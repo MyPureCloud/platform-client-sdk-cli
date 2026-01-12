@@ -1,0 +1,12 @@
+package intents_assignments_externalcontacts_customerintents
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/intents_assignments_externalcontacts_customerintents_assignment"
+)
+
+func init() {
+	intents_assignments_externalcontacts_customerintentsCmd.AddCommand(intents_assignments_externalcontacts_customerintents_assignment.Cmdintents_assignments_externalcontacts_customerintents_assignment())
+	intents_assignments_externalcontacts_customerintentsCmd.Short = utils.GenerateCustomDescription(intents_assignments_externalcontacts_customerintentsCmd.Short, intents_assignments_externalcontacts_customerintents_assignment.Description, )
+	intents_assignments_externalcontacts_customerintentsCmd.Long = intents_assignments_externalcontacts_customerintentsCmd.Short
+}

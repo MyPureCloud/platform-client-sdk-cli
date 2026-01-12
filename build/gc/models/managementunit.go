@@ -36,13 +36,13 @@ type ManagementunitDud struct {
     
 
 
+    ModifiedBy Userreference `json:"modifiedBy"`
+
+
     Version int `json:"version"`
 
 
     DateModified time.Time `json:"dateModified"`
-
-
-    ModifiedBy Userreference `json:"modifiedBy"`
 
 
     SelfUri string `json:"selfUri"`

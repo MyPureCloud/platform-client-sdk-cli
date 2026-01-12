@@ -20,12 +20,16 @@ type FlowpathsflowdetailsDud struct {
     
 
 
-    Flow Addressableentityref `json:"flow"`
+    
 
 }
 
 // Flowpathsflowdetails
 type Flowpathsflowdetails struct { 
+    // Flow - The identifier of the flow.
+    Flow Addressableentityref `json:"flow"`
+
+
     // Version - The version of the flow.
     Version string `json:"version"`
 
@@ -37,13 +41,11 @@ type Flowpathsflowdetails struct {
     // Count - Count of all journeys that include this element in the given flow.
     Count int `json:"count"`
 
-
-    
-
 }
 
 // String returns a JSON representation of the model
 func (o *Flowpathsflowdetails) String() string {
+    
     
     
     
@@ -63,6 +65,8 @@ func (u *Flowpathsflowdetails) MarshalJSON() ([]byte, error) {
     FlowpathsflowdetailsMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Flow Addressableentityref `json:"flow"`
         
         Version string `json:"version"`
         

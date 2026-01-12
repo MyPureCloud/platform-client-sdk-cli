@@ -30,6 +30,7 @@ func init() {
 func Cmdquality_forms_versions() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Sort order")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/quality/forms/{formId}/versions", utils.FormatPermissions([]string{ "quality:evaluationForm:view",  }), utils.GenerateDevCentreLink("GET", "Quality", "/api/v2/quality/forms/{formId}/versions")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -80,6 +81,10 @@ var listCmd = &cobra.Command{
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
 			queryParams["pageNumber"] = pageNumber
+		}
+		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
+		if sortOrder != "" {
+			queryParams["sortOrder"] = sortOrder
 		}
 		urlString := path
 		if len(queryParams) > 0 {

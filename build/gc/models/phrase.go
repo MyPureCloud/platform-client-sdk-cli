@@ -19,9 +19,6 @@ type PhraseDud struct {
 
     
 
-
-    
-
 }
 
 // Phrase
@@ -37,15 +34,10 @@ type Phrase struct {
     // Sentiment - The phrase sentiment, default value is Unspecified. Note: Sentiment value for phrases is currently not in use and has no impact to the system.
     Sentiment string `json:"sentiment"`
 
-
-    // IsAIGenerated - Indicates whether the phrase is AI generated
-    IsAIGenerated bool `json:"isAIGenerated"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Phrase) String() string {
-    
     
     
     
@@ -71,13 +63,8 @@ func (u *Phrase) MarshalJSON() ([]byte, error) {
         Strictness string `json:"strictness"`
         
         Sentiment string `json:"sentiment"`
-        
-        IsAIGenerated bool `json:"isAIGenerated"`
         *Alias
     }{
-
-        
-
 
         
 

@@ -1,0 +1,12 @@
+package workforcemanagement_agents_unavailabletimes
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_agents_unavailabletimes_query"
+)
+
+func init() {
+	workforcemanagement_agents_unavailabletimesCmd.AddCommand(workforcemanagement_agents_unavailabletimes_query.Cmdworkforcemanagement_agents_unavailabletimes_query())
+	workforcemanagement_agents_unavailabletimesCmd.Short = utils.GenerateCustomDescription(workforcemanagement_agents_unavailabletimesCmd.Short, workforcemanagement_agents_unavailabletimes_query.Description, )
+	workforcemanagement_agents_unavailabletimesCmd.Long = workforcemanagement_agents_unavailabletimesCmd.Short
+}

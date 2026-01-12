@@ -1,0 +1,14 @@
+package intents_customerintents_sourceintents_bulk
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/intents_customerintents_sourceintents_bulk_remove"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/intents_customerintents_sourceintents_bulk_add"
+)
+
+func init() {
+	intents_customerintents_sourceintents_bulkCmd.AddCommand(intents_customerintents_sourceintents_bulk_remove.Cmdintents_customerintents_sourceintents_bulk_remove())
+	intents_customerintents_sourceintents_bulkCmd.AddCommand(intents_customerintents_sourceintents_bulk_add.Cmdintents_customerintents_sourceintents_bulk_add())
+	intents_customerintents_sourceintents_bulkCmd.Short = utils.GenerateCustomDescription(intents_customerintents_sourceintents_bulkCmd.Short, intents_customerintents_sourceintents_bulk_remove.Description, intents_customerintents_sourceintents_bulk_add.Description, )
+	intents_customerintents_sourceintents_bulkCmd.Long = intents_customerintents_sourceintents_bulkCmd.Short
+}

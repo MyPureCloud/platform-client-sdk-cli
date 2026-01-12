@@ -58,6 +58,16 @@
       "description": "Disassociate a queue from an assistant."
     },
     {
+      "name": "get",
+      "path": "/api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs/{jobId}",
+      "description": "Get job details."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs",
+      "description": "Start a new job to assistant-queue."
+    },
+    {
       "name": "create",
       "path": "/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/add",
       "description": "Bulk add users to assistant-queue (requires manual assignment mode)."

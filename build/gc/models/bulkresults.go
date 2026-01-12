@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    ContractitemsMarshalled = false
+    BulkresultsMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type ContractitemsDud struct { 
+type BulkresultsDud struct { 
     
 
 
@@ -18,20 +18,20 @@ type ContractitemsDud struct {
 
 }
 
-// Contractitems
-type Contractitems struct { 
-    // VarType
-    VarType []string `json:"type"`
+// Bulkresults
+type Bulkresults struct { 
+    // Id - Id of source intent
+    Id string `json:"id"`
 
 
-    // Pattern
-    Pattern string `json:"pattern"`
+    // Success - Result of operation
+    Success bool `json:"success"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Contractitems) String() string {
-     o.VarType = []string{""} 
+func (o *Bulkresults) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -40,24 +40,22 @@ func (o *Contractitems) String() string {
     return str
 }
 
-func (u *Contractitems) MarshalJSON() ([]byte, error) {
-    type Alias Contractitems
+func (u *Bulkresults) MarshalJSON() ([]byte, error) {
+    type Alias Bulkresults
 
-    if ContractitemsMarshalled {
+    if BulkresultsMarshalled {
         return []byte("{}"), nil
     }
-    ContractitemsMarshalled = true
+    BulkresultsMarshalled = true
 
     return json.Marshal(&struct {
         
-        VarType []string `json:"type"`
+        Id string `json:"id"`
         
-        Pattern string `json:"pattern"`
+        Success bool `json:"success"`
         *Alias
     }{
 
-        
-        VarType: []string{""},
         
 
 

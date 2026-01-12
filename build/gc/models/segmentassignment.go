@@ -24,7 +24,7 @@ type SegmentassignmentDud struct {
     
 
 
-    ExternalContact Addressableentityref `json:"externalContact"`
+    
 
 }
 
@@ -42,16 +42,18 @@ type Segmentassignment struct {
     Segment Segmentassignmentsegment `json:"segment"`
 
 
+    // ExternalContact - External contact of the customer to which the segment is assigned.
+    ExternalContact Addressableentityref `json:"externalContact"`
+
+
     // Session - For session-scoped segments, the session for which the segment was assigned.
     Session Segmentassignmentsession `json:"session"`
-
-
-    
 
 }
 
 // String returns a JSON representation of the model
 func (o *Segmentassignment) String() string {
+    
     
     
     
@@ -78,6 +80,8 @@ func (u *Segmentassignment) MarshalJSON() ([]byte, error) {
         DateForUnassignment time.Time `json:"dateForUnassignment"`
         
         Segment Segmentassignmentsegment `json:"segment"`
+        
+        ExternalContact Addressableentityref `json:"externalContact"`
         
         Session Segmentassignmentsession `json:"session"`
         *Alias

@@ -41,7 +41,7 @@ type Buttonresponse struct {
     Payload string `json:"payload"`
 
 
-    // MessageType - Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection
+    // MessageType - Button response message type that captures QuickReply , Cards and Carousel.This is used  as label for Card selection
     MessageType string `json:"messageType"`
 
 

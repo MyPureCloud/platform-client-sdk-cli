@@ -15,6 +15,12 @@ type SuggestionDud struct {
     Id string `json:"id"`
 
 
+    Conversation Addressableentityref `json:"conversation"`
+
+
+    Assistant Addressableentityref `json:"assistant"`
+
+
     VarType string `json:"type"`
 
 
@@ -52,12 +58,6 @@ type SuggestionDud struct {
 
 
     SelfUri string `json:"selfUri"`
-
-
-    Conversation Addressableentityref `json:"conversation"`
-
-
-    Assistant Addressableentityref `json:"assistant"`
 
 }
 

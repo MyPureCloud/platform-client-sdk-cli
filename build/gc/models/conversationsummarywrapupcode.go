@@ -17,18 +17,22 @@ type ConversationsummarywrapupcodeDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
-
-
-    Id string `json:"id"`
-
-
-    Confidence float32 `json:"confidence"`
 
 }
 
 // Conversationsummarywrapupcode
 type Conversationsummarywrapupcode struct { 
+    // Id - The id of the wrapup code.
+    Id string `json:"id"`
+
+
     // Name - The name of the wrapup code.
     Name string `json:"name"`
 
@@ -37,10 +41,8 @@ type Conversationsummarywrapupcode struct {
     Description string `json:"description"`
 
 
-    
-
-
-    
+    // Confidence - The AI confidence value.
+    Confidence float32 `json:"confidence"`
 
 
     
@@ -49,6 +51,8 @@ type Conversationsummarywrapupcode struct {
 
 // String returns a JSON representation of the model
 func (o *Conversationsummarywrapupcode) String() string {
+    
+    
     
     
 
@@ -68,9 +72,13 @@ func (u *Conversationsummarywrapupcode) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Id string `json:"id"`
+        
         Name string `json:"name"`
         
         Description string `json:"description"`
+        
+        Confidence float32 `json:"confidence"`
         *Alias
     }{
 

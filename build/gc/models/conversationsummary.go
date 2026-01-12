@@ -42,10 +42,10 @@ type ConversationsummaryDud struct {
     
 
 
-    Id string `json:"id"`
+    
 
 
-    Confidence float32 `json:"confidence"`
+    
 
 
     
@@ -54,8 +54,16 @@ type ConversationsummaryDud struct {
 
 // Conversationsummary
 type Conversationsummary struct { 
+    // Id - The id of the summary.
+    Id string `json:"id"`
+
+
     // Text - The text of the summary.
     Text string `json:"text"`
+
+
+    // Confidence - The AI confidence value.
+    Confidence float32 `json:"confidence"`
 
 
     // Status - The status of the conversation summary.
@@ -94,12 +102,6 @@ type Conversationsummary struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
-    
-
-
-    
-
-
     // Participants - The list of participants.
     Participants []Addressableentityref `json:"participants"`
 
@@ -107,6 +109,8 @@ type Conversationsummary struct {
 
 // String returns a JSON representation of the model
 func (o *Conversationsummary) String() string {
+    
+    
     
     
     
@@ -135,7 +139,11 @@ func (u *Conversationsummary) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Id string `json:"id"`
+        
         Text string `json:"text"`
+        
+        Confidence float32 `json:"confidence"`
         
         Status string `json:"status"`
         
@@ -172,13 +180,13 @@ func (u *Conversationsummary) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
+
+
+        
         PredictedWrapupCodes: []Conversationsummarywrapupcode{{}},
-        
-
-
-        
-
-
         
 
 

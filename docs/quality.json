@@ -19,6 +19,31 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}",
+      "description": "Get an Agent Scoring Rule"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}",
+      "description": "Update an Agent Scoring Rule"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}",
+      "description": "Delete an Agent Scoring Rule"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/quality/programs/{programId}/agentscoringrules",
+      "description": "Get Agent Scoring Rules for a program"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/quality/programs/{programId}/agentscoringrules",
+      "description": "Create an Agent Scoring Rule"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/quality/calibrations/{calibrationId}",
       "description": "Get a calibration by id.  Requires either calibrator id or conversation id"
     },

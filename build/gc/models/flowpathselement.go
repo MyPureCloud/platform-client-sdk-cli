@@ -26,10 +26,10 @@ type FlowpathselementDud struct {
     
 
 
-    FlowMilestone Addressableentityref `json:"flowMilestone"`
+    
 
 
-    FlowOutcome Addressableentityref `json:"flowOutcome"`
+    
 
 }
 
@@ -51,14 +51,16 @@ type Flowpathselement struct {
     Flows []Flowpathsflowdetails `json:"flows"`
 
 
+    // FlowMilestone - The flow milestone, set if the element type is Milestone.
+    FlowMilestone Addressableentityref `json:"flowMilestone"`
+
+
+    // FlowOutcome - The flow outcome, set if the element type is Outcome or Milestone.
+    FlowOutcome Addressableentityref `json:"flowOutcome"`
+
+
     // FlowOutcomeValue - The value of the flow outcome, if the element type is Outcome.
     FlowOutcomeValue string `json:"flowOutcomeValue"`
-
-
-    
-
-
-    
 
 }
 
@@ -68,6 +70,8 @@ func (o *Flowpathselement) String() string {
     
     
      o.Flows = []Flowpathsflowdetails{{}} 
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -93,6 +97,10 @@ func (u *Flowpathselement) MarshalJSON() ([]byte, error) {
         Count int `json:"count"`
         
         Flows []Flowpathsflowdetails `json:"flows"`
+        
+        FlowMilestone Addressableentityref `json:"flowMilestone"`
+        
+        FlowOutcome Addressableentityref `json:"flowOutcome"`
         
         FlowOutcomeValue string `json:"flowOutcomeValue"`
         *Alias

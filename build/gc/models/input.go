@@ -28,6 +28,12 @@ type InputDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Input - Input component configuration
@@ -55,10 +61,20 @@ type Input struct {
     // IsRequired - Whether the input is required
     IsRequired bool `json:"isRequired"`
 
+
+    // KeyboardType - Type of keyboard to be shown
+    KeyboardType string `json:"keyboardType"`
+
+
+    // AutoCompleteType - A string value representing the keyboard and system information about the expected semantic meaning for the content that users enter
+    AutoCompleteType string `json:"autoCompleteType"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Input) String() string {
+    
+    
     
     
     
@@ -93,8 +109,18 @@ func (u *Input) MarshalJSON() ([]byte, error) {
         IsMultipleLine bool `json:"isMultipleLine"`
         
         IsRequired bool `json:"isRequired"`
+        
+        KeyboardType string `json:"keyboardType"`
+        
+        AutoCompleteType string `json:"autoCompleteType"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

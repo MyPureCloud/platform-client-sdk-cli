@@ -158,6 +158,9 @@ type ParticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Participant
@@ -318,6 +321,14 @@ type Participant struct {
     Messages []Message `json:"messages"`
 
 
+    // InternalMessages
+    InternalMessages []Internalmessage `json:"internalMessages"`
+
+
+    // ScreenMonitorings
+    ScreenMonitorings []Screenmonitoring `json:"screenMonitorings"`
+
+
     // Screenshares
     Screenshares []Screenshare `json:"screenshares"`
 
@@ -348,10 +359,6 @@ type Participant struct {
 
     // EndAcwTime - The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     EndAcwTime time.Time `json:"endAcwTime"`
-
-
-    // InternalMessages
-    InternalMessages []Internalmessage `json:"internalMessages"`
 
 
     // BargedParticipantId - If this participant barged in a participant's call, then this will be the id of the targeted participant.
@@ -400,6 +407,8 @@ func (o *Participant) String() string {
      o.Cobrowsesessions = []Cobrowsesession{{}} 
      o.Emails = []Email{{}} 
      o.Messages = []Message{{}} 
+     o.InternalMessages = []Internalmessage{{}} 
+     o.ScreenMonitorings = []Screenmonitoring{{}} 
      o.Screenshares = []Screenshare{{}} 
      o.SocialExpressions = []Socialexpression{{}} 
      o.Videos = []Video{{}} 
@@ -408,7 +417,6 @@ func (o *Participant) String() string {
     
     
     
-     o.InternalMessages = []Internalmessage{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -505,6 +513,10 @@ func (u *Participant) MarshalJSON() ([]byte, error) {
         
         Messages []Message `json:"messages"`
         
+        InternalMessages []Internalmessage `json:"internalMessages"`
+        
+        ScreenMonitorings []Screenmonitoring `json:"screenMonitorings"`
+        
         Screenshares []Screenshare `json:"screenshares"`
         
         SocialExpressions []Socialexpression `json:"socialExpressions"`
@@ -520,8 +532,6 @@ func (u *Participant) MarshalJSON() ([]byte, error) {
         StartAcwTime time.Time `json:"startAcwTime"`
         
         EndAcwTime time.Time `json:"endAcwTime"`
-        
-        InternalMessages []Internalmessage `json:"internalMessages"`
         
         BargedParticipantId string `json:"bargedParticipantId"`
         *Alias
@@ -661,6 +671,16 @@ func (u *Participant) MarshalJSON() ([]byte, error) {
 
 
         
+        InternalMessages: []Internalmessage{{}},
+        
+
+
+        
+        ScreenMonitorings: []Screenmonitoring{{}},
+        
+
+
+        
         Screenshares: []Screenshare{{}},
         
 
@@ -689,11 +709,6 @@ func (u *Participant) MarshalJSON() ([]byte, error) {
         
 
 
-        
-
-
-        
-        InternalMessages: []Internalmessage{{}},
         
 
 

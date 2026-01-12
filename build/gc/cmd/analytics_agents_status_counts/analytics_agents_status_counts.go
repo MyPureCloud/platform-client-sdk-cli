@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdanalytics_agents_status_counts() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "[]string", "groupBy", "", "Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType Valid values: segmentType, presence, routingStatus, isOutOfOffice")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/analytics/agents/status/counts", utils.FormatPermissions([]string{ "analytics:agentState:view",  }), utils.GenerateDevCentreLink("POST", "Analytics", "/api/v2/analytics/agents/status/counts")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "query",
@@ -82,6 +83,10 @@ var createCmd = &cobra.Command{
 
 		path := "/api/v2/analytics/agents/status/counts"
 
+		groupBy := utils.GetFlag(cmd.Flags(), "[]string", "groupBy")
+		if groupBy != "" {
+			queryParams["groupBy"] = groupBy
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

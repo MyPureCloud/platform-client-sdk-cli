@@ -17,12 +17,16 @@ type ConversationsummaryreasonDud struct {
     
 
 
-    Confidence float32 `json:"confidence"`
+    
 
 }
 
 // Conversationsummaryreason
 type Conversationsummaryreason struct { 
+    // Confidence - The AI confidence value.
+    Confidence float32 `json:"confidence"`
+
+
     // Text - The text of the reason.
     Text string `json:"text"`
 
@@ -30,13 +34,11 @@ type Conversationsummaryreason struct {
     // Description - The description.
     Description string `json:"description"`
 
-
-    
-
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationsummaryreason) String() string {
+    
     
     
 
@@ -55,6 +57,8 @@ func (u *Conversationsummaryreason) MarshalJSON() ([]byte, error) {
     ConversationsummaryreasonMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Confidence float32 `json:"confidence"`
         
         Text string `json:"text"`
         

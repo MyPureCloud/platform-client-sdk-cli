@@ -45,7 +45,7 @@ type ReportingturnDud struct {
     
 
 
-    Conversation Addressableentityref `json:"conversation"`
+    
 
 }
 
@@ -61,6 +61,10 @@ type Reportingturn struct {
 
     // SessionId - The bot session ID that this reporting turn is grouped under.
     SessionId string `json:"sessionId"`
+
+
+    // Conversation - The conversation details, across potentially multiple Bot Flow sessions.
+    Conversation Addressableentityref `json:"conversation"`
 
 
     // AskAction - The bot flow 'ask' action associated with this reporting turn (e.g. AskForIntent).
@@ -94,15 +98,13 @@ type Reportingturn struct {
     // SessionEndDetails - The details related to end of bot flow session.
     SessionEndDetails Sessionenddetails `json:"sessionEndDetails"`
 
-
-    
-
 }
 
 // String returns a JSON representation of the model
 func (o *Reportingturn) String() string {
     
      o.BotPrompts = []string{""} 
+    
     
     
     
@@ -134,6 +136,8 @@ func (u *Reportingturn) MarshalJSON() ([]byte, error) {
         BotPrompts []string `json:"botPrompts"`
         
         SessionId string `json:"sessionId"`
+        
+        Conversation Addressableentityref `json:"conversation"`
         
         AskAction Reportingturnaction `json:"askAction"`
         

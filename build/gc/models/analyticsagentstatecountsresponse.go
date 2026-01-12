@@ -13,6 +13,15 @@ var (
 type AnalyticsagentstatecountsresponseDud struct { 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Analyticsagentstatecountsresponse
@@ -20,11 +29,26 @@ type Analyticsagentstatecountsresponse struct {
     // SegmentCounts - List of count by segment types
     SegmentCounts []Agentstatesegmenttypecount `json:"segmentCounts"`
 
+
+    // PresenceCounts - List of count by presences
+    PresenceCounts []Agentstatepresencecount `json:"presenceCounts"`
+
+
+    // RoutingStatusCounts - List of count by routing statuses
+    RoutingStatusCounts []Agentstateroutingstatuscount `json:"routingStatusCounts"`
+
+
+    // IsOutOfOfficeCounts - List of count by out of office states
+    IsOutOfOfficeCounts []Agentstateisoutofofficecount `json:"isOutOfOfficeCounts"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Analyticsagentstatecountsresponse) String() string {
      o.SegmentCounts = []Agentstatesegmenttypecount{{}} 
+     o.PresenceCounts = []Agentstatepresencecount{{}} 
+     o.RoutingStatusCounts = []Agentstateroutingstatuscount{{}} 
+     o.IsOutOfOfficeCounts = []Agentstateisoutofofficecount{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -43,11 +67,32 @@ func (u *Analyticsagentstatecountsresponse) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         SegmentCounts []Agentstatesegmenttypecount `json:"segmentCounts"`
+        
+        PresenceCounts []Agentstatepresencecount `json:"presenceCounts"`
+        
+        RoutingStatusCounts []Agentstateroutingstatuscount `json:"routingStatusCounts"`
+        
+        IsOutOfOfficeCounts []Agentstateisoutofofficecount `json:"isOutOfOfficeCounts"`
         *Alias
     }{
 
         
         SegmentCounts: []Agentstatesegmenttypecount{{}},
+        
+
+
+        
+        PresenceCounts: []Agentstatepresencecount{{}},
+        
+
+
+        
+        RoutingStatusCounts: []Agentstateroutingstatuscount{{}},
+        
+
+
+        
+        IsOutOfOfficeCounts: []Agentstateisoutofofficecount{{}},
         
 
         Alias: (*Alias)(u),

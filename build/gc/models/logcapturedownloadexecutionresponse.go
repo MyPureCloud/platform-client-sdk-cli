@@ -15,6 +15,9 @@ type LogcapturedownloadexecutionresponseDud struct {
     
 
 
+    User Addressableentityref `json:"user"`
+
+
     State string `json:"state"`
 
 
@@ -25,9 +28,6 @@ type LogcapturedownloadexecutionresponseDud struct {
 
 
     SelfUri string `json:"selfUri"`
-
-
-    User Addressableentityref `json:"user"`
 
 }
 

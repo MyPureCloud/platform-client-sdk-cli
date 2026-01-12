@@ -42,10 +42,10 @@ type SendagentlessoutboundmessageresponseDud struct {
     
 
 
-    SelfUri string `json:"selfUri"`
-
-
     User Addressableentityref `json:"user"`
+
+
+    SelfUri string `json:"selfUri"`
 
 }
 

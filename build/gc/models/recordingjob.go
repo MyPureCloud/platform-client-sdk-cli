@@ -15,6 +15,9 @@ type RecordingjobDud struct {
     Id string `json:"id"`
 
 
+    User Addressableentityref `json:"user"`
+
+
     
 
 
@@ -50,9 +53,6 @@ type RecordingjobDud struct {
 
     SelfUri string `json:"selfUri"`
 
-
-    User Addressableentityref `json:"user"`
-
 }
 
 // Recordingjob
@@ -60,11 +60,11 @@ type Recordingjob struct {
     
 
 
+    
+
+
     // State - The current state of the job.
     State string `json:"state"`
-
-
-    
 
 
     

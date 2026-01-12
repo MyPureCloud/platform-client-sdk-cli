@@ -83,6 +83,7 @@ func Cmdsocialmedia_topics() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionIds", "", "One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned.")
 	utils.AddFlag(listCmd.Flags(), "bool", "includeDeleted", "", "Determines whether to include soft-deleted items in the result.")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Search for topic by name that contains the given search string, search is case insensitive")
+	utils.AddFlag(listCmd.Flags(), "[]string", "ids", "", "One or more topic IDs to search through the topics.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/socialmedia/topics", utils.FormatPermissions([]string{ "socialmedia:topic:view",  }), utils.GenerateDevCentreLink("GET", "Social Media", "/api/v2/socialmedia/topics")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -371,6 +372,10 @@ var listCmd = &cobra.Command{
 		name := utils.GetFlag(cmd.Flags(), "string", "name")
 		if name != "" {
 			queryParams["name"] = name
+		}
+		ids := utils.GetFlag(cmd.Flags(), "[]string", "ids")
+		if ids != "" {
+			queryParams["ids"] = ids
 		}
 		urlString := path
 		if len(queryParams) > 0 {

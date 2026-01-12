@@ -99,6 +99,9 @@ type EvaluationresponseDud struct {
     
 
 
+    
+
+
     EvaluationSource Evaluationsource `json:"evaluationSource"`
 
 
@@ -106,9 +109,6 @@ type EvaluationresponseDud struct {
 
 
     SelfUri string `json:"selfUri"`
-
-
-    Calibration Addressableentityref `json:"calibration"`
 
 }
 
@@ -135,6 +135,10 @@ type Evaluationresponse struct {
 
     // Agent
     Agent User `json:"agent"`
+
+
+    // Calibration
+    Calibration Addressableentityref `json:"calibration"`
 
 
     // Status
@@ -237,13 +241,11 @@ type Evaluationresponse struct {
 
     
 
-
-    
-
 }
 
 // String returns a JSON representation of the model
 func (o *Evaluationresponse) String() string {
+    
     
     
     
@@ -298,6 +300,8 @@ func (u *Evaluationresponse) MarshalJSON() ([]byte, error) {
         Evaluator User `json:"evaluator"`
         
         Agent User `json:"agent"`
+        
+        Calibration Addressableentityref `json:"calibration"`
         
         Status string `json:"status"`
         
@@ -396,6 +400,9 @@ func (u *Evaluationresponse) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
         MediaType: []string{""},
         
 
@@ -432,9 +439,6 @@ func (u *Evaluationresponse) MarshalJSON() ([]byte, error) {
 
         
         AuthorizedActions: []string{""},
-        
-
-
         
 
 

@@ -239,13 +239,13 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/gamification/insights/users/{userId}/trends",
-      "description": "Get insights user trend for the user"
+      "path": "/api/v2/gamification/insights/trends",
+      "description": "Get insights user trend for the current user"
     },
     {
       "name": "list",
-      "path": "/api/v2/gamification/insights/trends",
-      "description": "Get insights user trend for the current user"
+      "path": "/api/v2/gamification/insights/users/{userId}/trends",
+      "description": "Get insights user trend for the user"
     },
     {
       "name": "list",
@@ -278,14 +278,14 @@
       "description": "Average performance values trends by metric of a user"
     },
     {
-      "name": "get",
-      "path": "/api/v2/gamification/scorecards/bestpoints",
-      "description": "Best points of the requesting user"
-    },
-    {
       "name": "list",
       "path": "/api/v2/gamification/scorecards",
       "description": "Workday performance metrics of the requesting user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/bestpoints",
+      "description": "Best points of the requesting user"
     },
     {
       "name": "get",

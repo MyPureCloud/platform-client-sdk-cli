@@ -63,21 +63,6 @@
       "description": "Query for workbins"
     },
     {
-      "name": "list",
-      "path": "/api/v2/taskmanagement/workbins/{workbinId}/versions",
-      "description": "Get all versions of a workbin"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion}",
-      "description": "Get a version of a workbin"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/taskmanagement/workbins/{workbinId}/history",
-      "description": "Get a listing of a workbin's attribute change history"
-    },
-    {
       "name": "get",
       "path": "/api/v2/taskmanagement/workbins/{workbinId}",
       "description": "Get a workbin"
@@ -93,6 +78,21 @@
       "description": "Update the attributes of a workbin"
     },
     {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workbins/{workbinId}/versions",
+      "description": "Get all versions of a workbin"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion}",
+      "description": "Get a version of a workbin"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workbins/{workbinId}/history",
+      "description": "Get a listing of a workbin's attribute change history"
+    },
+    {
       "name": "create",
       "path": "/api/v2/taskmanagement/workbins",
       "description": "Create a workbin"
@@ -103,6 +103,11 @@
       "description": "Create a workitem"
     },
     {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/query/jobs",
+      "description": "Create a workitem query job"
+    },
+    {
       "name": "get",
       "path": "/api/v2/taskmanagement/workitems/query/jobs/{jobId}",
       "description": "Get the workitem query job associated with the job id."
@@ -111,11 +116,6 @@
       "name": "list",
       "path": "/api/v2/taskmanagement/workitems/query/jobs/{jobId}/results",
       "description": "Get results from for workitem query job "
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/taskmanagement/workitems/query/jobs",
-      "description": "Create a workitem query job"
     },
     {
       "name": "create",

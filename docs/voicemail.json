@@ -29,6 +29,11 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/voicemail/groups/{groupId}/mailbox",
+      "description": "Get the group's mailbox information"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/voicemail/users/{userId}/mailbox",
       "description": "Get a user's mailbox information"
     },
@@ -41,11 +46,6 @@
       "name": "get",
       "path": "/api/v2/voicemail/me/mailbox",
       "description": "Get the current user's mailbox information"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/voicemail/groups/{groupId}/mailbox",
-      "description": "Get the group's mailbox information"
     },
     {
       "name": "list",

@@ -1,0 +1,86 @@
+{
+  "supercommand": "intents",
+  "description": "/api/v2/intents",
+  "resources": [
+    {
+      "name": "list",
+      "path": "/api/v2/intents/categories",
+      "description": "Get categories"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/intents/categories",
+      "description": "Create category"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/intents/categories/{categoryId}",
+      "description": "Get category for categoryId"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/intents/categories/{categoryId}",
+      "description": "Delete category for categoryId"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/intents/categories/{categoryId}",
+      "description": "Patch category for categoryId"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/intents/assignments/externalcontacts/{externalContactId}/customerintents/{customerIntentId}/assignment",
+      "description": "Create customer intent assignment for external contact"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/intents/assignments/externalcontacts/{externalContactId}",
+      "description": "Get customer intent assignments for externalContactId"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/intents/customerintents/{customerIntentId}",
+      "description": "Get customer intent for customerIntentId"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/intents/customerintents/{customerIntentId}",
+      "description": "Delete customer intent for customerIntentId"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/intents/customerintents/{customerIntentId}",
+      "description": "Patch customer intent for customerIntentId"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/intents/customerintents/{customerIntentId}/sourceintents/bulk/remove",
+      "description": "Bulk remove source intents mapped to a customer intent"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/intents/customerintents/{customerIntentId}/sourceintents/bulk/add",
+      "description": "Bulk add source intents to a customer intent"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/intents/customerintents",
+      "description": "Get customer intents"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/intents/customerintents",
+      "description": "Create customer intents"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/intents/customerintents/{customerIntentId}/sourceintents",
+      "description": "Get source intents mapped to a customer intent"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/intents/sourceintents",
+      "description": "Get all mapped source intents by type. If no type selected default is type Segment"
+    }
+  ]
+}

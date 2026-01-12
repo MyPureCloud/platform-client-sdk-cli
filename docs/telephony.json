@@ -9,6 +9,26 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/telephony/agents/{agentId}/greetings",
+      "description": "Get an agent's greetings."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/agents/{agentId}/greetings",
+      "description": "Updates an agent's greetings."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/agents/greetings/me",
+      "description": "Get the agent's own greetings."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/agents/greetings/me",
+      "description": "Updates the agent's own greetings."
+    },
+    {
+      "name": "get",
       "path": "/api/v2/telephony/sipmessages/conversations/{conversationId}/headers",
       "description": "Get SIP headers."
     },
@@ -633,11 +653,6 @@
       "description": "Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge."
     },
     {
-      "name": "get",
-      "path": "/api/v2/telephony/siptraces",
-      "description": "Fetch SIP metadata"
-    },
-    {
       "name": "create",
       "path": "/api/v2/telephony/siptraces/download",
       "description": "Request a download of a pcap file to S3"
@@ -649,28 +664,8 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/telephony/agents/{agentId}/greetings",
-      "description": "Get an agent's greetings."
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/telephony/agents/{agentId}/greetings",
-      "description": "Updates an agent's greetings."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/telephony/agents/greetings/me",
-      "description": "Get the agent's own greetings."
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/telephony/agents/greetings/me",
-      "description": "Updates the agent's own greetings."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}",
-      "description": "Get media endpoint statistics event."
+      "path": "/api/v2/telephony/siptraces",
+      "description": "Fetch SIP metadata"
     },
     {
       "name": "get",
@@ -681,6 +676,11 @@
       "name": "create",
       "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}/mediaresources/{mediaResourceId}",
       "description": "Post media endpoint statistics event."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}",
+      "description": "Get media endpoint statistics event."
     }
   ]
 }

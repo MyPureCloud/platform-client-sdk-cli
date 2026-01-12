@@ -19,6 +19,9 @@ type UsersrulesupdaterulerequestDud struct {
 
     
 
+
+    
+
 }
 
 // Usersrulesupdaterulerequest - Update users rule request
@@ -34,6 +37,10 @@ type Usersrulesupdaterulerequest struct {
     // Criteria - The criteria of the rule
     Criteria []Usersrulescriteria `json:"criteria"`
 
+
+    // LockedCriteria
+    LockedCriteria []Usersrulescriteria `json:"lockedCriteria"`
+
 }
 
 // String returns a JSON representation of the model
@@ -41,6 +48,7 @@ func (o *Usersrulesupdaterulerequest) String() string {
     
     
      o.Criteria = []Usersrulescriteria{{}} 
+     o.LockedCriteria = []Usersrulescriteria{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -63,6 +71,8 @@ func (u *Usersrulesupdaterulerequest) MarshalJSON() ([]byte, error) {
         Description string `json:"description"`
         
         Criteria []Usersrulescriteria `json:"criteria"`
+        
+        LockedCriteria []Usersrulescriteria `json:"lockedCriteria"`
         *Alias
     }{
 
@@ -74,6 +84,11 @@ func (u *Usersrulesupdaterulerequest) MarshalJSON() ([]byte, error) {
 
         
         Criteria: []Usersrulescriteria{{}},
+        
+
+
+        
+        LockedCriteria: []Usersrulescriteria{{}},
         
 
         Alias: (*Alias)(u),

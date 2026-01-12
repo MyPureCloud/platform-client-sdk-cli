@@ -269,6 +269,9 @@ type AnalyticssessionDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticssession
@@ -573,6 +576,10 @@ type Analyticssession struct {
     SkipEnabled bool `json:"skipEnabled"`
 
 
+    // SnippetRecording - Whether or not the conversation included a snippet being recorded.
+    SnippetRecording bool `json:"snippetRecording"`
+
+
     // TimeoutSeconds - The number of seconds before Genesys Cloud begins the call for a call back (0 disables automatic calling)
     TimeoutSeconds int `json:"timeoutSeconds"`
 
@@ -681,6 +688,7 @@ func (o *Analyticssession) String() string {
     
      o.RemovedSkillIds = []string{""} 
      o.RequestedRoutings = []string{""} 
+    
     
     
     
@@ -872,6 +880,8 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         SharingScreen bool `json:"sharingScreen"`
         
         SkipEnabled bool `json:"skipEnabled"`
+        
+        SnippetRecording bool `json:"snippetRecording"`
         
         TimeoutSeconds int `json:"timeoutSeconds"`
         
@@ -1093,6 +1103,9 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
 
         
         RequestedRoutings: []string{""},
+        
+
+
         
 
 

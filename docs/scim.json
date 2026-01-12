@@ -23,11 +23,6 @@
       "description": "Get a list of SCIM schemas"
     },
     {
-      "name": "list",
-      "path": "/api/v2/scim/groups",
-      "description": "Get a list of groups"
-    },
-    {
       "name": "get",
       "path": "/api/v2/scim/groups/{groupId}",
       "description": "Get a group"
@@ -41,6 +36,11 @@
       "name": "update",
       "path": "/api/v2/scim/groups/{groupId}",
       "description": "Modify a group"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scim/groups",
+      "description": "Get a list of groups"
     },
     {
       "name": "get",
@@ -98,11 +98,6 @@
       "description": "Get a list of SCIM schemas"
     },
     {
-      "name": "list",
-      "path": "/api/v2/scim/v2/groups",
-      "description": "Get a list of groups"
-    },
-    {
       "name": "get",
       "path": "/api/v2/scim/v2/groups/{groupId}",
       "description": "Get a group"
@@ -116,6 +111,11 @@
       "name": "modify",
       "path": "/api/v2/scim/v2/groups/{groupId}",
       "description": "Modify a group"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/scim/v2/groups",
+      "description": "Get a list of groups"
     },
     {
       "name": "get",

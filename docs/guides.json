@@ -8,16 +8,6 @@
       "description": "Add a turn to a guide session."
     },
     {
-      "name": "get",
-      "path": "/api/v2/guides/{guideId}",
-      "description": "Get guide."
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/guides/{guideId}",
-      "description": "Update a guide."
-    },
-    {
       "name": "delete",
       "path": "/api/v2/guides/{guideId}/jobs",
       "description": "Start the deletion of a guide."
@@ -26,6 +16,16 @@
       "name": "getjobforguide",
       "path": "/api/v2/guides/{guideId}/jobs/{jobId}",
       "description": "Get the specified guide deletion job."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/guides/{guideId}",
+      "description": "Get guide."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/guides/{guideId}",
+      "description": "Update a guide."
     },
     {
       "name": "get",
@@ -53,14 +53,14 @@
       "description": "Create a guide version."
     },
     {
-      "name": "get",
-      "path": "/api/v2/guides/jobs/{jobId}",
-      "description": "Get the status of the guide content generation job."
-    },
-    {
       "name": "create",
       "path": "/api/v2/guides/jobs",
       "description": "Start a guide content generation job."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/guides/jobs/{jobId}",
+      "description": "Get the status of the guide content generation job."
     },
     {
       "name": "list",

@@ -313,14 +313,14 @@
       "description": "Delete flow"
     },
     {
-      "name": "list",
-      "path": "/api/v2/flows/{flowId}/history/{historyId}",
-      "description": "Get generated flow history"
-    },
-    {
       "name": "create",
       "path": "/api/v2/flows/{flowId}/history",
       "description": "Generate flow history"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/{flowId}/history/{historyId}",
+      "description": "Get generated flow history"
     },
     {
       "name": "get",

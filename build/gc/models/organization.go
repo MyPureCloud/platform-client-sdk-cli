@@ -32,6 +32,9 @@ type OrganizationDud struct {
     
 
 
+    Features map[string]bool `json:"features"`
+
+
     
 
 
@@ -51,9 +54,6 @@ type OrganizationDud struct {
 
 
     SelfUri string `json:"selfUri"`
-
-
-    Features map[string]bool `json:"features"`
 
 }
 
@@ -85,6 +85,9 @@ type Organization struct {
     Domain string `json:"domain"`
 
 
+    
+
+
     // Version - The current version of the organization.
     Version int `json:"version"`
 
@@ -103,9 +106,6 @@ type Organization struct {
 
     // VoicemailEnabled
     VoicemailEnabled bool `json:"voicemailEnabled"`
-
-
-    
 
 
     

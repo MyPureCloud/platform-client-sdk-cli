@@ -1,0 +1,16 @@
+package workforcemanagement_unavailabletimes
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_unavailabletimes_validation"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_unavailabletimes_query"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_unavailabletimes_settings"
+)
+
+func init() {
+	workforcemanagement_unavailabletimesCmd.AddCommand(workforcemanagement_unavailabletimes_validation.Cmdworkforcemanagement_unavailabletimes_validation())
+	workforcemanagement_unavailabletimesCmd.AddCommand(workforcemanagement_unavailabletimes_query.Cmdworkforcemanagement_unavailabletimes_query())
+	workforcemanagement_unavailabletimesCmd.AddCommand(workforcemanagement_unavailabletimes_settings.Cmdworkforcemanagement_unavailabletimes_settings())
+	workforcemanagement_unavailabletimesCmd.Short = utils.GenerateCustomDescription(workforcemanagement_unavailabletimesCmd.Short, workforcemanagement_unavailabletimes_validation.Description, workforcemanagement_unavailabletimes_query.Description, workforcemanagement_unavailabletimes_settings.Description, )
+	workforcemanagement_unavailabletimesCmd.Long = workforcemanagement_unavailabletimesCmd.Short
+}

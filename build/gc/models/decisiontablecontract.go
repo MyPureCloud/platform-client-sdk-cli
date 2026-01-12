@@ -31,15 +31,15 @@ type Decisiontablecontract struct {
 
 
     // RowAuthoringSchema - JSON schema describing required value types for each column in every row in a decision table
-    RowAuthoringSchema Contractjsonschema `json:"rowAuthoringSchema"`
+    RowAuthoringSchema Jsonschemadocument `json:"rowAuthoringSchema"`
 
 
     // ExecutionInputSchema - JSON schema for execution input data for a decision table
-    ExecutionInputSchema Contractjsonschema `json:"executionInputSchema"`
+    ExecutionInputSchema Jsonschemadocument `json:"executionInputSchema"`
 
 
     // ExecutionOutputSchema - JSON schema for execution output data for a decision table
-    ExecutionOutputSchema Contractjsonschema `json:"executionOutputSchema"`
+    ExecutionOutputSchema Jsonschemadocument `json:"executionOutputSchema"`
 
 }
 
@@ -68,11 +68,11 @@ func (u *Decisiontablecontract) MarshalJSON() ([]byte, error) {
         
         ParentSchema Domainentityref `json:"parentSchema"`
         
-        RowAuthoringSchema Contractjsonschema `json:"rowAuthoringSchema"`
+        RowAuthoringSchema Jsonschemadocument `json:"rowAuthoringSchema"`
         
-        ExecutionInputSchema Contractjsonschema `json:"executionInputSchema"`
+        ExecutionInputSchema Jsonschemadocument `json:"executionInputSchema"`
         
-        ExecutionOutputSchema Contractjsonschema `json:"executionOutputSchema"`
+        ExecutionOutputSchema Jsonschemadocument `json:"executionOutputSchema"`
         *Alias
     }{
 

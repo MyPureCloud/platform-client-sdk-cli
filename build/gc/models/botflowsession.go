@@ -39,7 +39,7 @@ type BotflowsessionDud struct {
     
 
 
-    Conversation Addressableentityref `json:"conversation"`
+    
 
 }
 
@@ -51,6 +51,10 @@ type Botflowsession struct {
 
     // Flow - The flow associated to this bot session.
     Flow Entity `json:"flow"`
+
+
+    // Conversation - The conversation details, across potentially multiple Bot Flow sessions.
+    Conversation Addressableentityref `json:"conversation"`
 
 
     // Channel - Channel-specific information that describes the message channel/provider.
@@ -80,13 +84,11 @@ type Botflowsession struct {
     // DateCompleted - Timestamp indicating when the session was completed. Note: The 'interval' query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DateCompleted time.Time `json:"dateCompleted"`
 
-
-    
-
 }
 
 // String returns a JSON representation of the model
 func (o *Botflowsession) String() string {
+    
     
     
     
@@ -116,6 +118,8 @@ func (u *Botflowsession) MarshalJSON() ([]byte, error) {
         Id string `json:"id"`
         
         Flow Entity `json:"flow"`
+        
+        Conversation Addressableentityref `json:"conversation"`
         
         Channel Botchannel `json:"channel"`
         

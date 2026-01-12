@@ -80,6 +80,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/geolocations"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/intents"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/journey"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/knowledge"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/languageunderstanding"
@@ -141,7 +142,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 149.1.0")
+		fmt.Println("Current version: 150.0.0")
 		checkForNewVersion()
 	},
 }
@@ -160,7 +161,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("149.1.0", latestVersion) {
+	if versionsAreEqual("150.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -331,6 +332,7 @@ func init() {
 	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(geolocations.Cmdgeolocations())
+	rootCmd.AddCommand(intents.Cmdintents())
 	rootCmd.AddCommand(journey.Cmdjourney())
 	rootCmd.AddCommand(knowledge.Cmdknowledge())
 	rootCmd.AddCommand(languageunderstanding.Cmdlanguageunderstanding())

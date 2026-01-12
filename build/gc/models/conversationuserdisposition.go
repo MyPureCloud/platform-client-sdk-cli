@@ -17,7 +17,7 @@ type ConversationuserdispositionDud struct {
     
 
 
-    User Addressableentityref `json:"user"`
+    
 
 }
 
@@ -31,12 +31,14 @@ type Conversationuserdisposition struct {
     Notes string `json:"notes"`
 
 
-    
+    // User - The user that wrapped up the conversation.
+    User Addressableentityref `json:"user"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationuserdisposition) String() string {
+    
     
     
 
@@ -59,6 +61,8 @@ func (u *Conversationuserdisposition) MarshalJSON() ([]byte, error) {
         Code string `json:"code"`
         
         Notes string `json:"notes"`
+        
+        User Addressableentityref `json:"user"`
         *Alias
     }{
 

@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_unavailabletimes_settings
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_unavailabletimes_settings_query"
+)
+
+func init() {
+	workforcemanagement_businessunits_unavailabletimes_settingsCmd.AddCommand(workforcemanagement_businessunits_unavailabletimes_settings_query.Cmdworkforcemanagement_businessunits_unavailabletimes_settings_query())
+	workforcemanagement_businessunits_unavailabletimes_settingsCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_unavailabletimes_settingsCmd.Short, workforcemanagement_businessunits_unavailabletimes_settings_query.Description, )
+	workforcemanagement_businessunits_unavailabletimes_settingsCmd.Long = workforcemanagement_businessunits_unavailabletimes_settingsCmd.Short
+}

@@ -79,7 +79,7 @@ func Cmdusers_rules() *cobra.Command {
 
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Number of results per page")
-	utils.AddFlag(listCmd.Flags(), "[]string", "types", "", "The types of the rule - REQUIRED Valid values: Learning")
+	utils.AddFlag(listCmd.Flags(), "[]string", "types", "", "The types of the rule - REQUIRED Valid values: Learning, ActivityPlan")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Fields to expand in response Valid values: criteria")
 	utils.AddFlag(listCmd.Flags(), "string", "searchTerm", "", "a search term for finding a rule by name")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ascending", "sort rules by name, ascending, descending Valid values: ascending, descending")

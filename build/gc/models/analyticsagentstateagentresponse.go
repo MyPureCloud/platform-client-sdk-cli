@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -11,6 +12,24 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type AnalyticsagentstateagentresponseDud struct { 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
     
 
 
@@ -55,6 +74,30 @@ type Analyticsagentstateagentresponse struct {
     // Sessions - List of sessions
     Sessions []Analyticsagentstateagentsessionresult `json:"sessions"`
 
+
+    // SystemPresence - The user's system presence
+    SystemPresence string `json:"systemPresence"`
+
+
+    // OrganizationPresenceId - The identifier for the user's organization presence
+    OrganizationPresenceId string `json:"organizationPresenceId"`
+
+
+    // PresenceDate - The timestamp for when the user's presence began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    PresenceDate time.Time `json:"presenceDate"`
+
+
+    // RoutingStatus - The user's routing status
+    RoutingStatus string `json:"routingStatus"`
+
+
+    // RoutingStatusDate - The timestamp for when the user's routing status began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    RoutingStatusDate time.Time `json:"routingStatusDate"`
+
+
+    // IsOutOfOffice - Whether the user is out of office
+    IsOutOfOffice bool `json:"isOutOfOffice"`
+
 }
 
 // String returns a JSON representation of the model
@@ -65,6 +108,12 @@ func (o *Analyticsagentstateagentresponse) String() string {
     
     
      o.Sessions = []Analyticsagentstateagentsessionresult{{}} 
+    
+    
+    
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -93,6 +142,18 @@ func (u *Analyticsagentstateagentresponse) MarshalJSON() ([]byte, error) {
         SessionCount int `json:"sessionCount"`
         
         Sessions []Analyticsagentstateagentsessionresult `json:"sessions"`
+        
+        SystemPresence string `json:"systemPresence"`
+        
+        OrganizationPresenceId string `json:"organizationPresenceId"`
+        
+        PresenceDate time.Time `json:"presenceDate"`
+        
+        RoutingStatus string `json:"routingStatus"`
+        
+        RoutingStatusDate time.Time `json:"routingStatusDate"`
+        
+        IsOutOfOffice bool `json:"isOutOfOffice"`
         *Alias
     }{
 
@@ -113,6 +174,24 @@ func (u *Analyticsagentstateagentresponse) MarshalJSON() ([]byte, error) {
 
         
         Sessions: []Analyticsagentstateagentsessionresult{{}},
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
         
 
         Alias: (*Alias)(u),

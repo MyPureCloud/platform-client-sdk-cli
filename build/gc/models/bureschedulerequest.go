@@ -44,6 +44,9 @@ type BureschedulerequestDud struct {
 
     
 
+
+    
+
 }
 
 // Bureschedulerequest
@@ -91,6 +94,10 @@ type Bureschedulerequest struct {
     // InduceScheduleVariability - Overrides the default BU level induce schedule variability setting for this reschedule run
     InduceScheduleVariability bool `json:"induceScheduleVariability"`
 
+
+    // UseUnavailableTimesSnapshot - Whether to use original unavailable times from schedule generation or latest saved unavailable times for this reschedule run
+    UseUnavailableTimesSnapshot bool `json:"useUnavailableTimesSnapshot"`
+
 }
 
 // String returns a JSON representation of the model
@@ -100,6 +107,7 @@ func (o *Bureschedulerequest) String() string {
      o.AgentIds = []string{""} 
      o.ActivityCodeIds = []string{""} 
      o.ManagementUnitIds = []string{""} 
+    
     
     
     
@@ -144,6 +152,8 @@ func (u *Bureschedulerequest) MarshalJSON() ([]byte, error) {
         ActivitySmoothingType string `json:"activitySmoothingType"`
         
         InduceScheduleVariability bool `json:"induceScheduleVariability"`
+        
+        UseUnavailableTimesSnapshot bool `json:"useUnavailableTimesSnapshot"`
         *Alias
     }{
 
@@ -165,6 +175,9 @@ func (u *Bureschedulerequest) MarshalJSON() ([]byte, error) {
 
         
         ManagementUnitIds: []string{""},
+        
+
+
         
 
 

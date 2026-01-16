@@ -137,23 +137,23 @@ type Externalcontact struct {
     Division Writablestarrabledivision `json:"division"`
 
 
-    // FirstName - The first name of the contact.
+    // FirstName - The first name of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
     FirstName string `json:"firstName"`
 
 
-    // MiddleName
+    // MiddleName - The middle name of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
     MiddleName string `json:"middleName"`
 
 
-    // LastName - The last name of the contact.
+    // LastName - The last name of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
     LastName string `json:"lastName"`
 
 
-    // Salutation
+    // Salutation - The salutation of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
     Salutation string `json:"salutation"`
 
 
-    // Title
+    // Title - The title of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
     Title string `json:"title"`
 
 
@@ -173,15 +173,15 @@ type Externalcontact struct {
     OtherPhone Phonenumber `json:"otherPhone"`
 
 
-    // WorkEmail
+    // WorkEmail - The work email of the contact. Max: 256 characters. Leading and trailing whitespace stripped. Valid email format
     WorkEmail string `json:"workEmail"`
 
 
-    // PersonalEmail
+    // PersonalEmail - The personal email of the contact. Max: 256 characters. Leading and trailing whitespace stripped. Valid email format
     PersonalEmail string `json:"personalEmail"`
 
 
-    // OtherEmail
+    // OtherEmail - The other email of the contact. Max: 256 characters. Leading and trailing whitespace stripped. Valid email format
     OtherEmail string `json:"otherEmail"`
 
 
@@ -189,7 +189,7 @@ type Externalcontact struct {
     Address Contactaddress `json:"address"`
 
 
-    // TwitterId
+    // TwitterId - User information for a Twitter account
     TwitterId Twitterid `json:"twitterId"`
 
 
@@ -197,11 +197,11 @@ type Externalcontact struct {
     LineId Lineid `json:"lineId"`
 
 
-    // WhatsAppId
+    // WhatsAppId - User information for a WhatsApp account
     WhatsAppId Whatsappid `json:"whatsAppId"`
 
 
-    // FacebookId
+    // FacebookId - User information for a Facebook account
     FacebookId Facebookid `json:"facebookId"`
 
 
@@ -209,11 +209,11 @@ type Externalcontact struct {
     InstagramId Instagramid `json:"instagramId"`
 
 
-    // AppleOpaqueIds - User information for an Apple account
+    // AppleOpaqueIds - User information for an Apple account. Max: 10 ids
     AppleOpaqueIds []Appleopaqueid `json:"appleOpaqueIds"`
 
 
-    // ExternalIds - A list of external identifiers that identify this contact in an external system
+    // ExternalIds - A list of external identifiers that identify this contact in an external system. Max: 10 ids
     ExternalIds []Externalid `json:"externalIds"`
 
 
@@ -237,7 +237,7 @@ type Externalcontact struct {
     SurveyOptOut bool `json:"surveyOptOut"`
 
 
-    // ExternalSystemUrl - A string that identifies an external system-of-record resource that may have more detailed information on the contact. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
+    // ExternalSystemUrl - A string that identifies an external system-of-record resource that may have more detailed information on the contact. Should be a valid URL (including the http/https protocol, port, and path [if any]). Leading and trailing whitespace stripped. Max 1000 characters.
     ExternalSystemUrl string `json:"externalSystemUrl"`
 
 

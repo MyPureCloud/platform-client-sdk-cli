@@ -199,16 +199,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/flows/actions/checkin",
-      "description": "Check-in flow"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/flows/actions/checkout",
-      "description": "Check-out flow"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/flows/actions/deactivate",
       "description": "Deactivate flow"
     },
@@ -216,6 +206,16 @@
       "name": "create",
       "path": "/api/v2/flows/actions/revert",
       "description": "Revert flow"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/actions/checkin",
+      "description": "Check-in flow"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/actions/checkout",
+      "description": "Check-out flow"
     },
     {
       "name": "get",
@@ -298,6 +298,11 @@
       "description": "Create a flow outcome"
     },
     {
+      "name": "create",
+      "path": "/api/v2/flows/{flowId}/history",
+      "description": "Generate flow history"
+    },
+    {
       "name": "get",
       "path": "/api/v2/flows/{flowId}",
       "description": "Get flow"
@@ -311,11 +316,6 @@
       "name": "delete",
       "path": "/api/v2/flows/{flowId}",
       "description": "Delete flow"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/flows/{flowId}/history",
-      "description": "Generate flow history"
     },
     {
       "name": "list",

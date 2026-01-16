@@ -69,6 +69,11 @@
     },
     {
       "name": "list",
+      "path": "/api/v2/authorization/policies",
+      "description": "Get a page of access policies for an organization"
+    },
+    {
+      "name": "list",
       "path": "/api/v2/authorization/policies/subject/{subjectId}",
       "description": "Get a page of access policies for a given subject"
     },
@@ -81,6 +86,11 @@
       "name": "delete",
       "path": "/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}",
       "description": "Delete an access control policy"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/policies/targets/{targetName}/validate",
+      "description": "Validate the conditions and attributes of an access control policy for a specified resource target"
     },
     {
       "name": "get",
@@ -106,16 +116,6 @@
       "name": "get",
       "path": "/api/v2/authorization/policies/targets",
       "description": "Get a map of policy targets to valid attributes for those targets"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/authorization/policies",
-      "description": "Get a page of access policies for an organization"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/authorization/policies/targets/{targetName}/validate",
-      "description": "Validate the conditions and attributes of an access control policy for a specified resource target"
     },
     {
       "name": "get",
@@ -153,6 +153,11 @@
       "description": "Returns a listing of roles and permissions for the currently authenticated user."
     },
     {
+      "name": "get",
+      "path": "/api/v2/authorization/subjects/{subjectId}",
+      "description": "Returns a listing of roles and permissions for a user."
+    },
+    {
       "name": "create",
       "path": "/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}",
       "description": "Make a grant of a role in a division"
@@ -168,11 +173,6 @@
       "description": "Bulk-grant roles and divisions to a subject."
     },
     {
-      "name": "get",
-      "path": "/api/v2/authorization/subjects/{subjectId}",
-      "description": "Returns a listing of roles and permissions for a user."
-    },
-    {
       "name": "create",
       "path": "/api/v2/authorization/subjects/{subjectId}/bulkreplace",
       "description": "Replace subject's roles and divisions with the exact list supplied in the request."
@@ -184,11 +184,6 @@
     },
     {
       "name": "update",
-      "path": "/api/v2/authorization/roles/{roleId}/users/add",
-      "description": "Sets the users for the role"
-    },
-    {
-      "name": "update",
       "path": "/api/v2/authorization/roles/{roleId}/users/remove",
       "description": "Removes the users from the role"
     },
@@ -196,6 +191,11 @@
       "name": "list",
       "path": "/api/v2/authorization/roles/{roleId}/users",
       "description": "Get a list of the users in a specified role."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/authorization/roles/{roleId}/users/add",
+      "description": "Sets the users for the role"
     },
     {
       "name": "list",

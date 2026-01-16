@@ -620,6 +620,7 @@ gc/cmd/groups_search/groups_search.go
 gc/cmd/guides/guides.go
 gc/cmd/guides_jobs/guides_jobs.go
 gc/cmd/guides_sessions_turns/guides_sessions_turns.go
+gc/cmd/guides_uploads/guides_uploads.go
 gc/cmd/guides_versions/guides_versions.go
 gc/cmd/guides_versions_jobs/guides_versions_jobs.go
 gc/cmd/identityproviders/identityproviders.go
@@ -1874,6 +1875,7 @@ gc/models/auditrealtimequeryresultsresponse.go
 gc/models/auditrealtimerelatedrequest.go
 gc/models/auditrealtimerelatedresultsresponse.go
 gc/models/authenticationsettings.go
+gc/models/authoringknowledgesettings.go
 gc/models/authorizationpolicy.go
 gc/models/authorizationpolicyentitylisting.go
 gc/models/authorizationsettings.go
@@ -2247,7 +2249,10 @@ gc/models/capacityplanstaffinggroupmetricchangeresponse.go
 gc/models/capacityplanstaffingrequirementresult.go
 gc/models/card.go
 gc/models/cardaction.go
+gc/models/cardbodytext.go
 gc/models/cardparameters.go
+gc/models/carousel.go
+gc/models/carouselcard.go
 gc/models/carouselparameters.go
 gc/models/casemanagementaggregatedatacontainer.go
 gc/models/casemanagementaggregatequeryclause.go
@@ -2310,6 +2315,7 @@ gc/models/checklistinferencejobcreationresponse.go
 gc/models/checklistinferencejobpayload.go
 gc/models/checklistinferencejobresponse.go
 gc/models/checklistitem.go
+gc/models/chunksearchregisterrequest.go
 gc/models/clientapp.go
 gc/models/clientappconfigurationinfo.go
 gc/models/clientappentitylisting.go
@@ -3850,6 +3856,7 @@ gc/models/knowledgeparserecord.go
 gc/models/knowledgesearchclientapplication.go
 gc/models/knowledgesearchdocumentresponse.go
 gc/models/knowledgesetting.go
+gc/models/knowledgesettings.go
 gc/models/knowledgesuggestionconfig.go
 gc/models/knowledgesyncjobreport.go
 gc/models/knowledgesyncjobrequest.go
@@ -4539,11 +4546,9 @@ gc/models/programinsightssettings.go
 gc/models/programinsightssettingsentitylisting.go
 gc/models/programjob.go
 gc/models/programjobrequest.go
-gc/models/programmappings.go
 gc/models/programmappingsrequest.go
 gc/models/programrequest.go
 gc/models/programsentitylisting.go
-gc/models/programsmappingsentitylisting.go
 gc/models/programtranscriptionengine.go
 gc/models/programtranscriptionengines.go
 gc/models/progressconsulttransferevent.go
@@ -5074,8 +5079,8 @@ gc/models/socialmediastatisticalsummary.go
 gc/models/socialtopicpatchrequest.go
 gc/models/socialtopicrequest.go
 gc/models/socialtopicresponse.go
-gc/models/socialtopicresponseentitylisting.go
 gc/models/socialtopicwithdataingestionrulemetadataresponse.go
+gc/models/socialtopicwithdataingestionrulemetadataresponseentitylisting.go
 gc/models/sortitem.go
 gc/models/source.go
 gc/models/sourcebaseresponse.go
@@ -5107,6 +5112,7 @@ gc/models/stationentitylisting.go
 gc/models/statisticalresponse.go
 gc/models/statisticalsummary.go
 gc/models/statuschange.go
+gc/models/statusinfo.go
 gc/models/stopsettings.go
 gc/models/storysetting.go
 gc/models/streetaddress.go
@@ -5332,6 +5338,8 @@ gc/models/topicjobrequest.go
 gc/models/topicoffset.go
 gc/models/topicphrase.go
 gc/models/topicrequest.go
+gc/models/topicsdefinitionsprogrammappings.go
+gc/models/topicsdefinitionsprogramsmappingsentitylisting.go
 gc/models/topicsentitylisting.go
 gc/models/touchpoint.go
 gc/models/touchpointresponse.go
@@ -5976,5 +5984,4 @@ gc/models/writabledialercontact.go
 gc/models/writabledivision.go
 gc/models/writableentity.go
 gc/models/writablestarrabledivision.go
-gc/models/yearmonth.go
 gc/restclient/restclient.go

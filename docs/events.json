@@ -4,13 +4,13 @@
   "resources": [
     {
       "name": "create",
-      "path": "/api/v2/events/users/routingstatus",
-      "description": "Publish Agent Routing Status Batch Events"
+      "path": "/api/v2/events/conversations",
+      "description": "Publish Conversation Batch Events"
     },
     {
       "name": "create",
-      "path": "/api/v2/events/conversations",
-      "description": "Publish Conversation Batch Events"
+      "path": "/api/v2/events/users/routingstatus",
+      "description": "Publish Agent Routing Status Batch Events"
     },
     {
       "name": "create",

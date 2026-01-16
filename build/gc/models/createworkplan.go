@@ -100,6 +100,9 @@ type CreateworkplanDud struct {
 
     
 
+
+    
+
 }
 
 // Createworkplan
@@ -212,6 +215,10 @@ type Createworkplan struct {
     ShiftStartVarianceType string `json:"shiftStartVarianceType"`
 
 
+    // ShiftStartVariancePeriod - The length of the period over which the maximum shift start time variance is applied
+    ShiftStartVariancePeriod string `json:"shiftStartVariancePeriod"`
+
+
     // ShiftStartVariances - Variance in minutes among start times of shifts in this work plan
     ShiftStartVariances Listwrappershiftstartvariance `json:"shiftStartVariances"`
 
@@ -227,6 +234,7 @@ type Createworkplan struct {
 
 // String returns a JSON representation of the model
 func (o *Createworkplan) String() string {
+    
     
     
     
@@ -328,6 +336,8 @@ func (u *Createworkplan) MarshalJSON() ([]byte, error) {
         
         ShiftStartVarianceType string `json:"shiftStartVarianceType"`
         
+        ShiftStartVariancePeriod string `json:"shiftStartVariancePeriod"`
+        
         ShiftStartVariances Listwrappershiftstartvariance `json:"shiftStartVariances"`
         
         Shifts []Createworkplanshift `json:"shifts"`
@@ -335,6 +345,9 @@ func (u *Createworkplan) MarshalJSON() ([]byte, error) {
         Agents []Userreference `json:"agents"`
         *Alias
     }{
+
+        
+
 
         
 

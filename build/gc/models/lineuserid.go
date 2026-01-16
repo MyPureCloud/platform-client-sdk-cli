@@ -17,7 +17,7 @@ type LineuseridDud struct {
 
 // Lineuserid - Channel-specific User ID for Line accounts
 type Lineuserid struct { 
-    // UserId - The unique channel-specific userId for the user
+    // UserId - The unique channel-specific userId for the user. Max: 255 characters.
     UserId string `json:"userId"`
 
 }

@@ -19,11 +19,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/leaderboard",
-      "description": "Leaderboard of the requesting user's division or performance profile"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/gamification/leaderboard/bestpoints",
       "description": "Best Points of the requesting user's current performance profile or division"
     },
@@ -36,6 +31,11 @@
       "name": "get",
       "path": "/api/v2/gamification/leaderboard/all/bestpoints",
       "description": "Best Points by division or performance profile"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/leaderboard",
+      "description": "Leaderboard of the requesting user's division or performance profile"
     },
     {
       "name": "get",

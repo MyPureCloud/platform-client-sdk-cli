@@ -32,27 +32,27 @@ type ContactaddressDud struct {
 
 // Contactaddress
 type Contactaddress struct { 
-    // Address1
+    // Address1 - Max: 200 characters. Leading and trailing whitespace stripped.
     Address1 string `json:"address1"`
 
 
-    // Address2
+    // Address2 - Max: 200 characters. Leading and trailing whitespace stripped.
     Address2 string `json:"address2"`
 
 
-    // City
+    // City - Max: 100 characters. Leading and trailing whitespace stripped.
     City string `json:"city"`
 
 
-    // State
+    // State - Max: 50 characters. Leading and trailing whitespace stripped.
     State string `json:"state"`
 
 
-    // PostalCode
+    // PostalCode - Max: 25 characters. Leading and trailing whitespace stripped.
     PostalCode string `json:"postalCode"`
 
 
-    // CountryCode
+    // CountryCode - Max: 25 characters. Leading and trailing whitespace stripped.
     CountryCode string `json:"countryCode"`
 
 }

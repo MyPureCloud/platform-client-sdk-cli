@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("knowledge_knowledgebases_chunks_search", "SWAGGER_OVERRIDE_/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search", )
+	Description = utils.FormatUsageDescription("knowledge_knowledgebases_chunks_search", "SWAGGER_OVERRIDE_/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search", "SWAGGER_OVERRIDE_/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search", )
 	knowledge_knowledgebases_chunks_searchCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("knowledge_knowledgebases_chunks_search"),
 		Short: Description,
@@ -51,6 +51,24 @@ func Cmdknowledge_knowledgebases_chunks_search() *cobra.Command {
   }
 }`)
 	knowledge_knowledgebases_chunks_searchCmd.AddCommand(createCmd)
+
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search/{searchId}", utils.FormatPermissions([]string{ "knowledge:knowledgebase:search",  }), utils.GenerateDevCentreLink("PATCH", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search/{searchId}")))
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ChunkSearchRegisterRequest"
+      }
+    }
+  },
+  "required" : false
+}`)
+	
+	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
+  "description" : "Search registered successfully.",
+  "content" : { }
+}`)
+	knowledge_knowledgebases_chunks_searchCmd.AddCommand(updateCmd)
 	return knowledge_knowledgebases_chunks_searchCmd
 }
 
@@ -98,6 +116,76 @@ var createCmd = &cobra.Command{
 
 		const opId = "create"
 		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
+			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
+		utils.Render(results)
+	},
+}
+var updateCmd = &cobra.Command{
+	Use:   "update [knowledgeBaseId] [searchId]",
+	Short: "Register chunk search result.",
+	Long:  "Register chunk search result.",
+	Args:  utils.DetermineArgs([]string{ "knowledgeBaseId", "searchId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Chunksearchregisterrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search/{searchId}"
+		knowledgeBaseId, args := args[0], args[1:]
+		path = strings.Replace(path, "{knowledgeBaseId}", fmt.Sprintf("%v", knowledgeBaseId), -1)
+		searchId, args := args[0], args[1:]
+		path = strings.Replace(path, "{searchId}", fmt.Sprintf("%v", searchId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
+		const opId = "update"
+		const httpMethod = "PATCH"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

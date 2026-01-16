@@ -94,6 +94,16 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/speechandtextanalytics/programs/{programId}/mappings",
+      "description": "Get Speech & Text Analytics program mappings to queues and flows by id"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/speechandtextanalytics/programs/{programId}/mappings",
+      "description": "Set Speech & Text Analytics program mappings to queues and flows"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines",
       "description": "Get transcription engine settings of a program"
     },
@@ -106,6 +116,11 @@
       "name": "list",
       "path": "/api/v2/speechandtextanalytics/programs/settings/insights",
       "description": "Get the list of program AI Insights settings for the organization"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/programs/mappings",
+      "description": "Get the list of Speech & Text Analytics programs mappings to queues and flows"
     },
     {
       "name": "list",
@@ -159,16 +174,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/speechandtextanalytics/programs/{programId}/mappings",
-      "description": "Get Speech & Text Analytics program mappings to queues and flows by id"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/speechandtextanalytics/programs/{programId}/mappings",
-      "description": "Set Speech & Text Analytics program mappings to queues and flows"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/speechandtextanalytics/programs/publishjobs/{jobId}",
       "description": "Get a Speech & Text Analytics publish programs job by id"
     },
@@ -191,11 +196,6 @@
       "name": "delete",
       "path": "/api/v2/speechandtextanalytics/programs/{programId}",
       "description": "Delete a Speech & Text Analytics program by id"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/speechandtextanalytics/programs/mappings",
-      "description": "Get the list of Speech & Text Analytics programs mappings to queues and flows"
     },
     {
       "name": "list",
@@ -283,14 +283,14 @@
       "description": "Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation"
     },
     {
-      "name": "get",
-      "path": "/api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId}",
-      "description": "Translate a single interaction recording (or an email conversation)"
-    },
-    {
       "name": "list",
       "path": "/api/v2/speechandtextanalytics/translations/languages",
       "description": "Get supported translation languages"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId}",
+      "description": "Translate a single interaction recording (or an email conversation)"
     },
     {
       "name": "get",

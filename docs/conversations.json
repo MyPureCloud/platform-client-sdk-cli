@@ -118,6 +118,16 @@
       "description": "API invoked to finalize agent checklist evaluation."
     },
     {
+      "name": "get",
+      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}",
+      "description": "Get checklist info for a single checklist."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}",
+      "description": "Agent Checklist activation API"
+    },
+    {
       "name": "create",
       "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs",
       "description": "Create inference job"
@@ -131,16 +141,6 @@
       "name": "list",
       "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists",
       "description": "Get information of all checklists associated with a conversation."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}",
-      "description": "Get checklist info for a single checklist."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}",
-      "description": "Agent Checklist activation API"
     },
     {
       "name": "create",
@@ -1253,6 +1253,11 @@
       "description": "Delete a code used to add a communication to this participant"
     },
     {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks",
+      "description": "Create a new callback for the specified participant on the conversation."
+    },
+    {
       "name": "update",
       "path": "/api/v2/conversations/{conversationId}/participants/{participantId}",
       "description": "Update a participant."
@@ -1276,11 +1281,6 @@
       "name": "list",
       "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes",
       "description": "Get list of wrapup codes for this conversation participant"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks",
-      "description": "Create a new callback for the specified participant on the conversation."
     },
     {
       "name": "update",

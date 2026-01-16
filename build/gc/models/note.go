@@ -60,7 +60,7 @@ type Note struct {
     EntityType string `json:"entityType"`
 
 
-    // NoteText
+    // NoteText - Between 1 and 32,000 characters.
     NoteText string `json:"noteText"`
 
 

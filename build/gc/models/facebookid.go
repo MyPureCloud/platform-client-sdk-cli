@@ -20,11 +20,11 @@ type FacebookidDud struct {
 
 // Facebookid - User information for a Facebook user interacting with a page or app
 type Facebookid struct { 
-    // Ids - The set of scopedIds that this person has. Each scopedId is specific to a page or app that the user interacts with.
+    // Ids - The set of scopedIds that this person has. Each scopedId is specific to a page or app that the user interacts with. Max: 1 Id
     Ids []Facebookscopedid `json:"ids"`
 
 
-    // DisplayName - The displayName of this person's Facebook account. Roughly translates to user.first_name + ' ' + user.last_name in the Facebook API.
+    // DisplayName - The displayName of this person's Facebook account. Roughly translates to user.first_name + ' ' + user.last_name in the Facebook API. Max: 100 characters.
     DisplayName string `json:"displayName"`
 
 }

@@ -20,11 +20,11 @@ type LineidDud struct {
 
 // Lineid - User information for a Line account
 type Lineid struct { 
-    // Ids - The set of Line userIds that this person has. Each userId is specific to the Line channel that the user interacts with.
+    // Ids - The set of Line userIds that this person has. Each userId is specific to the Line channel that the user interacts with. Max 1 Id.
     Ids []Lineuserid `json:"ids"`
 
 
-    // DisplayName - The displayName of this person's account in Line
+    // DisplayName - The displayName of this person's account in Line. Max: 100 characters.
     DisplayName string `json:"displayName"`
 
 }

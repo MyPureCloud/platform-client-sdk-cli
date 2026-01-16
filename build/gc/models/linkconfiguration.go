@@ -17,7 +17,7 @@ type LinkconfigurationDud struct {
 
 // Linkconfiguration
 type Linkconfiguration struct { 
-    // UriTemplate
+    // UriTemplate - Should be a valid URL (including the http/https protocol, port, and path [if any]). Leading and trailing whitespace stripped. Max 400 characters.
     UriTemplate string `json:"uriTemplate"`
 
 }

@@ -27,17 +27,17 @@ type TwitteridDud struct {
 
 }
 
-// Twitterid - User information for a twitter account
+// Twitterid - User information for a twitter account. Either id OR screenName (or both) must be present
 type Twitterid struct { 
-    // Id - twitter user.id_str
+    // Id - twitter user.id_str. Max: 255 characters
     Id string `json:"id"`
 
 
-    // Name - twitter user.name
+    // Name - twitter user.name. Max: 255 characters
     Name string `json:"name"`
 
 
-    // ScreenName - twitter user.screen_name
+    // ScreenName - twitter user.screen_name. Max: 255 characters. Must match pattern: ^@?[A-Za-z0-9_]+$
     ScreenName string `json:"screenName"`
 
 

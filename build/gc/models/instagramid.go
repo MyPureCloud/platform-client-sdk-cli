@@ -23,15 +23,15 @@ type InstagramidDud struct {
 
 // Instagramid - User information for an Instagram account
 type Instagramid struct { 
-    // Ids - The set of scopedIds that this person has. Each scopedId is specific to an Instagram page or app that the user interacts with.
+    // Ids - The set of scopedIds that this person has. Each scopedId is specific to an Instagram page or app that the user interacts with. Max 1 id.
     Ids []Instagramscopedid `json:"ids"`
 
 
-    // DisplayName - The displayName of the person who owns this Instagram account
+    // DisplayName - The displayName of the person who owns this Instagram account. Max: 100 characters.
     DisplayName string `json:"displayName"`
 
 
-    // Handle - The handle of the person who owns this Instagram account
+    // Handle - The handle of the person who owns this Instagram account. Max: 100 characters.
     Handle string `json:"handle"`
 
 }

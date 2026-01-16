@@ -47,6 +47,9 @@ type AssistantDud struct {
 
     SelfUri string `json:"selfUri"`
 
+
+    VariationParent Addressableentityref `json:"variationParent"`
+
 }
 
 // Assistant
@@ -80,6 +83,9 @@ type Assistant struct {
 
     // KnowledgeSuggestionConfig - Configuration that defines how to produce knowledge suggestions.
     KnowledgeSuggestionConfig Knowledgesuggestionconfig `json:"knowledgeSuggestionConfig"`
+
+
+    
 
 
     
@@ -124,6 +130,9 @@ func (u *Assistant) MarshalJSON() ([]byte, error) {
         KnowledgeSuggestionConfig Knowledgesuggestionconfig `json:"knowledgeSuggestionConfig"`
         *Alias
     }{
+
+        
+
 
         
 

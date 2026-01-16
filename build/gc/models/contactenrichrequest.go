@@ -43,7 +43,7 @@ type Contactenrichrequest struct {
     Division Writablestarrabledivision `json:"division"`
 
 
-    // MatchingIdentifiers - An ordered list of one or more Identifiers which might each be claimed by a Contact. `action` describes what to do with any possibly matching Contacts. Identifier lookups will occur in the order specified here.
+    // MatchingIdentifiers - An ordered list of one or more Identifiers which might each be claimed by a Contact. `action` describes what to do with any possibly matching Contacts. Identifier lookups will occur in the order specified here. Between 1 and 25.
     MatchingIdentifiers []Contactidentifier `json:"matchingIdentifiers"`
 
 

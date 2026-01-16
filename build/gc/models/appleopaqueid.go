@@ -17,7 +17,7 @@ type AppleopaqueidDud struct {
 
 // Appleopaqueid
 type Appleopaqueid struct { 
-    // Value
+    // Value - Max: 255 characters. Leading and trailing whitespace stripped.
     Value string `json:"value"`
 
 }

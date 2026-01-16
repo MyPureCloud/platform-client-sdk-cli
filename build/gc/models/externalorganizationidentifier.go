@@ -47,7 +47,7 @@ type Externalorganizationidentifier struct {
     VarType string `json:"type"`
 
 
-    // Value - The string value of the identifier. Will vary in syntax by type.
+    // Value - The string value of the identifier. Will vary in syntax by type. Max: 255 characters.
     Value string `json:"value"`
 
 

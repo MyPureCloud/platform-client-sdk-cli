@@ -17,7 +17,7 @@ type FacebookscopedidDud struct {
 
 // Facebookscopedid - Scoped ID for a Facebook user interacting with a page or app
 type Facebookscopedid struct { 
-    // ScopedId - The unique page/app-specific scopedId for the user
+    // ScopedId - The unique page/app-specific scopedId for the user. Max: 255 characters.
     ScopedId string `json:"scopedId"`
 
 }

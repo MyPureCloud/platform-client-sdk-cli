@@ -110,6 +110,9 @@ type WorkplanvalidationrequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -230,6 +233,10 @@ type Workplanvalidationrequest struct {
     ShiftStartVarianceType string `json:"shiftStartVarianceType"`
 
 
+    // ShiftStartVariancePeriod - The length of the period over which the maximum shift start time variance is applied
+    ShiftStartVariancePeriod string `json:"shiftStartVariancePeriod"`
+
+
     // ShiftStartVariances - Variance in minutes among start times of shifts in this work plan
     ShiftStartVariances Listwrappershiftstartvariance `json:"shiftStartVariances"`
 
@@ -252,6 +259,7 @@ type Workplanvalidationrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Workplanvalidationrequest) String() string {
+    
     
     
     
@@ -354,6 +362,8 @@ func (u *Workplanvalidationrequest) MarshalJSON() ([]byte, error) {
         
         ShiftStartVarianceType string `json:"shiftStartVarianceType"`
         
+        ShiftStartVariancePeriod string `json:"shiftStartVariancePeriod"`
+        
         ShiftStartVariances Listwrappershiftstartvariance `json:"shiftStartVariances"`
         
         Shifts []Workplanshift `json:"shifts"`
@@ -363,6 +373,9 @@ func (u *Workplanvalidationrequest) MarshalJSON() ([]byte, error) {
         AgentCount int `json:"agentCount"`
         *Alias
     }{
+
+        
+
 
         
 

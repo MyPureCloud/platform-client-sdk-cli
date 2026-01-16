@@ -58,6 +58,9 @@ type WorkplanactivityDud struct {
 
     
 
+
+    
+
 }
 
 // Workplanactivity
@@ -114,6 +117,10 @@ type Workplanactivity struct {
     MinimumLengthFromShiftEndMinutes int `json:"minimumLengthFromShiftEndMinutes"`
 
 
+    // MaximumLengthFromShiftEndMinutes - The maximum duration between shift item (e.g., break or meal) end and shift end in minutes
+    MaximumLengthFromShiftEndMinutes int `json:"maximumLengthFromShiftEndMinutes"`
+
+
     // Id - ID of the activity. This is required only for the case of updating an existing activity
     Id string `json:"id"`
 
@@ -129,6 +136,7 @@ type Workplanactivity struct {
 
 // String returns a JSON representation of the model
 func (o *Workplanactivity) String() string {
+    
     
     
     
@@ -188,6 +196,8 @@ func (u *Workplanactivity) MarshalJSON() ([]byte, error) {
         
         MinimumLengthFromShiftEndMinutes int `json:"minimumLengthFromShiftEndMinutes"`
         
+        MaximumLengthFromShiftEndMinutes int `json:"maximumLengthFromShiftEndMinutes"`
+        
         Id string `json:"id"`
         
         Delete bool `json:"delete"`
@@ -195,6 +205,9 @@ func (u *Workplanactivity) MarshalJSON() ([]byte, error) {
         ValidationId string `json:"validationId"`
         *Alias
     }{
+
+        
+
 
         
 

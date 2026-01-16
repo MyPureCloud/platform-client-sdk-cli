@@ -3,11 +3,6 @@
   "description": "/api/v2/guides",
   "resources": [
     {
-      "name": "create",
-      "path": "/api/v2/guides/{guideId}/sessions/{guideSessionId}/turns",
-      "description": "Add a turn to a guide session."
-    },
-    {
       "name": "delete",
       "path": "/api/v2/guides/{guideId}/jobs",
       "description": "Start the deletion of a guide."
@@ -28,14 +23,9 @@
       "description": "Update a guide."
     },
     {
-      "name": "get",
-      "path": "/api/v2/guides/{guideId}/versions/{versionId}",
-      "description": "Get a guide version."
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/guides/{guideId}/versions/{versionId}",
-      "description": "Update a guide version."
+      "name": "create",
+      "path": "/api/v2/guides/{guideId}/sessions/{guideSessionId}/turns",
+      "description": "Add a turn to a guide session."
     },
     {
       "name": "create",
@@ -46,6 +36,16 @@
       "name": "get",
       "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId}",
       "description": "Get the status of the publishing job for this guide version."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/guides/{guideId}/versions/{versionId}",
+      "description": "Get a guide version."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/guides/{guideId}/versions/{versionId}",
+      "description": "Update a guide version."
     },
     {
       "name": "create",
@@ -71,6 +71,11 @@
       "name": "create",
       "path": "/api/v2/guides",
       "description": "Create a guide."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/guides/uploads",
+      "description": "Generate presigned URL for uploading a file content to generate guide"
     }
   ]
 }

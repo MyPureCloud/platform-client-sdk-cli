@@ -20,11 +20,11 @@ type ExternalidDud struct {
 
 // Externalid
 type Externalid struct { 
-    // ExternalSource
+    // ExternalSource - The external source of the identifier. Max: 255 characters. Leading and trailing whitespace stripped.
     ExternalSource Externalsource `json:"externalSource"`
 
 
-    // Value
+    // Value - The string value of the identifier. Max: 255 characters. Leading and trailing whitespace stripped.
     Value string `json:"value"`
 
 }

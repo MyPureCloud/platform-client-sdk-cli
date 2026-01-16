@@ -36,7 +36,7 @@ func Cmdspeechandtextanalytics_programs_mappings() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ProgramMappings"
+        "$ref" : "#/components/schemas/TopicsDefinitionsProgramMappings"
       }
     }
   }
@@ -78,7 +78,7 @@ func Cmdspeechandtextanalytics_programs_mappings() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ProgramMappings"
+        "$ref" : "#/components/schemas/TopicsDefinitionsProgramMappings"
       }
     }
   }

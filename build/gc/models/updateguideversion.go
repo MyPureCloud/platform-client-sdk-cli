@@ -19,6 +19,9 @@ type UpdateguideversionDud struct {
 
     
 
+
+    
+
 }
 
 // Updateguideversion - Request body for updating a guide version
@@ -34,12 +37,17 @@ type Updateguideversion struct {
     // Resources - The resources associated with this version of the guide.
     Resources Guideversionresources `json:"resources"`
 
+
+    // KnowledgeSettings - The knowledge settings associated with this version of the guide.
+    KnowledgeSettings Authoringknowledgesettings `json:"knowledgeSettings"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Updateguideversion) String() string {
     
      o.Variables = []Variable{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -63,6 +71,8 @@ func (u *Updateguideversion) MarshalJSON() ([]byte, error) {
         Variables []Variable `json:"variables"`
         
         Resources Guideversionresources `json:"resources"`
+        
+        KnowledgeSettings Authoringknowledgesettings `json:"knowledgeSettings"`
         *Alias
     }{
 
@@ -71,6 +81,9 @@ func (u *Updateguideversion) MarshalJSON() ([]byte, error) {
 
         
         Variables: []Variable{{}},
+        
+
+
         
 
 

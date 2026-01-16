@@ -20,11 +20,11 @@ type WhatsappidDud struct {
 
 // Whatsappid - User information for a WhatsApp account
 type Whatsappid struct { 
-    // PhoneNumber - The phone number associated with this WhatsApp account
+    // PhoneNumber - The phone number associated with this WhatsApp account. Requires 'E164 without a leading plus' phone number.
     PhoneNumber Phonenumber `json:"phoneNumber"`
 
 
-    // DisplayName - The displayName of this person's account in WhatsApp
+    // DisplayName - The displayName of this person's account in WhatsApp. Max: 100 characters.
     DisplayName string `json:"displayName"`
 
 }

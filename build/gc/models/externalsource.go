@@ -33,7 +33,7 @@ type Externalsource struct {
     Id string `json:"id"`
 
 
-    // Name - The name of the external source.
+    // Name - The name of the external source. Must be unique. Max: 200 characters. Leading and trailing whitespace stripped.
     Name string `json:"name"`
 
 

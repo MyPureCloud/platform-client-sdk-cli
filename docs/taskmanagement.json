@@ -34,11 +34,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results",
-      "description": "Get bulk terminate job results."
-    },
-    {
-      "name": "get",
       "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}",
       "description": "Get the bulk job associated with the job id."
     },
@@ -51,6 +46,11 @@
       "name": "update",
       "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}",
       "description": "Update workitem bulk terminate job."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results",
+      "description": "Get bulk terminate job results."
     },
     {
       "name": "create",

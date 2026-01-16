@@ -47,7 +47,7 @@ type Contactidentifier struct {
     VarType string `json:"type"`
 
 
-    // Value - The string value of the identifier. Will vary in syntax by type.
+    // Value - The string value of the identifier. Will vary in syntax by type. Max: 255 characters. Leading and trailing whitespace stripped.
     Value string `json:"value"`
 
 

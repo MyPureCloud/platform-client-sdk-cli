@@ -91,7 +91,7 @@ type Externalorganization struct {
     Id string `json:"id"`
 
 
-    // Name - The name of the company.
+    // Name - The name of the company. Max: 1000 characters. Leading and trailing whitespace stripped.
     Name string `json:"name"`
 
 
@@ -171,7 +171,7 @@ type Externalorganization struct {
     Identifiers []Externalorganizationidentifier `json:"identifiers"`
 
 
-    // ExternalIds - A list of external identifiers that identify this External Organization in an external system
+    // ExternalIds - A list of external identifiers that identify this External Organization in an external system. Max 10 items.
     ExternalIds []Externalid `json:"externalIds"`
 
 

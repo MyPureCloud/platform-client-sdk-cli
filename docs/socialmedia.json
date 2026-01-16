@@ -18,11 +18,6 @@
       "description": "Fetch a page of results for an async social media query"
     },
     {
-      "name": "create",
-      "path": "/api/v2/socialmedia/analytics/messages/jobs",
-      "description": "Query for social media messages asynchronously"
-    },
-    {
       "name": "get",
       "path": "/api/v2/socialmedia/analytics/messages/jobs/{jobId}",
       "description": "Get status for async query for social media messages job"
@@ -31,6 +26,11 @@
       "name": "list",
       "path": "/api/v2/socialmedia/analytics/messages/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async social media messages query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/socialmedia/analytics/messages/jobs",
+      "description": "Query for social media messages asynchronously"
     },
     {
       "name": "list",

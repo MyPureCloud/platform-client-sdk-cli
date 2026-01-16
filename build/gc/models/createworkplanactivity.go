@@ -49,6 +49,9 @@ type CreateworkplanactivityDud struct {
 
     
 
+
+    
+
 }
 
 // Createworkplanactivity
@@ -104,10 +107,15 @@ type Createworkplanactivity struct {
     // MinimumLengthFromShiftEndMinutes - The minimum duration between shift item (e.g., break or meal) end and shift end in minutes
     MinimumLengthFromShiftEndMinutes int `json:"minimumLengthFromShiftEndMinutes"`
 
+
+    // MaximumLengthFromShiftEndMinutes - The maximum duration between shift item (e.g., break or meal) end and shift end in minutes
+    MaximumLengthFromShiftEndMinutes int `json:"maximumLengthFromShiftEndMinutes"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Createworkplanactivity) String() string {
+    
     
     
     
@@ -163,8 +171,13 @@ func (u *Createworkplanactivity) MarshalJSON() ([]byte, error) {
         MinimumLengthFromShiftStartMinutes int `json:"minimumLengthFromShiftStartMinutes"`
         
         MinimumLengthFromShiftEndMinutes int `json:"minimumLengthFromShiftEndMinutes"`
+        
+        MaximumLengthFromShiftEndMinutes int `json:"maximumLengthFromShiftEndMinutes"`
         *Alias
     }{
+
+        
+
 
         
 

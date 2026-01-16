@@ -50,7 +50,7 @@ type Relationship struct {
     ExternalOrganization Externalorganization `json:"externalOrganization"`
 
 
-    // Relationship - The relationship or role of the user to this external organization.Examples: Account Manager, Sales Engineer, Implementation Consultant
+    // Relationship - The relationship or role of the user to this external organization.Examples: Account Manager, Sales Engineer, Implementation Consultant. Between 1 and 100 characters.
     Relationship string `json:"relationship"`
 
 

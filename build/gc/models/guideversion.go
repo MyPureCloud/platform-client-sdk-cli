@@ -38,6 +38,9 @@ type GuideversionDud struct {
 
     
 
+
+    
+
 }
 
 // Guideversion
@@ -71,10 +74,15 @@ type Guideversion struct {
     // Resources - The resources associated with this version of the guide.
     Resources Guideversionresources `json:"resources"`
 
+
+    // KnowledgeSettings - The knowledge settings associated with this version of the guide.
+    KnowledgeSettings Authoringknowledgesettings `json:"knowledgeSettings"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Guideversion) String() string {
+    
     
     
     
@@ -100,8 +108,13 @@ func (u *Guideversion) MarshalJSON() ([]byte, error) {
         State string `json:"state"`
         
         Resources Guideversionresources `json:"resources"`
+        
+        KnowledgeSettings Authoringknowledgesettings `json:"knowledgeSettings"`
         *Alias
     }{
+
+        
+
 
         
 

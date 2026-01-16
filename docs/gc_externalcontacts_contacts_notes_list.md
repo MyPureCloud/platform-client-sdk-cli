@@ -18,7 +18,7 @@ gc externalcontacts contacts notes list [contactId] [flags]
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --pageNumber string        Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default "1")
-      --pageSize string          Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default "20")
+      --pageSize string          Page size (limited to fetching first 1,000 records; pageSize <= 100; pageNumber * pageSize must be <= 1,000) (default "20")
       --sortOrder string         The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. createDate:asc, createDate:desc
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```

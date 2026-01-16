@@ -1,15 +1,15 @@
-## gc guides
+## gc guides uploads
 
-/api/v2/guides
+/api/v2/guides/uploads
 
 ### Synopsis
 
-/api/v2/guides
+/api/v2/guides/uploads
 
 ### Options
 
 ```
-  -h, --help   help for guides
+  -h, --help   help for uploads
 ```
 
 ### Options inherited from parent commands
@@ -29,14 +29,7 @@
 
 ### SEE ALSO
 
-* [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
-* [gc guides create](gc_guides_create.html)	 - Create a guide.
-* [gc guides get](gc_guides_get.html)	 - Get guide.
-* [gc guides jobs](gc_guides_jobs.html)	 - /api/v2/guides/jobs /api/v2/guides/{guideId}/jobs
-* [gc guides list](gc_guides_list.html)	 - Get all guides.
-* [gc guides sessions](gc_guides_sessions.html)	 - /api/v2/guides/{guideId}/sessions
-* [gc guides update](gc_guides_update.html)	 - Update a guide.
-* [gc guides uploads](gc_guides_uploads.html)	 - /api/v2/guides/uploads
-* [gc guides versions](gc_guides_versions.html)	 - /api/v2/guides/{guideId}/versions
+* [gc guides](gc_guides.html)	 - /api/v2/guides
+* [gc guides uploads create](gc_guides_uploads_create.html)	 - Generate presigned URL for uploading a file content to generate guide
 
 

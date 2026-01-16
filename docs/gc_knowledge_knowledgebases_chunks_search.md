@@ -31,5 +31,6 @@
 
 * [gc knowledge knowledgebases chunks](gc_knowledge_knowledgebases_chunks.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks
 * [gc knowledge knowledgebases chunks search create](gc_knowledge_knowledgebases_chunks_search_create.html)	 - Search for chunks in a knowledge base
+* [gc knowledge knowledgebases chunks search update](gc_knowledge_knowledgebases_chunks_search_update.html)	 - Register chunk search result.
 
 

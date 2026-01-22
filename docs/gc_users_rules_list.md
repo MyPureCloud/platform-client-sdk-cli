@@ -14,6 +14,7 @@ gc users rules list [flags]
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
+      --enabled string           Whether to list enabled or disabled rules Valid values: true, false
       --expand strings           Fields to expand in response Valid values: criteria
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list

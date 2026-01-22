@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc quality](gc_quality.html)	 - /api/v2/quality
+* [gc quality surveys create](gc_quality_surveys_create.html)	 - Create a survey for a conversation
 * [gc quality surveys get](gc_quality_surveys_get.html)	 - Get a survey for a conversation
 * [gc quality surveys scorable](gc_quality_surveys_scorable.html)	 - /api/v2/quality/surveys/scorable
 * [gc quality surveys scoring](gc_quality_surveys_scoring.html)	 - /api/v2/quality/surveys/scoring

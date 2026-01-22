@@ -1,22 +1,15 @@
-## gc users presences update
+## gc quality evaluations search
 
-Patch a user`s Presence
+/api/v2/quality/evaluations/search
 
 ### Synopsis
 
-Patch a user`s Presence
-
-```
-gc users presences update [userId] [sourceId] [flags]
-```
+/api/v2/quality/evaluations/search
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for update
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for search
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc users presences update [userId] [sourceId] [flags]
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/presences /api/v2/users/{userId}/presences
+* [gc quality evaluations](gc_quality_evaluations.html)	 - /api/v2/quality/evaluations
+* [gc quality evaluations search create](gc_quality_evaluations_search_create.html)	 - Search evaluations based along specified criteria
 
 

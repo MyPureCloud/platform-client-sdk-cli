@@ -16,8 +16,11 @@ gc speechandtextanalytics programs list [flags]
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
+      --name string              Case insensitive partial name to filter by
       --nextPage string          The key for listing the next page
       --pageSize string          The page size for the listing (default "20")
+      --sortBy string            Sort results by. Defaults to name Valid values: name
+      --sortOrder string         Sort order. Defaults to asc Valid values: asc, desc
       --state string             Program state. Defaults to Latest Valid values: Latest, Published
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```

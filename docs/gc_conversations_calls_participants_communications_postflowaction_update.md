@@ -1,13 +1,13 @@
-## gc users presences update
+## gc conversations calls participants communications postflowaction update
 
-Patch a user`s Presence
+Set mandatory post call actions.  If both values are null or blank error will occur.
 
 ### Synopsis
 
-Patch a user`s Presence
+Set mandatory post call actions.  If both values are null or blank error will occur.
 
 ```
-gc users presences update [userId] [sourceId] [flags]
+gc conversations calls participants communications postflowaction update [conversationId] [participantId] [communicationId] [flags]
 ```
 
 ### Options
@@ -36,6 +36,6 @@ gc users presences update [userId] [sourceId] [flags]
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/presences /api/v2/users/{userId}/presences
+* [gc conversations calls participants communications postflowaction](gc_conversations_calls_participants_communications_postflowaction.html)	 - /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction
 
 

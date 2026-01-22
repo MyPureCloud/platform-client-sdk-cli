@@ -13,13 +13,14 @@ gc speechandtextanalytics dictionaryfeedback list [flags]
 ### Options
 
 ```
-  -a, --autopaginate             Automatically paginate through the results stripping page information
-      --dialect string           The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
-      --filtercondition string   Filter list command output based on a given condition or regular expression
-  -h, --help                     help for list
-      --nextPage string          The key for listing the next page
-      --pageSize string          The page size for the listing (default "500")
-  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
+  -a, --autopaginate                 Automatically paginate through the results stripping page information
+      --dialect string               The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+      --filtercondition string       Filter list command output based on a given condition or regular expression
+  -h, --help                         help for list
+      --nextPage string              The key for listing the next page
+      --pageSize string              The page size for the listing (default "500")
+  -s, --stream                       Paginate and stream data as it is being processed leaving page information intact
+      --transcriptionEngine string   Filter by transcription engine Valid values: Genesys, GenesysExtended
 ```
 
 ### Options inherited from parent commands

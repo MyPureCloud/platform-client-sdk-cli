@@ -31,5 +31,6 @@
 
 * [gc quality forms evaluations](gc_quality_forms_evaluations.html)	 - /api/v2/quality/forms/evaluations
 * [gc quality forms evaluations bulk contexts](gc_quality_forms_evaluations_bulk_contexts.html)	 - /api/v2/quality/forms/evaluations/bulk/contexts
+* [gc quality forms evaluations bulk list](gc_quality_forms_evaluations_bulk_list.html)	 - Retrieve a list of evaluation forms by their ids
 
 

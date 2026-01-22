@@ -1,22 +1,19 @@
-## gc users presences update
+## gc conversations calls participants communications postflowaction delete
 
-Patch a user`s Presence
+Remove mandatory post call actions.
 
 ### Synopsis
 
-Patch a user`s Presence
+Remove mandatory post call actions.
 
 ```
-gc users presences update [userId] [sourceId] [flags]
+gc conversations calls participants communications postflowaction delete [conversationId] [participantId] [communicationId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for update
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for delete
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc users presences update [userId] [sourceId] [flags]
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/presences /api/v2/users/{userId}/presences
+* [gc conversations calls participants communications postflowaction](gc_conversations_calls_participants_communications_postflowaction.html)	 - /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction
 
 

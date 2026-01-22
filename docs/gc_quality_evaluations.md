@@ -33,5 +33,6 @@
 * [gc quality evaluations aggregates](gc_quality_evaluations_aggregates.html)	 - /api/v2/quality/evaluations/aggregates
 * [gc quality evaluations query](gc_quality_evaluations_query.html)	 - /api/v2/quality/evaluations/query
 * [gc quality evaluations scoring](gc_quality_evaluations_scoring.html)	 - /api/v2/quality/evaluations/scoring
+* [gc quality evaluations search](gc_quality_evaluations_search.html)	 - /api/v2/quality/evaluations/search
 
 

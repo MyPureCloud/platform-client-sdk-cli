@@ -14,7 +14,7 @@ gc externalcontacts contacts notes list [contactId] [flags]
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --expand strings           which fields, if any, to expand Valid values: author, externalDataSources, division
+      --expand strings           which fields, if any, to expand. mergeset will include notes attached to ancestor contacts which have been merged into this one. Valid values: author, externalDataSources, division, mergeset
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --pageNumber string        Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default "1")

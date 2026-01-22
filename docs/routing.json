@@ -698,6 +698,11 @@
       "description": "Create a wrap-up code"
     },
     {
+      "name": "list",
+      "path": "/api/v2/routing/utilization/tags/{tagId}/agents",
+      "description": "Get list of agent ids associated with a utilization tag"
+    },
+    {
       "name": "get",
       "path": "/api/v2/routing/utilization/tags/{tagId}",
       "description": "Get details about this utilization tag"
@@ -706,11 +711,6 @@
       "name": "delete",
       "path": "/api/v2/routing/utilization/tags/{tagId}",
       "description": "Delete an utilization tag"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/routing/utilization/tags/{tagId}/agents",
-      "description": "Get list of agent ids associated with a utilization tag"
     },
     {
       "name": "list",

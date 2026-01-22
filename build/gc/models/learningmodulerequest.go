@@ -46,6 +46,9 @@ type LearningmodulerequestDud struct {
 
     
 
+
+    
+
 }
 
 // Learningmodulerequest - Learning module request
@@ -97,6 +100,10 @@ type Learningmodulerequest struct {
     // ReviewAssessmentResults - Allows to view Assessment results in detail
     ReviewAssessmentResults Reviewassessmentresults `json:"reviewAssessmentResults"`
 
+
+    // AutoAssign - The configuration for linking a module to a rule
+    AutoAssign Learningmoduleautoassignrequest `json:"autoAssign"`
+
 }
 
 // String returns a JSON representation of the model
@@ -105,6 +112,7 @@ func (o *Learningmodulerequest) String() string {
     
     
      o.InformSteps = []Learningmoduleinformsteprequest{{}} 
+    
     
     
     
@@ -153,6 +161,8 @@ func (u *Learningmodulerequest) MarshalJSON() ([]byte, error) {
         EnforceContentOrder bool `json:"enforceContentOrder"`
         
         ReviewAssessmentResults Reviewassessmentresults `json:"reviewAssessmentResults"`
+        
+        AutoAssign Learningmoduleautoassignrequest `json:"autoAssign"`
         *Alias
     }{
 
@@ -167,6 +177,9 @@ func (u *Learningmodulerequest) MarshalJSON() ([]byte, error) {
 
         
         InformSteps: []Learningmoduleinformsteprequest{{}},
+        
+
+
         
 
 

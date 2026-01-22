@@ -51,6 +51,9 @@ type LearningmoduleDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -136,6 +139,10 @@ type Learningmodule struct {
     ReviewAssessmentResults Reviewassessmentresults `json:"reviewAssessmentResults"`
 
 
+    // AutoAssign - The auto assignment settings for this module
+    AutoAssign Learningmoduleautoassignresponse `json:"autoAssign"`
+
+
     
 
 
@@ -195,6 +202,7 @@ func (o *Learningmodule) String() string {
     
     
     
+    
      o.InformSteps = []Learningmoduleinformstep{{}} 
     
     
@@ -227,6 +235,8 @@ func (u *Learningmodule) MarshalJSON() ([]byte, error) {
         
         ReviewAssessmentResults Reviewassessmentresults `json:"reviewAssessmentResults"`
         
+        AutoAssign Learningmoduleautoassignresponse `json:"autoAssign"`
+        
         Description string `json:"description"`
         
         CompletionTimeInDays int `json:"completionTimeInDays"`
@@ -248,6 +258,9 @@ func (u *Learningmodule) MarshalJSON() ([]byte, error) {
         ArchivalMode string `json:"archivalMode"`
         *Alias
     }{
+
+        
+
 
         
 

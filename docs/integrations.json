@@ -113,11 +113,6 @@
       "description": "Retrieves basic info about trusted root CA certificates"
     },
     {
-      "name": "create",
-      "path": "/api/v2/integrations/actions/{actionId}/draft/test",
-      "description": "Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging."
-    },
-    {
       "name": "get",
       "path": "/api/v2/integrations/actions/{actionId}/draft",
       "description": "Retrieve a Draft"
@@ -136,6 +131,11 @@
       "name": "update",
       "path": "/api/v2/integrations/actions/{actionId}/draft",
       "description": "Update an existing Draft"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/actions/{actionId}/draft/test",
+      "description": "Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging."
     },
     {
       "name": "get",
@@ -358,14 +358,14 @@
       "description": "Get a list of Nuance bots in the specified Integration asynchronously"
     },
     {
-      "name": "update",
-      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings",
-      "description": "Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration"
-    },
-    {
       "name": "create",
       "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate",
       "description": "Try out a single credential for a Nuance bot to know if the secret is correct"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings",
+      "description": "Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration"
     },
     {
       "name": "list",

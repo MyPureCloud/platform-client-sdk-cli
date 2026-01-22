@@ -4,8 +4,8 @@
   "resources": [
     {
       "name": "get",
-      "path": "/api/v2/greetings/{greetingId}/media",
-      "description": "Get media playback URI for this greeting"
+      "path": "/api/v2/greetings/{greetingId}/users/downloads",
+      "description": "Download a user greeting recording"
     },
     {
       "name": "get",
@@ -19,8 +19,8 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/greetings/{greetingId}/users/downloads",
-      "description": "Download a user greeting recording"
+      "path": "/api/v2/greetings/{greetingId}/media",
+      "description": "Get media playback URI for this greeting"
     },
     {
       "name": "get",

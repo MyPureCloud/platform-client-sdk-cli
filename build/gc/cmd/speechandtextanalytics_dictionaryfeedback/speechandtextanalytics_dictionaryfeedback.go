@@ -78,6 +78,7 @@ func Cmdspeechandtextanalytics_dictionaryfeedback() *cobra.Command {
 	speechandtextanalytics_dictionaryfeedbackCmd.AddCommand(getCmd)
 
 	utils.AddFlag(listCmd.Flags(), "string", "dialect", "", "The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard")
+	utils.AddFlag(listCmd.Flags(), "string", "transcriptionEngine", "", "Filter by transcription engine Valid values: Genesys, GenesysExtended")
 	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "The key for listing the next page")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "500", "The page size for the listing")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/dictionaryfeedback", utils.FormatPermissions([]string{ "speechAndTextAnalytics:dictionaryterm:view",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/dictionaryfeedback")))
@@ -344,6 +345,10 @@ var listCmd = &cobra.Command{
 		dialect := utils.GetFlag(cmd.Flags(), "string", "dialect")
 		if dialect != "" {
 			queryParams["dialect"] = dialect
+		}
+		transcriptionEngine := utils.GetFlag(cmd.Flags(), "string", "transcriptionEngine")
+		if transcriptionEngine != "" {
+			queryParams["transcriptionEngine"] = transcriptionEngine
 		}
 		nextPage := utils.GetFlag(cmd.Flags(), "string", "nextPage")
 		if nextPage != "" {

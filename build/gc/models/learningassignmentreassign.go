@@ -17,6 +17,9 @@ type LearningassignmentreassignDud struct {
 
     
 
+
+    
+
 }
 
 // Learningassignmentreassign
@@ -28,10 +31,15 @@ type Learningassignmentreassign struct {
     // LengthInMinutes - The length in minutes of assignment
     LengthInMinutes int `json:"lengthInMinutes"`
 
+
+    // AddToSchedule - If True, adds the assignment to their schedule
+    AddToSchedule bool `json:"addToSchedule"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Learningassignmentreassign) String() string {
+    
     
     
 
@@ -54,8 +62,13 @@ func (u *Learningassignmentreassign) MarshalJSON() ([]byte, error) {
         RecommendedCompletionDate time.Time `json:"recommendedCompletionDate"`
         
         LengthInMinutes int `json:"lengthInMinutes"`
+        
+        AddToSchedule bool `json:"addToSchedule"`
         *Alias
     }{
+
+        
+
 
         
 

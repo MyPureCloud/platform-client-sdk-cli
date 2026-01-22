@@ -42,6 +42,15 @@ type DictionaryfeedbackDud struct {
     
 
 
+    Status string `json:"status"`
+
+
+    
+
+
+    
+
+
     
 
 
@@ -81,11 +90,22 @@ type Dictionaryfeedback struct {
     
 
 
-    // ExamplePhrases - A list of at least 3 and up to 20 unique phrases that are example usage of the term
+    // TranscriptionEngine - The transcription engine for the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+    TranscriptionEngine string `json:"transcriptionEngine"`
+
+
+    
+
+
+    // DisplayAs - The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.
+    DisplayAs string `json:"displayAs"`
+
+
+    // ExamplePhrases - A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid and required for Genesys transcription engine.
     ExamplePhrases []Dictionaryfeedbackexamplephrase `json:"examplePhrases"`
 
 
-    // SoundsLike - A list of up to 10 terms that give examples of how the term sounds
+    // SoundsLike - A list of up to 10 terms that give examples of how the term sounds. This field is only valid for Genesys transcription engine.
     SoundsLike []string `json:"soundsLike"`
 
 
@@ -95,6 +115,8 @@ type Dictionaryfeedback struct {
 
 // String returns a JSON representation of the model
 func (o *Dictionaryfeedback) String() string {
+    
+    
     
     
     
@@ -123,11 +145,24 @@ func (u *Dictionaryfeedback) MarshalJSON() ([]byte, error) {
         
         BoostValue float32 `json:"boostValue"`
         
+        TranscriptionEngine string `json:"transcriptionEngine"`
+        
+        DisplayAs string `json:"displayAs"`
+        
         ExamplePhrases []Dictionaryfeedbackexamplephrase `json:"examplePhrases"`
         
         SoundsLike []string `json:"soundsLike"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

@@ -109,16 +109,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/outbound/campaigns/{campaignId}/progress",
-      "description": "Get campaign progress"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/outbound/campaigns/{campaignId}/progress",
-      "description": "Reset campaign progress and recycle the campaign"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/outbound/campaigns/{campaignId}",
       "description": "Get dialer campaign."
     },
@@ -166,6 +156,16 @@
       "name": "create",
       "path": "/api/v2/outbound/campaigns/{campaignId}/stop",
       "description": "Stop the campaign"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/progress",
+      "description": "Get campaign progress"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/progress",
+      "description": "Reset campaign progress and recycle the campaign"
     },
     {
       "name": "get",
@@ -414,11 +414,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update",
-      "description": "Start an async job to bulk edit contacts."
-    },
-    {
-      "name": "create",
       "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk",
       "description": "Get contacts from a contact list."
     },
@@ -426,6 +421,11 @@
       "name": "create",
       "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove",
       "description": "Start an async job to delete contacts using a filter."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update",
+      "description": "Start an async job to bulk edit contacts."
     },
     {
       "name": "create",

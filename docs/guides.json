@@ -28,11 +28,6 @@
       "description": "Add a turn to a guide session."
     },
     {
-      "name": "create",
-      "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs",
-      "description": "Start the publishing of a guide version."
-    },
-    {
       "name": "get",
       "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId}",
       "description": "Get the status of the publishing job for this guide version."
@@ -49,18 +44,23 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/guides/{guideId}/versions",
-      "description": "Create a guide version."
+      "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs",
+      "description": "Start the publishing of a guide version."
     },
     {
       "name": "create",
-      "path": "/api/v2/guides/jobs",
-      "description": "Start a guide content generation job."
+      "path": "/api/v2/guides/{guideId}/versions",
+      "description": "Create a guide version."
     },
     {
       "name": "get",
       "path": "/api/v2/guides/jobs/{jobId}",
       "description": "Get the status of the guide content generation job."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/guides/jobs",
+      "description": "Start a guide content generation job."
     },
     {
       "name": "list",

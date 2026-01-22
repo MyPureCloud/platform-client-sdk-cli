@@ -68,11 +68,6 @@
       "description": "Create a calibration"
     },
     {
-      "name": "create",
-      "path": "/api/v2/quality/conversations/audits/query",
-      "description": "Create audit query execution"
-    },
-    {
       "name": "get",
       "path": "/api/v2/quality/conversations/audits/query/{transactionId}",
       "description": "Get status of audit query execution"
@@ -81,6 +76,11 @@
       "name": "list",
       "path": "/api/v2/quality/conversations/audits/query/{transactionId}/results",
       "description": "Get results of audit query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/quality/conversations/audits/query",
+      "description": "Create audit query execution"
     },
     {
       "name": "get",
@@ -139,6 +139,11 @@
     },
     {
       "name": "list",
+      "path": "/api/v2/quality/forms/evaluations/bulk",
+      "description": "Retrieve a list of evaluation forms by their ids"
+    },
+    {
+      "name": "list",
       "path": "/api/v2/quality/forms/evaluations/bulk/contexts",
       "description": "Retrieve a list of the latest published evaluation form versions by context ids"
     },
@@ -161,6 +166,11 @@
       "name": "create",
       "path": "/api/v2/quality/evaluations/scoring",
       "description": "Score evaluation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/quality/evaluations/search",
+      "description": "Search evaluations based along specified criteria"
     },
     {
       "name": "list",
@@ -224,13 +234,13 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/quality/forms/surveys/bulk/contexts",
-      "description": "Retrieve a list of the latest form versions by context ids"
+      "path": "/api/v2/quality/forms/surveys/bulk",
+      "description": "Retrieve a list of survey forms by their ids"
     },
     {
       "name": "list",
-      "path": "/api/v2/quality/forms/surveys/bulk",
-      "description": "Retrieve a list of survey forms by their ids"
+      "path": "/api/v2/quality/forms/surveys/bulk/contexts",
+      "description": "Retrieve a list of the latest form versions by context ids"
     },
     {
       "name": "list",
@@ -251,6 +261,11 @@
       "name": "create",
       "path": "/api/v2/quality/surveys/scoring",
       "description": "Score survey"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/quality/surveys",
+      "description": "Create a survey for a conversation"
     },
     {
       "name": "get",

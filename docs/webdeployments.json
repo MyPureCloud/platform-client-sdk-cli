@@ -38,16 +38,6 @@
       "description": "Create a configuration draft"
     },
     {
-      "name": "list",
-      "path": "/api/v2/webdeployments/configurations/{configurationId}/versions",
-      "description": "Get the versions of a configuration"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/webdeployments/configurations/{configurationId}/versions/{versionId}",
-      "description": "Get a configuration version"
-    },
-    {
       "name": "get",
       "path": "/api/v2/webdeployments/configurations/{configurationId}/versions/draft",
       "description": "Get the configuration draft"
@@ -61,6 +51,16 @@
       "name": "create",
       "path": "/api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish",
       "description": "Publish the configuration draft and create a new version"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/webdeployments/configurations/{configurationId}/versions",
+      "description": "Get the versions of a configuration"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/webdeployments/configurations/{configurationId}/versions/{versionId}",
+      "description": "Get a configuration version"
     },
     {
       "name": "get",

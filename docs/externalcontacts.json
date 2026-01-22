@@ -39,6 +39,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/notes/add",
+      "description": "Bulk add notes"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/notes/remove",
       "description": "Bulk remove notes"
     },
@@ -51,11 +56,6 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/bulk/notes/update",
       "description": "Bulk update notes"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/notes/add",
-      "description": "Bulk add notes"
     },
     {
       "name": "create",
@@ -89,11 +89,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/relationships/remove",
-      "description": "Bulk remove relationships"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/relationships",
       "description": "Bulk fetch relationships"
     },
@@ -106,6 +101,11 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/bulk/relationships/add",
       "description": "Bulk add relationships"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/relationships/remove",
+      "description": "Bulk remove relationships"
     },
     {
       "name": "get",
@@ -389,6 +389,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/externalcontacts/identifierlookup/organizations",
+      "description": "Fetch an external organization using an identifier type and value."
+    },
+    {
+      "name": "create",
       "path": "/api/v2/externalcontacts/identifierlookup",
       "description": "Fetch a contact using an identifier type and value."
     },
@@ -396,11 +401,6 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/identifierlookup/contacts",
       "description": "Fetch a contact using an identifier type and value."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/identifierlookup/organizations",
-      "description": "Fetch an external organization using an identifier type and value."
     },
     {
       "name": "list",

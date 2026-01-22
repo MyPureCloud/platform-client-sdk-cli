@@ -17,6 +17,9 @@ type BucopyschedulerequestDud struct {
 
     
 
+
+    
+
 }
 
 // Bucopyschedulerequest
@@ -28,10 +31,15 @@ type Bucopyschedulerequest struct {
     // WeekDate - The start weekDate for the new copy of the schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     WeekDate time.Time `json:"weekDate"`
 
+
+    // IncludeForecast - Whether to include the forecast while copying the schedule
+    IncludeForecast bool `json:"includeForecast"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Bucopyschedulerequest) String() string {
+    
     
     
 
@@ -54,8 +62,13 @@ func (u *Bucopyschedulerequest) MarshalJSON() ([]byte, error) {
         Description string `json:"description"`
         
         WeekDate time.Time `json:"weekDate"`
+        
+        IncludeForecast bool `json:"includeForecast"`
         *Alias
     }{
+
+        
+
 
         
 

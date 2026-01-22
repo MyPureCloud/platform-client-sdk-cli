@@ -47,6 +47,9 @@ type CreatecoachingappointmentrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Createcoachingappointmentrequest - Create coaching appointment request
@@ -98,6 +101,10 @@ type Createcoachingappointmentrequest struct {
     // ShareInsightsData - Whether to share the insight data
     ShareInsightsData bool `json:"shareInsightsData"`
 
+
+    // AddToSchedule - If True, adds the appointment to their schedule
+    AddToSchedule bool `json:"addToSchedule"`
+
 }
 
 // String returns a JSON representation of the model
@@ -112,6 +119,7 @@ func (o *Createcoachingappointmentrequest) String() string {
      o.DocumentIds = []string{""} 
     
      o.ExternalLinks = []string{""} 
+    
     
     
 
@@ -154,6 +162,8 @@ func (u *Createcoachingappointmentrequest) MarshalJSON() ([]byte, error) {
         Location string `json:"location"`
         
         ShareInsightsData bool `json:"shareInsightsData"`
+        
+        AddToSchedule bool `json:"addToSchedule"`
         *Alias
     }{
 
@@ -192,6 +202,9 @@ func (u *Createcoachingappointmentrequest) MarshalJSON() ([]byte, error) {
 
         
         ExternalLinks: []string{""},
+        
+
+
         
 
 

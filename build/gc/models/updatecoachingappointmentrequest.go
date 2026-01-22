@@ -44,6 +44,9 @@ type UpdatecoachingappointmentrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Updatecoachingappointmentrequest - Update coaching appointment request
@@ -91,6 +94,10 @@ type Updatecoachingappointmentrequest struct {
     // ShareInsightsData - Whether to share the insight data
     ShareInsightsData bool `json:"shareInsightsData"`
 
+
+    // AddToSchedule - If True, adds the appointment to their schedule
+    AddToSchedule bool `json:"addToSchedule"`
+
 }
 
 // String returns a JSON representation of the model
@@ -104,6 +111,7 @@ func (o *Updatecoachingappointmentrequest) String() string {
     
     
      o.ExternalLinks = []string{""} 
+    
     
     
 
@@ -144,6 +152,8 @@ func (u *Updatecoachingappointmentrequest) MarshalJSON() ([]byte, error) {
         Location string `json:"location"`
         
         ShareInsightsData bool `json:"shareInsightsData"`
+        
+        AddToSchedule bool `json:"addToSchedule"`
         *Alias
     }{
 
@@ -177,6 +187,9 @@ func (u *Updatecoachingappointmentrequest) MarshalJSON() ([]byte, error) {
 
         
         ExternalLinks: []string{""},
+        
+
+
         
 
 

@@ -81,6 +81,7 @@ func Cmdusers_rules() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Number of results per page")
 	utils.AddFlag(listCmd.Flags(), "[]string", "types", "", "The types of the rule - REQUIRED Valid values: Learning, ActivityPlan")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Fields to expand in response Valid values: criteria")
+	utils.AddFlag(listCmd.Flags(), "bool", "enabled", "", "Whether to list enabled or disabled rules")
 	utils.AddFlag(listCmd.Flags(), "string", "searchTerm", "", "a search term for finding a rule by name")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ascending", "sort rules by name, ascending, descending Valid values: ascending, descending")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users/rules", utils.FormatPermissions([]string{ "users:rules:view",  }), utils.GenerateDevCentreLink("GET", "Users Rules", "/api/v2/users/rules")))
@@ -361,6 +362,10 @@ var listCmd = &cobra.Command{
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
+		}
+		enabled := utils.GetFlag(cmd.Flags(), "bool", "enabled")
+		if enabled != "" {
+			queryParams["enabled"] = enabled
 		}
 		searchTerm := utils.GetFlag(cmd.Flags(), "string", "searchTerm")
 		if searchTerm != "" {

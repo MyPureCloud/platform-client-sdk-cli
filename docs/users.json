@@ -129,28 +129,18 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/users/presences/purecloud/bulk",
-      "description": "Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source"
+      "path": "/api/v2/users/presences/{sourceId}/bulk",
+      "description": "Get bulk user presences for a single presence source"
     },
     {
       "name": "get",
-      "path": "/api/v2/users/presences/{sourceId}/bulk",
-      "description": "Get bulk user presences for a single presence source"
+      "path": "/api/v2/users/presences/purecloud/bulk",
+      "description": "Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source"
     },
     {
       "name": "update",
       "path": "/api/v2/users/presences/bulk",
       "description": "Update bulk user Presences"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/users/{userId}/presences/{sourceId}",
-      "description": "Get a user's Presence"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/users/{userId}/presences/{sourceId}",
-      "description": "Patch a user's Presence"
     },
     {
       "name": "get",
@@ -161,6 +151,16 @@
       "name": "update",
       "path": "/api/v2/users/{userId}/presences/purecloud",
       "description": "Patch a Genesys Cloud user's presence"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/presences/{sourceId}",
+      "description": "Get a user's Presence"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/presences/{sourceId}",
+      "description": "Patch a user's Presence"
     },
     {
       "name": "list",
@@ -339,16 +339,6 @@
     },
     {
       "name": "update",
-      "path": "/api/v2/users/{userId}/station/defaultstation/{stationId}",
-      "description": "Set default station"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/users/{userId}/station/defaultstation",
-      "description": "Clear default station"
-    },
-    {
-      "name": "update",
       "path": "/api/v2/users/{userId}/station/associatedstation/{stationId}",
       "description": "Set associated station"
     },
@@ -356,6 +346,16 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/station/associatedstation",
       "description": "Clear associated station"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/station/defaultstation/{stationId}",
+      "description": "Set default station"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/station/defaultstation",
+      "description": "Clear default station"
     },
     {
       "name": "list",
@@ -393,14 +393,14 @@
       "description": "Search users assigned to teams"
     },
     {
-      "name": "get",
-      "path": "/api/v2/users/development/activities/{activityId}",
-      "description": "Get a Development Activity"
-    },
-    {
       "name": "list",
       "path": "/api/v2/users/development/activities",
       "description": "Get list of Development Activities"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/development/activities/{activityId}",
+      "description": "Get a Development Activity"
     },
     {
       "name": "list",
@@ -428,14 +428,14 @@
       "description": "Search manage queue member"
     },
     {
-      "name": "get",
-      "path": "/api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId}",
-      "description": "Get dependent of a users rule"
-    },
-    {
       "name": "list",
       "path": "/api/v2/users/rules/{ruleId}/dependents",
       "description": "Get dependents for a users rule"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId}",
+      "description": "Get dependent of a users rule"
     },
     {
       "name": "get",

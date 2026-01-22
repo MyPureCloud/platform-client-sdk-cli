@@ -23,10 +23,17 @@ type LearningassignmentcreateDud struct {
 
     
 
+
+    
+
 }
 
 // Learningassignmentcreate
 type Learningassignmentcreate struct { 
+    // AddToSchedule - If True, adds the assignment to their schedule
+    AddToSchedule bool `json:"addToSchedule"`
+
+
     // ModuleId - The Learning module Id associated with this assignment
     ModuleId string `json:"moduleId"`
 
@@ -50,6 +57,7 @@ func (o *Learningassignmentcreate) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -67,6 +75,8 @@ func (u *Learningassignmentcreate) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        AddToSchedule bool `json:"addToSchedule"`
+        
         ModuleId string `json:"moduleId"`
         
         UserId string `json:"userId"`
@@ -76,6 +86,9 @@ func (u *Learningassignmentcreate) MarshalJSON() ([]byte, error) {
         LengthInMinutes int `json:"lengthInMinutes"`
         *Alias
     }{
+
+        
+
 
         
 

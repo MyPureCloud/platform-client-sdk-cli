@@ -54,6 +54,15 @@ type EvaluationresponseDud struct {
     
 
 
+    CreatedDate time.Time `json:"createdDate"`
+
+
+    
+
+
+    SubmittedDate time.Time `json:"submittedDate"`
+
+
     
 
 
@@ -63,7 +72,7 @@ type EvaluationresponseDud struct {
     
 
 
-    
+    DivisionIds []string `json:"divisionIds"`
 
 
     
@@ -169,8 +178,14 @@ type Evaluationresponse struct {
     AssignedDate time.Time `json:"assignedDate"`
 
 
+    
+
+
     // ChangedDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     ChangedDate time.Time `json:"changedDate"`
+
+
+    
 
 
     // RevisionCreatedDate - Date of when evaluation revision is created. Null if there is no revision. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -183,6 +198,9 @@ type Evaluationresponse struct {
 
     // MediaType - List of different communication types used in conversation.
     MediaType []string `json:"mediaType"`
+
+
+    
 
 
     // Rescore - Is only true when evaluation is re-scored.
@@ -403,7 +421,16 @@ func (u *Evaluationresponse) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
+
+
+        
         MediaType: []string{""},
+        
+
+
         
 
 

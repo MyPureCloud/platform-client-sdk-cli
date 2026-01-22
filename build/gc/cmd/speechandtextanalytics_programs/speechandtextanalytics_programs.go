@@ -87,6 +87,9 @@ func Cmdspeechandtextanalytics_programs() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "The key for listing the next page")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "20", "The page size for the listing")
 	utils.AddFlag(listCmd.Flags(), "string", "state", "", "Program state. Defaults to Latest Valid values: Latest, Published")
+	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Case insensitive partial name to filter by")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort results by. Defaults to name Valid values: name")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "Sort order. Defaults to asc Valid values: asc, desc")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/programs", utils.FormatPermissions([]string{ "speechAndTextAnalytics:program:view",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/programs")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -364,6 +367,18 @@ var listCmd = &cobra.Command{
 		state := utils.GetFlag(cmd.Flags(), "string", "state")
 		if state != "" {
 			queryParams["state"] = state
+		}
+		name := utils.GetFlag(cmd.Flags(), "string", "name")
+		if name != "" {
+			queryParams["name"] = name
+		}
+		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
+		if sortBy != "" {
+			queryParams["sortBy"] = sortBy
+		}
+		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
+		if sortOrder != "" {
+			queryParams["sortOrder"] = sortOrder
 		}
 		urlString := path
 		if len(queryParams) > 0 {

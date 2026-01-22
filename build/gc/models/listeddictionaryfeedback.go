@@ -39,6 +39,15 @@ type ListeddictionaryfeedbackDud struct {
     ModifiedBy Userreference `json:"modifiedBy"`
 
 
+    
+
+
+    Status string `json:"status"`
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -75,12 +84,25 @@ type Listeddictionaryfeedback struct {
     
 
 
+    // TranscriptionEngine - The transcription engine for the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+    TranscriptionEngine string `json:"transcriptionEngine"`
+
+
+    
+
+
+    // DisplayAs - The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.
+    DisplayAs string `json:"displayAs"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Listeddictionaryfeedback) String() string {
+    
+    
     
     
     
@@ -106,8 +128,21 @@ func (u *Listeddictionaryfeedback) MarshalJSON() ([]byte, error) {
         Dialect string `json:"dialect"`
         
         BoostValue float32 `json:"boostValue"`
+        
+        TranscriptionEngine string `json:"transcriptionEngine"`
+        
+        DisplayAs string `json:"displayAs"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

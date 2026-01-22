@@ -258,6 +258,7 @@ gc/cmd/conversations_calls_participants_attributes/conversations_calls_participa
 gc/cmd/conversations_calls_participants_barge/conversations_calls_participants_barge.go
 gc/cmd/conversations_calls_participants_coach/conversations_calls_participants_coach.go
 gc/cmd/conversations_calls_participants_communications/conversations_calls_participants_communications.go
+gc/cmd/conversations_calls_participants_communications_postflowaction/conversations_calls_participants_communications_postflowaction.go
 gc/cmd/conversations_calls_participants_communications_uuidata/conversations_calls_participants_communications_uuidata.go
 gc/cmd/conversations_calls_participants_communications_wrapup/conversations_calls_participants_communications_wrapup.go
 gc/cmd/conversations_calls_participants_consult/conversations_calls_participants_consult.go
@@ -971,10 +972,12 @@ gc/cmd/quality_conversations_surveys/quality_conversations_surveys.go
 gc/cmd/quality_evaluations_aggregates_query_me/quality_evaluations_aggregates_query_me.go
 gc/cmd/quality_evaluations_query/quality_evaluations_query.go
 gc/cmd/quality_evaluations_scoring/quality_evaluations_scoring.go
+gc/cmd/quality_evaluations_search/quality_evaluations_search.go
 gc/cmd/quality_evaluators_activity/quality_evaluators_activity.go
 gc/cmd/quality_forms/quality_forms.go
 gc/cmd/quality_forms_evaluations/quality_forms_evaluations.go
 gc/cmd/quality_forms_evaluations_aiscoring_settings/quality_forms_evaluations_aiscoring_settings.go
+gc/cmd/quality_forms_evaluations_bulk/quality_forms_evaluations_bulk.go
 gc/cmd/quality_forms_evaluations_bulk_contexts/quality_forms_evaluations_bulk_contexts.go
 gc/cmd/quality_forms_evaluations_versions/quality_forms_evaluations_versions.go
 gc/cmd/quality_forms_surveys/quality_forms_surveys.go
@@ -2717,6 +2720,7 @@ gc/models/createresponseassetrequest.go
 gc/models/createresponseassetresponse.go
 gc/models/createroomrequest.go
 gc/models/createroomresponse.go
+gc/models/createroutingskill.go
 gc/models/createsecuresession.go
 gc/models/createservicegoaltemplate.go
 gc/models/createsharerequest.go
@@ -2724,6 +2728,7 @@ gc/models/createsharerequestmember.go
 gc/models/createshareresponse.go
 gc/models/createstaffinggroupallocation.go
 gc/models/createstaffinggrouprequest.go
+gc/models/createsurveyrequest.go
 gc/models/createtimeofflimitrequest.go
 gc/models/createtimeoffplanbusinessunitassociation.go
 gc/models/createtimeoffplanmanagementunitassociation.go
@@ -3206,6 +3211,13 @@ gc/models/evaluationquestionscore.go
 gc/models/evaluationreference.go
 gc/models/evaluationresponse.go
 gc/models/evaluationscoringset.go
+gc/models/evaluationsearchaggregationbucket.go
+gc/models/evaluationsearchaggregationdto.go
+gc/models/evaluationsearchaggregationresponse.go
+gc/models/evaluationsearchcriteriadto.go
+gc/models/evaluationsearchrequestdto.go
+gc/models/evaluationsearchresponse.go
+gc/models/evaluationsearchsubaggregationdto.go
 gc/models/evaluationsettings.go
 gc/models/evaluationsettingsassignee.go
 gc/models/evaluationsource.go
@@ -4059,6 +4071,7 @@ gc/models/managementunitreference.go
 gc/models/managementunitsettingsrequest.go
 gc/models/managementunitsettingsresponse.go
 gc/models/manager.go
+gc/models/mandatorypostcallactioninput.go
 gc/models/manualescalationrequest.go
 gc/models/manualescalationresponse.go
 gc/models/manualsearchconfig.go
@@ -4587,6 +4600,7 @@ gc/models/queryagentscheduleunavailabletimesresponse.go
 gc/models/queryagentsintegrationsrequest.go
 gc/models/queryagentunavailabletimesrequest.go
 gc/models/queryagentunavailabletimesvalidationjobresponse.go
+gc/models/queryapisearchaggregationrange.go
 gc/models/queryavailabilitymanagementunitssettingsrequest.go
 gc/models/queryavailabilitymanagementunitssettingsresponse.go
 gc/models/querycapacityplanstaffinggroupmetricchangehistory.go

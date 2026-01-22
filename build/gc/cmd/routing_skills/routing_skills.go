@@ -28,13 +28,13 @@ func init() {
 }
 
 func Cmdrouting_skills() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/skills", utils.FormatPermissions([]string{ "routing:skill:manage",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/skills")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/routing/skills", utils.FormatPermissions([]string{ "routing:skill:manage", "routing:skill:create",  }), utils.GenerateDevCentreLink("POST", "Routing", "/api/v2/routing/skills")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "Skill",
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/RoutingSkill"
+        "$ref" : "#/components/schemas/CreateRoutingSkill"
       }
     }
   },
@@ -53,7 +53,7 @@ func Cmdrouting_skills() *cobra.Command {
 }`)
 	routing_skillsCmd.AddCommand(createCmd)
 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/skills/{skillId}", utils.FormatPermissions([]string{ "routing:skill:manage",  }), utils.GenerateDevCentreLink("DELETE", "Routing", "/api/v2/routing/skills/{skillId}")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/routing/skills/{skillId}", utils.FormatPermissions([]string{ "routing:skill:manage", "routing:skill:delete",  }), utils.GenerateDevCentreLink("DELETE", "Routing", "/api/v2/routing/skills/{skillId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
@@ -115,7 +115,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Routingskill{}
+			reqModel := models.Createroutingskill{}
 			utils.Render(reqModel.String())
 			
 			return

@@ -36,6 +36,9 @@ type EvaluationformDud struct {
     
 
 
+    
+
+
     AiScoring Aiscoringsettings `json:"aiScoring"`
 
 
@@ -76,6 +79,10 @@ type Evaluationform struct {
     EvaluationSettings Evaluationsettings `json:"evaluationSettings"`
 
 
+    // LatestVersionFormName - The name of the form's most recently published version
+    LatestVersionFormName string `json:"latestVersionFormName"`
+
+
     
 
 
@@ -90,6 +97,7 @@ func (o *Evaluationform) String() string {
     
     
      o.QuestionGroups = []Evaluationquestiongroup{{}} 
+    
     
     
 
@@ -122,6 +130,8 @@ func (u *Evaluationform) MarshalJSON() ([]byte, error) {
         PublishedVersions Domainentitylistingevaluationform `json:"publishedVersions"`
         
         EvaluationSettings Evaluationsettings `json:"evaluationSettings"`
+        
+        LatestVersionFormName string `json:"latestVersionFormName"`
         *Alias
     }{
 
@@ -142,6 +152,9 @@ func (u *Evaluationform) MarshalJSON() ([]byte, error) {
 
         
         QuestionGroups: []Evaluationquestiongroup{{}},
+        
+
+
         
 
 

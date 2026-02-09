@@ -38,5 +38,6 @@
 * [gc assistants list](gc_assistants_list.html)	 - Get all assistants.
 * [gc assistants queues](gc_assistants_queues.html)	 - /api/v2/assistants/{assistantId}/queues /api/v2/assistants/queues
 * [gc assistants update](gc_assistants_update.html)	 - Update an assistant.
+* [gc assistants variations](gc_assistants_variations.html)	 - /api/v2/assistants/{assistantId}/variations
 
 

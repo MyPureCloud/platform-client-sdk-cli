@@ -36,6 +36,7 @@
 * [gc users callforwarding](gc_users_callforwarding.html)	 - /api/v2/users/{userId}/callforwarding
 * [gc users chats](gc_users_chats.html)	 - /api/v2/users/chats
 * [gc users create](gc_users_create.html)	 - Create user
+* [gc users customattributes](gc_users_customattributes.html)	 - /api/v2/users/customattributes /api/v2/users/{userId}/customattributes
 * [gc users delete](gc_users_delete.html)	 - Delete user
 * [gc users development](gc_users_development.html)	 - /api/v2/users/development
 * [gc users directreports](gc_users_directreports.html)	 - /api/v2/users/{userId}/directreports
@@ -49,7 +50,7 @@
 * [gc users me](gc_users_me.html)	 - /api/v2/users/me
 * [gc users outofoffice](gc_users_outofoffice.html)	 - /api/v2/users/{userId}/outofoffice
 * [gc users password](gc_users_password.html)	 - /api/v2/users/{userId}/password
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/presences /api/v2/users/{userId}/presences
+* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
 * [gc users profile](gc_users_profile.html)	 - /api/v2/users/{userId}/profile
 * [gc users profileskills](gc_users_profileskills.html)	 - /api/v2/users/{userId}/profileskills
 * [gc users query](gc_users_query.html)	 - /api/v2/users/query

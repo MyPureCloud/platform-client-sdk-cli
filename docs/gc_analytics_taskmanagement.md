@@ -31,5 +31,6 @@
 
 * [gc analytics](gc_analytics.html)	 - /api/v2/analytics
 * [gc analytics taskmanagement aggregates](gc_analytics_taskmanagement_aggregates.html)	 - /api/v2/analytics/taskmanagement/aggregates
+* [gc analytics taskmanagement metrics](gc_analytics_taskmanagement_metrics.html)	 - /api/v2/analytics/taskmanagement/metrics
 
 

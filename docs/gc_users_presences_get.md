@@ -33,6 +33,6 @@ gc users presences get [userId] [sourceId] [flags]
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/presences /api/v2/users/{userId}/presences
+* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
 
 

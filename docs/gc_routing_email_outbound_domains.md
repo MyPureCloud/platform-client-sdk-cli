@@ -36,5 +36,7 @@
 * [gc routing email outbound domains get](gc_routing_email_outbound_domains_get.html)	 - Get domain
 * [gc routing email outbound domains list](gc_routing_email_outbound_domains_list.html)	 - Get outbound domains
 * [gc routing email outbound domains simulated](gc_routing_email_outbound_domains_simulated.html)	 - /api/v2/routing/email/outbound/domains/simulated
+* [gc routing email outbound domains testconnection](gc_routing_email_outbound_domains_testconnection.html)	 - /api/v2/routing/email/outbound/domains/{domainId}/testconnection
+* [gc routing email outbound domains update](gc_routing_email_outbound_domains_update.html)	 - Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
 
 

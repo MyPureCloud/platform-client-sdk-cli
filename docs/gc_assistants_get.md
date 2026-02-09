@@ -13,8 +13,10 @@ gc assistants get [assistantId] [flags]
 ### Options
 
 ```
-      --expand string   Which fields, if any, to expand. Valid values: copilot
-  -h, --help            help for get
+      --expand string                       Which fields, if any, to expand. Valid values: copilot
+      --fallbackToPrimaryAssistant string   Fall back to primary assistant if specified variation is not found Valid values: true, false
+  -h, --help                                help for get
+      --languageVariation string            Language variation
 ```
 
 ### Options inherited from parent commands

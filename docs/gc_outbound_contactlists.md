@@ -42,5 +42,6 @@
 * [gc outbound contactlists list](gc_outbound_contactlists_list.html)	 - Query a list of contact lists.
 * [gc outbound contactlists timezonemappingpreview](gc_outbound_contactlists_timezonemappingpreview.html)	 - /api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview
 * [gc outbound contactlists update](gc_outbound_contactlists_update.html)	 - Update a contact list.
+* [gc outbound contactlists uploads](gc_outbound_contactlists_uploads.html)	 - /api/v2/outbound/contactlists/uploads
 
 

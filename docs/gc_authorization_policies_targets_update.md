@@ -13,10 +13,11 @@ gc authorization policies targets update [targetName] [flags]
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for update
-  -b, --printrequestbody   Print the request body format of the API.
+  -d, --directory string          Directory path with files containing request bodies
+  -f, --file string               File name containing the JSON body
+  -h, --help                      help for update
+  -b, --printrequestbody          Print the request body format of the API.
+      --skipLockoutCheck string   Skip lockout check; if true, policy will not be evaluated against current context for lockout risk Valid values: true, false
 ```
 
 ### Options inherited from parent commands

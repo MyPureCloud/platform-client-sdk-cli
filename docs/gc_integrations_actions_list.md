@@ -19,6 +19,7 @@ gc integrations actions list [flags]
   -h, --help                        help for list
       --ids string                  Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
       --includeAuthActions string   Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. Valid values: true, false
+      --includeConfig string        Return config in response. Valid values: true, false Valid values: true, false
       --name string                 Filter by partial or complete action name.
       --nextPage string             next page token
       --pageNumber string           The page number requested (default "1")

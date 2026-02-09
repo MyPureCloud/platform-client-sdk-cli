@@ -13,8 +13,10 @@ gc routing queues assistant get [queueId] [flags]
 ### Options
 
 ```
-      --expand strings   Which fields, if any, to expand. Valid values: assistant, copilot
-  -h, --help             help for get
+      --expand strings                      Which fields, if any, to expand. Valid values: assistant, copilot
+      --fallbackToPrimaryAssistant string   Fall back to primary assistant if specified variation is not found Valid values: true, false
+  -h, --help                                help for get
+      --languageVariation string            Language variation
 ```
 
 ### Options inherited from parent commands

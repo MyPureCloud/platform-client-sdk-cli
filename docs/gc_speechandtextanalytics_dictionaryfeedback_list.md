@@ -20,7 +20,7 @@ gc speechandtextanalytics dictionaryfeedback list [flags]
       --nextPage string              The key for listing the next page
       --pageSize string              The page size for the listing (default "500")
   -s, --stream                       Paginate and stream data as it is being processed leaving page information intact
-      --transcriptionEngine string   Filter by transcription engine Valid values: Genesys, GenesysExtended
+      --transcriptionEngine string   Filter by transcription engine, If not provided, all transcription engines will be considered Valid values: Genesys, GenesysExtended
 ```
 
 ### Options inherited from parent commands

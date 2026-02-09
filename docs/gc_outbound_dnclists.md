@@ -41,6 +41,7 @@
 * [gc outbound dnclists list](gc_outbound_dnclists_list.html)	 - Query dialer DNC lists
 * [gc outbound dnclists phonenumbers](gc_outbound_dnclists_phonenumbers.html)	 - /api/v2/outbound/dnclists/{dncListId}/phonenumbers
 * [gc outbound dnclists update](gc_outbound_dnclists_update.html)	 - Update dialer DNC list
+* [gc outbound dnclists uploads](gc_outbound_dnclists_uploads.html)	 - /api/v2/outbound/dnclists/uploads
 * [gc outbound dnclists whatsappnumbers](gc_outbound_dnclists_whatsappnumbers.html)	 - /api/v2/outbound/dnclists/{dncListId}/whatsappnumbers
 
 

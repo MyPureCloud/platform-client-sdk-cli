@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdauthorization_policies_targets() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "bool", "skipLockoutCheck", "false", "Skip lockout check; if true, policy will not be evaluated against current context for lockout risk")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/policies/targets/{targetName}", utils.FormatPermissions([]string{ "authorization:policy:add",  }), utils.GenerateDevCentreLink("POST", "Authorization", "/api/v2/authorization/policies/targets/{targetName}")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "Access control policy",
@@ -85,6 +86,7 @@ func Cmdauthorization_policies_targets() *cobra.Command {
 }`)
 	authorization_policies_targetsCmd.AddCommand(listCmd)
 
+	utils.AddFlag(updateCmd.Flags(), "bool", "skipLockoutCheck", "false", "Skip lockout check; if true, policy will not be evaluated against current context for lockout risk")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/authorization/policies/targets/{targetName}", utils.FormatPermissions([]string{ "authorization:policy:edit", "authorization:policy:add",  }), utils.GenerateDevCentreLink("PUT", "Authorization", "/api/v2/authorization/policies/targets/{targetName}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "Access control policy",
@@ -141,6 +143,10 @@ var createCmd = &cobra.Command{
 		targetName, args := args[0], args[1:]
 		path = strings.Replace(path, "{targetName}", fmt.Sprintf("%v", targetName), -1)
 
+		skipLockoutCheck := utils.GetFlag(cmd.Flags(), "bool", "skipLockoutCheck")
+		if skipLockoutCheck != "" {
+			queryParams["skipLockoutCheck"] = skipLockoutCheck
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -345,6 +351,10 @@ var updateCmd = &cobra.Command{
 		targetName, args := args[0], args[1:]
 		path = strings.Replace(path, "{targetName}", fmt.Sprintf("%v", targetName), -1)
 
+		skipLockoutCheck := utils.GetFlag(cmd.Flags(), "bool", "skipLockoutCheck")
+		if skipLockoutCheck != "" {
+			queryParams["skipLockoutCheck"] = skipLockoutCheck
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

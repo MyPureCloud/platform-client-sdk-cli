@@ -69,13 +69,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/journey/actionmaps/estimates/jobs/{jobId}",
-      "description": "Get status of job."
+      "path": "/api/v2/journey/actionmaps/estimates/jobs/{jobId}/results",
+      "description": "Get estimates from completed job."
     },
     {
       "name": "get",
-      "path": "/api/v2/journey/actionmaps/estimates/jobs/{jobId}/results",
-      "description": "Get estimates from completed job."
+      "path": "/api/v2/journey/actionmaps/estimates/jobs/{jobId}",
+      "description": "Get status of job."
     },
     {
       "name": "create",
@@ -209,13 +209,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion}",
-      "description": "Get a Chart by ID and version"
+      "path": "/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}",
+      "description": "Get a Chart by ID"
     },
     {
       "name": "get",
-      "path": "/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}",
-      "description": "Get a Chart by ID"
+      "path": "/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion}",
+      "description": "Get a Chart by ID and version"
     },
     {
       "name": "get",
@@ -328,14 +328,14 @@
       "description": "Create Outcome Attributions"
     },
     {
-      "name": "list",
-      "path": "/api/v2/journey/outcomes/attributions/jobs/{jobId}/results",
-      "description": "Get outcome attribution entities from completed job."
-    },
-    {
       "name": "get",
       "path": "/api/v2/journey/outcomes/attributions/jobs/{jobId}",
       "description": "Get job status."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/journey/outcomes/attributions/jobs/{jobId}/results",
+      "description": "Get outcome attribution entities from completed job."
     }
   ]
 }

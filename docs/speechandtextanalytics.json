@@ -198,6 +198,11 @@
       "description": "Delete a Speech & Text Analytics program by id"
     },
     {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/programs/topiclinks/jobs/{jobId}",
+      "description": "Get a Speech & Text Analytics program-topic links job by id"
+    },
+    {
       "name": "list",
       "path": "/api/v2/speechandtextanalytics/programs",
       "description": "Get the list of Speech & Text Analytics programs"
@@ -283,14 +288,14 @@
       "description": "Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation"
     },
     {
-      "name": "get",
-      "path": "/api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId}",
-      "description": "Translate a single interaction recording (or an email conversation)"
-    },
-    {
       "name": "list",
       "path": "/api/v2/speechandtextanalytics/translations/languages",
       "description": "Get supported translation languages"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId}",
+      "description": "Translate a single interaction recording (or an email conversation)"
     },
     {
       "name": "get",

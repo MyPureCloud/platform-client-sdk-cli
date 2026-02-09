@@ -44,7 +44,7 @@ func Cmdrecording_settings() *cobra.Command {
 }`)
 	recording_settingsCmd.AddCommand(getCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/settings", utils.FormatPermissions([]string{ "recording:settings:editScreenRecordings", "recording:settings:editRegionalStorage", "recording:settings:editUrlExpiration",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recording/settings")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/recording/settings", utils.FormatPermissions([]string{ "recording:settings:editScreenRecordings", "recording:settings:editRegionalStorage", "recording:settings:editUrlExpiration", "recording:settings:editConferenceRecording",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/recording/settings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "Recording settings",
   "content" : {

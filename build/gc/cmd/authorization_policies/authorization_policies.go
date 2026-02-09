@@ -60,6 +60,7 @@ func Cmdauthorization_policies() *cobra.Command {
 }`)
 	authorization_policiesCmd.AddCommand(listCmd)
 
+	utils.AddFlag(updateCmd.Flags(), "bool", "skipLockoutCheck", "false", "Skip lockout check; if true, policy will not be evaluated against current context for lockout risk")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/authorization/policies/{policyId}", utils.FormatPermissions([]string{ "authorization:policy:add",  }), utils.GenerateDevCentreLink("PUT", "Authorization", "/api/v2/authorization/policies/{policyId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "Access control policy",
@@ -252,6 +253,10 @@ var updateCmd = &cobra.Command{
 		policyId, args := args[0], args[1:]
 		path = strings.Replace(path, "{policyId}", fmt.Sprintf("%v", policyId), -1)
 
+		skipLockoutCheck := utils.GetFlag(cmd.Flags(), "bool", "skipLockoutCheck")
+		if skipLockoutCheck != "" {
+			queryParams["skipLockoutCheck"] = skipLockoutCheck
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

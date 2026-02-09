@@ -28,12 +28,12 @@ func init() {
 }
 
 func Cmdscreenrecording_token() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/screenrecording/token", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Screen Recording", "/api/v2/screenrecording/token")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/screenrecording/token", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("POST", "Background Assistant", "/api/v2/screenrecording/token")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ScreenRecordingUserAuthenticatedInfo"
+        "$ref" : "#/components/schemas/BackgroundAssistantUserAuthenticatedInfo"
       }
     }
   },
@@ -71,7 +71,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Screenrecordinguserauthenticatedinfo{}
+			reqModel := models.Backgroundassistantuserauthenticatedinfo{}
 			utils.Render(reqModel.String())
 			
 			return

@@ -389,17 +389,17 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/externalcontacts/identifierlookup/contacts",
+      "description": "Fetch a contact using an identifier type and value."
+    },
+    {
+      "name": "create",
       "path": "/api/v2/externalcontacts/identifierlookup/organizations",
       "description": "Fetch an external organization using an identifier type and value."
     },
     {
       "name": "create",
       "path": "/api/v2/externalcontacts/identifierlookup",
-      "description": "Fetch a contact using an identifier type and value."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/identifierlookup/contacts",
       "description": "Fetch a contact using an identifier type and value."
     },
     {

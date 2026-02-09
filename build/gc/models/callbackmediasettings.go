@@ -58,6 +58,12 @@ type CallbackmediasettingsDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Callbackmediasettings
@@ -125,10 +131,20 @@ type Callbackmediasettings struct {
     // AnsweringMachineFlow - The inbound flow to transfer to if an answering machine is detected during the outbound call of a customer first callback when answeringMachineReactionType is set to TransferToFlow.
     AnsweringMachineFlow Domainentityref `json:"answeringMachineFlow"`
 
+
+    // EdgeGroup - The identifier of the edge group that will place the calls. Can be set to specify custom edge group instead of default one.
+    EdgeGroup Domainentityref `json:"edgeGroup"`
+
+
+    // Site - The identifier of the site to be used for dialing; can be set in place of an edge group.
+    Site Domainentityref `json:"site"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Callbackmediasettings) String() string {
+    
+    
     
     
     
@@ -193,8 +209,18 @@ func (u *Callbackmediasettings) MarshalJSON() ([]byte, error) {
         AnsweringMachineReactionType string `json:"answeringMachineReactionType"`
         
         AnsweringMachineFlow Domainentityref `json:"answeringMachineFlow"`
+        
+        EdgeGroup Domainentityref `json:"edgeGroup"`
+        
+        Site Domainentityref `json:"site"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

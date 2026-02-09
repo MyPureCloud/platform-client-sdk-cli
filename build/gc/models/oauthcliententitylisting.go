@@ -45,7 +45,7 @@ type OauthcliententitylistingDud struct {
 // Oauthcliententitylisting
 type Oauthcliententitylisting struct { 
     // Entities
-    Entities []Oauthclientlisting `json:"entities"`
+    Entities []Oauthclient `json:"entities"`
 
 
     // PageSize
@@ -64,12 +64,12 @@ type Oauthcliententitylisting struct {
     FirstUri string `json:"firstUri"`
 
 
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
-
     // NextUri
     NextUri string `json:"nextUri"`
+
+
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
 
 
     // LastUri
@@ -87,7 +87,7 @@ type Oauthcliententitylisting struct {
 
 // String returns a JSON representation of the model
 func (o *Oauthcliententitylisting) String() string {
-     o.Entities = []Oauthclientlisting{{}} 
+     o.Entities = []Oauthclient{{}} 
     
     
     
@@ -114,7 +114,7 @@ func (u *Oauthcliententitylisting) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Entities []Oauthclientlisting `json:"entities"`
+        Entities []Oauthclient `json:"entities"`
         
         PageSize int `json:"pageSize"`
         
@@ -124,9 +124,9 @@ func (u *Oauthcliententitylisting) MarshalJSON() ([]byte, error) {
         
         FirstUri string `json:"firstUri"`
         
-        PreviousUri string `json:"previousUri"`
-        
         NextUri string `json:"nextUri"`
+        
+        PreviousUri string `json:"previousUri"`
         
         LastUri string `json:"lastUri"`
         
@@ -137,7 +137,7 @@ func (u *Oauthcliententitylisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Oauthclientlisting{{}},
+        Entities: []Oauthclient{{}},
         
 
 

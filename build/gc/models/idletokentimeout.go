@@ -16,6 +16,15 @@ type IdletokentimeoutDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Idletokentimeout
@@ -27,12 +36,27 @@ type Idletokentimeout struct {
     // EnableIdleTokenTimeout - Indicates whether the Token Timeout should be enabled or disabled.
     EnableIdleTokenTimeout bool `json:"enableIdleTokenTimeout"`
 
+
+    // InactivityTimeoutUnit - The unit for the inactivity timeout (MINUTES or HOURS).
+    InactivityTimeoutUnit string `json:"inactivityTimeoutUnit"`
+
+
+    // InactivityTimeoutGroupsEnabled - Indicates whether inactivity timeout groups are enabled.
+    InactivityTimeoutGroupsEnabled bool `json:"inactivityTimeoutGroupsEnabled"`
+
+
+    // InactivityTimeoutGroupBundles - Group bundle configuration for inactivity timeout.
+    InactivityTimeoutGroupBundles []Inactivitytimeoutgroupbundle `json:"inactivityTimeoutGroupBundles"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Idletokentimeout) String() string {
     
     
+    
+    
+     o.InactivityTimeoutGroupBundles = []Inactivitytimeoutgroupbundle{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -53,12 +77,29 @@ func (u *Idletokentimeout) MarshalJSON() ([]byte, error) {
         IdleTokenTimeoutSeconds int `json:"idleTokenTimeoutSeconds"`
         
         EnableIdleTokenTimeout bool `json:"enableIdleTokenTimeout"`
+        
+        InactivityTimeoutUnit string `json:"inactivityTimeoutUnit"`
+        
+        InactivityTimeoutGroupsEnabled bool `json:"inactivityTimeoutGroupsEnabled"`
+        
+        InactivityTimeoutGroupBundles []Inactivitytimeoutgroupbundle `json:"inactivityTimeoutGroupBundles"`
         *Alias
     }{
 
         
 
 
+        
+
+
+        
+
+
+        
+
+
+        
+        InactivityTimeoutGroupBundles: []Inactivitytimeoutgroupbundle{{}},
         
 
         Alias: (*Alias)(u),

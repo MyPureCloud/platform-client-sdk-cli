@@ -91,6 +91,7 @@ func Cmdintegrations_actions() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "ids", "", "Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.")
 	utils.AddFlag(listCmd.Flags(), "string", "secure", "", "Filter based on `secure` configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. Valid values: true, false")
 	utils.AddFlag(listCmd.Flags(), "string", "includeAuthActions", "false", "Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. Valid values: true, false")
+	utils.AddFlag(listCmd.Flags(), "bool", "includeConfig", "false", "Return config in response. Valid values: true, false")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/integrations/actions", utils.FormatPermissions([]string{ "integrations:action:view", "bridge:actions:view",  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/actions")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -408,6 +409,10 @@ var listCmd = &cobra.Command{
 		includeAuthActions := utils.GetFlag(cmd.Flags(), "string", "includeAuthActions")
 		if includeAuthActions != "" {
 			queryParams["includeAuthActions"] = includeAuthActions
+		}
+		includeConfig := utils.GetFlag(cmd.Flags(), "bool", "includeConfig")
+		if includeConfig != "" {
+			queryParams["includeConfig"] = includeConfig
 		}
 		urlString := path
 		if len(queryParams) > 0 {

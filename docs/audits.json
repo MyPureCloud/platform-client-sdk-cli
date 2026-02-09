@@ -3,6 +3,11 @@
   "description": "/api/v2/audits",
   "resources": [
     {
+      "name": "create",
+      "path": "/api/v2/audits/query",
+      "description": "Create audit query execution"
+    },
+    {
       "name": "get",
       "path": "/api/v2/audits/query/{transactionId}",
       "description": "Get status of audit query execution"
@@ -11,16 +16,6 @@
       "name": "list",
       "path": "/api/v2/audits/query/{transactionId}/results",
       "description": "Get results of audit query"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/audits/query",
-      "description": "Create audit query execution"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/audits/query/realtime",
-      "description": "This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits."
     },
     {
       "name": "create",
@@ -36,6 +31,11 @@
       "name": "get",
       "path": "/api/v2/audits/query/realtime/servicemapping",
       "description": "Get service mapping information used in realtime audits."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/audits/query/realtime",
+      "description": "This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits."
     }
   ]
 }

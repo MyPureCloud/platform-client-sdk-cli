@@ -1,0 +1,11 @@
+{
+  "supercommand": "backgroundassistant",
+  "description": "/api/v2/backgroundassistant",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/backgroundassistant/token",
+      "description": "Sign identifying information for Genesys Cloud Background Assistant"
+    }
+  ]
+}

@@ -12,7 +12,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type UsersrulesdependentDud struct { 
-    RuleId string `json:"ruleId"`
+    Rule Usersrulesdependentrule `json:"rule"`
 
 
     TypeId string `json:"typeId"`

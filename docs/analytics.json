@@ -33,6 +33,11 @@
       "description": "Query for bot aggregates"
     },
     {
+      "name": "get",
+      "path": "/api/v2/analytics/conversations/{conversationId}/details",
+      "description": "Get a conversation by id"
+    },
+    {
       "name": "create",
       "path": "/api/v2/analytics/conversations/aggregates/query",
       "description": "Query for conversation aggregates"
@@ -46,11 +51,6 @@
       "name": "create",
       "path": "/api/v2/analytics/conversations/details/query",
       "description": "Query for conversation details"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/analytics/conversations/{conversationId}/details",
-      "description": "Get a conversation by id"
     },
     {
       "name": "list",
@@ -483,6 +483,11 @@
       "description": "Fetch a page of results for an async aggregates query"
     },
     {
+      "name": "create",
+      "path": "/api/v2/analytics/knowledge/aggregates/jobs",
+      "description": "Query for knowledge aggregates asynchronously"
+    },
+    {
       "name": "get",
       "path": "/api/v2/analytics/knowledge/aggregates/jobs/{jobId}",
       "description": "Get status for async query for knowledge aggregates"
@@ -491,11 +496,6 @@
       "name": "delete",
       "path": "/api/v2/analytics/knowledge/aggregates/jobs/{jobId}",
       "description": "Delete/cancel an async request for knowledge aggregates"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/analytics/knowledge/aggregates/jobs",
-      "description": "Query for knowledge aggregates asynchronously"
     },
     {
       "name": "list",
@@ -584,6 +584,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/analytics/taskmanagement/metrics/query",
+      "description": "Query for task management observations"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/analytics/transcripts/aggregates/jobs",
       "description": "Query for transcript aggregates asynchronously"
     },
@@ -628,14 +633,14 @@
       "description": "Get metadata on files available for extraction"
     },
     {
-      "name": "get",
-      "path": "/api/v2/analytics/dataextraction/downloads/{downloadId}",
-      "description": "Get analytics data warehouse file download"
-    },
-    {
       "name": "create",
       "path": "/api/v2/analytics/dataextraction/downloads/bulk",
       "description": "Get download URLs for analytics data warehouse files"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/dataextraction/downloads/{downloadId}",
+      "description": "Get analytics data warehouse file download"
     }
   ]
 }

@@ -20,6 +20,12 @@ type PresencesettingsDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -37,12 +43,22 @@ type Presencesettings struct {
     RestorePresenceSettings Restorepresencesettings `json:"restorePresenceSettings"`
 
 
+    // RequestingOffQueueEnabled - Whether requesting off queue is enabled for the organization
+    RequestingOffQueueEnabled bool `json:"requestingOffQueueEnabled"`
+
+
+    // DefaultPrimaryPresenceRegisteredSourceId - The default primary presence registered source ID for the organization
+    DefaultPrimaryPresenceRegisteredSourceId string `json:"defaultPrimaryPresenceRegisteredSourceId"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Presencesettings) String() string {
+    
+    
     
     
 
@@ -65,8 +81,18 @@ func (u *Presencesettings) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         
         RestorePresenceSettings Restorepresencesettings `json:"restorePresenceSettings"`
+        
+        RequestingOffQueueEnabled bool `json:"requestingOffQueueEnabled"`
+        
+        DefaultPrimaryPresenceRegisteredSourceId string `json:"defaultPrimaryPresenceRegisteredSourceId"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

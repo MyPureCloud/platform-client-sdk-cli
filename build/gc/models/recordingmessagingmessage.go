@@ -98,6 +98,12 @@ type RecordingmessagingmessageDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Recordingmessagingmessage
@@ -124,6 +130,10 @@ type Recordingmessagingmessage struct {
 
     // Id - A globally unique identifier for this communication.
     Id string `json:"id"`
+
+
+    // Status - Status of the message
+    Status string `json:"status"`
 
 
     // Purpose - A well known string that specifies the purpose or type of the participant on this communication.
@@ -217,10 +227,15 @@ type Recordingmessagingmessage struct {
     // RoadsideAssistance - Roadside Assistance content.
     RoadsideAssistance Recordingroadsideassistance `json:"roadsideAssistance"`
 
+
+    // MessageReceipts - List of message receipts
+    MessageReceipts []Recordingmessagereceipt `json:"messageReceipts"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Recordingmessagingmessage) String() string {
+    
     
     
     
@@ -250,6 +265,7 @@ func (o *Recordingmessagingmessage) String() string {
     
     
     
+     o.MessageReceipts = []Recordingmessagereceipt{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -278,6 +294,8 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         Timestamp time.Time `json:"timestamp"`
         
         Id string `json:"id"`
+        
+        Status string `json:"status"`
         
         Purpose string `json:"purpose"`
         
@@ -324,8 +342,13 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         Form Recordingform `json:"form"`
         
         RoadsideAssistance Recordingroadsideassistance `json:"roadsideAssistance"`
+        
+        MessageReceipts []Recordingmessagereceipt `json:"messageReceipts"`
         *Alias
     }{
+
+        
+
 
         
 
@@ -423,6 +446,11 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        MessageReceipts: []Recordingmessagereceipt{{}},
         
 
         Alias: (*Alias)(u),

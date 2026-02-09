@@ -45,6 +45,9 @@ type EvaluationformresponseDud struct {
     AiScoring Aiscoringsettings `json:"aiScoring"`
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -93,6 +96,10 @@ type Evaluationformresponse struct {
     
 
 
+    // Dialect - The language dialect for this evaluation form. Supported dialects: ar, cs, da, de, en-US, es, fi, fr, fr-CA, he, hi, it, ja, ko, nl, no, pl, pt-BR, pt-PT, ru, sv, th, tr, uk, zh-CN, zh-TW
+    Dialect string `json:"dialect"`
+
+
     
 
 }
@@ -104,6 +111,7 @@ func (o *Evaluationformresponse) String() string {
     
     
      o.QuestionGroups = []Evaluationquestiongroup{{}} 
+    
     
     
     
@@ -142,6 +150,8 @@ func (u *Evaluationformresponse) MarshalJSON() ([]byte, error) {
         PublishedVersions Domainentitylistingevaluationform `json:"publishedVersions"`
         
         LatestVersionFormName string `json:"latestVersionFormName"`
+        
+        Dialect string `json:"dialect"`
         *Alias
     }{
 
@@ -162,6 +172,9 @@ func (u *Evaluationformresponse) MarshalJSON() ([]byte, error) {
 
         
         QuestionGroups: []Evaluationquestiongroup{{}},
+        
+
+
         
 
 

@@ -44,6 +44,31 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/assistants/{assistantId}/variations/{variationId}",
+      "description": "Get assistant copilot variation by id"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/assistants/{assistantId}/variations/{variationId}",
+      "description": "Update assistant copilot variation by id"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/assistants/{assistantId}/variations/{variationId}",
+      "description": "Delete assistant copilot variation by id"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/assistants/{assistantId}/variations",
+      "description": "Get variations of an assistant copilot"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/assistants/{assistantId}/variations",
+      "description": "Create assistant copilot variation"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/assistants/{assistantId}/queues/{queueId}",
       "description": "Get queue Information for an assistant."
     },

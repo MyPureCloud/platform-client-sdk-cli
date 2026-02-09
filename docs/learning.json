@@ -13,16 +13,6 @@
       "description": "Retrieve aggregated assignment data"
     },
     {
-      "name": "list",
-      "path": "/api/v2/learning/assignments",
-      "description": "List of Learning module Assignments"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/learning/assignments",
-      "description": "Create Learning Assignment"
-    },
-    {
       "name": "get",
       "path": "/api/v2/learning/assignments/{assignmentId}",
       "description": "Get Learning Assignment"
@@ -46,6 +36,16 @@
       "name": "list",
       "path": "/api/v2/learning/assignments/me",
       "description": "List of Learning Assignments assigned to current user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/learning/assignments",
+      "description": "List of Learning module Assignments"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/assignments",
+      "description": "Create Learning Assignment"
     },
     {
       "name": "create",
@@ -83,26 +83,6 @@
       "description": "Get users for learning module rule"
     },
     {
-      "name": "list",
-      "path": "/api/v2/learning/modules",
-      "description": "Get all learning modules of an organization"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/learning/modules",
-      "description": "Create a new learning module"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/learning/modules/assignments",
-      "description": "Get all learning modules of an organization including assignments for a specific user"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/learning/modules/{moduleId}/users/{userId}/assignments",
-      "description": "Update an external assignment for a specific user"
-    },
-    {
       "name": "get",
       "path": "/api/v2/learning/modules/{moduleId}",
       "description": "Get a learning module"
@@ -116,6 +96,26 @@
       "name": "delete",
       "path": "/api/v2/learning/modules/{moduleId}",
       "description": "Delete a learning module"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/modules/{moduleId}/publish",
+      "description": "Publish a Learning module"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/modules/{moduleId}/jobs",
+      "description": "Starts a specified operation on learning module"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/learning/modules/assignments",
+      "description": "Get all learning modules of an organization including assignments for a specific user"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/learning/modules/{moduleId}/users/{userId}/assignments",
+      "description": "Update an external assignment for a specific user"
     },
     {
       "name": "get",
@@ -143,14 +143,14 @@
       "description": "Get a specific Learning Module cover art using ID"
     },
     {
-      "name": "create",
-      "path": "/api/v2/learning/modules/{moduleId}/publish",
-      "description": "Publish a Learning module"
+      "name": "list",
+      "path": "/api/v2/learning/modules",
+      "description": "Get all learning modules of an organization"
     },
     {
       "name": "create",
-      "path": "/api/v2/learning/modules/{moduleId}/jobs",
-      "description": "Starts a specified operation on learning module"
+      "path": "/api/v2/learning/modules",
+      "description": "Create a new learning module"
     },
     {
       "name": "get",
@@ -168,14 +168,14 @@
       "description": "Start job to retrieve slots where a learning activity can be scheduled."
     },
     {
-      "name": "create",
-      "path": "/api/v2/learning/scheduleslots/query",
-      "description": "Get list of possible slots where a learning activity can be scheduled."
-    },
-    {
       "name": "get",
       "path": "/api/v2/learning/scheduleslots/jobs/{jobId}",
       "description": "Retrieve the status of the job for the slots where a learning activity can be scheduled."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/scheduleslots/query",
+      "description": "Get list of possible slots where a learning activity can be scheduled."
     },
     {
       "name": "get",

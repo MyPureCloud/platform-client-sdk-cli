@@ -5,10 +5,10 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_cobrowse"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_keyconfigurations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_participants"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_assign"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_recordingstate"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_barge"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_disconnect"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_assign"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_tags"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_utilizationlabel"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_secureattributes"
@@ -37,10 +37,10 @@ func init() {
 	conversationsCmd.AddCommand(conversations_cobrowse.Cmdconversations_cobrowse())
 	conversationsCmd.AddCommand(conversations_keyconfigurations.Cmdconversations_keyconfigurations())
 	conversationsCmd.AddCommand(conversations_participants.Cmdconversations_participants())
-	conversationsCmd.AddCommand(conversations_assign.Cmdconversations_assign())
 	conversationsCmd.AddCommand(conversations_recordingstate.Cmdconversations_recordingstate())
 	conversationsCmd.AddCommand(conversations_barge.Cmdconversations_barge())
 	conversationsCmd.AddCommand(conversations_disconnect.Cmdconversations_disconnect())
+	conversationsCmd.AddCommand(conversations_assign.Cmdconversations_assign())
 	conversationsCmd.AddCommand(conversations_tags.Cmdconversations_tags())
 	conversationsCmd.AddCommand(conversations_utilizationlabel.Cmdconversations_utilizationlabel())
 	conversationsCmd.AddCommand(conversations_secureattributes.Cmdconversations_secureattributes())
@@ -63,6 +63,6 @@ func init() {
 	conversationsCmd.AddCommand(conversations_summaries.Cmdconversations_summaries())
 	conversationsCmd.AddCommand(conversations_recordingmetadata.Cmdconversations_recordingmetadata())
 	conversationsCmd.AddCommand(conversations_recordings.Cmdconversations_recordings())
-	conversationsCmd.Short = utils.GenerateCustomDescription(conversationsCmd.Short, conversations_cobrowse.Description, conversations_keyconfigurations.Description, conversations_participants.Description, conversations_assign.Description, conversations_recordingstate.Description, conversations_barge.Description, conversations_disconnect.Description, conversations_tags.Description, conversations_utilizationlabel.Description, conversations_secureattributes.Description, conversations_faxes.Description, conversations_settings.Description, conversations_communications.Description, conversations_aftercallwork.Description, conversations_callbacks.Description, conversations_calls.Description, conversations_chats.Description, conversations_cobrowsesessions.Description, conversations_emails.Description, conversations_internalmessages.Description, conversations_messages.Description, conversations_screenshares.Description, conversations_socials.Description, conversations_videos.Description, conversations_messaging.Description, conversations_suggestions.Description, conversations_summaries.Description, conversations_recordingmetadata.Description, conversations_recordings.Description, )
+	conversationsCmd.Short = utils.GenerateCustomDescription(conversationsCmd.Short, conversations_cobrowse.Description, conversations_keyconfigurations.Description, conversations_participants.Description, conversations_recordingstate.Description, conversations_barge.Description, conversations_disconnect.Description, conversations_assign.Description, conversations_tags.Description, conversations_utilizationlabel.Description, conversations_secureattributes.Description, conversations_faxes.Description, conversations_settings.Description, conversations_communications.Description, conversations_aftercallwork.Description, conversations_callbacks.Description, conversations_calls.Description, conversations_chats.Description, conversations_cobrowsesessions.Description, conversations_emails.Description, conversations_internalmessages.Description, conversations_messages.Description, conversations_screenshares.Description, conversations_socials.Description, conversations_videos.Description, conversations_messaging.Description, conversations_suggestions.Description, conversations_summaries.Description, conversations_recordingmetadata.Description, conversations_recordings.Description, )
 	conversationsCmd.Long = conversationsCmd.Short
 }

@@ -6,24 +6,24 @@ import (
 )
 
 var (
-    ScreenrecordinguserauthenticatedinfoMarshalled = false
+    BackgroundassistantuserauthenticatedinfoMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type ScreenrecordinguserauthenticatedinfoDud struct { 
+type BackgroundassistantuserauthenticatedinfoDud struct { 
     
 
 }
 
-// Screenrecordinguserauthenticatedinfo
-type Screenrecordinguserauthenticatedinfo struct { 
+// Backgroundassistantuserauthenticatedinfo
+type Backgroundassistantuserauthenticatedinfo struct { 
     // BackgroundAssistantId - Id of Genesys Cloud Background Assistant
     BackgroundAssistantId string `json:"backgroundAssistantId"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Screenrecordinguserauthenticatedinfo) String() string {
+func (o *Backgroundassistantuserauthenticatedinfo) String() string {
     
 
     j, _ := json.Marshal(o)
@@ -32,13 +32,13 @@ func (o *Screenrecordinguserauthenticatedinfo) String() string {
     return str
 }
 
-func (u *Screenrecordinguserauthenticatedinfo) MarshalJSON() ([]byte, error) {
-    type Alias Screenrecordinguserauthenticatedinfo
+func (u *Backgroundassistantuserauthenticatedinfo) MarshalJSON() ([]byte, error) {
+    type Alias Backgroundassistantuserauthenticatedinfo
 
-    if ScreenrecordinguserauthenticatedinfoMarshalled {
+    if BackgroundassistantuserauthenticatedinfoMarshalled {
         return []byte("{}"), nil
     }
-    ScreenrecordinguserauthenticatedinfoMarshalled = true
+    BackgroundassistantuserauthenticatedinfoMarshalled = true
 
     return json.Marshal(&struct {
         

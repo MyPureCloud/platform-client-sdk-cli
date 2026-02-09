@@ -17,7 +17,7 @@ type UpdatedecisiontableversionrequestDud struct {
 
 // Updatedecisiontableversionrequest
 type Updatedecisiontableversionrequest struct { 
-    // RowIndexUpdate - An update to a decision table version row index, which moves the row to a new position in the table. Execution output is returned based on the first matching row.
+    // RowIndexUpdate - An update to a decision table version row index, which moves the row to a new position in the table.
     RowIndexUpdate Updaterowindexrequest `json:"rowIndexUpdate"`
 
 }

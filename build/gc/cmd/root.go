@@ -116,6 +116,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/coaching"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/employeeengagement"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/learning"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/backgroundassistant"
 	"os"
 )
 
@@ -142,7 +143,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 152.1.0")
+		fmt.Println("Current version: 153.0.0")
 		checkForNewVersion()
 	},
 }
@@ -161,7 +162,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("152.1.0", latestVersion) {
+	if versionsAreEqual("153.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -368,6 +369,7 @@ func init() {
 	rootCmd.AddCommand(coaching.Cmdcoaching())
 	rootCmd.AddCommand(employeeengagement.Cmdemployeeengagement())
 	rootCmd.AddCommand(learning.Cmdlearning())
+	rootCmd.AddCommand(backgroundassistant.Cmdbackgroundassistant())
 
 	if config.IsExperimentalFeatureEnabled(getProfileName(os.Args), models.DummyCommand.String()) {
 		rootCmd.AddCommand(dummy_command.Cmddummy_command())

@@ -16,10 +16,20 @@ type CardparametersDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Cardparameters - Template parameters for a single carousel card
 type Cardparameters struct { 
+    // Index - Index of the card in the carousel template
+    Index int `json:"index"`
+
+
     // BodyParameters - A list of Response Management carousel card body parameter substitutions for the response's messaging template
     BodyParameters []Templateparameter `json:"bodyParameters"`
 
@@ -27,12 +37,18 @@ type Cardparameters struct {
     // ButtonUrlParameters - A list of Response Management carousel card button URL parameter substitutions for the response's messaging template
     ButtonUrlParameters []Templateparameter `json:"buttonUrlParameters"`
 
+
+    // ButtonQuickReplyPayloads - A list of quick reply button payloads for the carousel card
+    ButtonQuickReplyPayloads []Buttonquickreplypayload `json:"buttonQuickReplyPayloads"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Cardparameters) String() string {
+    
      o.BodyParameters = []Templateparameter{{}} 
      o.ButtonUrlParameters = []Templateparameter{{}} 
+     o.ButtonQuickReplyPayloads = []Buttonquickreplypayload{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -50,11 +66,18 @@ func (u *Cardparameters) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Index int `json:"index"`
+        
         BodyParameters []Templateparameter `json:"bodyParameters"`
         
         ButtonUrlParameters []Templateparameter `json:"buttonUrlParameters"`
+        
+        ButtonQuickReplyPayloads []Buttonquickreplypayload `json:"buttonQuickReplyPayloads"`
         *Alias
     }{
+
+        
+
 
         
         BodyParameters: []Templateparameter{{}},
@@ -63,6 +86,11 @@ func (u *Cardparameters) MarshalJSON() ([]byte, error) {
 
         
         ButtonUrlParameters: []Templateparameter{{}},
+        
+
+
+        
+        ButtonQuickReplyPayloads: []Buttonquickreplypayload{{}},
         
 
         Alias: (*Alias)(u),

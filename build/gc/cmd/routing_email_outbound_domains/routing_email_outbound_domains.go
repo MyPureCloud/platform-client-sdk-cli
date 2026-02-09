@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("routing_email_outbound_domains", "SWAGGER_OVERRIDE_/api/v2/routing/email/outbound/domains", "SWAGGER_OVERRIDE_/api/v2/routing/email/outbound/domains", "SWAGGER_OVERRIDE_/api/v2/routing/email/outbound/domains", "SWAGGER_OVERRIDE_/api/v2/routing/email/outbound/domains", )
+	Description = utils.FormatUsageDescription("routing_email_outbound_domains", "SWAGGER_OVERRIDE_/api/v2/routing/email/outbound/domains", "SWAGGER_OVERRIDE_/api/v2/routing/email/outbound/domains", "SWAGGER_OVERRIDE_/api/v2/routing/email/outbound/domains", "SWAGGER_OVERRIDE_/api/v2/routing/email/outbound/domains", "SWAGGER_OVERRIDE_/api/v2/routing/email/outbound/domains", )
 	routing_email_outbound_domainsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("routing_email_outbound_domains"),
 		Short: Description,
@@ -96,6 +96,31 @@ func Cmdrouting_email_outbound_domains() *cobra.Command {
   }
 }`)
 	routing_email_outbound_domainsCmd.AddCommand(listCmd)
+
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/routing/email/outbound/domains/{domainId}", utils.FormatPermissions([]string{ "routing:email:manage",  }), utils.GenerateDevCentreLink("PATCH", "Routing", "/api/v2/routing/email/outbound/domains/{domainId}")))
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
+  "description" : "Domain settings",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OutboundDomainPatchRequest"
+      }
+    }
+  },
+  "required" : true
+}`)
+	
+	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
+  "description" : "successful operation",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/OutboundDomain"
+      }
+    }
+  }
+}`)
+	routing_email_outbound_domainsCmd.AddCommand(updateCmd)
 	return routing_email_outbound_domainsCmd
 }
 
@@ -354,6 +379,74 @@ var listCmd = &cobra.Command{
 
 		const opId = "list"
 		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
+			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
+		utils.Render(results)
+	},
+}
+var updateCmd = &cobra.Command{
+	Use:   "update [domainId]",
+	Short: "Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).",
+	Long:  "Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).",
+	Args:  utils.DetermineArgs([]string{ "domainId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Outbounddomainpatchrequest{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/routing/email/outbound/domains/{domainId}"
+		domainId, args := args[0], args[1:]
+		path = strings.Replace(path, "{domainId}", fmt.Sprintf("%v", domainId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
+		const opId = "update"
+		const httpMethod = "PATCH"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

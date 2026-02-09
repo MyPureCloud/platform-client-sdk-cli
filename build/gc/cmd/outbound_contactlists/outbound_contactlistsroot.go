@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_contactlists_export"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_contactlists_importstatus"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_contactlists_timezonemappingpreview"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_contactlists_uploads"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_contactlists_contacts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound_contactlists_clear"
 )
@@ -15,8 +16,9 @@ func init() {
 	outbound_contactlistsCmd.AddCommand(outbound_contactlists_export.Cmdoutbound_contactlists_export())
 	outbound_contactlistsCmd.AddCommand(outbound_contactlists_importstatus.Cmdoutbound_contactlists_importstatus())
 	outbound_contactlistsCmd.AddCommand(outbound_contactlists_timezonemappingpreview.Cmdoutbound_contactlists_timezonemappingpreview())
+	outbound_contactlistsCmd.AddCommand(outbound_contactlists_uploads.Cmdoutbound_contactlists_uploads())
 	outbound_contactlistsCmd.AddCommand(outbound_contactlists_contacts.Cmdoutbound_contactlists_contacts())
 	outbound_contactlistsCmd.AddCommand(outbound_contactlists_clear.Cmdoutbound_contactlists_clear())
-	outbound_contactlistsCmd.Short = utils.GenerateCustomDescription(outbound_contactlistsCmd.Short, outbound_contactlists_divisionviews.Description, outbound_contactlists_export.Description, outbound_contactlists_importstatus.Description, outbound_contactlists_timezonemappingpreview.Description, outbound_contactlists_contacts.Description, outbound_contactlists_clear.Description, )
+	outbound_contactlistsCmd.Short = utils.GenerateCustomDescription(outbound_contactlistsCmd.Short, outbound_contactlists_divisionviews.Description, outbound_contactlists_export.Description, outbound_contactlists_importstatus.Description, outbound_contactlists_timezonemappingpreview.Description, outbound_contactlists_uploads.Description, outbound_contactlists_contacts.Description, outbound_contactlists_clear.Description, )
 	outbound_contactlistsCmd.Long = outbound_contactlistsCmd.Short
 }

@@ -103,14 +103,14 @@
       "description": "Create a workitem"
     },
     {
-      "name": "create",
-      "path": "/api/v2/taskmanagement/workitems/query/jobs",
-      "description": "Create a workitem query job"
-    },
-    {
       "name": "get",
       "path": "/api/v2/taskmanagement/workitems/query/jobs/{jobId}",
       "description": "Get the workitem query job associated with the job id."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/query/jobs",
+      "description": "Create a workitem query job"
     },
     {
       "name": "list",
@@ -119,8 +119,18 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/disconnect",
+      "description": "Disconnect the assignee of the workitem"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/taskmanagement/workitems/{workitemId}/terminate",
       "description": "Terminate a workitem"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/acd/cancel",
+      "description": "Cancel the assignment process for a workitem that is currently queued for assignment through ACD."
     },
     {
       "name": "get",
@@ -156,16 +166,6 @@
       "name": "list",
       "path": "/api/v2/taskmanagement/workitems/{workitemId}/history",
       "description": "Get a listing of a workitem's attribute change history"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/taskmanagement/workitems/{workitemId}/acd/cancel",
-      "description": "Cancel the assignment process for a workitem that is currently queued for assignment through ACD."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/taskmanagement/workitems/{workitemId}/disconnect",
-      "description": "Disconnect the assignee of the workitem"
     },
     {
       "name": "get",

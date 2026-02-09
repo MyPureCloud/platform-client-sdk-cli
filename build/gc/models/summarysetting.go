@@ -45,6 +45,15 @@ type SummarysettingDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -100,6 +109,18 @@ type Summarysetting struct {
     Prompt string `json:"prompt"`
 
 
+    // ServiceType - Service type for summarization. Can be 'Native' for Genesys native summarization engine or 'External' for external service. If specified as 'External', integrationId must be provided.
+    ServiceType string `json:"serviceType"`
+
+
+    // IntegrationId - Integration ID for the external summarization service. Required when serviceType is External.
+    IntegrationId string `json:"integrationId"`
+
+
+    // TimeoutDuration - Timeout duration in seconds for the external summarization service request.
+    TimeoutDuration int `json:"timeoutDuration"`
+
+
     
 
 
@@ -120,6 +141,9 @@ func (o *Summarysetting) String() string {
     
      o.PredefinedInsights = []string{""} 
      o.CustomEntities = []Summarysettingcustomentity{{}} 
+    
+    
+    
     
     
 
@@ -158,6 +182,12 @@ func (u *Summarysetting) MarshalJSON() ([]byte, error) {
         SettingType string `json:"settingType"`
         
         Prompt string `json:"prompt"`
+        
+        ServiceType string `json:"serviceType"`
+        
+        IntegrationId string `json:"integrationId"`
+        
+        TimeoutDuration int `json:"timeoutDuration"`
         *Alias
     }{
 
@@ -189,6 +219,15 @@ func (u *Summarysetting) MarshalJSON() ([]byte, error) {
 
         
         CustomEntities: []Summarysettingcustomentity{{}},
+        
+
+
+        
+
+
+        
+
+
         
 
 

@@ -62,6 +62,8 @@ func Cmdassistants() *cobra.Command {
 	assistantsCmd.AddCommand(deleteCmd)
 
 	utils.AddFlag(getCmd.Flags(), "string", "expand", "", "Which fields, if any, to expand. Valid values: copilot")
+	utils.AddFlag(getCmd.Flags(), "string", "languageVariation", "", "Language variation")
+	utils.AddFlag(getCmd.Flags(), "bool", "fallbackToPrimaryAssistant", "", "Fall back to primary assistant if specified variation is not found")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/assistants/{assistantId}", utils.FormatPermissions([]string{ "assistants:assistant:view",  }), utils.GenerateDevCentreLink("GET", "Agent Assistants", "/api/v2/assistants/{assistantId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -284,6 +286,14 @@ var getCmd = &cobra.Command{
 		expand := utils.GetFlag(cmd.Flags(), "string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
+		}
+		languageVariation := utils.GetFlag(cmd.Flags(), "string", "languageVariation")
+		if languageVariation != "" {
+			queryParams["languageVariation"] = languageVariation
+		}
+		fallbackToPrimaryAssistant := utils.GetFlag(cmd.Flags(), "bool", "fallbackToPrimaryAssistant")
+		if fallbackToPrimaryAssistant != "" {
+			queryParams["fallbackToPrimaryAssistant"] = fallbackToPrimaryAssistant
 		}
 		urlString := path
 		if len(queryParams) > 0 {

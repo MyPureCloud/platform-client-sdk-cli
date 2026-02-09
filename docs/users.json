@@ -129,28 +129,18 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/users/presences/{sourceId}/bulk",
-      "description": "Get bulk user presences for a single presence source"
+      "path": "/api/v2/users/presences/purecloud/bulk",
+      "description": "Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source"
     },
     {
       "name": "get",
-      "path": "/api/v2/users/presences/purecloud/bulk",
-      "description": "Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source"
+      "path": "/api/v2/users/presences/{sourceId}/bulk",
+      "description": "Get bulk user presences for a single presence source"
     },
     {
       "name": "update",
       "path": "/api/v2/users/presences/bulk",
       "description": "Update bulk user Presences"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/users/{userId}/presences/purecloud",
-      "description": "Get a user's Genesys Cloud presence."
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/users/{userId}/presences/purecloud",
-      "description": "Patch a Genesys Cloud user's presence"
     },
     {
       "name": "get",
@@ -163,6 +153,16 @@
       "description": "Patch a user's Presence"
     },
     {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/presences/purecloud",
+      "description": "Get a user's Genesys Cloud presence."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/presences/purecloud",
+      "description": "Patch a Genesys Cloud user's presence"
+    },
+    {
       "name": "list",
       "path": "/api/v2/users/chats/me",
       "description": "Get chats for a user"
@@ -171,11 +171,6 @@
       "name": "getuserbyexternalid",
       "path": "/api/v2/users/externalid/{authorityName}/{externalKey}",
       "description": "Get the user associated with external identifier."
-    },
-    {
-      "name": "getexternalidforuserauthority",
-      "path": "/api/v2/users/{userId}/externalid/{authorityName}",
-      "description": "Get the external identifier of user for an authority."
     },
     {
       "name": "getexternalidsforuser",
@@ -191,6 +186,11 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}",
       "description": "Delete the external identifier for user."
+    },
+    {
+      "name": "getexternalidforuserauthority",
+      "path": "/api/v2/users/{userId}/externalid/{authorityName}",
+      "description": "Get the external identifier of user for an authority."
     },
     {
       "name": "create",
@@ -394,6 +394,11 @@
     },
     {
       "name": "list",
+      "path": "/api/v2/users/development/activities/me",
+      "description": "Get list of Development Activities for current user"
+    },
+    {
+      "name": "list",
       "path": "/api/v2/users/development/activities",
       "description": "Get list of Development Activities"
     },
@@ -401,11 +406,6 @@
       "name": "get",
       "path": "/api/v2/users/development/activities/{activityId}",
       "description": "Get a Development Activity"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/users/development/activities/me",
-      "description": "Get list of Development Activities for current user"
     },
     {
       "name": "create",
@@ -428,14 +428,104 @@
       "description": "Search manage queue member"
     },
     {
+      "name": "get",
+      "path": "/api/v2/users/customattributes/schemas/coretypes/{coreTypeName}",
+      "description": "Get the core types from which all schemas are built."
+    },
+    {
       "name": "list",
-      "path": "/api/v2/users/rules/{ruleId}/dependents",
-      "description": "Get dependents for a users rule"
+      "path": "/api/v2/users/customattributes/schemas/coretypes",
+      "description": "Get the list of core types enabled for a specific namespace."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/customattributes/{schemaId}",
+      "description": "Get custom attributes by schema id"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/customattributes/{schemaId}",
+      "description": "Delete a custom attributes record."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/customattributes",
+      "description": "Create or update a single custom attributes record. Updating replaces all data with the provided fields."
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/users/{userId}/customattributes",
+      "description": "Update a single custom attributes record by amending the data with only the provided fields."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/customattributes/bulk",
+      "description": "Get multiple custom attributes records by schema ids"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/customattributes/bulk",
+      "description": "Update multiple custom attributes records by amending the data with only the provided fields."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/customattributes/schemas/limits",
+      "description": "Get quantitative limits on schemas"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/customattributes/schemas/{schemaId}",
+      "description": "Get a schema"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/customattributes/schemas/{schemaId}",
+      "description": "Update a schema"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/customattributes/schemas/{schemaId}",
+      "description": "Delete a schema"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/customattributes/schemas/{schemaId}/versions",
+      "description": "Get all versions of a user schema"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/customattributes/schemas/{schemaId}/versions/{versionId}",
+      "description": "Get a specific version of a schema"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/customattributes/schemas",
+      "description": "Get a list of schemas."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/customattributes/schemas",
+      "description": "Create a schema"
     },
     {
       "name": "get",
       "path": "/api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId}",
       "description": "Get dependent of a users rule"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/rules/{ruleId}/dependents",
+      "description": "Get dependents for a users rule"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/rules",
+      "description": "Get the list of users rules"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/rules",
+      "description": "Create a new rule"
     },
     {
       "name": "get",
@@ -451,16 +541,6 @@
       "name": "update",
       "path": "/api/v2/users/rules/{ruleId}",
       "description": "Update an existing users rule"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/users/rules",
-      "description": "Get the list of users rules"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/users/rules",
-      "description": "Create a new rule"
     },
     {
       "name": "create",

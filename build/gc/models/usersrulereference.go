@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    CasereferenceMarshalled = false
+    UsersrulereferenceMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type CasereferenceDud struct { 
+type UsersrulereferenceDud struct { 
     Id string `json:"id"`
 
 
@@ -18,8 +18,8 @@ type CasereferenceDud struct {
 
 }
 
-// Casereference
-type Casereference struct { 
+// Usersrulereference
+type Usersrulereference struct { 
     
 
 
@@ -28,7 +28,7 @@ type Casereference struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Casereference) String() string {
+func (o *Usersrulereference) String() string {
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -36,13 +36,13 @@ func (o *Casereference) String() string {
     return str
 }
 
-func (u *Casereference) MarshalJSON() ([]byte, error) {
-    type Alias Casereference
+func (u *Usersrulereference) MarshalJSON() ([]byte, error) {
+    type Alias Usersrulereference
 
-    if CasereferenceMarshalled {
+    if UsersrulereferenceMarshalled {
         return []byte("{}"), nil
     }
-    CasereferenceMarshalled = true
+    UsersrulereferenceMarshalled = true
 
     return json.Marshal(&struct {
         *Alias

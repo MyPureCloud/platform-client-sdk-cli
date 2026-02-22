@@ -40,6 +40,9 @@ type EscalationrulerequestDud struct {
 
     
 
+
+    
+
 }
 
 // Escalationrulerequest
@@ -83,10 +86,15 @@ type Escalationrulerequest struct {
     // TwitterEscalation - The target integration configuration used for a X (formerly Twitter) message escalation.
     TwitterEscalation Escalationtarget `json:"twitterEscalation"`
 
+
+    // GoogleBusinessProfileEscalation - The target integration configuration used for a Google Business Profile message escalation.
+    GoogleBusinessProfileEscalation Escalationtarget `json:"googleBusinessProfileEscalation"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Escalationrulerequest) String() string {
+    
     
     
     
@@ -133,8 +141,13 @@ func (u *Escalationrulerequest) MarshalJSON() ([]byte, error) {
         InstagramEscalation Escalationtarget `json:"instagramEscalation"`
         
         TwitterEscalation Escalationtarget `json:"twitterEscalation"`
+        
+        GoogleBusinessProfileEscalation Escalationtarget `json:"googleBusinessProfileEscalation"`
         *Alias
     }{
+
+        
+
 
         
 

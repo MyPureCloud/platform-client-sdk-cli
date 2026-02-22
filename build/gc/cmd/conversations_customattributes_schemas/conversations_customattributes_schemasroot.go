@@ -1,0 +1,16 @@
+package conversations_customattributes_schemas
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_customattributes_schemas_coretypes"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_customattributes_schemas_limits"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_customattributes_schemas_versions"
+)
+
+func init() {
+	conversations_customattributes_schemasCmd.AddCommand(conversations_customattributes_schemas_coretypes.Cmdconversations_customattributes_schemas_coretypes())
+	conversations_customattributes_schemasCmd.AddCommand(conversations_customattributes_schemas_limits.Cmdconversations_customattributes_schemas_limits())
+	conversations_customattributes_schemasCmd.AddCommand(conversations_customattributes_schemas_versions.Cmdconversations_customattributes_schemas_versions())
+	conversations_customattributes_schemasCmd.Short = utils.GenerateCustomDescription(conversations_customattributes_schemasCmd.Short, conversations_customattributes_schemas_coretypes.Description, conversations_customattributes_schemas_limits.Description, conversations_customattributes_schemas_versions.Description, )
+	conversations_customattributes_schemasCmd.Long = conversations_customattributes_schemasCmd.Short
+}

@@ -654,6 +654,11 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/telephony/siptraces/download/{downloadId}",
+      "description": "Get signed S3 URL for a pcap download"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/telephony/siptraces",
       "description": "Fetch SIP metadata"
     },
@@ -661,11 +666,6 @@
       "name": "create",
       "path": "/api/v2/telephony/siptraces/download",
       "description": "Request a download of a pcap file to S3"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/telephony/siptraces/download/{downloadId}",
-      "description": "Get signed S3 URL for a pcap download"
     },
     {
       "name": "get",

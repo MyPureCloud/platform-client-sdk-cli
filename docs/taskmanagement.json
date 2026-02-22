@@ -103,14 +103,14 @@
       "description": "Create a workitem"
     },
     {
-      "name": "get",
-      "path": "/api/v2/taskmanagement/workitems/query/jobs/{jobId}",
-      "description": "Get the workitem query job associated with the job id."
-    },
-    {
       "name": "create",
       "path": "/api/v2/taskmanagement/workitems/query/jobs",
       "description": "Create a workitem query job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/query/jobs/{jobId}",
+      "description": "Get the workitem query job associated with the job id."
     },
     {
       "name": "list",
@@ -126,6 +126,16 @@
       "name": "create",
       "path": "/api/v2/taskmanagement/workitems/{workitemId}/terminate",
       "description": "Terminate a workitem"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion}",
+      "description": "Get a version of a workitem"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/history",
+      "description": "Get a listing of a workitem's attribute change history"
     },
     {
       "name": "create",
@@ -156,16 +166,6 @@
       "name": "list",
       "path": "/api/v2/taskmanagement/workitems/{workitemId}/versions",
       "description": "Get all versions of a workitem"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion}",
-      "description": "Get a version of a workitem"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/taskmanagement/workitems/{workitemId}/history",
-      "description": "Get a listing of a workitem's attribute change history"
     },
     {
       "name": "get",

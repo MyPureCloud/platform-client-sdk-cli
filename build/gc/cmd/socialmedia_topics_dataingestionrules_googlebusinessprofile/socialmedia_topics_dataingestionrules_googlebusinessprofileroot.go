@@ -1,0 +1,12 @@
+package socialmedia_topics_dataingestionrules_googlebusinessprofile
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/socialmedia_topics_dataingestionrules_googlebusinessprofile_versions"
+)
+
+func init() {
+	socialmedia_topics_dataingestionrules_googlebusinessprofileCmd.AddCommand(socialmedia_topics_dataingestionrules_googlebusinessprofile_versions.Cmdsocialmedia_topics_dataingestionrules_googlebusinessprofile_versions())
+	socialmedia_topics_dataingestionrules_googlebusinessprofileCmd.Short = utils.GenerateCustomDescription(socialmedia_topics_dataingestionrules_googlebusinessprofileCmd.Short, socialmedia_topics_dataingestionrules_googlebusinessprofile_versions.Description, )
+	socialmedia_topics_dataingestionrules_googlebusinessprofileCmd.Long = socialmedia_topics_dataingestionrules_googlebusinessprofileCmd.Short
+}

@@ -118,11 +118,6 @@
       "description": "API invoked to finalize agent checklist evaluation."
     },
     {
-      "name": "create",
-      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs",
-      "description": "Create inference job"
-    },
-    {
       "name": "get",
       "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId}",
       "description": "Get inference job status"
@@ -146,6 +141,96 @@
       "name": "create",
       "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/agentaction",
       "description": "API invoked to capture an agent action."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs",
+      "description": "Create inference job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/{conversationId}/customattributes/{attributesId}",
+      "description": "Get custom attributes by id"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/{conversationId}/customattributes/{attributesId}",
+      "description": "Delete a custom attributes record."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/{conversationId}/customattributes",
+      "description": "Get a list of custom attributes for a conversation."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/{conversationId}/customattributes",
+      "description": "Create or update a single custom attributes record. Updating replaces all data with the provided fields."
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/conversations/{conversationId}/customattributes",
+      "description": "Update a single custom attributes record by amending the data with only the provided fields."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/{conversationId}/customattributes/bulk",
+      "description": "Create or update a list of custom attributes records. Updating replaces all data with the provided fields."
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/conversations/{conversationId}/customattributes/bulk",
+      "description": "Update a list of custom attributes record by amending the data with only the provided fields."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/customattributes/search",
+      "description": "Search resources."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/customattributes/schemas/coretypes/{coreTypeName}",
+      "description": "Get the core types from which all schemas are built."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/customattributes/schemas/coretypes",
+      "description": "Get the list of core types enabled for a specific namespace."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/customattributes/schemas/limits",
+      "description": "Get quantitative limits on schemas"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/customattributes/schemas/{schemaId}",
+      "description": "Get a schema"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/customattributes/schemas/{schemaId}",
+      "description": "Update a schema"
+    },
+    {
+      "name": "getAllConversationsCustomattributesSchemaVersions",
+      "path": "/api/v2/conversations/customattributes/schemas/{schemaId}/versions",
+      "description": "Get all versions of a CCA schema"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/customattributes/schemas/{schemaId}/versions/{versionId}",
+      "description": "Get a specific version of a schema"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/customattributes/schemas",
+      "description": "Get a list of schemas."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/customattributes/schemas",
+      "description": "Create a schema"
     },
     {
       "name": "update",
@@ -1353,6 +1438,11 @@
       "description": "Create secure IVR session. Only a participant in the conversation can invoke a secure IVR."
     },
     {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/suggestions/feedback",
+      "description": "Suggestion feedback."
+    },
+    {
       "name": "list",
       "path": "/api/v2/conversations/{conversationId}/suggestions",
       "description": "Get all suggestions for a conversation."
@@ -1366,11 +1456,6 @@
       "name": "create",
       "path": "/api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement",
       "description": "Save an engagement on the suggestion."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/{conversationId}/suggestions/feedback",
-      "description": "Suggestion feedback."
     },
     {
       "name": "get",
@@ -1486,6 +1571,46 @@
       "name": "get",
       "path": "/api/v2/conversations/videos/{conferenceId}/details",
       "description": "Get video conference details (e.g. the current number of active participants)."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}",
+      "description": "Get an Open messaging integration with the Google Business Profile extension"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}",
+      "description": "Delete an Open messaging integration with the Google Business Profile extension"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}",
+      "description": "Update an Open messaging integration with the Google Business Profile extension"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile",
+      "description": "Create an Open messaging integration with the Google Business Profile extension"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}/accounts",
+      "description": "Get Google Business Profile accounts"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/oauth/settings",
+      "description": "Get Google Business Profile OAuth 2 settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}",
+      "description": "Get a Google Auth Token"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens",
+      "description": "Create a Google Auth Token by exchanging the one-time auth code retrieved from Google"
     }
   ]
 }

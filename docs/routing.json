@@ -153,6 +153,11 @@
       "description": "Delete Routing Skill"
     },
     {
+      "name": "update",
+      "path": "/api/v2/routing/skills/{skillId}",
+      "description": "Update Routing Skill Division"
+    },
+    {
       "name": "list",
       "path": "/api/v2/routing/skills",
       "description": "Get the list of routing skills."

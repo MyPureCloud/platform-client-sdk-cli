@@ -43,6 +43,9 @@ func Cmdwebdeployments_configurations_versions() *cobra.Command {
 }`)
 	webdeployments_configurations_versionsCmd.AddCommand(getCmd)
 
+	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Defaults to 300.")
+	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
+	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/webdeployments/configurations/{configurationId}/versions", utils.FormatPermissions([]string{ "webDeployments:configuration:view",  }), utils.GenerateDevCentreLink("GET", "Web Deployments", "/api/v2/webdeployments/configurations/{configurationId}/versions")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -153,6 +156,18 @@ var listCmd = &cobra.Command{
 		configurationId, args := args[0], args[1:]
 		path = strings.Replace(path, "{configurationId}", fmt.Sprintf("%v", configurationId), -1)
 
+		pageSize := utils.GetFlag(cmd.Flags(), "string", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
+		}
+		before := utils.GetFlag(cmd.Flags(), "string", "before")
+		if before != "" {
+			queryParams["before"] = before
+		}
+		after := utils.GetFlag(cmd.Flags(), "string", "after")
+		if after != "" {
+			queryParams["after"] = after
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

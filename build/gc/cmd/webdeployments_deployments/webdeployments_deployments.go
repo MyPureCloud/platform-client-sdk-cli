@@ -77,6 +77,9 @@ func Cmdwebdeployments_deployments() *cobra.Command {
 }`)
 	webdeployments_deploymentsCmd.AddCommand(getCmd)
 
+	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Defaults to 300.")
+	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
+	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "The specified entity attributes will be filled. Comma separated values expected.  Valid values: Configuration, SupportedContent, identityresolution")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/webdeployments/deployments", utils.FormatPermissions([]string{ "webDeployments:deployment:view",  }), utils.GenerateDevCentreLink("GET", "Web Deployments", "/api/v2/webdeployments/deployments")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -343,6 +346,18 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/webdeployments/deployments"
 
+		pageSize := utils.GetFlag(cmd.Flags(), "string", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
+		}
+		before := utils.GetFlag(cmd.Flags(), "string", "before")
+		if before != "" {
+			queryParams["before"] = before
+		}
+		after := utils.GetFlag(cmd.Flags(), "string", "after")
+		if after != "" {
+			queryParams["after"] = after
+		}
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand

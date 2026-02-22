@@ -18,6 +18,11 @@
       "description": "Fetch a page of results for an async social media query"
     },
     {
+      "name": "create",
+      "path": "/api/v2/socialmedia/analytics/messages/jobs",
+      "description": "Query for social media messages asynchronously"
+    },
+    {
       "name": "get",
       "path": "/api/v2/socialmedia/analytics/messages/jobs/{jobId}",
       "description": "Get status for async query for social media messages job"
@@ -26,11 +31,6 @@
       "name": "list",
       "path": "/api/v2/socialmedia/analytics/messages/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async social media messages query"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/socialmedia/analytics/messages/jobs",
-      "description": "Query for social media messages asynchronously"
     },
     {
       "name": "list",
@@ -246,6 +246,41 @@
       "name": "create",
       "path": "/api/v2/socialmedia/topics",
       "description": "Create a social topic."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}",
+      "description": "Get a single Google Business Profile data ingestion rule."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}",
+      "description": "Update the Google Business Profile data ingestion rule."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}",
+      "description": "Delete a Google Business Profile data ingestion rule."
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}",
+      "description": "Update the status of a Google Business Profile data ingestion rule."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions/{dataIngestionRuleVersion}",
+      "description": "Get a single Google Business Profile data ingestion rule version."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions",
+      "description": "Get the Google Business Profile data ingestion rule versions."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile",
+      "description": "Create a Google Business Profile data ingestion rule."
     },
     {
       "name": "delete",

@@ -51,6 +51,9 @@ type EscalationruleresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -109,12 +112,17 @@ type Escalationruleresponse struct {
     TwitterEscalation Escalationtarget `json:"twitterEscalation"`
 
 
+    // GoogleBusinessProfileEscalation - The target integration configuration used for a Google Business Profile message escalation.
+    GoogleBusinessProfileEscalation Escalationtarget `json:"googleBusinessProfileEscalation"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Escalationruleresponse) String() string {
+    
     
     
     
@@ -170,8 +178,13 @@ func (u *Escalationruleresponse) MarshalJSON() ([]byte, error) {
         InstagramEscalation Escalationtarget `json:"instagramEscalation"`
         
         TwitterEscalation Escalationtarget `json:"twitterEscalation"`
+        
+        GoogleBusinessProfileEscalation Escalationtarget `json:"googleBusinessProfileEscalation"`
         *Alias
     }{
+
+        
+
 
         
 

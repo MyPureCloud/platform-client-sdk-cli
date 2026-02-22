@@ -19,8 +19,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/audits/query/realtime/related",
-      "description": "Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id."
+      "path": "/api/v2/audits/query/realtime",
+      "description": "This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits."
     },
     {
       "name": "get",
@@ -34,8 +34,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/audits/query/realtime",
-      "description": "This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits."
+      "path": "/api/v2/audits/query/realtime/related",
+      "description": "Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id."
     }
   ]
 }

@@ -304,6 +304,13 @@ gc/cmd/conversations_communications_agentchecklists_agentaction/conversations_co
 gc/cmd/conversations_communications_agentchecklists_finalize/conversations_communications_agentchecklists_finalize.go
 gc/cmd/conversations_communications_agentchecklists_jobs/conversations_communications_agentchecklists_jobs.go
 gc/cmd/conversations_communications_internalmessages/conversations_communications_internalmessages.go
+gc/cmd/conversations_customattributes/conversations_customattributes.go
+gc/cmd/conversations_customattributes_bulk/conversations_customattributes_bulk.go
+gc/cmd/conversations_customattributes_schemas/conversations_customattributes_schemas.go
+gc/cmd/conversations_customattributes_schemas_coretypes/conversations_customattributes_schemas_coretypes.go
+gc/cmd/conversations_customattributes_schemas_limits/conversations_customattributes_schemas_limits.go
+gc/cmd/conversations_customattributes_schemas_versions/conversations_customattributes_schemas_versions.go
+gc/cmd/conversations_customattributes_search/conversations_customattributes_search.go
 gc/cmd/conversations_disconnect/conversations_disconnect.go
 gc/cmd/conversations_emails/conversations_emails.go
 gc/cmd/conversations_emails_agentless/conversations_emails_agentless.go
@@ -365,6 +372,10 @@ gc/cmd/conversations_messaging_integrations_apple/conversations_messaging_integr
 gc/cmd/conversations_messaging_integrations_facebook/conversations_messaging_integrations_facebook.go
 gc/cmd/conversations_messaging_integrations_instagram/conversations_messaging_integrations_instagram.go
 gc/cmd/conversations_messaging_integrations_open/conversations_messaging_integrations_open.go
+gc/cmd/conversations_messaging_integrations_open_extensions_googlebusinessprofile/conversations_messaging_integrations_open_extensions_googlebusinessprofile.go
+gc/cmd/conversations_messaging_integrations_open_extensions_googlebusinessprofile_oauth_settings/conversations_messaging_integrations_open_extensions_googlebusinessprofile_oauth_settings.go
+gc/cmd/conversations_messaging_integrations_open_extensions_googlebusinessprofile_tokens/conversations_messaging_integrations_open_extensions_googlebusinessprofile_tokens.go
+gc/cmd/conversations_messaging_integrations_open_extensions_googlebusinessprofile_tokens_accounts/conversations_messaging_integrations_open_extensions_googlebusinessprofile_tokens_accounts.go
 gc/cmd/conversations_messaging_integrations_twitter/conversations_messaging_integrations_twitter.go
 gc/cmd/conversations_messaging_integrations_twitter_oauth_settings/conversations_messaging_integrations_twitter_oauth_settings.go
 gc/cmd/conversations_messaging_integrations_whatsapp/conversations_messaging_integrations_whatsapp.go
@@ -1117,6 +1128,8 @@ gc/cmd/socialmedia_topics/socialmedia_topics.go
 gc/cmd/socialmedia_topics_dataingestionrules/socialmedia_topics_dataingestionrules.go
 gc/cmd/socialmedia_topics_dataingestionrules_facebook/socialmedia_topics_dataingestionrules_facebook.go
 gc/cmd/socialmedia_topics_dataingestionrules_facebook_versions/socialmedia_topics_dataingestionrules_facebook_versions.go
+gc/cmd/socialmedia_topics_dataingestionrules_googlebusinessprofile/socialmedia_topics_dataingestionrules_googlebusinessprofile.go
+gc/cmd/socialmedia_topics_dataingestionrules_googlebusinessprofile_versions/socialmedia_topics_dataingestionrules_googlebusinessprofile_versions.go
 gc/cmd/socialmedia_topics_dataingestionrules_instagram/socialmedia_topics_dataingestionrules_instagram.go
 gc/cmd/socialmedia_topics_dataingestionrules_instagram_versions/socialmedia_topics_dataingestionrules_instagram_versions.go
 gc/cmd/socialmedia_topics_dataingestionrules_open/socialmedia_topics_dataingestionrules_open.go
@@ -2161,7 +2174,6 @@ gc/models/butimeoffplanlisting.go
 gc/models/butimeoffplanresponse.go
 gc/models/button.go
 gc/models/buttoncomponent.go
-gc/models/buttonquickreplypayload.go
 gc/models/buttonresponse.go
 gc/models/buupdateagentscheduleshift.go
 gc/models/buupdateagentscheduleuploadschema.go
@@ -2604,6 +2616,10 @@ gc/models/conversationcontenttext.go
 gc/models/conversationcontentwheelpicker.go
 gc/models/conversationcontentwheelpickeritem.go
 gc/models/conversationcontext.go
+gc/models/conversationcustomattributessearchcriteria.go
+gc/models/conversationcustomattributessearchrequest.go
+gc/models/conversationdataschema.go
+gc/models/conversationdataschemalisting.go
 gc/models/conversationdeletionprotectionquery.go
 gc/models/conversationdetailqueryclause.go
 gc/models/conversationdetailqueryfilter.go
@@ -2626,6 +2642,8 @@ gc/models/conversationformpagecomponent.go
 gc/models/conversationformresponsecomponent.go
 gc/models/conversationformresponsecontent.go
 gc/models/conversationinsight.go
+gc/models/conversationjsonschemadocument.go
+gc/models/conversationjsonschemarequest.go
 gc/models/conversationmessagecontent.go
 gc/models/conversationmessageevent.go
 gc/models/conversationmessagemetadata.go
@@ -2660,6 +2678,7 @@ gc/models/conversationroutingdata.go
 gc/models/conversationschemaattribute.go
 gc/models/conversationschemadata.go
 gc/models/conversationschemareference.go
+gc/models/conversationschemaupdaterequest.go
 gc/models/conversationsecureattributes.go
 gc/models/conversationsessionsummary.go
 gc/models/conversationsummariesgetresponse.go
@@ -2746,6 +2765,7 @@ gc/models/createshareresponse.go
 gc/models/createstaffinggroupallocation.go
 gc/models/createstaffinggrouprequest.go
 gc/models/createsurveyrequest.go
+gc/models/createsurveyresponse.go
 gc/models/createtimeofflimitrequest.go
 gc/models/createtimeoffplanbusinessunitassociation.go
 gc/models/createtimeoffplanmanagementunitassociation.go
@@ -2802,6 +2822,13 @@ gc/models/cursornotelisting.go
 gc/models/cursororganizationlisting.go
 gc/models/cursorrelationshiplisting.go
 gc/models/cursors.go
+gc/models/customattributes.go
+gc/models/customattributesbulkupdateresponse.go
+gc/models/customattributesbulkupdateresponsemap.go
+gc/models/customattributesidresponse.go
+gc/models/customattributeslisting.go
+gc/models/customattributespatchrequest.go
+gc/models/customattributesupdaterequest.go
 gc/models/customer.go
 gc/models/customerintent.go
 gc/models/customerintentassignmentlisting.go
@@ -2961,6 +2988,7 @@ gc/models/divisioneddomainentityref.go
 gc/models/divisionentityref.go
 gc/models/divisionreference.go
 gc/models/divspermittedentitylisting.go
+gc/models/dmarcresult.go
 gc/models/dnclist.go
 gc/models/dnclistcreate.go
 gc/models/dnclistdivisionview.go
@@ -3090,6 +3118,7 @@ gc/models/dynamicgrouproutingskillcondition.go
 gc/models/dynamicgroupskillcondition.go
 gc/models/dynamiclinebalancingsettings.go
 gc/models/dynamiclinebalancingsettingspatchrequest.go
+gc/models/dynamicutilization.go
 gc/models/edge.go
 gc/models/edgeautoupdateconfig.go
 gc/models/edgeconnectioninfo.go
@@ -3428,6 +3457,7 @@ gc/models/flowsettingsresponseentitylisting.go
 gc/models/flowsquerycriteriaresponse.go
 gc/models/flowversion.go
 gc/models/flowversionentitylisting.go
+gc/models/followersfilter.go
 gc/models/footertemplate.go
 gc/models/forecastabandonrateresponse.go
 gc/models/forecastaveragespeedofanswerresponse.go
@@ -3497,8 +3527,22 @@ gc/models/gkndocumentationresult.go
 gc/models/gkndocumentationsearchcriteria.go
 gc/models/gkndocumentationsearchrequest.go
 gc/models/gkndocumentationsearchresponse.go
+gc/models/googleauthtoken.go
+gc/models/googleauthtokenreference.go
+gc/models/googleauthtokenrequest.go
+gc/models/googlebusinessprofileaccount.go
+gc/models/googlebusinessprofileaccountlisting.go
+gc/models/googlebusinessprofileaccountreference.go
+gc/models/googlebusinessprofiledataingestionrulerequest.go
+gc/models/googlebusinessprofiledataingestionruleresponse.go
+gc/models/googlebusinessprofiledataingestionruleversionresponse.go
+gc/models/googlebusinessprofiledataingestionruleversionresponseentitylisting.go
+gc/models/googlebusinessprofileopenintegration.go
+gc/models/googlebusinessprofileopenintegrationrequest.go
+gc/models/googlebusinessprofileopenintegrationupdaterequest.go
 gc/models/googledialogflowconfig.go
 gc/models/googledialogflowcustomsettings.go
+gc/models/googleoauthsettingsresponse.go
 gc/models/grammar.go
 gc/models/grammarfileuploadrequest.go
 gc/models/grammarlanguage.go
@@ -3551,6 +3595,7 @@ gc/models/guideversionresources.go
 gc/models/headcountforecast.go
 gc/models/headcountinterval.go
 gc/models/header.go
+gc/models/headerentry.go
 gc/models/healthinfo.go
 gc/models/helplink.go
 gc/models/helpsettings.go
@@ -5551,6 +5596,7 @@ gc/models/updatescheduleuploadschema.go
 gc/models/updatesegmentassignmentrequest.go
 gc/models/updatesegmentassignmentresponse.go
 gc/models/updateservicegoaltemplate.go
+gc/models/updateskilldivisionrequest.go
 gc/models/updatestaffinggrouprequest.go
 gc/models/updatetimeofflimitrequest.go
 gc/models/updatetimeoffplanbusinessunitassociation.go

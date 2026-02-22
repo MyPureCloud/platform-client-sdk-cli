@@ -68,7 +68,7 @@ type Opensocialmediachannel struct {
 
 
     // Metadata - Information about the channel.
-    Metadata interface{} `json:"metadata"`
+    Metadata Conversationchannelmetadata `json:"metadata"`
 
 
     // PublicMetadata - Meta data of this public post. For example, used to define where in the thread the post exists.
@@ -82,7 +82,7 @@ func (o *Opensocialmediachannel) String() string {
     
     
     
-     o.Metadata = Interface{} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -109,7 +109,7 @@ func (u *Opensocialmediachannel) MarshalJSON() ([]byte, error) {
         
         Time time.Time `json:"time"`
         
-        Metadata interface{} `json:"metadata"`
+        Metadata Conversationchannelmetadata `json:"metadata"`
         
         PublicMetadata Opensocialmediapublicmetadata `json:"publicMetadata"`
         *Alias
@@ -136,8 +136,6 @@ func (u *Opensocialmediachannel) MarshalJSON() ([]byte, error) {
         
 
 
-        
-        Metadata: Interface{},
         
 
 

@@ -38,11 +38,6 @@
       "description": "Create a configuration draft"
     },
     {
-      "name": "list",
-      "path": "/api/v2/webdeployments/configurations/{configurationId}/versions",
-      "description": "Get the versions of a configuration"
-    },
-    {
       "name": "get",
       "path": "/api/v2/webdeployments/configurations/{configurationId}/versions/{versionId}",
       "description": "Get a configuration version"
@@ -63,6 +58,11 @@
       "description": "Publish the configuration draft and create a new version"
     },
     {
+      "name": "list",
+      "path": "/api/v2/webdeployments/configurations/{configurationId}/versions",
+      "description": "Get the versions of a configuration"
+    },
+    {
       "name": "get",
       "path": "/api/v2/webdeployments/deployments/{deploymentId}/identityresolution",
       "description": "Get a deployment identity resolution setting."
@@ -71,11 +71,6 @@
       "name": "update",
       "path": "/api/v2/webdeployments/deployments/{deploymentId}/identityresolution",
       "description": "Update identity resolution settings for a deployment."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/webdeployments/deployments/{deploymentId}/configurations",
-      "description": "Get active configuration for a given deployment"
     },
     {
       "name": "get",
@@ -91,6 +86,11 @@
       "name": "delete",
       "path": "/api/v2/webdeployments/deployments/{deploymentId}",
       "description": "Delete a deployment"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/webdeployments/deployments/{deploymentId}/configurations",
+      "description": "Get active configuration for a given deployment"
     },
     {
       "name": "delete",

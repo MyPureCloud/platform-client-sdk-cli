@@ -40,7 +40,7 @@ type Openinboundmessagemessagingchannel struct {
 
 
     // Metadata - Additional Custom Information about the channel.
-    Metadata interface{} `json:"metadata"`
+    Metadata Conversationchannelmetadata `json:"metadata"`
 
 }
 
@@ -49,7 +49,7 @@ func (o *Openinboundmessagemessagingchannel) String() string {
     
     
     
-     o.Metadata = Interface{} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -73,7 +73,7 @@ func (u *Openinboundmessagemessagingchannel) MarshalJSON() ([]byte, error) {
         
         MessageId string `json:"messageId"`
         
-        Metadata interface{} `json:"metadata"`
+        Metadata Conversationchannelmetadata `json:"metadata"`
         *Alias
     }{
 
@@ -86,8 +86,6 @@ func (u *Openinboundmessagemessagingchannel) MarshalJSON() ([]byte, error) {
         
 
 
-        
-        Metadata: Interface{},
         
 
         Alias: (*Alias)(u),

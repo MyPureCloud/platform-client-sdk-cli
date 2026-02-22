@@ -1,0 +1,12 @@
+package conversations_messaging_integrations_open_extensions
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_messaging_integrations_open_extensions_googlebusinessprofile"
+)
+
+func init() {
+	conversations_messaging_integrations_open_extensionsCmd.AddCommand(conversations_messaging_integrations_open_extensions_googlebusinessprofile.Cmdconversations_messaging_integrations_open_extensions_googlebusinessprofile())
+	conversations_messaging_integrations_open_extensionsCmd.Short = utils.GenerateCustomDescription(conversations_messaging_integrations_open_extensionsCmd.Short, conversations_messaging_integrations_open_extensions_googlebusinessprofile.Description, )
+	conversations_messaging_integrations_open_extensionsCmd.Long = conversations_messaging_integrations_open_extensionsCmd.Short
+}

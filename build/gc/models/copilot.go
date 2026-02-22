@@ -41,6 +41,12 @@ type CopilotDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -58,7 +64,7 @@ type Copilot struct {
     DefaultLanguage string `json:"defaultLanguage"`
 
 
-    // KnowledgeAnswerConfig - Knowledge answer configuration.
+    // KnowledgeAnswerConfig - Deprecated: Please use AutoSearchConfig and ManualSearchConfig fields instead.
     KnowledgeAnswerConfig Knowledgeanswerconfig `json:"knowledgeAnswerConfig"`
 
 
@@ -70,7 +76,7 @@ type Copilot struct {
     WrapupCodePredictionConfig Wrapupcodepredictionconfig `json:"wrapupCodePredictionConfig"`
 
 
-    // AnswerGenerationConfig - Answer generation configuration.
+    // AnswerGenerationConfig - Deprecated: Please use AutoSearchConfig and ManualSearchConfig fields instead.
     AnswerGenerationConfig Answergenerationconfig `json:"answerGenerationConfig"`
 
 
@@ -86,12 +92,22 @@ type Copilot struct {
     RuleEngineConfig Ruleengineconfig `json:"ruleEngineConfig"`
 
 
+    // AutoSearchConfig - Auto search configuration.
+    AutoSearchConfig Autosearchconfig `json:"autoSearchConfig"`
+
+
+    // ManualSearchConfig - Manual Search configuration.
+    ManualSearchConfig Manualsearchconfig `json:"manualSearchConfig"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Copilot) String() string {
+    
+    
     
     
     
@@ -135,8 +151,18 @@ func (u *Copilot) MarshalJSON() ([]byte, error) {
         NluConfig Nluconfig `json:"nluConfig"`
         
         RuleEngineConfig Ruleengineconfig `json:"ruleEngineConfig"`
+        
+        AutoSearchConfig Autosearchconfig `json:"autoSearchConfig"`
+        
+        ManualSearchConfig Manualsearchconfig `json:"manualSearchConfig"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

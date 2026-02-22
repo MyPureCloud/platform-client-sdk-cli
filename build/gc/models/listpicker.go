@@ -22,6 +22,9 @@ type ListpickerDud struct {
 
     
 
+
+    
+
 }
 
 // Listpicker
@@ -38,6 +41,10 @@ type Listpicker struct {
     Subtitle string `json:"subtitle"`
 
 
+    // Header - Text to show in the header.
+    Header string `json:"header"`
+
+
     // Sections - An array of sections in the List Picker.
     Sections []Listpickersection `json:"sections"`
 
@@ -45,6 +52,7 @@ type Listpicker struct {
 
 // String returns a JSON representation of the model
 func (o *Listpicker) String() string {
+    
     
     
     
@@ -72,9 +80,14 @@ func (u *Listpicker) MarshalJSON() ([]byte, error) {
         
         Subtitle string `json:"subtitle"`
         
+        Header string `json:"header"`
+        
         Sections []Listpickersection `json:"sections"`
         *Alias
     }{
+
+        
+
 
         
 

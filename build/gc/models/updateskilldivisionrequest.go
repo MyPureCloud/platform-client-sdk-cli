@@ -6,24 +6,24 @@ import (
 )
 
 var (
-    ButtonquickreplypayloadMarshalled = false
+    UpdateskilldivisionrequestMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type ButtonquickreplypayloadDud struct { 
+type UpdateskilldivisionrequestDud struct { 
     
 
 }
 
-// Buttonquickreplypayload - Quick reply button payload for carousel cards
-type Buttonquickreplypayload struct { 
-    // Value - Unique payload value for the quick reply button
-    Value string `json:"value"`
+// Updateskilldivisionrequest
+type Updateskilldivisionrequest struct { 
+    // DivisionId - The division to which this skill will belong
+    DivisionId string `json:"divisionId"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Buttonquickreplypayload) String() string {
+func (o *Updateskilldivisionrequest) String() string {
     
 
     j, _ := json.Marshal(o)
@@ -32,17 +32,17 @@ func (o *Buttonquickreplypayload) String() string {
     return str
 }
 
-func (u *Buttonquickreplypayload) MarshalJSON() ([]byte, error) {
-    type Alias Buttonquickreplypayload
+func (u *Updateskilldivisionrequest) MarshalJSON() ([]byte, error) {
+    type Alias Updateskilldivisionrequest
 
-    if ButtonquickreplypayloadMarshalled {
+    if UpdateskilldivisionrequestMarshalled {
         return []byte("{}"), nil
     }
-    ButtonquickreplypayloadMarshalled = true
+    UpdateskilldivisionrequestMarshalled = true
 
     return json.Marshal(&struct {
         
-        Value string `json:"value"`
+        DivisionId string `json:"divisionId"`
         *Alias
     }{
 

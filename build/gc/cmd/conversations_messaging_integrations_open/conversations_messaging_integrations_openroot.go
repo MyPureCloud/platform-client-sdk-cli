@@ -1,0 +1,12 @@
+package conversations_messaging_integrations_open
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/conversations_messaging_integrations_open_extensions"
+)
+
+func init() {
+	conversations_messaging_integrations_openCmd.AddCommand(conversations_messaging_integrations_open_extensions.Cmdconversations_messaging_integrations_open_extensions())
+	conversations_messaging_integrations_openCmd.Short = utils.GenerateCustomDescription(conversations_messaging_integrations_openCmd.Short, conversations_messaging_integrations_open_extensions.Description, )
+	conversations_messaging_integrations_openCmd.Long = conversations_messaging_integrations_openCmd.Short
+}

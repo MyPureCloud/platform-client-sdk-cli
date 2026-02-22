@@ -3,11 +3,6 @@
   "description": "/api/v2/users",
   "resources": [
     {
-      "name": "list",
-      "path": "/api/v2/users/{userId}/verifiers",
-      "description": "Get a list of verifiers"
-    },
-    {
       "name": "update",
       "path": "/api/v2/users/{userId}/verifiers/{verifierId}",
       "description": "Update a verifier"
@@ -16,6 +11,11 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/verifiers/{verifierId}",
       "description": "Delete a verifier"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/verifiers",
+      "description": "Get a list of verifiers"
     },
     {
       "name": "get",
@@ -144,16 +144,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/users/{userId}/presences/{sourceId}",
-      "description": "Get a user's Presence"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/users/{userId}/presences/{sourceId}",
-      "description": "Patch a user's Presence"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/users/{userId}/presences/purecloud",
       "description": "Get a user's Genesys Cloud presence."
     },
@@ -161,6 +151,16 @@
       "name": "update",
       "path": "/api/v2/users/{userId}/presences/purecloud",
       "description": "Patch a Genesys Cloud user's presence"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/presences/{sourceId}",
+      "description": "Get a user's Presence"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/presences/{sourceId}",
+      "description": "Patch a user's Presence"
     },
     {
       "name": "list",
@@ -173,16 +173,6 @@
       "description": "Get the user associated with external identifier."
     },
     {
-      "name": "getexternalidsforuser",
-      "path": "/api/v2/users/{userId}/externalid",
-      "description": "Get the external identifiers for a user."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/users/{userId}/externalid",
-      "description": "Create mapping between external identifier and user. Limit 100 per entity."
-    },
-    {
       "name": "delete",
       "path": "/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}",
       "description": "Delete the external identifier for user."
@@ -191,6 +181,16 @@
       "name": "getexternalidforuserauthority",
       "path": "/api/v2/users/{userId}/externalid/{authorityName}",
       "description": "Get the external identifier of user for an authority."
+    },
+    {
+      "name": "getexternalidsforuser",
+      "path": "/api/v2/users/{userId}/externalid",
+      "description": "Get the external identifiers for a user."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/{userId}/externalid",
+      "description": "Create mapping between external identifier and user. Limit 100 per entity."
     },
     {
       "name": "create",
@@ -393,9 +393,9 @@
       "description": "Search users assigned to teams"
     },
     {
-      "name": "list",
-      "path": "/api/v2/users/development/activities/me",
-      "description": "Get list of Development Activities for current user"
+      "name": "get",
+      "path": "/api/v2/users/development/activities/{activityId}",
+      "description": "Get a Development Activity"
     },
     {
       "name": "list",
@@ -403,14 +403,59 @@
       "description": "Get list of Development Activities"
     },
     {
-      "name": "get",
-      "path": "/api/v2/users/development/activities/{activityId}",
-      "description": "Get a Development Activity"
+      "name": "list",
+      "path": "/api/v2/users/development/activities/me",
+      "description": "Get list of Development Activities for current user"
     },
     {
       "name": "create",
       "path": "/api/v2/users/development/activities/aggregates/query",
       "description": "Retrieve aggregated development activity data"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/rules/{ruleId}/dependents",
+      "description": "Get dependents for a users rule"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId}",
+      "description": "Get dependent of a users rule"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/rules/{ruleId}",
+      "description": "Get a users rule"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/rules/{ruleId}",
+      "description": "Delete an existing users rule"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/rules/{ruleId}",
+      "description": "Update an existing users rule"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/rules",
+      "description": "Get the list of users rules"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/rules",
+      "description": "Create a new rule"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/rules/query",
+      "description": "Query the result of a users rule"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/rules/settings/{ruleType}",
+      "description": "Get the settings for a specific users rule type"
     },
     {
       "name": "list",
@@ -506,51 +551,6 @@
       "name": "create",
       "path": "/api/v2/users/customattributes/schemas",
       "description": "Create a schema"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId}",
-      "description": "Get dependent of a users rule"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/users/rules/{ruleId}/dependents",
-      "description": "Get dependents for a users rule"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/users/rules",
-      "description": "Get the list of users rules"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/users/rules",
-      "description": "Create a new rule"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/users/rules/{ruleId}",
-      "description": "Get a users rule"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/users/rules/{ruleId}",
-      "description": "Delete an existing users rule"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/users/rules/{ruleId}",
-      "description": "Update an existing users rule"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/users/rules/query",
-      "description": "Query the result of a users rule"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/users/rules/settings/{ruleType}",
-      "description": "Get the settings for a specific users rule type"
     }
   ]
 }

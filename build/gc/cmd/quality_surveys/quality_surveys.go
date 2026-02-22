@@ -46,7 +46,7 @@ func Cmdquality_surveys() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/Survey"
+        "$ref" : "#/components/schemas/CreateSurveyResponse"
       }
     }
   }

@@ -10,10 +10,16 @@ var (
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type ConversationchannelmetadataDud struct { }
+type ConversationchannelmetadataDud struct { 
+    SubType string `json:"subType"`
+
+}
 
 // Conversationchannelmetadata - Information about the channel.
-type Conversationchannelmetadata struct { }
+type Conversationchannelmetadata struct { 
+    
+
+}
 
 // String returns a JSON representation of the model
 func (o *Conversationchannelmetadata) String() string {
@@ -35,6 +41,9 @@ func (u *Conversationchannelmetadata) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
         Alias: (*Alias)(u),
     })
 }

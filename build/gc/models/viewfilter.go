@@ -715,6 +715,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -1655,8 +1658,12 @@ type Viewfilter struct {
     SessionExpired bool `json:"sessionExpired"`
 
 
-    // EngagementSource - The engagement sources used to filter the view
-    EngagementSource []string `json:"engagementSource"`
+    // EngagementSources - The engagement sources used to filter the view
+    EngagementSources []string `json:"engagementSources"`
+
+
+    // IsSnippetRecorded - Indicates filtering for snippet recorded
+    IsSnippetRecorded bool `json:"isSnippetRecorded"`
 
 }
 
@@ -1896,7 +1903,8 @@ func (o *Viewfilter) String() string {
      o.SentimentTrendCategories = []string{""} 
      o.ContentModerationFlags = []string{""} 
     
-     o.EngagementSource = []string{""} 
+     o.EngagementSources = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -2382,7 +2390,9 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         
         SessionExpired bool `json:"sessionExpired"`
         
-        EngagementSource []string `json:"engagementSource"`
+        EngagementSources []string `json:"engagementSources"`
+        
+        IsSnippetRecorded bool `json:"isSnippetRecorded"`
         *Alias
     }{
 
@@ -3411,7 +3421,10 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
 
         
-        EngagementSource: []string{""},
+        EngagementSources: []string{""},
+        
+
+
         
 
         Alias: (*Alias)(u),

@@ -30,6 +30,9 @@ type MessagingintegrationDud struct {
     MessengerType string `json:"messengerType"`
 
 
+    OpenExtensionType string `json:"openExtensionType"`
+
+
     Recipient Domainentityref `json:"recipient"`
 
 
@@ -94,6 +97,9 @@ type Messagingintegration struct {
 
     
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
@@ -122,6 +128,9 @@ func (u *Messagingintegration) MarshalJSON() ([]byte, error) {
         MessagingSetting Messagingsettingreference `json:"messagingSetting"`
         *Alias
     }{
+
+        
+
 
         
 

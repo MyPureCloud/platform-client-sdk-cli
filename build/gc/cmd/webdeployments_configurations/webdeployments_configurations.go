@@ -61,6 +61,9 @@ func Cmdwebdeployments_configurations() *cobra.Command {
 }`)
 	webdeployments_configurationsCmd.AddCommand(deleteCmd)
 
+	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Defaults to 300.")
+	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
+	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "bool", "showOnlyPublished", "", "Filter by published status.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/webdeployments/configurations", utils.FormatPermissions([]string{ "webDeployments:configuration:view",  }), utils.GenerateDevCentreLink("GET", "Web Deployments", "/api/v2/webdeployments/configurations")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -234,6 +237,18 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/webdeployments/configurations"
 
+		pageSize := utils.GetFlag(cmd.Flags(), "string", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
+		}
+		before := utils.GetFlag(cmd.Flags(), "string", "before")
+		if before != "" {
+			queryParams["before"] = before
+		}
+		after := utils.GetFlag(cmd.Flags(), "string", "after")
+		if after != "" {
+			queryParams["after"] = after
+		}
 		showOnlyPublished := utils.GetFlag(cmd.Flags(), "bool", "showOnlyPublished")
 		if showOnlyPublished != "" {
 			queryParams["showOnlyPublished"] = showOnlyPublished

@@ -13,10 +13,13 @@ gc webdeployments deployments list [flags]
 ### Options
 
 ```
+      --after string             The cursor that points to the end of the set of entities that has been returned.
   -a, --autopaginate             Automatically paginate through the results stripping page information
+      --before string            The cursor that points to the start of the set of entities that has been returned.
       --expand strings           The specified entity attributes will be filled. Comma separated values expected.  Valid values: Configuration, SupportedContent, identityresolution
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
+      --pageSize string          Number of entities to return. Defaults to 300.
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

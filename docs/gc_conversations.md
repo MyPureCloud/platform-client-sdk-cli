@@ -39,6 +39,7 @@
 * [gc conversations cobrowse](gc_conversations_cobrowse.html)	 - /api/v2/conversations/{conversationId}/cobrowse
 * [gc conversations cobrowsesessions](gc_conversations_cobrowsesessions.html)	 - /api/v2/conversations/cobrowsesessions
 * [gc conversations communications](gc_conversations_communications.html)	 - /api/v2/conversations/{conversationId}/communications
+* [gc conversations customattributes](gc_conversations_customattributes.html)	 - /api/v2/conversations/{conversationId}/customattributes /api/v2/conversations/customattributes
 * [gc conversations delete](gc_conversations_delete.html)	 - Update a conversation by disconnecting all of the participants
 * [gc conversations disconnect](gc_conversations_disconnect.html)	 - /api/v2/conversations/{conversationId}/disconnect
 * [gc conversations emails](gc_conversations_emails.html)	 - /api/v2/conversations/emails

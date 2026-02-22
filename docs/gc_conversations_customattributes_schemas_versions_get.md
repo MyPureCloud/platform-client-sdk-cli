@@ -1,15 +1,19 @@
-## gc routing skills
+## gc conversations customattributes schemas versions get
 
-/api/v2/routing/skills
+Get a specific version of a schema
 
 ### Synopsis
 
-/api/v2/routing/skills
+Get a specific version of a schema
+
+```
+gc conversations customattributes schemas versions get [schemaId] [versionId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for skills
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -29,11 +33,6 @@
 
 ### SEE ALSO
 
-* [gc routing](gc_routing.html)	 - /api/v2/routing
-* [gc routing skills create](gc_routing_skills_create.html)	 - Create Skill
-* [gc routing skills delete](gc_routing_skills_delete.html)	 - Delete Routing Skill
-* [gc routing skills get](gc_routing_skills_get.html)	 - Get Routing Skill
-* [gc routing skills list](gc_routing_skills_list.html)	 - Get the list of routing skills.
-* [gc routing skills update](gc_routing_skills_update.html)	 - Update Routing Skill Division
+* [gc conversations customattributes schemas versions](gc_conversations_customattributes_schemas_versions.html)	 - /api/v2/conversations/customattributes/schemas/{schemaId}/versions
 
 

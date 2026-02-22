@@ -1,15 +1,22 @@
-## gc routing skills
+## gc socialmedia topics dataingestionrules googlebusinessprofile patch
 
-/api/v2/routing/skills
+Update the status of a Google Business Profile data ingestion rule.
 
 ### Synopsis
 
-/api/v2/routing/skills
+Update the status of a Google Business Profile data ingestion rule.
+
+```
+gc socialmedia topics dataingestionrules googlebusinessprofile patch [topicId] [googleBusinessProfileIngestionRuleId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for skills
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for patch
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,11 +36,6 @@
 
 ### SEE ALSO
 
-* [gc routing](gc_routing.html)	 - /api/v2/routing
-* [gc routing skills create](gc_routing_skills_create.html)	 - Create Skill
-* [gc routing skills delete](gc_routing_skills_delete.html)	 - Delete Routing Skill
-* [gc routing skills get](gc_routing_skills_get.html)	 - Get Routing Skill
-* [gc routing skills list](gc_routing_skills_list.html)	 - Get the list of routing skills.
-* [gc routing skills update](gc_routing_skills_update.html)	 - Update Routing Skill Division
+* [gc socialmedia topics dataingestionrules googlebusinessprofile](gc_socialmedia_topics_dataingestionrules_googlebusinessprofile.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile
 
 

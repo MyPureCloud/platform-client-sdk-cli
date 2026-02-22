@@ -1,15 +1,15 @@
-## gc routing skills
+## gc conversations customattributes bulk
 
-/api/v2/routing/skills
+/api/v2/conversations/{conversationId}/customattributes/bulk
 
 ### Synopsis
 
-/api/v2/routing/skills
+/api/v2/conversations/{conversationId}/customattributes/bulk
 
 ### Options
 
 ```
-  -h, --help   help for skills
+  -h, --help   help for bulk
 ```
 
 ### Options inherited from parent commands
@@ -29,11 +29,8 @@
 
 ### SEE ALSO
 
-* [gc routing](gc_routing.html)	 - /api/v2/routing
-* [gc routing skills create](gc_routing_skills_create.html)	 - Create Skill
-* [gc routing skills delete](gc_routing_skills_delete.html)	 - Delete Routing Skill
-* [gc routing skills get](gc_routing_skills_get.html)	 - Get Routing Skill
-* [gc routing skills list](gc_routing_skills_list.html)	 - Get the list of routing skills.
-* [gc routing skills update](gc_routing_skills_update.html)	 - Update Routing Skill Division
+* [gc conversations customattributes](gc_conversations_customattributes.html)	 - /api/v2/conversations/{conversationId}/customattributes /api/v2/conversations/customattributes
+* [gc conversations customattributes bulk patch](gc_conversations_customattributes_bulk_patch.html)	 - Update a list of custom attributes record by amending the data with only the provided fields.
+* [gc conversations customattributes bulk update](gc_conversations_customattributes_bulk_update.html)	 - Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
 
 

@@ -1,15 +1,15 @@
-## gc routing skills
+## gc conversations messaging integrations open extensions
 
-/api/v2/routing/skills
+/api/v2/conversations/messaging/integrations/open/extensions
 
 ### Synopsis
 
-/api/v2/routing/skills
+/api/v2/conversations/messaging/integrations/open/extensions
 
 ### Options
 
 ```
-  -h, --help   help for skills
+  -h, --help   help for extensions
 ```
 
 ### Options inherited from parent commands
@@ -29,11 +29,7 @@
 
 ### SEE ALSO
 
-* [gc routing](gc_routing.html)	 - /api/v2/routing
-* [gc routing skills create](gc_routing_skills_create.html)	 - Create Skill
-* [gc routing skills delete](gc_routing_skills_delete.html)	 - Delete Routing Skill
-* [gc routing skills get](gc_routing_skills_get.html)	 - Get Routing Skill
-* [gc routing skills list](gc_routing_skills_list.html)	 - Get the list of routing skills.
-* [gc routing skills update](gc_routing_skills_update.html)	 - Update Routing Skill Division
+* [gc conversations messaging integrations open](gc_conversations_messaging_integrations_open.html)	 - /api/v2/conversations/messaging/integrations/open
+* [gc conversations messaging integrations open extensions googlebusinessprofile](gc_conversations_messaging_integrations_open_extensions_googlebusinessprofile.html)	 - /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile
 
 

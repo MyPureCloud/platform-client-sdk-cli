@@ -32,6 +32,7 @@
 * [gc conversations messaging integrations](gc_conversations_messaging_integrations.html)	 - /api/v2/conversations/messaging/integrations
 * [gc conversations messaging integrations open create](gc_conversations_messaging_integrations_open_create.html)	 - Create an Open messaging integration
 * [gc conversations messaging integrations open delete](gc_conversations_messaging_integrations_open_delete.html)	 - Delete an Open messaging integration
+* [gc conversations messaging integrations open extensions](gc_conversations_messaging_integrations_open_extensions.html)	 - /api/v2/conversations/messaging/integrations/open/extensions
 * [gc conversations messaging integrations open get](gc_conversations_messaging_integrations_open_get.html)	 - Get an Open messaging integration
 * [gc conversations messaging integrations open list](gc_conversations_messaging_integrations_open_list.html)	 - Get a list of Open messaging integrations
 * [gc conversations messaging integrations open update](gc_conversations_messaging_integrations_open_update.html)	 - Update an Open messaging integration

@@ -1,24 +1,24 @@
-## gc webdeployments configurations versions list
+## gc socialmedia topics dataingestionrules googlebusinessprofile versions list
 
-Get the versions of a configuration
+Get the Google Business Profile data ingestion rule versions.
 
 ### Synopsis
 
-Get the versions of a configuration
+Get the Google Business Profile data ingestion rule versions.
 
 ```
-gc webdeployments configurations versions list [configurationId] [flags]
+gc socialmedia topics dataingestionrules googlebusinessprofile versions list [topicId] [googleBusinessProfileIngestionRuleId] [flags]
 ```
 
 ### Options
 
 ```
-      --after string             The cursor that points to the end of the set of entities that has been returned.
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --before string            The cursor that points to the start of the set of entities that has been returned.
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageSize string          Number of entities to return. Defaults to 300.
+      --includeDeleted string    Determines whether to include soft-deleted items in the result. Valid values: true, false
+      --pageNumber string        Page number (default "1")
+      --pageSize string          Page size (default "25")
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
@@ -39,6 +39,6 @@ gc webdeployments configurations versions list [configurationId] [flags]
 
 ### SEE ALSO
 
-* [gc webdeployments configurations versions](gc_webdeployments_configurations_versions.html)	 - /api/v2/webdeployments/configurations/{configurationId}/versions
+* [gc socialmedia topics dataingestionrules googlebusinessprofile versions](gc_socialmedia_topics_dataingestionrules_googlebusinessprofile_versions.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions
 
 

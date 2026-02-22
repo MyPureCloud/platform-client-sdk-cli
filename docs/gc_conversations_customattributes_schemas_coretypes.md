@@ -1,15 +1,15 @@
-## gc routing skills
+## gc conversations customattributes schemas coretypes
 
-/api/v2/routing/skills
+/api/v2/conversations/customattributes/schemas/coretypes
 
 ### Synopsis
 
-/api/v2/routing/skills
+/api/v2/conversations/customattributes/schemas/coretypes
 
 ### Options
 
 ```
-  -h, --help   help for skills
+  -h, --help   help for coretypes
 ```
 
 ### Options inherited from parent commands
@@ -29,11 +29,8 @@
 
 ### SEE ALSO
 
-* [gc routing](gc_routing.html)	 - /api/v2/routing
-* [gc routing skills create](gc_routing_skills_create.html)	 - Create Skill
-* [gc routing skills delete](gc_routing_skills_delete.html)	 - Delete Routing Skill
-* [gc routing skills get](gc_routing_skills_get.html)	 - Get Routing Skill
-* [gc routing skills list](gc_routing_skills_list.html)	 - Get the list of routing skills.
-* [gc routing skills update](gc_routing_skills_update.html)	 - Update Routing Skill Division
+* [gc conversations customattributes schemas](gc_conversations_customattributes_schemas.html)	 - /api/v2/conversations/customattributes/schemas
+* [gc conversations customattributes schemas coretypes get](gc_conversations_customattributes_schemas_coretypes_get.html)	 - Get the core types from which all schemas are built.
+* [gc conversations customattributes schemas coretypes list](gc_conversations_customattributes_schemas_coretypes_list.html)	 - Get the list of core types enabled for a specific namespace.
 
 

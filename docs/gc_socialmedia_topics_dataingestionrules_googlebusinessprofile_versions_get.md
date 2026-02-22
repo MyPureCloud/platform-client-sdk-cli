@@ -1,15 +1,20 @@
-## gc routing skills
+## gc socialmedia topics dataingestionrules googlebusinessprofile versions get
 
-/api/v2/routing/skills
+Get a single Google Business Profile data ingestion rule version.
 
 ### Synopsis
 
-/api/v2/routing/skills
+Get a single Google Business Profile data ingestion rule version.
+
+```
+gc socialmedia topics dataingestionrules googlebusinessprofile versions get [topicId] [googleBusinessProfileIngestionRuleId] [dataIngestionRuleVersion] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for skills
+  -h, --help                    help for get
+      --includeDeleted string   Determines whether to include soft-deleted item in the result. Valid values: true, false
 ```
 
 ### Options inherited from parent commands
@@ -29,11 +34,6 @@
 
 ### SEE ALSO
 
-* [gc routing](gc_routing.html)	 - /api/v2/routing
-* [gc routing skills create](gc_routing_skills_create.html)	 - Create Skill
-* [gc routing skills delete](gc_routing_skills_delete.html)	 - Delete Routing Skill
-* [gc routing skills get](gc_routing_skills_get.html)	 - Get Routing Skill
-* [gc routing skills list](gc_routing_skills_list.html)	 - Get the list of routing skills.
-* [gc routing skills update](gc_routing_skills_update.html)	 - Update Routing Skill Division
+* [gc socialmedia topics dataingestionrules googlebusinessprofile versions](gc_socialmedia_topics_dataingestionrules_googlebusinessprofile_versions.html)	 - /api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions
 
 

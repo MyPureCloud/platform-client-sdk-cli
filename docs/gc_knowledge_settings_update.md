@@ -1,13 +1,13 @@
-## gc taskmanagement workitems create
+## gc knowledge settings update
 
-Create a workitem
+Update Knowledge setting.
 
 ### Synopsis
 
-Create a workitem
+Update Knowledge setting.
 
 ```
-gc taskmanagement workitems create [flags]
+gc knowledge settings update [knowledgeSettingId] [flags]
 ```
 
 ### Options
@@ -15,7 +15,7 @@ gc taskmanagement workitems create [flags]
 ```
   -d, --directory string   Directory path with files containing request bodies
   -f, --file string        File name containing the JSON body
-  -h, --help               help for create
+  -h, --help               help for update
   -b, --printrequestbody   Print the request body format of the API.
 ```
 
@@ -36,6 +36,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc knowledge settings](gc_knowledge_settings.html)	 - /api/v2/knowledge/settings
 
 

@@ -1,22 +1,15 @@
-## gc taskmanagement workitems create
+## gc knowledge search preview
 
-Create a workitem
+/api/v2/knowledge/search/preview
 
 ### Synopsis
 
-Create a workitem
-
-```
-gc taskmanagement workitems create [flags]
-```
+/api/v2/knowledge/search/preview
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for preview
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc knowledge search](gc_knowledge_search.html)	 - /api/v2/knowledge/search
+* [gc knowledge search preview create](gc_knowledge_search_preview_create.html)	 - Get Knowledge Search Preview
 
 

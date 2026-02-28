@@ -31,6 +31,7 @@
 
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
 * [gc telephony agents](gc_telephony_agents.html)	 - /api/v2/telephony/agents
+* [gc telephony calls](gc_telephony_calls.html)	 - /api/v2/telephony/calls
 * [gc telephony mediaregions](gc_telephony_mediaregions.html)	 - /api/v2/telephony/mediaregions
 * [gc telephony providers](gc_telephony_providers.html)	 - /api/v2/telephony/providers
 * [gc telephony sipmessages](gc_telephony_sipmessages.html)	 - /api/v2/telephony/sipmessages

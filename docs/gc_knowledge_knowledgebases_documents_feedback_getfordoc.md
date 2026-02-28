@@ -1,4 +1,4 @@
-## gc knowledge knowledgebases documents feedback list
+## gc knowledge knowledgebases documents feedback getfordoc
 
 Get a list of feedback records given on a document
 
@@ -7,7 +7,7 @@ Get a list of feedback records given on a document
 Get a list of feedback records given on a document
 
 ```
-gc knowledge knowledgebases documents feedback list [knowledgeBaseId] [documentId] [flags]
+gc knowledge knowledgebases documents feedback getfordoc [knowledgeBaseId] [documentId] [flags]
 ```
 
 ### Options
@@ -20,7 +20,7 @@ gc knowledge knowledgebases documents feedback list [knowledgeBaseId] [documentI
       --documentVariationId string   Document variation ID to filter by. Supported only if onlyCommented=true is set.
       --documentVersionId string     Document version ID to filter by. Supported only if onlyCommented=true is set.
       --filtercondition string       Filter list command output based on a given condition or regular expression
-  -h, --help                         help for list
+  -h, --help                         help for getfordoc
       --onlyCommented string         If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false. Valid values: true, false
       --pageSize string              Number of entities to return. Maximum of 200.
       --queryType string             Query type to filter by. Supported only if onlyCommented=true is set. Valid values: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion, ExpandedArticle

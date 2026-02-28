@@ -1,13 +1,13 @@
-## gc taskmanagement workitems create
+## gc knowledge settings create
 
-Create a workitem
+Create Knowledge setting.
 
 ### Synopsis
 
-Create a workitem
+Create Knowledge setting.
 
 ```
-gc taskmanagement workitems create [flags]
+gc knowledge settings create [flags]
 ```
 
 ### Options
@@ -36,6 +36,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc knowledge settings](gc_knowledge_settings.html)	 - /api/v2/knowledge/settings
 
 

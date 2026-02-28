@@ -1,22 +1,19 @@
-## gc taskmanagement workitems create
+## gc knowledge settings delete
 
-Create a workitem
+Delete Knowledge setting.
 
 ### Synopsis
 
-Create a workitem
+Delete Knowledge setting.
 
 ```
-gc taskmanagement workitems create [flags]
+gc knowledge settings delete [knowledgeSettingId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for delete
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc knowledge settings](gc_knowledge_settings.html)	 - /api/v2/knowledge/settings
 
 

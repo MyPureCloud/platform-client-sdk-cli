@@ -1,13 +1,13 @@
-## gc taskmanagement workitems create
+## gc knowledge search preview create
 
-Create a workitem
+Get Knowledge Search Preview
 
 ### Synopsis
 
-Create a workitem
+Get Knowledge Search Preview
 
 ```
-gc taskmanagement workitems create [flags]
+gc knowledge search preview create [flags]
 ```
 
 ### Options
@@ -36,6 +36,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc knowledge search preview](gc_knowledge_search_preview.html)	 - /api/v2/knowledge/search/preview
 
 

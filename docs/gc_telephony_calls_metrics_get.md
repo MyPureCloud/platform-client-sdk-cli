@@ -1,22 +1,20 @@
-## gc taskmanagement workitems create
+## gc telephony calls metrics get
 
-Create a workitem
+Get the concurrent call metrics for a given organization.
 
 ### Synopsis
 
-Create a workitem
+Get the concurrent call metrics for a given organization.
 
 ```
-gc taskmanagement workitems create [flags]
+gc telephony calls metrics get [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help                help for get
+      --metricType string   Flag to indicate metric type to fetch. Valid values: cloud, premises
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +34,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc telephony calls metrics](gc_telephony_calls_metrics.html)	 - /api/v2/telephony/calls/metrics
 
 

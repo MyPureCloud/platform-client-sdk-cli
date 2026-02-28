@@ -796,6 +796,8 @@ gc/cmd/knowledge_knowledgebases_synchronize_jobs/knowledge_knowledgebases_synchr
 gc/cmd/knowledge_knowledgebases_unanswered_groups/knowledge_knowledgebases_unanswered_groups.go
 gc/cmd/knowledge_knowledgebases_unanswered_groups_phrasegroups/knowledge_knowledgebases_unanswered_groups_phrasegroups.go
 gc/cmd/knowledge_knowledgebases_uploads_urls_jobs/knowledge_knowledgebases_uploads_urls_jobs.go
+gc/cmd/knowledge_search_preview/knowledge_search_preview.go
+gc/cmd/knowledge_settings/knowledge_settings.go
 gc/cmd/languages/languages.go
 gc/cmd/languages_translations/languages_translations.go
 gc/cmd/languages_translations_builtin/languages_translations_builtin.go
@@ -1212,6 +1214,7 @@ gc/cmd/teams_members/teams_members.go
 gc/cmd/teams_search/teams_search.go
 gc/cmd/telephony_agents_greetings/telephony_agents_greetings.go
 gc/cmd/telephony_agents_greetings_me/telephony_agents_greetings_me.go
+gc/cmd/telephony_calls_metrics/telephony_calls_metrics.go
 gc/cmd/telephony_mediaregions/telephony_mediaregions.go
 gc/cmd/telephony_providers_edges/telephony_providers_edges.go
 gc/cmd/telephony_providers_edges_addressvalidation/telephony_providers_edges_addressvalidation.go
@@ -2574,7 +2577,7 @@ gc/models/conversationappsettings.go
 gc/models/conversationassociation.go
 gc/models/conversationasyncaggregatequeryresponse.go
 gc/models/conversationasyncaggregationquery.go
-gc/models/conversationattributefilter.go
+gc/models/conversationattributeproperties.go
 gc/models/conversationbasic.go
 gc/models/conversationcategoriesentitylisting.go
 gc/models/conversationcategory.go
@@ -2675,8 +2678,6 @@ gc/models/conversationreason.go
 gc/models/conversationrecipientadditionalidentifier.go
 gc/models/conversationreference.go
 gc/models/conversationroutingdata.go
-gc/models/conversationschemaattribute.go
-gc/models/conversationschemadata.go
 gc/models/conversationschemareference.go
 gc/models/conversationschemaupdaterequest.go
 gc/models/conversationsecureattributes.go
@@ -3844,6 +3845,7 @@ gc/models/knowledgecontextreference.go
 gc/models/knowledgecontextvaluereference.go
 gc/models/knowledgeconversationcontext.go
 gc/models/knowledgeconversationcontextresponse.go
+gc/models/knowledgeconversationturn.go
 gc/models/knowledgedocumentalternative.go
 gc/models/knowledgedocumentbulkremoverequest.go
 gc/models/knowledgedocumentbulkupdateentity.go
@@ -3890,6 +3892,7 @@ gc/models/knowledgeexportjobdocumentsfilter.go
 gc/models/knowledgeexportjobfilter.go
 gc/models/knowledgeexportjobrequest.go
 gc/models/knowledgeexportjobresponse.go
+gc/models/knowledgegenerationsetting.go
 gc/models/knowledgegroupstatistics.go
 gc/models/knowledgeguestanswerdocumentresponse.go
 gc/models/knowledgeguestanswerdocumentsresponse.go
@@ -3929,10 +3932,17 @@ gc/models/knowledgeparsejobrequestimport.go
 gc/models/knowledgeparsejobrequestpatch.go
 gc/models/knowledgeparsejobresponse.go
 gc/models/knowledgeparserecord.go
+gc/models/knowledgeretrievedreference.go
 gc/models/knowledgesearchclientapplication.go
 gc/models/knowledgesearchdocumentresponse.go
+gc/models/knowledgesearchpreviewrequest.go
+gc/models/knowledgesearchpreviewresponse.go
+gc/models/knowledgesearchresult.go
 gc/models/knowledgesetting.go
+gc/models/knowledgesettinglisting.go
 gc/models/knowledgesettings.go
+gc/models/knowledgesettingsrequest.go
+gc/models/knowledgesettingsresponse.go
 gc/models/knowledgesuggestionconfig.go
 gc/models/knowledgesyncjobreport.go
 gc/models/knowledgesyncjobrequest.go
@@ -4414,6 +4424,7 @@ gc/models/operationresponse.go
 gc/models/operatorposition.go
 gc/models/optinsettings.go
 gc/models/organization.go
+gc/models/organizationcallmetrics.go
 gc/models/organizationfeatures.go
 gc/models/organizationpresence.go
 gc/models/organizationpresencedefinition.go
@@ -5750,6 +5761,7 @@ gc/models/utilizationresponse.go
 gc/models/utilizationtag.go
 gc/models/utilizationtagentitylisting.go
 gc/models/utterance.go
+gc/models/v3sourceref.go
 gc/models/validateaddressrequest.go
 gc/models/validateaddressresponse.go
 gc/models/validateagentunavailabletimesrequest.go

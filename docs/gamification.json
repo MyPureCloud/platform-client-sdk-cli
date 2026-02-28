@@ -59,13 +59,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/gamification/profiles/users/me/query",
-      "description": "Query performance profiles in date range for the current user"
+      "path": "/api/v2/gamification/profiles/users/{userId}/query",
+      "description": "Query performance profiles in date range for a user"
     },
     {
       "name": "create",
-      "path": "/api/v2/gamification/profiles/users/{userId}/query",
-      "description": "Query performance profiles in date range for a user"
+      "path": "/api/v2/gamification/profiles/users/me/query",
+      "description": "Query performance profiles in date range for the current user"
     },
     {
       "name": "get",
@@ -239,13 +239,18 @@
     },
     {
       "name": "list",
+      "path": "/api/v2/gamification/insights/users/{userId}/trends",
+      "description": "Get insights user trend for the user"
+    },
+    {
+      "name": "list",
       "path": "/api/v2/gamification/insights/trends",
       "description": "Get insights user trend for the current user"
     },
     {
-      "name": "list",
-      "path": "/api/v2/gamification/insights/users/{userId}/trends",
-      "description": "Get insights user trend for the user"
+      "name": "create",
+      "path": "/api/v2/gamification/profiles/{profileId}/members/validate",
+      "description": "Validate member assignment"
     },
     {
       "name": "list",
@@ -256,11 +261,6 @@
       "name": "create",
       "path": "/api/v2/gamification/profiles/{profileId}/members",
       "description": "Assign members to a given performance profile"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/gamification/profiles/{profileId}/members/validate",
-      "description": "Validate member assignment"
     },
     {
       "name": "get",
@@ -278,11 +278,6 @@
       "description": "Average performance values trends by metric of a user"
     },
     {
-      "name": "get",
-      "path": "/api/v2/gamification/scorecards/bestpoints",
-      "description": "Best points of the requesting user"
-    },
-    {
       "name": "list",
       "path": "/api/v2/gamification/scorecards",
       "description": "Workday performance metrics of the requesting user"
@@ -291,6 +286,11 @@
       "name": "get",
       "path": "/api/v2/gamification/scorecards/attendance",
       "description": "Attendance status metrics of the requesting user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/bestpoints",
+      "description": "Best points of the requesting user"
     },
     {
       "name": "get",
@@ -319,6 +319,11 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/{userId}",
+      "description": "Workday performance metrics for a user"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/gamification/scorecards/users/{userId}/bestpoints",
       "description": "Best points of a user"
     },
@@ -326,11 +331,6 @@
       "name": "get",
       "path": "/api/v2/gamification/scorecards/users/{userId}/attendance",
       "description": "Attendance status metrics for a user"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/gamification/scorecards/users/{userId}",
-      "description": "Workday performance metrics for a user"
     },
     {
       "name": "get",

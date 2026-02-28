@@ -103,14 +103,14 @@
       "description": "Retrieves all categories of available Actions"
     },
     {
-      "name": "list",
-      "path": "/api/v2/integrations/actions/certificates",
-      "description": "Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress."
-    },
-    {
       "name": "get",
       "path": "/api/v2/integrations/actions/certificates/truststore",
       "description": "Retrieves basic info about trusted root CA certificates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/actions/certificates",
+      "description": "Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress."
     },
     {
       "name": "create",
@@ -163,6 +163,21 @@
       "description": "Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error."
     },
     {
+      "name": "create",
+      "path": "/api/v2/integrations/actions/{actionId}/test",
+      "description": "Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/actions/{actionId}/schemas/{fileName}",
+      "description": "Retrieve schema for an action based on filename."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/actions/{actionId}/templates/{fileName}",
+      "description": "Retrieve text of templates for an action based on filename."
+    },
+    {
       "name": "get",
       "path": "/api/v2/integrations/actions/{actionId}",
       "description": "Retrieves a single Action matching id."
@@ -176,21 +191,6 @@
       "name": "update",
       "path": "/api/v2/integrations/actions/{actionId}",
       "description": "Patch an Action"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/integrations/actions/{actionId}/templates/{fileName}",
-      "description": "Retrieve text of templates for an action based on filename."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/integrations/actions/{actionId}/test",
-      "description": "Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/integrations/actions/{actionId}/schemas/{fileName}",
-      "description": "Retrieve schema for an action based on filename."
     },
     {
       "name": "get",
@@ -358,14 +358,14 @@
       "description": "Get a list of Nuance bots in the specified Integration asynchronously"
     },
     {
-      "name": "create",
-      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate",
-      "description": "Try out a single credential for a Nuance bot to know if the secret is correct"
-    },
-    {
       "name": "update",
       "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings",
       "description": "Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate",
+      "description": "Try out a single credential for a Nuance bot to know if the secret is correct"
     },
     {
       "name": "list",

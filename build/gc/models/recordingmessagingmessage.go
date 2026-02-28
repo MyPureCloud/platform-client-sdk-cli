@@ -104,6 +104,9 @@ type RecordingmessagingmessageDud struct {
 
     
 
+
+    
+
 }
 
 // Recordingmessagingmessage
@@ -228,6 +231,10 @@ type Recordingmessagingmessage struct {
     RoadsideAssistance Recordingroadsideassistance `json:"roadsideAssistance"`
 
 
+    // RichLink - Rich Link content.
+    RichLink Richlink `json:"richLink"`
+
+
     // MessageReceipts - List of message receipts
     MessageReceipts []Recordingmessagereceipt `json:"messageReceipts"`
 
@@ -260,6 +267,7 @@ func (o *Recordingmessagingmessage) String() string {
     
     
      o.Events = []Conversationmessageevent{{}} 
+    
     
     
     
@@ -342,6 +350,8 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         Form Recordingform `json:"form"`
         
         RoadsideAssistance Recordingroadsideassistance `json:"roadsideAssistance"`
+        
+        RichLink Richlink `json:"richLink"`
         
         MessageReceipts []Recordingmessagereceipt `json:"messageReceipts"`
         *Alias
@@ -431,6 +441,9 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
 
         
         Events: []Conversationmessageevent{{}},
+        
+
+
         
 
 

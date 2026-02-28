@@ -209,13 +209,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion}",
-      "description": "Get a Chart by ID and version"
+      "path": "/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}",
+      "description": "Get a Chart by ID"
     },
     {
       "name": "get",
-      "path": "/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}",
-      "description": "Get a Chart by ID"
+      "path": "/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion}",
+      "description": "Get a Chart by ID and version"
     },
     {
       "name": "get",

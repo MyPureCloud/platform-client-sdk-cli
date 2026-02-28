@@ -69,16 +69,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping",
-      "description": "Get networking-related information from an Edge for a target IP or host."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping",
-      "description": "Ping Request command to collect networking-related information from an Edge for a target IP or host."
-    },
-    {
-      "name": "get",
       "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath",
       "description": "Get networking-related information from an Edge for a target IP or host."
     },
@@ -106,6 +96,16 @@
       "name": "create",
       "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/route",
       "description": "Route request command to collect networking-related information from an Edge for a target IP or host."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping",
+      "description": "Get networking-related information from an Edge for a target IP or host."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping",
+      "description": "Ping Request command to collect networking-related information from an Edge for a target IP or host."
     },
     {
       "name": "create",
@@ -403,6 +403,11 @@
       "description": "Get the metrics for a list of edges."
     },
     {
+      "name": "get",
+      "path": "/api/v2/telephony/calls/metrics",
+      "description": "Get the concurrent call metrics for a given organization."
+    },
+    {
       "name": "list",
       "path": "/api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications",
       "description": "Get a list of Classifications for this Site"
@@ -654,11 +659,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/telephony/siptraces/download/{downloadId}",
-      "description": "Get signed S3 URL for a pcap download"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/telephony/siptraces",
       "description": "Fetch SIP metadata"
     },
@@ -666,6 +666,11 @@
       "name": "create",
       "path": "/api/v2/telephony/siptraces/download",
       "description": "Request a download of a pcap file to S3"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/siptraces/download/{downloadId}",
+      "description": "Get signed S3 URL for a pcap download"
     },
     {
       "name": "get",

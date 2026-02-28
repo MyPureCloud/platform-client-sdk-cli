@@ -6,24 +6,30 @@ import (
 )
 
 var (
-    ConversationschemaattributeMarshalled = false
+    V3sourcerefMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type ConversationschemaattributeDud struct { 
+type V3sourcerefDud struct { 
+    
+
+
+    SelfUri string `json:"selfUri"`
+
+}
+
+// V3sourceref
+type V3sourceref struct { 
+    // Id - Source Id.
+    Id string `json:"id"`
+
+
     
 
 }
 
-// Conversationschemaattribute
-type Conversationschemaattribute struct { 
-    // Name - Name of the attribute as defined in the schema.
-    Name string `json:"name"`
-
-}
-
 // String returns a JSON representation of the model
-func (o *Conversationschemaattribute) String() string {
+func (o *V3sourceref) String() string {
     
 
     j, _ := json.Marshal(o)
@@ -32,19 +38,22 @@ func (o *Conversationschemaattribute) String() string {
     return str
 }
 
-func (u *Conversationschemaattribute) MarshalJSON() ([]byte, error) {
-    type Alias Conversationschemaattribute
+func (u *V3sourceref) MarshalJSON() ([]byte, error) {
+    type Alias V3sourceref
 
-    if ConversationschemaattributeMarshalled {
+    if V3sourcerefMarshalled {
         return []byte("{}"), nil
     }
-    ConversationschemaattributeMarshalled = true
+    V3sourcerefMarshalled = true
 
     return json.Marshal(&struct {
         
-        Name string `json:"name"`
+        Id string `json:"id"`
         *Alias
     }{
+
+        
+
 
         
 

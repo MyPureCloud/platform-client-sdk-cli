@@ -68,9 +68,9 @@
       "description": "Create a calibration"
     },
     {
-      "name": "create",
-      "path": "/api/v2/quality/conversations/audits/query",
-      "description": "Create audit query execution"
+      "name": "list",
+      "path": "/api/v2/quality/conversations/audits/query/{transactionId}/results",
+      "description": "Get results of audit query"
     },
     {
       "name": "get",
@@ -78,9 +78,9 @@
       "description": "Get status of audit query execution"
     },
     {
-      "name": "list",
-      "path": "/api/v2/quality/conversations/audits/query/{transactionId}/results",
-      "description": "Get results of audit query"
+      "name": "create",
+      "path": "/api/v2/quality/conversations/audits/query",
+      "description": "Create audit query execution"
     },
     {
       "name": "get",

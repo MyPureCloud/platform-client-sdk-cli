@@ -67,21 +67,21 @@ func Cmdknowledge_knowledgebases_documents_feedback() *cobra.Command {
 }`)
 	knowledge_knowledgebases_documents_feedbackCmd.AddCommand(getCmd)
 
-	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
-	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
-	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
-	utils.AddFlag(listCmd.Flags(), "bool", "onlyCommented", "", "If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false.")
-	utils.AddFlag(listCmd.Flags(), "string", "documentVersionId", "", "Document version ID to filter by. Supported only if onlyCommented=true is set.")
-	utils.AddFlag(listCmd.Flags(), "string", "documentVariationId", "", "Document variation ID to filter by. Supported only if onlyCommented=true is set.")
-	utils.AddFlag(listCmd.Flags(), "string", "appType", "", "Application type to filter by. Supported only if onlyCommented=true is set. Valid values: Assistant, BotFlow, MessengerKnowledgeApp, SmartAdvisor, SupportCenter")
-	utils.AddFlag(listCmd.Flags(), "string", "queryType", "", "Query type to filter by. Supported only if onlyCommented=true is set. Valid values: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion, ExpandedArticle")
-	utils.AddFlag(listCmd.Flags(), "string", "userId", "", "The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set.")
-	utils.AddFlag(listCmd.Flags(), "string", "queueId", "", "Queue ID to filter by. Supported only if onlyCommented=true is set.")
-	utils.AddFlag(listCmd.Flags(), "string", "state", "", "State to filter by. Supported only if onlyCommented=true is set. Default: Final Valid values: All, Draft, Final")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback", utils.FormatPermissions([]string{ "knowledge:feedback:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback")))
-	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
+	utils.AddFlag(getfordocCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
+	utils.AddFlag(getfordocCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
+	utils.AddFlag(getfordocCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
+	utils.AddFlag(getfordocCmd.Flags(), "bool", "onlyCommented", "", "If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false.")
+	utils.AddFlag(getfordocCmd.Flags(), "string", "documentVersionId", "", "Document version ID to filter by. Supported only if onlyCommented=true is set.")
+	utils.AddFlag(getfordocCmd.Flags(), "string", "documentVariationId", "", "Document variation ID to filter by. Supported only if onlyCommented=true is set.")
+	utils.AddFlag(getfordocCmd.Flags(), "string", "appType", "", "Application type to filter by. Supported only if onlyCommented=true is set. Valid values: Assistant, BotFlow, MessengerKnowledgeApp, SmartAdvisor, SupportCenter")
+	utils.AddFlag(getfordocCmd.Flags(), "string", "queryType", "", "Query type to filter by. Supported only if onlyCommented=true is set. Valid values: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion, ExpandedArticle")
+	utils.AddFlag(getfordocCmd.Flags(), "string", "userId", "", "The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set.")
+	utils.AddFlag(getfordocCmd.Flags(), "string", "queueId", "", "Queue ID to filter by. Supported only if onlyCommented=true is set.")
+	utils.AddFlag(getfordocCmd.Flags(), "string", "state", "", "State to filter by. Supported only if onlyCommented=true is set. Default: Final Valid values: All, Draft, Final")
+	getfordocCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getfordocCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback", utils.FormatPermissions([]string{ "knowledge:feedback:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback")))
+	utils.AddFileFlagIfUpsert(getfordocCmd.Flags(), "GET", ``)
 	
-	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+	utils.AddPaginateFlagsIfListingResponse(getfordocCmd.Flags(), "GET", `{
   "description" : "successful operation",
   "content" : {
     "application/json" : {
@@ -91,7 +91,7 @@ func Cmdknowledge_knowledgebases_documents_feedback() *cobra.Command {
     }
   }
 }`)
-	knowledge_knowledgebases_documents_feedbackCmd.AddCommand(listCmd)
+	knowledge_knowledgebases_documents_feedbackCmd.AddCommand(getfordocCmd)
 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId}", utils.FormatPermissions([]string{ "knowledge:feedback:edit",  }), utils.GenerateDevCentreLink("PATCH", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
@@ -263,8 +263,8 @@ var getCmd = &cobra.Command{
 		utils.Render(results)
 	},
 }
-var listCmd = &cobra.Command{
-	Use:   "list [knowledgeBaseId] [documentId]",
+var getfordocCmd = &cobra.Command{
+	Use:   "getfordoc [knowledgeBaseId] [documentId]",
 	Short: "Get a list of feedback records given on a document",
 	Long:  "Get a list of feedback records given on a document",
 	Args:  utils.DetermineArgs([]string{ "knowledgeBaseId", "documentId", }),
@@ -343,7 +343,7 @@ var listCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
-		const opId = "list"
+		const opId = "getfordoc"
 		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
 		// TODO read from config file

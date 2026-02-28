@@ -14,9 +14,6 @@ type ConversationschemareferenceDud struct {
     
 
 
-    
-
-
     SelfUri string `json:"selfUri"`
 
 }
@@ -27,17 +24,12 @@ type Conversationschemareference struct {
     Id string `json:"id"`
 
 
-    // Version - The version of the schema.
-    Version int `json:"version"`
-
-
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Conversationschemareference) String() string {
-    
     
 
     j, _ := json.Marshal(o)
@@ -57,13 +49,8 @@ func (u *Conversationschemareference) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Id string `json:"id"`
-        
-        Version int `json:"version"`
         *Alias
     }{
-
-        
-
 
         
 

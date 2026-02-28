@@ -89,11 +89,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/relationships/update",
-      "description": "Bulk update relationships"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/relationships/add",
       "description": "Bulk add relationships"
     },
@@ -106,6 +101,11 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/bulk/relationships",
       "description": "Bulk fetch relationships"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/relationships/update",
+      "description": "Bulk update relationships"
     },
     {
       "name": "get",

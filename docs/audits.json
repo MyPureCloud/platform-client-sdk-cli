@@ -3,9 +3,9 @@
   "description": "/api/v2/audits",
   "resources": [
     {
-      "name": "create",
-      "path": "/api/v2/audits/query",
-      "description": "Create audit query execution"
+      "name": "list",
+      "path": "/api/v2/audits/query/{transactionId}/results",
+      "description": "Get results of audit query"
     },
     {
       "name": "get",
@@ -13,14 +13,9 @@
       "description": "Get status of audit query execution"
     },
     {
-      "name": "list",
-      "path": "/api/v2/audits/query/{transactionId}/results",
-      "description": "Get results of audit query"
-    },
-    {
       "name": "create",
-      "path": "/api/v2/audits/query/realtime",
-      "description": "This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits."
+      "path": "/api/v2/audits/query",
+      "description": "Create audit query execution"
     },
     {
       "name": "get",
@@ -36,6 +31,11 @@
       "name": "create",
       "path": "/api/v2/audits/query/realtime/related",
       "description": "Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/audits/query/realtime",
+      "description": "This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits."
     }
   ]
 }

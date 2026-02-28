@@ -298,7 +298,7 @@
       "description": "Update feedback on a document"
     },
     {
-      "name": "list",
+      "name": "getfordoc",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback",
       "description": "Get a list of feedback records given on a document"
     },
@@ -398,6 +398,11 @@
       "description": "Create parse job"
     },
     {
+      "name": "create",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search",
+      "description": "Search the documents in a knowledge base."
+    },
+    {
       "name": "update",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/{searchId}",
       "description": "Update search result."
@@ -409,13 +414,38 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search",
-      "description": "Search the documents in a knowledge base."
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/views",
+      "description": "Create view for a document."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/knowledge/settings/{knowledgeSettingId}",
+      "description": "Get Knowledge setting."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/knowledge/settings/{knowledgeSettingId}",
+      "description": "Delete Knowledge setting."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/knowledge/settings/{knowledgeSettingId}",
+      "description": "Update Knowledge setting."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/knowledge/settings",
+      "description": "Get Knowledge settings."
     },
     {
       "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/views",
-      "description": "Create view for a document."
+      "path": "/api/v2/knowledge/settings",
+      "description": "Create Knowledge setting."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/search/preview",
+      "description": "Get Knowledge Search Preview"
     },
     {
       "name": "create",
@@ -428,19 +458,14 @@
       "description": "Give feedback on a document"
     },
     {
-      "name": "get",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}",
-      "description": "Get a knowledge document by ID."
-    },
-    {
       "name": "list",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents",
       "description": "Get documents."
     },
     {
-      "name": "create",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations",
-      "description": "Indicate that documents were presented to the user."
+      "name": "get",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}",
+      "description": "Get a knowledge document by ID."
     },
     {
       "name": "create",
@@ -453,9 +478,19 @@
       "description": "Indicate that the document was copied by the user."
     },
     {
+      "name": "create",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations",
+      "description": "Indicate that documents were presented to the user."
+    },
+    {
       "name": "list",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/categories",
       "description": "Get categories"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search",
+      "description": "Search the documents in a guest session."
     },
     {
       "name": "create",
@@ -466,11 +501,6 @@
       "name": "update",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId}",
       "description": "Update search result."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search",
-      "description": "Search the documents in a guest session."
     },
     {
       "name": "create",

@@ -14,13 +14,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/usage/events/query",
-      "description": "Query operational events in a timeframe."
+      "path": "/api/v2/usage/events/aggregates/query",
+      "description": "Get aggregates for operational events in a timeframe."
     },
     {
       "name": "create",
-      "path": "/api/v2/usage/events/aggregates/query",
-      "description": "Get aggregates for operational events in a timeframe."
+      "path": "/api/v2/usage/events/query",
+      "description": "Query operational events in a timeframe."
     },
     {
       "name": "create",

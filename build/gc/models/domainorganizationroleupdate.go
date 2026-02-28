@@ -1,6 +1,5 @@
 package models
 import (
-    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -27,33 +26,6 @@ type DomainorganizationroleupdateDud struct {
     
 
 
-    UnusedPermissions []string `json:"unusedPermissions"`
-
-
-    
-
-
-    
-
-
-    
-
-
-    
-
-
-    
-
-
-    DateLicenseLastUpdated time.Time `json:"dateLicenseLastUpdated"`
-
-
-    
-
-
-    
-
-
     SelfUri string `json:"selfUri"`
 
 }
@@ -72,46 +44,12 @@ type Domainorganizationroleupdate struct {
     Description string `json:"description"`
 
 
-    // DefaultRoleId
-    DefaultRoleId string `json:"defaultRoleId"`
-
-
     // Permissions
     Permissions []string `json:"permissions"`
 
 
-    
-
-
     // PermissionPolicies
     PermissionPolicies []Domainpermissionpolicy `json:"permissionPolicies"`
-
-
-    // UserCount
-    UserCount int `json:"userCount"`
-
-
-    // RoleNeedsUpdate - Optional unless patch operation.
-    RoleNeedsUpdate bool `json:"roleNeedsUpdate"`
-
-
-    // BaseLicense
-    BaseLicense string `json:"baseLicense"`
-
-
-    // AddonLicenses
-    AddonLicenses []string `json:"addonLicenses"`
-
-
-    
-
-
-    // Base
-    Base bool `json:"base"`
-
-
-    // VarDefault
-    VarDefault bool `json:"default"`
 
 
     
@@ -123,15 +61,8 @@ func (o *Domainorganizationroleupdate) String() string {
     
     
     
-    
      o.Permissions = []string{""} 
      o.PermissionPolicies = []Domainpermissionpolicy{{}} 
-    
-    
-    
-     o.AddonLicenses = []string{""} 
-    
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -155,28 +86,11 @@ func (u *Domainorganizationroleupdate) MarshalJSON() ([]byte, error) {
         
         Description string `json:"description"`
         
-        DefaultRoleId string `json:"defaultRoleId"`
-        
         Permissions []string `json:"permissions"`
         
         PermissionPolicies []Domainpermissionpolicy `json:"permissionPolicies"`
-        
-        UserCount int `json:"userCount"`
-        
-        RoleNeedsUpdate bool `json:"roleNeedsUpdate"`
-        
-        BaseLicense string `json:"baseLicense"`
-        
-        AddonLicenses []string `json:"addonLicenses"`
-        
-        Base bool `json:"base"`
-        
-        VarDefault bool `json:"default"`
         *Alias
     }{
-
-        
-
 
         
 
@@ -193,33 +107,7 @@ func (u *Domainorganizationroleupdate) MarshalJSON() ([]byte, error) {
 
 
         
-
-
-        
         PermissionPolicies: []Domainpermissionpolicy{{}},
-        
-
-
-        
-
-
-        
-
-
-        
-
-
-        
-        AddonLicenses: []string{""},
-        
-
-
-        
-
-
-        
-
-
         
 
 

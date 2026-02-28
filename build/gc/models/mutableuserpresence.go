@@ -30,6 +30,9 @@ type MutableuserpresenceDud struct {
     
 
 
+    FuturePresenceDefinition Presencedefinition `json:"futurePresenceDefinition"`
+
+
     
 
 
@@ -64,6 +67,9 @@ type Mutableuserpresence struct {
 
     // PresenceDefinition
     PresenceDefinition Presencedefinition `json:"presenceDefinition"`
+
+
+    
 
 
     // Message
@@ -122,6 +128,9 @@ func (u *Mutableuserpresence) MarshalJSON() ([]byte, error) {
         ModifiedDate time.Time `json:"modifiedDate"`
         *Alias
     }{
+
+        
+
 
         
 

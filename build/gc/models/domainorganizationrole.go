@@ -95,11 +95,11 @@ type Domainorganizationrole struct {
     RoleNeedsUpdate bool `json:"roleNeedsUpdate"`
 
 
-    // BaseLicense
+    // BaseLicense - Set baseLicense only while updating license using PUT /license endpoint
     BaseLicense string `json:"baseLicense"`
 
 
-    // AddonLicenses
+    // AddonLicenses - Set addonLicenses only while updating license using PUT /license endpoint
     AddonLicenses []string `json:"addonLicenses"`
 
 

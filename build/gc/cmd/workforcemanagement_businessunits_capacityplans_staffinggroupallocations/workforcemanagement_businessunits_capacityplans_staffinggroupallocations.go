@@ -52,6 +52,7 @@ func Cmdworkforcemanagement_businessunits_capacityplans_staffinggroupallocations
 }`)
 	workforcemanagement_businessunits_capacityplans_staffinggroupallocationsCmd.AddCommand(createCmd)
 
+	utils.AddFlag(getCmd.Flags(), "string", "granularity", "", "Granularity to access staffing group data, defaults to weekly Valid values: weekly, monthly")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations", utils.FormatPermissions([]string{ "wfm:capacityPlan:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -167,6 +168,10 @@ var getCmd = &cobra.Command{
 		capacityPlanId, args := args[0], args[1:]
 		path = strings.Replace(path, "{capacityPlanId}", fmt.Sprintf("%v", capacityPlanId), -1)
 
+		granularity := utils.GetFlag(cmd.Flags(), "string", "granularity")
+		if granularity != "" {
+			queryParams["granularity"] = granularity
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

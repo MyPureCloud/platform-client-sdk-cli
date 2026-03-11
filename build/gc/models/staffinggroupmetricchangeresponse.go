@@ -35,6 +35,9 @@ type StaffinggroupmetricchangeresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Staffinggroupmetricchangeresponse
@@ -59,6 +62,10 @@ type Staffinggroupmetricchangeresponse struct {
     Notes string `json:"notes"`
 
 
+    // TransfersFullTimeEquivalent - Full time equivalent transfer from one staffing group to another
+    TransfersFullTimeEquivalent Transfersfulltimeequivalent `json:"transfersFullTimeEquivalent"`
+
+
     // StaffingGroups - The staffing groups affected by the metric change
     StaffingGroups []Staffinggroupreference `json:"staffingGroups"`
 
@@ -74,6 +81,7 @@ type Staffinggroupmetricchangeresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Staffinggroupmetricchangeresponse) String() string {
+    
     
     
     
@@ -109,6 +117,8 @@ func (u *Staffinggroupmetricchangeresponse) MarshalJSON() ([]byte, error) {
         
         Notes string `json:"notes"`
         
+        TransfersFullTimeEquivalent Transfersfulltimeequivalent `json:"transfersFullTimeEquivalent"`
+        
         StaffingGroups []Staffinggroupreference `json:"staffingGroups"`
         
         CreatedBy Userreference `json:"createdBy"`
@@ -116,6 +126,9 @@ func (u *Staffinggroupmetricchangeresponse) MarshalJSON() ([]byte, error) {
         CreatedDate time.Time `json:"createdDate"`
         *Alias
     }{
+
+        
+
 
         
 

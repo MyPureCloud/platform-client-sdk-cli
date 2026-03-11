@@ -59,6 +59,12 @@ type InboundrouteDud struct {
     
 
 
+    
+
+
+    Status string `json:"status"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -128,6 +134,13 @@ type Inboundroute struct {
     AllowMultipleActions bool `json:"allowMultipleActions"`
 
 
+    // MailboxFolders - Integration Folder routed to this route
+    MailboxFolders []string `json:"mailboxFolders"`
+
+
+    
+
+
     
 
 }
@@ -149,6 +162,7 @@ func (o *Inboundroute) String() string {
     
     
     
+     o.MailboxFolders = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -195,6 +209,8 @@ func (u *Inboundroute) MarshalJSON() ([]byte, error) {
         HistoryInclusion string `json:"historyInclusion"`
         
         AllowMultipleActions bool `json:"allowMultipleActions"`
+        
+        MailboxFolders []string `json:"mailboxFolders"`
         *Alias
     }{
 
@@ -244,6 +260,14 @@ func (u *Inboundroute) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+        MailboxFolders: []string{""},
         
 
 

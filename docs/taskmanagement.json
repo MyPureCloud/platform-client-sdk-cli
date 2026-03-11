@@ -104,6 +104,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/query",
+      "description": "Query for workitems"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/taskmanagement/workitems/query/jobs",
       "description": "Create a workitem query job"
     },
@@ -119,18 +124,13 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/disconnect",
+      "description": "Disconnect the assignee of the workitem"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/taskmanagement/workitems/{workitemId}/terminate",
       "description": "Terminate a workitem"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/taskmanagement/workitems/{workitemId}/assignment",
-      "description": "Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages."
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/taskmanagement/workitems/{workitemId}/versions",
-      "description": "Get all versions of a workitem"
     },
     {
       "name": "get",
@@ -163,9 +163,14 @@
       "description": "Update the attributes of a workitem"
     },
     {
-      "name": "create",
-      "path": "/api/v2/taskmanagement/workitems/{workitemId}/disconnect",
-      "description": "Disconnect the assignee of the workitem"
+      "name": "update",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/assignment",
+      "description": "Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/versions",
+      "description": "Get all versions of a workitem"
     },
     {
       "name": "get",
@@ -218,11 +223,6 @@
       "description": "Create a schema"
     },
     {
-      "name": "update",
-      "path": "/api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups",
-      "description": "Add/Remove a wrapup code for the current user in a workitem."
-    },
-    {
       "name": "list",
       "path": "/api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups",
       "description": "Get all wrapup codes added for the given user for a workitem."
@@ -231,6 +231,11 @@
       "name": "update",
       "path": "/api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups",
       "description": "Add/Remove a wrapup code for a given user in a workitem."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups",
+      "description": "Add/Remove a wrapup code for the current user in a workitem."
     },
     {
       "name": "list",
@@ -376,11 +381,6 @@
       "name": "create",
       "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules",
       "description": "Add an on-create rule to a worktype"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/taskmanagement/workitems/query",
-      "description": "Query for workitems"
     }
   ]
 }

@@ -23,16 +23,16 @@ type RecurrencesettingsDud struct {
 
 // Recurrencesettings
 type Recurrencesettings struct { 
+    // EndAfter - Settings controlling when to end the recurrence for the activity plan
+    EndAfter Recurrenceendsettings `json:"endAfter"`
+
+
     // RecurrencePeriod - The recurrence period of the activity plan
     RecurrencePeriod Recurrenceperiod `json:"recurrencePeriod"`
 
 
     // MinimumTimeBetweenOccurrences - Constraint indicating the minimum time in hours between recurrences of the activity plan
     MinimumTimeBetweenOccurrences Recurrenceperiod `json:"minimumTimeBetweenOccurrences"`
-
-
-    // EndAfter - Settings controlling when to end the recurrence for the activity plan
-    EndAfter Recurrenceendsettings `json:"endAfter"`
 
 }
 
@@ -58,11 +58,11 @@ func (u *Recurrencesettings) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        EndAfter Recurrenceendsettings `json:"endAfter"`
+        
         RecurrencePeriod Recurrenceperiod `json:"recurrencePeriod"`
         
         MinimumTimeBetweenOccurrences Recurrenceperiod `json:"minimumTimeBetweenOccurrences"`
-        
-        EndAfter Recurrenceendsettings `json:"endAfter"`
         *Alias
     }{
 

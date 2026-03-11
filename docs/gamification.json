@@ -19,16 +19,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/leaderboard",
-      "description": "Leaderboard of the requesting user's division or performance profile"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/gamification/leaderboard/bestpoints",
-      "description": "Best Points of the requesting user's current performance profile or division"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/gamification/leaderboard/all",
       "description": "Leaderboard by filter type"
     },
@@ -36,6 +26,16 @@
       "name": "get",
       "path": "/api/v2/gamification/leaderboard/all/bestpoints",
       "description": "Best Points by division or performance profile"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/leaderboard",
+      "description": "Leaderboard of the requesting user's division or performance profile"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/leaderboard/bestpoints",
+      "description": "Best Points of the requesting user's current performance profile or division"
     },
     {
       "name": "get",
@@ -59,13 +59,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/gamification/profiles/users/{userId}/query",
-      "description": "Query performance profiles in date range for a user"
+      "path": "/api/v2/gamification/profiles/users/me/query",
+      "description": "Query performance profiles in date range for the current user"
     },
     {
       "name": "create",
-      "path": "/api/v2/gamification/profiles/users/me/query",
-      "description": "Query performance profiles in date range for the current user"
+      "path": "/api/v2/gamification/profiles/users/{userId}/query",
+      "description": "Query performance profiles in date range for a user"
     },
     {
       "name": "get",
@@ -199,13 +199,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/insights/users/{userId}/details",
-      "description": "Get insights details for the user"
+      "path": "/api/v2/gamification/insights/details",
+      "description": "Get insights details for the current user"
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/insights/details",
-      "description": "Get insights details for the current user"
+      "path": "/api/v2/gamification/insights/users/{userId}/details",
+      "description": "Get insights details for the user"
     },
     {
       "name": "list",
@@ -248,11 +248,6 @@
       "description": "Get insights user trend for the current user"
     },
     {
-      "name": "create",
-      "path": "/api/v2/gamification/profiles/{profileId}/members/validate",
-      "description": "Validate member assignment"
-    },
-    {
       "name": "list",
       "path": "/api/v2/gamification/profiles/{profileId}/members",
       "description": "Members of a given performance profile"
@@ -261,6 +256,11 @@
       "name": "create",
       "path": "/api/v2/gamification/profiles/{profileId}/members",
       "description": "Assign members to a given performance profile"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/gamification/profiles/{profileId}/members/validate",
+      "description": "Validate member assignment"
     },
     {
       "name": "get",
@@ -284,13 +284,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/scorecards/attendance",
-      "description": "Attendance status metrics of the requesting user"
+      "path": "/api/v2/gamification/scorecards/bestpoints",
+      "description": "Best points of the requesting user"
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/scorecards/bestpoints",
-      "description": "Best points of the requesting user"
+      "path": "/api/v2/gamification/scorecards/attendance",
+      "description": "Attendance status metrics of the requesting user"
     },
     {
       "name": "get",

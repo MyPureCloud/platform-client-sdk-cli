@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("workforcemanagement_agents_integrations", "SWAGGER_OVERRIDE_/api/v2/workforcemanagement/agents/integrations")
+	Description = utils.FormatUsageDescription("workforcemanagement_agents_integrations", "SWAGGER_OVERRIDE_/api/v2/workforcemanagement/agents/{agentId}/integrations")
 	workforcemanagement_agents_integrationsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("workforcemanagement_agents_integrations"),
 		Short: Description,

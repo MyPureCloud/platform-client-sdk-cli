@@ -13,11 +13,6 @@
       "description": "Query for agent copilot aggregates"
     },
     {
-      "name": "create",
-      "path": "/api/v2/analytics/agents/status/query",
-      "description": "Retrieve the top 50 agents matching the query filters"
-    },
-    {
       "name": "get",
       "path": "/api/v2/analytics/agents/{userId}/status",
       "description": "Get an agent and their active sessions by user ID"
@@ -26,6 +21,11 @@
       "name": "create",
       "path": "/api/v2/analytics/agents/status/counts",
       "description": "Count agents by different groupings"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/agents/status/query",
+      "description": "Retrieve the top 50 agents matching the query filters"
     },
     {
       "name": "create",
@@ -174,13 +174,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/analytics/users/observations/query",
-      "description": "Query for user observations"
+      "path": "/api/v2/analytics/users/aggregates/query",
+      "description": "Query for user aggregates"
     },
     {
       "name": "create",
-      "path": "/api/v2/analytics/users/aggregates/query",
-      "description": "Query for user aggregates"
+      "path": "/api/v2/analytics/users/observations/query",
+      "description": "Query for user observations"
     },
     {
       "name": "create",

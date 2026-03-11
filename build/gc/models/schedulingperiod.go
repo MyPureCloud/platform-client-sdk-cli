@@ -21,12 +21,12 @@ type SchedulingperiodDud struct {
 
 // Schedulingperiod
 type Schedulingperiod struct { 
-    // EarliestStartDate - The earliest date the associated activity plan can begin, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-    EarliestStartDate time.Time `json:"earliestStartDate"`
-
-
     // LatestEndDate - The latest date the associated activity plan can end, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     LatestEndDate time.Time `json:"latestEndDate"`
+
+
+    // EarliestStartDate - The earliest date the associated activity plan can begin, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+    EarliestStartDate time.Time `json:"earliestStartDate"`
 
 }
 
@@ -51,9 +51,9 @@ func (u *Schedulingperiod) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        EarliestStartDate time.Time `json:"earliestStartDate"`
-        
         LatestEndDate time.Time `json:"latestEndDate"`
+        
+        EarliestStartDate time.Time `json:"earliestStartDate"`
         *Alias
     }{
 

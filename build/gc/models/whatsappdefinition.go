@@ -44,15 +44,15 @@ type Whatsappdefinition struct {
     Language string `json:"language"`
 
 
-    // Buttons - List of buttons to be included in the WhatsApp messages channel
+    // Buttons - List of buttons to be included in the standard WhatsApp messages channel
     Buttons []Button `json:"buttons"`
 
 
-    // MessageFooter - Footer for the message in the WhatsApp messages channel
+    // MessageFooter - Footer for the message in the standard WhatsApp messages channel
     MessageFooter Messagefooter `json:"messageFooter"`
 
 
-    // Header - Header for the message in the WhatsApp messages channel
+    // Header - Header for the message in the standard WhatsApp messages channel
     Header Messageheader `json:"header"`
 
 }

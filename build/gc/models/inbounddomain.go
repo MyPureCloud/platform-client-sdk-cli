@@ -32,6 +32,12 @@ type InbounddomainDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -62,6 +68,14 @@ type Inbounddomain struct {
     CustomSMTPServer Domainentityref `json:"customSMTPServer"`
 
 
+    // ImapSettings - The IMAP server integration and settings to use for processing inbound emails.
+    ImapSettings Imapsettings `json:"imapSettings"`
+
+
+    // GraphApiSettings - The GraphAPI server integration and settings to use for processing inbound and outbound emails.
+    GraphApiSettings Graphapisettings `json:"graphApiSettings"`
+
+
     // EmailSetting - The email settings associated with this domain.
     EmailSetting Emailsetting `json:"emailSetting"`
 
@@ -72,6 +86,8 @@ type Inbounddomain struct {
 
 // String returns a JSON representation of the model
 func (o *Inbounddomain) String() string {
+    
+    
     
     
     
@@ -108,9 +124,19 @@ func (u *Inbounddomain) MarshalJSON() ([]byte, error) {
         
         CustomSMTPServer Domainentityref `json:"customSMTPServer"`
         
+        ImapSettings Imapsettings `json:"imapSettings"`
+        
+        GraphApiSettings Graphapisettings `json:"graphApiSettings"`
+        
         EmailSetting Emailsetting `json:"emailSetting"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

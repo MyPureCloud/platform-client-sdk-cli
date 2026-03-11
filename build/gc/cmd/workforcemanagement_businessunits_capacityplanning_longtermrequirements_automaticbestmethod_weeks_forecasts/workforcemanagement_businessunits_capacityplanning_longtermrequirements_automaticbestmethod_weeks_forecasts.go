@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdworkforcemanagement_businessunits_capacityplanning_longtermrequirements_automaticbestmethod_weeks_forecasts() *cobra.Command { 
+	utils.AddFlag(getCmd.Flags(), "string", "granularity", "", "Granularity to access staffing requirements data, defaults to weekly Valid values: weekly, monthly")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}", utils.FormatPermissions([]string{ "wfm:longTermStaffing:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -75,6 +76,10 @@ var getCmd = &cobra.Command{
 		forecastId, args := args[0], args[1:]
 		path = strings.Replace(path, "{forecastId}", fmt.Sprintf("%v", forecastId), -1)
 
+		granularity := utils.GetFlag(cmd.Flags(), "string", "granularity")
+		if granularity != "" {
+			queryParams["granularity"] = granularity
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

@@ -69,6 +69,16 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping",
+      "description": "Get networking-related information from an Edge for a target IP or host."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping",
+      "description": "Ping Request command to collect networking-related information from an Edge for a target IP or host."
+    },
+    {
+      "name": "get",
       "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath",
       "description": "Get networking-related information from an Edge for a target IP or host."
     },
@@ -96,16 +106,6 @@
       "name": "create",
       "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/route",
       "description": "Route request command to collect networking-related information from an Edge for a target IP or host."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping",
-      "description": "Get networking-related information from an Edge for a target IP or host."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping",
-      "description": "Ping Request command to collect networking-related information from an Edge for a target IP or host."
     },
     {
       "name": "create",

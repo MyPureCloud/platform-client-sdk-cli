@@ -22,6 +22,9 @@ type InbounddomainpatchrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Inbounddomainpatchrequest
@@ -38,6 +41,10 @@ type Inbounddomainpatchrequest struct {
     ImapSettings Imapsettings `json:"imapSettings"`
 
 
+    // GraphApiSettings - The GraphAPI server integration and settings to use for processing inbound and outbound emails.
+    GraphApiSettings Graphapisettings `json:"graphApiSettings"`
+
+
     // EmailSetting - The email settings to associate with this domain.
     EmailSetting Emailsettingreference `json:"emailSetting"`
 
@@ -45,6 +52,7 @@ type Inbounddomainpatchrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Inbounddomainpatchrequest) String() string {
+    
     
     
     
@@ -72,9 +80,14 @@ func (u *Inbounddomainpatchrequest) MarshalJSON() ([]byte, error) {
         
         ImapSettings Imapsettings `json:"imapSettings"`
         
+        GraphApiSettings Graphapisettings `json:"graphApiSettings"`
+        
         EmailSetting Emailsettingreference `json:"emailSetting"`
         *Alias
     }{
+
+        
+
 
         
 

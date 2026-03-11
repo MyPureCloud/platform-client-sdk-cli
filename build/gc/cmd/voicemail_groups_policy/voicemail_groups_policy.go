@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdvoicemail_groups_policy() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/voicemail/groups/{groupId}/policy", utils.FormatPermissions([]string{ "directory:group:add", "directory:group:edit",  }), utils.GenerateDevCentreLink("GET", "Voicemail", "/api/v2/voicemail/groups/{groupId}/policy")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/voicemail/groups/{groupId}/policy", utils.FormatPermissions([]string{ "voicemail:groupPolicy:view",  }), utils.GenerateDevCentreLink("GET", "Voicemail", "/api/v2/voicemail/groups/{groupId}/policy")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
@@ -43,7 +43,7 @@ func Cmdvoicemail_groups_policy() *cobra.Command {
 }`)
 	voicemail_groups_policyCmd.AddCommand(getCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/voicemail/groups/{groupId}/policy", utils.FormatPermissions([]string{ "directory:group:add", "directory:group:edit",  }), utils.GenerateDevCentreLink("PATCH", "Voicemail", "/api/v2/voicemail/groups/{groupId}/policy")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/voicemail/groups/{groupId}/policy", utils.FormatPermissions([]string{ "voicemail:groupPolicy:edit",  }), utils.GenerateDevCentreLink("PATCH", "Voicemail", "/api/v2/voicemail/groups/{groupId}/policy")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   "description" : "The group's voicemail policy",
   "content" : {

@@ -248,8 +248,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Get active message conversations for the logged in user",
-	Long:  "Get active message conversations for the logged in user",
+	Short: "Get the logged-in user`s active conversations and their Message participants state.",
+	Long:  "Get the logged-in user`s active conversations and their Message participants state.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

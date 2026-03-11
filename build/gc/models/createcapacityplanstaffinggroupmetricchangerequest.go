@@ -31,6 +31,9 @@ type CreatecapacityplanstaffinggroupmetricchangerequestDud struct {
 
     
 
+
+    
+
 }
 
 // Createcapacityplanstaffinggroupmetricchangerequest
@@ -55,6 +58,10 @@ type Createcapacityplanstaffinggroupmetricchangerequest struct {
     Notes string `json:"notes"`
 
 
+    // TransfersFullTimeEquivalent - Full time equivalent transfer from one staffing group to another
+    TransfersFullTimeEquivalent Transfersfulltimeequivalent `json:"transfersFullTimeEquivalent"`
+
+
     // StaffingGroupIds - The IDs of the staffing groups affected by the metric change
     StaffingGroupIds []string `json:"staffingGroupIds"`
 
@@ -66,6 +73,7 @@ type Createcapacityplanstaffinggroupmetricchangerequest struct {
 
 // String returns a JSON representation of the model
 func (o *Createcapacityplanstaffinggroupmetricchangerequest) String() string {
+    
     
     
     
@@ -100,11 +108,16 @@ func (u *Createcapacityplanstaffinggroupmetricchangerequest) MarshalJSON() ([]by
         
         Notes string `json:"notes"`
         
+        TransfersFullTimeEquivalent Transfersfulltimeequivalent `json:"transfersFullTimeEquivalent"`
+        
         StaffingGroupIds []string `json:"staffingGroupIds"`
         
         Version int `json:"version"`
         *Alias
     }{
+
+        
+
 
         
 

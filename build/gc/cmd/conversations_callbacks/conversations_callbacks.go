@@ -273,8 +273,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Get active callback conversations for the logged in user",
-	Long:  "Get active callback conversations for the logged in user",
+	Short: "Get the logged-in user`s active conversations and their Callback participants state.",
+	Long:  "Get the logged-in user`s active conversations and their Callback participants state.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

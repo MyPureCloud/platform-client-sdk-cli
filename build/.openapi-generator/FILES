@@ -796,6 +796,7 @@ gc/cmd/knowledge_knowledgebases_synchronize_jobs/knowledge_knowledgebases_synchr
 gc/cmd/knowledge_knowledgebases_unanswered_groups/knowledge_knowledgebases_unanswered_groups.go
 gc/cmd/knowledge_knowledgebases_unanswered_groups_phrasegroups/knowledge_knowledgebases_unanswered_groups_phrasegroups.go
 gc/cmd/knowledge_knowledgebases_uploads_urls_jobs/knowledge_knowledgebases_uploads_urls_jobs.go
+gc/cmd/knowledge_search/knowledge_search.go
 gc/cmd/knowledge_search_preview/knowledge_search_preview.go
 gc/cmd/knowledge_settings/knowledge_settings.go
 gc/cmd/languages/languages.go
@@ -3120,6 +3121,7 @@ gc/models/dynamicgroupskillcondition.go
 gc/models/dynamiclinebalancingsettings.go
 gc/models/dynamiclinebalancingsettingspatchrequest.go
 gc/models/dynamicutilization.go
+gc/models/dynamicutilizationrule.go
 gc/models/edge.go
 gc/models/edgeautoupdateconfig.go
 gc/models/edgeconnectioninfo.go
@@ -3943,12 +3945,16 @@ gc/models/knowledgesettinglisting.go
 gc/models/knowledgesettings.go
 gc/models/knowledgesettingsrequest.go
 gc/models/knowledgesettingsresponse.go
+gc/models/knowledgesourcessearchrequest.go
+gc/models/knowledgesourcessearchresponse.go
 gc/models/knowledgesuggestionconfig.go
 gc/models/knowledgesyncjobreport.go
 gc/models/knowledgesyncjobrequest.go
 gc/models/knowledgesyncjobresponse.go
 gc/models/knowledgesyncjobstatistics.go
 gc/models/knowledgesyncrequest.go
+gc/models/knowledgev3conversationcontext.go
+gc/models/knowledgev3conversationcontextresponse.go
 gc/models/kpiresult.go
 gc/models/label.go
 gc/models/labelcreaterequest.go
@@ -4787,6 +4793,7 @@ gc/models/recordingwheelpickeritem.go
 gc/models/recurrenceendsettings.go
 gc/models/recurrenceperiod.go
 gc/models/recurrencesettings.go
+gc/models/recurrencesettingsbase.go
 gc/models/referrer.go
 gc/models/regiontimezone.go
 gc/models/registerarchitectexportjob.go
@@ -4947,6 +4954,7 @@ gc/models/scheduleuploadprocessingresponse.go
 gc/models/schedulingnoforecastoptionsrequest.go
 gc/models/schedulingoptionsrequest.go
 gc/models/schedulingperiod.go
+gc/models/schedulingperiodbase.go
 gc/models/schedulingprocessingerror.go
 gc/models/schedulingsettingsrequest.go
 gc/models/schedulingsettingsresponse.go
@@ -5761,6 +5769,7 @@ gc/models/utilizationresponse.go
 gc/models/utilizationtag.go
 gc/models/utilizationtagentitylisting.go
 gc/models/utterance.go
+gc/models/v3knowledgesearchclientapplication.go
 gc/models/v3sourceref.go
 gc/models/validateaddressrequest.go
 gc/models/validateaddressresponse.go

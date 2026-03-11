@@ -20,6 +20,9 @@ type LongtermrequirementsDud struct {
 
     
 
+
+    
+
 }
 
 // Longtermrequirements
@@ -32,6 +35,10 @@ type Longtermrequirements struct {
     DateGenerationStarted time.Time `json:"dateGenerationStarted"`
 
 
+    // Months - The list of months covered by the long-term staffing requirements, formatted as yyyy-MM
+    Months []string `json:"months"`
+
+
     // RequirementResults - List of planning group outputs
     RequirementResults []Planninggrouprequirementoutput `json:"requirementResults"`
 
@@ -41,6 +48,7 @@ type Longtermrequirements struct {
 func (o *Longtermrequirements) String() string {
     
     
+     o.Months = []string{""} 
      o.RequirementResults = []Planninggrouprequirementoutput{{}} 
 
     j, _ := json.Marshal(o)
@@ -63,6 +71,8 @@ func (u *Longtermrequirements) MarshalJSON() ([]byte, error) {
         
         DateGenerationStarted time.Time `json:"dateGenerationStarted"`
         
+        Months []string `json:"months"`
+        
         RequirementResults []Planninggrouprequirementoutput `json:"requirementResults"`
         *Alias
     }{
@@ -70,6 +80,11 @@ func (u *Longtermrequirements) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Months: []string{""},
         
 
 

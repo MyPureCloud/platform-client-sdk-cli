@@ -25,6 +25,12 @@ type InbounddomaincreaterequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Inbounddomaincreaterequest
@@ -45,6 +51,14 @@ type Inbounddomaincreaterequest struct {
     CustomSMTPServer Domainentityref `json:"customSMTPServer"`
 
 
+    // ImapSettings - The IMAP server integration and settings to use for processing inbound emails.
+    ImapSettings Imapsettings `json:"imapSettings"`
+
+
+    // GraphApiSettings - The GraphAPI server integration and settings to use for processing inbound and outbound emails.
+    GraphApiSettings Graphapisettings `json:"graphApiSettings"`
+
+
     // EmailSetting - The email settings to associate with this domain.
     EmailSetting Emailsettingreference `json:"emailSetting"`
 
@@ -52,6 +66,8 @@ type Inbounddomaincreaterequest struct {
 
 // String returns a JSON representation of the model
 func (o *Inbounddomaincreaterequest) String() string {
+    
+    
     
     
     
@@ -82,9 +98,19 @@ func (u *Inbounddomaincreaterequest) MarshalJSON() ([]byte, error) {
         
         CustomSMTPServer Domainentityref `json:"customSMTPServer"`
         
+        ImapSettings Imapsettings `json:"imapSettings"`
+        
+        GraphApiSettings Graphapisettings `json:"graphApiSettings"`
+        
         EmailSetting Emailsettingreference `json:"emailSetting"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

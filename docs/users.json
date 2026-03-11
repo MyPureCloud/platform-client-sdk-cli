@@ -173,6 +173,11 @@
       "description": "Get the user associated with external identifier."
     },
     {
+      "name": "getexternalidforuserauthority",
+      "path": "/api/v2/users/{userId}/externalid/{authorityName}",
+      "description": "Get the external identifier of user for an authority."
+    },
+    {
       "name": "getexternalidsforuser",
       "path": "/api/v2/users/{userId}/externalid",
       "description": "Get the external identifiers for a user."
@@ -186,11 +191,6 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}",
       "description": "Delete the external identifier for user."
-    },
-    {
-      "name": "getexternalidforuserauthority",
-      "path": "/api/v2/users/{userId}/externalid/{authorityName}",
-      "description": "Get the external identifier of user for an authority."
     },
     {
       "name": "create",
@@ -413,14 +413,14 @@
       "description": "Retrieve aggregated development activity data"
     },
     {
-      "name": "get",
-      "path": "/api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId}",
-      "description": "Get dependent of a users rule"
-    },
-    {
       "name": "list",
       "path": "/api/v2/users/rules/{ruleId}/dependents",
       "description": "Get dependents for a users rule"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId}",
+      "description": "Get dependent of a users rule"
     },
     {
       "name": "get",

@@ -2480,6 +2480,7 @@
   "gc_knowledge_knowledgebases_uploads_urls_jobs_create.md",
   "gc_knowledge_knowledgebases_uploads_urls_jobs_get.md",
   "gc_knowledge_search.md",
+  "gc_knowledge_search_create.md",
   "gc_knowledge_search_preview.md",
   "gc_knowledge_search_preview_create.md",
   "gc_knowledge_settings.md",

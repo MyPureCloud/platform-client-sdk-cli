@@ -1,10 +1,10 @@
 ## gc conversations callbacks list
 
-Get active callback conversations for the logged in user
+Get the logged-in user`s active conversations and their Callback participants state.
 
 ### Synopsis
 
-Get active callback conversations for the logged in user
+Get the logged-in user`s active conversations and their Callback participants state.
 
 ```
 gc conversations callbacks list [flags]

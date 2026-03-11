@@ -1,10 +1,10 @@
 ## gc conversations emails list
 
-Get active email conversations for the logged in user
+Get the logged-in user`s active conversations and their Email participants state.
 
 ### Synopsis
 
-Get active email conversations for the logged in user
+Get the logged-in user`s active conversations and their Email participants state.
 
 ```
 gc conversations emails list [flags]

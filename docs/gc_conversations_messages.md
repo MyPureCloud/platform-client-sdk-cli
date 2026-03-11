@@ -37,7 +37,7 @@
 * [gc conversations messages details](gc_conversations_messages_details.html)	 - /api/v2/conversations/messages/{messageId}/details
 * [gc conversations messages get](gc_conversations_messages_get.html)	 - Get message conversation
 * [gc conversations messages inbound](gc_conversations_messages_inbound.html)	 - /api/v2/conversations/messages/inbound
-* [gc conversations messages list](gc_conversations_messages_list.html)	 - Get active message conversations for the logged in user
+* [gc conversations messages list](gc_conversations_messages_list.html)	 - Get the logged-in user`s active conversations and their Message participants state.
 * [gc conversations messages messages](gc_conversations_messages_messages.html)	 - /api/v2/conversations/messages/{conversationId}/messages
 * [gc conversations messages participants](gc_conversations_messages_participants.html)	 - /api/v2/conversations/messages/{conversationId}/participants
 * [gc conversations messages recordingstate](gc_conversations_messages_recordingstate.html)	 - /api/v2/conversations/messages/{conversationId}/recordingstate

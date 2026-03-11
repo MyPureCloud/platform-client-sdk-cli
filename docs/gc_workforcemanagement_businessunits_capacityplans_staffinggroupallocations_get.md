@@ -13,7 +13,8 @@ gc workforcemanagement businessunits capacityplans staffinggroupallocations get 
 ### Options
 
 ```
-  -h, --help   help for get
+      --granularity string   Granularity to access staffing group data, defaults to weekly Valid values: weekly, monthly
+  -h, --help                 help for get
 ```
 
 ### Options inherited from parent commands

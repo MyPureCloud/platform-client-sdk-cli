@@ -31,6 +31,6 @@
 
 * [gc conversations](gc_conversations.html)	 - /api/v2/conversations
 * [gc conversations internalmessages get](gc_conversations_internalmessages_get.html)	 - Get internal message conversation
-* [gc conversations internalmessages list](gc_conversations_internalmessages_list.html)	 - Get active internal message conversations for the logged in user
+* [gc conversations internalmessages list](gc_conversations_internalmessages_list.html)	 - Get the logged-in user`s active conversations and their InternalMessage participants state.
 
 

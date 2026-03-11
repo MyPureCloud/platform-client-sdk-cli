@@ -1,13 +1,13 @@
-## gc taskmanagement workitems create
+## gc knowledge search create
 
-Create a workitem
+Get Knowledge Search
 
 ### Synopsis
 
-Create a workitem
+Get Knowledge Search
 
 ```
-gc taskmanagement workitems create [flags]
+gc knowledge search create [flags]
 ```
 
 ### Options
@@ -36,6 +36,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc knowledge search](gc_knowledge_search.html)	 - /api/v2/knowledge/search
 
 

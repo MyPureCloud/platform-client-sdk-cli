@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc knowledge](gc_knowledge.html)	 - /api/v2/knowledge
+* [gc knowledge search create](gc_knowledge_search_create.html)	 - Get Knowledge Search
 * [gc knowledge search preview](gc_knowledge_search_preview.html)	 - /api/v2/knowledge/search/preview
 
 

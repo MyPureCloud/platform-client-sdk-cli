@@ -34,7 +34,7 @@
 * [gc conversations calls create](gc_conversations_calls_create.html)	 - Create a call conversation
 * [gc conversations calls get](gc_conversations_calls_get.html)	 - Get call conversation
 * [gc conversations calls history](gc_conversations_calls_history.html)	 - /api/v2/conversations/calls/history
-* [gc conversations calls list](gc_conversations_calls_list.html)	 - Get active call conversations for the logged in user
+* [gc conversations calls list](gc_conversations_calls_list.html)	 - Get the logged-in user`s active conversations and their Call participants state.
 * [gc conversations calls maximumconferenceparties](gc_conversations_calls_maximumconferenceparties.html)	 - /api/v2/conversations/calls/maximumconferenceparties
 * [gc conversations calls participants](gc_conversations_calls_participants.html)	 - /api/v2/conversations/calls/{conversationId}/participants
 * [gc conversations calls placecallbackcall](gc_conversations_calls_placecallbackcall.html)	 - Place a new call as part of a callback conversation.

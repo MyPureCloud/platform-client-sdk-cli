@@ -1,10 +1,10 @@
 ## gc conversations calls list
 
-Get active call conversations for the logged in user
+Get the logged-in user`s active conversations and their Call participants state.
 
 ### Synopsis
 
-Get active call conversations for the logged in user
+Get the logged-in user`s active conversations and their Call participants state.
 
 ```
 gc conversations calls list [flags]

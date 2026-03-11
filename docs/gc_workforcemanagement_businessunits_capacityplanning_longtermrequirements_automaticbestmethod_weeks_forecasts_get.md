@@ -13,7 +13,8 @@ gc workforcemanagement businessunits capacityplanning longtermrequirements autom
 ### Options
 
 ```
-  -h, --help   help for get
+      --granularity string   Granularity to access staffing requirements data, defaults to weekly Valid values: weekly, monthly
+  -h, --help                 help for get
 ```
 
 ### Options inherited from parent commands

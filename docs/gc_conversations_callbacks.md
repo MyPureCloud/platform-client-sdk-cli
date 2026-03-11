@@ -33,7 +33,7 @@
 * [gc conversations callbacks bulk](gc_conversations_callbacks_bulk.html)	 - /api/v2/conversations/callbacks/bulk
 * [gc conversations callbacks create](gc_conversations_callbacks_create.html)	 - Create a Callback
 * [gc conversations callbacks get](gc_conversations_callbacks_get.html)	 - Get callback conversation
-* [gc conversations callbacks list](gc_conversations_callbacks_list.html)	 - Get active callback conversations for the logged in user
+* [gc conversations callbacks list](gc_conversations_callbacks_list.html)	 - Get the logged-in user`s active conversations and their Callback participants state.
 * [gc conversations callbacks participants](gc_conversations_callbacks_participants.html)	 - /api/v2/conversations/callbacks/{conversationId}/participants
 * [gc conversations callbacks recordingstate](gc_conversations_callbacks_recordingstate.html)	 - /api/v2/conversations/callbacks/{conversationId}/recordingstate
 * [gc conversations callbacks update](gc_conversations_callbacks_update.html)	 - Update a conversation by disconnecting all of the participants

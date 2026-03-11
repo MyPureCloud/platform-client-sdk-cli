@@ -1,10 +1,10 @@
 ## gc conversations internalmessages list
 
-Get active internal message conversations for the logged in user
+Get the logged-in user`s active conversations and their InternalMessage participants state.
 
 ### Synopsis
 
-Get active internal message conversations for the logged in user
+Get the logged-in user`s active conversations and their InternalMessage participants state.
 
 ```
 gc conversations internalmessages list [flags]

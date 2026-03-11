@@ -1,10 +1,10 @@
 ## gc conversations messages list
 
-Get active message conversations for the logged in user
+Get the logged-in user`s active conversations and their Message participants state.
 
 ### Synopsis
 
-Get active message conversations for the logged in user
+Get the logged-in user`s active conversations and their Message participants state.
 
 ```
 gc conversations messages list [flags]

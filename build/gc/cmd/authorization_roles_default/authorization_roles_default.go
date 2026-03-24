@@ -32,6 +32,7 @@ func Cmdauthorization_roles_default() *cobra.Command {
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/authorization/roles/default", utils.FormatPermissions([]string{ "authorization:role:edit",  }), utils.GenerateDevCentreLink("POST", "Authorization", "/api/v2/authorization/roles/default")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
 	
+	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
   "content" : {
@@ -59,6 +60,7 @@ func Cmdauthorization_roles_default() *cobra.Command {
   },
   "required" : true
 }`)
+	
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
   "description" : "successful operation",
@@ -115,9 +117,27 @@ var createCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
+		headerParams := make(map[string]string)
+		// to determine the Content-Type header
+		localVarHttpContentTypes := []string{ "application/json",  }
+		// set Content-Type header
+		localVarHttpContentType := utils.SelectHeaderContentType(localVarHttpContentTypes)
+		if localVarHttpContentType != "" {
+			headerParams["Content-Type"] = localVarHttpContentType
+		}
+		// to determine the Accept header
+		localVarHttpHeaderAccepts := []string{
+			"application/json",
+		}
+		// set Accept header
+		localVarHttpHeaderAccept := utils.SelectHeaderAccept(localVarHttpHeaderAccepts)
+		if localVarHttpHeaderAccept != "" {
+			headerParams["Accept"] = localVarHttpHeaderAccept
+		}
+
 		const opId = "create"
 		const httpMethod = "POST"
-		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -181,9 +201,27 @@ var updateCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
+		headerParams := make(map[string]string)
+		// to determine the Content-Type header
+		localVarHttpContentTypes := []string{ "application/json",  }
+		// set Content-Type header
+		localVarHttpContentType := utils.SelectHeaderContentType(localVarHttpContentTypes)
+		if localVarHttpContentType != "" {
+			headerParams["Content-Type"] = localVarHttpContentType
+		}
+		// to determine the Accept header
+		localVarHttpHeaderAccepts := []string{
+			"application/json",
+		}
+		// set Accept header
+		localVarHttpHeaderAccept := utils.SelectHeaderAccept(localVarHttpHeaderAccepts)
+		if localVarHttpHeaderAccept != "" {
+			headerParams["Accept"] = localVarHttpHeaderAccept
+		}
+
 		const opId = "update"
 		const httpMethod = "PUT"
-		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

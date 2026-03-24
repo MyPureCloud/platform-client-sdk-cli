@@ -23,6 +23,12 @@ type SchemaquantitylimitsDud struct {
     MaxFieldNameCharacters int `json:"maxFieldNameCharacters"`
 
 
+    MinFieldTitleCharacters int `json:"minFieldTitleCharacters"`
+
+
+    MaxFieldTitleCharacters int `json:"maxFieldTitleCharacters"`
+
+
     MinFieldDescriptionCharacters int `json:"minFieldDescriptionCharacters"`
 
 
@@ -98,6 +104,12 @@ type Schemaquantitylimits struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // String returns a JSON representation of the model
@@ -123,6 +135,12 @@ func (u *Schemaquantitylimits) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

@@ -40,6 +40,15 @@ type TranscriptasyncaggregationqueryDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Transcriptasyncaggregationquery
@@ -80,6 +89,18 @@ type Transcriptasyncaggregationquery struct {
     AlternateTimeDimension string `json:"alternateTimeDimension"`
 
 
+    // QueryType - Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
+    QueryType string `json:"queryType"`
+
+
+    // SortMetric - Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+    SortMetric Transcriptaggregationsort `json:"sortMetric"`
+
+
+    // Limit - How many results you want in an ordered list. Only applicable for topN/bottomN query type.
+    Limit int `json:"limit"`
+
+
     // PageSize - The number of results per page
     PageSize int `json:"pageSize"`
 
@@ -95,6 +116,9 @@ func (o *Transcriptasyncaggregationquery) String() string {
      o.Metrics = []string{""} 
     
      o.Views = []Transcriptaggregationview{{}} 
+    
+    
+    
     
     
 
@@ -132,6 +156,12 @@ func (u *Transcriptasyncaggregationquery) MarshalJSON() ([]byte, error) {
         
         AlternateTimeDimension string `json:"alternateTimeDimension"`
         
+        QueryType string `json:"queryType"`
+        
+        SortMetric Transcriptaggregationsort `json:"sortMetric"`
+        
+        Limit int `json:"limit"`
+        
         PageSize int `json:"pageSize"`
         *Alias
     }{
@@ -163,6 +193,15 @@ func (u *Transcriptasyncaggregationquery) MarshalJSON() ([]byte, error) {
 
         
         Views: []Transcriptaggregationview{{}},
+        
+
+
+        
+
+
+        
+
+
         
 
 

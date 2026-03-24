@@ -31,6 +31,7 @@ func Cmdtelephony_providers_edges_phones_reboot() *cobra.Command {
 	rebootCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", rebootCmd.UsageTemplate(), "POST", "/api/v2/telephony/providers/edges/phones/{phoneId}/reboot", utils.FormatPermissions([]string{ "telephony:plugin:all",  }), utils.GenerateDevCentreLink("POST", "Telephony Providers Edge", "/api/v2/telephony/providers/edges/phones/{phoneId}/reboot")))
 	utils.AddFileFlagIfUpsert(rebootCmd.Flags(), "POST", ``)
 	
+	
 	utils.AddPaginateFlagsIfListingResponse(rebootCmd.Flags(), "POST", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
   "content" : {
@@ -65,6 +66,7 @@ func Cmdtelephony_providers_edges_phones_reboot() *cobra.Command {
   },
   "required" : true
 }`)
+	
 	
 	utils.AddPaginateFlagsIfListingResponse(rebootphonesCmd.Flags(), "POST", `{
   "description" : "The request could not be understood by the server due to malformed syntax.",
@@ -129,9 +131,27 @@ var rebootCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
+		headerParams := make(map[string]string)
+		// to determine the Content-Type header
+		localVarHttpContentTypes := []string{ "application/json",  }
+		// set Content-Type header
+		localVarHttpContentType := utils.SelectHeaderContentType(localVarHttpContentTypes)
+		if localVarHttpContentType != "" {
+			headerParams["Content-Type"] = localVarHttpContentType
+		}
+		// to determine the Accept header
+		localVarHttpHeaderAccepts := []string{
+			"application/json",
+		}
+		// set Accept header
+		localVarHttpHeaderAccept := utils.SelectHeaderAccept(localVarHttpHeaderAccepts)
+		if localVarHttpHeaderAccept != "" {
+			headerParams["Accept"] = localVarHttpHeaderAccept
+		}
+
 		const opId = "reboot"
 		const httpMethod = "POST"
-		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -195,9 +215,27 @@ var rebootphonesCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
+		headerParams := make(map[string]string)
+		// to determine the Content-Type header
+		localVarHttpContentTypes := []string{ "application/json",  }
+		// set Content-Type header
+		localVarHttpContentType := utils.SelectHeaderContentType(localVarHttpContentTypes)
+		if localVarHttpContentType != "" {
+			headerParams["Content-Type"] = localVarHttpContentType
+		}
+		// to determine the Accept header
+		localVarHttpHeaderAccepts := []string{
+			"application/json",
+		}
+		// set Accept header
+		localVarHttpHeaderAccept := utils.SelectHeaderAccept(localVarHttpHeaderAccepts)
+		if localVarHttpHeaderAccept != "" {
+			headerParams["Accept"] = localVarHttpHeaderAccept
+		}
+
 		const opId = "rebootphones"
 		const httpMethod = "POST"
-		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

@@ -28,8 +28,10 @@ func init() {
 }
 
 func Cmdscim_v2_serviceproviderconfig() *cobra.Command { 
+	utils.AddFlag(getCmd.Flags(), "string", "ifNoneMatch", "", "The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: 42. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. ")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/scim/v2/serviceproviderconfig", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "SCIM", "/api/v2/scim/v2/serviceproviderconfig")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
+	
 	
 	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
   "description" : "successful operation",
@@ -87,9 +89,35 @@ var getCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
+		headerParams := make(map[string]string)
+		// to determine the Content-Type header
+		localVarHttpContentTypes := []string{ "application/json",  }
+		// set Content-Type header
+		localVarHttpContentType := utils.SelectHeaderContentType(localVarHttpContentTypes)
+		if localVarHttpContentType != "" {
+			headerParams["Content-Type"] = localVarHttpContentType
+		}
+		// to determine the Accept header
+		localVarHttpHeaderAccepts := []string{
+			"application/scim+json",
+	"application/json",
+		}
+		// set Accept header
+		localVarHttpHeaderAccept := utils.SelectHeaderAccept(localVarHttpHeaderAccepts)
+		if localVarHttpHeaderAccept != "" {
+			headerParams["Accept"] = localVarHttpHeaderAccept
+		}
+
+		// header params "If-None-Match"
+		ifNoneMatch := utils.GetFlag(cmd.Flags(), "string", "ifNoneMatch")
+		if ifNoneMatch != "" {
+			headerParams["If-None-Match"] = ifNoneMatch
+		}
+
+
 		const opId = "get"
 		const httpMethod = "GET"
-		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

@@ -56,10 +56,14 @@ var AddCmd = &cobra.Command{
 			return
 		}
 
+		headerParams := make(map[string]string)
+		headerParams["Content-Type"] = "application/json"
+		headerParams["Accept"] = "application/json"
+
 		groupId, args := args[0], args[1:]
 		path := strings.Replace(getMembersOperation.Path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
 
-		currentVersion := getGroupVersion(path, cmd)
+		currentVersion := getGroupVersion(path, headerParams, cmd)
 
 		inputData := utils.ResolveInputData(cmd)
 
@@ -77,7 +81,7 @@ var AddCmd = &cobra.Command{
 
 		path = strings.Replace(addMembersOperation.Path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
 
-		retryFunc := retry.RetryWithData(path, data, CommandService.Post)
+		retryFunc := retry.RetryWithData(path, headerParams, data, CommandService.Post)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -93,8 +97,8 @@ var AddCmd = &cobra.Command{
 	},
 }
 
-func getGroupVersion(path string, cmd *cobra.Command) int {
-	retryFunc := CommandService.DetermineAction(getMembersOperation.Method, path, cmd, "")
+func getGroupVersion(path string, headerParams map[string]string, cmd *cobra.Command) int {
+	retryFunc := CommandService.DetermineAction(getMembersOperation.Method, path, headerParams, cmd, "")
 	retryConfig := &retry.RetryConfiguration{
 		RetryWaitMin: 5 * time.Second,
 		RetryWaitMax: 60 * time.Second,

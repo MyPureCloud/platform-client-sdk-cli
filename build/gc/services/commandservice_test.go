@@ -42,6 +42,10 @@ func TestRetryWithData(t *testing.T) {
 	headers := make(map[string][]string)
 	headers["Retry-After"] = []string{"10"}
 
+	headerParams := make(map[string]string)
+	headerParams["Content-Type"] = "application/json"
+	headerParams["Accept"] = "application/json"
+
 	tc := apiClientTest{
 		targetHeaders:      headers,
 		targetStatusCode:   http.StatusTooManyRequests,
@@ -49,7 +53,7 @@ func TestRetryWithData(t *testing.T) {
 		expectedStatusCode: http.StatusTooManyRequests}
 	setRestClientDoMockForRetry(tc, 10)
 
-	retryFunc := retry.RetryWithData(tc.targetPath, []string{""}, c.Patch)
+	retryFunc := retry.RetryWithData(tc.targetPath, headerParams, []string{""}, c.Patch)
 	retryConfig := &retry.RetryConfiguration{
 		RetryWaitMax: 100 * time.Second,
 		RetryMax:     maxRetriesBeforeQuitting,
@@ -75,7 +79,7 @@ func TestRetryWithData(t *testing.T) {
 	tc.expectedResponse = fmt.Sprintf(`{"numRetries":"%v"}`, expectedNumCalls)
 	setRestClientDoMockForRetry(tc, 10)
 
-	retryFunc = retry.RetryWithData(tc.targetPath, []string{""}, c.Patch)
+	retryFunc = retry.RetryWithData(tc.targetPath, headerParams, []string{""}, c.Patch)
 	retryConfig.RetryWaitMax = maxRetryTimeSec
 	_, err = retryFunc(retryConfig)
 	if err != nil {
@@ -98,7 +102,7 @@ func TestRetryWithData(t *testing.T) {
 	tc.expectedResponse = fmt.Sprintf(`{"numRetries":"%v"}`, expectedNumCalls)
 	setRestClientDoMockForRetry(tc, 3)
 
-	retryFunc = retry.RetryWithData(tc.targetPath, []string{""}, c.Patch)
+	retryFunc = retry.RetryWithData(tc.targetPath, headerParams, []string{""}, c.Patch)
 	retryConfig.RetryMax = maxRetriesBeforeQuitting
 	results, err := retryFunc(retryConfig)
 	if err != nil {
@@ -125,8 +129,12 @@ func TestReAuthenticationWithAccessToken(t *testing.T) {
 	}
 	setRestClientDoMockForReAuthenticate(tc)
 
+	headerParams := make(map[string]string)
+	headerParams["Content-Type"] = "application/json"
+	headerParams["Accept"] = "application/json"
+
 	// the expected err from this GET request, when we have an access token in config, is the error msg below, and we do not care about the empty string returned
-	_, err := c.Get("")
+	_, err := c.Get("", headerParams)
 
 	expectedErr := "unauthorized. your access_token has either expired or is not valid. please authenticate"
 
@@ -152,7 +160,11 @@ func TestReAuthentication(t *testing.T) {
 	}
 	setRestClientDoMockForReAuthenticate(tc)
 
-	value, err := c.Get("")
+	headerParams := make(map[string]string)
+	headerParams["Content-Type"] = "application/json"
+	headerParams["Accept"] = "application/json"
+
+	value, err := c.Get("", headerParams)
 	if err != nil {
 		t.Fatalf("err should be nil, got: %s", err)
 	}

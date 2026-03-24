@@ -37,6 +37,12 @@ type EvaluationscoringsetDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Evaluationscoringset
@@ -47,6 +53,14 @@ type Evaluationscoringset struct {
 
     // TotalCriticalScore - Score of only the critical questions
     TotalCriticalScore float32 `json:"totalCriticalScore"`
+
+
+    // MaxTotalRawCriticalScore - Maximum total raw score for the critical questions. Raw score is the actual point values before applying weights or percentages.
+    MaxTotalRawCriticalScore float32 `json:"maxTotalRawCriticalScore"`
+
+
+    // MaxTotalRawScore - Maximum total raw score for all questions. Raw score is the actual point values before applying weights or percentages.
+    MaxTotalRawScore float32 `json:"maxTotalRawScore"`
 
 
     // TotalNonCriticalScore - Score of only the non-critical questions
@@ -83,6 +97,8 @@ func (o *Evaluationscoringset) String() string {
     
     
     
+    
+    
      o.QuestionGroupScores = []Evaluationquestiongroupscore{{}} 
     
     
@@ -110,6 +126,10 @@ func (u *Evaluationscoringset) MarshalJSON() ([]byte, error) {
         
         TotalCriticalScore float32 `json:"totalCriticalScore"`
         
+        MaxTotalRawCriticalScore float32 `json:"maxTotalRawCriticalScore"`
+        
+        MaxTotalRawScore float32 `json:"maxTotalRawScore"`
+        
         TotalNonCriticalScore float32 `json:"totalNonCriticalScore"`
         
         QuestionGroupScores []Evaluationquestiongroupscore `json:"questionGroupScores"`
@@ -125,6 +145,12 @@ func (u *Evaluationscoringset) MarshalJSON() ([]byte, error) {
         TranscriptTopics []Transcripttopic `json:"transcriptTopics"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

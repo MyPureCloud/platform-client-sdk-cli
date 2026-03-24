@@ -14,7 +14,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-//Example of a custom API
+// Example of a custom API
 func init() {
 	createCmd = queryUsageCmd
 }
@@ -39,7 +39,12 @@ var queryUsageCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		timeout, _ := cmd.Flags().GetInt("timeout")
 
-		retryFunc := CommandService.DetermineAction(usageQueryOperation.Method, usageQueryOperation.Path, cmd, "")
+		headerParams := make(map[string]string)
+		headerParams["Content-Type"] = "application/json"
+		headerParams["Accept"] = "application/json"
+
+		retryFunc := CommandService.DetermineAction(usageQueryOperation.Method, usageQueryOperation.Path, headerParams, cmd, "")
+
 		results, err := retryFunc(nil)
 		if err != nil {
 			logger.Fatal(err)
@@ -58,7 +63,8 @@ var queryUsageCmd = &cobra.Command{
 			for true {
 				path := usageQueryResultsOperation.Path
 				targetURI := strings.Replace(path, "{executionId}", fmt.Sprintf("%v", usageSubmitResponse.ExecutionID), -1)
-				retryFunc := CommandService.DetermineAction(usageQueryResultsOperation.Method, targetURI, cmd, "")
+				retryFunc := CommandService.DetermineAction(usageQueryResultsOperation.Method, targetURI, headerParams, cmd, "")
+
 				rawData, commandErr := retryFunc(nil)
 				if commandErr != nil {
 					logger.Fatal(commandErr)

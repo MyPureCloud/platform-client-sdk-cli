@@ -10,13 +10,21 @@ var (
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type CampaignrulecampaignwaittimesettingsDud struct { }
+type CampaignrulecampaignwaittimesettingsDud struct { 
+    
+
+}
 
 // Campaignrulecampaignwaittimesettings
-type Campaignrulecampaignwaittimesettings struct { }
+type Campaignrulecampaignwaittimesettings struct { 
+    // WaitType - Campaign wait type
+    WaitType string `json:"waitType"`
+
+}
 
 // String returns a JSON representation of the model
 func (o *Campaignrulecampaignwaittimesettings) String() string {
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -33,8 +41,13 @@ func (u *Campaignrulecampaignwaittimesettings) MarshalJSON() ([]byte, error) {
     CampaignrulecampaignwaittimesettingsMarshalled = true
 
     return json.Marshal(&struct {
+        
+        WaitType string `json:"waitType"`
         *Alias
     }{
+
+        
+
         Alias: (*Alias)(u),
     })
 }

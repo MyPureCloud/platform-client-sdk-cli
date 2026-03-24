@@ -64,13 +64,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing",
-      "description": "Send a typing-indicator in a chat conversation."
+      "path": "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages",
+      "description": "Send a message in a chat conversation."
     },
     {
       "name": "create",
-      "path": "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages",
-      "description": "Send a message in a chat conversation."
+      "path": "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing",
+      "description": "Send a typing-indicator in a chat conversation."
     },
     {
       "name": "get",

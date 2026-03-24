@@ -10,13 +10,21 @@ var (
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type CampaignrulecampaignruntimesettingsDud struct { }
+type CampaignrulecampaignruntimesettingsDud struct { 
+    
+
+}
 
 // Campaignrulecampaignruntimesettings
-type Campaignrulecampaignruntimesettings struct { }
+type Campaignrulecampaignruntimesettings struct { 
+    // IncludeWaitingTime - When true counts all campaign running time, otherwise only running time that a campaign was not waiting. Default: true
+    IncludeWaitingTime bool `json:"includeWaitingTime"`
+
+}
 
 // String returns a JSON representation of the model
 func (o *Campaignrulecampaignruntimesettings) String() string {
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -33,8 +41,13 @@ func (u *Campaignrulecampaignruntimesettings) MarshalJSON() ([]byte, error) {
     CampaignrulecampaignruntimesettingsMarshalled = true
 
     return json.Marshal(&struct {
+        
+        IncludeWaitingTime bool `json:"includeWaitingTime"`
         *Alias
     }{
+
+        
+
         Alias: (*Alias)(u),
     })
 }

@@ -10,13 +10,29 @@ var (
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type CampaignruledayofweekparametersDud struct { }
+type CampaignruledayofweekparametersDud struct { 
+    
+
+
+    
+
+}
 
 // Campaignruledayofweekparameters
-type Campaignruledayofweekparameters struct { }
+type Campaignruledayofweekparameters struct { 
+    // InSet - The operand for the \"in\" operator, each value in 1-7 (Monday-Sunday) format
+    InSet []int `json:"inSet"`
+
+
+    // Interval - The operand for the \"between\" operator
+    Interval Campaignruledayofweekinterval `json:"interval"`
+
+}
 
 // String returns a JSON representation of the model
 func (o *Campaignruledayofweekparameters) String() string {
+     o.InSet = []int{0} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -33,8 +49,20 @@ func (u *Campaignruledayofweekparameters) MarshalJSON() ([]byte, error) {
     CampaignruledayofweekparametersMarshalled = true
 
     return json.Marshal(&struct {
+        
+        InSet []int `json:"inSet"`
+        
+        Interval Campaignruledayofweekinterval `json:"interval"`
         *Alias
     }{
+
+        
+        InSet: []int{0},
+        
+
+
+        
+
         Alias: (*Alias)(u),
     })
 }

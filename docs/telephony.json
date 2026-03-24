@@ -9,6 +9,16 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/telephony/settings",
+      "description": "Get the global telephony configuration."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/settings",
+      "description": "Update the global telephony configuration."
+    },
+    {
+      "name": "get",
       "path": "/api/v2/telephony/agents/{agentId}/greetings",
       "description": "Get an agent's greetings."
     },

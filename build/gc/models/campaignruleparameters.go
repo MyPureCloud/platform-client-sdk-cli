@@ -52,6 +52,9 @@ type CampaignruleparametersDud struct {
 
     
 
+
+    
+
 }
 
 // Campaignruleparameters
@@ -111,10 +114,15 @@ type Campaignruleparameters struct {
     // EmailContentTemplate - The content template to set a Email campaign to.
     EmailContentTemplate Domainentityref `json:"emailContentTemplate"`
 
+
+    // ForDuration - ISO-8601 Duration for which condition expression must be continuously true before condition is evaluated as true
+    ForDuration Duration `json:"forDuration"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Campaignruleparameters) String() string {
+    
     
     
     
@@ -173,8 +181,13 @@ func (u *Campaignruleparameters) MarshalJSON() ([]byte, error) {
         SmsContentTemplate Domainentityref `json:"smsContentTemplate"`
         
         EmailContentTemplate Domainentityref `json:"emailContentTemplate"`
+        
+        ForDuration Duration `json:"forDuration"`
         *Alias
     }{
+
+        
+
 
         
 

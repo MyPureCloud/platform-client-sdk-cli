@@ -51,6 +51,9 @@ type CampaignruleDud struct {
     
 
 
+    
+
+
     Warnings []Campaignrulewarning `json:"warnings"`
 
 
@@ -109,6 +112,10 @@ type Campaignrule struct {
     ExecutionSettings Campaignruleexecutionsettings `json:"executionSettings"`
 
 
+    // TimeZoneId - The time zone to use for date-time conditions.
+    TimeZoneId string `json:"timeZoneId"`
+
+
     
 
 
@@ -127,6 +134,7 @@ func (o *Campaignrule) String() string {
     
     
      o.ConditionGroups = []Campaignruleconditiongroup{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -164,6 +172,8 @@ func (u *Campaignrule) MarshalJSON() ([]byte, error) {
         ConditionGroups []Campaignruleconditiongroup `json:"conditionGroups"`
         
         ExecutionSettings Campaignruleexecutionsettings `json:"executionSettings"`
+        
+        TimeZoneId string `json:"timeZoneId"`
         *Alias
     }{
 
@@ -206,6 +216,9 @@ func (u *Campaignrule) MarshalJSON() ([]byte, error) {
 
         
         ConditionGroups: []Campaignruleconditiongroup{{}},
+        
+
+
         
 
 

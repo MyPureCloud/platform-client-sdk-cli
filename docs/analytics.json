@@ -13,11 +13,6 @@
       "description": "Query for agent copilot aggregates"
     },
     {
-      "name": "get",
-      "path": "/api/v2/analytics/agents/{userId}/status",
-      "description": "Get an agent and their active sessions by user ID"
-    },
-    {
       "name": "create",
       "path": "/api/v2/analytics/agents/status/counts",
       "description": "Count agents by different groupings"
@@ -26,6 +21,11 @@
       "name": "create",
       "path": "/api/v2/analytics/agents/status/query",
       "description": "Retrieve the top 50 agents matching the query filters"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/agents/{userId}/status",
+      "description": "Get an agent and their active sessions by user ID"
     },
     {
       "name": "create",
@@ -169,13 +169,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/analytics/users/details/query",
-      "description": "Query for user details"
+      "path": "/api/v2/analytics/users/aggregates/query",
+      "description": "Query for user aggregates"
     },
     {
       "name": "create",
-      "path": "/api/v2/analytics/users/aggregates/query",
-      "description": "Query for user aggregates"
+      "path": "/api/v2/analytics/users/details/query",
+      "description": "Query for user details"
     },
     {
       "name": "create",
@@ -268,14 +268,14 @@
       "description": "Get dashboards summary for a user"
     },
     {
-      "name": "create",
-      "path": "/api/v2/analytics/reporting/dashboards/users/bulk/remove",
-      "description": "Bulk soft delete dashboards owned by other user(s)"
-    },
-    {
       "name": "list",
       "path": "/api/v2/analytics/reporting/dashboards/users",
       "description": "Get dashboards summary for users in a org"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/reporting/dashboards/users/bulk/remove",
+      "description": "Bulk soft delete dashboards owned by other user(s)"
     },
     {
       "name": "list",
@@ -463,6 +463,11 @@
       "description": "Fetch a page of results for an async aggregates query"
     },
     {
+      "name": "create",
+      "path": "/api/v2/analytics/journeys/aggregates/jobs",
+      "description": "Query for journey aggregates asynchronously"
+    },
+    {
       "name": "get",
       "path": "/api/v2/analytics/journeys/aggregates/jobs/{jobId}",
       "description": "Get status for async query for journey aggregates"
@@ -476,11 +481,6 @@
       "name": "list",
       "path": "/api/v2/analytics/journeys/aggregates/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async aggregates query"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/analytics/journeys/aggregates/jobs",
-      "description": "Query for journey aggregates asynchronously"
     },
     {
       "name": "create",

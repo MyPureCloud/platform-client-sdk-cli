@@ -84,6 +84,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/responsemanagement/responseassets/bulk",
+      "description": "Get response assets."
+    },
+    {
+      "name": "create",
       "path": "/api/v2/responsemanagement/responseassets/uploads",
       "description": "Creates pre-signed url for uploading response asset"
     },
@@ -91,6 +96,11 @@
       "name": "create",
       "path": "/api/v2/responsemanagement/responseassets/search",
       "description": "Search response assets"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/responsemanagement/libraries/query",
+      "description": "Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions."
     }
   ]
 }

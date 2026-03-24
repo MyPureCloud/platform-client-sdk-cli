@@ -384,3 +384,34 @@ func isJSON(str string) bool {
 	var js json.RawMessage
 	return json.Unmarshal([]byte(str), &js) == nil
 }
+
+// SelectHeaderContentType selects the header content type
+func SelectHeaderContentType(contentTypes []string) string {
+	if len(contentTypes) == 0 {
+		return ""
+	}
+	if contains(contentTypes, "application/json") {
+		return "application/json"
+	}
+	return contentTypes[0] // use the first content type specified in 'consumes'
+}
+
+// SelectHeaderAccept selects the header accept
+func SelectHeaderAccept(accepts []string) string {
+	if len(accepts) == 0 {
+		return ""
+	}
+	if contains(accepts, "application/json") {
+		return "application/json"
+	}
+	return strings.Join(accepts, ",")
+}
+
+func contains(source []string, containvalue string) bool {
+	for _, a := range source {
+		if strings.ToLower(a) == strings.ToLower(containvalue) {
+			return true
+		}
+	}
+	return false
+}

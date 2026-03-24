@@ -37,6 +37,15 @@ type TranscriptaggregationqueryDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Transcriptaggregationquery
@@ -76,6 +85,18 @@ type Transcriptaggregationquery struct {
     // AlternateTimeDimension - Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
     AlternateTimeDimension string `json:"alternateTimeDimension"`
 
+
+    // QueryType - Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
+    QueryType string `json:"queryType"`
+
+
+    // SortMetric - Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+    SortMetric Transcriptaggregationsort `json:"sortMetric"`
+
+
+    // Limit - How many results you want in an ordered list. Only applicable for topN/bottomN query type.
+    Limit int `json:"limit"`
+
 }
 
 // String returns a JSON representation of the model
@@ -88,6 +109,9 @@ func (o *Transcriptaggregationquery) String() string {
      o.Metrics = []string{""} 
     
      o.Views = []Transcriptaggregationview{{}} 
+    
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -123,6 +147,12 @@ func (u *Transcriptaggregationquery) MarshalJSON() ([]byte, error) {
         Views []Transcriptaggregationview `json:"views"`
         
         AlternateTimeDimension string `json:"alternateTimeDimension"`
+        
+        QueryType string `json:"queryType"`
+        
+        SortMetric Transcriptaggregationsort `json:"sortMetric"`
+        
+        Limit int `json:"limit"`
         *Alias
     }{
 
@@ -153,6 +183,15 @@ func (u *Transcriptaggregationquery) MarshalJSON() ([]byte, error) {
 
         
         Views: []Transcriptaggregationview{{}},
+        
+
+
+        
+
+
+        
+
+
         
 
 

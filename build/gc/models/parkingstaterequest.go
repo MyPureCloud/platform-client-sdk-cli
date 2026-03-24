@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -13,6 +14,9 @@ var (
 type ParkingstaterequestDud struct { 
     
 
+
+    
+
 }
 
 // Parkingstaterequest
@@ -20,10 +24,15 @@ type Parkingstaterequest struct {
     // State - State to set the participant.
     State string `json:"state"`
 
+
+    // ResumeTime - Timestamp for resume parked conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    ResumeTime time.Time `json:"resumeTime"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Parkingstaterequest) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +52,13 @@ func (u *Parkingstaterequest) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         State string `json:"state"`
+        
+        ResumeTime time.Time `json:"resumeTime"`
         *Alias
     }{
+
+        
+
 
         
 

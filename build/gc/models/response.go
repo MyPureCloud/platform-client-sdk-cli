@@ -106,7 +106,7 @@ type Response struct {
 
 
     // Assets - Assets used in the response
-    Assets []Addressableentityref `json:"assets"`
+    Assets []Rmsassetaddressableref `json:"assets"`
 
 
     // Footer - Footer template definition for responseType.Footer.
@@ -128,7 +128,7 @@ func (o *Response) String() string {
     
     
     
-     o.Assets = []Addressableentityref{{}} 
+     o.Assets = []Rmsassetaddressableref{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -165,7 +165,7 @@ func (u *Response) MarshalJSON() ([]byte, error) {
         
         MessagingTemplate Messagingtemplate `json:"messagingTemplate"`
         
-        Assets []Addressableentityref `json:"assets"`
+        Assets []Rmsassetaddressableref `json:"assets"`
         
         Footer Footertemplate `json:"footer"`
         *Alias
@@ -214,7 +214,7 @@ func (u *Response) MarshalJSON() ([]byte, error) {
 
 
         
-        Assets: []Addressableentityref{{}},
+        Assets: []Rmsassetaddressableref{{}},
         
 
 

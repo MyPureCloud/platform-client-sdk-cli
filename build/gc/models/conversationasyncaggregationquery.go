@@ -40,6 +40,15 @@ type ConversationasyncaggregationqueryDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Conversationasyncaggregationquery
@@ -80,6 +89,18 @@ type Conversationasyncaggregationquery struct {
     AlternateTimeDimension string `json:"alternateTimeDimension"`
 
 
+    // QueryType - Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
+    QueryType string `json:"queryType"`
+
+
+    // SortMetric - Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+    SortMetric Conversationaggregationsort `json:"sortMetric"`
+
+
+    // Limit - How many results you want in an ordered list. Only applicable for topN/bottomN query type.
+    Limit int `json:"limit"`
+
+
     // PageSize - The number of results per page
     PageSize int `json:"pageSize"`
 
@@ -95,6 +116,9 @@ func (o *Conversationasyncaggregationquery) String() string {
      o.Metrics = []string{""} 
     
      o.Views = []Conversationaggregationview{{}} 
+    
+    
+    
     
     
 
@@ -132,6 +156,12 @@ func (u *Conversationasyncaggregationquery) MarshalJSON() ([]byte, error) {
         
         AlternateTimeDimension string `json:"alternateTimeDimension"`
         
+        QueryType string `json:"queryType"`
+        
+        SortMetric Conversationaggregationsort `json:"sortMetric"`
+        
+        Limit int `json:"limit"`
+        
         PageSize int `json:"pageSize"`
         *Alias
     }{
@@ -163,6 +193,15 @@ func (u *Conversationasyncaggregationquery) MarshalJSON() ([]byte, error) {
 
         
         Views: []Conversationaggregationview{{}},
+        
+
+
+        
+
+
+        
+
+
         
 
 

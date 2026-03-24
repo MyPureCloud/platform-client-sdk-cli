@@ -1,0 +1,176 @@
+{
+  "supercommand": "casemanagement",
+  "description": "/api/v2/casemanagement",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/casemanagement/cases/{caseId}/associations/{associationId}",
+      "description": "Get a Case Association."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/casemanagement/cases/associations/query",
+      "description": "Query for case associations"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/casemanagement/cases/{caseId}/associations",
+      "description": "Get a list of case associations for a provided case."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/casemanagement/cases/{caseId}/associations",
+      "description": "Create a case association."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}",
+      "description": "Get a Caseplan."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}",
+      "description": "Delete a Caseplan."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}",
+      "description": "Update the attributes of a Caseplan."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/publish",
+      "description": "Publish Caseplan."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/versions",
+      "description": "Create Caseplan version."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}",
+      "description": "Get a Caseplan version."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/intakesettings",
+      "description": "Get the intake settings for a Caseplan version."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/dataschemas",
+      "description": "Get the dataSchemas for a caseplan version."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/casemanagement/caseplans",
+      "description": "Get a list of Caseplans."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/casemanagement/caseplans",
+      "description": "Create a Caseplan."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/casemanagement/cases/{caseId}/datedue",
+      "description": "Update date due of a Case."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/casemanagement/cases/{caseId}/priority",
+      "description": "Update priority of a Case."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/casemanagement/cases/{caseId}",
+      "description": "Get a Case."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/casemanagement/cases/{caseId}",
+      "description": "Delete a Case."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/casemanagement/cases/{caseId}/summary",
+      "description": "Update summary of a Case."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/casemanagement/cases/externalcontacts/{externalContactId}",
+      "description": "Get a list of cases for provided external contact id."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/casemanagement/cases/references/{referenceId}",
+      "description": "Get a Case by reference."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/casemanagement/cases",
+      "description": "Create a Case."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/casemanagement/cases/{caseId}/terminate/jobs/{jobId}",
+      "description": "Get a Terminate Job for a Case."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/casemanagement/cases/{caseId}/terminate/jobs",
+      "description": "Create a Terminate Job for a Case."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}",
+      "description": "Update the attributes of a Stageplan."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}",
+      "description": "Get a Stageplan."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans",
+      "description": "Get a list of Stageplans."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/casemanagement/cases/{caseId}/stages/{stageId}",
+      "description": "Get a Stage."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/casemanagement/cases/{caseId}/stages",
+      "description": "Get a list of Stages."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/stepplans/{stepplanId}",
+      "description": "Update the attributes of a Stepplan."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}/stepplans/{stepplanId}",
+      "description": "Get a Stepplan."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}/stepplans",
+      "description": "Get a list of Stepplans."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps/{stepId}",
+      "description": "Get a Step."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps",
+      "description": "Get a list of Steps."
+    }
+  ]
+}

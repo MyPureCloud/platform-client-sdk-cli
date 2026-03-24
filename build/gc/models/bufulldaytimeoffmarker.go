@@ -62,7 +62,7 @@ type Bufulldaytimeoffmarker struct {
     Paid bool `json:"paid"`
 
 
-    // PayableMinutes - Payable minutes for the time off marker
+    // PayableMinutes - Payable minutes for the time off marker. Must not exceed lengthMinutes
     PayableMinutes int `json:"payableMinutes"`
 
 

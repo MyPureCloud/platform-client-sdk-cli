@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -11,6 +12,9 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type MediaparticipantrequestDud struct { 
+    
+
+
     
 
 
@@ -62,10 +66,15 @@ type Mediaparticipantrequest struct {
     // WrapupSkipped - True to skip wrap-up for this participant.
     WrapupSkipped bool `json:"wrapupSkipped"`
 
+
+    // ResumeTime - Time to resume parked communication. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    ResumeTime time.Time `json:"resumeTime"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Mediaparticipantrequest) String() string {
+    
     
     
     
@@ -103,8 +112,13 @@ func (u *Mediaparticipantrequest) MarshalJSON() ([]byte, error) {
         Held bool `json:"held"`
         
         WrapupSkipped bool `json:"wrapupSkipped"`
+        
+        ResumeTime time.Time `json:"resumeTime"`
         *Alias
     }{
+
+        
+
 
         
 

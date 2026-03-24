@@ -378,6 +378,11 @@
       "description": "Get ids of operation creator users and oauth clients"
     },
     {
+      "name": "create",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import",
+      "description": "Import the parsed articles"
+    },
+    {
       "name": "get",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}",
       "description": "Get parse job report"
@@ -386,11 +391,6 @@
       "name": "update",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}",
       "description": "Send update to the parse operation"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import",
-      "description": "Import the parsed articles"
     },
     {
       "name": "create",
@@ -416,6 +416,36 @@
       "name": "create",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/views",
       "description": "Create view for a document."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/knowledge/connections/{connectionId}/options",
+      "description": "Get connection options"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/knowledge/connections/{connectionId}",
+      "description": "Get connection"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/knowledge/connections/{connectionId}",
+      "description": "Delete connection"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/knowledge/connections/{connectionId}",
+      "description": "Update connection"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/knowledge/connections",
+      "description": "Get connections"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/connections",
+      "description": "Create new connection"
     },
     {
       "name": "get",
@@ -453,6 +483,61 @@
       "description": "Get Knowledge Search"
     },
     {
+      "name": "get",
+      "path": "/api/v2/knowledge/sources/{sourceId}",
+      "description": "Get source"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/knowledge/sources/{sourceId}",
+      "description": "Update the source"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/knowledge/sources/{sourceId}",
+      "description": "Delete source"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/knowledge/sources",
+      "description": "List sources"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/sources",
+      "description": "Create a new source"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}",
+      "description": "Get a specific synchronization of a source."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}",
+      "description": "Update synchronization."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads",
+      "description": "Create presigned URL for uploading a file in the synchronization."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/knowledge/sources/{sourceId}/synchronizations",
+      "description": "Get synchronizations of a source."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/sources/{sourceId}/synchronizations",
+      "description": "Start a manual synchronization from a source."
+    },
+    {
+      "name": "listallsources",
+      "path": "/api/v2/knowledge/sources/synchronizations",
+      "description": "Get synchronizations of all sources of the organization."
+    },
+    {
       "name": "create",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/answers",
       "description": "Answer documents."
@@ -463,19 +548,14 @@
       "description": "Give feedback on a document"
     },
     {
-      "name": "get",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}",
-      "description": "Get a knowledge document by ID."
-    },
-    {
       "name": "list",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents",
       "description": "Get documents."
     },
     {
-      "name": "create",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views",
-      "description": "Create view event for a document."
+      "name": "get",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}",
+      "description": "Get a knowledge document by ID."
     },
     {
       "name": "create",
@@ -486,6 +566,11 @@
       "name": "create",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations",
       "description": "Indicate that documents were presented to the user."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views",
+      "description": "Create view event for a document."
     },
     {
       "name": "list",

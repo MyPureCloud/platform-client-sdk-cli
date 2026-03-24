@@ -28,8 +28,9 @@ func init() {
 }
 
 func Cmdconversations_recordingmetadata() *cobra.Command { 
-	conversationmetadataCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", conversationmetadataCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordingmetadata", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recordingSegment:view", "recording:snippetRecording:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordingmetadata")))
+	conversationmetadataCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", conversationmetadataCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordingmetadata", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recordingSegment:view", "recording:snippetRecording:view", "recording:screenRecording:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordingmetadata")))
 	utils.AddFileFlagIfUpsert(conversationmetadataCmd.Flags(), "GET", ``)
+	
 	
 	utils.AddPaginateFlagsIfListingResponse(conversationmetadataCmd.Flags(), "GET", `{
   "description" : "successful operation",
@@ -46,8 +47,9 @@ func Cmdconversations_recordingmetadata() *cobra.Command {
 }`)
 	conversations_recordingmetadataCmd.AddCommand(conversationmetadataCmd)
 
-	recordingmetadataCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", recordingmetadataCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recordingSegment:view", "recording:snippetRecording:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}")))
+	recordingmetadataCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", recordingmetadataCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recordingSegment:view", "recording:snippetRecording:view", "recording:screenRecording:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}")))
 	utils.AddFileFlagIfUpsert(recordingmetadataCmd.Flags(), "GET", ``)
+	
 	
 	utils.AddPaginateFlagsIfListingResponse(recordingmetadataCmd.Flags(), "GET", `{
   "description" : "successful operation",
@@ -102,9 +104,27 @@ var conversationmetadataCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
+		headerParams := make(map[string]string)
+		// to determine the Content-Type header
+		localVarHttpContentTypes := []string{ "application/json",  }
+		// set Content-Type header
+		localVarHttpContentType := utils.SelectHeaderContentType(localVarHttpContentTypes)
+		if localVarHttpContentType != "" {
+			headerParams["Content-Type"] = localVarHttpContentType
+		}
+		// to determine the Accept header
+		localVarHttpHeaderAccepts := []string{
+			"application/json",
+		}
+		// set Accept header
+		localVarHttpHeaderAccept := utils.SelectHeaderAccept(localVarHttpHeaderAccepts)
+		if localVarHttpHeaderAccept != "" {
+			headerParams["Accept"] = localVarHttpHeaderAccept
+		}
+
 		const opId = "conversationmetadata"
 		const httpMethod = "GET"
-		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,
@@ -169,9 +189,27 @@ var recordingmetadataCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
+		headerParams := make(map[string]string)
+		// to determine the Content-Type header
+		localVarHttpContentTypes := []string{ "application/json",  }
+		// set Content-Type header
+		localVarHttpContentType := utils.SelectHeaderContentType(localVarHttpContentTypes)
+		if localVarHttpContentType != "" {
+			headerParams["Content-Type"] = localVarHttpContentType
+		}
+		// to determine the Accept header
+		localVarHttpHeaderAccepts := []string{
+			"application/json",
+		}
+		// set Accept header
+		localVarHttpHeaderAccept := utils.SelectHeaderAccept(localVarHttpHeaderAccepts)
+		if localVarHttpHeaderAccept != "" {
+			headerParams["Accept"] = localVarHttpHeaderAccept
+		}
+
 		const opId = "recordingmetadata"
 		const httpMethod = "GET"
-		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

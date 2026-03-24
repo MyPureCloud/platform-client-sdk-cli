@@ -132,6 +132,9 @@ type CampaignDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -274,6 +277,10 @@ type Campaign struct {
     SkillColumns []string `json:"skillColumns"`
 
 
+    // PreviewAutoEnd - Option to enable preview auto end
+    PreviewAutoEnd bool `json:"previewAutoEnd"`
+
+
     // MaxCallsPerAgent - The maximum number of calls that can be placed per agent on this campaign
     MaxCallsPerAgent int `json:"maxCallsPerAgent"`
 
@@ -331,6 +338,7 @@ func (o *Campaign) String() string {
     
     
      o.SkillColumns = []string{""} 
+    
     
     
     
@@ -414,6 +422,8 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
         DynamicContactQueueingSettings Dynamiccontactqueueingsettings `json:"dynamicContactQueueingSettings"`
         
         SkillColumns []string `json:"skillColumns"`
+        
+        PreviewAutoEnd bool `json:"previewAutoEnd"`
         
         MaxCallsPerAgent int `json:"maxCallsPerAgent"`
         
@@ -541,6 +551,9 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
 
         
         SkillColumns: []string{""},
+        
+
+
         
 
 

@@ -718,6 +718,12 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1654,6 +1660,10 @@ type Viewfilter struct {
     ContentModerationFlags []string `json:"contentModerationFlags"`
 
 
+    // SocialSourceTypes - A set of Source Types for social filtering
+    SocialSourceTypes []string `json:"socialSourceTypes"`
+
+
     // SessionExpired - Filter to indicate for if session is expired
     SessionExpired bool `json:"sessionExpired"`
 
@@ -1664,6 +1674,10 @@ type Viewfilter struct {
 
     // IsSnippetRecorded - Indicates filtering for snippet recorded
     IsSnippetRecorded bool `json:"isSnippetRecorded"`
+
+
+    // Takeover - Indicates filtering for takeover
+    Takeover bool `json:"takeover"`
 
 }
 
@@ -1902,8 +1916,10 @@ func (o *Viewfilter) String() string {
      o.SentimentScoreCategories = []string{""} 
      o.SentimentTrendCategories = []string{""} 
      o.ContentModerationFlags = []string{""} 
+     o.SocialSourceTypes = []string{""} 
     
      o.EngagementSources = []string{""} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -2388,11 +2404,15 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         
         ContentModerationFlags []string `json:"contentModerationFlags"`
         
+        SocialSourceTypes []string `json:"socialSourceTypes"`
+        
         SessionExpired bool `json:"sessionExpired"`
         
         EngagementSources []string `json:"engagementSources"`
         
         IsSnippetRecorded bool `json:"isSnippetRecorded"`
+        
+        Takeover bool `json:"takeover"`
         *Alias
     }{
 
@@ -3418,10 +3438,18 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
 
         
+        SocialSourceTypes: []string{""},
+        
+
+
+        
 
 
         
         EngagementSources: []string{""},
+        
+
+
         
 
 

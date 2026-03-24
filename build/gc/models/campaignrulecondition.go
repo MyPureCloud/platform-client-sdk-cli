@@ -19,6 +19,15 @@ type CampaignruleconditionDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Campaignrulecondition
@@ -34,10 +43,25 @@ type Campaignrulecondition struct {
     // ConditionType - The type of condition to evaluate.
     ConditionType string `json:"conditionType"`
 
+
+    // DateTimeParameters - Parameters for conditions (timeOfDay, dayOfWeek, dayOfMonth, weekDayOfMonth and specificDate)
+    DateTimeParameters Campaignruledatetimeconditionparameters `json:"dateTimeParameters"`
+
+
+    // CampaignRunTimeSettings - Settings for campaignRunTime conditions
+    CampaignRunTimeSettings Campaignrulecampaignruntimesettings `json:"campaignRunTimeSettings"`
+
+
+    // CampaignWaitTimeSettings - Settings for campaignWaitTime conditions
+    CampaignWaitTimeSettings Campaignrulecampaignwaittimesettings `json:"campaignWaitTimeSettings"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Campaignrulecondition) String() string {
+    
+    
+    
     
     
     
@@ -63,8 +87,23 @@ func (u *Campaignrulecondition) MarshalJSON() ([]byte, error) {
         Parameters Campaignruleparameters `json:"parameters"`
         
         ConditionType string `json:"conditionType"`
+        
+        DateTimeParameters Campaignruledatetimeconditionparameters `json:"dateTimeParameters"`
+        
+        CampaignRunTimeSettings Campaignrulecampaignruntimesettings `json:"campaignRunTimeSettings"`
+        
+        CampaignWaitTimeSettings Campaignrulecampaignwaittimesettings `json:"campaignWaitTimeSettings"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

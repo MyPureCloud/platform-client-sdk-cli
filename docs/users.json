@@ -129,28 +129,18 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/users/presences/purecloud/bulk",
-      "description": "Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source"
+      "path": "/api/v2/users/presences/{sourceId}/bulk",
+      "description": "Get bulk user presences for a single presence source"
     },
     {
       "name": "get",
-      "path": "/api/v2/users/presences/{sourceId}/bulk",
-      "description": "Get bulk user presences for a single presence source"
+      "path": "/api/v2/users/presences/purecloud/bulk",
+      "description": "Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source"
     },
     {
       "name": "update",
       "path": "/api/v2/users/presences/bulk",
       "description": "Update bulk user Presences"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/users/{userId}/presences/{sourceId}",
-      "description": "Get a user's Presence"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/users/{userId}/presences/{sourceId}",
-      "description": "Patch a user's Presence"
     },
     {
       "name": "get",
@@ -163,6 +153,16 @@
       "description": "Patch a Genesys Cloud user's presence"
     },
     {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/presences/{sourceId}",
+      "description": "Get a user's Presence"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/presences/{sourceId}",
+      "description": "Patch a user's Presence"
+    },
+    {
       "name": "list",
       "path": "/api/v2/users/chats/me",
       "description": "Get chats for a user"
@@ -171,11 +171,6 @@
       "name": "getuserbyexternalid",
       "path": "/api/v2/users/externalid/{authorityName}/{externalKey}",
       "description": "Get the user associated with external identifier."
-    },
-    {
-      "name": "getexternalidforuserauthority",
-      "path": "/api/v2/users/{userId}/externalid/{authorityName}",
-      "description": "Get the external identifier of user for an authority."
     },
     {
       "name": "getexternalidsforuser",
@@ -191,6 +186,11 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}",
       "description": "Delete the external identifier for user."
+    },
+    {
+      "name": "getexternalidforuserauthority",
+      "path": "/api/v2/users/{userId}/externalid/{authorityName}",
+      "description": "Get the external identifier of user for an authority."
     },
     {
       "name": "create",
@@ -393,6 +393,11 @@
       "description": "Search users assigned to teams"
     },
     {
+      "name": "get",
+      "path": "/api/v2/users/development/activities/{activityId}",
+      "description": "Get a Development Activity"
+    },
+    {
       "name": "list",
       "path": "/api/v2/users/development/activities",
       "description": "Get list of Development Activities"
@@ -401,11 +406,6 @@
       "name": "list",
       "path": "/api/v2/users/development/activities/me",
       "description": "Get list of Development Activities for current user"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/users/development/activities/{activityId}",
-      "description": "Get a Development Activity"
     },
     {
       "name": "create",

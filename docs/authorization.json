@@ -13,6 +13,11 @@
       "description": "Returns the maximum allowed number of divisions."
     },
     {
+      "name": "create",
+      "path": "/api/v2/authorization/divisions/{divisionId}/restore",
+      "description": "Recreate a previously deleted division."
+    },
+    {
       "name": "get",
       "path": "/api/v2/authorization/divisions/{divisionId}",
       "description": "Returns an authorization division."
@@ -26,11 +31,6 @@
       "name": "delete",
       "path": "/api/v2/authorization/divisions/{divisionId}",
       "description": "Delete a division."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/authorization/divisions/{divisionId}/restore",
-      "description": "Recreate a previously deleted division."
     },
     {
       "name": "list",
@@ -68,21 +68,6 @@
       "description": "Add an access control policy for a specified resource target and subject, overwriting any existing policy"
     },
     {
-      "name": "create",
-      "path": "/api/v2/authorization/policies/targets/{targetName}/validate",
-      "description": "Validate the conditions and attributes of an access control policy for a specified resource target"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/authorization/policies",
-      "description": "Get a page of access policies for an organization"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/authorization/policies/subject/{subjectId}",
-      "description": "Get a page of access policies for a given subject"
-    },
-    {
       "name": "get",
       "path": "/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}",
       "description": "Get an access control policy for a specified resource target and subject"
@@ -93,6 +78,11 @@
       "description": "Delete an access control policy"
     },
     {
+      "name": "list",
+      "path": "/api/v2/authorization/policies/subject/{subjectId}",
+      "description": "Get a page of access policies for a given subject"
+    },
+    {
       "name": "get",
       "path": "/api/v2/authorization/policies/{policyId}",
       "description": "Get an access control policy with the specified policy ID"
@@ -101,6 +91,11 @@
       "name": "update",
       "path": "/api/v2/authorization/policies/{policyId}",
       "description": "Update an access control policy with a given ID"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/policies",
+      "description": "Get a page of access policies for an organization"
     },
     {
       "name": "get",
@@ -116,6 +111,11 @@
       "name": "get",
       "path": "/api/v2/authorization/policies/targets",
       "description": "Get a map of policy targets to valid attributes for those targets"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/policies/targets/{targetName}/validate",
+      "description": "Validate the conditions and attributes of an access control policy for a specified resource target"
     },
     {
       "name": "get",
@@ -153,9 +153,9 @@
       "description": "Returns a listing of roles and permissions for the currently authenticated user."
     },
     {
-      "name": "get",
-      "path": "/api/v2/authorization/subjects/{subjectId}",
-      "description": "Returns a listing of roles and permissions for a user."
+      "name": "create",
+      "path": "/api/v2/authorization/subjects/{subjectId}/bulkreplace",
+      "description": "Replace subject's roles and divisions with the exact list supplied in the request."
     },
     {
       "name": "create",
@@ -169,18 +169,18 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/authorization/subjects/{subjectId}/bulkremove",
+      "description": "Bulk-remove grants from a subject."
+    },
+    {
+      "name": "create",
       "path": "/api/v2/authorization/subjects/{subjectId}/bulkadd",
       "description": "Bulk-grant roles and divisions to a subject."
     },
     {
-      "name": "create",
-      "path": "/api/v2/authorization/subjects/{subjectId}/bulkreplace",
-      "description": "Replace subject's roles and divisions with the exact list supplied in the request."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/authorization/subjects/{subjectId}/bulkremove",
-      "description": "Bulk-remove grants from a subject."
+      "name": "get",
+      "path": "/api/v2/authorization/subjects/{subjectId}",
+      "description": "Returns a listing of roles and permissions for a user."
     },
     {
       "name": "update",

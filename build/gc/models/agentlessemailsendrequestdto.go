@@ -38,7 +38,7 @@ type AgentlessemailsendrequestdtoDud struct {
 
 // Agentlessemailsendrequestdto
 type Agentlessemailsendrequestdto struct { 
-    // SenderType - The direction of the message.
+    // SenderType - The type of email domain used to send the agentless message.
     SenderType string `json:"senderType"`
 
 

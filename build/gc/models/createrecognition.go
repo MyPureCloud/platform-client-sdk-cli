@@ -40,7 +40,7 @@ type Createrecognition struct {
     VarType string `json:"type"`
 
 
-    // Title - The title of the recognition. Max length of 100 characters (optional)
+    // Title - The title of the recognition. Max length of 100 characters
     Title string `json:"title"`
 
 

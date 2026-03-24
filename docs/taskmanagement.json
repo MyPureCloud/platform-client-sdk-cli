@@ -34,6 +34,11 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results",
+      "description": "Get bulk terminate job results."
+    },
+    {
+      "name": "get",
       "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}",
       "description": "Get the bulk job associated with the job id."
     },
@@ -46,11 +51,6 @@
       "name": "update",
       "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}",
       "description": "Update workitem bulk terminate job."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results",
-      "description": "Get bulk terminate job results."
     },
     {
       "name": "create",
@@ -124,28 +124,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/taskmanagement/workitems/{workitemId}/disconnect",
-      "description": "Disconnect the assignee of the workitem"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/taskmanagement/workitems/{workitemId}/terminate",
       "description": "Terminate a workitem"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion}",
-      "description": "Get a version of a workitem"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/taskmanagement/workitems/{workitemId}/history",
-      "description": "Get a listing of a workitem's attribute change history"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/taskmanagement/workitems/{workitemId}/acd/cancel",
-      "description": "Cancel the assignment process for a workitem that is currently queued for assignment through ACD."
     },
     {
       "name": "get",
@@ -171,6 +151,26 @@
       "name": "list",
       "path": "/api/v2/taskmanagement/workitems/{workitemId}/versions",
       "description": "Get all versions of a workitem"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion}",
+      "description": "Get a version of a workitem"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/history",
+      "description": "Get a listing of a workitem's attribute change history"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/acd/cancel",
+      "description": "Cancel the assignment process for a workitem that is currently queued for assignment through ACD."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/disconnect",
+      "description": "Disconnect the assignee of the workitem"
     },
     {
       "name": "get",

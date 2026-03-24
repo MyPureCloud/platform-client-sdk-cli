@@ -1,0 +1,16 @@
+package casemanagement_caseplans_versions
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/casemanagement_caseplans_versions_intakesettings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/casemanagement_caseplans_versions_dataschemas"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/casemanagement_caseplans_versions_stageplans"
+)
+
+func init() {
+	casemanagement_caseplans_versionsCmd.AddCommand(casemanagement_caseplans_versions_intakesettings.Cmdcasemanagement_caseplans_versions_intakesettings())
+	casemanagement_caseplans_versionsCmd.AddCommand(casemanagement_caseplans_versions_dataschemas.Cmdcasemanagement_caseplans_versions_dataschemas())
+	casemanagement_caseplans_versionsCmd.AddCommand(casemanagement_caseplans_versions_stageplans.Cmdcasemanagement_caseplans_versions_stageplans())
+	casemanagement_caseplans_versionsCmd.Short = utils.GenerateCustomDescription(casemanagement_caseplans_versionsCmd.Short, casemanagement_caseplans_versions_intakesettings.Description, casemanagement_caseplans_versions_dataschemas.Description, casemanagement_caseplans_versions_stageplans.Description, )
+	casemanagement_caseplans_versionsCmd.Long = casemanagement_caseplans_versionsCmd.Short
+}

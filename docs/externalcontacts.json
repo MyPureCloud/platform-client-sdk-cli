@@ -89,6 +89,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/relationships/add",
+      "description": "Bulk add relationships"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/relationships/remove",
       "description": "Bulk remove relationships"
     },
@@ -101,11 +106,6 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/bulk/relationships/update",
       "description": "Bulk update relationships"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/relationships/add",
-      "description": "Bulk add relationships"
     },
     {
       "name": "get",
@@ -148,6 +148,16 @@
       "description": "Delete an external contact"
     },
     {
+      "name": "patch",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}",
+      "description": "Update specific fields of an external contact"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/promotion",
+      "description": "Promote an observed contact (ephemeral or identified) to a curated contact"
+    },
+    {
       "name": "list",
       "path": "/api/v2/externalcontacts/contacts/{contactId}/identifiers",
       "description": "List the identifiers for a contact"
@@ -156,11 +166,6 @@
       "name": "update",
       "path": "/api/v2/externalcontacts/contacts/{contactId}/identifiers",
       "description": "Claim or release identifiers for a contact"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/contacts/{contactId}/promotion",
-      "description": "Promote an observed contact (ephemeral or identified) to a curated contact"
     },
     {
       "name": "get",

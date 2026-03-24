@@ -68,6 +68,12 @@ type AnalyticsconversationDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Analyticsconversation
@@ -106,6 +112,14 @@ type Analyticsconversation struct {
 
     // InactivityTimeout - The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     InactivityTimeout time.Time `json:"inactivityTimeout"`
+
+
+    // AssociatedConversationId - ID of the conversation the initiator is signaling this new conversation is associated with
+    AssociatedConversationId string `json:"associatedConversationId"`
+
+
+    // ConsultationConversationIds - Set of conversationIds the initiator has signaled this conversation is associated with
+    ConsultationConversationIds []string `json:"consultationConversationIds"`
 
 
     // KnowledgeBaseIds - The unique identifier(s) of the knowledge base(s) used
@@ -160,6 +174,8 @@ func (o *Analyticsconversation) String() string {
      o.DivisionIds = []string{""} 
     
     
+    
+     o.ConsultationConversationIds = []string{""} 
      o.KnowledgeBaseIds = []string{""} 
     
     
@@ -204,6 +220,10 @@ func (u *Analyticsconversation) MarshalJSON() ([]byte, error) {
         ExternalTag string `json:"externalTag"`
         
         InactivityTimeout time.Time `json:"inactivityTimeout"`
+        
+        AssociatedConversationId string `json:"associatedConversationId"`
+        
+        ConsultationConversationIds []string `json:"consultationConversationIds"`
         
         KnowledgeBaseIds []string `json:"knowledgeBaseIds"`
         
@@ -253,6 +273,14 @@ func (u *Analyticsconversation) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+        ConsultationConversationIds: []string{""},
         
 
 

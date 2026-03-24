@@ -24,9 +24,9 @@ type SupportedcontentreferenceDud struct {
 
 }
 
-// Supportedcontentreference - Reference to supported content profile associated with the integration
+// Supportedcontentreference
 type Supportedcontentreference struct { 
-    // Id - The SupportedContent unique identifier associated with this integration
+    // Id - The SupportedContent unique identifier associated with this integration or phone number
     Id string `json:"id"`
 
 

@@ -69,11 +69,6 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/businessrules/decisiontables/search",
-      "description": "Search for decision tables."
-    },
-    {
-      "name": "list",
       "path": "/api/v2/businessrules/decisiontables",
       "description": "Get a list of decision tables."
     },
@@ -81,6 +76,11 @@
       "name": "create",
       "path": "/api/v2/businessrules/decisiontables",
       "description": "Create a decision table"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/businessrules/decisiontables/search",
+      "description": "Search for decision tables."
     },
     {
       "name": "get",

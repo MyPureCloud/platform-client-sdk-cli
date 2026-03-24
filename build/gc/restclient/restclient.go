@@ -63,36 +63,36 @@ func (r *RESTClient) SetConfig(c config.Configuration) {
 }
 
 // Get executes an HTTP Get
-func (r *RESTClient) Get(uri string) (string, error) {
-        return r.callAPI(http.MethodGet, uri, "")
+func (r *RESTClient) Get(uri string, headerParams map[string]string) (string, error) {
+        return r.callAPI(http.MethodGet, uri, headerParams, "")
 }
 
 // Head executes an HTTP Head
-func (r *RESTClient) Head(uri string) (string, error) {
-        return r.callAPI(http.MethodHead, uri, "")
+func (r *RESTClient) Head(uri string, headerParams map[string]string) (string, error) {
+        return r.callAPI(http.MethodHead, uri, headerParams, "")
 }
 
 // Put executes an HTTP Put
-func (r *RESTClient) Put(uri string, data string) (string, error) {
-        return r.callAPI(http.MethodPut, uri, data)
+func (r *RESTClient) Put(uri string, headerParams map[string]string, data string) (string, error) {
+        return r.callAPI(http.MethodPut, uri, headerParams, data)
 }
 
 // Post executes an HTTP Post
-func (r *RESTClient) Post(uri string, data string) (string, error) {
-        return r.callAPI(http.MethodPost, uri, data)
+func (r *RESTClient) Post(uri string, headerParams map[string]string, data string) (string, error) {
+        return r.callAPI(http.MethodPost, uri, headerParams, data)
 }
 
 // Patch executes an HTTP Patch
-func (r *RESTClient) Patch(uri string, data string) (string, error) {
-        return r.callAPI(http.MethodPatch, uri, data)
+func (r *RESTClient) Patch(uri string, headerParams map[string]string, data string) (string, error) {
+        return r.callAPI(http.MethodPatch, uri, headerParams, data)
 }
 
 // Delete executes an HTTP Delete
-func (r *RESTClient) Delete(uri string) (string, error) {
-        return r.callAPI(http.MethodDelete, uri, "")
+func (r *RESTClient) Delete(uri string, headerParams map[string]string) (string, error) {
+        return r.callAPI(http.MethodDelete, uri, headerParams, "")
 }
 
-func (r *RESTClient) callAPI(method string, uri string, data string) (string, error) {
+func (r *RESTClient) callAPI(method string, uri string, headerParams map[string]string, data string) (string, error) {
         var apiURI *url.URL
         if !strings.HasPrefix(uri, "/") {
                 uri = fmt.Sprintf("/%v", uri)
@@ -116,12 +116,20 @@ func (r *RESTClient) callAPI(method string, uri string, data string) (string, er
 
         //Setting up the auth header
         request.Header.Set("Authorization", fmt.Sprintf("Bearer %s", r.token))
-        request.Header.Set("Content-Type", "application/json")
         request.Header.Set("Cache-Control", "no-cache")
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "156.0.0")
+        request.Header.Set("purecloud-sdk", "157.0.0")
+
+        // Set additional headers from parameters
+	if len(headerParams) > 0 {
+                for k, v := range headerParams {
+			if v != "" {
+				request.Header.Set(k, v)
+			}
+		}
+	}
 
         if data != "" {
                 request.Body = ioutil.NopCloser(bytes.NewBuffer([]byte(data)))
@@ -314,7 +322,7 @@ func authorizePKCEGrant(c config.Configuration, code string, codeVerifier string
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "156.0.0")
+        request.Header.Set("purecloud-sdk", "157.0.0")
 
         //Setting up the form data
         form := url.Values{}
@@ -403,7 +411,7 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "156.0.0")
+        request.Header.Set("purecloud-sdk", "157.0.0")
 
         //Setting up the form data
         form := url.Values{}

@@ -61,11 +61,11 @@ type Admintimeoffrequestpatch struct {
     Notes string `json:"notes"`
 
 
-    // FullDayManagementUnitDates - A set of dates in yyyy-MM-dd format. Should be interpreted in the management unit's configured time zone.
+    // FullDayManagementUnitDates - A set of dates in yyyy-MM-dd format. Should be interpreted in the management unit's configured time zone
     FullDayManagementUnitDates []string `json:"fullDayManagementUnitDates"`
 
 
-    // PartialDayStartDateTimes - A set of start date-times in ISO-8601 format for partial day requests.
+    // PartialDayStartDateTimes - A set of start date-times in ISO-8601 format for partial day requests
     PartialDayStartDateTimes []time.Time `json:"partialDayStartDateTimes"`
 
 

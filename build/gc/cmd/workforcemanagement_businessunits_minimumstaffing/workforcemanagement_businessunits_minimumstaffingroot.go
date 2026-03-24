@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_minimumstaffing
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_minimumstaffing_settings"
+)
+
+func init() {
+	workforcemanagement_businessunits_minimumstaffingCmd.AddCommand(workforcemanagement_businessunits_minimumstaffing_settings.Cmdworkforcemanagement_businessunits_minimumstaffing_settings())
+	workforcemanagement_businessunits_minimumstaffingCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_minimumstaffingCmd.Short, workforcemanagement_businessunits_minimumstaffing_settings.Description, )
+	workforcemanagement_businessunits_minimumstaffingCmd.Long = workforcemanagement_businessunits_minimumstaffingCmd.Short
+}

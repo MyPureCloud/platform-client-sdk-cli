@@ -10,13 +10,29 @@ var (
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type CampaignruletimeofdayintervalDud struct { }
+type CampaignruletimeofdayintervalDud struct { 
+    
+
+
+    
+
+}
 
 // Campaignruletimeofdayinterval
-type Campaignruletimeofdayinterval struct { }
+type Campaignruletimeofdayinterval struct { 
+    // Min - Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS
+    Min string `json:"min"`
+
+
+    // Max - Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS
+    Max string `json:"max"`
+
+}
 
 // String returns a JSON representation of the model
 func (o *Campaignruletimeofdayinterval) String() string {
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -33,8 +49,18 @@ func (u *Campaignruletimeofdayinterval) MarshalJSON() ([]byte, error) {
     CampaignruletimeofdayintervalMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Min string `json:"min"`
+        
+        Max string `json:"max"`
         *Alias
     }{
+
+        
+
+
+        
+
         Alias: (*Alias)(u),
     })
 }

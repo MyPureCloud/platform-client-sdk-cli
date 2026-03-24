@@ -21,15 +21,15 @@ import (
 
 // CommandService holds the method signatures for all common Command object invocations
 type CommandService interface {
-	Get(uri string) (string, error)
-	Head(uri string) (string, error)
-	List(uri string) (string, error)
-	Stream(uri string) (string, error)
-	Post(uri string, payload string) (string, error)
-	Patch(uri string, payload string) (string, error)
-	Put(uri string, payload string) (string, error)
-	Delete(uri string) (string, error)
-	DetermineAction(httpMethod string, uri string, cmd *cobra.Command, opId string) func(retryConfiguration *retry.RetryConfiguration) (string, error)
+	Get(uri string, headerParams map[string]string) (string, error)
+	Head(uri string, headerParams map[string]string) (string, error)
+	List(uri string, headerParams map[string]string) (string, error)
+	Stream(uri string, headerParams map[string]string) (string, error)
+	Post(uri string, headerParams map[string]string, payload string) (string, error)
+	Patch(uri string, headerParams map[string]string, payload string) (string, error)
+	Put(uri string, headerParams map[string]string, payload string) (string, error)
+	Delete(uri string, headerParams map[string]string) (string, error)
+	DetermineAction(httpMethod string, uri string, headerParams map[string]string, cmd *cobra.Command, opId string) func(retryConfiguration *retry.RetryConfiguration) (string, error)
 }
 
 type commandService struct {
@@ -58,7 +58,7 @@ func NewCommandService(cmd *cobra.Command) *commandService {
 	return &commandService{cmd: cmd}
 }
 
-func (c *commandService) Stream(uri string) (string, error) {
+func (c *commandService) Stream(uri string, headerParams map[string]string) (string, error) {
 	profileName, _ := c.cmd.Root().Flags().GetString("profile")
 	config, err := configGetConfig(profileName)
 	consecutiveEmptyPages := 0
@@ -70,13 +70,13 @@ func (c *commandService) Stream(uri string) (string, error) {
 
 	//Looks up first page
 	c.traceStart(http.MethodGet, uri, "")
-	data, err := restClient.Get(uri)
+	data, err := restClient.Get(uri, headerParams)
 	if err != nil {
 		err = reAuthenticateIfNecessary(config, err)
 		if err != nil {
 			return "", err
 		}
-		return c.Stream(uri)
+		return c.Stream(uri, headerParams)
 	}
 
 	utils.Render(data)
@@ -102,7 +102,7 @@ func (c *commandService) Stream(uri string) (string, error) {
 		for ok := true; ok; ok = cursor != "" && consecutiveEmptyPages < 3 {
 			logger.Info("Paginating with URI: ", pagedURI)
 			c.traceProgress(pagedURI)
-			retryFunc := retry.Retry(pagedURI, restClient.Get)
+			retryFunc := retry.Retry(pagedURI, headerParams, restClient.Get)
 			data, err = retryFunc(getPaginationRetryConfiguration())
 			if err != nil {
 				return "", err
@@ -140,7 +140,7 @@ func (c *commandService) Stream(uri string) (string, error) {
 			pagedURI = updatePagingIndex(pagedURI, "pageNumber", x)
 			logger.Info("Paginating with URI: ", pagedURI)
 			c.traceProgress(pagedURI)
-			retryFunc := retry.Retry(pagedURI, restClient.Get)
+			retryFunc := retry.Retry(pagedURI, headerParams, restClient.Get)
 			data, err = retryFunc(getPaginationRetryConfiguration())
 			if err != nil {
 				return "", err
@@ -171,7 +171,7 @@ func (c *commandService) Stream(uri string) (string, error) {
 			pagedURI = updatePagingIndex(pagedURI, "startIndex", pageData.StartIndex)
 			logger.Info("Paginating with URI: ", pagedURI)
 			c.traceProgress(pagedURI)
-			retryFunc := retry.Retry(pagedURI, restClient.Get)
+			retryFunc := retry.Retry(pagedURI, headerParams, restClient.Get)
 			data, err = retryFunc(getPaginationRetryConfiguration())
 			if err != nil {
 				return "", err
@@ -200,7 +200,7 @@ func (c *commandService) Stream(uri string) (string, error) {
 	return "", nil
 }
 
-func (c *commandService) List(uri string) (string, error) {
+func (c *commandService) List(uri string, headerParams map[string]string) (string, error) {
 	profileName, _ := c.cmd.Root().Flags().GetString("profile")
 	config, err := configGetConfig(profileName)
 	consecutiveEmptyPages := 0
@@ -212,13 +212,13 @@ func (c *commandService) List(uri string) (string, error) {
 
 	//Looks up first page
 	c.traceStart(http.MethodGet, uri, "")
-	data, err := restClient.Get(uri)
+	data, err := restClient.Get(uri, headerParams)
 	if err != nil {
 		err = reAuthenticateIfNecessary(config, err)
 		if err != nil {
 			return "", err
 		}
-		return c.List(uri)
+		return c.List(uri, headerParams)
 	}
 
 	firstPage := &models.Entities{}
@@ -250,7 +250,7 @@ func (c *commandService) List(uri string) (string, error) {
 		for ok := true; ok; ok = cursor != "" && consecutiveEmptyPages < 3 {
 			logger.Info("Paginating with URI: ", pagedURI)
 			c.traceProgress(pagedURI)
-			retryFunc := retry.Retry(pagedURI, restClient.Get)
+			retryFunc := retry.Retry(pagedURI, headerParams, restClient.Get)
 			data, err = retryFunc(getPaginationRetryConfiguration())
 			if err != nil {
 				return "", err
@@ -289,7 +289,7 @@ func (c *commandService) List(uri string) (string, error) {
 			pagedURI = updatePagingIndex(pagedURI, "pageNumber", x)
 			logger.Info("Paginating with URI: ", pagedURI)
 			c.traceProgress(pagedURI)
-			retryFunc := retry.Retry(pagedURI, restClient.Get)
+			retryFunc := retry.Retry(pagedURI, headerParams, restClient.Get)
 			data, err = retryFunc(getPaginationRetryConfiguration())
 			if err != nil {
 				return "", err
@@ -321,7 +321,7 @@ func (c *commandService) List(uri string) (string, error) {
 			pagedURI = updatePagingIndex(pagedURI, "startIndex", pageData.StartIndex)
 			logger.Info("Paginating with URI: ", pagedURI)
 			c.traceProgress(pagedURI)
-			retryFunc := retry.Retry(pagedURI, restClient.Get)
+			retryFunc := retry.Retry(pagedURI, headerParams, restClient.Get)
 			data, err = retryFunc(getPaginationRetryConfiguration())
 			if err != nil {
 				return "", err
@@ -472,31 +472,31 @@ func updatePagingIndex(pagedURI, indexName string, index int) string {
 	return pagedURI
 }
 
-func (c *commandService) Get(uri string) (string, error) {
-	return c.invoke(http.MethodGet, uri, "")
+func (c *commandService) Get(uri string, headerParams map[string]string) (string, error) {
+	return c.invoke(http.MethodGet, uri, headerParams, "")
 }
 
-func (c *commandService) Post(uri string, payload string) (string, error) {
-	return c.invoke(http.MethodPost, uri, payload)
+func (c *commandService) Post(uri string, headerParams map[string]string, payload string) (string, error) {
+	return c.invoke(http.MethodPost, uri, headerParams, payload)
 }
 
-func (c *commandService) Patch(uri string, payload string) (string, error) {
-	return c.invoke(http.MethodPatch, uri, payload)
+func (c *commandService) Patch(uri string, headerParams map[string]string, payload string) (string, error) {
+	return c.invoke(http.MethodPatch, uri, headerParams, payload)
 }
 
-func (c *commandService) Put(uri string, payload string) (string, error) {
-	return c.invoke(http.MethodPut, uri, payload)
+func (c *commandService) Put(uri string, headerParams map[string]string, payload string) (string, error) {
+	return c.invoke(http.MethodPut, uri, headerParams, payload)
 }
 
-func (c *commandService) Delete(uri string) (string, error) {
-	return c.invoke(http.MethodDelete, uri, "")
+func (c *commandService) Delete(uri string, headerParams map[string]string) (string, error) {
+	return c.invoke(http.MethodDelete, uri, headerParams, "")
 }
 
-func (c *commandService) Head(uri string) (string, error) {
-	return c.invoke(http.MethodHead, uri, "")
+func (c *commandService) Head(uri string, headerParams map[string]string) (string, error) {
+	return c.invoke(http.MethodHead, uri, headerParams, "")
 }
 
-func (c *commandService) invoke(method string, uri string, payload string) (string, error) {
+func (c *commandService) invoke(method string, uri string, headerParams map[string]string, payload string) (string, error) {
 	profileName, _ := c.cmd.Root().Flags().GetString("profile")
 	config, err := configGetConfig(profileName)
 	if err != nil {
@@ -510,17 +510,17 @@ func (c *commandService) invoke(method string, uri string, payload string) (stri
 	c.traceStart(method, uri, payload)
 	switch method {
 	case http.MethodGet:
-		response, err = restClient.Get(uri)
+		response, err = restClient.Get(uri, headerParams)
 	case http.MethodPost:
-		response, err = restClient.Post(uri, payload)
+		response, err = restClient.Post(uri, headerParams, payload)
 	case http.MethodPut:
-		response, err = restClient.Put(uri, payload)
+		response, err = restClient.Put(uri, headerParams, payload)
 	case http.MethodPatch:
-		response, err = restClient.Patch(uri, payload)
+		response, err = restClient.Patch(uri, headerParams, payload)
 	case http.MethodDelete:
-		response, err = restClient.Delete(uri)
+		response, err = restClient.Delete(uri, headerParams)
 	case http.MethodHead:
-		response, err = restClient.Head(uri)
+		response, err = restClient.Head(uri, headerParams)
 	default:
 		logger.Fatalf("Unable to resolve the http verb: %v", method)
 	}
@@ -535,7 +535,7 @@ func (c *commandService) invoke(method string, uri string, payload string) (stri
 		return "", err
 	}
 
-	return c.invoke(method, uri, payload)
+	return c.invoke(method, uri, headerParams, payload)
 }
 
 func reAuthenticateIfNecessary(config config.Configuration, err error) error {
@@ -565,7 +565,7 @@ func reAuthenticateIfNecessary(config config.Configuration, err error) error {
 	return nil
 }
 
-func (c *commandService) DetermineAction(httpMethod string, uri string, cmd *cobra.Command, opId string) func(retryConfiguration *retry.RetryConfiguration) (string, error) {
+func (c *commandService) DetermineAction(httpMethod string, uri string, headerParams map[string]string, cmd *cobra.Command, opId string) func(retryConfiguration *retry.RetryConfiguration) (string, error) {
 	flags := cmd.Flags()
 	logger.InitLogger(c.cmd)
 	switch httpMethod {
@@ -580,7 +580,7 @@ func (c *commandService) DetermineAction(httpMethod string, uri string, cmd *cob
 		}
 
 		if flags == nil && !doAutoPagination {
-			return retry.Retry(uri, c.Get)
+			return retry.Retry(uri, headerParams, c.Get)
 		}
 
 		// These flags will be false if they're not available on the command (simple GETs) or if they haven't been set on a paginatable command
@@ -588,34 +588,34 @@ func (c *commandService) DetermineAction(httpMethod string, uri string, cmd *cob
 		stream, _ := flags.GetBool("stream")
 
 		if !autoPaginate && !stream && !doAutoPagination {
-			return retry.Retry(uri, c.Get)
+			return retry.Retry(uri, headerParams, c.Get)
 		}
 
 		// Stream if the user just sets stream or stream and autopagination
 		if stream {
-			return retry.Retry(uri, c.Stream)
+			return retry.Retry(uri, headerParams, c.Stream)
 		}
 
-		return retry.Retry(uri, c.List)
+		return retry.Retry(uri, headerParams, c.List)
 	case http.MethodHead:
-		return retry.Retry(uri, c.Head)
+		return retry.Retry(uri, headerParams, c.Head)
 	case http.MethodPatch:
 		if flags.Lookup("file") == nil || flags.Lookup("directory") == nil {
-			return retry.RetryWithData(uri, []string{""}, c.Patch)
+			return retry.RetryWithData(uri, headerParams, []string{""}, c.Patch)
 		}
-		return retry.RetryWithData(uri, utils.ResolveInputData(c.cmd), c.Patch)
+		return retry.RetryWithData(uri, headerParams, utils.ResolveInputData(c.cmd), c.Patch)
 	case http.MethodPost:
 		if flags.Lookup("file") == nil || flags.Lookup("directory") == nil {
-			return retry.RetryWithData(uri, []string{""}, c.Post)
+			return retry.RetryWithData(uri, headerParams, []string{""}, c.Post)
 		}
-		return retry.RetryWithData(uri, utils.ResolveInputData(c.cmd), c.Post)
+		return retry.RetryWithData(uri, headerParams, utils.ResolveInputData(c.cmd), c.Post)
 	case http.MethodPut:
 		if flags.Lookup("file") == nil || flags.Lookup("directory") == nil {
-			return retry.RetryWithData(uri, []string{""}, c.Put)
+			return retry.RetryWithData(uri, headerParams, []string{""}, c.Put)
 		}
-		return retry.RetryWithData(uri, utils.ResolveInputData(c.cmd), c.Put)
+		return retry.RetryWithData(uri, headerParams, utils.ResolveInputData(c.cmd), c.Put)
 	case http.MethodDelete:
-		return retry.Retry(uri, c.Delete)
+		return retry.Retry(uri, headerParams, c.Delete)
 	}
 	return nil
 }

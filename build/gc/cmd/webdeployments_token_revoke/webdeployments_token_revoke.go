@@ -28,8 +28,11 @@ func init() {
 }
 
 func Cmdwebdeployments_token_revoke() *cobra.Command { 
+	utils.AddFlag(deleteCmd.Flags(), "string", "xJourneySessionId", "", "The Customer`s journey sessionId.")
+	utils.AddFlag(deleteCmd.Flags(), "string", "xJourneySessionType", "", "The Customer`s journey session type.")
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/webdeployments/token/revoke", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("DELETE", "Web Deployments", "/api/v2/webdeployments/token/revoke")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
+	
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "Revoke any tokens associate with the JWT. \nIf the JWT is expired the refresh endpoint should be called to obtain a valid JWT and this endpoint called again.",
@@ -76,9 +79,39 @@ var deleteCmd = &cobra.Command{
 			urlString = strings.Replace(urlString, "varType", "type", -1)
 		}
 
+		headerParams := make(map[string]string)
+		// to determine the Content-Type header
+		localVarHttpContentTypes := []string{ "application/json",  }
+		// set Content-Type header
+		localVarHttpContentType := utils.SelectHeaderContentType(localVarHttpContentTypes)
+		if localVarHttpContentType != "" {
+			headerParams["Content-Type"] = localVarHttpContentType
+		}
+		// to determine the Accept header
+		localVarHttpHeaderAccepts := []string{
+			"application/json",
+		}
+		// set Accept header
+		localVarHttpHeaderAccept := utils.SelectHeaderAccept(localVarHttpHeaderAccepts)
+		if localVarHttpHeaderAccept != "" {
+			headerParams["Accept"] = localVarHttpHeaderAccept
+		}
+
+		// header params "X-Journey-Session-Id"
+		xJourneySessionId := utils.GetFlag(cmd.Flags(), "string", "xJourneySessionId")
+		if xJourneySessionId != "" {
+			headerParams["X-Journey-Session-Id"] = xJourneySessionId
+		}
+		// header params "X-Journey-Session-Type"
+		xJourneySessionType := utils.GetFlag(cmd.Flags(), "string", "xJourneySessionType")
+		if xJourneySessionType != "" {
+			headerParams["X-Journey-Session-Type"] = xJourneySessionType
+		}
+
+
 		const opId = "delete"
 		const httpMethod = "DELETE"
-		retryFunc := CommandService.DetermineAction(httpMethod, urlString, cmd, opId)
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{
 			RetryWaitMin: 5 * time.Second,

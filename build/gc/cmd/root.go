@@ -38,6 +38,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/mobiledevices"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orphanrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/presencedefinitions"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scripts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/search"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
@@ -77,7 +78,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/outbound"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/profile"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/employeeperformance"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gdpr"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/geolocations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/intents"
@@ -117,6 +117,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/employeeengagement"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/learning"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/backgroundassistant"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/casemanagement"
 	"os"
 )
 
@@ -143,7 +144,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 156.0.0")
+		fmt.Println("Current version: 157.0.0")
 		checkForNewVersion()
 	},
 }
@@ -162,7 +163,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("156.0.0", latestVersion) {
+	if versionsAreEqual("157.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -291,6 +292,7 @@ func init() {
 	rootCmd.AddCommand(mobiledevices.Cmdmobiledevices())
 	rootCmd.AddCommand(orphanrecordings.Cmdorphanrecordings())
 	rootCmd.AddCommand(presencedefinitions.Cmdpresencedefinitions())
+	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(scripts.Cmdscripts())
 	rootCmd.AddCommand(search.Cmdsearch())
 	rootCmd.AddCommand(stations.Cmdstations())
@@ -330,7 +332,6 @@ func init() {
 	rootCmd.AddCommand(outbound.Cmdoutbound())
 	rootCmd.AddCommand(profile.Cmdprofile())
 	rootCmd.AddCommand(employeeperformance.Cmdemployeeperformance())
-	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(gdpr.Cmdgdpr())
 	rootCmd.AddCommand(geolocations.Cmdgeolocations())
 	rootCmd.AddCommand(intents.Cmdintents())
@@ -370,6 +371,7 @@ func init() {
 	rootCmd.AddCommand(employeeengagement.Cmdemployeeengagement())
 	rootCmd.AddCommand(learning.Cmdlearning())
 	rootCmd.AddCommand(backgroundassistant.Cmdbackgroundassistant())
+	rootCmd.AddCommand(casemanagement.Cmdcasemanagement())
 
 	if config.IsExperimentalFeatureEnabled(getProfileName(os.Args), models.DummyCommand.String()) {
 		rootCmd.AddCommand(dummy_command.Cmddummy_command())

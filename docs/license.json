@@ -46,6 +46,11 @@
       "name": "create",
       "path": "/api/v2/license/users",
       "description": "Fetch user licenses in a batch."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/license/infer/permissions",
+      "description": "Get a list of licenses inferred based on a list of permissions"
     }
   ]
 }

@@ -343,6 +343,16 @@
       "description": "Delete Contact List Template"
     },
     {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlisttemplates/bulk/add",
+      "description": "Add multiple contact list templates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/contactlisttemplates/bulk/retrieve",
+      "description": "Get multiple contact list templates"
+    },
+    {
       "name": "list",
       "path": "/api/v2/outbound/contactlisttemplates",
       "description": "Query a list of contact list templates"
@@ -356,16 +366,6 @@
       "name": "deleteall",
       "path": "/api/v2/outbound/contactlisttemplates",
       "description": "Delete multiple contact list templates."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/outbound/contactlisttemplates/bulk/add",
-      "description": "Add multiple contact list templates"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/outbound/contactlisttemplates/bulk/retrieve",
-      "description": "Get multiple contact list templates"
     },
     {
       "name": "list",
@@ -445,7 +445,7 @@
     {
       "name": "deletecontacts",
       "path": "/api/v2/outbound/contactlists/{contactListId}/contacts",
-      "description": "Delete contacts from a contact list."
+      "description": "Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted"
     },
     {
       "name": "create",
@@ -731,6 +731,11 @@
       "name": "update",
       "path": "/api/v2/outbound/wrapupcodemappings",
       "description": "Update the Dialer wrap up code mapping."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/diagnostics/campaigns/{campaignId}/summary",
+      "description": "Get diagnostic summary for a single campaign"
     },
     {
       "name": "get",

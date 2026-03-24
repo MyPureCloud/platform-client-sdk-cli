@@ -20,7 +20,7 @@ func GetRetryConfiguration() *RetryConfiguration {
 
 type RequestLogHook func(*http.Request, int)
 
-func RetryWithData(uri string, data []string, httpCall func(uri string, data string) (string, error)) func(retryConfig *RetryConfiguration) (string, error) {
+func RetryWithData(uri string, headerParams map[string]string, data []string, httpCall func(uri string, headerParams map[string]string, data string) (string, error)) func(retryConfig *RetryConfiguration) (string, error) {
 	return func(retryConfig *RetryConfiguration) (string, error) {
 		if retryConfig == nil {
 			retryConfig = &RetryConfiguration{
@@ -33,14 +33,14 @@ func RetryWithData(uri string, data []string, httpCall func(uri string, data str
 
 		// if there is only one item in the array (req body), then just return the response object
 		if len(data) == 1 {
-			res, err := httpCall(uri, data[0])
+			res, err := httpCall(uri, headerParams, data[0])
 			return res, err
 		}
 
 		// if there is more than one item in the array (req bodies), the response will be an array of response objects
 		var response string = "["
 		for i, reqBody := range data {
-			res, err := httpCall(uri, reqBody)
+			res, err := httpCall(uri, headerParams, reqBody)
 			retryConfiguration = nil
 			if err != nil {
 				if i == len(data)-1 {
@@ -62,7 +62,7 @@ func RetryWithData(uri string, data []string, httpCall func(uri string, data str
 	}
 }
 
-func Retry(uri string, httpCall func(uri string) (string, error)) func(retryConfig *RetryConfiguration) (string, error) {
+func Retry(uri string, headerParams map[string]string, httpCall func(uri string, headerParams map[string]string) (string, error)) func(retryConfig *RetryConfiguration) (string, error) {
 	return func(retryConfig *RetryConfiguration) (string, error) {
 		if retryConfig == nil {
 			retryConfig = &RetryConfiguration{
@@ -73,7 +73,7 @@ func Retry(uri string, httpCall func(uri string) (string, error)) func(retryConf
 		}
 		retryConfiguration = retryConfig
 
-		response, err := httpCall(uri)
+		response, err := httpCall(uri, headerParams)
 		retryConfiguration = nil
 
 		return response, err

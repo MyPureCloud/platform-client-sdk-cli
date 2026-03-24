@@ -22,6 +22,9 @@ type VariableDud struct {
 
     
 
+
+    
+
 }
 
 // Variable
@@ -41,10 +44,15 @@ type Variable struct {
     // Description - The description of the variable used by Guides runtime for input/output handling.
     Description string `json:"description"`
 
+
+    // Validation - The validation configuration for the variable. Optional - if not present, no validation is applied.
+    Validation Variablevalidation `json:"validation"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Variable) String() string {
+    
     
     
     
@@ -73,8 +81,13 @@ func (u *Variable) MarshalJSON() ([]byte, error) {
         Scope string `json:"scope"`
         
         Description string `json:"description"`
+        
+        Validation Variablevalidation `json:"validation"`
         *Alias
     }{
+
+        
+
 
         
 

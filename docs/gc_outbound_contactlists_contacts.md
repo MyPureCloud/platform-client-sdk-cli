@@ -33,7 +33,7 @@
 * [gc outbound contactlists contacts bulk](gc_outbound_contactlists_contacts_bulk.html)	 - /api/v2/outbound/contactlists/{contactListId}/contacts/bulk
 * [gc outbound contactlists contacts create](gc_outbound_contactlists_contacts_create.html)	 - Add contacts to a contact list.
 * [gc outbound contactlists contacts delete](gc_outbound_contactlists_contacts_delete.html)	 - Delete a contact.
-* [gc outbound contactlists contacts deletecontacts](gc_outbound_contactlists_contacts_deletecontacts.html)	 - Delete contacts from a contact list.
+* [gc outbound contactlists contacts deletecontacts](gc_outbound_contactlists_contacts_deletecontacts.html)	 - Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
 * [gc outbound contactlists contacts get](gc_outbound_contactlists_contacts_get.html)	 - Get a contact.
 * [gc outbound contactlists contacts search](gc_outbound_contactlists_contacts_search.html)	 - /api/v2/outbound/contactlists/{contactListId}/contacts/search
 * [gc outbound contactlists contacts update](gc_outbound_contactlists_contacts_update.html)	 - Update a contact.

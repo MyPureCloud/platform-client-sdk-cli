@@ -13,7 +13,8 @@ gc oauth scopes list [flags]
 ### Options
 
 ```
-  -h, --help   help for list
+      --acceptLanguage string   The language with which to display the scope descriptions.
+  -h, --help                    help for list
 ```
 
 ### Options inherited from parent commands

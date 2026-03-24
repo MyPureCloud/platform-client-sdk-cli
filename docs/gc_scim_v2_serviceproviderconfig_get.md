@@ -13,7 +13,8 @@ gc scim v2 serviceproviderconfig get [flags]
 ### Options
 
 ```
-  -h, --help   help for get
+  -h, --help                 help for get
+      --ifNoneMatch string   The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: 42. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
 ```
 
 ### Options inherited from parent commands

@@ -16,6 +16,7 @@ gc scim v2 groups replace [groupId] [flags]
   -d, --directory string   Directory path with files containing request bodies
   -f, --file string        File name containing the JSON body
   -h, --help               help for replace
+      --ifMatch string     The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
   -b, --printrequestbody   Print the request body format of the API.
 ```
 

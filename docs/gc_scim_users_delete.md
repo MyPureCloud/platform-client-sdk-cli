@@ -13,7 +13,8 @@ gc scim users delete [userId] [flags]
 ### Options
 
 ```
-  -h, --help   help for delete
+  -h, --help             help for delete
+      --ifMatch string   The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.
 ```
 
 ### Options inherited from parent commands

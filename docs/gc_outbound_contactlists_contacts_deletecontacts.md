@@ -1,10 +1,10 @@
 ## gc outbound contactlists contacts deletecontacts
 
-Delete contacts from a contact list.
+Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
 
 ### Synopsis
 
-Delete contacts from a contact list.
+Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
 
 ```
 gc outbound contactlists contacts deletecontacts [contactListId] [flags]

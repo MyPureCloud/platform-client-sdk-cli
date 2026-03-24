@@ -13,7 +13,8 @@ gc oauth authorizations list [flags]
 ### Options
 
 ```
-  -h, --help   help for list
+      --acceptLanguage string   The language in which to display the client descriptions.
+  -h, --help                    help for list
 ```
 
 ### Options inherited from parent commands

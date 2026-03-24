@@ -30,11 +30,13 @@
 ### SEE ALSO
 
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
+* [gc knowledge connections](gc_knowledge_connections.html)	 - /api/v2/knowledge/connections
 * [gc knowledge documentuploads](gc_knowledge_documentuploads.html)	 - /api/v2/knowledge/documentuploads
 * [gc knowledge guest](gc_knowledge_guest.html)	 - /api/v2/knowledge/guest
 * [gc knowledge integrations](gc_knowledge_integrations.html)	 - /api/v2/knowledge/integrations
 * [gc knowledge knowledgebases](gc_knowledge_knowledgebases.html)	 - /api/v2/knowledge/knowledgebases
 * [gc knowledge search](gc_knowledge_search.html)	 - /api/v2/knowledge/search
 * [gc knowledge settings](gc_knowledge_settings.html)	 - /api/v2/knowledge/settings
+* [gc knowledge sources](gc_knowledge_sources.html)	 - /api/v2/knowledge/sources
 
 

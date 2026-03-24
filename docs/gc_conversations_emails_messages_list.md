@@ -13,10 +13,11 @@ gc conversations emails messages list [conversationId] [flags]
 ### Options
 
 ```
-  -a, --autopaginate             Automatically paginate through the results stripping page information
-      --filtercondition string   Filter list command output based on a given condition or regular expression
-  -h, --help                     help for list
-  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
+  -a, --autopaginate                           Automatically paginate through the results stripping page information
+      --filtercondition string                 Filter list command output based on a given condition or regular expression
+  -h, --help                                   help for list
+      --includeAgentlessStitchedMessages api   Whether to include Agentless api type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that`s a stitched agentless message. Valid values: true, false
+  -s, --stream                                 Paginate and stream data as it is being processed leaving page information intact
 ```
 
 ### Options inherited from parent commands

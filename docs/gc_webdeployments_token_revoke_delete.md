@@ -13,7 +13,9 @@ gc webdeployments token revoke delete [flags]
 ### Options
 
 ```
-  -h, --help   help for delete
+  -h, --help                         help for delete
+      --xJourneySessionId string     The Customer`s journey sessionId.
+      --xJourneySessionType string   The Customer`s journey session type.
 ```
 
 ### Options inherited from parent commands

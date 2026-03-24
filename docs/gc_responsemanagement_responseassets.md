@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc responsemanagement](gc_responsemanagement.html)	 - /api/v2/responsemanagement
+* [gc responsemanagement responseassets bulk](gc_responsemanagement_responseassets_bulk.html)	 - /api/v2/responsemanagement/responseassets/bulk
 * [gc responsemanagement responseassets delete](gc_responsemanagement_responseassets_delete.html)	 - Delete response asset
 * [gc responsemanagement responseassets get](gc_responsemanagement_responseassets_get.html)	 - Get response asset information
 * [gc responsemanagement responseassets search](gc_responsemanagement_responseassets_search.html)	 - /api/v2/responsemanagement/responseassets/search

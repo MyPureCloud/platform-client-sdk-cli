@@ -36,6 +36,7 @@ gc is a CLI for interacting with Genesys Cloud
 * [gc billing](gc_billing.html)	 - /api/v2/billing
 * [gc businessrules](gc_businessrules.html)	 - /api/v2/businessrules
 * [gc carrierservices](gc_carrierservices.html)	 - /api/v2/carrierservices
+* [gc casemanagement](gc_casemanagement.html)	 - /api/v2/casemanagement
 * [gc certificate](gc_certificate.html)	 - /api/v2/certificate
 * [gc chats](gc_chats.html)	 - /api/v2/chats
 * [gc coaching](gc_coaching.html)	 - /api/v2/coaching

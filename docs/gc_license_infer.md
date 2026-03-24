@@ -31,5 +31,6 @@
 
 * [gc license](gc_license.html)	 - /api/v2/license
 * [gc license infer create](gc_license_infer_create.html)	 - Get a list of licenses inferred based on a list of roleIds
+* [gc license infer permissions](gc_license_infer_permissions.html)	 - /api/v2/license/infer/permissions
 
 

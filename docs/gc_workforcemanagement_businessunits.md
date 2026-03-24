@@ -45,7 +45,9 @@
 * [gc workforcemanagement businessunits list](gc_workforcemanagement_businessunits_list.html)	 - Get business units
 * [gc workforcemanagement businessunits mainforecast](gc_workforcemanagement_businessunits_mainforecast.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast
 * [gc workforcemanagement businessunits managementunits](gc_workforcemanagement_businessunits_managementunits.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits
+* [gc workforcemanagement businessunits minimumstaffing](gc_workforcemanagement_businessunits_minimumstaffing.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing
 * [gc workforcemanagement businessunits planninggroups](gc_workforcemanagement_businessunits_planninggroups.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups
+* [gc workforcemanagement businessunits scheduler](gc_workforcemanagement_businessunits_scheduler.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler
 * [gc workforcemanagement businessunits scheduling](gc_workforcemanagement_businessunits_scheduling.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling
 * [gc workforcemanagement businessunits servicegoaltemplates](gc_workforcemanagement_businessunits_servicegoaltemplates.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates
 * [gc workforcemanagement businessunits staffinggroups](gc_workforcemanagement_businessunits_staffinggroups.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups
@@ -53,6 +55,7 @@
 * [gc workforcemanagement businessunits timeoffplans](gc_workforcemanagement_businessunits_timeoffplans.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans
 * [gc workforcemanagement businessunits unavailabletimes](gc_workforcemanagement_businessunits_unavailabletimes.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes
 * [gc workforcemanagement businessunits update](gc_workforcemanagement_businessunits_update.html)	 - Update business unit
+* [gc workforcemanagement businessunits users](gc_workforcemanagement_businessunits_users.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/users
 * [gc workforcemanagement businessunits weeks](gc_workforcemanagement_businessunits_weeks.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks
 * [gc workforcemanagement businessunits workplanbids](gc_workforcemanagement_businessunits_workplanbids.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids
 

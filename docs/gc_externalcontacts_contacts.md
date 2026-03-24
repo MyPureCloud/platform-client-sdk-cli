@@ -39,6 +39,7 @@
 * [gc externalcontacts contacts journey](gc_externalcontacts_contacts_journey.html)	 - /api/v2/externalcontacts/contacts/{contactId}/journey
 * [gc externalcontacts contacts merge](gc_externalcontacts_contacts_merge.html)	 - /api/v2/externalcontacts/contacts/merge
 * [gc externalcontacts contacts notes](gc_externalcontacts_contacts_notes.html)	 - /api/v2/externalcontacts/contacts/{contactId}/notes
+* [gc externalcontacts contacts patch](gc_externalcontacts_contacts_patch.html)	 - Update specific fields of an external contact
 * [gc externalcontacts contacts promotion](gc_externalcontacts_contacts_promotion.html)	 - /api/v2/externalcontacts/contacts/{contactId}/promotion
 * [gc externalcontacts contacts schemas](gc_externalcontacts_contacts_schemas.html)	 - /api/v2/externalcontacts/contacts/schemas
 * [gc externalcontacts contacts search](gc_externalcontacts_contacts_search.html)	 - Search for external contacts

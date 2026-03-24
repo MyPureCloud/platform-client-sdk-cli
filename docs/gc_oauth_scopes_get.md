@@ -13,7 +13,8 @@ gc oauth scopes get [scopeId] [flags]
 ### Options
 
 ```
-  -h, --help   help for get
+      --acceptLanguage string   The language with which to display the scope description.
+  -h, --help                    help for get
 ```
 
 ### Options inherited from parent commands

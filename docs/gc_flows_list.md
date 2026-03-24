@@ -35,7 +35,7 @@ gc flows list [flags]
       --sortBy string                Sort by
       --sortOrder string             Sort order
   -s, --stream                       Paginate and stream data as it is being processed leaving page information intact
-      --varType strings              Type Valid values: bot, commonmodule, digitalbot, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, inqueueemail, inqueueshortmessage, speech, securecall, surveyinvite, voice, voicemail, voicesurvey, workflow, workitem
+      --varType strings              Type Valid values: bot, commonmodule, digitalbot, emailsend, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, inqueueemail, inqueueshortmessage, speech, securecall, surveyinvite, voice, voicemail, voicesurvey, workflow, workitem
       --virtualAgentEnabled string   Include/exclude virtual agent flows Valid values: true, false
 ```
 

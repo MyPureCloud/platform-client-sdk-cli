@@ -35,6 +35,7 @@
 * [gc responsemanagement libraries delete](gc_responsemanagement_libraries_delete.html)	 - Delete an existing response library.
 * [gc responsemanagement libraries get](gc_responsemanagement_libraries_get.html)	 - Get details about an existing response library.
 * [gc responsemanagement libraries list](gc_responsemanagement_libraries_list.html)	 - Gets a list of existing response libraries.
+* [gc responsemanagement libraries query](gc_responsemanagement_libraries_query.html)	 - /api/v2/responsemanagement/libraries/query
 * [gc responsemanagement libraries update](gc_responsemanagement_libraries_update.html)	 - Update an existing response library.
 
 

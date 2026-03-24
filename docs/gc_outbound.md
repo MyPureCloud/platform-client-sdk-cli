@@ -39,6 +39,7 @@
 * [gc outbound contactlists](gc_outbound_contactlists.html)	 - /api/v2/outbound/contactlists
 * [gc outbound contactlisttemplates](gc_outbound_contactlisttemplates.html)	 - /api/v2/outbound/contactlisttemplates
 * [gc outbound conversations](gc_outbound_conversations.html)	 - /api/v2/outbound/conversations
+* [gc outbound diagnostics](gc_outbound_diagnostics.html)	 - /api/v2/outbound/diagnostics
 * [gc outbound digitalrulesets](gc_outbound_digitalrulesets.html)	 - /api/v2/outbound/digitalrulesets
 * [gc outbound dnclists](gc_outbound_dnclists.html)	 - /api/v2/outbound/dnclists
 * [gc outbound events](gc_outbound_events.html)	 - /api/v2/outbound/events

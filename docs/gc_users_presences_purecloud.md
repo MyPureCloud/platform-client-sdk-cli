@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
+* [gc users presences](gc_users_presences.html)	 - /api/v2/users/presences /api/v2/users/{userId}/presences
 * [gc users presences purecloud bulk](gc_users_presences_purecloud_bulk.html)	 - /api/v2/users/presences/purecloud/bulk
 * [gc users presences purecloud get](gc_users_presences_purecloud_get.html)	 - Get a user`s Genesys Cloud presence.
 * [gc users presences purecloud update](gc_users_presences_purecloud_update.html)	 - Patch a Genesys Cloud user`s presence

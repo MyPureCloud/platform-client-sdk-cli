@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    CredentialtypelistingMarshalled = false
+    ExternaleventsconfigurationlistingMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type CredentialtypelistingDud struct { 
+type ExternaleventsconfigurationlistingDud struct { 
     
 
 
@@ -42,10 +42,10 @@ type CredentialtypelistingDud struct {
 
 }
 
-// Credentialtypelisting
-type Credentialtypelisting struct { 
+// Externaleventsconfigurationlisting
+type Externaleventsconfigurationlisting struct { 
     // Entities
-    Entities []Credentialtype `json:"entities"`
+    Entities []Externaleventsconfiguration `json:"entities"`
 
 
     // PageSize
@@ -86,8 +86,8 @@ type Credentialtypelisting struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Credentialtypelisting) String() string {
-     o.Entities = []Credentialtype{{}} 
+func (o *Externaleventsconfigurationlisting) String() string {
+     o.Entities = []Externaleventsconfiguration{{}} 
     
     
     
@@ -104,17 +104,17 @@ func (o *Credentialtypelisting) String() string {
     return str
 }
 
-func (u *Credentialtypelisting) MarshalJSON() ([]byte, error) {
-    type Alias Credentialtypelisting
+func (u *Externaleventsconfigurationlisting) MarshalJSON() ([]byte, error) {
+    type Alias Externaleventsconfigurationlisting
 
-    if CredentialtypelistingMarshalled {
+    if ExternaleventsconfigurationlistingMarshalled {
         return []byte("{}"), nil
     }
-    CredentialtypelistingMarshalled = true
+    ExternaleventsconfigurationlistingMarshalled = true
 
     return json.Marshal(&struct {
         
-        Entities []Credentialtype `json:"entities"`
+        Entities []Externaleventsconfiguration `json:"entities"`
         
         PageSize int `json:"pageSize"`
         
@@ -137,7 +137,7 @@ func (u *Credentialtypelisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Credentialtype{{}},
+        Entities: []Externaleventsconfiguration{{}},
         
 
 

@@ -25,6 +25,9 @@ type TranscriptsfiltersDud struct {
 
     
 
+
+    
+
 }
 
 // Transcriptsfilters
@@ -41,6 +44,10 @@ type Transcriptsfilters struct {
     EndTimeMs int `json:"endTimeMs"`
 
 
+    // Programs - list of programs ids to filter by
+    Programs []string `json:"programs"`
+
+
     // Queues - list of queues ids to filter by
     Queues []string `json:"queues"`
 
@@ -55,6 +62,7 @@ func (o *Transcriptsfilters) String() string {
     
     
     
+     o.Programs = []string{""} 
      o.Queues = []string{""} 
      o.Flows = []string{""} 
 
@@ -80,6 +88,8 @@ func (u *Transcriptsfilters) MarshalJSON() ([]byte, error) {
         
         EndTimeMs int `json:"endTimeMs"`
         
+        Programs []string `json:"programs"`
+        
         Queues []string `json:"queues"`
         
         Flows []string `json:"flows"`
@@ -92,6 +102,11 @@ func (u *Transcriptsfilters) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        Programs: []string{""},
         
 
 

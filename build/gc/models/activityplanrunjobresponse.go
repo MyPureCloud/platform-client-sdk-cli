@@ -35,10 +35,6 @@ type Activityplanrunjobresponse struct {
     
 
 
-    // ActivityPlan - The activity plan associated with this job
-    ActivityPlan Activityplanreference `json:"activityPlan"`
-
-
     // Status - The status of the job
     Status string `json:"status"`
 
@@ -51,6 +47,10 @@ type Activityplanrunjobresponse struct {
     VarError Errorbody `json:"error"`
 
 
+    // ActivityPlan - The activity plan associated with this job
+    ActivityPlan Activityplanreference `json:"activityPlan"`
+
+
     
 
 }
@@ -58,8 +58,8 @@ type Activityplanrunjobresponse struct {
 // String returns a JSON representation of the model
 func (o *Activityplanrunjobresponse) String() string {
     
-    
      o.Exceptions = []Activityplanjobexception{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -78,13 +78,13 @@ func (u *Activityplanrunjobresponse) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        ActivityPlan Activityplanreference `json:"activityPlan"`
-        
         Status string `json:"status"`
         
         Exceptions []Activityplanjobexception `json:"exceptions"`
         
         VarError Errorbody `json:"error"`
+        
+        ActivityPlan Activityplanreference `json:"activityPlan"`
         *Alias
     }{
 
@@ -95,10 +95,10 @@ func (u *Activityplanrunjobresponse) MarshalJSON() ([]byte, error) {
 
 
         
-
-
-        
         Exceptions: []Activityplanjobexception{{}},
+        
+
+
         
 
 

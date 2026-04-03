@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdspeechandtextanalytics_conversations_summaries() *cobra.Command { 
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/conversations/{conversationId}/summaries", utils.FormatPermissions([]string{ "speechAndTextAnalytics:aiSummary:view", "recording:recording:view", "recording:recording:viewSensitiveData",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/conversations/{conversationId}/summaries")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/conversations/{conversationId}/summaries", utils.FormatPermissions([]string{ "speechAndTextAnalytics:aiSummary:view",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/conversations/{conversationId}/summaries")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	

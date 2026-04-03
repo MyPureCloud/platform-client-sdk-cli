@@ -30,6 +30,7 @@ func init() {
 func Cmdusers_me() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, date, geolocationsettings, organization, presencedefinitions, divisionedpresencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture, autoanswersettings")
 	utils.AddFlag(getCmd.Flags(), "string", "integrationPresenceSource", "", "Get your presence for a given integration. This parameter will only be used when presence is provided as an expand. Valid values: MicrosoftTeams, ZoomPhone, EightByEight")
+	utils.AddFlag(getCmd.Flags(), "[]string", "userCustomAttributeSchemaIds", "", "Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 100")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/me", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/me")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -79,6 +80,10 @@ var getCmd = &cobra.Command{
 		integrationPresenceSource := utils.GetFlag(cmd.Flags(), "string", "integrationPresenceSource")
 		if integrationPresenceSource != "" {
 			queryParams["integrationPresenceSource"] = integrationPresenceSource
+		}
+		userCustomAttributeSchemaIds := utils.GetFlag(cmd.Flags(), "[]string", "userCustomAttributeSchemaIds")
+		if userCustomAttributeSchemaIds != "" {
+			queryParams["userCustomAttributeSchemaIds"] = userCustomAttributeSchemaIds
 		}
 		urlString := path
 		if len(queryParams) > 0 {

@@ -77,7 +77,7 @@ func Cmdconversations_recordings() *cobra.Command {
 	conversations_recordingsCmd.AddCommand(listCmd)
 
 	utils.AddFlag(updateCmd.Flags(), "bool", "clearExport", "", "Whether to clear the pending export for the recording")
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/{conversationId}/recordings/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recording:editRetention", "recording:screenRecording:view", "recording:screenRecording:editRetention", "recording:snippetRecording:view", "recording:snippetRecording:editRetention",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/{conversationId}/recordings/{recordingId}", utils.FormatPermissions([]string{ "recording:recording:view", "recording:recording:editRetention", "recording:recording:restore", "recording:screenRecording:view", "recording:screenRecording:editRetention", "recording:screenRecording:restore", "recording:snippetRecording:view", "recording:snippetRecording:editRetention", "recording:snippetRecording:restore",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "recording",
   "content" : {

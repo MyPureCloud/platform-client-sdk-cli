@@ -1,0 +1,12 @@
+package workforcemanagement_shifttrading_trades_mine_query
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_shifttrading_trades_mine_query_jobs"
+)
+
+func init() {
+	workforcemanagement_shifttrading_trades_mine_queryCmd.AddCommand(workforcemanagement_shifttrading_trades_mine_query_jobs.Cmdworkforcemanagement_shifttrading_trades_mine_query_jobs())
+	workforcemanagement_shifttrading_trades_mine_queryCmd.Short = utils.GenerateCustomDescription(workforcemanagement_shifttrading_trades_mine_queryCmd.Short, workforcemanagement_shifttrading_trades_mine_query_jobs.Description, )
+	workforcemanagement_shifttrading_trades_mine_queryCmd.Long = workforcemanagement_shifttrading_trades_mine_queryCmd.Short
+}

@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_shifttrading_weeks_summary
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_shifttrading_weeks_summary_jobs"
+)
+
+func init() {
+	workforcemanagement_businessunits_shifttrading_weeks_summaryCmd.AddCommand(workforcemanagement_businessunits_shifttrading_weeks_summary_jobs.Cmdworkforcemanagement_businessunits_shifttrading_weeks_summary_jobs())
+	workforcemanagement_businessunits_shifttrading_weeks_summaryCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_shifttrading_weeks_summaryCmd.Short, workforcemanagement_businessunits_shifttrading_weeks_summary_jobs.Description, )
+	workforcemanagement_businessunits_shifttrading_weeks_summaryCmd.Long = workforcemanagement_businessunits_shifttrading_weeks_summaryCmd.Short
+}

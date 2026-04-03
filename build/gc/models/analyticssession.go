@@ -272,6 +272,9 @@ type AnalyticssessionDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticssession
@@ -572,6 +575,10 @@ type Analyticssession struct {
     SharingScreen bool `json:"sharingScreen"`
 
 
+    // SkillExpressionId - Unique identifier for the skill requested for an interaction
+    SkillExpressionId string `json:"skillExpressionId"`
+
+
     // SkipEnabled - (Dialer) Whether the agent can skip the dialer contact
     SkipEnabled bool `json:"skipEnabled"`
 
@@ -688,6 +695,7 @@ func (o *Analyticssession) String() string {
     
      o.RemovedSkillIds = []string{""} 
      o.RequestedRoutings = []string{""} 
+    
     
     
     
@@ -878,6 +886,8 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         SessionId string `json:"sessionId"`
         
         SharingScreen bool `json:"sharingScreen"`
+        
+        SkillExpressionId string `json:"skillExpressionId"`
         
         SkipEnabled bool `json:"skipEnabled"`
         
@@ -1103,6 +1113,9 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
 
         
         RequestedRoutings: []string{""},
+        
+
+
         
 
 

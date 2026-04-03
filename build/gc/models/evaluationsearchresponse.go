@@ -17,7 +17,7 @@ type EvaluationsearchresponseDud struct {
     PageNumber int `json:"pageNumber"`
 
 
-    Results []Evaluationresponse `json:"results"`
+    Results []Evaluationsearchitemresponse `json:"results"`
 
 
     Aggregations map[string]Evaluationsearchaggregationresponse `json:"aggregations"`

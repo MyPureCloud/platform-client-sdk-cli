@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_shifttrading_trades_state_bulk
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_shifttrading_trades_state_bulk_jobs"
+)
+
+func init() {
+	workforcemanagement_businessunits_shifttrading_trades_state_bulkCmd.AddCommand(workforcemanagement_businessunits_shifttrading_trades_state_bulk_jobs.Cmdworkforcemanagement_businessunits_shifttrading_trades_state_bulk_jobs())
+	workforcemanagement_businessunits_shifttrading_trades_state_bulkCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_shifttrading_trades_state_bulkCmd.Short, workforcemanagement_businessunits_shifttrading_trades_state_bulk_jobs.Description, )
+	workforcemanagement_businessunits_shifttrading_trades_state_bulkCmd.Long = workforcemanagement_businessunits_shifttrading_trades_state_bulkCmd.Short
+}

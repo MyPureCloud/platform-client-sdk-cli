@@ -19,6 +19,9 @@ type RecordersstateDud struct {
 
     
 
+
+    
+
 }
 
 // Recordersstate
@@ -34,10 +37,15 @@ type Recordersstate struct {
     // AgentExperienceState - Indicates the state of the agent experience recorder.
     AgentExperienceState string `json:"agentExperienceState"`
 
+
+    // SnippetState - Indicates the state of the snippet recording.
+    SnippetState string `json:"snippetState"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Recordersstate) String() string {
+    
     
     
     
@@ -63,8 +71,13 @@ func (u *Recordersstate) MarshalJSON() ([]byte, error) {
         CustomerExperienceState string `json:"customerExperienceState"`
         
         AgentExperienceState string `json:"agentExperienceState"`
+        
+        SnippetState string `json:"snippetState"`
         *Alias
     }{
+
+        
+
 
         
 

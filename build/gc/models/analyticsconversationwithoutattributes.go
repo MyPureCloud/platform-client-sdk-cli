@@ -74,12 +74,27 @@ type AnalyticsconversationwithoutattributesDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticsconversationwithoutattributes
 type Analyticsconversationwithoutattributes struct { 
+    // AccessAttributes - Set of attributes that limit which users can access the conversation
+    AccessAttributes []string `json:"accessAttributes"`
+
+
+    // AssociatedConversationId - ID of the conversation the initiator is signaling this new conversation is associated with
+    AssociatedConversationId string `json:"associatedConversationId"`
+
+
     // ConferenceStart - The start time of a conference call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     ConferenceStart time.Time `json:"conferenceStart"`
+
+
+    // ConsultationConversationIds - Set of conversationIds the initiator has signaled this conversation is associated with
+    ConsultationConversationIds []string `json:"consultationConversationIds"`
 
 
     // ConversationEnd - The end time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -112,14 +127,6 @@ type Analyticsconversationwithoutattributes struct {
 
     // InactivityTimeout - The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     InactivityTimeout time.Time `json:"inactivityTimeout"`
-
-
-    // AssociatedConversationId - ID of the conversation the initiator is signaling this new conversation is associated with
-    AssociatedConversationId string `json:"associatedConversationId"`
-
-
-    // ConsultationConversationIds - Set of conversationIds the initiator has signaled this conversation is associated with
-    ConsultationConversationIds []string `json:"consultationConversationIds"`
 
 
     // KnowledgeBaseIds - The unique identifier(s) of the knowledge base(s) used
@@ -165,7 +172,10 @@ type Analyticsconversationwithoutattributes struct {
 
 // String returns a JSON representation of the model
 func (o *Analyticsconversationwithoutattributes) String() string {
+     o.AccessAttributes = []string{""} 
     
+    
+     o.ConsultationConversationIds = []string{""} 
     
     
     
@@ -174,8 +184,6 @@ func (o *Analyticsconversationwithoutattributes) String() string {
      o.DivisionIds = []string{""} 
     
     
-    
-     o.ConsultationConversationIds = []string{""} 
      o.KnowledgeBaseIds = []string{""} 
     
     
@@ -203,7 +211,13 @@ func (u *Analyticsconversationwithoutattributes) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        AccessAttributes []string `json:"accessAttributes"`
+        
+        AssociatedConversationId string `json:"associatedConversationId"`
+        
         ConferenceStart time.Time `json:"conferenceStart"`
+        
+        ConsultationConversationIds []string `json:"consultationConversationIds"`
         
         ConversationEnd time.Time `json:"conversationEnd"`
         
@@ -220,10 +234,6 @@ func (u *Analyticsconversationwithoutattributes) MarshalJSON() ([]byte, error) {
         ExternalTag string `json:"externalTag"`
         
         InactivityTimeout time.Time `json:"inactivityTimeout"`
-        
-        AssociatedConversationId string `json:"associatedConversationId"`
-        
-        ConsultationConversationIds []string `json:"consultationConversationIds"`
         
         KnowledgeBaseIds []string `json:"knowledgeBaseIds"`
         
@@ -247,6 +257,19 @@ func (u *Analyticsconversationwithoutattributes) MarshalJSON() ([]byte, error) {
         *Alias
     }{
 
+        
+        AccessAttributes: []string{""},
+        
+
+
+        
+
+
+        
+
+
+        
+        ConsultationConversationIds: []string{""},
         
 
 
@@ -273,14 +296,6 @@ func (u *Analyticsconversationwithoutattributes) MarshalJSON() ([]byte, error) {
         
 
 
-        
-
-
-        
-
-
-        
-        ConsultationConversationIds: []string{""},
         
 
 

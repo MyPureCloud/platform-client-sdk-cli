@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdspeechandtextanalytics_conversations_sentiments() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/conversations/{conversationId}/sentiments", utils.FormatPermissions([]string{ "speechAndTextAnalytics:sentimentData:view", "speechAndTextAnalytics:data:view", "recording:recording:view", "recording:recording:viewSensitiveData",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/conversations/{conversationId}/sentiments")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/conversations/{conversationId}/sentiments", utils.FormatPermissions([]string{ "speechAndTextAnalytics:sentimentData:view",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/conversations/{conversationId}/sentiments")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	

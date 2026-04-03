@@ -73,16 +73,6 @@
       "description": "Create a Caseplan."
     },
     {
-      "name": "update",
-      "path": "/api/v2/casemanagement/cases/{caseId}/datedue",
-      "description": "Update date due of a Case."
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/casemanagement/cases/{caseId}/priority",
-      "description": "Update priority of a Case."
-    },
-    {
       "name": "get",
       "path": "/api/v2/casemanagement/cases/{caseId}",
       "description": "Get a Case."
@@ -91,6 +81,16 @@
       "name": "delete",
       "path": "/api/v2/casemanagement/cases/{caseId}",
       "description": "Delete a Case."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/casemanagement/cases/{caseId}/priority",
+      "description": "Update priority of a Case."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/casemanagement/cases/{caseId}/datedue",
+      "description": "Update date due of a Case."
     },
     {
       "name": "update",

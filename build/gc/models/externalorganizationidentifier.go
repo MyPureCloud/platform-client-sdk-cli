@@ -12,9 +12,6 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type ExternalorganizationidentifierDud struct { 
-    Id string `json:"id"`
-
-
     
 
 
@@ -28,17 +25,11 @@ type ExternalorganizationidentifierDud struct {
 
 
     
-
-
-    SelfUri string `json:"selfUri"`
 
 }
 
 // Externalorganizationidentifier
 type Externalorganizationidentifier struct { 
-    
-
-
     // Division - The division to which this entity belongs.
     Division Writablestarrabledivision `json:"division"`
 
@@ -57,9 +48,6 @@ type Externalorganizationidentifier struct {
 
     // ExternalSource - The External Source ID of the identifier
     ExternalSource Externalsource `json:"externalSource"`
-
-
-    
 
 }
 
@@ -98,12 +86,6 @@ func (u *Externalorganizationidentifier) MarshalJSON() ([]byte, error) {
         ExternalSource Externalsource `json:"externalSource"`
         *Alias
     }{
-
-        
-
-
-        
-
 
         
 

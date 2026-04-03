@@ -13,11 +13,6 @@
       "description": "Returns the maximum allowed number of divisions."
     },
     {
-      "name": "create",
-      "path": "/api/v2/authorization/divisions/{divisionId}/restore",
-      "description": "Recreate a previously deleted division."
-    },
-    {
       "name": "get",
       "path": "/api/v2/authorization/divisions/{divisionId}",
       "description": "Returns an authorization division."
@@ -31,6 +26,11 @@
       "name": "delete",
       "path": "/api/v2/authorization/divisions/{divisionId}",
       "description": "Delete a division."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/divisions/{divisionId}/restore",
+      "description": "Recreate a previously deleted division."
     },
     {
       "name": "list",
@@ -79,6 +79,11 @@
     },
     {
       "name": "list",
+      "path": "/api/v2/authorization/policies",
+      "description": "Get a page of access policies for an organization"
+    },
+    {
+      "name": "list",
       "path": "/api/v2/authorization/policies/subject/{subjectId}",
       "description": "Get a page of access policies for a given subject"
     },
@@ -91,11 +96,6 @@
       "name": "update",
       "path": "/api/v2/authorization/policies/{policyId}",
       "description": "Update an access control policy with a given ID"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/authorization/policies",
-      "description": "Get a page of access policies for an organization"
     },
     {
       "name": "get",
@@ -154,6 +154,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/authorization/subjects/{subjectId}/bulkadd",
+      "description": "Bulk-grant roles and divisions to a subject."
+    },
+    {
+      "name": "create",
       "path": "/api/v2/authorization/subjects/{subjectId}/bulkreplace",
       "description": "Replace subject's roles and divisions with the exact list supplied in the request."
     },
@@ -173,19 +178,9 @@
       "description": "Bulk-remove grants from a subject."
     },
     {
-      "name": "create",
-      "path": "/api/v2/authorization/subjects/{subjectId}/bulkadd",
-      "description": "Bulk-grant roles and divisions to a subject."
-    },
-    {
       "name": "get",
       "path": "/api/v2/authorization/subjects/{subjectId}",
       "description": "Returns a listing of roles and permissions for a user."
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/authorization/roles/{roleId}/users/remove",
-      "description": "Removes the users from the role"
     },
     {
       "name": "list",
@@ -196,6 +191,11 @@
       "name": "update",
       "path": "/api/v2/authorization/roles/{roleId}/users/add",
       "description": "Sets the users for the role"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/authorization/roles/{roleId}/users/remove",
+      "description": "Removes the users from the role"
     },
     {
       "name": "list",

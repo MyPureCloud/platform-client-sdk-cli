@@ -28,9 +28,6 @@ type ExternalorganizationenrichrequestDud struct {
 
     
 
-
-    SelfUri string `json:"selfUri"`
-
 }
 
 // Externalorganizationenrichrequest
@@ -57,9 +54,6 @@ type Externalorganizationenrichrequest struct {
 
     // FieldRules - Logic describing how to combine data from the submitted request with data found in the database.
     FieldRules Enrichfieldrules `json:"fieldRules"`
-
-
-    
 
 }
 
@@ -110,9 +104,6 @@ func (u *Externalorganizationenrichrequest) MarshalJSON() ([]byte, error) {
 
         
         MatchingIdentifiers: []Externalorganizationidentifier{{}},
-        
-
-
         
 
 

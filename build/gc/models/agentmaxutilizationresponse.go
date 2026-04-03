@@ -19,6 +19,9 @@ type AgentmaxutilizationresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Agentmaxutilizationresponse
@@ -31,6 +34,10 @@ type Agentmaxutilizationresponse struct {
     LabelUtilizations map[string]Labelutilizationresponse `json:"labelUtilizations"`
 
 
+    // MaxInboundCalls - Max number of inbound voice calls.
+    MaxInboundCalls int `json:"maxInboundCalls"`
+
+
     // Level
     Level string `json:"level"`
 
@@ -40,6 +47,7 @@ type Agentmaxutilizationresponse struct {
 func (o *Agentmaxutilizationresponse) String() string {
      o.Utilization = map[string]Mediautilization{"": {}} 
      o.LabelUtilizations = map[string]Labelutilizationresponse{"": {}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -62,6 +70,8 @@ func (u *Agentmaxutilizationresponse) MarshalJSON() ([]byte, error) {
         
         LabelUtilizations map[string]Labelutilizationresponse `json:"labelUtilizations"`
         
+        MaxInboundCalls int `json:"maxInboundCalls"`
+        
         Level string `json:"level"`
         *Alias
     }{
@@ -73,6 +83,9 @@ func (u *Agentmaxutilizationresponse) MarshalJSON() ([]byte, error) {
 
         
         LabelUtilizations: map[string]Labelutilizationresponse{"": {}},
+        
+
+
         
 
 

@@ -724,6 +724,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -1668,6 +1671,10 @@ type Viewfilter struct {
     SessionExpired bool `json:"sessionExpired"`
 
 
+    // ScreenMonitored - Filter to indicate if the interaction was screen monitored
+    ScreenMonitored bool `json:"screenMonitored"`
+
+
     // EngagementSources - The engagement sources used to filter the view
     EngagementSources []string `json:"engagementSources"`
 
@@ -1917,6 +1924,7 @@ func (o *Viewfilter) String() string {
      o.SentimentTrendCategories = []string{""} 
      o.ContentModerationFlags = []string{""} 
      o.SocialSourceTypes = []string{""} 
+    
     
      o.EngagementSources = []string{""} 
     
@@ -2407,6 +2415,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         SocialSourceTypes []string `json:"socialSourceTypes"`
         
         SessionExpired bool `json:"sessionExpired"`
+        
+        ScreenMonitored bool `json:"screenMonitored"`
         
         EngagementSources []string `json:"engagementSources"`
         
@@ -3439,6 +3449,9 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         SocialSourceTypes: []string{""},
+        
+
+
         
 
 

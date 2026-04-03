@@ -75,6 +75,7 @@ func Cmdusers() *cobra.Command {
 
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it`s recommended to use specific API requests instead. Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent")
 	utils.AddFlag(getCmd.Flags(), "string", "integrationPresenceSource", "", "Gets an integration presence for a user instead of their default. Valid values: MicrosoftTeams, ZoomPhone, EightByEight")
+	utils.AddFlag(getCmd.Flags(), "[]string", "userCustomAttributeSchemaIds", "", "Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 100")
 	utils.AddFlag(getCmd.Flags(), "string", "state", "active", "Search for a user with this state Valid values: active, deleted")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/{userId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
@@ -99,6 +100,7 @@ func Cmdusers() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "ASC", "Ascending or descending sort order Valid values: ascending, descending")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it`s recommended to use specific API requests instead. Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent")
 	utils.AddFlag(listCmd.Flags(), "string", "integrationPresenceSource", "", "Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100. Valid values: MicrosoftTeams, ZoomPhone, EightByEight")
+	utils.AddFlag(listCmd.Flags(), "[]string", "userCustomAttributeSchemaIds", "", "Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 5")
 	utils.AddFlag(listCmd.Flags(), "string", "state", "active", "Only list users of this state Valid values: active, inactive, deleted, any")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -345,6 +347,10 @@ var getCmd = &cobra.Command{
 		if integrationPresenceSource != "" {
 			queryParams["integrationPresenceSource"] = integrationPresenceSource
 		}
+		userCustomAttributeSchemaIds := utils.GetFlag(cmd.Flags(), "[]string", "userCustomAttributeSchemaIds")
+		if userCustomAttributeSchemaIds != "" {
+			queryParams["userCustomAttributeSchemaIds"] = userCustomAttributeSchemaIds
+		}
 		state := utils.GetFlag(cmd.Flags(), "string", "state")
 		if state != "" {
 			queryParams["state"] = state
@@ -457,6 +463,10 @@ var listCmd = &cobra.Command{
 		integrationPresenceSource := utils.GetFlag(cmd.Flags(), "string", "integrationPresenceSource")
 		if integrationPresenceSource != "" {
 			queryParams["integrationPresenceSource"] = integrationPresenceSource
+		}
+		userCustomAttributeSchemaIds := utils.GetFlag(cmd.Flags(), "[]string", "userCustomAttributeSchemaIds")
+		if userCustomAttributeSchemaIds != "" {
+			queryParams["userCustomAttributeSchemaIds"] = userCustomAttributeSchemaIds
 		}
 		state := utils.GetFlag(cmd.Flags(), "string", "state")
 		if state != "" {

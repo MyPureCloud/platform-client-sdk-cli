@@ -88,6 +88,86 @@
       "description": "Retrieve all events for a given session."
     },
     {
+      "name": "get",
+      "path": "/api/v2/journey/externalevents/schemas/coretypes/{coreTypeName}",
+      "description": "Get a core type from which all schemas are built"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/journey/externalevents/schemas/coretypes",
+      "description": "Get the list of core types enabled for a specific namespace."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/journey/externalevents/configurations/{configId}",
+      "description": "Get an external events configuration"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/journey/externalevents/configurations/{configId}",
+      "description": "Delete an external events configuration."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/journey/externalevents/configurations/{configId}",
+      "description": "Update an external events configuration."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/journey/externalevents/configurations",
+      "description": "Get all external event configurations."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/journey/externalevents/configurations",
+      "description": "Create an external events configuration."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/journey/externalevents/configurations/{configurationId}/events",
+      "description": "Create external events"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/journey/externalevents/schemas/limits",
+      "description": "Get quantitative limits on schemas"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/journey/externalevents/schemas/{schemaId}",
+      "description": "Get a schema"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/journey/externalevents/schemas/{schemaId}",
+      "description": "Update a schema"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/journey/externalevents/schemas/{schemaId}",
+      "description": "Delete a schema"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/journey/externalevents/schemas/{schemaId}/versions",
+      "description": "Get all versions of a External Events schema"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/journey/externalevents/schemas/{schemaId}/versions/{versionId}",
+      "description": "Get a specific version of a schema"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/journey/externalevents/schemas",
+      "description": "Get a list of schemas."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/journey/externalevents/schemas",
+      "description": "Create a schema"
+    },
+    {
       "name": "create",
       "path": "/api/v2/journey/flows/paths/query",
       "description": "Query for flow paths."

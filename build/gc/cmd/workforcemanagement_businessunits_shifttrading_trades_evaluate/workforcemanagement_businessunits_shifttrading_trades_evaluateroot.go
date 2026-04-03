@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_shifttrading_trades_evaluate
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_shifttrading_trades_evaluate_jobs"
+)
+
+func init() {
+	workforcemanagement_businessunits_shifttrading_trades_evaluateCmd.AddCommand(workforcemanagement_businessunits_shifttrading_trades_evaluate_jobs.Cmdworkforcemanagement_businessunits_shifttrading_trades_evaluate_jobs())
+	workforcemanagement_businessunits_shifttrading_trades_evaluateCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_shifttrading_trades_evaluateCmd.Short, workforcemanagement_businessunits_shifttrading_trades_evaluate_jobs.Description, )
+	workforcemanagement_businessunits_shifttrading_trades_evaluateCmd.Long = workforcemanagement_businessunits_shifttrading_trades_evaluateCmd.Short
+}

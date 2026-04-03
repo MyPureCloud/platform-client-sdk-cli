@@ -38,11 +38,6 @@
       "description": "Get customer intent assignments for externalContactId"
     },
     {
-      "name": "create",
-      "path": "/api/v2/intents/customerintents/{customerIntentId}/sourceintents/bulk/add",
-      "description": "Bulk add source intents to a customer intent"
-    },
-    {
       "name": "get",
       "path": "/api/v2/intents/customerintents/{customerIntentId}",
       "description": "Get customer intent for customerIntentId"
@@ -61,6 +56,11 @@
       "name": "create",
       "path": "/api/v2/intents/customerintents/{customerIntentId}/sourceintents/bulk/remove",
       "description": "Bulk remove source intents mapped to a customer intent"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/intents/customerintents/{customerIntentId}/sourceintents/bulk/add",
+      "description": "Bulk add source intents to a customer intent"
     },
     {
       "name": "list",

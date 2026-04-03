@@ -104,16 +104,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/routing/settings/contactcenter",
-      "description": "Get Contact Center Settings"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/routing/settings/contactcenter",
-      "description": "Update Contact Center Settings"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/routing/settings/transcription",
       "description": "Get Transcription Settings"
     },
@@ -126,6 +116,16 @@
       "name": "modify",
       "path": "/api/v2/routing/settings/transcription",
       "description": "Patch Transcription Settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/settings/contactcenter",
+      "description": "Get Contact Center Settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/settings/contactcenter",
+      "description": "Update Contact Center Settings"
     },
     {
       "name": "get",
@@ -713,11 +713,6 @@
       "description": "Create a wrap-up code"
     },
     {
-      "name": "list",
-      "path": "/api/v2/routing/utilization/tags/{tagId}/agents",
-      "description": "Get list of agent ids associated with a utilization tag"
-    },
-    {
       "name": "get",
       "path": "/api/v2/routing/utilization/tags/{tagId}",
       "description": "Get details about this utilization tag"
@@ -726,6 +721,11 @@
       "name": "delete",
       "path": "/api/v2/routing/utilization/tags/{tagId}",
       "description": "Delete an utilization tag"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/utilization/tags/{tagId}/agents",
+      "description": "Get list of agent ids associated with a utilization tag"
     },
     {
       "name": "list",

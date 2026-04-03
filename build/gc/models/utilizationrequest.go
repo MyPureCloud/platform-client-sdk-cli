@@ -16,6 +16,9 @@ type UtilizationrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Utilizationrequest
@@ -27,12 +30,17 @@ type Utilizationrequest struct {
     // LabelUtilizations - Map of label ids to utilization settings.
     LabelUtilizations map[string]Labelutilizationrequest `json:"labelUtilizations"`
 
+
+    // MaxInboundCalls - Max number of inbound voice calls.
+    MaxInboundCalls int `json:"maxInboundCalls"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Utilizationrequest) String() string {
      o.Utilization = map[string]Mediautilization{"": {}} 
      o.LabelUtilizations = map[string]Labelutilizationrequest{"": {}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -53,6 +61,8 @@ func (u *Utilizationrequest) MarshalJSON() ([]byte, error) {
         Utilization map[string]Mediautilization `json:"utilization"`
         
         LabelUtilizations map[string]Labelutilizationrequest `json:"labelUtilizations"`
+        
+        MaxInboundCalls int `json:"maxInboundCalls"`
         *Alias
     }{
 
@@ -63,6 +73,9 @@ func (u *Utilizationrequest) MarshalJSON() ([]byte, error) {
 
         
         LabelUtilizations: map[string]Labelutilizationrequest{"": {}},
+        
+
+
         
 
         Alias: (*Alias)(u),

@@ -155,8 +155,8 @@ var conversationmetadataCmd = &cobra.Command{
 }
 var recordingmetadataCmd = &cobra.Command{
 	Use:   "recordingmetadata [conversationId] [recordingId]",
-	Short: "Get metadata for a specific recording. Does not return playable media.",
-	Long:  "Get metadata for a specific recording. Does not return playable media.",
+	Short: "Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.",
+	Long:  "Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.",
 	Args:  utils.DetermineArgs([]string{ "conversationId", "recordingId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

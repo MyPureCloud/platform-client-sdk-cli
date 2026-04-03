@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdconversations_recordings_annotations() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations", utils.FormatPermissions([]string{ "recording:annotation:add", "recording:recording:view", "recording:recordingSegment:view", "recording:snippetRecording:view", "recording:screenRecording:view",  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations", utils.FormatPermissions([]string{ "recording:annotation:add", "recording:annotation:edit", "recording:recording:view", "recording:recordingSegment:view", "recording:snippetRecording:view", "recording:screenRecording:view",  }), utils.GenerateDevCentreLink("POST", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "annotation",
   "content" : {
@@ -109,7 +109,7 @@ func Cmdconversations_recordings_annotations() *cobra.Command {
 }`)
 	conversations_recordings_annotationsCmd.AddCommand(listCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}", utils.FormatPermissions([]string{ "recording:annotation:edit", "recording:recording:view", "recording:recordingSegment:view", "recording:snippetRecording:view", "recording:screenRecording:view",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}", utils.FormatPermissions([]string{ "recording:annotation:edit", "recording:annotation:add", "recording:recording:view", "recording:recordingSegment:view", "recording:snippetRecording:view", "recording:screenRecording:view",  }), utils.GenerateDevCentreLink("PUT", "Recording", "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
   "description" : "annotation",
   "content" : {

@@ -11,9 +11,6 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type DeploymentidentityresolutionconfigDud struct { 
-    Id string `json:"id"`
-
-
     
 
 
@@ -32,9 +29,6 @@ type DeploymentidentityresolutionconfigDud struct {
 
 // Deploymentidentityresolutionconfig
 type Deploymentidentityresolutionconfig struct { 
-    
-
-
     // Division - The division to use when performing identity resolution.
     Division Writablestarrabledivision `json:"division"`
 
@@ -87,9 +81,6 @@ func (u *Deploymentidentityresolutionconfig) MarshalJSON() ([]byte, error) {
         Automerge Identityresolutionautomergeconfig `json:"automerge"`
         *Alias
     }{
-
-        
-
 
         
 

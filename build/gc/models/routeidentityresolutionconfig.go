@@ -11,9 +11,6 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type RouteidentityresolutionconfigDud struct { 
-    Id string `json:"id"`
-
-
     
 
 
@@ -26,9 +23,6 @@ type RouteidentityresolutionconfigDud struct {
 
 // Routeidentityresolutionconfig
 type Routeidentityresolutionconfig struct { 
-    
-
-
     // Division - The division to use when performing identity resolution.
     Division Writablestarrabledivision `json:"division"`
 
@@ -67,9 +61,6 @@ func (u *Routeidentityresolutionconfig) MarshalJSON() ([]byte, error) {
         ResolveIdentities bool `json:"resolveIdentities"`
         *Alias
     }{
-
-        
-
 
         
 

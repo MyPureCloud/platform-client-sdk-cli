@@ -38,6 +38,16 @@
       "description": "Update reactions to a message"
     },
     {
+      "name": "list",
+      "path": "/api/v2/chats/rooms/{roomJid}/messages",
+      "description": "Get a room's message history"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/chats/rooms/{roomJid}/messages",
+      "description": "Send a message to a room"
+    },
+    {
       "name": "delete",
       "path": "/api/v2/chats/rooms/{roomJid}/messages/{messageId}",
       "description": "Delete a message in a room"
@@ -81,16 +91,6 @@
       "name": "delete",
       "path": "/api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId}",
       "description": "Remove a pinned message from a 1on1"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/chats/rooms/{roomJid}/messages",
-      "description": "Get a room's message history"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/chats/rooms/{roomJid}/messages",
-      "description": "Send a message to a room"
     },
     {
       "name": "get",

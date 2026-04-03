@@ -37,7 +37,10 @@ func Cmdintegrations_credentials_types() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/CredentialType"
+        }
       }
     }
   }

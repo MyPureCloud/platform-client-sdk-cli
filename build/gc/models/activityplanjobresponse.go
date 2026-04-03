@@ -41,10 +41,6 @@ type Activityplanjobresponse struct {
     
 
 
-    // ActivityPlan - The activity plan associated with this job
-    ActivityPlan Activityplanreference `json:"activityPlan"`
-
-
     // Status - The status of the job
     Status string `json:"status"`
 
@@ -57,12 +53,16 @@ type Activityplanjobresponse struct {
     VarError Errorbody `json:"error"`
 
 
-    // Occurrence - The occurrence associated with this job if type == 'DeleteOccurrence'
-    Occurrence Activityplanoccurrencereference `json:"occurrence"`
+    // ActivityPlan - The activity plan associated with this job
+    ActivityPlan Activityplanstructurewithoccurrencesessionsusersreference `json:"activityPlan"`
 
 
     // VarType - The type of the job
     VarType string `json:"type"`
+
+
+    // Occurrence - The occurrence associated with this job if type == 'DeleteOccurrence'
+    Occurrence Activityplanoccurrencereference `json:"occurrence"`
 
 
     
@@ -72,8 +72,8 @@ type Activityplanjobresponse struct {
 // String returns a JSON representation of the model
 func (o *Activityplanjobresponse) String() string {
     
-    
      o.Exceptions = []Activityplanjobexception{{}} 
+    
     
     
     
@@ -94,17 +94,17 @@ func (u *Activityplanjobresponse) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        ActivityPlan Activityplanreference `json:"activityPlan"`
-        
         Status string `json:"status"`
         
         Exceptions []Activityplanjobexception `json:"exceptions"`
         
         VarError Errorbody `json:"error"`
         
-        Occurrence Activityplanoccurrencereference `json:"occurrence"`
+        ActivityPlan Activityplanstructurewithoccurrencesessionsusersreference `json:"activityPlan"`
         
         VarType string `json:"type"`
+        
+        Occurrence Activityplanoccurrencereference `json:"occurrence"`
         *Alias
     }{
 
@@ -115,10 +115,10 @@ func (u *Activityplanjobresponse) MarshalJSON() ([]byte, error) {
 
 
         
-
-
-        
         Exceptions: []Activityplanjobexception{{}},
+        
+
+
         
 
 

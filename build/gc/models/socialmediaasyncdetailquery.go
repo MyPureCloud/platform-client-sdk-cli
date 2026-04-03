@@ -52,7 +52,7 @@ type Socialmediaasyncdetailquery struct {
     PageSize int `json:"pageSize"`
 
 
-    // Order - Sorting of results based on time
+    // Order - Deprecated: use 'sort' field instead. Sorting of results based on time
     Order string `json:"order"`
 
 }

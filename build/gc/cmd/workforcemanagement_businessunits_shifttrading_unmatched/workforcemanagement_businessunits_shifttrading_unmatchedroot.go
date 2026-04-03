@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_shifttrading_unmatched
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_shifttrading_unmatched_search"
+)
+
+func init() {
+	workforcemanagement_businessunits_shifttrading_unmatchedCmd.AddCommand(workforcemanagement_businessunits_shifttrading_unmatched_search.Cmdworkforcemanagement_businessunits_shifttrading_unmatched_search())
+	workforcemanagement_businessunits_shifttrading_unmatchedCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_shifttrading_unmatchedCmd.Short, workforcemanagement_businessunits_shifttrading_unmatched_search.Description, )
+	workforcemanagement_businessunits_shifttrading_unmatchedCmd.Long = workforcemanagement_businessunits_shifttrading_unmatchedCmd.Short
+}

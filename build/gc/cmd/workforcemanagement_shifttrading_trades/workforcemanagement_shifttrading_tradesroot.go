@@ -1,0 +1,18 @@
+package workforcemanagement_shifttrading_trades
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_shifttrading_trades_jobs"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_shifttrading_trades_mine"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_shifttrading_trades_state"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_shifttrading_trades_match"
+)
+
+func init() {
+	workforcemanagement_shifttrading_tradesCmd.AddCommand(workforcemanagement_shifttrading_trades_jobs.Cmdworkforcemanagement_shifttrading_trades_jobs())
+	workforcemanagement_shifttrading_tradesCmd.AddCommand(workforcemanagement_shifttrading_trades_mine.Cmdworkforcemanagement_shifttrading_trades_mine())
+	workforcemanagement_shifttrading_tradesCmd.AddCommand(workforcemanagement_shifttrading_trades_state.Cmdworkforcemanagement_shifttrading_trades_state())
+	workforcemanagement_shifttrading_tradesCmd.AddCommand(workforcemanagement_shifttrading_trades_match.Cmdworkforcemanagement_shifttrading_trades_match())
+	workforcemanagement_shifttrading_tradesCmd.Short = utils.GenerateCustomDescription(workforcemanagement_shifttrading_tradesCmd.Short, workforcemanagement_shifttrading_trades_jobs.Description, workforcemanagement_shifttrading_trades_mine.Description, workforcemanagement_shifttrading_trades_state.Description, workforcemanagement_shifttrading_trades_match.Description, )
+	workforcemanagement_shifttrading_tradesCmd.Long = workforcemanagement_shifttrading_tradesCmd.Short
+}

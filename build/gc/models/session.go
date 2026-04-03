@@ -138,6 +138,18 @@ type SessionDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -324,6 +336,22 @@ type Session struct {
     LastScreen string `json:"lastScreen"`
 
 
+    // CaseAssociations - Cases associated with the session - conversation only.
+    CaseAssociations []Journeycaseassociation `json:"caseAssociations"`
+
+
+    // CaseEntity - The case this session refers to.
+    CaseEntity Addressableentityref `json:"caseEntity"`
+
+
+    // CaseReference - The reference for this case.
+    CaseReference string `json:"caseReference"`
+
+
+    // CaseStatus - The status of this case.
+    CaseStatus string `json:"caseStatus"`
+
+
     
 
 
@@ -387,6 +415,10 @@ func (o *Session) String() string {
     
     
      o.DivisionIds = []string{""} 
+    
+     o.CaseAssociations = []Journeycaseassociation{{}} 
+    
+    
     
     
     
@@ -492,6 +524,14 @@ func (u *Session) MarshalJSON() ([]byte, error) {
         DivisionIds []string `json:"divisionIds"`
         
         LastScreen string `json:"lastScreen"`
+        
+        CaseAssociations []Journeycaseassociation `json:"caseAssociations"`
+        
+        CaseEntity Addressableentityref `json:"caseEntity"`
+        
+        CaseReference string `json:"caseReference"`
+        
+        CaseStatus string `json:"caseStatus"`
         
         CreatedDate time.Time `json:"createdDate"`
         
@@ -637,6 +677,20 @@ func (u *Session) MarshalJSON() ([]byte, error) {
 
         
         DivisionIds: []string{""},
+        
+
+
+        
+
+
+        
+        CaseAssociations: []Journeycaseassociation{{}},
+        
+
+
+        
+
+
         
 
 

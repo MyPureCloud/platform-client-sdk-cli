@@ -13,16 +13,17 @@ gc users query list [flags]
 ### Options
 
 ```
-  -a, --autopaginate                       Automatically paginate through the results stripping page information
-      --cursor string                      Cursor token to retrieve next page
-      --expand strings                     Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it`s recommended to use specific API requests instead. Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent
-      --filtercondition string             Filter list command output based on a given condition or regular expression
-  -h, --help                               help for list
-      --integrationPresenceSource string   Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100. Valid values: MicrosoftTeams, ZoomPhone, EightByEight
-      --pageSize string                    Page size (default "25")
-      --sortOrder string                   Ascending or descending sort order Valid values: ASC, DESC
-      --state string                       Only list users of this state Valid values: active, inactive, deleted, any
-  -s, --stream                             Paginate and stream data as it is being processed leaving page information intact
+  -a, --autopaginate                           Automatically paginate through the results stripping page information
+      --cursor string                          Cursor token to retrieve next page
+      --expand strings                         Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it`s recommended to use specific API requests instead. Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent
+      --filtercondition string                 Filter list command output based on a given condition or regular expression
+  -h, --help                                   help for list
+      --integrationPresenceSource string       Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100. Valid values: MicrosoftTeams, ZoomPhone, EightByEight
+      --pageSize string                        Page size (default "25")
+      --sortOrder string                       Ascending or descending sort order Valid values: ASC, DESC
+      --state string                           Only list users of this state Valid values: active, inactive, deleted, any
+  -s, --stream                                 Paginate and stream data as it is being processed leaving page information intact
+      --userCustomAttributeSchemaIds strings   Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 5
 ```
 
 ### Options inherited from parent commands

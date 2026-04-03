@@ -30,7 +30,7 @@
 ### SEE ALSO
 
 * [gc recording](gc_recording.html)	 - /api/v2/recording
-* [gc recording batchrequests create](gc_recording_batchrequests_create.html)	 - Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+* [gc recording batchrequests create](gc_recording_batchrequests_create.html)	 - Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download.
 * [gc recording batchrequests get](gc_recording_batchrequests_get.html)	 - Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
 
 

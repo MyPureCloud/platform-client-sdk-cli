@@ -37,6 +37,7 @@
 * [gc analytics bots](gc_analytics_bots.html)	 - /api/v2/analytics/bots
 * [gc analytics casemanagement](gc_analytics_casemanagement.html)	 - /api/v2/analytics/casemanagement
 * [gc analytics conversations](gc_analytics_conversations.html)	 - /api/v2/analytics/conversations
+* [gc analytics copilots](gc_analytics_copilots.html)	 - /api/v2/analytics/copilots
 * [gc analytics dataextraction](gc_analytics_dataextraction.html)	 - /api/v2/analytics/dataextraction
 * [gc analytics dataretention](gc_analytics_dataretention.html)	 - /api/v2/analytics/dataretention
 * [gc analytics evaluations](gc_analytics_evaluations.html)	 - /api/v2/analytics/evaluations

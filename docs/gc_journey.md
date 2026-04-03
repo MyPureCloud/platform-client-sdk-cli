@@ -34,6 +34,7 @@
 * [gc journey actiontargets](gc_journey_actiontargets.html)	 - /api/v2/journey/actiontargets
 * [gc journey actiontemplates](gc_journey_actiontemplates.html)	 - /api/v2/journey/actiontemplates
 * [gc journey deployments](gc_journey_deployments.html)	 - /api/v2/journey/deployments
+* [gc journey externalevents](gc_journey_externalevents.html)	 - /api/v2/journey/externalevents
 * [gc journey flows](gc_journey_flows.html)	 - /api/v2/journey/flows
 * [gc journey outcomes](gc_journey_outcomes.html)	 - /api/v2/journey/outcomes
 * [gc journey segments](gc_journey_segments.html)	 - /api/v2/journey/segments

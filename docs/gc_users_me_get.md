@@ -13,9 +13,10 @@ gc users me get [flags]
 ### Options
 
 ```
-      --expand strings                     Which fields, if any, to expand. Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, date, geolocationsettings, organization, presencedefinitions, divisionedpresencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture, autoanswersettings
-  -h, --help                               help for get
-      --integrationPresenceSource string   Get your presence for a given integration. This parameter will only be used when presence is provided as an expand. Valid values: MicrosoftTeams, ZoomPhone, EightByEight
+      --expand strings                         Which fields, if any, to expand. Valid values: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, date, geolocationsettings, organization, presencedefinitions, divisionedpresencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture, autoanswersettings
+  -h, --help                                   help for get
+      --integrationPresenceSource string       Get your presence for a given integration. This parameter will only be used when presence is provided as an expand. Valid values: MicrosoftTeams, ZoomPhone, EightByEight
+      --userCustomAttributeSchemaIds strings   Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an expand. The maximum number of schemaIds that can be requested is 100
 ```
 
 ### Options inherited from parent commands

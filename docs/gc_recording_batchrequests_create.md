@@ -1,10 +1,10 @@
 ## gc recording batchrequests create
 
-Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download.
 
 ### Synopsis
 
-Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download.
 
 ```
 gc recording batchrequests create [flags]

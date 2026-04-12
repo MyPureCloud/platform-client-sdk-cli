@@ -3,6 +3,11 @@
   "description": "/api/v2/users",
   "resources": [
     {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/verifiers",
+      "description": "Get a list of verifiers"
+    },
+    {
       "name": "update",
       "path": "/api/v2/users/{userId}/verifiers/{verifierId}",
       "description": "Update a verifier"
@@ -11,11 +16,6 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/verifiers/{verifierId}",
       "description": "Delete a verifier"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/users/{userId}/verifiers",
-      "description": "Get a list of verifiers"
     },
     {
       "name": "get",
@@ -63,11 +63,6 @@
       "description": "Patch a user's CallForwarding"
     },
     {
-      "name": "list",
-      "path": "/api/v2/users/{userId}/directreports",
-      "description": "Get direct reports"
-    },
-    {
       "name": "get",
       "path": "/api/v2/users/{userId}/adjacents",
       "description": "Get adjacents"
@@ -76,6 +71,11 @@
       "name": "list",
       "path": "/api/v2/users/{userId}/superiors",
       "description": "Get superiors"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/directreports",
+      "description": "Get direct reports"
     },
     {
       "name": "list",
@@ -129,13 +129,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/users/presences/{sourceId}/bulk",
-      "description": "Get bulk user presences for a single presence source"
+      "path": "/api/v2/users/presences/purecloud/bulk",
+      "description": "Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source"
     },
     {
       "name": "get",
-      "path": "/api/v2/users/presences/purecloud/bulk",
-      "description": "Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source"
+      "path": "/api/v2/users/presences/{sourceId}/bulk",
+      "description": "Get bulk user presences for a single presence source"
     },
     {
       "name": "update",
@@ -339,16 +339,6 @@
     },
     {
       "name": "update",
-      "path": "/api/v2/users/{userId}/station/defaultstation/{stationId}",
-      "description": "Set default station"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/users/{userId}/station/defaultstation",
-      "description": "Clear default station"
-    },
-    {
-      "name": "update",
       "path": "/api/v2/users/{userId}/station/associatedstation/{stationId}",
       "description": "Set associated station"
     },
@@ -356,6 +346,16 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/station/associatedstation",
       "description": "Clear associated station"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/station/defaultstation/{stationId}",
+      "description": "Set default station"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/station/defaultstation",
+      "description": "Clear default station"
     },
     {
       "name": "list",
@@ -473,14 +473,14 @@
       "description": "Create a schema"
     },
     {
-      "name": "get",
-      "path": "/api/v2/users/development/activities/{activityId}",
-      "description": "Get a Development Activity"
-    },
-    {
       "name": "list",
       "path": "/api/v2/users/development/activities/me",
       "description": "Get list of Development Activities for current user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/development/activities/{activityId}",
+      "description": "Get a Development Activity"
     },
     {
       "name": "list",
@@ -518,16 +518,6 @@
       "description": "Update an existing users rule"
     },
     {
-      "name": "create",
-      "path": "/api/v2/users/rules/query",
-      "description": "Query the result of a users rule"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/users/rules/settings/{ruleType}",
-      "description": "Get the settings for a specific users rule type"
-    },
-    {
       "name": "list",
       "path": "/api/v2/users/rules",
       "description": "Get the list of users rules"
@@ -536,6 +526,16 @@
       "name": "create",
       "path": "/api/v2/users/rules",
       "description": "Create a new rule"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/rules/query",
+      "description": "Query the result of a users rule"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/rules/settings/{ruleType}",
+      "description": "Get the settings for a specific users rule type"
     },
     {
       "name": "list",

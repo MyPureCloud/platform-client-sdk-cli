@@ -8,6 +8,11 @@
       "description": "Get response libraries."
     },
     {
+      "name": "create",
+      "path": "/api/v2/responsemanagement/libraries/query",
+      "description": "Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions."
+    },
+    {
       "name": "list",
       "path": "/api/v2/responsemanagement/libraries",
       "description": "Gets a list of existing response libraries."
@@ -96,11 +101,6 @@
       "name": "create",
       "path": "/api/v2/responsemanagement/responseassets/search",
       "description": "Search response assets"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/responsemanagement/libraries/query",
-      "description": "Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions."
     }
   ]
 }

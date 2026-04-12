@@ -205,7 +205,7 @@
     {
       "name": "update",
       "path": "/api/v2/routing/utilization",
-      "description": "Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration."
+      "description": "Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values."
     },
     {
       "name": "delete",
@@ -274,16 +274,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/routing/email/domains/{domainId}/dkim",
-      "description": "Get domain dkim settings"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/routing/email/domains/{domainId}/dkim",
-      "description": "Restart domain dkim"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/routing/email/domains/{domainId}/verification",
       "description": "Get domain verification settings"
     },
@@ -306,6 +296,16 @@
       "name": "create",
       "path": "/api/v2/routing/email/domains/{domainId}/testconnection",
       "description": "Tests the custom SMTP server integration connection set on this ACD domain"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/email/domains/{domainId}/dkim",
+      "description": "Get domain dkim settings"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/email/domains/{domainId}/dkim",
+      "description": "Restart domain dkim"
     },
     {
       "name": "list",
@@ -670,7 +670,7 @@
     {
       "name": "update",
       "path": "/api/v2/routing/users/{userId}/utilization",
-      "description": "Update the user's max utilization settings.  Include only those media types requiring custom configuration."
+      "description": "Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values."
     },
     {
       "name": "delete",

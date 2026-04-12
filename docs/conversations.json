@@ -839,16 +839,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/conversations/messages/{conversationId}/messages/{messageId}",
-      "description": "Get conversation message"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages",
-      "description": "Send a social media message"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/conversations/messages/{conversationId}",
       "description": "Get message conversation"
     },
@@ -893,19 +883,14 @@
       "description": "Apply wrap-up for this conversation communication"
     },
     {
-      "name": "create",
-      "path": "/api/v2/conversations/messages/agentless",
-      "description": "Send an agentless outbound message"
+      "name": "get",
+      "path": "/api/v2/conversations/messages/{conversationId}/messages/{messageId}",
+      "description": "Get conversation message"
     },
     {
       "name": "create",
-      "path": "/api/v2/conversations/messages/inbound/open",
-      "description": "Send an inbound Open Message"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/messages/{integrationId}/inbound/open/event",
-      "description": "Send an inbound Open Event Message"
+      "path": "/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages",
+      "description": "Send a social media message"
     },
     {
       "name": "list",
@@ -926,6 +911,21 @@
       "name": "get",
       "path": "/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}",
       "description": "Get media"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/agentless",
+      "description": "Send an agentless outbound message"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/inbound/open",
+      "description": "Send an inbound Open Message"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{integrationId}/inbound/open/event",
+      "description": "Send an inbound Open Event Message"
     },
     {
       "name": "create",
@@ -978,6 +978,16 @@
       "description": "Apply wrap-up for this conversation communication"
     },
     {
+      "name": "get",
+      "path": "/api/v2/conversations/videos/meetings/{meetingId}",
+      "description": "Gets a record for a given meetingId"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/videos/meetings",
+      "description": "Generate a meetingId for a given conferenceId"
+    },
+    {
       "name": "update",
       "path": "/api/v2/conversations/videos/{conversationId}/recordingstate",
       "description": "Update a conversation by setting its recording state"
@@ -991,16 +1001,6 @@
       "name": "create",
       "path": "/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
       "description": "Apply wrap-up for this conversation communication"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/conversations/videos/meetings/{meetingId}",
-      "description": "Gets a record for a given meetingId"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/videos/meetings",
-      "description": "Generate a meetingId for a given conferenceId"
     },
     {
       "name": "get",

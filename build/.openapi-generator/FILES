@@ -19,6 +19,9 @@ gc/cmd/analytics_agentcopilots_aggregates_query/analytics_agentcopilots_aggregat
 gc/cmd/analytics_agents_status/analytics_agents_status.go
 gc/cmd/analytics_agents_status_counts/analytics_agents_status_counts.go
 gc/cmd/analytics_agents_status_query/analytics_agents_status_query.go
+gc/cmd/analytics_agentutilizations_aggregates_jobs/analytics_agentutilizations_aggregates_jobs.go
+gc/cmd/analytics_agentutilizations_aggregates_jobs_results/analytics_agentutilizations_aggregates_jobs_results.go
+gc/cmd/analytics_agentutilizations_aggregates_query/analytics_agentutilizations_aggregates_query.go
 gc/cmd/analytics_botflows_divisions_reportingturns/analytics_botflows_divisions_reportingturns.go
 gc/cmd/analytics_botflows_reportingturns/analytics_botflows_reportingturns.go
 gc/cmd/analytics_botflows_sessions/analytics_botflows_sessions.go
@@ -204,6 +207,7 @@ gc/cmd/businessrules_schemas/businessrules_schemas.go
 gc/cmd/businessrules_schemas_coretypes/businessrules_schemas_coretypes.go
 gc/cmd/carrierservices_integrations_emergencylocations_me/carrierservices_integrations_emergencylocations_me.go
 gc/cmd/casemanagement_caseplans/casemanagement_caseplans.go
+gc/cmd/casemanagement_caseplans_intakesettings/casemanagement_caseplans_intakesettings.go
 gc/cmd/casemanagement_caseplans_publish/casemanagement_caseplans_publish.go
 gc/cmd/casemanagement_caseplans_stageplans/casemanagement_caseplans_stageplans.go
 gc/cmd/casemanagement_caseplans_stageplans_stepplans/casemanagement_caseplans_stageplans_stepplans.go
@@ -1013,6 +1017,7 @@ gc/cmd/presence_settings/presence_settings.go
 gc/cmd/presence_sources/presence_sources.go
 gc/cmd/presence_users_primarysource/presence_users_primarysource.go
 gc/cmd/presencedefinitions/presencedefinitions.go
+gc/cmd/processautomation_scheduledtriggers/processautomation_scheduledtriggers.go
 gc/cmd/processautomation_triggers/processautomation_triggers.go
 gc/cmd/processautomation_triggers_testfile/processautomation_triggers_testfile.go
 gc/cmd/processautomation_triggers_topics/processautomation_triggers_topics.go
@@ -1787,6 +1792,16 @@ gc/models/agentstateuserfilter.go
 gc/models/agentsworkplansresponse.go
 gc/models/agenttimeoffrequestpatch.go
 gc/models/agentupdatealternativeshifttraderequest.go
+gc/models/agentutilizationaggregatedatacontainer.go
+gc/models/agentutilizationaggregatequeryclause.go
+gc/models/agentutilizationaggregatequeryfilter.go
+gc/models/agentutilizationaggregatequerypredicate.go
+gc/models/agentutilizationaggregatequeryresponse.go
+gc/models/agentutilizationaggregationquery.go
+gc/models/agentutilizationaggregationsort.go
+gc/models/agentutilizationaggregationview.go
+gc/models/agentutilizationasyncaggregatequeryresponse.go
+gc/models/agentutilizationasyncaggregationquery.go
 gc/models/agentvideosettings.go
 gc/models/agentworkplan.go
 gc/models/agentworkplanactivity.go
@@ -2868,6 +2883,7 @@ gc/models/createresponseassetresponse.go
 gc/models/createroomrequest.go
 gc/models/createroomresponse.go
 gc/models/createroutingskill.go
+gc/models/createscheduledtriggerrequest.go
 gc/models/createsecuresession.go
 gc/models/createservicegoaltemplate.go
 gc/models/createsharerequest.go
@@ -3842,6 +3858,7 @@ gc/models/instagramscopedid.go
 gc/models/intake.go
 gc/models/intakesetting.go
 gc/models/intakesettingslisting.go
+gc/models/intakesettingsupdate.go
 gc/models/integration.go
 gc/models/integrationaction.go
 gc/models/integrationactionfields.go
@@ -4970,6 +4987,8 @@ gc/models/reportingexportmetadatajobresponse.go
 gc/models/reportinginterval.go
 gc/models/reportingturn.go
 gc/models/reportingturnaction.go
+gc/models/reportingturnbotflowinvocationevent.go
+gc/models/reportingturnflow.go
 gc/models/reportingturnintent.go
 gc/models/reportingturnintentslot.go
 gc/models/reportingturnknowledge.go
@@ -5093,6 +5112,8 @@ gc/models/samlprovider.go
 gc/models/schedule.go
 gc/models/scheduleactivity.go
 gc/models/scheduledivisionviewentitylisting.go
+gc/models/scheduledtrigger.go
+gc/models/scheduledtriggerentitylisting.go
 gc/models/scheduleentitylisting.go
 gc/models/schedulegenerationmessage.go
 gc/models/schedulegenerationresult.go
@@ -5690,6 +5711,7 @@ gc/models/translatesupportedlanguagelist.go
 gc/models/trenddata.go
 gc/models/trigger.go
 gc/models/triggerentitylisting.go
+gc/models/triggerschedule.go
 gc/models/triggertarget.go
 gc/models/trunk.go
 gc/models/trunkbase.go
@@ -5812,6 +5834,7 @@ gc/models/updatenotificationsrequest.go
 gc/models/updatenotificationsresponse.go
 gc/models/updateplanninggrouprequest.go
 gc/models/updaterowindexrequest.go
+gc/models/updatescheduledtriggerrequest.go
 gc/models/updatescheduleuploadresponse.go
 gc/models/updatescheduleuploadschema.go
 gc/models/updatesegmentassignmentrequest.go

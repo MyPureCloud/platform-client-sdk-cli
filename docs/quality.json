@@ -139,13 +139,13 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/quality/forms/evaluations/bulk/contexts",
-      "description": "Retrieve a list of the latest published evaluation form versions by context ids"
+      "path": "/api/v2/quality/forms/evaluations/bulk",
+      "description": "Retrieve a list of evaluation forms by their ids"
     },
     {
       "name": "list",
-      "path": "/api/v2/quality/forms/evaluations/bulk",
-      "description": "Retrieve a list of evaluation forms by their ids"
+      "path": "/api/v2/quality/forms/evaluations/bulk/contexts",
+      "description": "Retrieve a list of the latest published evaluation form versions by context ids"
     },
     {
       "name": "list",

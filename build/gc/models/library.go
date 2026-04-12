@@ -30,6 +30,9 @@ type LibraryDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -57,12 +60,17 @@ type Library struct {
     ResponseType string `json:"responseType"`
 
 
+    // Division - The division to which this entity belongs.
+    Division Writabledivision `json:"division"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Library) String() string {
+    
     
     
     
@@ -88,8 +96,13 @@ func (u *Library) MarshalJSON() ([]byte, error) {
         Version int `json:"version"`
         
         ResponseType string `json:"responseType"`
+        
+        Division Writabledivision `json:"division"`
         *Alias
     }{
+
+        
+
 
         
 

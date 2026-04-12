@@ -16,19 +16,12 @@ type PatchuserDud struct {
 
     
 
-
-    
-
 }
 
 // Patchuser
 type Patchuser struct { 
     // Id - The globally unique identifier for the object.
     Id string `json:"id"`
-
-
-    // PreferredName - Preferred full name of agent
-    PreferredName string `json:"preferredName"`
 
 
     // AcdAutoAnswer - The value that denotes if acdAutoAnswer is set on the user
@@ -38,7 +31,6 @@ type Patchuser struct {
 
 // String returns a JSON representation of the model
 func (o *Patchuser) String() string {
-    
     
     
 
@@ -60,14 +52,9 @@ func (u *Patchuser) MarshalJSON() ([]byte, error) {
         
         Id string `json:"id"`
         
-        PreferredName string `json:"preferredName"`
-        
         AcdAutoAnswer bool `json:"acdAutoAnswer"`
         *Alias
     }{
-
-        
-
 
         
 

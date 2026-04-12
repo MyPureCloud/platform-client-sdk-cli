@@ -89,13 +89,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/profiles/users/me",
-      "description": "Performance profile of the requesting user"
+      "path": "/api/v2/gamification/profiles/users/{userId}",
+      "description": "Performance profile of a user"
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/profiles/users/{userId}",
-      "description": "Performance profile of a user"
+      "path": "/api/v2/gamification/profiles/users/me",
+      "description": "Performance profile of the requesting user"
     },
     {
       "name": "list",
@@ -228,14 +228,14 @@
       "description": "Get insights overall trend for the current user"
     },
     {
-      "name": "get",
-      "path": "/api/v2/gamification/insights/rankings",
-      "description": "Get insights rankings"
-    },
-    {
       "name": "list",
       "path": "/api/v2/gamification/insights",
       "description": "Get insights summary"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/insights/rankings",
+      "description": "Get insights rankings"
     },
     {
       "name": "list",
@@ -248,6 +248,11 @@
       "description": "Get insights user trend for the current user"
     },
     {
+      "name": "create",
+      "path": "/api/v2/gamification/profiles/{profileId}/members/validate",
+      "description": "Validate member assignment"
+    },
+    {
       "name": "list",
       "path": "/api/v2/gamification/profiles/{profileId}/members",
       "description": "Members of a given performance profile"
@@ -256,11 +261,6 @@
       "name": "create",
       "path": "/api/v2/gamification/profiles/{profileId}/members",
       "description": "Assign members to a given performance profile"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/gamification/profiles/{profileId}/members/validate",
-      "description": "Validate member assignment"
     },
     {
       "name": "get",
@@ -319,6 +319,11 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/{userId}",
+      "description": "Workday performance metrics for a user"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/gamification/scorecards/users/{userId}/bestpoints",
       "description": "Best points of a user"
     },
@@ -326,11 +331,6 @@
       "name": "get",
       "path": "/api/v2/gamification/scorecards/users/{userId}/attendance",
       "description": "Attendance status metrics for a user"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/gamification/scorecards/users/{userId}",
-      "description": "Workday performance metrics for a user"
     },
     {
       "name": "get",

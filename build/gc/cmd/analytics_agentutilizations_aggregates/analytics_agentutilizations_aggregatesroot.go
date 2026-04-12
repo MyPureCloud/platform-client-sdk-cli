@@ -1,0 +1,14 @@
+package analytics_agentutilizations_aggregates
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_agentutilizations_aggregates_query"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_agentutilizations_aggregates_jobs"
+)
+
+func init() {
+	analytics_agentutilizations_aggregatesCmd.AddCommand(analytics_agentutilizations_aggregates_query.Cmdanalytics_agentutilizations_aggregates_query())
+	analytics_agentutilizations_aggregatesCmd.AddCommand(analytics_agentutilizations_aggregates_jobs.Cmdanalytics_agentutilizations_aggregates_jobs())
+	analytics_agentutilizations_aggregatesCmd.Short = utils.GenerateCustomDescription(analytics_agentutilizations_aggregatesCmd.Short, analytics_agentutilizations_aggregates_query.Description, analytics_agentutilizations_aggregates_jobs.Description, )
+	analytics_agentutilizations_aggregatesCmd.Long = analytics_agentutilizations_aggregatesCmd.Short
+}

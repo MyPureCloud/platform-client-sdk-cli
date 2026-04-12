@@ -343,14 +343,14 @@
       "description": "Get a Nuance bot in the specified Integration"
     },
     {
-      "name": "listBotsJob",
-      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}",
-      "description": "Get the status of an asynchronous Nuance bots GET job"
-    },
-    {
       "name": "list",
       "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results",
       "description": "Get the result of an asynchronous Nuance bots GET job"
+    },
+    {
+      "name": "listBotsJob",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}",
+      "description": "Get the status of an asynchronous Nuance bots GET job"
     },
     {
       "name": "list",
@@ -358,14 +358,14 @@
       "description": "Get a list of Nuance bots in the specified Integration asynchronously"
     },
     {
-      "name": "update",
-      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings",
-      "description": "Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration"
-    },
-    {
       "name": "create",
       "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate",
       "description": "Try out a single credential for a Nuance bot to know if the secret is correct"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings",
+      "description": "Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration"
     },
     {
       "name": "list",

@@ -251,8 +251,8 @@ var getCmd = &cobra.Command{
 }
 var updateCmd = &cobra.Command{
 	Use:   "update",
-	Short: "Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.",
-	Long:  "Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.",
+	Short: "Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.",
+	Long:  "Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

@@ -42,6 +42,9 @@ type AuthorizationpolicyDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -85,6 +88,10 @@ type Authorizationpolicy struct {
     Active bool `json:"active"`
 
 
+    // ApplyToClients - Flag to determine whether policy applies to OAuth Clients
+    ApplyToClients bool `json:"applyToClients"`
+
+
     
 
 }
@@ -97,6 +104,7 @@ func (o *Authorizationpolicy) String() string {
      o.Condition = Interface{} 
     
      o.PresetAttributes = map[string]Typedattribute{"": {}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -128,6 +136,8 @@ func (u *Authorizationpolicy) MarshalJSON() ([]byte, error) {
         PresetAttributes map[string]Typedattribute `json:"presetAttributes"`
         
         Active bool `json:"active"`
+        
+        ApplyToClients bool `json:"applyToClients"`
         *Alias
     }{
 
@@ -159,6 +169,9 @@ func (u *Authorizationpolicy) MarshalJSON() ([]byte, error) {
 
         
         PresetAttributes: map[string]Typedattribute{"": {}},
+        
+
+
         
 
 

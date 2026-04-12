@@ -498,14 +498,14 @@
       "description": "Query adherence explanations for the current user"
     },
     {
-      "name": "get",
-      "path": "/api/v2/workforcemanagement/agents/me/adherence/historical/jobs/{jobId}",
-      "description": "Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status"
-    },
-    {
       "name": "create",
       "path": "/api/v2/workforcemanagement/agents/me/adherence/historical/jobs",
       "description": "Request an agent historical adherence report"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/agents/me/adherence/historical/jobs/{jobId}",
+      "description": "Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status"
     },
     {
       "name": "create",
@@ -559,13 +559,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/schedules/query",
-      "description": "Get agent schedule generation unavailable times"
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/settings/query",
+      "description": "Query availability management units settings"
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/settings/query",
-      "description": "Query availability management units settings"
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/schedules/query",
+      "description": "Get agent schedule generation unavailable times"
     },
     {
       "name": "update",
@@ -923,11 +923,6 @@
       "description": "Update minimum staffing settings for a business unit"
     },
     {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations",
-      "description": "Request a daily recalculation of the performance prediction for the associated schedule"
-    },
-    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/{recalculationId}",
       "description": "Get recalculated performance prediction result"
@@ -941,6 +936,11 @@
       "name": "create",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl",
       "description": "Upload daily activity changes to be able to request a performance prediction recalculation"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations",
+      "description": "Request a daily recalculation of the performance prediction for the associated schedule"
     },
     {
       "name": "list",
@@ -1333,6 +1333,16 @@
       "description": "Retrieves time off limit, allocated and waitlisted values according to specific time off request"
     },
     {
+      "name": "list",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans",
+      "description": "Gets a list of time-off plans"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans",
+      "description": "Creates a new time-off plan"
+    },
+    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}",
       "description": "Gets a time-off plan"
@@ -1349,13 +1359,13 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans",
-      "description": "Gets a list of time-off plans"
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans",
+      "description": "Gets a list of time off plans"
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans",
-      "description": "Creates a new time-off plan"
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans",
+      "description": "Creates a new time off plan"
     },
     {
       "name": "get",
@@ -1373,24 +1383,9 @@
       "description": "Updates a time off plan"
     },
     {
-      "name": "list",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans",
-      "description": "Gets a list of time off plans"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans",
-      "description": "Creates a new time off plan"
-    },
-    {
       "name": "create",
       "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query",
       "description": "Retrieves daily waitlist position for a list of time off requests"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/summary",
-      "description": "Get summary of bid groups that belong to a work plan bid"
     },
     {
       "name": "create",
@@ -1411,6 +1406,11 @@
       "name": "update",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}",
       "description": "Update a bid group by bid group Id"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/summary",
+      "description": "Get summary of bid groups that belong to a work plan bid"
     },
     {
       "name": "get",

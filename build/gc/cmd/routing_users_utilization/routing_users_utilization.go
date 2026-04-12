@@ -255,8 +255,8 @@ var getCmd = &cobra.Command{
 }
 var updateCmd = &cobra.Command{
 	Use:   "update [userId]",
-	Short: "Update the user`s max utilization settings.  Include only those media types requiring custom configuration.",
-	Long:  "Update the user`s max utilization settings.  Include only those media types requiring custom configuration.",
+	Short: "Update the user`s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization`s default values.",
+	Long:  "Update the user`s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization`s default values.",
 	Args:  utils.DetermineArgs([]string{ "userId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

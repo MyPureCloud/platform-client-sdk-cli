@@ -29,11 +29,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId}",
-      "description": "Get the status of the publishing job for this guide version."
-    },
-    {
-      "name": "get",
       "path": "/api/v2/guides/{guideId}/versions/{versionId}",
       "description": "Get a guide version."
     },
@@ -46,6 +41,11 @@
       "name": "create",
       "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs",
       "description": "Start the publishing of a guide version."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId}",
+      "description": "Get the status of the publishing job for this guide version."
     },
     {
       "name": "create",

@@ -14,6 +14,11 @@
     },
     {
       "name": "list",
+      "path": "/api/v2/learning/assignments/me",
+      "description": "List of Learning Assignments assigned to current user"
+    },
+    {
+      "name": "list",
       "path": "/api/v2/learning/assignments",
       "description": "List of Learning module Assignments"
     },
@@ -61,11 +66,6 @@
       "name": "update",
       "path": "/api/v2/learning/assignments/{assignmentId}/reschedule",
       "description": "Reschedule Learning Assignment"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/learning/assignments/me",
-      "description": "List of Learning Assignments assigned to current user"
     },
     {
       "name": "get",
@@ -164,11 +164,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/learning/scheduleslots/query",
-      "description": "Get list of possible slots where a learning activity can be scheduled."
-    },
-    {
-      "name": "create",
       "path": "/api/v2/learning/scheduleslots/jobs",
       "description": "Start job to retrieve slots where a learning activity can be scheduled."
     },
@@ -179,13 +174,18 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/learning/scorm",
-      "description": "Create a SCORM package upload request"
+      "path": "/api/v2/learning/scheduleslots/query",
+      "description": "Get list of possible slots where a learning activity can be scheduled."
     },
     {
       "name": "get",
       "path": "/api/v2/learning/scorm/{scormId}",
       "description": "Get Learning SCORM Result"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/scorm",
+      "description": "Create a SCORM package upload request"
     },
     {
       "name": "create",

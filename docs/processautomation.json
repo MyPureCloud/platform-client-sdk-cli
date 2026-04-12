@@ -8,6 +8,31 @@
       "description": "Test the matching of all organization Triggers on given topic using provided event body"
     },
     {
+      "name": "get",
+      "path": "/api/v2/processautomation/scheduledtriggers/{scheduledTriggerId}",
+      "description": "Retrieve a single Scheduled Trigger matching id"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/processautomation/scheduledtriggers/{scheduledTriggerId}",
+      "description": "Update a Scheduled Trigger"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/processautomation/scheduledtriggers/{scheduledTriggerId}",
+      "description": "Delete a Scheduled Trigger"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/processautomation/scheduledtriggers",
+      "description": "Retrieves all scheduled triggers, optionally filtered by query parameters."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/processautomation/scheduledtriggers",
+      "description": "Create a scheduled Trigger"
+    },
+    {
       "name": "list",
       "path": "/api/v2/processautomation/triggers/topics",
       "description": "Get topics available for organization"

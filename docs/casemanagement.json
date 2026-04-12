@@ -58,6 +58,11 @@
       "description": "Get the intake settings for a Caseplan version."
     },
     {
+      "name": "update",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/intakesettings",
+      "description": "Update the intake settings for a Caseplan."
+    },
+    {
       "name": "list",
       "path": "/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/dataschemas",
       "description": "Get the dataSchemas for a caseplan version."

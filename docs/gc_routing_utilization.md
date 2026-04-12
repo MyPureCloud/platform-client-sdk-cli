@@ -34,6 +34,6 @@
 * [gc routing utilization get](gc_routing_utilization_get.html)	 - Get the organization-wide max utilization settings.
 * [gc routing utilization labels](gc_routing_utilization_labels.html)	 - /api/v2/routing/utilization/labels
 * [gc routing utilization tags](gc_routing_utilization_tags.html)	 - /api/v2/routing/utilization/tags
-* [gc routing utilization update](gc_routing_utilization_update.html)	 - Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+* [gc routing utilization update](gc_routing_utilization_update.html)	 - Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
 
 

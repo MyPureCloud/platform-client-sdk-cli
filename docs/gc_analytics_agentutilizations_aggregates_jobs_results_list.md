@@ -1,25 +1,22 @@
-## gc casemanagement caseplans versions stageplans stepplans list
+## gc analytics agentutilizations aggregates jobs results list
 
-Get a list of Stepplans.
+Fetch a page of results for an async aggregates query
 
 ### Synopsis
 
-Get a list of Stepplans.
+Fetch a page of results for an async aggregates query
 
 ```
-gc casemanagement caseplans versions stageplans stepplans list [caseplanId] [versionId] [stageplanId] [flags]
+gc analytics agentutilizations aggregates jobs results list [jobId] [flags]
 ```
 
 ### Options
 
 ```
-      --after string             The cursor that points to the end of the set of entities that has been returned.
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --before string            The cursor that points to the start of the set of entities that has been returned.
-      --expands strings          Which fields to expand. Valid values: caseplan, stageplan, worktype
+      --cursor string            Cursor token to retrieve next page
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageSize string          Number of entities to return. Maximum of 200.
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
@@ -40,6 +37,6 @@ gc casemanagement caseplans versions stageplans stepplans list [caseplanId] [ver
 
 ### SEE ALSO
 
-* [gc casemanagement caseplans versions stageplans stepplans](gc_casemanagement_caseplans_versions_stageplans_stepplans.html)	 - /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}/stepplans
+* [gc analytics agentutilizations aggregates jobs results](gc_analytics_agentutilizations_aggregates_jobs_results.html)	 - /api/v2/analytics/agentutilizations/aggregates/jobs/{jobId}/results
 
 

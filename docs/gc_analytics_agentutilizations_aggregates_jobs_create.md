@@ -1,15 +1,22 @@
-## gc users presences bulk
+## gc analytics agentutilizations aggregates jobs create
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+Query for agent utilization aggregates asynchronously
 
 ### Synopsis
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+Query for agent utilization aggregates asynchronously
+
+```
+gc analytics agentutilizations aggregates jobs create [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for bulk
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +36,6 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
-* [gc users presences bulk get](gc_users_presences_bulk_get.html)	 - Get bulk user presences for a single presence source
-* [gc users presences bulk update](gc_users_presences_bulk_update.html)	 - Update bulk user Presences
+* [gc analytics agentutilizations aggregates jobs](gc_analytics_agentutilizations_aggregates_jobs.html)	 - /api/v2/analytics/agentutilizations/aggregates/jobs
 
 

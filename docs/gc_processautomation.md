@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
+* [gc processautomation scheduledtriggers](gc_processautomation_scheduledtriggers.html)	 - /api/v2/processautomation/scheduledtriggers
 * [gc processautomation triggers](gc_processautomation_triggers.html)	 - /api/v2/processautomation/triggers
 
 

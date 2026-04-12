@@ -33,6 +33,7 @@
 * [gc casemanagement caseplans create](gc_casemanagement_caseplans_create.html)	 - Create a Caseplan.
 * [gc casemanagement caseplans delete](gc_casemanagement_caseplans_delete.html)	 - Delete a Caseplan.
 * [gc casemanagement caseplans get](gc_casemanagement_caseplans_get.html)	 - Get a Caseplan.
+* [gc casemanagement caseplans intakesettings](gc_casemanagement_caseplans_intakesettings.html)	 - /api/v2/casemanagement/caseplans/{caseplanId}/intakesettings
 * [gc casemanagement caseplans list](gc_casemanagement_caseplans_list.html)	 - Get a list of Caseplans.
 * [gc casemanagement caseplans publish](gc_casemanagement_caseplans_publish.html)	 - /api/v2/casemanagement/caseplans/{caseplanId}/publish
 * [gc casemanagement caseplans stageplans](gc_casemanagement_caseplans_stageplans.html)	 - /api/v2/casemanagement/caseplans/{caseplanId}/stageplans

@@ -1,15 +1,22 @@
-## gc users presences bulk
+## gc casemanagement caseplans intakesettings update
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+Update the intake settings for a Caseplan.
 
 ### Synopsis
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+Update the intake settings for a Caseplan.
+
+```
+gc casemanagement caseplans intakesettings update [caseplanId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for bulk
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for update
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +36,6 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
-* [gc users presences bulk get](gc_users_presences_bulk_get.html)	 - Get bulk user presences for a single presence source
-* [gc users presences bulk update](gc_users_presences_bulk_update.html)	 - Update bulk user Presences
+* [gc casemanagement caseplans intakesettings](gc_casemanagement_caseplans_intakesettings.html)	 - /api/v2/casemanagement/caseplans/{caseplanId}/intakesettings
 
 

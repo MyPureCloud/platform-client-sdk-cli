@@ -32,6 +32,6 @@
 * [gc routing users](gc_routing_users.html)	 - /api/v2/routing/users
 * [gc routing users utilization delete](gc_routing_users_utilization_delete.html)	 - Delete the user`s max utilization settings and revert to the organization-wide default.
 * [gc routing users utilization get](gc_routing_users_utilization_get.html)	 - Get the user`s max utilization settings.  If not configured, the organization-wide default is returned.
-* [gc routing users utilization update](gc_routing_users_utilization_update.html)	 - Update the user`s max utilization settings.  Include only those media types requiring custom configuration.
+* [gc routing users utilization update](gc_routing_users_utilization_update.html)	 - Update the user`s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization`s default values.
 
 

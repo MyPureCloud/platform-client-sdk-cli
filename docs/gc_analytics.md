@@ -33,6 +33,7 @@
 * [gc analytics actions](gc_analytics_actions.html)	 - /api/v2/analytics/actions
 * [gc analytics agentcopilots](gc_analytics_agentcopilots.html)	 - /api/v2/analytics/agentcopilots
 * [gc analytics agents](gc_analytics_agents.html)	 - /api/v2/analytics/agents
+* [gc analytics agentutilizations](gc_analytics_agentutilizations.html)	 - /api/v2/analytics/agentutilizations
 * [gc analytics botflows](gc_analytics_botflows.html)	 - /api/v2/analytics/botflows
 * [gc analytics bots](gc_analytics_bots.html)	 - /api/v2/analytics/bots
 * [gc analytics casemanagement](gc_analytics_casemanagement.html)	 - /api/v2/analytics/casemanagement

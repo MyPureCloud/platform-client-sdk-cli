@@ -1,10 +1,10 @@
 ## gc routing users utilization update
 
-Update the user`s max utilization settings.  Include only those media types requiring custom configuration.
+Update the user`s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization`s default values.
 
 ### Synopsis
 
-Update the user`s max utilization settings.  Include only those media types requiring custom configuration.
+Update the user`s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization`s default values.
 
 ```
 gc routing users utilization update [userId] [flags]

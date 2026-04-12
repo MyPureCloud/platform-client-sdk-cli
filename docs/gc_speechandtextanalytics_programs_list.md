@@ -16,6 +16,7 @@ gc speechandtextanalytics programs list [flags]
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
+      --ids strings              Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed.
       --name string              Case insensitive partial name to filter by
       --nextPage string          The key for listing the next page
       --pageSize string          The page size for the listing (default "20")

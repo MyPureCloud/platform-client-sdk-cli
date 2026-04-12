@@ -1,13 +1,13 @@
-## gc casemanagement caseplans versions stageplans stepplans list
+## gc processautomation scheduledtriggers list
 
-Get a list of Stepplans.
+Retrieves all scheduled triggers, optionally filtered by query parameters.
 
 ### Synopsis
 
-Get a list of Stepplans.
+Retrieves all scheduled triggers, optionally filtered by query parameters.
 
 ```
-gc casemanagement caseplans versions stageplans stepplans list [caseplanId] [versionId] [stageplanId] [flags]
+gc processautomation scheduledtriggers list [flags]
 ```
 
 ### Options
@@ -16,7 +16,7 @@ gc casemanagement caseplans versions stageplans stepplans list [caseplanId] [ver
       --after string             The cursor that points to the end of the set of entities that has been returned.
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --before string            The cursor that points to the start of the set of entities that has been returned.
-      --expands strings          Which fields to expand. Valid values: caseplan, stageplan, worktype
+      --enabled string           Boolean indicating desired enabled state of scheduled triggers Valid values: true, false
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --pageSize string          Number of entities to return. Maximum of 200.
@@ -40,6 +40,6 @@ gc casemanagement caseplans versions stageplans stepplans list [caseplanId] [ver
 
 ### SEE ALSO
 
-* [gc casemanagement caseplans versions stageplans stepplans](gc_casemanagement_caseplans_versions_stageplans_stepplans.html)	 - /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}/stepplans
+* [gc processautomation scheduledtriggers](gc_processautomation_scheduledtriggers.html)	 - /api/v2/processautomation/scheduledtriggers
 
 

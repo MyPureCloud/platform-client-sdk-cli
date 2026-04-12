@@ -1,10 +1,10 @@
 ## gc users presences
 
-/api/v2/users/presences /api/v2/users/{userId}/presences
+/api/v2/users/{userId}/presences /api/v2/users/presences
 
 ### Synopsis
 
-/api/v2/users/presences /api/v2/users/{userId}/presences
+/api/v2/users/{userId}/presences /api/v2/users/presences
 
 ### Options
 

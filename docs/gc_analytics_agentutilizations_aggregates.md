@@ -1,15 +1,15 @@
-## gc users presences bulk
+## gc analytics agentutilizations aggregates
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+/api/v2/analytics/agentutilizations/aggregates
 
 ### Synopsis
 
-/api/v2/users/presences/{sourceId}/bulk /api/v2/users/presences/bulk
+/api/v2/analytics/agentutilizations/aggregates
 
 ### Options
 
 ```
-  -h, --help   help for bulk
+  -h, --help   help for aggregates
 ```
 
 ### Options inherited from parent commands
@@ -29,8 +29,8 @@
 
 ### SEE ALSO
 
-* [gc users presences](gc_users_presences.html)	 - /api/v2/users/{userId}/presences /api/v2/users/presences
-* [gc users presences bulk get](gc_users_presences_bulk_get.html)	 - Get bulk user presences for a single presence source
-* [gc users presences bulk update](gc_users_presences_bulk_update.html)	 - Update bulk user Presences
+* [gc analytics agentutilizations](gc_analytics_agentutilizations.html)	 - /api/v2/analytics/agentutilizations
+* [gc analytics agentutilizations aggregates jobs](gc_analytics_agentutilizations_aggregates_jobs.html)	 - /api/v2/analytics/agentutilizations/aggregates/jobs
+* [gc analytics agentutilizations aggregates query](gc_analytics_agentutilizations_aggregates_query.html)	 - /api/v2/analytics/agentutilizations/aggregates/query
 
 

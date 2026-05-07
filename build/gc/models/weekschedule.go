@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type WeekscheduleDud struct { 
-    Id string `json:"id"`
+    
 
 
     SelfUri string `json:"selfUri"`
@@ -47,7 +47,8 @@ type WeekscheduleDud struct {
 
 // Weekschedule
 type Weekschedule struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     
@@ -98,6 +99,7 @@ func (o *Weekschedule) String() string {
     
     
     
+    
      o.UserSchedules = map[string]Userschedule{"": {}} 
     
     
@@ -117,6 +119,8 @@ func (u *Weekschedule) MarshalJSON() ([]byte, error) {
     WeekscheduleMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         WeekDate string `json:"weekDate"`
         

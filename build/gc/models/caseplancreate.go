@@ -76,7 +76,7 @@ type Caseplancreate struct {
     DivisionId string `json:"divisionId"`
 
 
-    // DataSchemas - The schemas that define all data for cases from this Caseplan. The schema must be defined in the TaskManagement namespace.
+    // DataSchemas - The schemas that define all data for cases from this Caseplan. The schema must be defined in the TaskManagement namespace. Omit or leave null to create a draft Caseplan without a schema; assign a schema before publish.
     DataSchemas []Caseplandataschema `json:"dataSchemas"`
 
 

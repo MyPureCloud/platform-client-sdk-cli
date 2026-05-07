@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type ShifttradeupdatetradejobresponseDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -35,7 +35,8 @@ type ShifttradeupdatetradejobresponseDud struct {
 
 // Shifttradeupdatetradejobresponse
 type Shifttradeupdatetradejobresponse struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // Status - The status of the job
@@ -69,6 +70,7 @@ func (o *Shifttradeupdatetradejobresponse) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -85,6 +87,8 @@ func (u *Shifttradeupdatetradejobresponse) MarshalJSON() ([]byte, error) {
     ShifttradeupdatetradejobresponseMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         Status string `json:"status"`
         

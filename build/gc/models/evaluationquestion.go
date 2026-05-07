@@ -49,6 +49,9 @@ type EvaluationquestionDud struct {
 
     
 
+
+    
+
 }
 
 // Evaluationquestion
@@ -96,6 +99,10 @@ type Evaluationquestion struct {
     DefaultAnswer Defaultanswer `json:"defaultAnswer"`
 
 
+    // AutomatedScoringFocus - Focus setting for automated scoring
+    AutomatedScoringFocus string `json:"automatedScoringFocus"`
+
+
     // IsKill
     IsKill bool `json:"isKill"`
 
@@ -116,6 +123,7 @@ func (o *Evaluationquestion) String() string {
     
      o.AnswerOptions = []Answeroption{{}} 
      o.MultipleSelectOptionQuestions = []Evaluationquestion{{}} 
+    
     
     
     
@@ -156,6 +164,8 @@ func (u *Evaluationquestion) MarshalJSON() ([]byte, error) {
         
         DefaultAnswer Defaultanswer `json:"defaultAnswer"`
         
+        AutomatedScoringFocus string `json:"automatedScoringFocus"`
+        
         IsKill bool `json:"isKill"`
         
         IsCritical bool `json:"isCritical"`
@@ -193,6 +203,9 @@ func (u *Evaluationquestion) MarshalJSON() ([]byte, error) {
 
         
         MultipleSelectOptionQuestions: []Evaluationquestion{{}},
+        
+
+
         
 
 

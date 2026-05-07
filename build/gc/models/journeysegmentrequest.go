@@ -60,7 +60,7 @@ type Journeysegmentrequest struct {
     Description string `json:"description"`
 
 
-    // Color - The hexadecimal color value of the segment.
+    // Color - The hexadecimal color value of the segment. Defaults if not provided.
     Color string `json:"color"`
 
 
@@ -68,11 +68,11 @@ type Journeysegmentrequest struct {
     ShouldDisplayToAgent bool `json:"shouldDisplayToAgent"`
 
 
-    // Context - The context of the segment.
+    // Context - The context of the segment. Defaults if not provided.
     Context Requestcontext `json:"context"`
 
 
-    // Journey - The pattern of rules defining the segment.
+    // Journey - The pattern of rules defining the segment. Defaults if not provided.
     Journey Requestjourney `json:"journey"`
 
 

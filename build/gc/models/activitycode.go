@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type ActivitycodeDud struct { 
-    Id string `json:"id"`
+    
 
 
     SelfUri string `json:"selfUri"`
@@ -47,7 +47,8 @@ type ActivitycodeDud struct {
 
 // Activitycode
 type Activitycode struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     
@@ -101,6 +102,7 @@ func (o *Activitycode) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -117,6 +119,8 @@ func (u *Activitycode) MarshalJSON() ([]byte, error) {
     ActivitycodeMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         Name string `json:"name"`
         

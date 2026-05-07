@@ -16,6 +16,9 @@ type LastresultoverallconditionsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Lastresultoverallconditionsettings
@@ -27,12 +30,17 @@ type Lastresultoverallconditionsettings struct {
     // SmsWrapupCodes - A list of wrapup code identifiers to match for SMS.
     SmsWrapupCodes []string `json:"smsWrapupCodes"`
 
+
+    // WhatsAppWrapupCodes - A list of wrapup code identifiers to match for WhatsApp.
+    WhatsAppWrapupCodes []string `json:"whatsAppWrapupCodes"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Lastresultoverallconditionsettings) String() string {
      o.EmailWrapupCodes = []string{""} 
      o.SmsWrapupCodes = []string{""} 
+     o.WhatsAppWrapupCodes = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -53,6 +61,8 @@ func (u *Lastresultoverallconditionsettings) MarshalJSON() ([]byte, error) {
         EmailWrapupCodes []string `json:"emailWrapupCodes"`
         
         SmsWrapupCodes []string `json:"smsWrapupCodes"`
+        
+        WhatsAppWrapupCodes []string `json:"whatsAppWrapupCodes"`
         *Alias
     }{
 
@@ -63,6 +73,11 @@ func (u *Lastresultoverallconditionsettings) MarshalJSON() ([]byte, error) {
 
         
         SmsWrapupCodes: []string{""},
+        
+
+
+        
+        WhatsAppWrapupCodes: []string{""},
         
 
         Alias: (*Alias)(u),

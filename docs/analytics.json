@@ -388,11 +388,6 @@
       "description": "Fetch a page of results for an async aggregates query"
     },
     {
-      "name": "list",
-      "path": "/api/v2/analytics/casemanagement/aggregates/jobs/{jobId}/results",
-      "description": "Fetch a page of results for an async case management query"
-    },
-    {
       "name": "create",
       "path": "/api/v2/analytics/casemanagement/aggregates/query",
       "description": "Query for case management aggregates"
@@ -411,6 +406,11 @@
       "name": "delete",
       "path": "/api/v2/analytics/casemanagement/aggregates/jobs/{jobId}",
       "description": "Delete/cancel an async request for case management aggregates"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/casemanagement/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async case management query"
     },
     {
       "name": "create",
@@ -538,6 +538,11 @@
       "description": "Fetch a page of results for an async aggregates query"
     },
     {
+      "name": "create",
+      "path": "/api/v2/analytics/knowledge/aggregates/jobs",
+      "description": "Query for knowledge aggregates asynchronously"
+    },
+    {
       "name": "get",
       "path": "/api/v2/analytics/knowledge/aggregates/jobs/{jobId}",
       "description": "Get status for async query for knowledge aggregates"
@@ -551,11 +556,6 @@
       "name": "list",
       "path": "/api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async aggregates query"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/analytics/knowledge/aggregates/jobs",
-      "description": "Query for knowledge aggregates asynchronously"
     },
     {
       "name": "create",
@@ -598,6 +598,11 @@
       "description": "Fetch a page of results for an async aggregates query"
     },
     {
+      "name": "create",
+      "path": "/api/v2/analytics/surveys/aggregates/jobs",
+      "description": "Query for survey aggregates asynchronously"
+    },
+    {
       "name": "get",
       "path": "/api/v2/analytics/surveys/aggregates/jobs/{jobId}",
       "description": "Get status for async query for survey aggregates"
@@ -611,11 +616,6 @@
       "name": "list",
       "path": "/api/v2/analytics/surveys/aggregates/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async aggregates query"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/analytics/surveys/aggregates/jobs",
-      "description": "Query for survey aggregates asynchronously"
     },
     {
       "name": "create",

@@ -13,6 +13,9 @@ var (
 type IdentityresolutionautomergeconfigDud struct { 
     
 
+
+    
+
 }
 
 // Identityresolutionautomergeconfig
@@ -20,10 +23,15 @@ type Identityresolutionautomergeconfig struct {
     // AuthenticatedWebMessaging - Whether automerging is enabled for Authenticated Webmessaging conversations in this channel.
     AuthenticatedWebMessaging bool `json:"authenticatedWebMessaging"`
 
+
+    // WebTracking - Whether automerging is enabled for Web Tracking sessions in this channel.
+    WebTracking bool `json:"webTracking"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Identityresolutionautomergeconfig) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Identityresolutionautomergeconfig) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         AuthenticatedWebMessaging bool `json:"authenticatedWebMessaging"`
+        
+        WebTracking bool `json:"webTracking"`
         *Alias
     }{
+
+        
+
 
         
 

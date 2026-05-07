@@ -51,7 +51,7 @@ type Capacityplanstaffingrequirementresult struct {
     Status string `json:"status"`
 
 
-    // ReferenceBusinessUnitDate - The reference date for interval-based data for the requirements. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+    // ReferenceBusinessUnitDate - The reference date for interval-based data relative to the business unit time zone for the requirements. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     ReferenceBusinessUnitDate time.Time `json:"referenceBusinessUnitDate"`
 
 

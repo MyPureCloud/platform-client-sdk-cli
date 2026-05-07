@@ -12,7 +12,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type BuschedulerunDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -69,7 +69,8 @@ type BuschedulerunDud struct {
 
 // Buschedulerun
 type Buschedulerun struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // SchedulerRunId - The scheduler run ID.  Reference this value for support
@@ -155,6 +156,7 @@ func (o *Buschedulerun) String() string {
     
     
     
+    
      o.MessageSeverityCounts = []Schedulermessageseveritycount{{}} 
     
     
@@ -174,6 +176,8 @@ func (u *Buschedulerun) MarshalJSON() ([]byte, error) {
     BuschedulerunMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         SchedulerRunId string `json:"schedulerRunId"`
         

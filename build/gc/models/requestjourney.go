@@ -17,7 +17,7 @@ type RequestjourneyDud struct {
 
 // Requestjourney
 type Requestjourney struct { 
-    // Patterns - A list of zero or more patterns to match.
+    // Patterns - A list of zero or more patterns to match. Defaults to an empty list if not provided.
     Patterns []Requestjourneypattern `json:"patterns"`
 
 }

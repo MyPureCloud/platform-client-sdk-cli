@@ -12,7 +12,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type BushorttermforecastDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -63,7 +63,8 @@ type BushorttermforecastDud struct {
 
 // Bushorttermforecast
 type Bushorttermforecast struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // WeekDate - The start week date of this forecast in yyyy-MM-dd.  Must fall on the start day of week for the associated business unit. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
@@ -134,6 +135,7 @@ func (o *Bushorttermforecast) String() string {
     
     
     
+    
      o.SourceDays = []Forecastsourcedaypointer{{}} 
      o.Modifications = []Buforecastmodificationresponse{{}} 
     
@@ -156,6 +158,8 @@ func (u *Bushorttermforecast) MarshalJSON() ([]byte, error) {
     BushorttermforecastMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         WeekDate time.Time `json:"weekDate"`
         

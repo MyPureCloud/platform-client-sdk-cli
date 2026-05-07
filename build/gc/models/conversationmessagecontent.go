@@ -67,6 +67,9 @@ type ConversationmessagecontentDud struct {
 
     
 
+
+    
+
 }
 
 // Conversationmessagecontent - Message content element. If contentType = \"Attachment\" only one item is allowed.
@@ -146,6 +149,10 @@ type Conversationmessagecontent struct {
     // Form - Form content.
     Form Conversationcontentform `json:"form"`
 
+
+    // NotificationResponse - Notification response content, e.g. an Apple Invitation acceptance.
+    NotificationResponse Conversationcontentnotificationresponse `json:"notificationResponse"`
+
 }
 
 // String returns a JSON representation of the model
@@ -162,6 +169,7 @@ func (o *Conversationmessagecontent) String() string {
     
     
      o.Reactions = []Conversationcontentreaction{{}} 
+    
     
     
     
@@ -223,6 +231,8 @@ func (u *Conversationmessagecontent) MarshalJSON() ([]byte, error) {
         Push Conversationcontentpush `json:"push"`
         
         Form Conversationcontentform `json:"form"`
+        
+        NotificationResponse Conversationcontentnotificationresponse `json:"notificationResponse"`
         *Alias
     }{
 
@@ -261,6 +271,9 @@ func (u *Conversationmessagecontent) MarshalJSON() ([]byte, error) {
 
         
         Reactions: []Conversationcontentreaction{{}},
+        
+
+
         
 
 

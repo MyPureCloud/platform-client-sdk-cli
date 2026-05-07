@@ -13,6 +13,15 @@ var (
 type ConnectionoptionlistingDud struct { 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Connectionoptionlisting
@@ -20,11 +29,26 @@ type Connectionoptionlisting struct {
     // Entities
     Entities []Connectionoption `json:"entities"`
 
+
+    // NextUri
+    NextUri string `json:"nextUri"`
+
+
+    // SelfUri
+    SelfUri string `json:"selfUri"`
+
+
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Connectionoptionlisting) String() string {
      o.Entities = []Connectionoption{{}} 
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -43,11 +67,26 @@ func (u *Connectionoptionlisting) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Entities []Connectionoption `json:"entities"`
+        
+        NextUri string `json:"nextUri"`
+        
+        SelfUri string `json:"selfUri"`
+        
+        PreviousUri string `json:"previousUri"`
         *Alias
     }{
 
         
         Entities: []Connectionoption{{}},
+        
+
+
+        
+
+
+        
+
+
         
 
         Alias: (*Alias)(u),

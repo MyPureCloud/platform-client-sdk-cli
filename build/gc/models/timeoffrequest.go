@@ -78,7 +78,7 @@ type TimeoffrequestDud struct {
 
 // Timeoffrequest
 type Timeoffrequest struct { 
-    // Id - The id of the time off request
+    // Id - The globally unique identifier for the object.
     Id string `json:"id"`
 
 

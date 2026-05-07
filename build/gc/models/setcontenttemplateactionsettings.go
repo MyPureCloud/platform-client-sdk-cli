@@ -16,6 +16,9 @@ type SetcontenttemplateactionsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Setcontenttemplateactionsettings
@@ -27,10 +30,15 @@ type Setcontenttemplateactionsettings struct {
     // EmailContentTemplateId - A String containing the Email contentTemplateId.
     EmailContentTemplateId string `json:"emailContentTemplateId"`
 
+
+    // WhatsAppContentTemplateId - A string containing the WhatsApp contentTemplateId.
+    WhatsAppContentTemplateId string `json:"whatsAppContentTemplateId"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Setcontenttemplateactionsettings) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Setcontenttemplateactionsettings) MarshalJSON() ([]byte, error) {
         SmsContentTemplateId string `json:"smsContentTemplateId"`
         
         EmailContentTemplateId string `json:"emailContentTemplateId"`
+        
+        WhatsAppContentTemplateId string `json:"whatsAppContentTemplateId"`
         *Alias
     }{
+
+        
+
 
         
 

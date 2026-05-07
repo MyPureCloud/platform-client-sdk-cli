@@ -16,6 +16,11 @@
       "name": "create",
       "path": "/api/v2/events/users/presence",
       "description": "Publish User Presence Status Batch Events"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/events/routing/customkpiattributions",
+      "description": "Publish Predictive Routing Custom Kpi Attribution Batch Events"
     }
   ]
 }

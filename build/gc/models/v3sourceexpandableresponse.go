@@ -7,12 +7,15 @@ import (
 )
 
 var (
-    V3sourcedetailedwitherrorresponseMarshalled = false
+    V3sourceexpandableresponseMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type V3sourcedetailedwitherrorresponseDud struct { 
+type V3sourceexpandableresponseDud struct { 
     Id string `json:"id"`
+
+
+    
 
 
     
@@ -61,8 +64,8 @@ type V3sourcedetailedwitherrorresponseDud struct {
 
 }
 
-// V3sourcedetailedwitherrorresponse
-type V3sourcedetailedwitherrorresponse struct { 
+// V3sourceexpandableresponse
+type V3sourceexpandableresponse struct { 
     
 
 
@@ -118,6 +121,10 @@ type V3sourcedetailedwitherrorresponse struct {
     FilterDetails V3sourcefilterdetails `json:"filterDetails"`
 
 
+    // Connection - The connection associated with the source. Needs to be expanded.
+    Connection Connectionresponse `json:"connection"`
+
+
     // VarError - Optional error details of an errored source.
     VarError Errorbody `json:"error"`
 
@@ -127,7 +134,8 @@ type V3sourcedetailedwitherrorresponse struct {
 }
 
 // String returns a JSON representation of the model
-func (o *V3sourcedetailedwitherrorresponse) String() string {
+func (o *V3sourceexpandableresponse) String() string {
+    
     
     
     
@@ -149,13 +157,13 @@ func (o *V3sourcedetailedwitherrorresponse) String() string {
     return str
 }
 
-func (u *V3sourcedetailedwitherrorresponse) MarshalJSON() ([]byte, error) {
-    type Alias V3sourcedetailedwitherrorresponse
+func (u *V3sourceexpandableresponse) MarshalJSON() ([]byte, error) {
+    type Alias V3sourceexpandableresponse
 
-    if V3sourcedetailedwitherrorresponseMarshalled {
+    if V3sourceexpandableresponseMarshalled {
         return []byte("{}"), nil
     }
-    V3sourcedetailedwitherrorresponseMarshalled = true
+    V3sourceexpandableresponseMarshalled = true
 
     return json.Marshal(&struct {
         
@@ -185,9 +193,14 @@ func (u *V3sourcedetailedwitherrorresponse) MarshalJSON() ([]byte, error) {
         
         FilterDetails V3sourcefilterdetails `json:"filterDetails"`
         
+        Connection Connectionresponse `json:"connection"`
+        
         VarError Errorbody `json:"error"`
         *Alias
     }{
+
+        
+
 
         
 

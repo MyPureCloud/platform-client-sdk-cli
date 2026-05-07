@@ -14,11 +14,6 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/learning/assignments/me",
-      "description": "List of Learning Assignments assigned to current user"
-    },
-    {
-      "name": "list",
       "path": "/api/v2/learning/assignments",
       "description": "List of Learning module Assignments"
     },
@@ -43,6 +38,16 @@
       "description": "Update Learning Assignment"
     },
     {
+      "name": "update",
+      "path": "/api/v2/learning/assignments/{assignmentId}/reschedule",
+      "description": "Reschedule Learning Assignment"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/learning/assignments/me",
+      "description": "List of Learning Assignments assigned to current user"
+    },
+    {
       "name": "create",
       "path": "/api/v2/learning/assignments/{assignmentId}/reset",
       "description": "Reset Learning Assignment"
@@ -61,11 +66,6 @@
       "name": "create",
       "path": "/api/v2/learning/assignments/bulkremove",
       "description": "Remove multiple Learning Assignments"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/learning/assignments/{assignmentId}/reschedule",
-      "description": "Reschedule Learning Assignment"
     },
     {
       "name": "get",

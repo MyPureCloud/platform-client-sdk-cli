@@ -62,6 +62,9 @@ type IdentitynowDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -135,6 +138,10 @@ type Identitynow struct {
     MetadataURL string `json:"metadataURL"`
 
 
+    // ForceAuthn
+    ForceAuthn bool `json:"forceAuthn"`
+
+
     
 
 }
@@ -150,6 +157,7 @@ func (o *Identitynow) String() string {
     
     
      o.Certificates = []string{""} 
+    
     
     
     
@@ -205,6 +213,8 @@ func (u *Identitynow) MarshalJSON() ([]byte, error) {
         DisplayOnLogin bool `json:"displayOnLogin"`
         
         MetadataURL string `json:"metadataURL"`
+        
+        ForceAuthn bool `json:"forceAuthn"`
         *Alias
     }{
 
@@ -237,6 +247,9 @@ func (u *Identitynow) MarshalJSON() ([]byte, error) {
 
         
         Certificates: []string{""},
+        
+
+
         
 
 

@@ -10,13 +10,21 @@ var (
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type SetwhatsappintegrationactionsettingsDud struct { }
+type SetwhatsappintegrationactionsettingsDud struct { 
+    
+
+}
 
 // Setwhatsappintegrationactionsettings
-type Setwhatsappintegrationactionsettings struct { }
+type Setwhatsappintegrationactionsettings struct { 
+    // WhatsAppIntegrationId - The ID of the WhatsApp integration.
+    WhatsAppIntegrationId string `json:"whatsAppIntegrationId"`
+
+}
 
 // String returns a JSON representation of the model
 func (o *Setwhatsappintegrationactionsettings) String() string {
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -33,8 +41,13 @@ func (u *Setwhatsappintegrationactionsettings) MarshalJSON() ([]byte, error) {
     SetwhatsappintegrationactionsettingsMarshalled = true
 
     return json.Marshal(&struct {
+        
+        WhatsAppIntegrationId string `json:"whatsAppIntegrationId"`
         *Alias
     }{
+
+        
+
         Alias: (*Alias)(u),
     })
 }

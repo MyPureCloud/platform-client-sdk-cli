@@ -65,6 +65,9 @@ type GenericsamlDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -138,6 +141,10 @@ type Genericsaml struct {
     MetadataURL string `json:"metadataURL"`
 
 
+    // ForceAuthn
+    ForceAuthn bool `json:"forceAuthn"`
+
+
     // EndpointCompression
     EndpointCompression bool `json:"endpointCompression"`
 
@@ -157,6 +164,7 @@ func (o *Genericsaml) String() string {
     
     
      o.Certificates = []string{""} 
+    
     
     
     
@@ -214,6 +222,8 @@ func (u *Genericsaml) MarshalJSON() ([]byte, error) {
         
         MetadataURL string `json:"metadataURL"`
         
+        ForceAuthn bool `json:"forceAuthn"`
+        
         EndpointCompression bool `json:"endpointCompression"`
         *Alias
     }{
@@ -247,6 +257,9 @@ func (u *Genericsaml) MarshalJSON() ([]byte, error) {
 
         
         Certificates: []string{""},
+        
+
+
         
 
 

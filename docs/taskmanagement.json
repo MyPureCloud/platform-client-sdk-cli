@@ -108,6 +108,11 @@
       "description": "Query for workitems"
     },
     {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/workitems/query/jobs/{jobId}/results",
+      "description": "Get results from for workitem query job "
+    },
+    {
       "name": "create",
       "path": "/api/v2/taskmanagement/workitems/query/jobs",
       "description": "Create a workitem query job"
@@ -116,11 +121,6 @@
       "name": "get",
       "path": "/api/v2/taskmanagement/workitems/query/jobs/{jobId}",
       "description": "Get the workitem query job associated with the job id."
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/taskmanagement/workitems/query/jobs/{jobId}/results",
-      "description": "Get results from for workitem query job "
     },
     {
       "name": "create",

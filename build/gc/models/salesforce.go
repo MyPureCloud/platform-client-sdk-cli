@@ -62,6 +62,9 @@ type SalesforceDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -135,6 +138,10 @@ type Salesforce struct {
     MetadataURL string `json:"metadataURL"`
 
 
+    // ForceAuthn
+    ForceAuthn bool `json:"forceAuthn"`
+
+
     
 
 }
@@ -150,6 +157,7 @@ func (o *Salesforce) String() string {
     
     
      o.Certificates = []string{""} 
+    
     
     
     
@@ -205,6 +213,8 @@ func (u *Salesforce) MarshalJSON() ([]byte, error) {
         DisplayOnLogin bool `json:"displayOnLogin"`
         
         MetadataURL string `json:"metadataURL"`
+        
+        ForceAuthn bool `json:"forceAuthn"`
         *Alias
     }{
 
@@ -237,6 +247,9 @@ func (u *Salesforce) MarshalJSON() ([]byte, error) {
 
         
         Certificates: []string{""},
+        
+
+
         
 
 

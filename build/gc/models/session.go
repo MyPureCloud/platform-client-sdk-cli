@@ -200,7 +200,7 @@ type Session struct {
     ShortId string `json:"shortId"`
 
 
-    // OutcomeAchievements - List of the outcome achievements by the customer in this session.
+    // OutcomeAchievements - Deprecated. List of the outcome achievements by the customer in this session. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
     OutcomeAchievements []Outcomeachievement `json:"outcomeAchievements"`
 
 

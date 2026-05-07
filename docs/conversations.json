@@ -509,13 +509,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages",
-      "description": "Send a message on behalf of a communication in a chat conversation."
+      "path": "/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing",
+      "description": "Send a typing-indicator on behalf of a communication in a chat conversation."
     },
     {
       "name": "create",
-      "path": "/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing",
-      "description": "Send a typing-indicator on behalf of a communication in a chat conversation."
+      "path": "/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages",
+      "description": "Send a message on behalf of a communication in a chat conversation."
     },
     {
       "name": "list",
@@ -883,6 +883,11 @@
       "description": "Apply wrap-up for this conversation communication"
     },
     {
+      "name": "update",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/parkingstate",
+      "description": "Update conversation by setting its parking state"
+    },
+    {
       "name": "get",
       "path": "/api/v2/conversations/messages/{conversationId}/messages/{messageId}",
       "description": "Get conversation message"
@@ -978,16 +983,6 @@
       "description": "Apply wrap-up for this conversation communication"
     },
     {
-      "name": "get",
-      "path": "/api/v2/conversations/videos/meetings/{meetingId}",
-      "description": "Gets a record for a given meetingId"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/videos/meetings",
-      "description": "Generate a meetingId for a given conferenceId"
-    },
-    {
       "name": "update",
       "path": "/api/v2/conversations/videos/{conversationId}/recordingstate",
       "description": "Update a conversation by setting its recording state"
@@ -1001,6 +996,16 @@
       "name": "create",
       "path": "/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
       "description": "Apply wrap-up for this conversation communication"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/videos/meetings/{meetingId}",
+      "description": "Gets a record for a given meetingId"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/videos/meetings",
+      "description": "Generate a meetingId for a given conferenceId"
     },
     {
       "name": "get",
@@ -1566,6 +1571,11 @@
       "name": "create",
       "path": "/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations",
       "description": "Create annotation"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/{conversationId}/assistant/copilotcontext",
+      "description": "Get copilot context values for a conversation."
     },
     {
       "name": "create",

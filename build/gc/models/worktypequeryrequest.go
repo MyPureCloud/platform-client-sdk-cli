@@ -28,6 +28,9 @@ type WorktypequeryrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Worktypequeryrequest
@@ -52,6 +55,10 @@ type Worktypequeryrequest struct {
     After string `json:"after"`
 
 
+    // Expands - List of entity attributes to be expanded in the result.
+    Expands string `json:"expands"`
+
+
     // Sort - Sort
     Sort Worktypequerysort `json:"sort"`
 
@@ -63,6 +70,7 @@ func (o *Worktypequeryrequest) String() string {
     
      o.Filters = []Workitemfilter{{}} 
      o.Attributes = []string{""} 
+    
     
     
 
@@ -92,6 +100,8 @@ func (u *Worktypequeryrequest) MarshalJSON() ([]byte, error) {
         
         After string `json:"after"`
         
+        Expands string `json:"expands"`
+        
         Sort Worktypequerysort `json:"sort"`
         *Alias
     }{
@@ -109,6 +119,9 @@ func (u *Worktypequeryrequest) MarshalJSON() ([]byte, error) {
 
         
         Attributes: []string{""},
+        
+
+
         
 
 

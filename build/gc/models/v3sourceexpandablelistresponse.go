@@ -7,12 +7,15 @@ import (
 )
 
 var (
-    V3sourcewitherrorresponseMarshalled = false
+    V3sourceexpandablelistresponseMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type V3sourcewitherrorresponseDud struct { 
+type V3sourceexpandablelistresponseDud struct { 
     Id string `json:"id"`
+
+
+    
 
 
     
@@ -52,8 +55,8 @@ type V3sourcewitherrorresponseDud struct {
 
 }
 
-// V3sourcewitherrorresponse
-type V3sourcewitherrorresponse struct { 
+// V3sourceexpandablelistresponse
+type V3sourceexpandablelistresponse struct { 
     
 
 
@@ -97,6 +100,10 @@ type V3sourcewitherrorresponse struct {
     LastSync V3sourcelastsynchronization `json:"lastSync"`
 
 
+    // Connection - The connection associated with the source. Needs to be expanded.
+    Connection Connectionresponse `json:"connection"`
+
+
     // VarError - Optional error details of an errored source.
     VarError Errorbody `json:"error"`
 
@@ -106,7 +113,8 @@ type V3sourcewitherrorresponse struct {
 }
 
 // String returns a JSON representation of the model
-func (o *V3sourcewitherrorresponse) String() string {
+func (o *V3sourceexpandablelistresponse) String() string {
+    
     
     
     
@@ -125,13 +133,13 @@ func (o *V3sourcewitherrorresponse) String() string {
     return str
 }
 
-func (u *V3sourcewitherrorresponse) MarshalJSON() ([]byte, error) {
-    type Alias V3sourcewitherrorresponse
+func (u *V3sourceexpandablelistresponse) MarshalJSON() ([]byte, error) {
+    type Alias V3sourceexpandablelistresponse
 
-    if V3sourcewitherrorresponseMarshalled {
+    if V3sourceexpandablelistresponseMarshalled {
         return []byte("{}"), nil
     }
-    V3sourcewitherrorresponseMarshalled = true
+    V3sourceexpandablelistresponseMarshalled = true
 
     return json.Marshal(&struct {
         
@@ -155,9 +163,14 @@ func (u *V3sourcewitherrorresponse) MarshalJSON() ([]byte, error) {
         
         LastSync V3sourcelastsynchronization `json:"lastSync"`
         
+        Connection Connectionresponse `json:"connection"`
+        
         VarError Errorbody `json:"error"`
         *Alias
     }{
+
+        
+
 
         
 

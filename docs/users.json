@@ -63,6 +63,11 @@
       "description": "Patch a user's CallForwarding"
     },
     {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/favorites",
+      "description": "Deprecated; will be revived with new contract"
+    },
+    {
       "name": "get",
       "path": "/api/v2/users/{userId}/adjacents",
       "description": "Get adjacents"
@@ -76,11 +81,6 @@
       "name": "list",
       "path": "/api/v2/users/{userId}/directreports",
       "description": "Get direct reports"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/users/{userId}/favorites",
-      "description": "Deprecated; will be revived with new contract"
     },
     {
       "name": "get",
@@ -173,11 +173,6 @@
       "description": "Get the user associated with external identifier."
     },
     {
-      "name": "getexternalidforuserauthority",
-      "path": "/api/v2/users/{userId}/externalid/{authorityName}",
-      "description": "Get the external identifier of user for an authority."
-    },
-    {
       "name": "getexternalidsforuser",
       "path": "/api/v2/users/{userId}/externalid",
       "description": "Get the external identifiers for a user."
@@ -186,6 +181,11 @@
       "name": "create",
       "path": "/api/v2/users/{userId}/externalid",
       "description": "Create mapping between external identifier and user. Limit 100 per entity."
+    },
+    {
+      "name": "getexternalidforuserauthority",
+      "path": "/api/v2/users/{userId}/externalid/{authorityName}",
+      "description": "Get the external identifier of user for an authority."
     },
     {
       "name": "delete",
@@ -318,6 +318,21 @@
       "description": "Update the routing status of a user"
     },
     {
+      "name": "get",
+      "path": "/api/v2/users/stations/me",
+      "description": "Get station information for self"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/stations/me/associatedstation/{stationId}",
+      "description": "Set self associated station"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/stations/me/associatedstation",
+      "description": "Clear self associated station"
+    },
+    {
       "name": "list",
       "path": "/api/v2/users/{userId}/skillgroups",
       "description": "Get skill groups for a user"
@@ -366,6 +381,11 @@
       "name": "update",
       "path": "/api/v2/users/bulk",
       "description": "Update bulk acd autoanswer on users. Max 50 users can be updated at a time."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/query",
+      "description": "Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required"
     },
     {
       "name": "list",
@@ -503,6 +523,26 @@
       "description": "Get dependent of a users rule"
     },
     {
+      "name": "create",
+      "path": "/api/v2/users/rules/query",
+      "description": "Query the result of a users rule"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/rules/settings/{ruleType}",
+      "description": "Get the settings for a specific users rule type"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/rules",
+      "description": "Get the list of users rules"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/rules",
+      "description": "Create a new rule"
+    },
+    {
       "name": "get",
       "path": "/api/v2/users/rules/{ruleId}",
       "description": "Get a users rule"
@@ -516,31 +556,6 @@
       "name": "update",
       "path": "/api/v2/users/rules/{ruleId}",
       "description": "Update an existing users rule"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/users/rules",
-      "description": "Get the list of users rules"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/users/rules",
-      "description": "Create a new rule"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/users/rules/query",
-      "description": "Query the result of a users rule"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/users/rules/settings/{ruleType}",
-      "description": "Get the settings for a specific users rule type"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/users/query",
-      "description": "Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required"
     },
     {
       "name": "create",

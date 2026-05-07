@@ -104,6 +104,12 @@ type MessageDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Message
@@ -231,6 +237,14 @@ type Message struct {
     // EngagementSource
     EngagementSource string `json:"engagementSource"`
 
+
+    // ResumeTime - Represents the time when a parked message will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    ResumeTime time.Time `json:"resumeTime"`
+
+
+    // ParkTime - Represents the time when an message was put into parked state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    ParkTime time.Time `json:"parkTime"`
+
 }
 
 // String returns a JSON representation of the model
@@ -258,6 +272,8 @@ func (o *Message) String() string {
     
     
      o.Messages = []Messagedetails{{}} 
+    
+    
     
     
     
@@ -344,6 +360,10 @@ func (u *Message) MarshalJSON() ([]byte, error) {
         QueueMediaSettings Conversationqueuemediasettings `json:"queueMediaSettings"`
         
         EngagementSource string `json:"engagementSource"`
+        
+        ResumeTime time.Time `json:"resumeTime"`
+        
+        ParkTime time.Time `json:"parkTime"`
         *Alias
     }{
 
@@ -417,6 +437,12 @@ func (u *Message) MarshalJSON() ([]byte, error) {
 
         
         Messages: []Messagedetails{{}},
+        
+
+
+        
+
+
         
 
 

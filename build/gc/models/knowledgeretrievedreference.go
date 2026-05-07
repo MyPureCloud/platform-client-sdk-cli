@@ -22,6 +22,9 @@ type KnowledgeretrievedreferenceDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgeretrievedreference
@@ -41,10 +44,15 @@ type Knowledgeretrievedreference struct {
     // Url - The url of the file.
     Url string `json:"url"`
 
+
+    // UsedForGeneration - Indicates whether a retrieved reference is used for answer generation
+    UsedForGeneration bool `json:"usedForGeneration"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgeretrievedreference) String() string {
+    
     
     
     
@@ -73,8 +81,13 @@ func (u *Knowledgeretrievedreference) MarshalJSON() ([]byte, error) {
         FileName string `json:"fileName"`
         
         Url string `json:"url"`
+        
+        UsedForGeneration bool `json:"usedForGeneration"`
         *Alias
     }{
+
+        
+
 
         
 

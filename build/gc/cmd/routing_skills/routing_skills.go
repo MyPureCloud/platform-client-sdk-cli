@@ -64,7 +64,7 @@ func Cmdrouting_skills() *cobra.Command {
 }`)
 	routing_skillsCmd.AddCommand(deleteCmd)
 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/skills/{skillId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/skills/{skillId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/skills/{skillId}", utils.FormatPermissions([]string{ "routing:skill:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/skills/{skillId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	
@@ -84,7 +84,7 @@ func Cmdrouting_skills() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter for results that start with this value")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "id")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/skills", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/skills")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/routing/skills", utils.FormatPermissions([]string{ "routing:skill:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/skills")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	

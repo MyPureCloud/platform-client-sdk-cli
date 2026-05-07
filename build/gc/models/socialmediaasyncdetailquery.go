@@ -20,7 +20,7 @@ type SocialmediaasyncdetailqueryDud struct {
     
 
 
-    
+    TopicIds []string `json:"topicIds"`
 
 
     
@@ -44,8 +44,7 @@ type Socialmediaasyncdetailquery struct {
     Filter Socialmediaqueryfilter `json:"filter"`
 
 
-    // TopicIds - List of topicIds to query in
-    TopicIds []string `json:"topicIds"`
+    
 
 
     // PageSize - The number of results per page
@@ -62,7 +61,6 @@ func (o *Socialmediaasyncdetailquery) String() string {
     
     
     
-     o.TopicIds = []string{""} 
     
     
 
@@ -88,8 +86,6 @@ func (u *Socialmediaasyncdetailquery) MarshalJSON() ([]byte, error) {
         
         Filter Socialmediaqueryfilter `json:"filter"`
         
-        TopicIds []string `json:"topicIds"`
-        
         PageSize int `json:"pageSize"`
         
         Order string `json:"order"`
@@ -105,8 +101,6 @@ func (u *Socialmediaasyncdetailquery) MarshalJSON() ([]byte, error) {
         
 
 
-        
-        TopicIds: []string{""},
         
 
 

@@ -30,6 +30,7 @@ func init() {
 func Cmdusers_chats_me() *cobra.Command { 
 	utils.AddFlag(listCmd.Flags(), "bool", "excludeClosed", "", "Whether or not to exclude closed chats")
 	utils.AddFlag(listCmd.Flags(), "bool", "includePresence", "", "Whether or not to include user presence")
+	utils.AddFlag(listCmd.Flags(), "bool", "includeRoomOwners", "", "Whether or not to include room owners")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The key to start after")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users/chats/me", utils.FormatPermissions([]string{ "chat:chat:access", "user:chats:view",  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/chats/me")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -80,6 +81,10 @@ var listCmd = &cobra.Command{
 		includePresence := utils.GetFlag(cmd.Flags(), "bool", "includePresence")
 		if includePresence != "" {
 			queryParams["includePresence"] = includePresence
+		}
+		includeRoomOwners := utils.GetFlag(cmd.Flags(), "bool", "includeRoomOwners")
+		if includeRoomOwners != "" {
+			queryParams["includeRoomOwners"] = includeRoomOwners
 		}
 		after := utils.GetFlag(cmd.Flags(), "string", "after")
 		if after != "" {

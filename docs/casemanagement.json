@@ -23,6 +23,11 @@
       "description": "Create a case association."
     },
     {
+      "name": "create",
+      "path": "/api/v2/casemanagement/caseplans/query",
+      "description": "Query for caseplans"
+    },
+    {
       "name": "get",
       "path": "/api/v2/casemanagement/caseplans/{caseplanId}",
       "description": "Get a Caseplan."

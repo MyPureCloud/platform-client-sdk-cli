@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdusers_callforwarding() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/callforwarding", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/{userId}/callforwarding")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/callforwarding", utils.FormatPermissions([]string{ "conversation:callForwarding:view",  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/{userId}/callforwarding")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	

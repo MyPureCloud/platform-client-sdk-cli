@@ -62,6 +62,9 @@ type AppeventresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Appeventresponse
@@ -130,6 +133,10 @@ type Appeventresponse struct {
     Traits map[string]Customeventattribute `json:"traits"`
 
 
+    // ExternalId - An external identifier for the customer.
+    ExternalId string `json:"externalId"`
+
+
     // CreatedDate - UTC timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     CreatedDate time.Time `json:"createdDate"`
 
@@ -153,6 +160,7 @@ func (o *Appeventresponse) String() string {
     
      o.Attributes = map[string]Customeventattribute{"": {}} 
      o.Traits = map[string]Customeventattribute{"": {}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -202,6 +210,8 @@ func (u *Appeventresponse) MarshalJSON() ([]byte, error) {
         Attributes map[string]Customeventattribute `json:"attributes"`
         
         Traits map[string]Customeventattribute `json:"traits"`
+        
+        ExternalId string `json:"externalId"`
         
         CreatedDate time.Time `json:"createdDate"`
         *Alias
@@ -256,6 +266,9 @@ func (u *Appeventresponse) MarshalJSON() ([]byte, error) {
 
         
         Traits: map[string]Customeventattribute{"": {}},
+        
+
+
         
 
 

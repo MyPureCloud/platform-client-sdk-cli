@@ -45,6 +45,9 @@ type ConnectionresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -94,12 +97,17 @@ type Connectionresponse struct {
     VarError Errorbody `json:"error"`
 
 
+    // DateExpiry - Expiry date of the authentication credentials. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateExpiry time.Time `json:"dateExpiry"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Connectionresponse) String() string {
+    
     
     
     
@@ -146,8 +154,13 @@ func (u *Connectionresponse) MarshalJSON() ([]byte, error) {
         Status string `json:"status"`
         
         VarError Errorbody `json:"error"`
+        
+        DateExpiry time.Time `json:"dateExpiry"`
         *Alias
     }{
+
+        
+
 
         
 

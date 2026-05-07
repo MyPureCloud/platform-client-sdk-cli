@@ -62,6 +62,9 @@ type WebeventresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Webeventresponse
@@ -130,6 +133,10 @@ type Webeventresponse struct {
     Authenticated bool `json:"authenticated"`
 
 
+    // ExternalId - An external identifier for the customer.
+    ExternalId string `json:"externalId"`
+
+
     // CreatedDate - UTC timestamp indicating when the event actually took place, events older than an hour will be rejected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     CreatedDate time.Time `json:"createdDate"`
 
@@ -152,6 +159,7 @@ func (o *Webeventresponse) String() string {
     
      o.Attributes = map[string]Customeventattribute{"": {}} 
      o.Traits = map[string]Customeventattribute{"": {}} 
+    
     
     
 
@@ -203,6 +211,8 @@ func (u *Webeventresponse) MarshalJSON() ([]byte, error) {
         
         Authenticated bool `json:"authenticated"`
         
+        ExternalId string `json:"externalId"`
+        
         CreatedDate time.Time `json:"createdDate"`
         *Alias
     }{
@@ -253,6 +263,9 @@ func (u *Webeventresponse) MarshalJSON() ([]byte, error) {
 
         
         Traits: map[string]Customeventattribute{"": {}},
+        
+
+
         
 
 

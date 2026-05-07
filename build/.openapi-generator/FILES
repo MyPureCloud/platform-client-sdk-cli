@@ -209,6 +209,7 @@ gc/cmd/carrierservices_integrations_emergencylocations_me/carrierservices_integr
 gc/cmd/casemanagement_caseplans/casemanagement_caseplans.go
 gc/cmd/casemanagement_caseplans_intakesettings/casemanagement_caseplans_intakesettings.go
 gc/cmd/casemanagement_caseplans_publish/casemanagement_caseplans_publish.go
+gc/cmd/casemanagement_caseplans_query/casemanagement_caseplans_query.go
 gc/cmd/casemanagement_caseplans_stageplans/casemanagement_caseplans_stageplans.go
 gc/cmd/casemanagement_caseplans_stageplans_stepplans/casemanagement_caseplans_stageplans_stepplans.go
 gc/cmd/casemanagement_caseplans_versions/casemanagement_caseplans_versions.go
@@ -267,6 +268,7 @@ gc/cmd/contentmanagement_workspaces_tagvalues_query/contentmanagement_workspaces
 gc/cmd/conversations/conversations.go
 gc/cmd/conversations_aftercallwork_participants_communications/conversations_aftercallwork_participants_communications.go
 gc/cmd/conversations_assign/conversations_assign.go
+gc/cmd/conversations_assistant_copilotcontext/conversations_assistant_copilotcontext.go
 gc/cmd/conversations_barge/conversations_barge.go
 gc/cmd/conversations_callbacks/conversations_callbacks.go
 gc/cmd/conversations_callbacks_bulk_disconnect/conversations_callbacks_bulk_disconnect.go
@@ -383,6 +385,7 @@ gc/cmd/conversations_messages_participants_attributes/conversations_messages_par
 gc/cmd/conversations_messages_participants_communications/conversations_messages_participants_communications.go
 gc/cmd/conversations_messages_participants_communications_wrapup/conversations_messages_participants_communications_wrapup.go
 gc/cmd/conversations_messages_participants_monitor/conversations_messages_participants_monitor.go
+gc/cmd/conversations_messages_participants_parkingstate/conversations_messages_participants_parkingstate.go
 gc/cmd/conversations_messages_participants_replace/conversations_messages_participants_replace.go
 gc/cmd/conversations_messages_participants_wrapup/conversations_messages_participants_wrapup.go
 gc/cmd/conversations_messages_participants_wrapupcodes/conversations_messages_participants_wrapupcodes.go
@@ -475,6 +478,7 @@ gc/cmd/employeeengagement_recognitions/employeeengagement_recognitions.go
 gc/cmd/employeeperformance_externalmetrics_data/employeeperformance_externalmetrics_data.go
 gc/cmd/employeeperformance_externalmetrics_definitions/employeeperformance_externalmetrics_definitions.go
 gc/cmd/events_conversations/events_conversations.go
+gc/cmd/events_routing_customkpiattributions/events_routing_customkpiattributions.go
 gc/cmd/events_users_presence/events_users_presence.go
 gc/cmd/events_users_routingstatus/events_users_routingstatus.go
 gc/cmd/externalcontacts_bulk_contacts/externalcontacts_bulk_contacts.go
@@ -562,6 +566,7 @@ gc/cmd/flows_actions_unlock/flows_actions_unlock.go
 gc/cmd/flows_datatables/flows_datatables.go
 gc/cmd/flows_datatables_divisionviews/flows_datatables_divisionviews.go
 gc/cmd/flows_datatables_export_jobs/flows_datatables_export_jobs.go
+gc/cmd/flows_datatables_import_csv_jobs/flows_datatables_import_csv_jobs.go
 gc/cmd/flows_datatables_import_jobs/flows_datatables_import_jobs.go
 gc/cmd/flows_datatables_rows/flows_datatables_rows.go
 gc/cmd/flows_divisionviews/flows_divisionviews.go
@@ -1398,6 +1403,8 @@ gc/cmd/users_state/users_state.go
 gc/cmd/users_station/users_station.go
 gc/cmd/users_station_associatedstation/users_station_associatedstation.go
 gc/cmd/users_station_defaultstation/users_station_defaultstation.go
+gc/cmd/users_stations_me/users_stations_me.go
+gc/cmd/users_stations_me_associatedstation/users_stations_me_associatedstation.go
 gc/cmd/users_superiors/users_superiors.go
 gc/cmd/users_trustors/users_trustors.go
 gc/cmd/users_verifiers/users_verifiers.go
@@ -2025,6 +2032,7 @@ gc/models/batchdownloadjobsubmission.go
 gc/models/batchdownloadjobsubmissionresult.go
 gc/models/batchdownloadrequest.go
 gc/models/batcheventresponse.go
+gc/models/batchpredictiveroutingcustomkpiattributioneventrequest.go
 gc/models/batchuserpresenceeventrequest.go
 gc/models/batchuserroutingstatuseventrequest.go
 gc/models/benefitassessment.go
@@ -2399,6 +2407,8 @@ gc/models/caseplancreateresponse.go
 gc/models/caseplandataschema.go
 gc/models/caseplandataschemalisting.go
 gc/models/caseplanlisting.go
+gc/models/caseplanqueryentitylisting.go
+gc/models/caseplanqueryrequest.go
 gc/models/caseplanreference.go
 gc/models/caseplanupdate.go
 gc/models/casepriorityupdate.go
@@ -2715,6 +2725,7 @@ gc/models/conversationcontentlistpicker.go
 gc/models/conversationcontentlistpickeritem.go
 gc/models/conversationcontentlistpickersection.go
 gc/models/conversationcontentlocation.go
+gc/models/conversationcontentnotificationresponse.go
 gc/models/conversationcontentnotificationtemplate.go
 gc/models/conversationcontentpaymentrequest.go
 gc/models/conversationcontentpaymentresponse.go
@@ -2823,8 +2834,11 @@ gc/models/copilotasyncaggregatequeryresponse.go
 gc/models/copilotasyncaggregationquery.go
 gc/models/copilotcondition.go
 gc/models/copilotcontext.go
+gc/models/copilotcontextentity.go
 gc/models/copilotcontextfilter.go
 gc/models/copilotcontextvalue.go
+gc/models/copilotcontextvalueitem.go
+gc/models/copilotcontextvalues.go
 gc/models/copilotfallbackaction.go
 gc/models/copilotnludomain.go
 gc/models/copilotnludomainversion.go
@@ -3773,6 +3787,7 @@ gc/models/hristimeofftypesjobreference.go
 gc/models/hristimeofftypesjobresponse.go
 gc/models/hristimeofftypesresponse.go
 gc/models/humanize.go
+gc/models/icon.go
 gc/models/identifierclaimrequest.go
 gc/models/identitynow.go
 gc/models/identityprovider.go
@@ -4247,6 +4262,7 @@ gc/models/listing.go
 gc/models/listpicker.go
 gc/models/listpickeritem.go
 gc/models/listpickersection.go
+gc/models/listvalues.go
 gc/models/listwrapperagentworkplanfield.go
 gc/models/listwrapperalternativeshiftbusettingsactivitycategory.go
 gc/models/listwrapperalternativeshiftbusettingsgranularity.go
@@ -4646,7 +4662,11 @@ gc/models/outcomescore.go
 gc/models/outcomescoresresult.go
 gc/models/outgoingmessagerequest.go
 gc/models/outgoingmessageresponse.go
+gc/models/outlier.go
+gc/models/outlierdata.go
 gc/models/outlierinfo.go
+gc/models/outlierresultbody.go
+gc/models/outlierresulttemplate.go
 gc/models/outofoffice.go
 gc/models/outputvalue.go
 gc/models/overallbestpoints.go
@@ -4777,6 +4797,7 @@ gc/models/posttextrequest.go
 gc/models/posttextresponse.go
 gc/models/predictionresults.go
 gc/models/predictiverouting.go
+gc/models/predictiveroutingcustomkpiattributionevent.go
 gc/models/predictor.go
 gc/models/predictorlisting.go
 gc/models/predictormodel.go
@@ -5370,6 +5391,7 @@ gc/models/socialmediaasyncdetailquery.go
 gc/models/socialmediaasyncdetailqueryresponse.go
 gc/models/socialmediadetaildatacontainer.go
 gc/models/socialmediadetailmessagecontainer.go
+gc/models/socialmediaengagement.go
 gc/models/socialmediamessagedata.go
 gc/models/socialmediamessageescalationinfo.go
 gc/models/socialmediaqueryclause.go
@@ -5621,6 +5643,7 @@ gc/models/textbotuserinputevent.go
 gc/models/textbotwaitforinputaction.go
 gc/models/textmessagelisting.go
 gc/models/textstyleproperties.go
+gc/models/thirdpartysuggestion.go
 gc/models/ticker.go
 gc/models/timeallowed.go
 gc/models/timeanddatesubcondition.go
@@ -6001,7 +6024,9 @@ gc/models/utterance.go
 gc/models/v3knowledgesearchclientapplication.go
 gc/models/v3sourcecreaterequest.go
 gc/models/v3sourcedetailedresponse.go
-gc/models/v3sourcedetailedwitherrorresponse.go
+gc/models/v3sourceexpandablelisting.go
+gc/models/v3sourceexpandablelistresponse.go
+gc/models/v3sourceexpandableresponse.go
 gc/models/v3sourcefilter.go
 gc/models/v3sourcefilterdetails.go
 gc/models/v3sourcefolderdetails.go
@@ -6010,8 +6035,6 @@ gc/models/v3sourceref.go
 gc/models/v3sourceschedulesettings.go
 gc/models/v3sourcesitedetails.go
 gc/models/v3sourceupdaterequest.go
-gc/models/v3sourcewitherrorlisting.go
-gc/models/v3sourcewitherrorresponse.go
 gc/models/v3startmanualsyncrequest.go
 gc/models/v3synchronization.go
 gc/models/v3synchronizationlisting.go

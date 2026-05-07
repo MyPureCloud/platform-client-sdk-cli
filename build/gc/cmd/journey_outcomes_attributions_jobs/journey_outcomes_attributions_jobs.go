@@ -79,8 +79,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Create Outcome Attributions",
-	Long:  "Create Outcome Attributions",
+	Short: "Deprecated. Create Outcome Attributions",
+	Long:  "Deprecated. Create Outcome Attributions",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -163,8 +163,8 @@ var createCmd = &cobra.Command{
 }
 var getCmd = &cobra.Command{
 	Use:   "get [jobId]",
-	Short: "Get job status.",
-	Long:  "Get job status.",
+	Short: "Deprecated. Get job status.",
+	Long:  "Deprecated. Get job status.",
 	Args:  utils.DetermineArgs([]string{ "jobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

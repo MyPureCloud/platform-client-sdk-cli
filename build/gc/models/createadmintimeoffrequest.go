@@ -69,19 +69,19 @@ type Createadmintimeoffrequest struct {
     PartialDayStartDateTimes []time.Time `json:"partialDayStartDateTimes"`
 
 
-    // DailyDurationMinutes - The daily duration of this time off request in minutes
+    // DailyDurationMinutes - Daily duration in minutes applied to all days of this time off request. Ignored if durationMinutes is specified. At least one of dailyDurationMinutes or durationMinutes is required
     DailyDurationMinutes int `json:"dailyDurationMinutes"`
 
 
-    // DurationMinutes - Daily durations for each day of this time off request in minutes
+    // DurationMinutes - Duration in minutes for each day of this time off request. Must match the size of fullDayManagementUnitDates or partialDayStartDateTimes. At least one of dailyDurationMinutes or durationMinutes is required
     DurationMinutes []int `json:"durationMinutes"`
 
 
-    // PayableMinutes - Payable minutes for each day of this time off request
+    // PayableMinutes - Payable minutes for each day of this time off request, representing scheduled paid time displaced by this request. Defaults to dailyDurationMinutes if not specified
     PayableMinutes []int `json:"payableMinutes"`
 
 
-    // Paid - Whether this is a paid time off request
+    // Paid - Whether this is a paid time off request. Defaults to the activity code's paid value if not specified
     Paid bool `json:"paid"`
 
 }

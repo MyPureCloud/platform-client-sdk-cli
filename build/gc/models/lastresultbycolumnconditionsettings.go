@@ -22,6 +22,12 @@ type LastresultbycolumnconditionsettingsDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Lastresultbycolumnconditionsettings
@@ -41,6 +47,14 @@ type Lastresultbycolumnconditionsettings struct {
     // SmsWrapupCodes - A list of wrapup code identifiers to match for SMS.
     SmsWrapupCodes []string `json:"smsWrapupCodes"`
 
+
+    // WhatsAppColumnName - The name of the contact column to evaluate for WhatsApp.
+    WhatsAppColumnName string `json:"whatsAppColumnName"`
+
+
+    // WhatsAppWrapupCodes - A list of wrapup code identifiers to match for WhatsApp.
+    WhatsAppWrapupCodes []string `json:"whatsAppWrapupCodes"`
+
 }
 
 // String returns a JSON representation of the model
@@ -49,6 +63,8 @@ func (o *Lastresultbycolumnconditionsettings) String() string {
      o.EmailWrapupCodes = []string{""} 
     
      o.SmsWrapupCodes = []string{""} 
+    
+     o.WhatsAppWrapupCodes = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -73,6 +89,10 @@ func (u *Lastresultbycolumnconditionsettings) MarshalJSON() ([]byte, error) {
         SmsColumnName string `json:"smsColumnName"`
         
         SmsWrapupCodes []string `json:"smsWrapupCodes"`
+        
+        WhatsAppColumnName string `json:"whatsAppColumnName"`
+        
+        WhatsAppWrapupCodes []string `json:"whatsAppWrapupCodes"`
         *Alias
     }{
 
@@ -89,6 +109,14 @@ func (u *Lastresultbycolumnconditionsettings) MarshalJSON() ([]byte, error) {
 
         
         SmsWrapupCodes: []string{""},
+        
+
+
+        
+
+
+        
+        WhatsAppWrapupCodes: []string{""},
         
 
         Alias: (*Alias)(u),

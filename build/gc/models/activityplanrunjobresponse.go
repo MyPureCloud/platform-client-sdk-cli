@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type ActivityplanrunjobresponseDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -32,7 +32,8 @@ type ActivityplanrunjobresponseDud struct {
 
 // Activityplanrunjobresponse
 type Activityplanrunjobresponse struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // Status - The status of the job
@@ -58,6 +59,7 @@ type Activityplanrunjobresponse struct {
 // String returns a JSON representation of the model
 func (o *Activityplanrunjobresponse) String() string {
     
+    
      o.Exceptions = []Activityplanjobexception{{}} 
     
     
@@ -77,6 +79,8 @@ func (u *Activityplanrunjobresponse) MarshalJSON() ([]byte, error) {
     ActivityplanrunjobresponseMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         Status string `json:"status"`
         

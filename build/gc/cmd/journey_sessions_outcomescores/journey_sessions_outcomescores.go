@@ -53,8 +53,8 @@ func queryEscape(value string) string {
 
 var getCmd = &cobra.Command{
 	Use:   "get [sessionId]",
-	Short: "Retrieve latest outcome score associated with a session for all outcomes.",
-	Long:  "Retrieve latest outcome score associated with a session for all outcomes.",
+	Short: "Deprecated. Retrieve latest outcome score associated with a session for all outcomes.",
+	Long:  "Deprecated. Retrieve latest outcome score associated with a session for all outcomes.",
 	Args:  utils.DetermineArgs([]string{ "sessionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

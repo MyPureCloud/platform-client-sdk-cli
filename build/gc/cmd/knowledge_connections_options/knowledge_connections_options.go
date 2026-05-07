@@ -28,6 +28,8 @@ func init() {
 }
 
 func Cmdknowledge_connections_options() *cobra.Command { 
+	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
+	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "200", "Number of results per page. Minimum: 25, Maximum: 500.")
 	utils.AddFlag(listCmd.Flags(), "string", "parentId", "", "The id of the parent option whose children to be listed.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/knowledge/connections/{connectionId}/options", utils.FormatPermissions([]string{ "knowledge:connectionOptions:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/connections/{connectionId}/options")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -38,7 +40,7 @@ func Cmdknowledge_connections_options() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ConnectionOptionListing"
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
       }
     }
   }
@@ -73,6 +75,14 @@ var listCmd = &cobra.Command{
 		connectionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{connectionId}", fmt.Sprintf("%v", connectionId), -1)
 
+		after := utils.GetFlag(cmd.Flags(), "string", "after")
+		if after != "" {
+			queryParams["after"] = after
+		}
+		pageSize := utils.GetFlag(cmd.Flags(), "string", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
+		}
 		parentId := utils.GetFlag(cmd.Flags(), "string", "parentId")
 		if parentId != "" {
 			queryParams["parentId"] = parentId

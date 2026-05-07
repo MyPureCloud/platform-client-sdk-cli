@@ -27,7 +27,7 @@ type Querycriteriaitem struct {
     Key string `json:"key"`
 
 
-    // Operator - The operator for comparison
+    // Operator - The operator for comparison. For DivisionId, only EQUALS and NOTEQUALS operators are supported.
     Operator string `json:"operator"`
 
 

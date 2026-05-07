@@ -70,17 +70,17 @@
     {
       "name": "get",
       "path": "/api/v2/journey/actionmaps/estimates/jobs/{jobId}",
-      "description": "Get status of job."
+      "description": "Deprecated. Get status of job."
     },
     {
       "name": "get",
       "path": "/api/v2/journey/actionmaps/estimates/jobs/{jobId}/results",
-      "description": "Get estimates from completed job."
+      "description": "Deprecated. Get estimates from completed job."
     },
     {
       "name": "create",
       "path": "/api/v2/journey/actionmaps/estimates/jobs",
-      "description": "Query for estimates"
+      "description": "Deprecated. Query for estimates"
     },
     {
       "name": "list",
@@ -175,52 +175,52 @@
     {
       "name": "get",
       "path": "/api/v2/journey/outcomes/{outcomeId}",
-      "description": "Retrieve a single outcome."
+      "description": "Deprecated. Retrieve a single outcome."
     },
     {
       "name": "delete",
       "path": "/api/v2/journey/outcomes/{outcomeId}",
-      "description": "Delete an outcome."
+      "description": "Deprecated. Delete an outcome."
     },
     {
       "name": "update",
       "path": "/api/v2/journey/outcomes/{outcomeId}",
-      "description": "Update an outcome."
+      "description": "Deprecated. Update an outcome."
     },
     {
       "name": "list",
       "path": "/api/v2/journey/outcomes",
-      "description": "Retrieve all outcomes."
+      "description": "Deprecated. Retrieve all outcomes."
     },
     {
       "name": "create",
       "path": "/api/v2/journey/outcomes",
-      "description": "Create an outcome."
+      "description": "Deprecated. Create an outcome."
     },
     {
       "name": "get",
       "path": "/api/v2/journey/sessions/{sessionId}/outcomescores",
-      "description": "Retrieve latest outcome score associated with a session for all outcomes."
+      "description": "Deprecated. Retrieve latest outcome score associated with a session for all outcomes."
     },
     {
       "name": "get",
       "path": "/api/v2/journey/outcomes/predictors/{predictorId}",
-      "description": "Retrieve a single outcome predictor."
+      "description": "Deprecated. Retrieve a single outcome predictor."
     },
     {
       "name": "delete",
       "path": "/api/v2/journey/outcomes/predictors/{predictorId}",
-      "description": "Delete an outcome predictor."
+      "description": "Deprecated. Delete an outcome predictor."
     },
     {
       "name": "list",
       "path": "/api/v2/journey/outcomes/predictors",
-      "description": "Retrieve all outcome predictors."
+      "description": "Deprecated. Retrieve all outcome predictors."
     },
     {
       "name": "create",
       "path": "/api/v2/journey/outcomes/predictors",
-      "description": "Create an outcome predictor."
+      "description": "Deprecated. Create an outcome predictor."
     },
     {
       "name": "get",
@@ -263,11 +263,6 @@
       "description": "Update a Journey View by ID and version"
     },
     {
-      "name": "create",
-      "path": "/api/v2/journey/views/{viewId}/versions",
-      "description": "Update a Journey View by ID"
-    },
-    {
       "name": "get",
       "path": "/api/v2/journey/views/{viewId}",
       "description": "Get a Journey View by ID"
@@ -276,6 +271,11 @@
       "name": "delete",
       "path": "/api/v2/journey/views/{viewId}",
       "description": "Delete a Journey View by ID"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/journey/views/{viewId}/versions",
+      "description": "Update a Journey View by ID"
     },
     {
       "name": "list",
@@ -405,17 +405,17 @@
     {
       "name": "create",
       "path": "/api/v2/journey/outcomes/attributions/jobs",
-      "description": "Create Outcome Attributions"
+      "description": "Deprecated. Create Outcome Attributions"
     },
     {
       "name": "get",
       "path": "/api/v2/journey/outcomes/attributions/jobs/{jobId}",
-      "description": "Get job status."
+      "description": "Deprecated. Get job status."
     },
     {
       "name": "list",
       "path": "/api/v2/journey/outcomes/attributions/jobs/{jobId}/results",
-      "description": "Get outcome attribution entities from completed job."
+      "description": "Deprecated. Get outcome attribution entities from completed job."
     }
   ]
 }

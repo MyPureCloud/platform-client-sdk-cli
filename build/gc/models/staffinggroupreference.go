@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type StaffinggroupreferenceDud struct { 
-    Id string `json:"id"`
+    
 
 
     SelfUri string `json:"selfUri"`
@@ -20,7 +20,8 @@ type StaffinggroupreferenceDud struct {
 
 // Staffinggroupreference
 type Staffinggroupreference struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     
@@ -29,6 +30,7 @@ type Staffinggroupreference struct {
 
 // String returns a JSON representation of the model
 func (o *Staffinggroupreference) String() string {
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -45,6 +47,8 @@ func (u *Staffinggroupreference) MarshalJSON() ([]byte, error) {
     StaffinggroupreferenceMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         *Alias
     }{
 

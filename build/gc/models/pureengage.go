@@ -65,6 +65,9 @@ type PureengageDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -138,6 +141,10 @@ type Pureengage struct {
     MetadataURL string `json:"metadataURL"`
 
 
+    // ForceAuthn
+    ForceAuthn bool `json:"forceAuthn"`
+
+
     // AutoProvisionUsers
     AutoProvisionUsers bool `json:"autoProvisionUsers"`
 
@@ -157,6 +164,7 @@ func (o *Pureengage) String() string {
     
     
      o.Certificates = []string{""} 
+    
     
     
     
@@ -214,6 +222,8 @@ func (u *Pureengage) MarshalJSON() ([]byte, error) {
         
         MetadataURL string `json:"metadataURL"`
         
+        ForceAuthn bool `json:"forceAuthn"`
+        
         AutoProvisionUsers bool `json:"autoProvisionUsers"`
         *Alias
     }{
@@ -247,6 +257,9 @@ func (u *Pureengage) MarshalJSON() ([]byte, error) {
 
         
         Certificates: []string{""},
+        
+
+
         
 
 

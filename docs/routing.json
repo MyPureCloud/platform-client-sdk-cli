@@ -274,16 +274,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/routing/email/domains/{domainId}/verification",
-      "description": "Get domain verification settings"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/routing/email/domains/{domainId}/verification",
-      "description": "Restart domain verification"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/routing/email/domains/{domainId}/mailfrom",
       "description": "Get domain mail from settings"
     },
@@ -306,6 +296,16 @@
       "name": "create",
       "path": "/api/v2/routing/email/domains/{domainId}/dkim",
       "description": "Restart domain dkim"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/email/domains/{domainId}/verification",
+      "description": "Get domain verification settings"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/email/domains/{domainId}/verification",
+      "description": "Restart domain verification"
     },
     {
       "name": "list",

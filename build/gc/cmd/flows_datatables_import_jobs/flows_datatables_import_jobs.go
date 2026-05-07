@@ -97,8 +97,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create [datatableId]",
-	Short: "Begin an import process for importing rows into a datatable",
-	Long:  "Begin an import process for importing rows into a datatable",
+	Short: "Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead",
+	Long:  "Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead",
 	Args:  utils.DetermineArgs([]string{ "datatableId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

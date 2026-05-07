@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type AdminagentworkplanpreferenceresponseDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -26,7 +26,8 @@ type AdminagentworkplanpreferenceresponseDud struct {
 
 // Adminagentworkplanpreferenceresponse
 type Adminagentworkplanpreferenceresponse struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // WorkPlans - The list of work plans that belong to this bid group
@@ -43,6 +44,7 @@ type Adminagentworkplanpreferenceresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Adminagentworkplanpreferenceresponse) String() string {
+    
      o.WorkPlans = []Workplanreference{{}} 
      o.AgentWorkPlanBidPreferences = []Adminagentworkplanbiddingpreference{{}} 
 
@@ -61,6 +63,8 @@ func (u *Adminagentworkplanpreferenceresponse) MarshalJSON() ([]byte, error) {
     AdminagentworkplanpreferenceresponseMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         WorkPlans []Workplanreference `json:"workPlans"`
         

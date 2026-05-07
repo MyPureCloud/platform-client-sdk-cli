@@ -23,8 +23,8 @@ type UsersruleslockedcriteriasettingsgroupDud struct {
 
 // Usersruleslockedcriteriasettingsgroup
 type Usersruleslockedcriteriasettingsgroup struct { 
-    // Operator - The operator for this criteria
-    Operator string `json:"operator"`
+    // Operators - The allowed operators for this criteria
+    Operators []string `json:"operators"`
 
 
     // Container - The container that the ids belong to
@@ -38,7 +38,7 @@ type Usersruleslockedcriteriasettingsgroup struct {
 
 // String returns a JSON representation of the model
 func (o *Usersruleslockedcriteriasettingsgroup) String() string {
-    
+     o.Operators = []string{""} 
     
     
 
@@ -58,7 +58,7 @@ func (u *Usersruleslockedcriteriasettingsgroup) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Operator string `json:"operator"`
+        Operators []string `json:"operators"`
         
         Container string `json:"container"`
         
@@ -66,6 +66,8 @@ func (u *Usersruleslockedcriteriasettingsgroup) MarshalJSON() ([]byte, error) {
         *Alias
     }{
 
+        
+        Operators: []string{""},
         
 
 

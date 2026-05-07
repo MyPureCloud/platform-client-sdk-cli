@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type WfmagentDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -50,7 +50,8 @@ type WfmagentDud struct {
 
 // Wfmagent
 type Wfmagent struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // User - The user associated with this data
@@ -103,6 +104,7 @@ func (o *Wfmagent) String() string {
     
     
     
+    
      o.WorkPlanOverrides = []Workplanoverride{{}} 
      o.Queues = []Queuereference{{}} 
      o.Languages = []Languagereference{{}} 
@@ -125,6 +127,8 @@ func (u *Wfmagent) MarshalJSON() ([]byte, error) {
     WfmagentMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         User Userreference `json:"user"`
         

@@ -93,11 +93,6 @@
       "description": "Remove a pinned message from a 1on1"
     },
     {
-      "name": "getRoomParticipants",
-      "path": "/api/v2/chats/rooms/{roomJid}/participants",
-      "description": "Get room participants in a room"
-    },
-    {
       "name": "get",
       "path": "/api/v2/chats/rooms/{roomJid}/participants/{participantJid}",
       "description": "Get a room participant"
@@ -111,6 +106,11 @@
       "name": "delete",
       "path": "/api/v2/chats/rooms/{roomJid}/participants/{userId}",
       "description": "Remove a user from a room."
+    },
+    {
+      "name": "getRoomParticipants",
+      "path": "/api/v2/chats/rooms/{roomJid}/participants",
+      "description": "Get room participants in a room"
     },
     {
       "name": "get",

@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type WorkplanbidgroupsummaryDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -35,7 +35,8 @@ type WorkplanbidgroupsummaryDud struct {
 
 // Workplanbidgroupsummary
 type Workplanbidgroupsummary struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // Name - The name assigned to this bid group
@@ -69,6 +70,7 @@ func (o *Workplanbidgroupsummary) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -85,6 +87,8 @@ func (u *Workplanbidgroupsummary) MarshalJSON() ([]byte, error) {
     WorkplanbidgroupsummaryMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         Name string `json:"name"`
         

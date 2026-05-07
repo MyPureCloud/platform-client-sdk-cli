@@ -135,8 +135,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Create an outcome.",
-	Long:  "Create an outcome.",
+	Short: "Deprecated. Create an outcome.",
+	Long:  "Deprecated. Create an outcome.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -219,8 +219,8 @@ var createCmd = &cobra.Command{
 }
 var deleteCmd = &cobra.Command{
 	Use:   "delete [outcomeId]",
-	Short: "Delete an outcome.",
-	Long:  "Delete an outcome.",
+	Short: "Deprecated. Delete an outcome.",
+	Long:  "Deprecated. Delete an outcome.",
 	Args:  utils.DetermineArgs([]string{ "outcomeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -302,8 +302,8 @@ var deleteCmd = &cobra.Command{
 }
 var getCmd = &cobra.Command{
 	Use:   "get [outcomeId]",
-	Short: "Retrieve a single outcome.",
-	Long:  "Retrieve a single outcome.",
+	Short: "Deprecated. Retrieve a single outcome.",
+	Long:  "Deprecated. Retrieve a single outcome.",
 	Args:  utils.DetermineArgs([]string{ "outcomeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -385,8 +385,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Retrieve all outcomes.",
-	Long:  "Retrieve all outcomes.",
+	Short: "Deprecated. Retrieve all outcomes.",
+	Long:  "Deprecated. Retrieve all outcomes.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -490,8 +490,8 @@ var listCmd = &cobra.Command{
 }
 var updateCmd = &cobra.Command{
 	Use:   "update [outcomeId]",
-	Short: "Update an outcome.",
-	Long:  "Update an outcome.",
+	Short: "Deprecated. Update an outcome.",
+	Long:  "Deprecated. Update an outcome.",
 	Args:  utils.DetermineArgs([]string{ "outcomeId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

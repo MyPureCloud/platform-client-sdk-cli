@@ -17,7 +17,7 @@ type RequestcontextDud struct {
 
 // Requestcontext
 type Requestcontext struct { 
-    // Patterns - A list of one or more patterns to match.
+    // Patterns - A list of one or more patterns to match. Defaults to an empty list if not provided.
     Patterns []Requestcontextpattern `json:"patterns"`
 
 }

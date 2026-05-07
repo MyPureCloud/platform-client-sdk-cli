@@ -75,7 +75,7 @@ type Event struct {
     EventType string `json:"eventType"`
 
 
-    // OutcomeAchievedEvent - Event where a customer has achieved a specific outcome or goal.
+    // OutcomeAchievedEvent - Deprecated. Event where a customer has achieved a specific outcome or goal. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
     OutcomeAchievedEvent Outcomeachievedevent `json:"outcomeAchievedEvent"`
 
 

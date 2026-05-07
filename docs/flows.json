@@ -18,6 +18,11 @@
       "description": "Begin an export process for exporting all rows from a datatable"
     },
     {
+      "name": "create",
+      "path": "/api/v2/flows/datatables/{datatableId}/import/csv/jobs",
+      "description": "Begin an import process for importing rows from a CSV file into a datatable. CSV file is uploaded by performing a PUT request against the URL in the returned 'uploadURI' field. Headers for the PUT request must contain all headers contained in the returned 'uploadHeaders' field."
+    },
+    {
       "name": "getstateinformation",
       "path": "/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}",
       "description": "Returns the state information about an import job"
@@ -30,7 +35,7 @@
     {
       "name": "create",
       "path": "/api/v2/flows/datatables/{datatableId}/import/jobs",
-      "description": "Begin an import process for importing rows into a datatable"
+      "description": "Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead"
     },
     {
       "name": "get",

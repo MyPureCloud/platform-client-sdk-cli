@@ -19,12 +19,19 @@ type ReportingturnintentDud struct {
 
     
 
+
+    
+
 }
 
 // Reportingturnintent
 type Reportingturnintent struct { 
     // Name - The name of the intent detected during this reporting turn.
     Name string `json:"name"`
+
+
+    // Id - The ID of the intent detected during this reporting turn.
+    Id string `json:"id"`
 
 
     // Confidence - The confidence score of the intent detected during this reporting turn.
@@ -38,6 +45,7 @@ type Reportingturnintent struct {
 
 // String returns a JSON representation of the model
 func (o *Reportingturnintent) String() string {
+    
     
     
      o.Slots = []Reportingturnintentslot{{}} 
@@ -60,11 +68,16 @@ func (u *Reportingturnintent) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        Id string `json:"id"`
+        
         Confidence float64 `json:"confidence"`
         
         Slots []Reportingturnintentslot `json:"slots"`
         *Alias
     }{
+
+        
+
 
         
 

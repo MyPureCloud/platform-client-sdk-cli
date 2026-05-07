@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type ActivityplanoccurrencesessionsusersstructurereferenceDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -23,7 +23,8 @@ type ActivityplanoccurrencesessionsusersstructurereferenceDud struct {
 
 // Activityplanoccurrencesessionsusersstructurereference
 type Activityplanoccurrencesessionsusersstructurereference struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // Sessions - The sessions to delete from this activity plan occurrence
@@ -36,6 +37,7 @@ type Activityplanoccurrencesessionsusersstructurereference struct {
 
 // String returns a JSON representation of the model
 func (o *Activityplanoccurrencesessionsusersstructurereference) String() string {
+    
      o.Sessions = []Activityplansessionstructurereference{{}} 
 
     j, _ := json.Marshal(o)
@@ -53,6 +55,8 @@ func (u *Activityplanoccurrencesessionsusersstructurereference) MarshalJSON() ([
     ActivityplanoccurrencesessionsusersstructurereferenceMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         Sessions []Activityplansessionstructurereference `json:"sessions"`
         *Alias

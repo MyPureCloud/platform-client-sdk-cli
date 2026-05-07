@@ -27,7 +27,7 @@ type SchedulereferencewithbusinessunitDud struct {
 
 // Schedulereferencewithbusinessunit
 type Schedulereferencewithbusinessunit struct { 
-    // Id - The unique identifier of the schedule
+    // Id - The globally unique identifier for the object.
     Id string `json:"id"`
 
 

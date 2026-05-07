@@ -86,7 +86,7 @@ type Conversationproperties struct {
     IsMonitored bool `json:"isMonitored"`
 
 
-    // IsScreenMonitored - Indicates filtering for screenMonitored
+    // IsScreenMonitored - Deprecated: Use screenMonitored
     IsScreenMonitored bool `json:"isScreenMonitored"`
 
 

@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type TimeofflimitDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -29,7 +29,8 @@ type TimeofflimitDud struct {
 
 // Timeofflimit
 type Timeofflimit struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // Granularity - Granularity choice for the time off limit
@@ -53,6 +54,7 @@ func (o *Timeofflimit) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -69,6 +71,8 @@ func (u *Timeofflimit) MarshalJSON() ([]byte, error) {
     TimeofflimitMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         Granularity string `json:"granularity"`
         

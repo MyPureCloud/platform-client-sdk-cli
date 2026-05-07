@@ -113,6 +113,11 @@
       "description": "Retrieves basic info about trusted root CA certificates"
     },
     {
+      "name": "create",
+      "path": "/api/v2/integrations/actions/{actionId}/draft/test",
+      "description": "Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging."
+    },
+    {
       "name": "get",
       "path": "/api/v2/integrations/actions/{actionId}/draft",
       "description": "Retrieve a Draft"
@@ -151,11 +156,6 @@
       "name": "get",
       "path": "/api/v2/integrations/actions/{actionId}/draft/validation",
       "description": "Validate current Draft configuration."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/integrations/actions/{actionId}/draft/test",
-      "description": "Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging."
     },
     {
       "name": "create",
@@ -343,14 +343,14 @@
       "description": "Get a Nuance bot in the specified Integration"
     },
     {
-      "name": "list",
-      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results",
-      "description": "Get the result of an asynchronous Nuance bots GET job"
-    },
-    {
       "name": "listBotsJob",
       "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}",
       "description": "Get the status of an asynchronous Nuance bots GET job"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results",
+      "description": "Get the result of an asynchronous Nuance bots GET job"
     },
     {
       "name": "list",

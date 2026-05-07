@@ -22,6 +22,9 @@ type LastattemptbycolumnconditionsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Lastattemptbycolumnconditionsettings
@@ -32,6 +35,10 @@ type Lastattemptbycolumnconditionsettings struct {
 
     // SmsColumnName - The name of the contact column to evaluate for SMS.
     SmsColumnName string `json:"smsColumnName"`
+
+
+    // WhatsAppColumnName - The name of the contact column to evaluate for WhatsApp.
+    WhatsAppColumnName string `json:"whatsAppColumnName"`
 
 
     // Operator - The operator to use when comparing values.
@@ -45,6 +52,7 @@ type Lastattemptbycolumnconditionsettings struct {
 
 // String returns a JSON representation of the model
 func (o *Lastattemptbycolumnconditionsettings) String() string {
+    
     
     
     
@@ -70,11 +78,16 @@ func (u *Lastattemptbycolumnconditionsettings) MarshalJSON() ([]byte, error) {
         
         SmsColumnName string `json:"smsColumnName"`
         
+        WhatsAppColumnName string `json:"whatsAppColumnName"`
+        
         Operator string `json:"operator"`
         
         Value string `json:"value"`
         *Alias
     }{
+
+        
+
 
         
 

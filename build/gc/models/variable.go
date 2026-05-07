@@ -25,6 +25,12 @@ type VariableDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Variable
@@ -46,7 +52,15 @@ type Variable struct {
 
 
     // Validation - The validation configuration for the variable. Optional - if not present, no validation is applied.
-    Validation Variablevalidation `json:"validation"`
+    Validation interface{} `json:"validation"`
+
+
+    // ListValues - The values configuration for List variables. Only applicable when type is 'List'.
+    ListValues interface{} `json:"listValues"`
+
+
+    // ListVariables - The variables that the list result will be stored in. Only applicable when type is 'List'.
+    ListVariables []Variable `json:"listVariables"`
 
 }
 
@@ -56,7 +70,9 @@ func (o *Variable) String() string {
     
     
     
-    
+     o.Validation = Interface{} 
+     o.ListValues = Interface{} 
+     o.ListVariables = []Variable{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -82,7 +98,11 @@ func (u *Variable) MarshalJSON() ([]byte, error) {
         
         Description string `json:"description"`
         
-        Validation Variablevalidation `json:"validation"`
+        Validation interface{} `json:"validation"`
+        
+        ListValues interface{} `json:"listValues"`
+        
+        ListVariables []Variable `json:"listVariables"`
         *Alias
     }{
 
@@ -98,6 +118,18 @@ func (u *Variable) MarshalJSON() ([]byte, error) {
         
 
 
+        
+        Validation: Interface{},
+        
+
+
+        
+        ListValues: Interface{},
+        
+
+
+        
+        ListVariables: []Variable{{}},
         
 
         Alias: (*Alias)(u),

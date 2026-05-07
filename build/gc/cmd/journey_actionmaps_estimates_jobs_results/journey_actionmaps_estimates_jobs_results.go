@@ -53,8 +53,8 @@ func queryEscape(value string) string {
 
 var getCmd = &cobra.Command{
 	Use:   "get [jobId]",
-	Short: "Get estimates from completed job.",
-	Long:  "Get estimates from completed job.",
+	Short: "Deprecated. Get estimates from completed job.",
+	Long:  "Deprecated. Get estimates from completed job.",
 	Args:  utils.DetermineArgs([]string{ "jobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

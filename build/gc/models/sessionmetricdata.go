@@ -22,6 +22,9 @@ type SessionmetricdataDud struct {
 
     
 
+
+    
+
 }
 
 // Sessionmetricdata
@@ -38,13 +41,18 @@ type Sessionmetricdata struct {
     Historical Historicaldata `json:"historical"`
 
 
-    // ModelMetaData - Contains forecast meta data
+    // ModelMetaData - Contains forecast metadata
     ModelMetaData Modelmetadata `json:"modelMetaData"`
+
+
+    // Outliers - Contains forecast outlier data
+    Outliers Outlierdata `json:"outliers"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Sessionmetricdata) String() string {
+    
     
     
     
@@ -73,8 +81,13 @@ func (u *Sessionmetricdata) MarshalJSON() ([]byte, error) {
         Historical Historicaldata `json:"historical"`
         
         ModelMetaData Modelmetadata `json:"modelMetaData"`
+        
+        Outliers Outlierdata `json:"outliers"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -37,7 +37,7 @@ func Cmdworkforcemanagement_businessunits_activityplans_runs_jobs() *cobra.Comma
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ActivityPlanJobResponse"
+        "$ref" : "#/components/schemas/ActivityPlanRunJobResponse"
       }
     }
   }
@@ -53,7 +53,7 @@ func Cmdworkforcemanagement_businessunits_activityplans_runs_jobs() *cobra.Comma
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ActivityPlanRunJobResponse"
+        "$ref" : "#/components/schemas/ActivityPlanJobResponse"
       }
     }
   }

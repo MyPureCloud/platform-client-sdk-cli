@@ -53,8 +53,8 @@ func queryEscape(value string) string {
 
 var listCmd = &cobra.Command{
 	Use:   "list [jobId]",
-	Short: "Get outcome attribution entities from completed job.",
-	Long:  "Get outcome attribution entities from completed job.",
+	Short: "Deprecated. Get outcome attribution entities from completed job.",
+	Long:  "Deprecated. Get outcome attribution entities from completed job.",
 	Args:  utils.DetermineArgs([]string{ "jobId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

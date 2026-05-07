@@ -31,7 +31,7 @@ type Createroomrequest struct {
     Subject string `json:"subject"`
 
 
-    // UserIds - Users to add to the room
+    // UserIds - Users to add to the room, limit of 25
     UserIds []string `json:"userIds"`
 
 }

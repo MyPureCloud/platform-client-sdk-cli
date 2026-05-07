@@ -63,6 +63,11 @@
       "description": "Get all media requests to the guest in the conversation"
     },
     {
+      "name": "create",
+      "path": "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing",
+      "description": "Send a typing-indicator in a chat conversation."
+    },
+    {
       "name": "get",
       "path": "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}",
       "description": "Get a web chat conversation member"
@@ -76,11 +81,6 @@
       "name": "create",
       "path": "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages",
       "description": "Send a message in a chat conversation."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing",
-      "description": "Send a typing-indicator in a chat conversation."
     },
     {
       "name": "list",

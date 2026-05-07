@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type ShorttermforecastreferenceDud struct { 
-    Id string `json:"id"`
+    
 
 
     SelfUri string `json:"selfUri"`
@@ -26,7 +26,8 @@ type ShorttermforecastreferenceDud struct {
 
 // Shorttermforecastreference
 type Shorttermforecastreference struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     
@@ -45,6 +46,7 @@ type Shorttermforecastreference struct {
 func (o *Shorttermforecastreference) String() string {
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -61,6 +63,8 @@ func (u *Shorttermforecastreference) MarshalJSON() ([]byte, error) {
     ShorttermforecastreferenceMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         WeekDate string `json:"weekDate"`
         

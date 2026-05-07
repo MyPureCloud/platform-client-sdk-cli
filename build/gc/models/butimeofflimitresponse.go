@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type ButimeofflimitresponseDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -29,7 +29,8 @@ type ButimeofflimitresponseDud struct {
 
 // Butimeofflimitresponse
 type Butimeofflimitresponse struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // StaffingGroup - The staffing group to which this time-off limit is associated. If managementUnit is set, then the staffing group belongs to that management unit.Otherwise, if managementUnit is not set, it is a business unit level staffing group.At least one of managementUnit and staffingGroup must be set
@@ -53,6 +54,7 @@ func (o *Butimeofflimitresponse) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -69,6 +71,8 @@ func (u *Butimeofflimitresponse) MarshalJSON() ([]byte, error) {
     ButimeofflimitresponseMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         StaffingGroup Staffinggroupreference `json:"staffingGroup"`
         

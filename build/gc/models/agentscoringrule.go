@@ -39,6 +39,9 @@ type AgentscoringruleDud struct {
     
 
 
+    
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -84,6 +87,10 @@ type Agentscoringrule struct {
     Evaluator Addressableentityref `json:"evaluator"`
 
 
+    // AgentToScore - Which agent(s) to score. Valid values: First, Last, Each.
+    AgentToScore string `json:"agentToScore"`
+
+
     
 
 
@@ -96,6 +103,7 @@ type Agentscoringrule struct {
 
 // String returns a JSON representation of the model
 func (o *Agentscoringrule) String() string {
+    
     
     
     
@@ -130,8 +138,13 @@ func (u *Agentscoringrule) MarshalJSON() ([]byte, error) {
         Enabled bool `json:"enabled"`
         
         Evaluator Addressableentityref `json:"evaluator"`
+        
+        AgentToScore string `json:"agentToScore"`
         *Alias
     }{
+
+        
+
 
         
 

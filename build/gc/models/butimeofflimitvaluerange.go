@@ -12,7 +12,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type ButimeofflimitvaluerangeDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -45,7 +45,8 @@ type ButimeofflimitvaluerangeDud struct {
 
 // Butimeofflimitvaluerange
 type Butimeofflimitvaluerange struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // TimeOffLimit - The ID of the time-off limit
@@ -89,6 +90,7 @@ func (o *Butimeofflimitvaluerange) String() string {
     
     
     
+    
      o.LimitMinutesPerInterval = []int{0} 
      o.AllocatedMinutesPerInterval = []int{0} 
      o.WaitlistedMinutesPerInterval = []int{0} 
@@ -110,6 +112,8 @@ func (u *Butimeofflimitvaluerange) MarshalJSON() ([]byte, error) {
     ButimeofflimitvaluerangeMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         TimeOffLimit Butimeofflimitreference `json:"timeOffLimit"`
         

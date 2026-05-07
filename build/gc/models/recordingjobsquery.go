@@ -44,6 +44,12 @@ type RecordingjobsqueryDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Recordingjobsquery
@@ -80,6 +86,14 @@ type Recordingjobsquery struct {
     IncludeScreenRecordings bool `json:"includeScreenRecordings"`
 
 
+    // IncludePolicyBasedRecordings - Whether to include policy-based recordings for the action, default value = true
+    IncludePolicyBasedRecordings bool `json:"includePolicyBasedRecordings"`
+
+
+    // IncludeSnippetRecordings - Whether to include snippet recordings for the action, default value = true
+    IncludeSnippetRecordings bool `json:"includeSnippetRecordings"`
+
+
     // ClearExport - For DELETE action, setting this to true will clear any pending exports for recordings. This field is only used for DELETE action. Default value = false
     ClearExport bool `json:"clearExport"`
 
@@ -95,6 +109,8 @@ type Recordingjobsquery struct {
 
 // String returns a JSON representation of the model
 func (o *Recordingjobsquery) String() string {
+    
+    
     
     
     
@@ -139,6 +155,10 @@ func (u *Recordingjobsquery) MarshalJSON() ([]byte, error) {
         
         IncludeScreenRecordings bool `json:"includeScreenRecordings"`
         
+        IncludePolicyBasedRecordings bool `json:"includePolicyBasedRecordings"`
+        
+        IncludeSnippetRecordings bool `json:"includeSnippetRecordings"`
+        
         ClearExport bool `json:"clearExport"`
         
         ConversationQuery Asyncconversationquery `json:"conversationQuery"`
@@ -146,6 +166,12 @@ func (u *Recordingjobsquery) MarshalJSON() ([]byte, error) {
         AgedConversationInterval string `json:"agedConversationInterval"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

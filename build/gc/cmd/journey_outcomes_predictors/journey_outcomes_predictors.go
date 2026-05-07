@@ -104,8 +104,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Create an outcome predictor.",
-	Long:  "Create an outcome predictor.",
+	Short: "Deprecated. Create an outcome predictor.",
+	Long:  "Deprecated. Create an outcome predictor.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -188,8 +188,8 @@ var createCmd = &cobra.Command{
 }
 var deleteCmd = &cobra.Command{
 	Use:   "delete [predictorId]",
-	Short: "Delete an outcome predictor.",
-	Long:  "Delete an outcome predictor.",
+	Short: "Deprecated. Delete an outcome predictor.",
+	Long:  "Deprecated. Delete an outcome predictor.",
 	Args:  utils.DetermineArgs([]string{ "predictorId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -271,8 +271,8 @@ var deleteCmd = &cobra.Command{
 }
 var getCmd = &cobra.Command{
 	Use:   "get [predictorId]",
-	Short: "Retrieve a single outcome predictor.",
-	Long:  "Retrieve a single outcome predictor.",
+	Short: "Deprecated. Retrieve a single outcome predictor.",
+	Long:  "Deprecated. Retrieve a single outcome predictor.",
 	Args:  utils.DetermineArgs([]string{ "predictorId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -354,8 +354,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Retrieve all outcome predictors.",
-	Long:  "Retrieve all outcome predictors.",
+	Short: "Deprecated. Retrieve all outcome predictors.",
+	Long:  "Deprecated. Retrieve all outcome predictors.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

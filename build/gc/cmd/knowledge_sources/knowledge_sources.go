@@ -63,7 +63,7 @@ func Cmdknowledge_sources() *cobra.Command {
 }`)
 	knowledge_sourcesCmd.AddCommand(deleteCmd)
 
-	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Optional fields to expand for the Source. Valid values: lastSync, filterDetails")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Optional fields to expand for the Source. Valid values: lastSync, filterDetails, connection")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/knowledge/sources/{sourceId}", utils.FormatPermissions([]string{ "knowledge:source:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/sources/{sourceId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -73,14 +73,14 @@ func Cmdknowledge_sources() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/V3SourceDetailedWithErrorResponse"
+        "$ref" : "#/components/schemas/V3SourceExpandableResponse"
       }
     }
   }
 }`)
 	knowledge_sourcesCmd.AddCommand(getCmd)
 
-	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Optional fields to expand for the Source. Valid values: lastSync")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Optional fields to expand for the Source. Valid values: lastSync, connection")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/knowledge/sources", utils.FormatPermissions([]string{ "knowledge:source:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/sources")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -90,7 +90,7 @@ func Cmdknowledge_sources() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/V3SourceWithErrorListing"
+        "$ref" : "#/components/schemas/V3SourceExpandableListing"
       }
     }
   }

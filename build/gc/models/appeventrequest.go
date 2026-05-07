@@ -47,6 +47,9 @@ type AppeventrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Appeventrequest
@@ -91,6 +94,10 @@ type Appeventrequest struct {
     Traits map[string]Customeventattribute `json:"traits"`
 
 
+    // ExternalId - An external identifier for the customer.
+    ExternalId string `json:"externalId"`
+
+
     // CustomerCookieId - A UUID representing the customer associated with the app event. This is expected to be set per application install or device and can be used to identify a single customer across multiple sessions. This identifier, along with others passed as traits, is used for identity resolution.
     CustomerCookieId string `json:"customerCookieId"`
 
@@ -112,6 +119,7 @@ func (o *Appeventrequest) String() string {
     
      o.Attributes = map[string]Customeventattribute{"": {}} 
      o.Traits = map[string]Customeventattribute{"": {}} 
+    
     
     
 
@@ -151,6 +159,8 @@ func (u *Appeventrequest) MarshalJSON() ([]byte, error) {
         
         Traits map[string]Customeventattribute `json:"traits"`
         
+        ExternalId string `json:"externalId"`
+        
         CustomerCookieId string `json:"customerCookieId"`
         
         CreatedDate time.Time `json:"createdDate"`
@@ -188,6 +198,9 @@ func (u *Appeventrequest) MarshalJSON() ([]byte, error) {
 
         
         Traits: map[string]Customeventattribute{"": {}},
+        
+
+
         
 
 

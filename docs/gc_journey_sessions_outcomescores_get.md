@@ -1,10 +1,10 @@
 ## gc journey sessions outcomescores get
 
-Retrieve latest outcome score associated with a session for all outcomes.
+Deprecated. Retrieve latest outcome score associated with a session for all outcomes.
 
 ### Synopsis
 
-Retrieve latest outcome score associated with a session for all outcomes.
+Deprecated. Retrieve latest outcome score associated with a session for all outcomes.
 
 ```
 gc journey sessions outcomescores get [sessionId] [flags]

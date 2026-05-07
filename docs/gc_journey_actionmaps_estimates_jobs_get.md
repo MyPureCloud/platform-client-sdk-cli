@@ -1,10 +1,10 @@
 ## gc journey actionmaps estimates jobs get
 
-Get status of job.
+Deprecated. Get status of job.
 
 ### Synopsis
 
-Get status of job.
+Deprecated. Get status of job.
 
 ```
 gc journey actionmaps estimates jobs get [jobId] [flags]

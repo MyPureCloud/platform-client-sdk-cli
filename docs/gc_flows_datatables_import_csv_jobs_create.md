@@ -1,13 +1,13 @@
-## gc flows datatables import jobs create
+## gc flows datatables import csv jobs create
 
-Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
+Begin an import process for importing rows from a CSV file into a datatable. CSV file is uploaded by performing a PUT request against the URL in the returned `uploadURI` field. Headers for the PUT request must contain all headers contained in the returned `uploadHeaders` field.
 
 ### Synopsis
 
-Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
+Begin an import process for importing rows from a CSV file into a datatable. CSV file is uploaded by performing a PUT request against the URL in the returned `uploadURI` field. Headers for the PUT request must contain all headers contained in the returned `uploadHeaders` field.
 
 ```
-gc flows datatables import jobs create [datatableId] [flags]
+gc flows datatables import csv jobs create [datatableId] [flags]
 ```
 
 ### Options
@@ -36,6 +36,6 @@ gc flows datatables import jobs create [datatableId] [flags]
 
 ### SEE ALSO
 
-* [gc flows datatables import jobs](gc_flows_datatables_import_jobs.html)	 - /api/v2/flows/datatables/{datatableId}/import/jobs
+* [gc flows datatables import csv jobs](gc_flows_datatables_import_csv_jobs.html)	 - /api/v2/flows/datatables/{datatableId}/import/csv/jobs
 
 

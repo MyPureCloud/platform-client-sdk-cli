@@ -1,10 +1,10 @@
 ## gc journey outcomes list
 
-Retrieve all outcomes.
+Deprecated. Retrieve all outcomes.
 
 ### Synopsis
 
-Retrieve all outcomes.
+Deprecated. Retrieve all outcomes.
 
 ```
 gc journey outcomes list [flags]

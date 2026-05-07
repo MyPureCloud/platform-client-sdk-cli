@@ -1,10 +1,10 @@
 ## gc journey actionmaps estimates jobs results get
 
-Get estimates from completed job.
+Deprecated. Get estimates from completed job.
 
 ### Synopsis
 
-Get estimates from completed job.
+Deprecated. Get estimates from completed job.
 
 ```
 gc journey actionmaps estimates jobs results get [jobId] [flags]

@@ -31,6 +31,7 @@
 
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
 * [gc events conversations](gc_events_conversations.html)	 - /api/v2/events/conversations
+* [gc events routing](gc_events_routing.html)	 - /api/v2/events/routing
 * [gc events users](gc_events_users.html)	 - /api/v2/events/users
 
 

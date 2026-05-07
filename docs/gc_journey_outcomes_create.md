@@ -1,10 +1,10 @@
 ## gc journey outcomes create
 
-Create an outcome.
+Deprecated. Create an outcome.
 
 ### Synopsis
 
-Create an outcome.
+Deprecated. Create an outcome.
 
 ```
 gc journey outcomes create [flags]

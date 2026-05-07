@@ -30,8 +30,8 @@
 ### SEE ALSO
 
 * [gc journey outcomes attributions](gc_journey_outcomes_attributions.html)	 - /api/v2/journey/outcomes/attributions
-* [gc journey outcomes attributions jobs create](gc_journey_outcomes_attributions_jobs_create.html)	 - Create Outcome Attributions
-* [gc journey outcomes attributions jobs get](gc_journey_outcomes_attributions_jobs_get.html)	 - Get job status.
+* [gc journey outcomes attributions jobs create](gc_journey_outcomes_attributions_jobs_create.html)	 - Deprecated. Create Outcome Attributions
+* [gc journey outcomes attributions jobs get](gc_journey_outcomes_attributions_jobs_get.html)	 - Deprecated. Get job status.
 * [gc journey outcomes attributions jobs results](gc_journey_outcomes_attributions_jobs_results.html)	 - /api/v2/journey/outcomes/attributions/jobs/{jobId}/results
 
 

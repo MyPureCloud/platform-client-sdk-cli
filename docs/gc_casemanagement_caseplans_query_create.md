@@ -1,15 +1,22 @@
-## gc flows datatables import jobs
+## gc casemanagement caseplans query create
 
-/api/v2/flows/datatables/{datatableId}/import/jobs
+Query for caseplans
 
 ### Synopsis
 
-/api/v2/flows/datatables/{datatableId}/import/jobs
+Query for caseplans
+
+```
+gc casemanagement caseplans query create [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for jobs
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +36,6 @@
 
 ### SEE ALSO
 
-* [gc flows datatables import](gc_flows_datatables_import.html)	 - /api/v2/flows/datatables/{datatableId}/import
-* [gc flows datatables import jobs create](gc_flows_datatables_import_jobs_create.html)	 - Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
-* [gc flows datatables import jobs getstateinformation](gc_flows_datatables_import_jobs_getstateinformation.html)	 - Returns the state information about an import job
-* [gc flows datatables import jobs list](gc_flows_datatables_import_jobs_list.html)	 - Get all recent import jobs
+* [gc casemanagement caseplans query](gc_casemanagement_caseplans_query.html)	 - /api/v2/casemanagement/caseplans/query
 
 

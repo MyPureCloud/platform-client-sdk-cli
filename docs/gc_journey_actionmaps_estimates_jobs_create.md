@@ -1,10 +1,10 @@
 ## gc journey actionmaps estimates jobs create
 
-Query for estimates
+Deprecated. Query for estimates
 
 ### Synopsis
 
-Query for estimates
+Deprecated. Query for estimates
 
 ```
 gc journey actionmaps estimates jobs create [flags]

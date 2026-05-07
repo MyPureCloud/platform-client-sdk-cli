@@ -1,10 +1,10 @@
 ## gc journey outcomes attributions jobs create
 
-Create Outcome Attributions
+Deprecated. Create Outcome Attributions
 
 ### Synopsis
 
-Create Outcome Attributions
+Deprecated. Create Outcome Attributions
 
 ```
 gc journey outcomes attributions jobs create [flags]

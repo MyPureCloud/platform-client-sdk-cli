@@ -36,6 +36,7 @@
 * [gc casemanagement caseplans intakesettings](gc_casemanagement_caseplans_intakesettings.html)	 - /api/v2/casemanagement/caseplans/{caseplanId}/intakesettings
 * [gc casemanagement caseplans list](gc_casemanagement_caseplans_list.html)	 - Get a list of Caseplans.
 * [gc casemanagement caseplans publish](gc_casemanagement_caseplans_publish.html)	 - /api/v2/casemanagement/caseplans/{caseplanId}/publish
+* [gc casemanagement caseplans query](gc_casemanagement_caseplans_query.html)	 - /api/v2/casemanagement/caseplans/query
 * [gc casemanagement caseplans stageplans](gc_casemanagement_caseplans_stageplans.html)	 - /api/v2/casemanagement/caseplans/{caseplanId}/stageplans
 * [gc casemanagement caseplans update](gc_casemanagement_caseplans_update.html)	 - Update the attributes of a Caseplan.
 * [gc casemanagement caseplans versions](gc_casemanagement_caseplans_versions.html)	 - /api/v2/casemanagement/caseplans/{caseplanId}/versions

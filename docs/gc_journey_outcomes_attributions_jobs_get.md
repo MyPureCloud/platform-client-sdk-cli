@@ -1,10 +1,10 @@
 ## gc journey outcomes attributions jobs get
 
-Get job status.
+Deprecated. Get job status.
 
 ### Synopsis
 
-Get job status.
+Deprecated. Get job status.
 
 ```
 gc journey outcomes attributions jobs get [jobId] [flags]

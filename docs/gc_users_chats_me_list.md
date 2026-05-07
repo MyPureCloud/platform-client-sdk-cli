@@ -13,13 +13,14 @@ gc users chats me list [flags]
 ### Options
 
 ```
-      --after string             The key to start after
-  -a, --autopaginate             Automatically paginate through the results stripping page information
-      --excludeClosed string     Whether or not to exclude closed chats Valid values: true, false
-      --filtercondition string   Filter list command output based on a given condition or regular expression
-  -h, --help                     help for list
-      --includePresence string   Whether or not to include user presence Valid values: true, false
-  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
+      --after string               The key to start after
+  -a, --autopaginate               Automatically paginate through the results stripping page information
+      --excludeClosed string       Whether or not to exclude closed chats Valid values: true, false
+      --filtercondition string     Filter list command output based on a given condition or regular expression
+  -h, --help                       help for list
+      --includePresence string     Whether or not to include user presence Valid values: true, false
+      --includeRoomOwners string   Whether or not to include room owners Valid values: true, false
+  -s, --stream                     Paginate and stream data as it is being processed leaving page information intact
 ```
 
 ### Options inherited from parent commands

@@ -1,10 +1,10 @@
 ## gc journey outcomes predictors list
 
-Retrieve all outcome predictors.
+Deprecated. Retrieve all outcome predictors.
 
 ### Synopsis
 
-Retrieve all outcome predictors.
+Deprecated. Retrieve all outcome predictors.
 
 ```
 gc journey outcomes predictors list [flags]

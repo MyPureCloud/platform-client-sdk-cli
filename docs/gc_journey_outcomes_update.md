@@ -1,10 +1,10 @@
 ## gc journey outcomes update
 
-Update an outcome.
+Deprecated. Update an outcome.
 
 ### Synopsis
 
-Update an outcome.
+Deprecated. Update an outcome.
 
 ```
 gc journey outcomes update [outcomeId] [flags]

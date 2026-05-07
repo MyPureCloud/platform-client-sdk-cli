@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc journey actionmaps estimates jobs](gc_journey_actionmaps_estimates_jobs.html)	 - /api/v2/journey/actionmaps/estimates/jobs
-* [gc journey actionmaps estimates jobs results get](gc_journey_actionmaps_estimates_jobs_results_get.html)	 - Get estimates from completed job.
+* [gc journey actionmaps estimates jobs results get](gc_journey_actionmaps_estimates_jobs_results_get.html)	 - Deprecated. Get estimates from completed job.
 
 

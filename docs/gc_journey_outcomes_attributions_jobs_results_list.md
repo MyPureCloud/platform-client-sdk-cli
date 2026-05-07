@@ -1,10 +1,10 @@
 ## gc journey outcomes attributions jobs results list
 
-Get outcome attribution entities from completed job.
+Deprecated. Get outcome attribution entities from completed job.
 
 ### Synopsis
 
-Get outcome attribution entities from completed job.
+Deprecated. Get outcome attribution entities from completed job.
 
 ```
 gc journey outcomes attributions jobs results list [jobId] [flags]

@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc journey sessions](gc_journey_sessions.html)	 - /api/v2/journey/sessions
-* [gc journey sessions outcomescores get](gc_journey_sessions_outcomescores_get.html)	 - Retrieve latest outcome score associated with a session for all outcomes.
+* [gc journey sessions outcomescores get](gc_journey_sessions_outcomescores_get.html)	 - Deprecated. Retrieve latest outcome score associated with a session for all outcomes.
 
 

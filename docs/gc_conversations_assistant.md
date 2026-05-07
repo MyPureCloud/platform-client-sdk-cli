@@ -1,15 +1,15 @@
-## gc flows datatables import jobs
+## gc conversations assistant
 
-/api/v2/flows/datatables/{datatableId}/import/jobs
+/api/v2/conversations/{conversationId}/assistant
 
 ### Synopsis
 
-/api/v2/flows/datatables/{datatableId}/import/jobs
+/api/v2/conversations/{conversationId}/assistant
 
 ### Options
 
 ```
-  -h, --help   help for jobs
+  -h, --help   help for assistant
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +29,7 @@
 
 ### SEE ALSO
 
-* [gc flows datatables import](gc_flows_datatables_import.html)	 - /api/v2/flows/datatables/{datatableId}/import
-* [gc flows datatables import jobs create](gc_flows_datatables_import_jobs_create.html)	 - Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
-* [gc flows datatables import jobs getstateinformation](gc_flows_datatables_import_jobs_getstateinformation.html)	 - Returns the state information about an import job
-* [gc flows datatables import jobs list](gc_flows_datatables_import_jobs_list.html)	 - Get all recent import jobs
+* [gc conversations](gc_conversations.html)	 - /api/v2/conversations
+* [gc conversations assistant copilotcontext](gc_conversations_assistant_copilotcontext.html)	 - /api/v2/conversations/{conversationId}/assistant/copilotcontext
 
 

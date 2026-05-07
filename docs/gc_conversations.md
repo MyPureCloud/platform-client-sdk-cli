@@ -32,6 +32,7 @@
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
 * [gc conversations aftercallwork](gc_conversations_aftercallwork.html)	 - /api/v2/conversations/aftercallwork
 * [gc conversations assign](gc_conversations_assign.html)	 - /api/v2/conversations/{conversationId}/assign
+* [gc conversations assistant](gc_conversations_assistant.html)	 - /api/v2/conversations/{conversationId}/assistant
 * [gc conversations barge](gc_conversations_barge.html)	 - /api/v2/conversations/{conversationId}/barge
 * [gc conversations callbacks](gc_conversations_callbacks.html)	 - /api/v2/conversations/callbacks
 * [gc conversations calls](gc_conversations_calls.html)	 - /api/v2/conversations/calls

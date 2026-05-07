@@ -64,6 +64,7 @@
 * [gc users skillgroups](gc_users_skillgroups.html)	 - /api/v2/users/{userId}/skillgroups
 * [gc users state](gc_users_state.html)	 - /api/v2/users/{userId}/state
 * [gc users station](gc_users_station.html)	 - /api/v2/users/{userId}/station
+* [gc users stations](gc_users_stations.html)	 - /api/v2/users/stations
 * [gc users superiors](gc_users_superiors.html)	 - /api/v2/users/{userId}/superiors
 * [gc users trustors](gc_users_trustors.html)	 - /api/v2/users/{userId}/trustors
 * [gc users update](gc_users_update.html)	 - Update user

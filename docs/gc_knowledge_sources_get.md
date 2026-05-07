@@ -13,7 +13,7 @@ gc knowledge sources get [sourceId] [flags]
 ### Options
 
 ```
-      --expand strings   Optional fields to expand for the Source. Valid values: lastSync, filterDetails
+      --expand strings   Optional fields to expand for the Source. Valid values: lastSync, filterDetails, connection
   -h, --help             help for get
 ```
 

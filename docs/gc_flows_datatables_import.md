@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc flows datatables](gc_flows_datatables.html)	 - /api/v2/flows/datatables
+* [gc flows datatables import csv](gc_flows_datatables_import_csv.html)	 - /api/v2/flows/datatables/{datatableId}/import/csv
 * [gc flows datatables import jobs](gc_flows_datatables_import_jobs.html)	 - /api/v2/flows/datatables/{datatableId}/import/jobs
 
 

@@ -1,10 +1,10 @@
 ## gc journey outcomes predictors get
 
-Retrieve a single outcome predictor.
+Deprecated. Retrieve a single outcome predictor.
 
 ### Synopsis
 
-Retrieve a single outcome predictor.
+Deprecated. Retrieve a single outcome predictor.
 
 ```
 gc journey outcomes predictors get [predictorId] [flags]

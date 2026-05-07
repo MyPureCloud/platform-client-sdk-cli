@@ -30,9 +30,9 @@
 ### SEE ALSO
 
 * [gc journey outcomes](gc_journey_outcomes.html)	 - /api/v2/journey/outcomes
-* [gc journey outcomes predictors create](gc_journey_outcomes_predictors_create.html)	 - Create an outcome predictor.
-* [gc journey outcomes predictors delete](gc_journey_outcomes_predictors_delete.html)	 - Delete an outcome predictor.
-* [gc journey outcomes predictors get](gc_journey_outcomes_predictors_get.html)	 - Retrieve a single outcome predictor.
-* [gc journey outcomes predictors list](gc_journey_outcomes_predictors_list.html)	 - Retrieve all outcome predictors.
+* [gc journey outcomes predictors create](gc_journey_outcomes_predictors_create.html)	 - Deprecated. Create an outcome predictor.
+* [gc journey outcomes predictors delete](gc_journey_outcomes_predictors_delete.html)	 - Deprecated. Delete an outcome predictor.
+* [gc journey outcomes predictors get](gc_journey_outcomes_predictors_get.html)	 - Deprecated. Retrieve a single outcome predictor.
+* [gc journey outcomes predictors list](gc_journey_outcomes_predictors_list.html)	 - Deprecated. Retrieve all outcome predictors.
 
 

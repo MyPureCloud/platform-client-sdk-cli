@@ -13,7 +13,7 @@ gc knowledge sources list [flags]
 ### Options
 
 ```
-      --expand strings   Optional fields to expand for the Source. Valid values: lastSync
+      --expand strings   Optional fields to expand for the Source. Valid values: lastSync, connection
   -h, --help             help for list
 ```
 

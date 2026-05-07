@@ -1,15 +1,19 @@
-## gc flows datatables import jobs
+## gc users stations me get
 
-/api/v2/flows/datatables/{datatableId}/import/jobs
+Get station information for self
 
 ### Synopsis
 
-/api/v2/flows/datatables/{datatableId}/import/jobs
+Get station information for self
+
+```
+gc users stations me get [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for jobs
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +33,6 @@
 
 ### SEE ALSO
 
-* [gc flows datatables import](gc_flows_datatables_import.html)	 - /api/v2/flows/datatables/{datatableId}/import
-* [gc flows datatables import jobs create](gc_flows_datatables_import_jobs_create.html)	 - Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
-* [gc flows datatables import jobs getstateinformation](gc_flows_datatables_import_jobs_getstateinformation.html)	 - Returns the state information about an import job
-* [gc flows datatables import jobs list](gc_flows_datatables_import_jobs_list.html)	 - Get all recent import jobs
+* [gc users stations me](gc_users_stations_me.html)	 - /api/v2/users/stations/me
 
 

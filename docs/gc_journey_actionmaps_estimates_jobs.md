@@ -30,8 +30,8 @@
 ### SEE ALSO
 
 * [gc journey actionmaps estimates](gc_journey_actionmaps_estimates.html)	 - /api/v2/journey/actionmaps/estimates
-* [gc journey actionmaps estimates jobs create](gc_journey_actionmaps_estimates_jobs_create.html)	 - Query for estimates
-* [gc journey actionmaps estimates jobs get](gc_journey_actionmaps_estimates_jobs_get.html)	 - Get status of job.
+* [gc journey actionmaps estimates jobs create](gc_journey_actionmaps_estimates_jobs_create.html)	 - Deprecated. Query for estimates
+* [gc journey actionmaps estimates jobs get](gc_journey_actionmaps_estimates_jobs_get.html)	 - Deprecated. Get status of job.
 * [gc journey actionmaps estimates jobs results](gc_journey_actionmaps_estimates_jobs_results.html)	 - /api/v2/journey/actionmaps/estimates/jobs/{jobId}/results
 
 

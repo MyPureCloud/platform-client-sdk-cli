@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc journey outcomes attributions jobs](gc_journey_outcomes_attributions_jobs.html)	 - /api/v2/journey/outcomes/attributions/jobs
-* [gc journey outcomes attributions jobs results list](gc_journey_outcomes_attributions_jobs_results_list.html)	 - Get outcome attribution entities from completed job.
+* [gc journey outcomes attributions jobs results list](gc_journey_outcomes_attributions_jobs_results_list.html)	 - Deprecated. Get outcome attribution entities from completed job.
 
 

@@ -33,6 +33,7 @@
 * [gc conversations messages participants attributes](gc_conversations_messages_participants_attributes.html)	 - /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes
 * [gc conversations messages participants communications](gc_conversations_messages_participants_communications.html)	 - /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications
 * [gc conversations messages participants monitor](gc_conversations_messages_participants_monitor.html)	 - /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor
+* [gc conversations messages participants parkingstate](gc_conversations_messages_participants_parkingstate.html)	 - /api/v2/conversations/messages/{conversationId}/participants/{participantId}/parkingstate
 * [gc conversations messages participants replace](gc_conversations_messages_participants_replace.html)	 - /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace
 * [gc conversations messages participants update](gc_conversations_messages_participants_update.html)	 - Update conversation participant
 * [gc conversations messages participants wrapup](gc_conversations_messages_participants_wrapup.html)	 - /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup

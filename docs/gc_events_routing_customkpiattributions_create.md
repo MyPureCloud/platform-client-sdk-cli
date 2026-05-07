@@ -1,15 +1,22 @@
-## gc flows datatables import jobs
+## gc events routing customkpiattributions create
 
-/api/v2/flows/datatables/{datatableId}/import/jobs
+Publish Predictive Routing Custom Kpi Attribution Batch Events
 
 ### Synopsis
 
-/api/v2/flows/datatables/{datatableId}/import/jobs
+Publish Predictive Routing Custom Kpi Attribution Batch Events
+
+```
+gc events routing customkpiattributions create [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for jobs
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +36,6 @@
 
 ### SEE ALSO
 
-* [gc flows datatables import](gc_flows_datatables_import.html)	 - /api/v2/flows/datatables/{datatableId}/import
-* [gc flows datatables import jobs create](gc_flows_datatables_import_jobs_create.html)	 - Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
-* [gc flows datatables import jobs getstateinformation](gc_flows_datatables_import_jobs_getstateinformation.html)	 - Returns the state information about an import job
-* [gc flows datatables import jobs list](gc_flows_datatables_import_jobs_list.html)	 - Get all recent import jobs
+* [gc events routing customkpiattributions](gc_events_routing_customkpiattributions.html)	 - /api/v2/events/routing/customkpiattributions
 
 

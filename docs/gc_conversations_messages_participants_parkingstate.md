@@ -1,15 +1,15 @@
-## gc flows datatables import jobs
+## gc conversations messages participants parkingstate
 
-/api/v2/flows/datatables/{datatableId}/import/jobs
+/api/v2/conversations/messages/{conversationId}/participants/{participantId}/parkingstate
 
 ### Synopsis
 
-/api/v2/flows/datatables/{datatableId}/import/jobs
+/api/v2/conversations/messages/{conversationId}/participants/{participantId}/parkingstate
 
 ### Options
 
 ```
-  -h, --help   help for jobs
+  -h, --help   help for parkingstate
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +29,7 @@
 
 ### SEE ALSO
 
-* [gc flows datatables import](gc_flows_datatables_import.html)	 - /api/v2/flows/datatables/{datatableId}/import
-* [gc flows datatables import jobs create](gc_flows_datatables_import_jobs_create.html)	 - Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
-* [gc flows datatables import jobs getstateinformation](gc_flows_datatables_import_jobs_getstateinformation.html)	 - Returns the state information about an import job
-* [gc flows datatables import jobs list](gc_flows_datatables_import_jobs_list.html)	 - Get all recent import jobs
+* [gc conversations messages participants](gc_conversations_messages_participants.html)	 - /api/v2/conversations/messages/{conversationId}/participants
+* [gc conversations messages participants parkingstate update](gc_conversations_messages_participants_parkingstate_update.html)	 - Update conversation by setting its parking state
 
 

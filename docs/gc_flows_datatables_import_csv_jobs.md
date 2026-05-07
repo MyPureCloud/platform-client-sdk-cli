@@ -1,10 +1,10 @@
-## gc flows datatables import jobs
+## gc flows datatables import csv jobs
 
-/api/v2/flows/datatables/{datatableId}/import/jobs
+/api/v2/flows/datatables/{datatableId}/import/csv/jobs
 
 ### Synopsis
 
-/api/v2/flows/datatables/{datatableId}/import/jobs
+/api/v2/flows/datatables/{datatableId}/import/csv/jobs
 
 ### Options
 
@@ -29,9 +29,7 @@
 
 ### SEE ALSO
 
-* [gc flows datatables import](gc_flows_datatables_import.html)	 - /api/v2/flows/datatables/{datatableId}/import
-* [gc flows datatables import jobs create](gc_flows_datatables_import_jobs_create.html)	 - Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
-* [gc flows datatables import jobs getstateinformation](gc_flows_datatables_import_jobs_getstateinformation.html)	 - Returns the state information about an import job
-* [gc flows datatables import jobs list](gc_flows_datatables_import_jobs_list.html)	 - Get all recent import jobs
+* [gc flows datatables import csv](gc_flows_datatables_import_csv.html)	 - /api/v2/flows/datatables/{datatableId}/import/csv
+* [gc flows datatables import csv jobs create](gc_flows_datatables_import_csv_jobs_create.html)	 - Begin an import process for importing rows from a CSV file into a datatable. CSV file is uploaded by performing a PUT request against the URL in the returned `uploadURI` field. Headers for the PUT request must contain all headers contained in the returned `uploadHeaders` field.
 
 

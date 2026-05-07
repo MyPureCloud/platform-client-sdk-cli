@@ -1,10 +1,10 @@
 ## gc journey outcomes delete
 
-Delete an outcome.
+Deprecated. Delete an outcome.
 
 ### Synopsis
 
-Delete an outcome.
+Deprecated. Delete an outcome.
 
 ```
 gc journey outcomes delete [outcomeId] [flags]

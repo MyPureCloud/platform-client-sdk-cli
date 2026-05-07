@@ -13,8 +13,13 @@ gc knowledge connections options list [connectionId] [flags]
 ### Options
 
 ```
-  -h, --help              help for list
-      --parentId string   The id of the parent option whose children to be listed.
+      --after string             The cursor that points to the end of the set of entities that has been returned.
+  -a, --autopaginate             Automatically paginate through the results stripping page information
+      --filtercondition string   Filter list command output based on a given condition or regular expression
+  -h, --help                     help for list
+      --pageSize string          Number of results per page. Minimum: 25, Maximum: 500.
+      --parentId string          The id of the parent option whose children to be listed.
+  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
 ### Options inherited from parent commands

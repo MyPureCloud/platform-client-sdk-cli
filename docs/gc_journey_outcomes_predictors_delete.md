@@ -1,10 +1,10 @@
 ## gc journey outcomes predictors delete
 
-Delete an outcome predictor.
+Deprecated. Delete an outcome predictor.
 
 ### Synopsis
 
-Delete an outcome predictor.
+Deprecated. Delete an outcome predictor.
 
 ```
 gc journey outcomes predictors delete [predictorId] [flags]

@@ -1,10 +1,10 @@
 ## gc journey outcomes get
 
-Retrieve a single outcome.
+Deprecated. Retrieve a single outcome.
 
 ### Synopsis
 
-Retrieve a single outcome.
+Deprecated. Retrieve a single outcome.
 
 ```
 gc journey outcomes get [outcomeId] [flags]

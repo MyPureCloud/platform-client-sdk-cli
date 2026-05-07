@@ -31,11 +31,11 @@
 
 * [gc journey](gc_journey.html)	 - /api/v2/journey
 * [gc journey outcomes attributions](gc_journey_outcomes_attributions.html)	 - /api/v2/journey/outcomes/attributions
-* [gc journey outcomes create](gc_journey_outcomes_create.html)	 - Create an outcome.
-* [gc journey outcomes delete](gc_journey_outcomes_delete.html)	 - Delete an outcome.
-* [gc journey outcomes get](gc_journey_outcomes_get.html)	 - Retrieve a single outcome.
-* [gc journey outcomes list](gc_journey_outcomes_list.html)	 - Retrieve all outcomes.
+* [gc journey outcomes create](gc_journey_outcomes_create.html)	 - Deprecated. Create an outcome.
+* [gc journey outcomes delete](gc_journey_outcomes_delete.html)	 - Deprecated. Delete an outcome.
+* [gc journey outcomes get](gc_journey_outcomes_get.html)	 - Deprecated. Retrieve a single outcome.
+* [gc journey outcomes list](gc_journey_outcomes_list.html)	 - Deprecated. Retrieve all outcomes.
 * [gc journey outcomes predictors](gc_journey_outcomes_predictors.html)	 - /api/v2/journey/outcomes/predictors
-* [gc journey outcomes update](gc_journey_outcomes_update.html)	 - Update an outcome.
+* [gc journey outcomes update](gc_journey_outcomes_update.html)	 - Deprecated. Update an outcome.
 
 

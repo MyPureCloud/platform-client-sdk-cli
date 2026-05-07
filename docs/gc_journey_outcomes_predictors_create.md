@@ -1,10 +1,10 @@
 ## gc journey outcomes predictors create
 
-Create an outcome predictor.
+Deprecated. Create an outcome predictor.
 
 ### Synopsis
 
-Create an outcome predictor.
+Deprecated. Create an outcome predictor.
 
 ```
 gc journey outcomes predictors create [flags]

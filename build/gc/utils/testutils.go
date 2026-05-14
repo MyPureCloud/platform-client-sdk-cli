@@ -3,11 +3,12 @@ package utils
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
-	"github.com/tidwall/pretty"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"testing"
+
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/models"
+	"github.com/tidwall/pretty"
 )
 
 var swaggerURL = "https://api.mypurecloud.com/api/v2/docs/swagger"
@@ -61,7 +62,7 @@ func downloadFile(uri string) (string, error) {
 	}
 	defer resp.Body.Close()
 
-	response, err := ioutil.ReadAll(resp.Body)
+	response, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return "", err
 	}

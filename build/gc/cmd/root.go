@@ -17,7 +17,7 @@ import (
 	"fmt"
 	"strings"
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"time"
 	"net/http"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dummy_command"
@@ -144,7 +144,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 160.0.0")
+		fmt.Println("Current version: 161.0.0")
 		checkForNewVersion()
 	},
 }
@@ -163,7 +163,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("160.0.0", latestVersion) {
+	if versionsAreEqual("161.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -186,7 +186,7 @@ func retrieveLatestVersion(url string) (error, string) {
 	if res.Body != nil {
 		defer res.Body.Close()
 	}
-	body, readErr := ioutil.ReadAll(res.Body)
+	body, readErr := io.ReadAll(res.Body)
 	if readErr != nil {
 		return readErr, ""
 	}

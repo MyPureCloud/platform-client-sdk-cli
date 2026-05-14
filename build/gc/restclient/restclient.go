@@ -25,7 +25,7 @@ import (
         "encoding/json"
         "fmt"
         "github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
-        "io/ioutil"
+        "io"
         "net/url"
         "strings"
         "path/filepath"
@@ -120,7 +120,7 @@ func (r *RESTClient) callAPI(method string, uri string, headerParams map[string]
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "160.0.0")
+        request.Header.Set("purecloud-sdk", "161.0.0")
 
         // Set additional headers from parameters
 	if len(headerParams) > 0 {
@@ -132,7 +132,7 @@ func (r *RESTClient) callAPI(method string, uri string, headerParams map[string]
 	}
 
         if data != "" {
-                request.Body = ioutil.NopCloser(bytes.NewBuffer([]byte(data)))
+                request.Body = io.NopCloser(bytes.NewBuffer([]byte(data)))
         }
 
         retryConfiguration := retry.GetRetryConfiguration()
@@ -172,7 +172,7 @@ func (r *RESTClient) callAPI(method string, uri string, headerParams map[string]
                 logger.Infof("API response Correlation ID: %v, method: %v, URI: %v, timestamp(ms): %d", correlationId[0], method, uri, timestampMS)
         }
 
-        response, err := ioutil.ReadAll(resp.Body)
+        response, err := io.ReadAll(resp.Body)
         if err != nil {
                 return "", err
         }
@@ -322,7 +322,7 @@ func authorizePKCEGrant(c config.Configuration, code string, codeVerifier string
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "160.0.0")
+        request.Header.Set("purecloud-sdk", "161.0.0")
 
         //Setting up the form data
         form := url.Values{}
@@ -331,7 +331,7 @@ func authorizePKCEGrant(c config.Configuration, code string, codeVerifier string
         form["code"] = []string{code}
         form["redirect_uri"] = []string{redirectUri}
         form["code_verifier"] = []string{codeVerifier}
-        request.Body = ioutil.NopCloser(strings.NewReader(form.Encode()))
+        request.Body = io.NopCloser(strings.NewReader(form.Encode()))
         setProxyConf(c, "login")
 
         //Executing the request
@@ -344,7 +344,7 @@ func authorizePKCEGrant(c config.Configuration, code string, codeVerifier string
 
         oAuthTokenResponse := &models.OAuthTokenData{}
         // Read Response Body
-        responseData, err := ioutil.ReadAll(resp.Body)
+        responseData, err := io.ReadAll(resp.Body)
         if err != nil {
                 return *oAuthTokenResponse, err
         }
@@ -411,12 +411,12 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 
         //User-Agent and SDK version headers
         request.Header.Set("User-Agent", "PureCloud SDK/go-cli")
-        request.Header.Set("purecloud-sdk", "160.0.0")
+        request.Header.Set("purecloud-sdk", "161.0.0")
 
         //Setting up the form data
         form := url.Values{}
         form["grant_type"] = []string{"client_credentials"}
-        request.Body = ioutil.NopCloser(strings.NewReader(form.Encode()))
+        request.Body = io.NopCloser(strings.NewReader(form.Encode()))
         setProxyConf(c, "login")
 
         //Executing the request
@@ -429,7 +429,7 @@ func authorize(c config.Configuration) (models.OAuthTokenData, error) {
 
         oAuthTokenResponse := &models.OAuthTokenData{}
         // Read Response Body
-        responseData, err := ioutil.ReadAll(resp.Body)
+        responseData, err := io.ReadAll(resp.Body)
         if err != nil {
                 return *oAuthTokenResponse, err
         }
@@ -555,7 +555,7 @@ func startLocalServerFunc(c config.Configuration, authChannel chan models.OAuthT
         activePage := initialPage
 
         http.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
-                _, err := fmt.Fprintf(w, activePage)
+                _, err := fmt.Fprintf(w, "%s", activePage)
                 if err != nil {
                         logger.Fatalf("Error handling request: %v", err)
                 }
@@ -581,7 +581,7 @@ func startLocalServerFunc(c config.Configuration, authChannel chan models.OAuthT
 	}
 
 	if c.SecureLoginEnabled() {
-		log.SetOutput(ioutil.Discard)
+		log.SetOutput(io.Discard)
 		if listener != nil {
 			log.Fatal(http.ServeTLS(listener, nil, filepath.Join(os.TempDir(), "cert.pem"), filepath.Join(os.TempDir(), "key.pem")))
 		} else {

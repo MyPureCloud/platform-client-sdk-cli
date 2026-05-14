@@ -3,12 +3,13 @@ package proxy
 import (
 	"encoding/json"
 	"fmt"
+	"io"
+	"os"
+
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/spf13/cobra"
-	"io/ioutil"
-	"os"
 )
 
 func Cmdproxy() *cobra.Command {
@@ -86,7 +87,7 @@ func convertToJSON(fileName string) *(config.ProxyConfiguration) {
 	// defer the closing of our jsonFile so that we can parse it later on
 	defer jsonFile.Close()
 
-	fileContent, _ := ioutil.ReadAll(jsonFile)
+	fileContent, _ := io.ReadAll(jsonFile)
 	proxyconf := config.ProxyConfiguration{}
 	if err := json.Unmarshal(fileContent, &proxyconf); err != nil {
 		panic(err)

@@ -28,8 +28,8 @@ func init() {
 }
 
 func Cmdconversations_communications_agentchecklists_jobs() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs", utils.FormatPermissions([]string{ "conversation:agentchecklist:edit",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs")))
-	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+	createforchecklistCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createforchecklistCmd.UsageTemplate(), "POST", "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs", utils.FormatPermissions([]string{ "conversation:agentchecklist:edit",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs")))
+	utils.AddFileFlagIfUpsert(createforchecklistCmd.Flags(), "POST", `{
   "description" : "Agent checklist inference job payload",
   "content" : {
     "application/json" : {
@@ -42,7 +42,7 @@ func Cmdconversations_communications_agentchecklists_jobs() *cobra.Command {
 }`)
 	
 	
-	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
+	utils.AddPaginateFlagsIfListingResponse(createforchecklistCmd.Flags(), "POST", `{
   "description" : "successful operation",
   "content" : {
     "application/json" : {
@@ -52,7 +52,7 @@ func Cmdconversations_communications_agentchecklists_jobs() *cobra.Command {
     }
   }
 }`)
-	conversations_communications_agentchecklists_jobsCmd.AddCommand(createCmd)
+	conversations_communications_agentchecklists_jobsCmd.AddCommand(createforchecklistCmd)
 
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId}", utils.FormatPermissions([]string{ "conversation:agentchecklist:view",  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
@@ -77,8 +77,8 @@ func queryEscape(value string) string {
    return url.QueryEscape(value)
 }
 
-var createCmd = &cobra.Command{
-	Use:   "create [conversationId] [communicationId] [agentChecklistId]",
+var createforchecklistCmd = &cobra.Command{
+	Use:   "createforchecklist [conversationId] [communicationId] [agentChecklistId]",
 	Short: "Create inference job",
 	Long:  "Create inference job",
 	Args:  utils.DetermineArgs([]string{ "conversationId", "communicationId", "agentChecklistId", }),
@@ -136,7 +136,7 @@ var createCmd = &cobra.Command{
 			headerParams["Accept"] = localVarHttpHeaderAccept
 		}
 
-		const opId = "create"
+		const opId = "createforchecklist"
 		const httpMethod = "POST"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
 		// TODO read from config file

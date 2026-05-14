@@ -2,7 +2,7 @@ package services
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"strconv"
 	"strings"
@@ -201,7 +201,7 @@ func setRestClientDoMockForRetry(tc apiClientTest, numberOfFailedCalls int) {
 			numCalls++
 
 			stringReader := strings.NewReader(fmt.Sprintf(`{"numRetries": "%v"}`, numCalls))
-			stringReadCloser := ioutil.NopCloser(stringReader)
+			stringReadCloser := io.NopCloser(stringReader)
 			response.Body = stringReadCloser
 			if numCalls > numberOfFailedCalls {
 				response.StatusCode = http.StatusOK
@@ -254,7 +254,7 @@ func setRestClientDoMockForReAuthenticate(tc apiClientTest) {
 		}
 
 		stringReader := strings.NewReader(responseString)
-		stringReadCloser := ioutil.NopCloser(stringReader)
+		stringReadCloser := io.NopCloser(stringReader)
 
 		response := &http.Response{
 			Header:     tc.targetHeaders,

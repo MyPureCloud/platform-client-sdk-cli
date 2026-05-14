@@ -3,12 +3,13 @@ package gateway
 import (
 	"encoding/json"
 	"fmt"
+	"io"
+	"os"
+
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/config"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/spf13/cobra"
-	"io/ioutil"
-	"os"
 )
 
 func Cmdgateway() *cobra.Command {
@@ -86,7 +87,7 @@ func convertToJSON(fileName string) *(config.GateWayConfiguration) {
 	// defer the closing of our jsonFile so that we can parse it later on
 	defer jsonFile.Close()
 
-	fileContent, _ := ioutil.ReadAll(jsonFile)
+	fileContent, _ := io.ReadAll(jsonFile)
 	gconf := config.GateWayConfiguration{}
 	if err := json.Unmarshal(fileContent, &gconf); err != nil {
 		panic(err)

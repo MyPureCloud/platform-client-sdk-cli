@@ -3,7 +3,7 @@ package restclient
 import (
 	"encoding/base64"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"strings"
 	"testing"
@@ -361,7 +361,7 @@ func setRestClientDoMockForAuthorize(t *testing.T, mockConfig mocks.MockClientCo
 		`, accessToken)
 
 		stringReader := strings.NewReader(responseString)
-		stringReadCloser := ioutil.NopCloser(stringReader)
+		stringReadCloser := io.NopCloser(stringReader)
 		response := &http.Response{
 			Status:     "200 OK",
 			StatusCode: 200,
@@ -393,7 +393,7 @@ func setRestClientDoMock(t *testing.T, tc apiClientTest) {
 
 		//Setting up the response body
 		stringReader := strings.NewReader(tc.expectedResponse)
-		stringReadCloser := ioutil.NopCloser(stringReader)
+		stringReadCloser := io.NopCloser(stringReader)
 		response := &http.Response{
 			StatusCode: tc.targetStatusCode,
 			Body:       stringReadCloser,

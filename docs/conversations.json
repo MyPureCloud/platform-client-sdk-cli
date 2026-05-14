@@ -123,12 +123,12 @@
       "description": "Get checklist info for a single checklist."
     },
     {
-      "name": "create",
+      "name": "activatechecklist",
       "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}",
       "description": "Agent Checklist activation API"
     },
     {
-      "name": "create",
+      "name": "createforchecklist",
       "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs",
       "description": "Create inference job"
     },

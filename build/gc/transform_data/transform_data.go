@@ -4,15 +4,16 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/Masterminds/sprig"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"path/filepath"
 	"regexp"
 	"strings"
 	"text/template"
+
+	"github.com/Masterminds/sprig"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/logger"
 )
 
 var (
@@ -55,7 +56,7 @@ func ProcessTemplateFile(mp interface{}) string {
 				logger.Fatalf("Error downloading template file: %v\n", err)
 			}
 
-			body, err := ioutil.ReadAll(resp.Body)
+			body, err := io.ReadAll(resp.Body)
 			if err != nil {
 				log.Fatal(err)
 			}

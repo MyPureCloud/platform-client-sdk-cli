@@ -1,4 +1,4 @@
-## gc conversations communications agentchecklists create
+## gc conversations communications agentchecklists activatechecklist
 
 Agent Checklist activation API
 
@@ -7,7 +7,7 @@ Agent Checklist activation API
 Agent Checklist activation API
 
 ```
-gc conversations communications agentchecklists create [conversationId] [communicationId] [agentChecklistId] [flags]
+gc conversations communications agentchecklists activatechecklist [conversationId] [communicationId] [agentChecklistId] [flags]
 ```
 
 ### Options
@@ -15,7 +15,7 @@ gc conversations communications agentchecklists create [conversationId] [communi
 ```
   -d, --directory string   Directory path with files containing request bodies
   -f, --file string        File name containing the JSON body
-  -h, --help               help for create
+  -h, --help               help for activatechecklist
   -b, --printrequestbody   Print the request body format of the API.
 ```
 

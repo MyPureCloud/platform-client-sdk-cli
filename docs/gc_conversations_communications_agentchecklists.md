@@ -30,8 +30,8 @@
 ### SEE ALSO
 
 * [gc conversations communications](gc_conversations_communications.html)	 - /api/v2/conversations/{conversationId}/communications
+* [gc conversations communications agentchecklists activatechecklist](gc_conversations_communications_agentchecklists_activatechecklist.html)	 - Agent Checklist activation API
 * [gc conversations communications agentchecklists agentaction](gc_conversations_communications_agentchecklists_agentaction.html)	 - /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/agentaction
-* [gc conversations communications agentchecklists create](gc_conversations_communications_agentchecklists_create.html)	 - Agent Checklist activation API
 * [gc conversations communications agentchecklists finalize](gc_conversations_communications_agentchecklists_finalize.html)	 - /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/finalize
 * [gc conversations communications agentchecklists get](gc_conversations_communications_agentchecklists_get.html)	 - Get checklist info for a single checklist.
 * [gc conversations communications agentchecklists jobs](gc_conversations_communications_agentchecklists_jobs.html)	 - /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs

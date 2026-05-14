@@ -30,7 +30,7 @@
 ### SEE ALSO
 
 * [gc conversations communications agentchecklists](gc_conversations_communications_agentchecklists.html)	 - /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists
-* [gc conversations communications agentchecklists jobs create](gc_conversations_communications_agentchecklists_jobs_create.html)	 - Create inference job
+* [gc conversations communications agentchecklists jobs createforchecklist](gc_conversations_communications_agentchecklists_jobs_createforchecklist.html)	 - Create inference job
 * [gc conversations communications agentchecklists jobs get](gc_conversations_communications_agentchecklists_jobs_get.html)	 - Get inference job status
 
 

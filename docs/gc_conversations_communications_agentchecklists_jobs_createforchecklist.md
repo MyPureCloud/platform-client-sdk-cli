@@ -1,4 +1,4 @@
-## gc conversations communications agentchecklists jobs create
+## gc conversations communications agentchecklists jobs createforchecklist
 
 Create inference job
 
@@ -7,7 +7,7 @@ Create inference job
 Create inference job
 
 ```
-gc conversations communications agentchecklists jobs create [conversationId] [communicationId] [agentChecklistId] [flags]
+gc conversations communications agentchecklists jobs createforchecklist [conversationId] [communicationId] [agentChecklistId] [flags]
 ```
 
 ### Options
@@ -15,7 +15,7 @@ gc conversations communications agentchecklists jobs create [conversationId] [co
 ```
   -d, --directory string   Directory path with files containing request bodies
   -f, --file string        File name containing the JSON body
-  -h, --help               help for create
+  -h, --help               help for createforchecklist
   -b, --printrequestbody   Print the request body format of the API.
 ```
 

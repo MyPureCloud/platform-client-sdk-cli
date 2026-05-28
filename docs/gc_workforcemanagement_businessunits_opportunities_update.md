@@ -1,13 +1,13 @@
-## gc telephony providers edges mediastatistics conversations communications mediaresources create
+## gc workforcemanagement businessunits opportunities update
 
-Post media endpoint statistics event.
+Update the opportunity
 
 ### Synopsis
 
-Post media endpoint statistics event.
+Update the opportunity
 
 ```
-gc telephony providers edges mediastatistics conversations communications mediaresources create [conversationId] [communicationId] [mediaResourceId] [flags]
+gc workforcemanagement businessunits opportunities update [businessUnitId] [opportunityId] [flags]
 ```
 
 ### Options
@@ -15,7 +15,7 @@ gc telephony providers edges mediastatistics conversations communications mediar
 ```
   -d, --directory string   Directory path with files containing request bodies
   -f, --file string        File name containing the JSON body
-  -h, --help               help for create
+  -h, --help               help for update
   -b, --printrequestbody   Print the request body format of the API.
 ```
 
@@ -36,6 +36,6 @@ gc telephony providers edges mediastatistics conversations communications mediar
 
 ### SEE ALSO
 
-* [gc telephony providers edges mediastatistics conversations communications mediaresources](gc_telephony_providers_edges_mediastatistics_conversations_communications_mediaresources.html)	 - /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}/mediaresources
+* [gc workforcemanagement businessunits opportunities](gc_workforcemanagement_businessunits_opportunities.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities
 
 

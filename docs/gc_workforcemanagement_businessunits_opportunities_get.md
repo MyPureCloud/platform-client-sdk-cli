@@ -1,19 +1,20 @@
-## gc routing utilization tags agents list
+## gc workforcemanagement businessunits opportunities get
 
-Get list of agent ids associated with a utilization tag
+Get opportunity details
 
 ### Synopsis
 
-Get list of agent ids associated with a utilization tag
+Get opportunity details
 
 ```
-gc routing utilization tags agents list [tagId] [flags]
+gc workforcemanagement businessunits opportunities get [businessUnitId] [opportunityId] [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help   help for list
+      --expand string   List of resources to expand Valid values: agentIds
+  -h, --help            help for get
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +34,6 @@ gc routing utilization tags agents list [tagId] [flags]
 
 ### SEE ALSO
 
-* [gc routing utilization tags agents](gc_routing_utilization_tags_agents.html)	 - /api/v2/routing/utilization/tags/{tagId}/agents
+* [gc workforcemanagement businessunits opportunities](gc_workforcemanagement_businessunits_opportunities.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities
 
 

@@ -1,22 +1,15 @@
-## gc workforcemanagement adherence historical create
+## gc routing skillexpressions validate
 
-Deprecated. Use bulk routes instead (/adherence/historical/bulk)
+/api/v2/routing/skillexpressions/validate
 
 ### Synopsis
 
-Deprecated. Use bulk routes instead (/adherence/historical/bulk)
-
-```
-gc workforcemanagement adherence historical create [flags]
-```
+/api/v2/routing/skillexpressions/validate
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for validate
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc workforcemanagement adherence historical create [flags]
 
 ### SEE ALSO
 
-* [gc workforcemanagement adherence historical](gc_workforcemanagement_adherence_historical.html)	 - /api/v2/workforcemanagement/adherence/historical
+* [gc routing skillexpressions](gc_routing_skillexpressions.html)	 - /api/v2/routing/skillexpressions
+* [gc routing skillexpressions validate create](gc_routing_skillexpressions_validate_create.html)	 - Validate and normalize a skill expression
 
 

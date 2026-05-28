@@ -1,10 +1,10 @@
 ## gc journey actiontargets update
 
-Update a single action target.
+Deprecated. Update a single action target.
 
 ### Synopsis
 
-Update a single action target.
+Deprecated. Update a single action target.
 
 ```
 gc journey actiontargets update [actionTargetId] [flags]

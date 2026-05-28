@@ -1,10 +1,10 @@
 ## gc journey actiontargets get
 
-Retrieve a single action target.
+Deprecated. Retrieve a single action target.
 
 ### Synopsis
 
-Retrieve a single action target.
+Deprecated. Retrieve a single action target.
 
 ```
 gc journey actiontargets get [actionTargetId] [flags]

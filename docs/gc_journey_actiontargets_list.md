@@ -1,10 +1,10 @@
 ## gc journey actiontargets list
 
-Retrieve all action targets.
+Deprecated. Retrieve all action targets.
 
 ### Synopsis
 
-Retrieve all action targets.
+Deprecated. Retrieve all action targets.
 
 ```
 gc journey actiontargets list [flags]

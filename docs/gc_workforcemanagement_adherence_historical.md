@@ -31,7 +31,6 @@
 
 * [gc workforcemanagement adherence](gc_workforcemanagement_adherence.html)	 - /api/v2/workforcemanagement/adherence
 * [gc workforcemanagement adherence historical bulk](gc_workforcemanagement_adherence_historical_bulk.html)	 - /api/v2/workforcemanagement/adherence/historical/bulk
-* [gc workforcemanagement adherence historical create](gc_workforcemanagement_adherence_historical_create.html)	 - Deprecated. Use bulk routes instead (/adherence/historical/bulk)
 * [gc workforcemanagement adherence historical jobs](gc_workforcemanagement_adherence_historical_jobs.html)	 - /api/v2/workforcemanagement/adherence/historical/jobs
 
 

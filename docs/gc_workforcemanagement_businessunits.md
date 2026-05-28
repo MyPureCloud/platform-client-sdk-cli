@@ -46,6 +46,7 @@
 * [gc workforcemanagement businessunits mainforecast](gc_workforcemanagement_businessunits_mainforecast.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast
 * [gc workforcemanagement businessunits managementunits](gc_workforcemanagement_businessunits_managementunits.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits
 * [gc workforcemanagement businessunits minimumstaffing](gc_workforcemanagement_businessunits_minimumstaffing.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing
+* [gc workforcemanagement businessunits opportunities](gc_workforcemanagement_businessunits_opportunities.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities
 * [gc workforcemanagement businessunits planninggroups](gc_workforcemanagement_businessunits_planninggroups.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups
 * [gc workforcemanagement businessunits scheduler](gc_workforcemanagement_businessunits_scheduler.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler
 * [gc workforcemanagement businessunits scheduling](gc_workforcemanagement_businessunits_scheduling.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling

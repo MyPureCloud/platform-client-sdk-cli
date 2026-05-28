@@ -1,10 +1,10 @@
 ## gc knowledge knowledgebases documents feedback
 
-/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback
+/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/feedback
 
 ### Synopsis
 
-/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback
+/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/feedback
 
 ### Options
 
@@ -33,6 +33,7 @@
 * [gc knowledge knowledgebases documents feedback create](gc_knowledge_knowledgebases_documents_feedback_create.html)	 - Give feedback on a document
 * [gc knowledge knowledgebases documents feedback get](gc_knowledge_knowledgebases_documents_feedback_get.html)	 - Get a single feedback record given on a document
 * [gc knowledge knowledgebases documents feedback getfordoc](gc_knowledge_knowledgebases_documents_feedback_getfordoc.html)	 - Get a list of feedback records given on a document
+* [gc knowledge knowledgebases documents feedback list](gc_knowledge_knowledgebases_documents_feedback_list.html)	 - Get a list of feedback records given on documents in a knowledge base
 * [gc knowledge knowledgebases documents feedback update](gc_knowledge_knowledgebases_documents_feedback_update.html)	 - Update feedback on a document
 
 

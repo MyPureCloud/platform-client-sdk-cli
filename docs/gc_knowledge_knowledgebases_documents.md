@@ -35,7 +35,7 @@
 * [gc knowledge knowledgebases documents copies](gc_knowledge_knowledgebases_documents_copies.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/copies
 * [gc knowledge knowledgebases documents create](gc_knowledge_knowledgebases_documents_create.html)	 - Create document.
 * [gc knowledge knowledgebases documents delete](gc_knowledge_knowledgebases_documents_delete.html)	 - Delete document.
-* [gc knowledge knowledgebases documents feedback](gc_knowledge_knowledgebases_documents_feedback.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback
+* [gc knowledge knowledgebases documents feedback](gc_knowledge_knowledgebases_documents_feedback.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/feedback
 * [gc knowledge knowledgebases documents get](gc_knowledge_knowledgebases_documents_get.html)	 - Get document.
 * [gc knowledge knowledgebases documents list](gc_knowledge_knowledgebases_documents_list.html)	 - Get documents.
 * [gc knowledge knowledgebases documents presentations](gc_knowledge_knowledgebases_documents_presentations.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/presentations

@@ -1,20 +1,15 @@
-## gc routing utilization tags delete
+## gc workforcemanagement businessunits opportunities externalactivities
 
-Delete an utilization tag
+/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/externalactivities
 
 ### Synopsis
 
-Delete an utilization tag
-
-```
-gc routing utilization tags delete [tagId] [flags]
-```
+/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/externalactivities
 
 ### Options
 
 ```
-      --forceDelete string   Remove all tag usages (if found) without warning Valid values: true, false
-  -h, --help                 help for delete
+  -h, --help   help for externalactivities
 ```
 
 ### Options inherited from parent commands
@@ -34,6 +29,7 @@ gc routing utilization tags delete [tagId] [flags]
 
 ### SEE ALSO
 
-* [gc routing utilization tags](gc_routing_utilization_tags.html)	 - /api/v2/routing/utilization/tags
+* [gc workforcemanagement businessunits opportunities](gc_workforcemanagement_businessunits_opportunities.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities
+* [gc workforcemanagement businessunits opportunities externalactivities query](gc_workforcemanagement_businessunits_opportunities_externalactivities_query.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/externalactivities/query
 
 

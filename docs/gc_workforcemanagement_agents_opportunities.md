@@ -1,19 +1,15 @@
-## gc routing utilization tags get
+## gc workforcemanagement agents opportunities
 
-Get details about this utilization tag
+/api/v2/workforcemanagement/agents/opportunities
 
 ### Synopsis
 
-Get details about this utilization tag
-
-```
-gc routing utilization tags get [tagId] [flags]
-```
+/api/v2/workforcemanagement/agents/opportunities
 
 ### Options
 
 ```
-  -h, --help   help for get
+  -h, --help   help for opportunities
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +29,8 @@ gc routing utilization tags get [tagId] [flags]
 
 ### SEE ALSO
 
-* [gc routing utilization tags](gc_routing_utilization_tags.html)	 - /api/v2/routing/utilization/tags
+* [gc workforcemanagement agents](gc_workforcemanagement_agents.html)	 - /api/v2/workforcemanagement/agents
+* [gc workforcemanagement agents opportunities enrollments](gc_workforcemanagement_agents_opportunities_enrollments.html)	 - /api/v2/workforcemanagement/agents/opportunities/enrollments
+* [gc workforcemanagement agents opportunities query](gc_workforcemanagement_agents_opportunities_query.html)	 - /api/v2/workforcemanagement/agents/opportunities/query
 
 

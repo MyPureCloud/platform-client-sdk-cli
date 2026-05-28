@@ -1,22 +1,15 @@
-## gc routing utilization tags create
+## gc workforcemanagement businessunits opportunities bulk add
 
-Create an utilization tag
+/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/add
 
 ### Synopsis
 
-Create an utilization tag
-
-```
-gc routing utilization tags create [flags]
-```
+/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/add
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for add
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc routing utilization tags create [flags]
 
 ### SEE ALSO
 
-* [gc routing utilization tags](gc_routing_utilization_tags.html)	 - /api/v2/routing/utilization/tags
+* [gc workforcemanagement businessunits opportunities bulk](gc_workforcemanagement_businessunits_opportunities_bulk.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk
+* [gc workforcemanagement businessunits opportunities bulk add create](gc_workforcemanagement_businessunits_opportunities_bulk_add_create.html)	 - Bulk add opportunities
 
 

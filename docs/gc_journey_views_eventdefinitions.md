@@ -30,7 +30,10 @@
 ### SEE ALSO
 
 * [gc journey views](gc_journey_views.html)	 - /api/v2/journey/views
+* [gc journey views eventdefinitions activate](gc_journey_views_eventdefinitions_activate.html)	 - /api/v2/journey/views/eventdefinitions/{eventDefinitionId}/activate
+* [gc journey views eventdefinitions external](gc_journey_views_eventdefinitions_external.html)	 - /api/v2/journey/views/eventdefinitions/external
 * [gc journey views eventdefinitions get](gc_journey_views_eventdefinitions_get.html)	 - Get an Event Definition
 * [gc journey views eventdefinitions list](gc_journey_views_eventdefinitions_list.html)	 - Get a list of Event Definitions
+* [gc journey views eventdefinitions update](gc_journey_views_eventdefinitions_update.html)	 - Update external event for journey views
 
 

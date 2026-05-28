@@ -1,15 +1,15 @@
-## gc routing utilization tags
+## gc routing skillexpressions queue
 
-/api/v2/routing/utilization/tags
+/api/v2/routing/skillexpressions/queue
 
 ### Synopsis
 
-/api/v2/routing/utilization/tags
+/api/v2/routing/skillexpressions/queue
 
 ### Options
 
 ```
-  -h, --help   help for tags
+  -h, --help   help for queue
 ```
 
 ### Options inherited from parent commands
@@ -29,11 +29,7 @@
 
 ### SEE ALSO
 
-* [gc routing utilization](gc_routing_utilization.html)	 - /api/v2/routing/utilization
-* [gc routing utilization tags agents](gc_routing_utilization_tags_agents.html)	 - /api/v2/routing/utilization/tags/{tagId}/agents
-* [gc routing utilization tags create](gc_routing_utilization_tags_create.html)	 - Create an utilization tag
-* [gc routing utilization tags delete](gc_routing_utilization_tags_delete.html)	 - Delete an utilization tag
-* [gc routing utilization tags get](gc_routing_utilization_tags_get.html)	 - Get details about this utilization tag
-* [gc routing utilization tags list](gc_routing_utilization_tags_list.html)	 - Get list of utilization tags
+* [gc routing skillexpressions](gc_routing_skillexpressions.html)	 - /api/v2/routing/skillexpressions
+* [gc routing skillexpressions queue list](gc_routing_skillexpressions_queue_list.html)	 - Get skill expressions associated with a queue
 
 

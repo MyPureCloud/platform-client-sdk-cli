@@ -36,6 +36,6 @@ gc knowledge knowledgebases documents feedback update [knowledgeBaseId] [documen
 
 ### SEE ALSO
 
-* [gc knowledge knowledgebases documents feedback](gc_knowledge_knowledgebases_documents_feedback.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback
+* [gc knowledge knowledgebases documents feedback](gc_knowledge_knowledgebases_documents_feedback.html)	 - /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/feedback
 
 

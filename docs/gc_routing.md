@@ -40,6 +40,7 @@
 * [gc routing predictors](gc_routing_predictors.html)	 - /api/v2/routing/predictors
 * [gc routing queues](gc_routing_queues.html)	 - /api/v2/routing/queues
 * [gc routing settings](gc_routing_settings.html)	 - /api/v2/routing/settings
+* [gc routing skillexpressions](gc_routing_skillexpressions.html)	 - /api/v2/routing/skillexpressions
 * [gc routing skillgroups](gc_routing_skillgroups.html)	 - /api/v2/routing/skillgroups
 * [gc routing skills](gc_routing_skills.html)	 - /api/v2/routing/skills
 * [gc routing sms](gc_routing_sms.html)	 - /api/v2/routing/sms

@@ -13,17 +13,18 @@ gc assistants agentchecklists list [flags]
 ### Options
 
 ```
-      --after string             The cursor that points to the end of the set of entities that has been returned.
-  -a, --autopaginate             Automatically paginate through the results stripping page information
-      --before string            The cursor that points to the start of the set of entities that has been returned.
-      --filtercondition string   Filter list command output based on a given condition or regular expression
-  -h, --help                     help for list
-      --language string          The agent checklist language filter applied to the listing.
-      --namePrefix string        The agent checklist name prefix filter applied to the listing.
-      --pageSize string          The page size for the listing. The max that will be returned is 100.
-      --sortBy string            The field to sort by for the listing. Valid values: dateModified, language, name
-      --sortOrder string         The sort order for the listing Valid values: asc, desc
-  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
+      --after string                The cursor that points to the end of the set of entities that has been returned.
+      --agentChecklistIds strings   Agent checklist IDs (repeat param or comma-separated). Do not use with other optional filters.
+  -a, --autopaginate                Automatically paginate through the results stripping page information
+      --before string               The cursor that points to the start of the set of entities that has been returned.
+      --filtercondition string      Filter list command output based on a given condition or regular expression
+  -h, --help                        help for list
+      --language string             The agent checklist language filter applied to the listing.
+      --namePrefix string           The agent checklist name prefix filter applied to the listing.
+      --pageSize string             The page size for the listing. The max that will be returned is 100.
+      --sortBy string               The field to sort by for the listing. Valid values: dateModified, language, name
+      --sortOrder string            The sort order for the listing Valid values: asc, desc
+  -s, --stream                      Paginate and stream data as it is being processed leaving page information intact
 ```
 
 ### Options inherited from parent commands

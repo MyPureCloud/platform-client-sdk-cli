@@ -25,6 +25,12 @@ type RoutingconversationattributesresponseDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Routingconversationattributesresponse
@@ -48,6 +54,14 @@ type Routingconversationattributesresponse struct {
     // ScoredAgents - Current scored agents on in-queue conversation
     ScoredAgents []Scoredagent `json:"scoredAgents"`
 
+
+    // SkillExpression - Current skill expression on in-queue conversation
+    SkillExpression string `json:"skillExpression"`
+
+
+    // SkillExpressionId - Current skill expression ID on in-queue conversation
+    SkillExpressionId string `json:"skillExpressionId"`
+
 }
 
 // String returns a JSON representation of the model
@@ -57,6 +71,8 @@ func (o *Routingconversationattributesresponse) String() string {
     
     
      o.ScoredAgents = []Scoredagent{{}} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -83,6 +99,10 @@ func (u *Routingconversationattributesresponse) MarshalJSON() ([]byte, error) {
         Label Utilizationlabel `json:"label"`
         
         ScoredAgents []Scoredagent `json:"scoredAgents"`
+        
+        SkillExpression string `json:"skillExpression"`
+        
+        SkillExpressionId string `json:"skillExpressionId"`
         *Alias
     }{
 
@@ -102,6 +122,12 @@ func (u *Routingconversationattributesresponse) MarshalJSON() ([]byte, error) {
 
         
         ScoredAgents: []Scoredagent{{}},
+        
+
+
+        
+
+
         
 
         Alias: (*Alias)(u),

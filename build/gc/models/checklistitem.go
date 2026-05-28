@@ -42,6 +42,9 @@ type ChecklistitemDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -62,6 +65,10 @@ type Checklistitem struct {
 
     // AutomatedCheckEnabled - Flag to indicate whether automated check is enabled for this checklist item.
     AutomatedCheckEnabled bool `json:"automatedCheckEnabled"`
+
+
+    // ExactPhraseMatch - Flag to indicate whether exact phrase matching is applicable for this checklist item.
+    ExactPhraseMatch bool `json:"exactPhraseMatch"`
 
 
     // Important - Flag to indicate whether this checklist item is marked as important.
@@ -104,6 +111,7 @@ func (o *Checklistitem) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -129,6 +137,8 @@ func (u *Checklistitem) MarshalJSON() ([]byte, error) {
         
         AutomatedCheckEnabled bool `json:"automatedCheckEnabled"`
         
+        ExactPhraseMatch bool `json:"exactPhraseMatch"`
+        
         Important bool `json:"important"`
         
         StateFromModel string `json:"stateFromModel"`
@@ -142,6 +152,9 @@ func (u *Checklistitem) MarshalJSON() ([]byte, error) {
         LastModifiedInAcw bool `json:"lastModifiedInAcw"`
         *Alias
     }{
+
+        
+
 
         
 

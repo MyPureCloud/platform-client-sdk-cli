@@ -36,6 +36,9 @@ type OpendataingestionruleversionresponseDud struct {
     Platform string `json:"platform"`
 
 
+    
+
+
     Countries []string `json:"countries"`
 
 
@@ -77,6 +80,10 @@ type Opendataingestionruleversionresponse struct {
     
 
 
+    // IngestionRuleInfo - The Info about ingestion rule.
+    IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
+
+
     
 
 
@@ -90,6 +97,7 @@ type Opendataingestionruleversionresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Opendataingestionruleversionresponse) String() string {
+    
     
     
     
@@ -123,9 +131,14 @@ func (u *Opendataingestionruleversionresponse) MarshalJSON() ([]byte, error) {
         
         Version int `json:"version"`
         
+        IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
+        
         ExternalSource Domainentityref `json:"externalSource"`
         *Alias
     }{
+
+        
+
 
         
 

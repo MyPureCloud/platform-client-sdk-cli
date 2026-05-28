@@ -111,6 +111,9 @@ type RecordingDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -248,6 +251,10 @@ type Recording struct {
     CreationTime time.Time `json:"creationTime"`
 
 
+    // AssociatedConversationIds - List of associated conversation IDs
+    AssociatedConversationIds []string `json:"associatedConversationIds"`
+
+
     
 
 }
@@ -286,6 +293,7 @@ func (o *Recording) String() string {
     
     
     
+     o.AssociatedConversationIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -366,6 +374,8 @@ func (u *Recording) MarshalJSON() ([]byte, error) {
         OriginalRecordingStartTime time.Time `json:"originalRecordingStartTime"`
         
         CreationTime time.Time `json:"creationTime"`
+        
+        AssociatedConversationIds []string `json:"associatedConversationIds"`
         *Alias
     }{
 
@@ -477,6 +487,11 @@ func (u *Recording) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        AssociatedConversationIds: []string{""},
         
 
 

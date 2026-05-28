@@ -26,6 +26,9 @@ type AgentchecklistitemDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -47,6 +50,10 @@ type Agentchecklistitem struct {
     AutomatedCheckEnabled bool `json:"automatedCheckEnabled"`
 
 
+    // ExactPhraseMatch - Flag to indicate whether exact phrase matching is applicable for this checklist item.
+    ExactPhraseMatch bool `json:"exactPhraseMatch"`
+
+
     // Important - Flag to indicate whether this checklist item is marked as important.
     Important bool `json:"important"`
 
@@ -57,6 +64,7 @@ type Agentchecklistitem struct {
 
 // String returns a JSON representation of the model
 func (o *Agentchecklistitem) String() string {
+    
     
     
     
@@ -84,9 +92,14 @@ func (u *Agentchecklistitem) MarshalJSON() ([]byte, error) {
         
         AutomatedCheckEnabled bool `json:"automatedCheckEnabled"`
         
+        ExactPhraseMatch bool `json:"exactPhraseMatch"`
+        
         Important bool `json:"important"`
         *Alias
     }{
+
+        
+
 
         
 

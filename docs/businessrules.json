@@ -3,11 +3,6 @@
   "description": "/api/v2/businessrules",
   "resources": [
     {
-      "name": "create",
-      "path": "/api/v2/businessrules/decisiontables/{tableId}/execute",
-      "description": "Execute a published decision table"
-    },
-    {
       "name": "get",
       "path": "/api/v2/businessrules/decisiontables/{tableId}",
       "description": "Get a decision table"
@@ -21,6 +16,11 @@
       "name": "update",
       "path": "/api/v2/businessrules/decisiontables/{tableId}",
       "description": "Update a decision table"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/execute",
+      "description": "Execute a published decision table"
     },
     {
       "name": "get",

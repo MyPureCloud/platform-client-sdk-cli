@@ -46,15 +46,15 @@ type Actionmapaction struct {
     MediaType string `json:"mediaType"`
 
 
-    // ActionTargetId - Action target ID.
+    // ActionTargetId - Deprecated. Action target ID.
     ActionTargetId string `json:"actionTargetId"`
 
 
-    // IsPacingEnabled - Whether this action should be throttled.
+    // IsPacingEnabled - Deprecated. Whether this action should be throttled.
     IsPacingEnabled bool `json:"isPacingEnabled"`
 
 
-    // Props - Additional properties.
+    // Props - Deprecated. Additional properties.
     Props Actionproperties `json:"props"`
 
 

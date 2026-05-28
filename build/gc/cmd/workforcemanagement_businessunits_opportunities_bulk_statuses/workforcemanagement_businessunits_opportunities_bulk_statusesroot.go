@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_opportunities_bulk_statuses
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_opportunities_bulk_statuses_update"
+)
+
+func init() {
+	workforcemanagement_businessunits_opportunities_bulk_statusesCmd.AddCommand(workforcemanagement_businessunits_opportunities_bulk_statuses_update.Cmdworkforcemanagement_businessunits_opportunities_bulk_statuses_update())
+	workforcemanagement_businessunits_opportunities_bulk_statusesCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_opportunities_bulk_statusesCmd.Short, workforcemanagement_businessunits_opportunities_bulk_statuses_update.Description, )
+	workforcemanagement_businessunits_opportunities_bulk_statusesCmd.Long = workforcemanagement_businessunits_opportunities_bulk_statusesCmd.Short
+}

@@ -46,15 +46,15 @@ type Patchaction struct {
     ActionTemplate Actionmapactiontemplate `json:"actionTemplate"`
 
 
-    // ActionTargetId - Action target ID.
+    // ActionTargetId - Deprecated. Action target ID.
     ActionTargetId string `json:"actionTargetId"`
 
 
-    // IsPacingEnabled - Whether this action should be throttled.
+    // IsPacingEnabled - Deprecated. Whether this action should be throttled.
     IsPacingEnabled bool `json:"isPacingEnabled"`
 
 
-    // Props - Additional properties.
+    // Props - Deprecated. Additional properties.
     Props Patchactionproperties `json:"props"`
 
 

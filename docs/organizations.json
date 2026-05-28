@@ -69,18 +69,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/organizations/limits/namespaces/{namespaceName}",
-      "description": "Get the effective limits in a namespace for an organization"
+      "path": "/api/v2/organizations/limits/docs",
+      "description": "Get limit documentation"
     },
     {
       "name": "list",
       "path": "/api/v2/organizations/limits/namespaces/{namespaceName}/defaults",
       "description": "Get the default limits in a namespace for an organization"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/organizations/limits/docs",
-      "description": "Get limit documentation"
     },
     {
       "name": "get",
@@ -91,6 +86,11 @@
       "name": "list",
       "path": "/api/v2/organizations/limits/namespaces",
       "description": "Get the available limit namespaces"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/organizations/limits/namespaces/{namespaceName}",
+      "description": "Get the effective limits in a namespace for an organization"
     }
   ]
 }

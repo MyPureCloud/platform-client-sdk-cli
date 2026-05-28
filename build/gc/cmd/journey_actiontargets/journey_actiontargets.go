@@ -96,8 +96,8 @@ func queryEscape(value string) string {
 
 var getCmd = &cobra.Command{
 	Use:   "get [actionTargetId]",
-	Short: "Retrieve a single action target.",
-	Long:  "Retrieve a single action target.",
+	Short: "Deprecated. Retrieve a single action target.",
+	Long:  "Deprecated. Retrieve a single action target.",
 	Args:  utils.DetermineArgs([]string{ "actionTargetId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -179,8 +179,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Retrieve all action targets.",
-	Long:  "Retrieve all action targets.",
+	Short: "Deprecated. Retrieve all action targets.",
+	Long:  "Deprecated. Retrieve all action targets.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -268,8 +268,8 @@ var listCmd = &cobra.Command{
 }
 var updateCmd = &cobra.Command{
 	Use:   "update [actionTargetId]",
-	Short: "Update a single action target.",
-	Long:  "Update a single action target.",
+	Short: "Deprecated. Update a single action target.",
+	Long:  "Deprecated. Update a single action target.",
 	Args:  utils.DetermineArgs([]string{ "actionTargetId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

@@ -18,28 +18,10 @@ type SummarysettingDud struct {
     
 
 
-    
+    DateModified time.Time `json:"dateModified"`
 
 
-    
-
-
-    
-
-
-    
-
-
-    
-
-
-    
-
-
-    
-
-
-    
+    InteractionType string `json:"interactionType"`
 
 
     
@@ -57,7 +39,28 @@ type SummarysettingDud struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
-    DateModified time.Time `json:"dateModified"`
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
 
 
     SelfUri string `json:"selfUri"`
@@ -71,6 +74,12 @@ type Summarysetting struct {
 
     // Name - Name of the summary setting.
     Name string `json:"name"`
+
+
+    
+
+
+    
 
 
     // Language - Language of the generated summary, e.g. en-US, it-IT.
@@ -87,6 +96,9 @@ type Summarysetting struct {
 
     // MaskPII - Displaying PII in the generated summary.
     MaskPII Summarysettingpii `json:"maskPII"`
+
+
+    
 
 
     // ParticipantLabels - How to refer to interaction participants in the generated summary.
@@ -119,12 +131,6 @@ type Summarysetting struct {
 
     // TimeoutDuration - Timeout duration in seconds for the external summarization service request.
     TimeoutDuration int `json:"timeoutDuration"`
-
-
-    
-
-
-    
 
 
     
@@ -213,18 +219,21 @@ func (u *Summarysetting) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
+
+
+        
+
+
+        
         PredefinedInsights: []string{""},
         
 
 
         
         CustomEntities: []Summarysettingcustomentity{{}},
-        
-
-
-        
-
-
         
 
 

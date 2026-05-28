@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdworkforcemanagement_businessunits_planninggroups() *cobra.Command { 
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups", utils.FormatPermissions([]string{ "wfm:planningGroup:add",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups", utils.FormatPermissions([]string{ "wfm:planningGroup:add", "routing:queue:view",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "body",
   "content" : {
@@ -96,7 +96,7 @@ func Cmdworkforcemanagement_businessunits_planninggroups() *cobra.Command {
 }`)
 	workforcemanagement_businessunits_planninggroupsCmd.AddCommand(listCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}", utils.FormatPermissions([]string{ "wfm:planningGroup:edit",  }), utils.GenerateDevCentreLink("PATCH", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}", utils.FormatPermissions([]string{ "wfm:planningGroup:edit", "routing:queue:view",  }), utils.GenerateDevCentreLink("PATCH", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   "description" : "body",
   "content" : {

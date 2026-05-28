@@ -37,6 +37,9 @@ type WebmessagingcontentDud struct {
 
     
 
+
+    
+
 }
 
 // Webmessagingcontent - Message content element.
@@ -74,10 +77,15 @@ type Webmessagingcontent struct {
     // ListPicker - ListPicker content
     ListPicker Conversationcontentlistpicker `json:"listPicker"`
 
+
+    // Form - Form content
+    Form Conversationcontentform `json:"form"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Webmessagingcontent) String() string {
+    
     
     
     
@@ -115,8 +123,13 @@ func (u *Webmessagingcontent) MarshalJSON() ([]byte, error) {
         DatePicker Contentdatepicker `json:"datePicker"`
         
         ListPicker Conversationcontentlistpicker `json:"listPicker"`
+        
+        Form Conversationcontentform `json:"form"`
         *Alias
     }{
+
+        
+
 
         
 

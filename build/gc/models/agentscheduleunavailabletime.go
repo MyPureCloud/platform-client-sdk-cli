@@ -21,7 +21,7 @@ type AgentscheduleunavailabletimeDud struct {
 // Agentscheduleunavailabletime
 type Agentscheduleunavailabletime struct { 
     // TimeSpan - Exact date, time and length of the unavailability time span
-    TimeSpan Unavailabletimestimespan `json:"timeSpan"`
+    TimeSpan Wfmtimespan `json:"timeSpan"`
 
 
     // Notes - Comments explaining the unavailability time span
@@ -50,7 +50,7 @@ func (u *Agentscheduleunavailabletime) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        TimeSpan Unavailabletimestimespan `json:"timeSpan"`
+        TimeSpan Wfmtimespan `json:"timeSpan"`
         
         Notes string `json:"notes"`
         *Alias

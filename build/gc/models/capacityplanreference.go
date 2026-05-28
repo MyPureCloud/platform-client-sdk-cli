@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type CapacityplanreferenceDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -23,7 +23,8 @@ type CapacityplanreferenceDud struct {
 
 // Capacityplanreference
 type Capacityplanreference struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // Name
@@ -36,6 +37,7 @@ type Capacityplanreference struct {
 
 // String returns a JSON representation of the model
 func (o *Capacityplanreference) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -53,6 +55,8 @@ func (u *Capacityplanreference) MarshalJSON() ([]byte, error) {
     CapacityplanreferenceMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         Name string `json:"name"`
         *Alias

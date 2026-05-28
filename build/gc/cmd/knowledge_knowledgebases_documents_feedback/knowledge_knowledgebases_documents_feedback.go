@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("knowledge_knowledgebases_documents_feedback", "SWAGGER_OVERRIDE_/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback", "SWAGGER_OVERRIDE_/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback", "SWAGGER_OVERRIDE_/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback", "SWAGGER_OVERRIDE_/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback", )
+	Description = utils.FormatUsageDescription("knowledge_knowledgebases_documents_feedback", "SWAGGER_OVERRIDE_/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback", "SWAGGER_OVERRIDE_/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback", "SWAGGER_OVERRIDE_/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback", "SWAGGER_OVERRIDE_/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/feedback", "SWAGGER_OVERRIDE_/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback", )
 	knowledge_knowledgebases_documents_feedbackCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("knowledge_knowledgebases_documents_feedback"),
 		Short: Description,
@@ -95,6 +95,33 @@ func Cmdknowledge_knowledgebases_documents_feedback() *cobra.Command {
   }
 }`)
 	knowledge_knowledgebases_documents_feedbackCmd.AddCommand(getfordocCmd)
+
+	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
+	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
+	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
+	utils.AddFlag(listCmd.Flags(), "bool", "onlyCommented", "", "If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false.")
+	utils.AddFlag(listCmd.Flags(), "string", "documentVersionId", "", "Document version ID to filter by. Supported only if onlyCommented=true is set.")
+	utils.AddFlag(listCmd.Flags(), "string", "documentVariationId", "", "Document variation ID to filter by. Supported only if onlyCommented=true is set.")
+	utils.AddFlag(listCmd.Flags(), "string", "appType", "", "Application type to filter by. Supported only if onlyCommented=true is set. Valid values: Assistant, BotFlow, MessengerKnowledgeApp, SmartAdvisor, SupportCenter")
+	utils.AddFlag(listCmd.Flags(), "string", "queryType", "", "Query type to filter by. Supported only if onlyCommented=true is set. Valid values: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion, ExpandedArticle")
+	utils.AddFlag(listCmd.Flags(), "string", "userId", "", "The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set.")
+	utils.AddFlag(listCmd.Flags(), "string", "queueId", "", "Queue ID to filter by. Supported only if onlyCommented=true is set.")
+	utils.AddFlag(listCmd.Flags(), "string", "state", "", "State to filter by. Supported only if onlyCommented=true is set. Default: Final Valid values: All, Draft, Final")
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/feedback", utils.FormatPermissions([]string{ "knowledge:feedback:view",  }), utils.GenerateDevCentreLink("GET", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/feedback")))
+	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
+	
+	
+	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+  "description" : "successful operation",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+      }
+    }
+  }
+}`)
+	knowledge_knowledgebases_documents_feedbackCmd.AddCommand(listCmd)
 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId}", utils.FormatPermissions([]string{ "knowledge:feedback:edit",  }), utils.GenerateDevCentreLink("PATCH", "Knowledge", "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
@@ -402,6 +429,133 @@ var getfordocCmd = &cobra.Command{
 		}
 
 		const opId = "getfordoc"
+		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
+			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
+		utils.Render(results)
+	},
+}
+var listCmd = &cobra.Command{
+	Use:   "list [knowledgeBaseId]",
+	Short: "Get a list of feedback records given on documents in a knowledge base",
+	Long:  "Get a list of feedback records given on documents in a knowledge base",
+	Args:  utils.DetermineArgs([]string{ "knowledgeBaseId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/feedback"
+		knowledgeBaseId, args := args[0], args[1:]
+		path = strings.Replace(path, "{knowledgeBaseId}", fmt.Sprintf("%v", knowledgeBaseId), -1)
+
+		before := utils.GetFlag(cmd.Flags(), "string", "before")
+		if before != "" {
+			queryParams["before"] = before
+		}
+		after := utils.GetFlag(cmd.Flags(), "string", "after")
+		if after != "" {
+			queryParams["after"] = after
+		}
+		pageSize := utils.GetFlag(cmd.Flags(), "string", "pageSize")
+		if pageSize != "" {
+			queryParams["pageSize"] = pageSize
+		}
+		onlyCommented := utils.GetFlag(cmd.Flags(), "bool", "onlyCommented")
+		if onlyCommented != "" {
+			queryParams["onlyCommented"] = onlyCommented
+		}
+		documentVersionId := utils.GetFlag(cmd.Flags(), "string", "documentVersionId")
+		if documentVersionId != "" {
+			queryParams["documentVersionId"] = documentVersionId
+		}
+		documentVariationId := utils.GetFlag(cmd.Flags(), "string", "documentVariationId")
+		if documentVariationId != "" {
+			queryParams["documentVariationId"] = documentVariationId
+		}
+		appType := utils.GetFlag(cmd.Flags(), "string", "appType")
+		if appType != "" {
+			queryParams["appType"] = appType
+		}
+		queryType := utils.GetFlag(cmd.Flags(), "string", "queryType")
+		if queryType != "" {
+			queryParams["queryType"] = queryType
+		}
+		userId := utils.GetFlag(cmd.Flags(), "string", "userId")
+		if userId != "" {
+			queryParams["userId"] = userId
+		}
+		queueId := utils.GetFlag(cmd.Flags(), "string", "queueId")
+		if queueId != "" {
+			queryParams["queueId"] = queueId
+		}
+		state := utils.GetFlag(cmd.Flags(), "string", "state")
+		if state != "" {
+			queryParams["state"] = state
+		}
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
+		headerParams := make(map[string]string)
+		// to determine the Content-Type header
+		localVarHttpContentTypes := []string{ "application/json",  }
+		// set Content-Type header
+		localVarHttpContentType := utils.SelectHeaderContentType(localVarHttpContentTypes)
+		if localVarHttpContentType != "" {
+			headerParams["Content-Type"] = localVarHttpContentType
+		}
+		// to determine the Accept header
+		localVarHttpHeaderAccepts := []string{
+			"application/json",
+		}
+		// set Accept header
+		localVarHttpHeaderAccept := utils.SelectHeaderAccept(localVarHttpHeaderAccepts)
+		if localVarHttpHeaderAccept != "" {
+			headerParams["Accept"] = localVarHttpHeaderAccept
+		}
+
+		const opId = "list"
 		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
 		// TODO read from config file

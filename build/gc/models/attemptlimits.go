@@ -73,7 +73,7 @@ type Attemptlimits struct {
     MaxAttemptsPerNumber int `json:"maxAttemptsPerNumber"`
 
 
-    // TimeZoneId - If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY.
+    // TimeZoneId - If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
     TimeZoneId string `json:"timeZoneId"`
 
 

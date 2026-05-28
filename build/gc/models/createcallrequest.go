@@ -55,6 +55,9 @@ type CreatecallrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Createcallrequest
@@ -99,6 +102,10 @@ type Createcallrequest struct {
     RoutingSkillsIds []string `json:"routingSkillsIds"`
 
 
+    // RoutingSkillExpression - The skill expression to use for routing this call (if calling a queue).
+    RoutingSkillExpression string `json:"routingSkillExpression"`
+
+
     // ConversationIds - The list of existing call conversations to merge into a new ad-hoc conference.
     ConversationIds []string `json:"conversationIds"`
 
@@ -132,6 +139,7 @@ func (o *Createcallrequest) String() string {
      o.Attributes = map[string]string{"": ""} 
     
      o.RoutingSkillsIds = []string{""} 
+    
      o.ConversationIds = []string{""} 
      o.Participants = []Destination{{}} 
     
@@ -173,6 +181,8 @@ func (u *Createcallrequest) MarshalJSON() ([]byte, error) {
         LanguageId string `json:"languageId"`
         
         RoutingSkillsIds []string `json:"routingSkillsIds"`
+        
+        RoutingSkillExpression string `json:"routingSkillExpression"`
         
         ConversationIds []string `json:"conversationIds"`
         
@@ -217,6 +227,9 @@ func (u *Createcallrequest) MarshalJSON() ([]byte, error) {
 
         
         RoutingSkillsIds: []string{""},
+        
+
+
         
 
 

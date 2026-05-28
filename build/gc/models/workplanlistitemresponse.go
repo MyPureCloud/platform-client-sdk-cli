@@ -11,7 +11,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type WorkplanlistitemresponseDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -122,7 +122,8 @@ type WorkplanlistitemresponseDud struct {
 
 // Workplanlistitemresponse
 type Workplanlistitemresponse struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // Name
@@ -295,6 +296,7 @@ func (o *Workplanlistitemresponse) String() string {
     
     
     
+    
      o.Shifts = []Workplanshift{{}} 
      o.Agents = []Deletableuserreference{{}} 
     
@@ -315,6 +317,8 @@ func (u *Workplanlistitemresponse) MarshalJSON() ([]byte, error) {
     WorkplanlistitemresponseMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         Name string `json:"name"`
         

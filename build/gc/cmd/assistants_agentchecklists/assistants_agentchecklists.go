@@ -87,6 +87,7 @@ func Cmdassistants_agentchecklists() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "language", "", "The agent checklist language filter applied to the listing.")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "", "The sort order for the listing Valid values: asc, desc")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "The field to sort by for the listing. Valid values: dateModified, language, name")
+	utils.AddFlag(listCmd.Flags(), "[]string", "agentChecklistIds", "", "Agent checklist IDs (repeat param or comma-separated). Do not use with other optional filters.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/assistants/agentchecklists", utils.FormatPermissions([]string{ "assistants:agentchecklist:view",  }), utils.GenerateDevCentreLink("GET", "Agent Assistants", "/api/v2/assistants/agentchecklists")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -432,6 +433,10 @@ var listCmd = &cobra.Command{
 		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
 		if sortBy != "" {
 			queryParams["sortBy"] = sortBy
+		}
+		agentChecklistIds := utils.GetFlag(cmd.Flags(), "[]string", "agentChecklistIds")
+		if agentChecklistIds != "" {
+			queryParams["agentChecklistIds"] = agentChecklistIds
 		}
 		urlString := path
 		if len(queryParams) > 0 {

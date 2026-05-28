@@ -12,7 +12,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type CapacityplanlistitemDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -33,7 +33,8 @@ type CapacityplanlistitemDud struct {
 
 // Capacityplanlistitem
 type Capacityplanlistitem struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // Name
@@ -62,6 +63,7 @@ func (o *Capacityplanlistitem) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -78,6 +80,8 @@ func (u *Capacityplanlistitem) MarshalJSON() ([]byte, error) {
     CapacityplanlistitemMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         Name string `json:"name"`
         

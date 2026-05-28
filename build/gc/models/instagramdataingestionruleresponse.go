@@ -36,6 +36,9 @@ type InstagramdataingestionruleresponseDud struct {
     Platform string `json:"platform"`
 
 
+    
+
+
     Countries []string `json:"countries"`
 
 
@@ -77,6 +80,10 @@ type Instagramdataingestionruleresponse struct {
     
 
 
+    // IngestionRuleInfo - The Info about ingestion rule.
+    IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
+
+
     
 
 
@@ -90,6 +97,7 @@ type Instagramdataingestionruleresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Instagramdataingestionruleresponse) String() string {
+    
     
     
     
@@ -123,9 +131,14 @@ func (u *Instagramdataingestionruleresponse) MarshalJSON() ([]byte, error) {
         
         Version int `json:"version"`
         
+        IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
+        
         IntegrationId string `json:"integrationId"`
         *Alias
     }{
+
+        
+
 
         
 

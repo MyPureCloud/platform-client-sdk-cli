@@ -25,6 +25,9 @@ type RoutingconversationattributesrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Routingconversationattributesrequest
@@ -35,6 +38,10 @@ type Routingconversationattributesrequest struct {
 
     // SkillIds - Skill requirements for the conversation.  To remove all skill requirements, specify an empty list, i.e. [].
     SkillIds []string `json:"skillIds"`
+
+
+    // SkillExpression - Skill requirements in form of expression for the conversation.  To remove the skill expression, specify an empty string, i.e., \"\".
+    SkillExpression string `json:"skillExpression"`
 
 
     // LanguageId - Language requirement for the conversation.  To remove the language requirement, specify an empty string, i.e., \"\".
@@ -54,6 +61,7 @@ type Routingconversationattributesrequest struct {
 func (o *Routingconversationattributesrequest) String() string {
     
      o.SkillIds = []string{""} 
+    
     
     
      o.RequestScoredAgents = []Requestscoredagent{{}} 
@@ -78,6 +86,8 @@ func (u *Routingconversationattributesrequest) MarshalJSON() ([]byte, error) {
         
         SkillIds []string `json:"skillIds"`
         
+        SkillExpression string `json:"skillExpression"`
+        
         LanguageId string `json:"languageId"`
         
         LabelId string `json:"labelId"`
@@ -91,6 +101,9 @@ func (u *Routingconversationattributesrequest) MarshalJSON() ([]byte, error) {
 
         
         SkillIds: []string{""},
+        
+
+
         
 
 

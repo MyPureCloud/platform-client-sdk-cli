@@ -27,12 +27,12 @@ type Summarysettingwithtranscript struct {
     Transcript string `json:"transcript"`
 
 
-    // SummarySetting - Summary setting to preview on the transcript.
-    SummarySetting Summarysetting `json:"summarySetting"`
-
-
     // SummaryPreviewSessionId - Session identifier of the summary preview.
     SummaryPreviewSessionId string `json:"summaryPreviewSessionId"`
+
+
+    // SummarySetting - Summary setting to preview on the transcript.
+    SummarySetting Summarysetting `json:"summarySetting"`
 
 }
 
@@ -60,9 +60,9 @@ func (u *Summarysettingwithtranscript) MarshalJSON() ([]byte, error) {
         
         Transcript string `json:"transcript"`
         
-        SummarySetting Summarysetting `json:"summarySetting"`
-        
         SummaryPreviewSessionId string `json:"summaryPreviewSessionId"`
+        
+        SummarySetting Summarysetting `json:"summarySetting"`
         *Alias
     }{
 

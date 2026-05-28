@@ -18,6 +18,11 @@
       "description": "Query for recording retention data"
     },
     {
+      "name": "create",
+      "path": "/api/v2/recordings/screensessions/metadata",
+      "description": "Provide meta-data a screen recording."
+    },
+    {
       "name": "get",
       "path": "/api/v2/recordings/screensessions/details",
       "description": "Retrieves an object containing the total number of concurrent active screen recordings"
@@ -26,11 +31,6 @@
       "name": "create",
       "path": "/api/v2/recordings/screensessions/acknowledge",
       "description": "Acknowledge a screen recording."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/recordings/screensessions/metadata",
-      "description": "Provide meta-data a screen recording."
     }
   ]
 }

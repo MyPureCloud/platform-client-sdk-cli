@@ -28,6 +28,9 @@ type EmailoutbounddomainresultDud struct {
 
     
 
+
+    DmarcVerificationResult Dmarcresult `json:"dmarcVerificationResult"`
+
 }
 
 // Emailoutbounddomainresult
@@ -54,6 +57,9 @@ type Emailoutbounddomainresult struct {
 
     // EmailSetting - The email settings associated with this domain.
     EmailSetting Emailsetting `json:"emailSetting"`
+
+
+    
 
 }
 
@@ -95,6 +101,9 @@ func (u *Emailoutbounddomainresult) MarshalJSON() ([]byte, error) {
         EmailSetting Emailsetting `json:"emailSetting"`
         *Alias
     }{
+
+        
+
 
         
 

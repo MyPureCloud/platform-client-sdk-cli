@@ -42,6 +42,9 @@ type TwitterdataingestionruleresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -77,6 +80,10 @@ type Twitterdataingestionruleresponse struct {
     
 
 
+    // IngestionRuleInfo - The Info about ingestion rule.
+    IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
+
+
     // Countries - ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
     Countries []string `json:"countries"`
 
@@ -91,6 +98,7 @@ type Twitterdataingestionruleresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Twitterdataingestionruleresponse) String() string {
+    
     
     
     
@@ -125,11 +133,16 @@ func (u *Twitterdataingestionruleresponse) MarshalJSON() ([]byte, error) {
         
         Version int `json:"version"`
         
+        IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
+        
         Countries []string `json:"countries"`
         
         SearchTerms string `json:"searchTerms"`
         *Alias
     }{
+
+        
+
 
         
 

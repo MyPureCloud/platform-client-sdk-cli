@@ -34,6 +34,9 @@ type RoutingdataDud struct {
 
     
 
+
+    
+
 }
 
 // Routingdata
@@ -58,6 +61,10 @@ type Routingdata struct {
     SkillIds []string `json:"skillIds"`
 
 
+    // SkillExpression - Optional skill expression for routing when skillIds are present. Used to match agents by a logical expression over skills.
+    SkillExpression string `json:"skillExpression"`
+
+
     // PreferredAgentIds - A list of agents to be preferred in routing
     PreferredAgentIds []string `json:"preferredAgentIds"`
 
@@ -78,6 +85,7 @@ func (o *Routingdata) String() string {
     
     
      o.SkillIds = []string{""} 
+    
      o.PreferredAgentIds = []string{""} 
      o.ScoredAgents = []Scoredagent{{}} 
      o.RoutingFlags = []string{""} 
@@ -108,6 +116,8 @@ func (u *Routingdata) MarshalJSON() ([]byte, error) {
         
         SkillIds []string `json:"skillIds"`
         
+        SkillExpression string `json:"skillExpression"`
+        
         PreferredAgentIds []string `json:"preferredAgentIds"`
         
         ScoredAgents []Scoredagent `json:"scoredAgents"`
@@ -130,6 +140,9 @@ func (u *Routingdata) MarshalJSON() ([]byte, error) {
 
         
         SkillIds: []string{""},
+        
+
+
         
 
 

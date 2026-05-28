@@ -64,7 +64,7 @@ type Webactionevent struct {
     ActionMap Actioneventactionmap `json:"actionMap"`
 
 
-    // ActionTarget - The target for engagement actions.
+    // ActionTarget - Deprecated. The target for engagement actions.
     ActionTarget Addressableentityref `json:"actionTarget"`
 
 

@@ -36,6 +36,9 @@ type GooglebusinessprofiledataingestionruleversionresponseDud struct {
     Platform string `json:"platform"`
 
 
+    
+
+
     Countries []string `json:"countries"`
 
 
@@ -80,6 +83,10 @@ type Googlebusinessprofiledataingestionruleversionresponse struct {
     
 
 
+    // IngestionRuleInfo - The Info about ingestion rule.
+    IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
+
+
     
 
 
@@ -97,6 +104,7 @@ type Googlebusinessprofiledataingestionruleversionresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Googlebusinessprofiledataingestionruleversionresponse) String() string {
+    
     
     
     
@@ -131,11 +139,16 @@ func (u *Googlebusinessprofiledataingestionruleversionresponse) MarshalJSON() ([
         
         Version int `json:"version"`
         
+        IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
+        
         IntegrationId string `json:"integrationId"`
         
         ExternalSource Domainentityref `json:"externalSource"`
         *Alias
     }{
+
+        
+
 
         
 

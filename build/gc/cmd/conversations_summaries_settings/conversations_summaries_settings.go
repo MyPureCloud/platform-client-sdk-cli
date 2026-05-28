@@ -79,12 +79,12 @@ func Cmdconversations_summaries_settings() *cobra.Command {
 }`)
 	conversations_summaries_settingsCmd.AddCommand(getCmd)
 
-	utils.AddFlag(listCmd.Flags(), "string", "language", "", "Filter by matching language - case insensitive.")
-	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by partially matching name - case insensitive.")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "dateModified", "Sort by. Default value dateModified. Valid values: dateModified, name")
-	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "desc", "Sort Order. Default value desc. Valid values: asc, desc")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number.")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size. The maximum page size is 100.")
+	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Filter by partially matching name - case insensitive.")
+	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "desc", "Sort Order. Default value desc. Valid values: asc, desc")
+	utils.AddFlag(listCmd.Flags(), "string", "language", "", "Filter by matching language - case insensitive.")
+	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "dateModified", "Sort by. Default value dateModified. Valid values: dateModified, name")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/conversations/summaries/settings", utils.FormatPermissions([]string{ "aiStudio:summaryConfig:view",  }), utils.GenerateDevCentreLink("GET", "AI Studio", "/api/v2/conversations/summaries/settings")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -402,22 +402,6 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/conversations/summaries/settings"
 
-		language := utils.GetFlag(cmd.Flags(), "string", "language")
-		if language != "" {
-			queryParams["language"] = language
-		}
-		name := utils.GetFlag(cmd.Flags(), "string", "name")
-		if name != "" {
-			queryParams["name"] = name
-		}
-		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
-		if sortBy != "" {
-			queryParams["sortBy"] = sortBy
-		}
-		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
-		if sortOrder != "" {
-			queryParams["sortOrder"] = sortOrder
-		}
 		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
 		if pageNumber != "" {
 			queryParams["pageNumber"] = pageNumber
@@ -425,6 +409,22 @@ var listCmd = &cobra.Command{
 		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
 			queryParams["pageSize"] = pageSize
+		}
+		name := utils.GetFlag(cmd.Flags(), "string", "name")
+		if name != "" {
+			queryParams["name"] = name
+		}
+		sortOrder := utils.GetFlag(cmd.Flags(), "string", "sortOrder")
+		if sortOrder != "" {
+			queryParams["sortOrder"] = sortOrder
+		}
+		language := utils.GetFlag(cmd.Flags(), "string", "language")
+		if language != "" {
+			queryParams["language"] = language
+		}
+		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
+		if sortBy != "" {
+			queryParams["sortBy"] = sortBy
 		}
 		urlString := path
 		if len(queryParams) > 0 {

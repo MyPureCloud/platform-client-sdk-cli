@@ -70,7 +70,7 @@ type Campaignschedule struct {
     Recurrences []Reoccurrence `json:"recurrences"`
 
 
-    // TimeZone - The time zone for this CampaignSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
+    // TimeZone - The time zone for this CampaignSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
     TimeZone string `json:"timeZone"`
 
 

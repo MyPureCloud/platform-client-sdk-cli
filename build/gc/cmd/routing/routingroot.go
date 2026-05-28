@@ -14,6 +14,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing_message"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing_sms"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing_predictors"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing_skillexpressions"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing_skillgroups"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing_directroutingbackup"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/routing_users"
@@ -33,10 +34,11 @@ func init() {
 	routingCmd.AddCommand(routing_message.Cmdrouting_message())
 	routingCmd.AddCommand(routing_sms.Cmdrouting_sms())
 	routingCmd.AddCommand(routing_predictors.Cmdrouting_predictors())
+	routingCmd.AddCommand(routing_skillexpressions.Cmdrouting_skillexpressions())
 	routingCmd.AddCommand(routing_skillgroups.Cmdrouting_skillgroups())
 	routingCmd.AddCommand(routing_directroutingbackup.Cmdrouting_directroutingbackup())
 	routingCmd.AddCommand(routing_users.Cmdrouting_users())
 	routingCmd.AddCommand(routing_wrapupcodes.Cmdrouting_wrapupcodes())
-	routingCmd.Short = utils.GenerateCustomDescription(routingCmd.Short, routing_queues.Description, routing_availablemediatypes.Description, routing_languages.Description, routing_settings.Description, routing_skills.Description, routing_utilization.Description, routing_assessments.Description, routing_conversations.Description, routing_email.Description, routing_message.Description, routing_sms.Description, routing_predictors.Description, routing_skillgroups.Description, routing_directroutingbackup.Description, routing_users.Description, routing_wrapupcodes.Description, )
+	routingCmd.Short = utils.GenerateCustomDescription(routingCmd.Short, routing_queues.Description, routing_availablemediatypes.Description, routing_languages.Description, routing_settings.Description, routing_skills.Description, routing_utilization.Description, routing_assessments.Description, routing_conversations.Description, routing_email.Description, routing_message.Description, routing_sms.Description, routing_predictors.Description, routing_skillexpressions.Description, routing_skillgroups.Description, routing_directroutingbackup.Description, routing_users.Description, routing_wrapupcodes.Description, )
 	routingCmd.Long = routingCmd.Short
 }

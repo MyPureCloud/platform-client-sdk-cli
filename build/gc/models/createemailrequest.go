@@ -61,6 +61,9 @@ type CreateemailrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Createemailrequest
@@ -79,6 +82,10 @@ type Createemailrequest struct {
 
     // SkillIds - The list of skill ID's to use for routing.
     SkillIds []string `json:"skillIds"`
+
+
+    // SkillExpression - The skill expression to use for routing the email conversation (when using queueId).
+    SkillExpression string `json:"skillExpression"`
 
 
     // LanguageId - The ID of the language to use for routing.
@@ -142,6 +149,7 @@ func (o *Createemailrequest) String() string {
      o.SkillIds = []string{""} 
     
     
+    
      o.Attributes = map[string]string{"": ""} 
     
     
@@ -177,6 +185,8 @@ func (u *Createemailrequest) MarshalJSON() ([]byte, error) {
         Provider string `json:"provider"`
         
         SkillIds []string `json:"skillIds"`
+        
+        SkillExpression string `json:"skillExpression"`
         
         LanguageId string `json:"languageId"`
         
@@ -217,6 +227,9 @@ func (u *Createemailrequest) MarshalJSON() ([]byte, error) {
 
         
         SkillIds: []string{""},
+        
+
+
         
 
 

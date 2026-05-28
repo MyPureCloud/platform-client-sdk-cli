@@ -36,6 +36,9 @@ type DataingestionruleresponseDud struct {
     Platform string `json:"platform"`
 
 
+    
+
+
     Countries []string `json:"countries"`
 
 
@@ -74,6 +77,10 @@ type Dataingestionruleresponse struct {
     
 
 
+    // IngestionRuleInfo - The Info about ingestion rule.
+    IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
+
+
     
 
 
@@ -83,6 +90,7 @@ type Dataingestionruleresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Dataingestionruleresponse) String() string {
+    
     
     
     
@@ -114,8 +122,13 @@ func (u *Dataingestionruleresponse) MarshalJSON() ([]byte, error) {
         Status string `json:"status"`
         
         Version int `json:"version"`
+        
+        IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
         *Alias
     }{
+
+        
+
 
         
 

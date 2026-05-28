@@ -63,6 +63,15 @@ type AgentchecklistresponseDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -137,6 +146,18 @@ type Agentchecklistresponse struct {
     EvaluationFinalizedWithAcwDate time.Time `json:"evaluationFinalizedWithAcwDate"`
 
 
+    // Success - Whether activation succeeded for this checklist (bulk activation). Omitted for non-bulk responses.
+    Success bool `json:"success"`
+
+
+    // ErrorCode - Error code when success is false.
+    ErrorCode string `json:"errorCode"`
+
+
+    // ErrorMessage - Error message when success is false.
+    ErrorMessage string `json:"errorMessage"`
+
+
     
 
 }
@@ -147,6 +168,9 @@ func (o *Agentchecklistresponse) String() string {
     
      o.ChecklistItems = []Checklistitem{{}} 
      o.ActivationTriggers = []Activationtrigger{{}} 
+    
+    
+    
     
     
     
@@ -210,6 +234,12 @@ func (u *Agentchecklistresponse) MarshalJSON() ([]byte, error) {
         EvaluationFinalizedDate time.Time `json:"evaluationFinalizedDate"`
         
         EvaluationFinalizedWithAcwDate time.Time `json:"evaluationFinalizedWithAcwDate"`
+        
+        Success bool `json:"success"`
+        
+        ErrorCode string `json:"errorCode"`
+        
+        ErrorMessage string `json:"errorMessage"`
         *Alias
     }{
 
@@ -226,6 +256,15 @@ func (u *Agentchecklistresponse) MarshalJSON() ([]byte, error) {
 
         
         ActivationTriggers: []Activationtrigger{{}},
+        
+
+
+        
+
+
+        
+
+
         
 
 

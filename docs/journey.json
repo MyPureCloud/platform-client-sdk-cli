@@ -30,17 +30,17 @@
     {
       "name": "get",
       "path": "/api/v2/journey/actiontargets/{actionTargetId}",
-      "description": "Retrieve a single action target."
+      "description": "Deprecated. Retrieve a single action target."
     },
     {
       "name": "update",
       "path": "/api/v2/journey/actiontargets/{actionTargetId}",
-      "description": "Update a single action target."
+      "description": "Deprecated. Update a single action target."
     },
     {
       "name": "list",
       "path": "/api/v2/journey/actiontargets",
-      "description": "Retrieve all action targets."
+      "description": "Deprecated. Retrieve all action targets."
     },
     {
       "name": "get",
@@ -134,6 +134,11 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/journey/externalevents/schemas/{schemaId}/versions/{versionId}",
+      "description": "Get a specific version of a schema"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/journey/externalevents/schemas/{schemaId}",
       "description": "Get a schema"
     },
@@ -151,11 +156,6 @@
       "name": "list",
       "path": "/api/v2/journey/externalevents/schemas/{schemaId}/versions",
       "description": "Get all versions of a External Events schema"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/journey/externalevents/schemas/{schemaId}/versions/{versionId}",
-      "description": "Get a specific version of a schema"
     },
     {
       "name": "list",
@@ -254,16 +254,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/journey/views/{viewId}/versions/{versionId}",
-      "description": "Get a Journey View by ID and version"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/journey/views/{viewId}/versions/{versionId}",
-      "description": "Update a Journey View by ID and version"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/journey/views/{viewId}",
       "description": "Get a Journey View by ID"
     },
@@ -271,6 +261,16 @@
       "name": "delete",
       "path": "/api/v2/journey/views/{viewId}",
       "description": "Delete a Journey View by ID"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/journey/views/{viewId}/versions/{versionId}",
+      "description": "Get a Journey View by ID and version"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/journey/views/{viewId}/versions/{versionId}",
+      "description": "Update a Journey View by ID and version"
     },
     {
       "name": "create",
@@ -289,13 +289,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}",
-      "description": "Get a Chart by ID"
+      "path": "/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion}",
+      "description": "Get a Chart by ID and version"
     },
     {
       "name": "get",
-      "path": "/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion}",
-      "description": "Get a Chart by ID and version"
+      "path": "/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}",
+      "description": "Get a Chart by ID"
     },
     {
       "name": "get",
@@ -313,9 +313,29 @@
       "description": "Get an Event Definition"
     },
     {
+      "name": "update",
+      "path": "/api/v2/journey/views/eventdefinitions/{eventDefinitionId}",
+      "description": "Update external event for journey views"
+    },
+    {
       "name": "list",
       "path": "/api/v2/journey/views/eventdefinitions",
       "description": "Get a list of Event Definitions"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/journey/views/eventdefinitions/{eventDefinitionId}/activate",
+      "description": "Activate external event for journey views"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/journey/views/eventdefinitions/external/changes",
+      "description": "Get changes in external event definitions"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/journey/views/eventdefinitions/external",
+      "description": "Get external events for journey views"
     },
     {
       "name": "get",

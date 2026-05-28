@@ -17,6 +17,9 @@ type KnowledgebasereferenceDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -31,12 +34,17 @@ type Knowledgebasereference struct {
     LanguageCode string `json:"languageCode"`
 
 
+    // ContentSearchEnabled - Flag that indicates the search on content is enabled for the knowledge base.
+    ContentSearchEnabled bool `json:"contentSearchEnabled"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgebasereference) String() string {
+    
     
     
 
@@ -59,8 +67,13 @@ func (u *Knowledgebasereference) MarshalJSON() ([]byte, error) {
         Id string `json:"id"`
         
         LanguageCode string `json:"languageCode"`
+        
+        ContentSearchEnabled bool `json:"contentSearchEnabled"`
         *Alias
     }{
+
+        
+
 
         
 

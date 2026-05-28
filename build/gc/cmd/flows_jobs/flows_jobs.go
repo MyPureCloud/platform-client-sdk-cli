@@ -29,7 +29,16 @@ func init() {
 
 func Cmdflows_jobs() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/flows/jobs", utils.FormatPermissions([]string{ "architect:job:create",  }), utils.GenerateDevCentreLink("POST", "Architect", "/api/v2/flows/jobs")))
-	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/RegisterArchitectJobRequest"
+      }
+    }
+  },
+  "required" : false
+}`)
 	
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
@@ -79,6 +88,9 @@ var createCmd = &cobra.Command{
 
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
+			
+			reqModel := models.Interface{}
+			utils.Render(reqModel.String())
 			
 			return
 		}

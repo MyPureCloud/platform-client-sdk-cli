@@ -154,13 +154,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/analytics/taskmanagement/aggregates/query",
-      "description": "Query for task management aggregates"
+      "path": "/api/v2/analytics/taskmanagement/metrics/query",
+      "description": "Query for task management observations"
     },
     {
       "name": "create",
-      "path": "/api/v2/analytics/taskmanagement/metrics/query",
-      "description": "Query for task management observations"
+      "path": "/api/v2/analytics/taskmanagement/aggregates/query",
+      "description": "Query for task management aggregates"
     },
     {
       "name": "create",
@@ -273,14 +273,14 @@
       "description": "Get dashboards summary for a user"
     },
     {
-      "name": "list",
-      "path": "/api/v2/analytics/reporting/dashboards/users",
-      "description": "Get dashboards summary for users in a org"
-    },
-    {
       "name": "create",
       "path": "/api/v2/analytics/reporting/dashboards/users/bulk/remove",
       "description": "Bulk soft delete dashboards owned by other user(s)"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/reporting/dashboards/users",
+      "description": "Get dashboards summary for users in a org"
     },
     {
       "name": "list",
@@ -538,11 +538,6 @@
       "description": "Fetch a page of results for an async aggregates query"
     },
     {
-      "name": "create",
-      "path": "/api/v2/analytics/knowledge/aggregates/jobs",
-      "description": "Query for knowledge aggregates asynchronously"
-    },
-    {
       "name": "get",
       "path": "/api/v2/analytics/knowledge/aggregates/jobs/{jobId}",
       "description": "Get status for async query for knowledge aggregates"
@@ -556,6 +551,11 @@
       "name": "list",
       "path": "/api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/knowledge/aggregates/jobs",
+      "description": "Query for knowledge aggregates asynchronously"
     },
     {
       "name": "create",
@@ -618,11 +618,6 @@
       "description": "Fetch a page of results for an async aggregates query"
     },
     {
-      "name": "create",
-      "path": "/api/v2/analytics/taskmanagement/aggregates/jobs",
-      "description": "Query for task management aggregates asynchronously"
-    },
-    {
       "name": "get",
       "path": "/api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}",
       "description": "Get status for async query for task management aggregates"
@@ -639,6 +634,16 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/analytics/taskmanagement/aggregates/jobs",
+      "description": "Query for task management aggregates asynchronously"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/transcripts/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/analytics/transcripts/aggregates/jobs",
       "description": "Query for transcript aggregates asynchronously"
     },
@@ -651,11 +656,6 @@
       "name": "delete",
       "path": "/api/v2/analytics/transcripts/aggregates/jobs/{jobId}",
       "description": "Delete/cancel an async request for transcript aggregates"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/analytics/transcripts/aggregates/jobs/{jobId}/results",
-      "description": "Fetch a page of results for an async aggregates query"
     },
     {
       "name": "create",

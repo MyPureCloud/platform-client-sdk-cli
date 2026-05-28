@@ -12,9 +12,6 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type WfmversionedentitymetadataDud struct { 
-    
-
-
     ModifiedBy Userreference `json:"modifiedBy"`
 
 
@@ -26,24 +23,27 @@ type WfmversionedentitymetadataDud struct {
 
     DateCreated time.Time `json:"dateCreated"`
 
+
+    
+
 }
 
 // Wfmversionedentitymetadata
 type Wfmversionedentitymetadata struct { 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
     // Version - The version of the associated entity.  Used to prevent conflicts on concurrent edits
     Version int `json:"version"`
-
-
-    
-
-
-    
-
-
-    
-
-
-    
 
 }
 

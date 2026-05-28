@@ -593,6 +593,36 @@
       "description": "Get list of comparison periods"
     },
     {
+      "name": "get",
+      "path": "/api/v2/routing/skillexpressions/{expressionId}",
+      "description": "Get a skill expression by ID"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/skillexpressions/{expressionId}",
+      "description": "Archive a skill expression to remove it from the set of active expressions"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/skillexpressions/validate",
+      "description": "Validate and normalize a skill expression"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/skillexpressions",
+      "description": "Get skill expressions"
+    },
+    {
+      "name": "deleteall",
+      "path": "/api/v2/routing/skillexpressions",
+      "description": "Archive a set of skill expressions to remove them from the set of active expressions"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/skillexpressions/queue/{queueId}",
+      "description": "Get skill expressions associated with a queue"
+    },
+    {
       "name": "list",
       "path": "/api/v2/routing/skillgroups/{skillGroupId}/members/divisions",
       "description": "Get list of member divisions for this skill group."
@@ -711,31 +741,6 @@
       "name": "create",
       "path": "/api/v2/routing/wrapupcodes",
       "description": "Create a wrap-up code"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/routing/utilization/tags/{tagId}",
-      "description": "Get details about this utilization tag"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/routing/utilization/tags/{tagId}",
-      "description": "Delete an utilization tag"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/routing/utilization/tags/{tagId}/agents",
-      "description": "Get list of agent ids associated with a utilization tag"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/routing/utilization/tags",
-      "description": "Get list of utilization tags"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/routing/utilization/tags",
-      "description": "Create an utilization tag"
     },
     {
       "name": "create",

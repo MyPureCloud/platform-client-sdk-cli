@@ -1,0 +1,12 @@
+package workforcemanagement_agents_opportunities_enrollments
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_agents_opportunities_enrollments_bulk"
+)
+
+func init() {
+	workforcemanagement_agents_opportunities_enrollmentsCmd.AddCommand(workforcemanagement_agents_opportunities_enrollments_bulk.Cmdworkforcemanagement_agents_opportunities_enrollments_bulk())
+	workforcemanagement_agents_opportunities_enrollmentsCmd.Short = utils.GenerateCustomDescription(workforcemanagement_agents_opportunities_enrollmentsCmd.Short, workforcemanagement_agents_opportunities_enrollments_bulk.Description, )
+	workforcemanagement_agents_opportunities_enrollmentsCmd.Long = workforcemanagement_agents_opportunities_enrollmentsCmd.Short
+}

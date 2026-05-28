@@ -12,7 +12,7 @@ var (
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type ActivityplanlistitemDud struct { 
-    Id string `json:"id"`
+    
 
 
     
@@ -63,7 +63,8 @@ type ActivityplanlistitemDud struct {
 
 // Activityplanlistitem
 type Activityplanlistitem struct { 
-    
+    // Id - The globally unique identifier for the object.
+    Id string `json:"id"`
 
 
     // Name - The name of the activity plan
@@ -129,6 +130,7 @@ type Activityplanlistitem struct {
 // String returns a JSON representation of the model
 func (o *Activityplanlistitem) String() string {
     
+    
      o.ManagementUnits = []Managementunitreference{{}} 
     
     
@@ -158,6 +160,8 @@ func (u *Activityplanlistitem) MarshalJSON() ([]byte, error) {
     ActivityplanlistitemMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Id string `json:"id"`
         
         Name string `json:"name"`
         

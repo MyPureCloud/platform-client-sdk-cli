@@ -24,7 +24,7 @@ type Callabletime struct {
     TimeSlots []Campaigntimeslot `json:"timeSlots"`
 
 
-    // TimeZoneId - The time zone for the time slots; for example, Africa/Abidjan
+    // TimeZoneId - The time zone for the time slots; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
     TimeZoneId string `json:"timeZoneId"`
 
 }

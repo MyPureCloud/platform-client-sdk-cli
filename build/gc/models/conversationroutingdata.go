@@ -28,6 +28,12 @@ type ConversationroutingdataDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Conversationroutingdata
@@ -48,6 +54,14 @@ type Conversationroutingdata struct {
     Skills []Addressableentityref `json:"skills"`
 
 
+    // SkillExpression - The string with skill expression requested by the caller for routing decisions
+    SkillExpression string `json:"skillExpression"`
+
+
+    // SkillExpressionId - The internal id of the skill expression, if any, that is currently in use for routing decisions
+    SkillExpressionId string `json:"skillExpressionId"`
+
+
     // ScoredAgents - A collection of agents and their assigned scores for this conversation (0 - 100, higher being better), for use in routing to preferred agents
     ScoredAgents []Scoredagent `json:"scoredAgents"`
 
@@ -63,6 +77,8 @@ func (o *Conversationroutingdata) String() string {
     
     
      o.Skills = []Addressableentityref{{}} 
+    
+    
      o.ScoredAgents = []Scoredagent{{}} 
     
 
@@ -90,6 +106,10 @@ func (u *Conversationroutingdata) MarshalJSON() ([]byte, error) {
         
         Skills []Addressableentityref `json:"skills"`
         
+        SkillExpression string `json:"skillExpression"`
+        
+        SkillExpressionId string `json:"skillExpressionId"`
+        
         ScoredAgents []Scoredagent `json:"scoredAgents"`
         
         Label string `json:"label"`
@@ -107,6 +127,12 @@ func (u *Conversationroutingdata) MarshalJSON() ([]byte, error) {
 
         
         Skills: []Addressableentityref{{}},
+        
+
+
+        
+
+
         
 
 

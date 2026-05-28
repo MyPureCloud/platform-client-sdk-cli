@@ -19,6 +19,9 @@ type KnowledgebasecreaterequestDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgebasecreaterequest
@@ -34,10 +37,15 @@ type Knowledgebasecreaterequest struct {
     // CoreLanguage - Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with 'early preview' language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA] which might have a lower accuracy.
     CoreLanguage string `json:"coreLanguage"`
 
+
+    // ContentSearchEnabled - Flag that indicates the search on content is enabled for the knowledge base.
+    ContentSearchEnabled bool `json:"contentSearchEnabled"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgebasecreaterequest) String() string {
+    
     
     
     
@@ -63,8 +71,13 @@ func (u *Knowledgebasecreaterequest) MarshalJSON() ([]byte, error) {
         Description string `json:"description"`
         
         CoreLanguage string `json:"coreLanguage"`
+        
+        ContentSearchEnabled bool `json:"contentSearchEnabled"`
         *Alias
     }{
+
+        
+
 
         
 

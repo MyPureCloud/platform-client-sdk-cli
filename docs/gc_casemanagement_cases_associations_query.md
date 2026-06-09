@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc casemanagement cases associations](gc_casemanagement_cases_associations.html)	 - /api/v2/casemanagement/cases/{caseId}/associations
-* [gc casemanagement cases associations query create](gc_casemanagement_cases_associations_query_create.html)	 - Query for case associations
+* [gc casemanagement cases associations query create](gc_casemanagement_cases_associations_query_create.html)	 - Query for Case associations by interaction.
 
 

@@ -13,7 +13,7 @@ gc casemanagement caseplans versions stageplans get [caseplanId] [versionId] [st
 ### Options
 
 ```
-      --expands strings   Which fields to expand. Valid values: caseplan
+      --expands strings   Fields to expand. Valid values: caseplan
   -h, --help              help for get
 ```
 

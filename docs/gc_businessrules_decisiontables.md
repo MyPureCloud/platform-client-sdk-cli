@@ -33,7 +33,9 @@
 * [gc businessrules decisiontables create](gc_businessrules_decisiontables_create.html)	 - Create a decision table
 * [gc businessrules decisiontables delete](gc_businessrules_decisiontables_delete.html)	 - Delete a decision table
 * [gc businessrules decisiontables execute](gc_businessrules_decisiontables_execute.html)	 - /api/v2/businessrules/decisiontables/{tableId}/execute
+* [gc businessrules decisiontables exports](gc_businessrules_decisiontables_exports.html)	 - /api/v2/businessrules/decisiontables/{tableId}/exports
 * [gc businessrules decisiontables get](gc_businessrules_decisiontables_get.html)	 - Get a decision table
+* [gc businessrules decisiontables imports](gc_businessrules_decisiontables_imports.html)	 - /api/v2/businessrules/decisiontables/{tableId}/imports
 * [gc businessrules decisiontables list](gc_businessrules_decisiontables_list.html)	 - Get a list of decision tables.
 * [gc businessrules decisiontables search](gc_businessrules_decisiontables_search.html)	 - /api/v2/businessrules/decisiontables/search
 * [gc businessrules decisiontables update](gc_businessrules_decisiontables_update.html)	 - Update a decision table

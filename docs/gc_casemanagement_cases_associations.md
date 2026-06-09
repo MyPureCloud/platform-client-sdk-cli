@@ -30,9 +30,9 @@
 ### SEE ALSO
 
 * [gc casemanagement cases](gc_casemanagement_cases.html)	 - /api/v2/casemanagement/cases
-* [gc casemanagement cases associations create](gc_casemanagement_cases_associations_create.html)	 - Create a case association.
+* [gc casemanagement cases associations create](gc_casemanagement_cases_associations_create.html)	 - Create a Case association.
 * [gc casemanagement cases associations get](gc_casemanagement_cases_associations_get.html)	 - Get a Case Association.
-* [gc casemanagement cases associations list](gc_casemanagement_cases_associations_list.html)	 - Get a list of case associations for a provided case.
+* [gc casemanagement cases associations list](gc_casemanagement_cases_associations_list.html)	 - Get a list of Case associations for the Case.
 * [gc casemanagement cases associations query](gc_casemanagement_cases_associations_query.html)	 - /api/v2/casemanagement/cases/associations/query
 
 

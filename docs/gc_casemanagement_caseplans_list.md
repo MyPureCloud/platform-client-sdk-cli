@@ -13,13 +13,13 @@ gc casemanagement caseplans list [flags]
 ### Options
 
 ```
-      --after string              The cursor that points to the end of the set of caseplans that has been returned.
+      --after string              Cursor that points to the end of the previously returned set of Caseplans.
   -a, --autopaginate              Automatically paginate through the results stripping page information
-      --customerIntentId string   Filter by Customer Intent.
-      --divisionIds string        Filter by Divisions.
+      --customerIntentId string   Filter by customer intent.
+      --divisionIds string        Filter by divisions.
       --filtercondition string    Filter list command output based on a given condition or regular expression
   -h, --help                      help for list
-      --pageSize string           Number of caseplans to return. Maximum of 200.
+      --pageSize string           Number of Caseplans to return. Maximum is 200.
   -s, --stream                    Paginate and stream data as it is being processed leaving page information intact
 ```
 

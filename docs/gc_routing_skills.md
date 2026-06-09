@@ -33,7 +33,7 @@
 * [gc routing skills create](gc_routing_skills_create.html)	 - Create Skill
 * [gc routing skills delete](gc_routing_skills_delete.html)	 - Delete Routing Skill
 * [gc routing skills get](gc_routing_skills_get.html)	 - Get Routing Skill
-* [gc routing skills list](gc_routing_skills_list.html)	 - Get the list of routing skills.
+* [gc routing skills list](gc_routing_skills_list.html)	 - Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
 * [gc routing skills update](gc_routing_skills_update.html)	 - Update Routing Skill Division
 
 

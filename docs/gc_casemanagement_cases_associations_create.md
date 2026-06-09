@@ -1,10 +1,10 @@
 ## gc casemanagement cases associations create
 
-Create a case association.
+Create a Case association.
 
 ### Synopsis
 
-Create a case association.
+Create a Case association.
 
 ```
 gc casemanagement cases associations create [caseId] [flags]

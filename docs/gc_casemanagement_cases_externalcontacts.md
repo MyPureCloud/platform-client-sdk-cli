@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc casemanagement cases](gc_casemanagement_cases.html)	 - /api/v2/casemanagement/cases
-* [gc casemanagement cases externalcontacts list](gc_casemanagement_cases_externalcontacts_list.html)	 - Get a list of cases for provided external contact id.
+* [gc casemanagement cases externalcontacts list](gc_casemanagement_cases_externalcontacts_list.html)	 - Get a list of Cases for an External Contact.
 
 

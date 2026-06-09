@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc businessrules decisiontables versions](gc_businessrules_decisiontables_versions.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions
+* [gc businessrules decisiontables versions rows bulk](gc_businessrules_decisiontables_versions_rows_bulk.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk
 * [gc businessrules decisiontables versions rows create](gc_businessrules_decisiontables_versions_rows_create.html)	 - Create a decision table row
 * [gc businessrules decisiontables versions rows delete](gc_businessrules_decisiontables_versions_rows_delete.html)	 - Delete a decision table row
 * [gc businessrules decisiontables versions rows get](gc_businessrules_decisiontables_versions_rows_get.html)	 - Get a decision table row

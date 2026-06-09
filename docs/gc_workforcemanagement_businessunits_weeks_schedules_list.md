@@ -13,9 +13,11 @@ gc workforcemanagement businessunits weeks schedules list [businessUnitId] [week
 ### Options
 
 ```
-      --expand string                 expand Valid values: forecast.description
+      --earliestWeekDate recent       If weekId == recent, specify the earliest schedule start week date (inclusive) to include in the `recent` range, in yyyy-MM-dd format. Ignored if weekId != `recent`. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+      --expand string                 expand Valid values: shortTermForecast.description
   -h, --help                          help for list
       --includeOnlyPublished string   includeOnlyPublished Valid values: true, false
+      --latestWeekDate recent         If weekId == recent, specify the latest schedule start week date (inclusive) to include in the `recent` range, in yyyy-MM-dd format. Ignored if weekId != `recent`. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 ```
 
 ### Options inherited from parent commands

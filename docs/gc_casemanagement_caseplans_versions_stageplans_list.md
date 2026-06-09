@@ -16,7 +16,7 @@ gc casemanagement caseplans versions stageplans list [caseplanId] [versionId] [f
       --after string             The cursor that points to the end of the set of entities that has been returned.
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --before string            The cursor that points to the start of the set of entities that has been returned.
-      --expands strings          Which fields to expand. Valid values: caseplan
+      --expands strings          Fields to expand. Valid values: caseplan
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --pageSize string          Number of entities to return. Maximum of 200.

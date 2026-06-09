@@ -1,10 +1,10 @@
 ## gc casemanagement cases datedue update
 
-Update date due of a Case.
+Update the due date of a Case.
 
 ### Synopsis
 
-Update date due of a Case.
+Update the due date of a Case.
 
 ```
 gc casemanagement cases datedue update [caseId] [flags]

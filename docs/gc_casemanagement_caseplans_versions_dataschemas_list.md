@@ -1,10 +1,10 @@
 ## gc casemanagement caseplans versions dataschemas list
 
-Get the dataSchemas for a caseplan version.
+Get the data schemas for a Caseplan version.
 
 ### Synopsis
 
-Get the dataSchemas for a caseplan version.
+Get the data schemas for a Caseplan version.
 
 ```
 gc casemanagement caseplans versions dataschemas list [caseplanId] [versionId] [flags]

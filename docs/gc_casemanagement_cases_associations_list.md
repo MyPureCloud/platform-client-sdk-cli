@@ -1,10 +1,10 @@
 ## gc casemanagement cases associations list
 
-Get a list of case associations for a provided case.
+Get a list of Case associations for the Case.
 
 ### Synopsis
 
-Get a list of case associations for a provided case.
+Get a list of Case associations for the Case.
 
 ```
 gc casemanagement cases associations list [caseId] [flags]

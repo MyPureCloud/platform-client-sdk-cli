@@ -13,7 +13,7 @@ gc casemanagement cases get [caseId] [flags]
 ### Options
 
 ```
-      --expands string   Which fields to expand. Valid values: caseplan
+      --expands string   Fields to expand. Valid values: caseplan
   -h, --help             help for get
 ```
 

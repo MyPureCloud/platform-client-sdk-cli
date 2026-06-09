@@ -13,6 +13,7 @@ gc workforcemanagement businessunits timeoffplans list [businessUnitId] [flags]
 ### Options
 
 ```
+      --expand strings                Include to access additional data for the time-off plans Valid values: overrideDates
       --forceDownloadService string   Force the result of this operation to be sent via download service. For testing/app development purposes Valid values: true, false
   -h, --help                          help for list
       --managementUnitId string       The ID of the management unit to get management unit specific staffing groups

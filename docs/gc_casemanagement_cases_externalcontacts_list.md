@@ -1,10 +1,10 @@
 ## gc casemanagement cases externalcontacts list
 
-Get a list of cases for provided external contact id.
+Get a list of Cases for an External Contact.
 
 ### Synopsis
 
-Get a list of cases for provided external contact id.
+Get a list of Cases for an External Contact.
 
 ```
 gc casemanagement cases externalcontacts list [externalContactId] [flags]
@@ -13,13 +13,13 @@ gc casemanagement cases externalcontacts list [externalContactId] [flags]
 ### Options
 
 ```
-      --after string             The cursor that points to the end of the set of cases that has been returned.
+      --after string             Cursor pointing to the end of the previously returned page of Cases.
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --divisionIds string       Filter by Divisions
-      --expands strings          Which fields to expand. Valid values: caseplan
+      --divisionIds string       Filter by divisions.
+      --expands strings          Fields to expand. Valid values: caseplan
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageSize string          Number of cases to return. Maximum of 200.
+      --pageSize string          Number of Cases to return (maximum 200).
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

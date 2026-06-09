@@ -14,7 +14,7 @@ gc routing queues divisionviews list [flags]
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --divisionId strings       Division ID(s)
+      --divisionId *             Division ID(s). Including * will query for all divisions
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --id strings               Queue ID(s)

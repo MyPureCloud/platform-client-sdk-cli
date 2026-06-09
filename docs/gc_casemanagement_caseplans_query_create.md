@@ -1,10 +1,10 @@
 ## gc casemanagement caseplans query create
 
-Query for caseplans
+Query for Caseplans.
 
 ### Synopsis
 
-Query for caseplans
+Query for Caseplans.
 
 ```
 gc casemanagement caseplans query create [flags]

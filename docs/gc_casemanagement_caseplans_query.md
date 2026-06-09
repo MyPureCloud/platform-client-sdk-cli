@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc casemanagement caseplans](gc_casemanagement_caseplans.html)	 - /api/v2/casemanagement/caseplans
-* [gc casemanagement caseplans query create](gc_casemanagement_caseplans_query_create.html)	 - Query for caseplans
+* [gc casemanagement caseplans query create](gc_casemanagement_caseplans_query_create.html)	 - Query for Caseplans.
 
 

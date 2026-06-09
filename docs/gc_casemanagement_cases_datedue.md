@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc casemanagement cases](gc_casemanagement_cases.html)	 - /api/v2/casemanagement/cases
-* [gc casemanagement cases datedue update](gc_casemanagement_cases_datedue_update.html)	 - Update date due of a Case.
+* [gc casemanagement cases datedue update](gc_casemanagement_cases_datedue_update.html)	 - Update the due date of a Case.
 
 

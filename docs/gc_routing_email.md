@@ -32,6 +32,7 @@
 * [gc routing](gc_routing.html)	 - /api/v2/routing
 * [gc routing email domains](gc_routing_email_domains.html)	 - /api/v2/routing/email/domains
 * [gc routing email outbound](gc_routing_email_outbound.html)	 - /api/v2/routing/email/outbound
+* [gc routing email setting](gc_routing_email_setting.html)	 - /api/v2/routing/email/setting
 * [gc routing email setup](gc_routing_email_setup.html)	 - /api/v2/routing/email/setup
 
 

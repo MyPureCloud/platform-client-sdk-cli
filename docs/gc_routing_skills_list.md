@@ -1,10 +1,10 @@
 ## gc routing skills list
 
-Get the list of routing skills.
+Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
 
 ### Synopsis
 
-Get the list of routing skills.
+Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
 
 ```
 gc routing skills list [flags]

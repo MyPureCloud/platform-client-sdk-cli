@@ -1,10 +1,10 @@
 ## gc casemanagement cases associations query create
 
-Query for case associations
+Query for Case associations by interaction.
 
 ### Synopsis
 
-Query for case associations
+Query for Case associations by interaction.
 
 ```
 gc casemanagement cases associations query create [flags]

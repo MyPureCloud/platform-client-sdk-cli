@@ -30,6 +30,6 @@
 ### SEE ALSO
 
 * [gc casemanagement caseplans versions](gc_casemanagement_caseplans_versions.html)	 - /api/v2/casemanagement/caseplans/{caseplanId}/versions
-* [gc casemanagement caseplans versions dataschemas list](gc_casemanagement_caseplans_versions_dataschemas_list.html)	 - Get the dataSchemas for a caseplan version.
+* [gc casemanagement caseplans versions dataschemas list](gc_casemanagement_caseplans_versions_dataschemas_list.html)	 - Get the data schemas for a Caseplan version.
 
 

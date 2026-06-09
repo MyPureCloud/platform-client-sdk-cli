@@ -53,6 +53,9 @@ type ButimeoffplanresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -89,6 +92,10 @@ type Butimeoffplanresponse struct {
 
     // RestrictedActivityCodes - The IDs of non time-off activity codes to check for conflicts in case the auto approval rule specifies checking activity codes. If these activity codes are present in schedule and overlap with the time-off request duration, the request will not be auto approved
     RestrictedActivityCodes Activitycodesreference `json:"restrictedActivityCodes"`
+
+
+    // OverrideDates - A list of override dates to check for conflicts with time-off request dates. If a conflict is found, the request will not be auto-approved
+    OverrideDates []Overridedate `json:"overrideDates"`
 
 
     // HrisTimeOffType - Time-off type, if this time-off plan is associated with the integration
@@ -129,6 +136,7 @@ func (o *Butimeoffplanresponse) String() string {
     
     
     
+     o.OverrideDates = []Overridedate{{}} 
     
     
     
@@ -167,6 +175,8 @@ func (u *Butimeoffplanresponse) MarshalJSON() ([]byte, error) {
         AutoPublishApprovedTimeOffRequests bool `json:"autoPublishApprovedTimeOffRequests"`
         
         RestrictedActivityCodes Activitycodesreference `json:"restrictedActivityCodes"`
+        
+        OverrideDates []Overridedate `json:"overrideDates"`
         
         HrisTimeOffType Hristimeofftype `json:"hrisTimeOffType"`
         
@@ -207,6 +217,11 @@ func (u *Butimeoffplanresponse) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        OverrideDates: []Overridedate{{}},
         
 
 

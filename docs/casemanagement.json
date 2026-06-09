@@ -10,22 +10,22 @@
     {
       "name": "create",
       "path": "/api/v2/casemanagement/cases/associations/query",
-      "description": "Query for case associations"
+      "description": "Query for Case associations by interaction."
     },
     {
       "name": "list",
       "path": "/api/v2/casemanagement/cases/{caseId}/associations",
-      "description": "Get a list of case associations for a provided case."
+      "description": "Get a list of Case associations for the Case."
     },
     {
       "name": "create",
       "path": "/api/v2/casemanagement/cases/{caseId}/associations",
-      "description": "Create a case association."
+      "description": "Create a Case association."
     },
     {
       "name": "create",
       "path": "/api/v2/casemanagement/caseplans/query",
-      "description": "Query for caseplans"
+      "description": "Query for Caseplans."
     },
     {
       "name": "get",
@@ -70,7 +70,22 @@
     {
       "name": "list",
       "path": "/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/dataschemas",
-      "description": "Get the dataSchemas for a caseplan version."
+      "description": "Get the data schemas for a Caseplan version."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/dataschemas",
+      "description": "Add a data schema to a draft Caseplan."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName}",
+      "description": "Update a data schema on a draft Caseplan."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName}",
+      "description": "Remove a data schema from a draft Caseplan."
     },
     {
       "name": "list",
@@ -100,7 +115,7 @@
     {
       "name": "update",
       "path": "/api/v2/casemanagement/cases/{caseId}/datedue",
-      "description": "Update date due of a Case."
+      "description": "Update the due date of a Case."
     },
     {
       "name": "update",
@@ -110,7 +125,7 @@
     {
       "name": "list",
       "path": "/api/v2/casemanagement/cases/externalcontacts/{externalContactId}",
-      "description": "Get a list of cases for provided external contact id."
+      "description": "Get a list of Cases for an External Contact."
     },
     {
       "name": "get",

@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdcasemanagement_cases_references() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "string", "expands", "", "Which fields to expand. Valid values: caseplan")
+	utils.AddFlag(getCmd.Flags(), "string", "expands", "", "Fields to expand. Valid values: caseplan")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/casemanagement/cases/references/{referenceId}", utils.FormatPermissions([]string{ "caseManagement:caseReference:view",  }), utils.GenerateDevCentreLink("GET", "Case Management", "/api/v2/casemanagement/cases/references/{referenceId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	

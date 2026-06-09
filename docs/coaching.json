@@ -28,11 +28,6 @@
       "description": "Create a new annotation."
     },
     {
-      "name": "create",
-      "path": "/api/v2/coaching/appointments/{appointmentId}/conversations",
-      "description": "Add a conversation to an appointment"
-    },
-    {
       "name": "get",
       "path": "/api/v2/coaching/appointments/{appointmentId}",
       "description": "Retrieve an appointment"
@@ -46,6 +41,11 @@
       "name": "update",
       "path": "/api/v2/coaching/appointments/{appointmentId}",
       "description": "Update an existing appointment"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/coaching/appointments/{appointmentId}/conversations",
+      "description": "Add a conversation to an appointment"
     },
     {
       "name": "list",

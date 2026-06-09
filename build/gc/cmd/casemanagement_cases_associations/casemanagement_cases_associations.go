@@ -30,7 +30,7 @@ func init() {
 func Cmdcasemanagement_cases_associations() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/casemanagement/cases/{caseId}/associations", utils.FormatPermissions([]string{ "caseManagement:caseAssociation:add",  }), utils.GenerateDevCentreLink("POST", "Case Management", "/api/v2/casemanagement/cases/{caseId}/associations")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "description" : "Case Association",
+  "description" : "Case association create request.",
   "content" : {
     "application/json" : {
       "schema" : {
@@ -38,7 +38,7 @@ func Cmdcasemanagement_cases_associations() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	
@@ -98,8 +98,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create [caseId]",
-	Short: "Create a case association.",
-	Long:  "Create a case association.",
+	Short: "Create a Case association.",
+	Long:  "Create a Case association.",
 	Args:  utils.DetermineArgs([]string{ "caseId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -269,8 +269,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list [caseId]",
-	Short: "Get a list of case associations for a provided case.",
-	Long:  "Get a list of case associations for a provided case.",
+	Short: "Get a list of Case associations for the Case.",
+	Long:  "Get a list of Case associations for the Case.",
 	Args:  utils.DetermineArgs([]string{ "caseId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

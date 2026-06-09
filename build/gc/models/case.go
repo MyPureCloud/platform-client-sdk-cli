@@ -97,7 +97,7 @@ type Case struct {
     Reference string `json:"reference"`
 
 
-    // Caseplan - The Caseplan the case was created from.
+    // Caseplan - The Caseplan the Case was created from.
     Caseplan Caseplanreference `json:"caseplan"`
 
 
@@ -137,7 +137,7 @@ type Case struct {
     DateModified time.Time `json:"dateModified"`
 
 
-    // ModifiedBy - The id of the User who modified the Case.
+    // ModifiedBy - The ID of the User who modified the Case.
     ModifiedBy Userreference `json:"modifiedBy"`
 
 
@@ -149,7 +149,7 @@ type Case struct {
     CustomerIntent Customerintentreference `json:"customerIntent"`
 
 
-    // CreationStatus - The creation status of the Case
+    // CreationStatus - The creation status of the Case.
     CreationStatus string `json:"creationStatus"`
 
 

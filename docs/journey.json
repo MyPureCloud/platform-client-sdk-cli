@@ -134,11 +134,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/journey/externalevents/schemas/{schemaId}/versions/{versionId}",
-      "description": "Get a specific version of a schema"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/journey/externalevents/schemas/{schemaId}",
       "description": "Get a schema"
     },
@@ -156,6 +151,11 @@
       "name": "list",
       "path": "/api/v2/journey/externalevents/schemas/{schemaId}/versions",
       "description": "Get all versions of a External Events schema"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/journey/externalevents/schemas/{schemaId}/versions/{versionId}",
+      "description": "Get a specific version of a schema"
     },
     {
       "name": "list",
@@ -253,14 +253,9 @@
       "description": "Retrieve a single session."
     },
     {
-      "name": "get",
-      "path": "/api/v2/journey/views/{viewId}",
-      "description": "Get a Journey View by ID"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/journey/views/{viewId}",
-      "description": "Delete a Journey View by ID"
+      "name": "create",
+      "path": "/api/v2/journey/views/{viewId}/versions",
+      "description": "Update a Journey View by ID"
     },
     {
       "name": "get",
@@ -273,9 +268,14 @@
       "description": "Update a Journey View by ID and version"
     },
     {
-      "name": "create",
-      "path": "/api/v2/journey/views/{viewId}/versions",
-      "description": "Update a Journey View by ID"
+      "name": "get",
+      "path": "/api/v2/journey/views/{viewId}",
+      "description": "Get a Journey View by ID"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/journey/views/{viewId}",
+      "description": "Delete a Journey View by ID"
     },
     {
       "name": "list",
@@ -289,13 +289,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion}",
-      "description": "Get a Chart by ID and version"
+      "path": "/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}",
+      "description": "Get a Chart by ID"
     },
     {
       "name": "get",
-      "path": "/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}",
-      "description": "Get a Chart by ID"
+      "path": "/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion}",
+      "description": "Get a Chart by ID and version"
     },
     {
       "name": "get",

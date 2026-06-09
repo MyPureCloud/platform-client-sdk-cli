@@ -403,11 +403,6 @@
       "description": "Create parse job"
     },
     {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search",
-      "description": "Search the documents in a knowledge base."
-    },
-    {
       "name": "update",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/{searchId}",
       "description": "Update search result."
@@ -416,6 +411,11 @@
       "name": "create",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/suggestions",
       "description": "Query the knowledge documents to provide suggestions for auto completion."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search",
+      "description": "Search the documents in a knowledge base."
     },
     {
       "name": "create",
@@ -553,19 +553,14 @@
       "description": "Give feedback on a document"
     },
     {
-      "name": "list",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents",
-      "description": "Get documents."
-    },
-    {
       "name": "get",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}",
       "description": "Get a knowledge document by ID."
     },
     {
-      "name": "create",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views",
-      "description": "Create view event for a document."
+      "name": "list",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents",
+      "description": "Get documents."
     },
     {
       "name": "create",
@@ -578,9 +573,19 @@
       "description": "Indicate that documents were presented to the user."
     },
     {
+      "name": "create",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views",
+      "description": "Create view event for a document."
+    },
+    {
       "name": "list",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/categories",
       "description": "Get categories"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search",
+      "description": "Search the documents in a guest session."
     },
     {
       "name": "create",
@@ -591,11 +596,6 @@
       "name": "update",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId}",
       "description": "Update search result."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/search",
-      "description": "Search the documents in a guest session."
     },
     {
       "name": "create",

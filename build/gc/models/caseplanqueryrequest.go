@@ -26,7 +26,7 @@ type CaseplanqueryrequestDud struct {
 
 // Caseplanqueryrequest
 type Caseplanqueryrequest struct { 
-    // Name - Filter by caseplan name (case-insensitive, partial match). Omitting name returns all caseplans (subject to pagination).
+    // Name - Filter by Caseplan name (case-insensitive, partial match). Omitting name returns all Caseplans (subject to pagination).
     Name string `json:"name"`
 
 

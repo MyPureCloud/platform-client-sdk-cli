@@ -84,6 +84,51 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId}",
+      "description": "Get an export job for a decision table"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId}",
+      "description": "Delete an export job for a decision table"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/exports",
+      "description": "List export jobs for a decision table"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/exports",
+      "description": "Create an export job for a decision table version"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}",
+      "description": "Get decision table row import job"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}",
+      "description": "Delete decision table row import job"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}",
+      "description": "Update decision table row import job"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/imports",
+      "description": "List decision table row import jobs"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/imports",
+      "description": "Create a decision table row import job"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}",
       "description": "Get a decision table row"
     },
@@ -96,6 +141,21 @@
       "name": "delete",
       "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}",
       "description": "Delete a decision table row"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/add",
+      "description": "Bulk add decision table rows"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/update",
+      "description": "Bulk update decision table rows"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/remove",
+      "description": "Bulk delete decision table rows"
     },
     {
       "name": "list",

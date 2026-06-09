@@ -28,6 +28,21 @@ type WhatsappdefinitionDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    TemplateStatus string `json:"templateStatus"`
+
+
+    StatusInfo Statusinfo `json:"statusInfo"`
+
+
+    
+
 }
 
 // Whatsappdefinition - A WhatsApp messaging template definition as defined in the WhatsApp Business Manager
@@ -55,6 +70,24 @@ type Whatsappdefinition struct {
     // Header - Header for the message in the standard WhatsApp messages channel
     Header Messageheader `json:"header"`
 
+
+    // IntegrationId - WhatsApp integration ID for whatsApp carousels
+    IntegrationId string `json:"integrationId"`
+
+
+    // Category - Category of whatsApp carousels template.
+    Category string `json:"category"`
+
+
+    
+
+
+    
+
+
+    // Carousel - Definition for whatsApp carousels template.
+    Carousel Carousel `json:"carousel"`
+
 }
 
 // String returns a JSON representation of the model
@@ -63,6 +96,9 @@ func (o *Whatsappdefinition) String() string {
     
     
      o.Buttons = []Button{{}} 
+    
+    
+    
     
     
 
@@ -93,6 +129,12 @@ func (u *Whatsappdefinition) MarshalJSON() ([]byte, error) {
         MessageFooter Messagefooter `json:"messageFooter"`
         
         Header Messageheader `json:"header"`
+        
+        IntegrationId string `json:"integrationId"`
+        
+        Category string `json:"category"`
+        
+        Carousel Carousel `json:"carousel"`
         *Alias
     }{
 
@@ -107,6 +149,21 @@ func (u *Whatsappdefinition) MarshalJSON() ([]byte, error) {
 
         
         Buttons: []Button{{}},
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
         
 
 

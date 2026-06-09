@@ -53,8 +53,8 @@ func queryEscape(value string) string {
 
 var listCmd = &cobra.Command{
 	Use:   "list [caseplanId] [versionId]",
-	Short: "Get the dataSchemas for a caseplan version.",
-	Long:  "Get the dataSchemas for a caseplan version.",
+	Short: "Get the data schemas for a Caseplan version.",
+	Long:  "Get the data schemas for a Caseplan version.",
 	Args:  utils.DetermineArgs([]string{ "caseplanId", "versionId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

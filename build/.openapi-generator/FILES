@@ -195,18 +195,24 @@ gc/cmd/billing_reports_billableusage/billing_reports_billableusage.go
 gc/cmd/billing_trusteebillingoverview/billing_trusteebillingoverview.go
 gc/cmd/businessrules_decisiontables/businessrules_decisiontables.go
 gc/cmd/businessrules_decisiontables_execute/businessrules_decisiontables_execute.go
+gc/cmd/businessrules_decisiontables_exports/businessrules_decisiontables_exports.go
+gc/cmd/businessrules_decisiontables_imports/businessrules_decisiontables_imports.go
 gc/cmd/businessrules_decisiontables_search/businessrules_decisiontables_search.go
 gc/cmd/businessrules_decisiontables_versions/businessrules_decisiontables_versions.go
 gc/cmd/businessrules_decisiontables_versions_copy/businessrules_decisiontables_versions_copy.go
 gc/cmd/businessrules_decisiontables_versions_execute/businessrules_decisiontables_versions_execute.go
 gc/cmd/businessrules_decisiontables_versions_publish/businessrules_decisiontables_versions_publish.go
 gc/cmd/businessrules_decisiontables_versions_rows/businessrules_decisiontables_versions_rows.go
+gc/cmd/businessrules_decisiontables_versions_rows_bulk_add/businessrules_decisiontables_versions_rows_bulk_add.go
+gc/cmd/businessrules_decisiontables_versions_rows_bulk_remove/businessrules_decisiontables_versions_rows_bulk_remove.go
+gc/cmd/businessrules_decisiontables_versions_rows_bulk_update/businessrules_decisiontables_versions_rows_bulk_update.go
 gc/cmd/businessrules_decisiontables_versions_rows_search/businessrules_decisiontables_versions_rows_search.go
 gc/cmd/businessrules_decisiontables_versions_sync/businessrules_decisiontables_versions_sync.go
 gc/cmd/businessrules_schemas/businessrules_schemas.go
 gc/cmd/businessrules_schemas_coretypes/businessrules_schemas_coretypes.go
 gc/cmd/carrierservices_integrations_emergencylocations_me/carrierservices_integrations_emergencylocations_me.go
 gc/cmd/casemanagement_caseplans/casemanagement_caseplans.go
+gc/cmd/casemanagement_caseplans_dataschemas/casemanagement_caseplans_dataschemas.go
 gc/cmd/casemanagement_caseplans_intakesettings/casemanagement_caseplans_intakesettings.go
 gc/cmd/casemanagement_caseplans_publish/casemanagement_caseplans_publish.go
 gc/cmd/casemanagement_caseplans_query/casemanagement_caseplans_query.go
@@ -1106,6 +1112,7 @@ gc/cmd/routing_email_outbound_domains/routing_email_outbound_domains.go
 gc/cmd/routing_email_outbound_domains_activation/routing_email_outbound_domains_activation.go
 gc/cmd/routing_email_outbound_domains_simulated/routing_email_outbound_domains_simulated.go
 gc/cmd/routing_email_outbound_domains_testconnection/routing_email_outbound_domains_testconnection.go
+gc/cmd/routing_email_setting/routing_email_setting.go
 gc/cmd/routing_email_setup/routing_email_setup.go
 gc/cmd/routing_languages/routing_languages.go
 gc/cmd/routing_message_recipients/routing_message_recipients.go
@@ -1270,6 +1277,12 @@ gc/cmd/telephony_agents_greetings/telephony_agents_greetings.go
 gc/cmd/telephony_agents_greetings_me/telephony_agents_greetings_me.go
 gc/cmd/telephony_calls_metrics/telephony_calls_metrics.go
 gc/cmd/telephony_mediaregions/telephony_mediaregions.go
+gc/cmd/telephony_numbers_routing/telephony_numbers_routing.go
+gc/cmd/telephony_numbers_routing_all/telephony_numbers_routing_all.go
+gc/cmd/telephony_numbers_routing_reset/telephony_numbers_routing_reset.go
+gc/cmd/telephony_organization_link/telephony_organization_link.go
+gc/cmd/telephony_organization_link_approve/telephony_organization_link_approve.go
+gc/cmd/telephony_organization_link_regions/telephony_organization_link_regions.go
 gc/cmd/telephony_providers_edges/telephony_providers_edges.go
 gc/cmd/telephony_providers_edges_addressvalidation/telephony_providers_edges_addressvalidation.go
 gc/cmd/telephony_providers_edges_alertablepresences/telephony_providers_edges_alertablepresences.go
@@ -1813,6 +1826,8 @@ gc/models/agentscheduleunavailabletime.go
 gc/models/agentscoringrule.go
 gc/models/agentscoringruleentitylisting.go
 gc/models/agentsintegrationslisting.go
+gc/models/agentstateactivitycategorycount.go
+gc/models/agentstateadherencestatecount.go
 gc/models/agentstateagentqueryclause.go
 gc/models/agentstateagentquerypredicate.go
 gc/models/agentstatecountsrequest.go
@@ -1938,6 +1953,7 @@ gc/models/appleintegration.go
 gc/models/appleintegrationentitylisting.go
 gc/models/appleintegrationrequest.go
 gc/models/appleintegrationupdaterequest.go
+gc/models/appleinvitation.go
 gc/models/appleopaqueid.go
 gc/models/applepay.go
 gc/models/approvalnamespace.go
@@ -2170,6 +2186,8 @@ gc/models/buintradayforecastdata.go
 gc/models/buintradayresponse.go
 gc/models/buintradayscheduledata.go
 gc/models/bulistalternativeshifttradesresponse.go
+gc/models/bulkadddecisiontablerowsrequest.go
+gc/models/bulkadddecisiontablerowsresponse.go
 gc/models/bulkaddopportunitiesrequest.go
 gc/models/bulkaddopportunitiesresponse.go
 gc/models/bulkaddsourceintentsrequest.go
@@ -2180,6 +2198,7 @@ gc/models/bulkcontactsenrichrequest.go
 gc/models/bulkcontactsenrichresponse.go
 gc/models/bulkcontactsrequest.go
 gc/models/bulkcontactsresponse.go
+gc/models/bulkdeletedecisiontablerowsrequest.go
 gc/models/bulkdeleteresponse.go
 gc/models/bulkentityerrorcontactenrichrequest.go
 gc/models/bulkentityerrorentity.go
@@ -2244,6 +2263,8 @@ gc/models/bulkresult.go
 gc/models/bulkresults.go
 gc/models/bulkshifttradestateupdaterequest.go
 gc/models/bulksourceintentsresponse.go
+gc/models/bulkupdatedecisiontablerowsrequest.go
+gc/models/bulkupdatedecisiontablerowsresponse.go
 gc/models/bulkupdateopportunityenrollmentsstatusresponse.go
 gc/models/bulkupdateshifttradelistjobrequest.go
 gc/models/bulkupdateshifttradestaterequestitem.go
@@ -2450,6 +2471,7 @@ gc/models/caseplancreate.go
 gc/models/caseplancreateresponse.go
 gc/models/caseplandataschema.go
 gc/models/caseplandataschemalisting.go
+gc/models/caseplandataschemarequest.go
 gc/models/caseplanlisting.go
 gc/models/caseplanqueryentitylisting.go
 gc/models/caseplanqueryrequest.go
@@ -2664,6 +2686,7 @@ gc/models/contactsexport.go
 gc/models/contactsexportfieldfilter.go
 gc/models/contactsexportfieldlistfilter.go
 gc/models/contactsexportfilter.go
+gc/models/contactsexportlisting.go
 gc/models/contactsexportqueryconditions.go
 gc/models/contactsexportrequest.go
 gc/models/contactsort.go
@@ -2855,6 +2878,7 @@ gc/models/conversationsummariesgetresponse.go
 gc/models/conversationsummary.go
 gc/models/conversationsummaryextractedentity.go
 gc/models/conversationsummaryfollowup.go
+gc/models/conversationsummarylabel.go
 gc/models/conversationsummaryreason.go
 gc/models/conversationsummaryresolution.go
 gc/models/conversationsummarywrapupcode.go
@@ -2916,6 +2940,7 @@ gc/models/createcallresponse.go
 gc/models/createcapacityplanstaffinggroupmetricchangerequest.go
 gc/models/createcoachingappointmentrequest.go
 gc/models/createdecisiontablecolumnsrequest.go
+gc/models/createdecisiontableimportjobrequest.go
 gc/models/createdecisiontablerequest.go
 gc/models/createdecisiontablerowrequest.go
 gc/models/createemailrequest.go
@@ -2928,6 +2953,7 @@ gc/models/createmanagementunitapirequest.go
 gc/models/createmanagementunitsettingsrequest.go
 gc/models/createmetric.go
 gc/models/createobjective.go
+gc/models/createorganizationlink.go
 gc/models/createoutboundmessagingconversationrequest.go
 gc/models/createoutboundmessagingconversationresponse.go
 gc/models/createperformanceprofile.go
@@ -3074,9 +3100,18 @@ gc/models/decisiontablecolumns.go
 gc/models/decisiontablecontract.go
 gc/models/decisiontableexecutionrequest.go
 gc/models/decisiontableexecutionresponse.go
+gc/models/decisiontableexportjob.go
+gc/models/decisiontableexportjoberror.go
+gc/models/decisiontableexportjoblisting.go
+gc/models/decisiontableexportjobrequest.go
+gc/models/decisiontableimportjob.go
+gc/models/decisiontableimportjoberror.go
+gc/models/decisiontableimportjoblisting.go
+gc/models/decisiontableimportrowmetrics.go
 gc/models/decisiontableinputcolumn.go
 gc/models/decisiontableinputcolumnexpression.go
 gc/models/decisiontableinputcolumnrequest.go
+gc/models/decisiontablejobvalidationerror.go
 gc/models/decisiontablelisting.go
 gc/models/decisiontableoutputcolumn.go
 gc/models/decisiontableoutputcolumnrequest.go
@@ -3164,6 +3199,7 @@ gc/models/directroutingmediasettings.go
 gc/models/disablesiteconnectionsrequest.go
 gc/models/disallowedentitylearningassignmentitem.go
 gc/models/disallowedentitylearningassignmentreference.go
+gc/models/disasterrecoveryallroutingrequest.go
 gc/models/disconnectreason.go
 gc/models/disposition.go
 gc/models/dispositionamdtimeout.go
@@ -3367,6 +3403,7 @@ gc/models/emailprogresstransferevent.go
 gc/models/emailroutingestablishedevent.go
 gc/models/emailroutingtransferevent.go
 gc/models/emailsetting.go
+gc/models/emailsettingentitylisting.go
 gc/models/emailsettingreference.go
 gc/models/emailsettings.go
 gc/models/emailsetup.go
@@ -3492,7 +3529,6 @@ gc/models/expandablewebdeploymententitylisting.go
 gc/models/expansioncriterium.go
 gc/models/expirededgelisting.go
 gc/models/exportdetails.go
-gc/models/exportlisting.go
 gc/models/exportscriptrequest.go
 gc/models/exportscriptresponse.go
 gc/models/exporturi.go
@@ -4578,6 +4614,10 @@ gc/models/nuancemixdlgsettings.go
 gc/models/nuanceorganization.go
 gc/models/number.go
 gc/models/numberplan.go
+gc/models/numberrouting.go
+gc/models/numberroutinglisting.go
+gc/models/numberroutingrequest.go
+gc/models/numberroutingresetorganizationrequest.go
 gc/models/numericrange.go
 gc/models/oauthappleauthorizationresponse.go
 gc/models/oauthappleauthorizationresponseerror.go
@@ -4662,6 +4702,9 @@ gc/models/optinsettings.go
 gc/models/organization.go
 gc/models/organizationcallmetrics.go
 gc/models/organizationfeatures.go
+gc/models/organizationlink.go
+gc/models/organizationlinkapprovalrequest.go
+gc/models/organizationlinkresponse.go
 gc/models/organizationpresence.go
 gc/models/organizationpresencedefinition.go
 gc/models/organizationpresencedefinitionentitylisting.go
@@ -5032,6 +5075,7 @@ gc/models/recordingmessagereceipt.go
 gc/models/recordingmessagereceiptreason.go
 gc/models/recordingmessagingmessage.go
 gc/models/recordingmetadata.go
+gc/models/recordingnotificationresponse.go
 gc/models/recordingnotificationtemplate.go
 gc/models/recordingretention.go
 gc/models/recordingretentioncursorentitylisting.go
@@ -5052,6 +5096,7 @@ gc/models/recurrenceperiod.go
 gc/models/recurrencesettings.go
 gc/models/recurrencesettingsbase.go
 gc/models/referrer.go
+gc/models/regionresponse.go
 gc/models/regiontimezone.go
 gc/models/registerarchitectexportjob.go
 gc/models/registerarchitectexportjobresponse.go
@@ -5185,6 +5230,7 @@ gc/models/routingstatusdetailqueryclause.go
 gc/models/routingstatusdetailqueryfilter.go
 gc/models/routingstatusdetailquerypredicate.go
 gc/models/routingtransferevent.go
+gc/models/row.go
 gc/models/rowsearchfilter.go
 gc/models/rowsearchpredicate.go
 gc/models/ruleconfig.go
@@ -5218,6 +5264,9 @@ gc/models/schedulermessageseveritycount.go
 gc/models/schedulermessagetypeseverity.go
 gc/models/schedulesdivisionview.go
 gc/models/scheduleuploadprocessingresponse.go
+gc/models/schedulevisibilityrange.go
+gc/models/schedulevisibilitysettingsrequest.go
+gc/models/schedulevisibilitysettingsresponse.go
 gc/models/schedulingnoforecastoptionsrequest.go
 gc/models/schedulingoptionsrequest.go
 gc/models/schedulingperiod.go
@@ -5473,6 +5522,7 @@ gc/models/socialmediaquerypredicate.go
 gc/models/socialmediaquerysort.go
 gc/models/socialmediastatisticalresponse.go
 gc/models/socialmediastatisticalsummary.go
+gc/models/socialnumericrange.go
 gc/models/socialtopicpatchrequest.go
 gc/models/socialtopicrequest.go
 gc/models/socialtopicresponse.go
@@ -5717,6 +5767,7 @@ gc/models/textbotwaitforinputaction.go
 gc/models/textmessagelisting.go
 gc/models/textstyleproperties.go
 gc/models/thirdpartysuggestion.go
+gc/models/thirdpartysuggestionsource.go
 gc/models/ticker.go
 gc/models/timeallowed.go
 gc/models/timeanddatesubcondition.go
@@ -5909,6 +5960,7 @@ gc/models/updatecoachingappointmentrequest.go
 gc/models/updateconferencerequest.go
 gc/models/updatecontactcolumnactionsettings.go
 gc/models/updatedecisiontablecolumnsrequest.go
+gc/models/updatedecisiontableimportjobrequest.go
 gc/models/updatedecisiontablerequest.go
 gc/models/updatedecisiontableversionrequest.go
 gc/models/updatedraftinput.go
@@ -6107,10 +6159,12 @@ gc/models/v3sourcelastsynchronization.go
 gc/models/v3sourceref.go
 gc/models/v3sourceschedulesettings.go
 gc/models/v3sourcesitedetails.go
+gc/models/v3sourcetagfilter.go
 gc/models/v3sourceupdaterequest.go
 gc/models/v3startmanualsyncrequest.go
 gc/models/v3synchronization.go
 gc/models/v3synchronizationlisting.go
+gc/models/v3synchronizationref.go
 gc/models/v3synchronizationstatistics.go
 gc/models/v3synchronizationupdaterequest.go
 gc/models/v3synchronizationuploadmetadata.go

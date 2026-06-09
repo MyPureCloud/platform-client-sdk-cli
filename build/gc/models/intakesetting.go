@@ -27,11 +27,11 @@ type Intakesetting struct {
     Property string `json:"property"`
 
 
-    // Required - Defines if this property is required for intake
+    // Required - Whether this property is required for intake.
     Required bool `json:"required"`
 
 
-    // DisplayOrder - The order where this property should be displayed
+    // DisplayOrder - The display order for this property.
     DisplayOrder int `json:"displayOrder"`
 
 }

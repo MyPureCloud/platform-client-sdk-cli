@@ -82,6 +82,7 @@ func Cmdworkforcemanagement_businessunits_timeoffplans() *cobra.Command {
 
 	utils.AddFlag(listCmd.Flags(), "string", "managementUnitId", "", "The ID of the management unit to get management unit specific staffing groups")
 	utils.AddFlag(listCmd.Flags(), "bool", "forceDownloadService", "", "Force the result of this operation to be sent via download service. For testing/app development purposes")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Include to access additional data for the time-off plans Valid values: overrideDates")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans", utils.FormatPermissions([]string{ "wfm:timeOffPlan:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -415,6 +416,10 @@ var listCmd = &cobra.Command{
 		forceDownloadService := utils.GetFlag(cmd.Flags(), "bool", "forceDownloadService")
 		if forceDownloadService != "" {
 			queryParams["forceDownloadService"] = forceDownloadService
+		}
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
 		}
 		urlString := path
 		if len(queryParams) > 0 {

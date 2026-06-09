@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdworkforcemanagement_managementunits_users_timeoffrequests_estimate() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "string", "includeOnly", "", "Limit response to the specified field Valid values: overrideDateType")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate", utils.FormatPermissions([]string{ "wfm:timeOffRequest:view",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "body",
@@ -87,6 +88,10 @@ var createCmd = &cobra.Command{
 		userId, args := args[0], args[1:]
 		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
 
+		includeOnly := utils.GetFlag(cmd.Flags(), "string", "includeOnly")
+		if includeOnly != "" {
+			queryParams["includeOnly"] = includeOnly
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

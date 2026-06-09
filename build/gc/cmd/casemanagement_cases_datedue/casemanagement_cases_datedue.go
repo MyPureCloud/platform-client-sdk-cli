@@ -30,7 +30,7 @@ func init() {
 func Cmdcasemanagement_cases_datedue() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/casemanagement/cases/{caseId}/datedue", utils.FormatPermissions([]string{ "caseManagement:caseDateDue:edit",  }), utils.GenerateDevCentreLink("PATCH", "Case Management", "/api/v2/casemanagement/cases/{caseId}/datedue")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "description" : "Date due",
+  "description" : "Due date update.",
   "content" : {
     "application/json" : {
       "schema" : {
@@ -63,8 +63,8 @@ func queryEscape(value string) string {
 
 var updateCmd = &cobra.Command{
 	Use:   "update [caseId]",
-	Short: "Update date due of a Case.",
-	Long:  "Update date due of a Case.",
+	Short: "Update the due date of a Case.",
+	Long:  "Update the due date of a Case.",
 	Args:  utils.DetermineArgs([]string{ "caseId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

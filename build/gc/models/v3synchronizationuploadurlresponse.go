@@ -16,10 +16,41 @@ type V3synchronizationuploadurlresponseDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    SelfUri string `json:"selfUri"`
+
 }
 
 // V3synchronizationuploadurlresponse
 type V3synchronizationuploadurlresponse struct { 
+    // FileId - The unique identifier for the upload object.
+    FileId string `json:"fileId"`
+
+
+    // FileName - Name of the uploaded file.
+    FileName string `json:"fileName"`
+
+
+    // Metadata - The metadata of the uploaded file
+    Metadata V3synchronizationuploadmetadata `json:"metadata"`
+
+
+    // Synchronization - The synchronization of the file upload.
+    Synchronization V3synchronizationref `json:"synchronization"`
+
+
     // Url - Pre-signed URL to PUT the file to.
     Url string `json:"url"`
 
@@ -27,10 +58,17 @@ type V3synchronizationuploadurlresponse struct {
     // Headers - Required headers when uploading a file through PUT request to the URL.
     Headers map[string]string `json:"headers"`
 
+
+    
+
 }
 
 // String returns a JSON representation of the model
 func (o *V3synchronizationuploadurlresponse) String() string {
+    
+    
+    
+    
     
      o.Headers = map[string]string{"": ""} 
 
@@ -50,6 +88,14 @@ func (u *V3synchronizationuploadurlresponse) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        FileId string `json:"fileId"`
+        
+        FileName string `json:"fileName"`
+        
+        Metadata V3synchronizationuploadmetadata `json:"metadata"`
+        
+        Synchronization V3synchronizationref `json:"synchronization"`
+        
         Url string `json:"url"`
         
         Headers map[string]string `json:"headers"`
@@ -60,7 +106,22 @@ func (u *V3synchronizationuploadurlresponse) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
+
+
+        
+
+
+        
+
+
+        
         Headers: map[string]string{"": ""},
+        
+
+
         
 
         Alias: (*Alias)(u),

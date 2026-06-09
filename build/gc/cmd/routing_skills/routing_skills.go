@@ -385,8 +385,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Get the list of routing skills.",
-	Long:  "Get the list of routing skills.",
+	Short: "Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.",
+	Long:  "Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

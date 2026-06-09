@@ -30,7 +30,7 @@ func init() {
 func Cmdcasemanagement_cases() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/casemanagement/cases", utils.FormatPermissions([]string{ "caseManagement:case:add",  }), utils.GenerateDevCentreLink("POST", "Case Management", "/api/v2/casemanagement/cases")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "description" : "Case",
+  "description" : "Case create request.",
   "content" : {
     "application/json" : {
       "schema" : {
@@ -70,7 +70,7 @@ func Cmdcasemanagement_cases() *cobra.Command {
 }`)
 	casemanagement_casesCmd.AddCommand(deleteCmd)
 
-	utils.AddFlag(getCmd.Flags(), "string", "expands", "", "Which fields to expand. Valid values: caseplan")
+	utils.AddFlag(getCmd.Flags(), "string", "expands", "", "Fields to expand. Valid values: caseplan")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/casemanagement/cases/{caseId}", utils.FormatPermissions([]string{ "caseManagement:case:view",  }), utils.GenerateDevCentreLink("GET", "Case Management", "/api/v2/casemanagement/cases/{caseId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	

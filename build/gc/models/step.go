@@ -93,14 +93,14 @@ type Step struct {
     Status string `json:"status"`
 
 
-    // Stage - The parent stage of the step.
+    // Stage - The parent Stage of the Step.
     Stage Stagereference `json:"stage"`
 
 
     
 
 
-    // VarCase - The parent case of the step.
+    // VarCase - The parent Case of the Step.
     VarCase Casereference `json:"case"`
 
 }

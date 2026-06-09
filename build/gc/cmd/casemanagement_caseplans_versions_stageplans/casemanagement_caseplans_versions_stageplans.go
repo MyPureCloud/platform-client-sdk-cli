@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdcasemanagement_caseplans_versions_stageplans() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "[]string", "expands", "", "Which fields to expand. Valid values: caseplan")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expands", "", "Fields to expand. Valid values: caseplan")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}", utils.FormatPermissions([]string{ "caseManagement:stageplan:view",  }), utils.GenerateDevCentreLink("GET", "Case Management", "/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -48,7 +48,7 @@ func Cmdcasemanagement_caseplans_versions_stageplans() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
-	utils.AddFlag(listCmd.Flags(), "[]string", "expands", "", "Which fields to expand. Valid values: caseplan")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expands", "", "Fields to expand. Valid values: caseplan")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans", utils.FormatPermissions([]string{ "caseManagement:stageplan:view",  }), utils.GenerateDevCentreLink("GET", "Case Management", "/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

@@ -13,6 +13,12 @@ var (
 type DomainsDud struct { 
     
 
+
+    
+
+
+    
+
 }
 
 // Domains - The domain list settings.
@@ -20,10 +26,20 @@ type Domains struct {
     // AuthorizedDomains - The authorized domains settings for email processing.
     AuthorizedDomains Authorizeddomains `json:"authorizedDomains"`
 
+
+    // AllowExistingEmailParticipants - Allow reply and forward to recipients included in the previous email, ignoring the authorized domains list
+    AllowExistingEmailParticipants bool `json:"allowExistingEmailParticipants"`
+
+
+    // AllowOutboundToAnyDomainAcd - Allow new outbound email (no existing conversation) to be sent to any domain, ignoring the authorized domains list.This setting applies only to new outbound emails sent on behalf of queue or agentless, NOT campaigns.This setting can only be true if allowExistingEmailParticipants is also true.
+    AllowOutboundToAnyDomainAcd bool `json:"allowOutboundToAnyDomainAcd"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Domains) String() string {
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +59,18 @@ func (u *Domains) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         AuthorizedDomains Authorizeddomains `json:"authorizedDomains"`
+        
+        AllowExistingEmailParticipants bool `json:"allowExistingEmailParticipants"`
+        
+        AllowOutboundToAnyDomainAcd bool `json:"allowOutboundToAnyDomainAcd"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

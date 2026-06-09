@@ -25,6 +25,9 @@ type KnowledgesettingsrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgesettingsrequest
@@ -48,6 +51,10 @@ type Knowledgesettingsrequest struct {
     // Stateful - Indicates if stateful search and generation is enabled for the knowledge setting.
     Stateful bool `json:"stateful"`
 
+
+    // Filter - Composite tag filter of search results.
+    Filter V3sourcetagfilter `json:"filter"`
+
 }
 
 // String returns a JSON representation of the model
@@ -55,6 +62,7 @@ func (o *Knowledgesettingsrequest) String() string {
     
     
      o.Sources = []V3sourceref{{}} 
+    
     
     
 
@@ -83,6 +91,8 @@ func (u *Knowledgesettingsrequest) MarshalJSON() ([]byte, error) {
         GenerationSetting Knowledgegenerationsetting `json:"generationSetting"`
         
         Stateful bool `json:"stateful"`
+        
+        Filter V3sourcetagfilter `json:"filter"`
         *Alias
     }{
 
@@ -94,6 +104,9 @@ func (u *Knowledgesettingsrequest) MarshalJSON() ([]byte, error) {
 
         
         Sources: []V3sourceref{{}},
+        
+
+
         
 
 

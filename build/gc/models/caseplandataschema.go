@@ -20,7 +20,7 @@ type CaseplandataschemaDud struct {
 
 // Caseplandataschema
 type Caseplandataschema struct { 
-    // Id - The id of the schema.
+    // Id - The schema ID.
     Id string `json:"id"`
 
 

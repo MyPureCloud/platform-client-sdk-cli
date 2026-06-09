@@ -23,7 +23,7 @@ type StepplansworktypereferenceDud struct {
 
 // Stepplansworktypereference
 type Stepplansworktypereference struct { 
-    // Id - The id of the worktype.
+    // Id - The Worktype ID.
     Id string `json:"id"`
 
 

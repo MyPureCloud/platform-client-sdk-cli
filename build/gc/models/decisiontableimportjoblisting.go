@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    ExportlistingMarshalled = false
+    DecisiontableimportjoblistingMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type ExportlistingDud struct { 
+type DecisiontableimportjoblistingDud struct { 
     
 
 
@@ -24,10 +24,10 @@ type ExportlistingDud struct {
 
 }
 
-// Exportlisting
-type Exportlisting struct { 
+// Decisiontableimportjoblisting
+type Decisiontableimportjoblisting struct { 
     // Entities
-    Entities []Contactsexport `json:"entities"`
+    Entities []Decisiontableimportjob `json:"entities"`
 
 
     // NextUri
@@ -44,8 +44,8 @@ type Exportlisting struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Exportlisting) String() string {
-     o.Entities = []Contactsexport{{}} 
+func (o *Decisiontableimportjoblisting) String() string {
+     o.Entities = []Decisiontableimportjob{{}} 
     
     
     
@@ -56,17 +56,17 @@ func (o *Exportlisting) String() string {
     return str
 }
 
-func (u *Exportlisting) MarshalJSON() ([]byte, error) {
-    type Alias Exportlisting
+func (u *Decisiontableimportjoblisting) MarshalJSON() ([]byte, error) {
+    type Alias Decisiontableimportjoblisting
 
-    if ExportlistingMarshalled {
+    if DecisiontableimportjoblistingMarshalled {
         return []byte("{}"), nil
     }
-    ExportlistingMarshalled = true
+    DecisiontableimportjoblistingMarshalled = true
 
     return json.Marshal(&struct {
         
-        Entities []Contactsexport `json:"entities"`
+        Entities []Decisiontableimportjob `json:"entities"`
         
         NextUri string `json:"nextUri"`
         
@@ -77,7 +77,7 @@ func (u *Exportlisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Contactsexport{{}},
+        Entities: []Decisiontableimportjob{{}},
         
 
 

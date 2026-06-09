@@ -20,11 +20,11 @@ type CaseassociationcreateDud struct {
 
 // Caseassociationcreate
 type Caseassociationcreate struct { 
-    // WorkitemId - The ID of the workitem to associate with the case.
+    // WorkitemId - The ID of the Workitem to associate with the Case.
     WorkitemId string `json:"workitemId"`
 
 
-    // ConversationId - The ID of the conversation to associate with the case.
+    // ConversationId - The ID of the Conversation to associate with the Case.
     ConversationId string `json:"conversationId"`
 
 }

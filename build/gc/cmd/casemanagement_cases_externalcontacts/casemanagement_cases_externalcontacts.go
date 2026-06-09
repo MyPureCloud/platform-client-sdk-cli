@@ -28,10 +28,10 @@ func init() {
 }
 
 func Cmdcasemanagement_cases_externalcontacts() *cobra.Command { 
-	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of cases that has been returned.")
-	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "", "Number of cases to return. Maximum of 200.")
-	utils.AddFlag(listCmd.Flags(), "string", "divisionIds", "", "Filter by Divisions")
-	utils.AddFlag(listCmd.Flags(), "[]string", "expands", "", "Which fields to expand. Valid values: caseplan")
+	utils.AddFlag(listCmd.Flags(), "string", "after", "", "Cursor pointing to the end of the previously returned page of Cases.")
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "", "Number of Cases to return (maximum 200).")
+	utils.AddFlag(listCmd.Flags(), "string", "divisionIds", "", "Filter by divisions.")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expands", "", "Fields to expand. Valid values: caseplan")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/casemanagement/cases/externalcontacts/{externalContactId}", utils.FormatPermissions([]string{ "caseManagement:caseExternalContact:view",  }), utils.GenerateDevCentreLink("GET", "Case Management", "/api/v2/casemanagement/cases/externalcontacts/{externalContactId}")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -57,8 +57,8 @@ func queryEscape(value string) string {
 
 var listCmd = &cobra.Command{
 	Use:   "list [externalContactId]",
-	Short: "Get a list of cases for provided external contact id.",
-	Long:  "Get a list of cases for provided external contact id.",
+	Short: "Get a list of Cases for an External Contact.",
+	Long:  "Get a list of Cases for an External Contact.",
 	Args:  utils.DetermineArgs([]string{ "externalContactId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

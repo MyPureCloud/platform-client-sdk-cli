@@ -727,6 +727,12 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1667,6 +1673,14 @@ type Viewfilter struct {
     SocialSourceTypes []string `json:"socialSourceTypes"`
 
 
+    // SocialFollowerRange - The follower range used to filter the view
+    SocialFollowerRange Socialnumericrange `json:"socialFollowerRange"`
+
+
+    // SocialVerificationStatus - Filter to indicate if the posts from verified user
+    SocialVerificationStatus bool `json:"socialVerificationStatus"`
+
+
     // SessionExpired - Filter to indicate for if session is expired
     SessionExpired bool `json:"sessionExpired"`
 
@@ -1924,6 +1938,8 @@ func (o *Viewfilter) String() string {
      o.SentimentTrendCategories = []string{""} 
      o.ContentModerationFlags = []string{""} 
      o.SocialSourceTypes = []string{""} 
+    
+    
     
     
      o.EngagementSources = []string{""} 
@@ -2413,6 +2429,10 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         ContentModerationFlags []string `json:"contentModerationFlags"`
         
         SocialSourceTypes []string `json:"socialSourceTypes"`
+        
+        SocialFollowerRange Socialnumericrange `json:"socialFollowerRange"`
+        
+        SocialVerificationStatus bool `json:"socialVerificationStatus"`
         
         SessionExpired bool `json:"sessionExpired"`
         
@@ -3449,6 +3469,12 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         SocialSourceTypes: []string{""},
+        
+
+
+        
+
+
         
 
 

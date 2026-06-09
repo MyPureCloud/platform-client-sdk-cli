@@ -68,6 +68,11 @@
       "description": "Add an access control policy for a specified resource target and subject, overwriting any existing policy"
     },
     {
+      "name": "list",
+      "path": "/api/v2/authorization/policies",
+      "description": "Get a page of access policies for an organization"
+    },
+    {
       "name": "get",
       "path": "/api/v2/authorization/policies/{policyId}",
       "description": "Get an access control policy with the specified policy ID"
@@ -86,11 +91,6 @@
       "name": "delete",
       "path": "/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}",
       "description": "Delete an access control policy"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/authorization/policies",
-      "description": "Get a page of access policies for an organization"
     },
     {
       "name": "list",
@@ -183,11 +183,6 @@
       "description": "Bulk-remove grants from a subject."
     },
     {
-      "name": "update",
-      "path": "/api/v2/authorization/roles/{roleId}/users/remove",
-      "description": "Removes the users from the role"
-    },
-    {
       "name": "list",
       "path": "/api/v2/authorization/roles/{roleId}/users",
       "description": "Get a list of the users in a specified role."
@@ -196,6 +191,11 @@
       "name": "update",
       "path": "/api/v2/authorization/roles/{roleId}/users/add",
       "description": "Sets the users for the role"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/authorization/roles/{roleId}/users/remove",
+      "description": "Removes the users from the role"
     },
     {
       "name": "list",

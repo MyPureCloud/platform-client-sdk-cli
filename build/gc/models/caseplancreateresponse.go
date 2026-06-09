@@ -99,7 +99,7 @@ type Caseplancreateresponse struct {
     DefaultTtlSeconds int `json:"defaultTtlSeconds"`
 
 
-    // DefaultCaseOwner - The default case owner for Cases created from the Caseplan.
+    // DefaultCaseOwner - The default Case owner for Cases created from the Caseplan.
     DefaultCaseOwner Userreference `json:"defaultCaseOwner"`
 
 
@@ -123,11 +123,11 @@ type Caseplancreateresponse struct {
     DatePublished time.Time `json:"datePublished"`
 
 
-    // ModifiedBy - The id of the User who modified the Caseplan.
+    // ModifiedBy - The ID of the User who modified the Caseplan.
     ModifiedBy Userreference `json:"modifiedBy"`
 
 
-    // CustomerIntent - The customer intent for the Cases created from the caseplan.
+    // CustomerIntent - The customer intent for Cases created from this Caseplan.
     CustomerIntent Customerintentreference `json:"customerIntent"`
 
 
@@ -135,11 +135,11 @@ type Caseplancreateresponse struct {
     VersionState string `json:"versionState"`
 
 
-    // DataSchemas - The schemas that define all data for cases from this Caseplan.
+    // DataSchemas - The schemas that define all data for Cases from this Caseplan.
     DataSchemas []Caseplandataschema `json:"dataSchemas"`
 
 
-    // IntakeSettings - The intake format when collecting data for a case from this caseplan.
+    // IntakeSettings - The intake format when collecting data for a Case from this Caseplan.
     IntakeSettings []Intakesetting `json:"intakeSettings"`
 
 

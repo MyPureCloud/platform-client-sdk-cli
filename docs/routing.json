@@ -160,7 +160,7 @@
     {
       "name": "list",
       "path": "/api/v2/routing/skills",
-      "description": "Get the list of routing skills."
+      "description": "Get the list of routing skills. View permission enforcement only applies to skills assigned to a division."
     },
     {
       "name": "create",
@@ -274,21 +274,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/routing/email/domains/{domainId}/mailfrom",
-      "description": "Get domain mail from settings"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/routing/email/domains/{domainId}/mailfrom",
-      "description": "Set domain mail from settings"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/routing/email/domains/{domainId}/testconnection",
-      "description": "Tests the custom SMTP server integration connection set on this ACD domain"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/routing/email/domains/{domainId}/dkim",
       "description": "Get domain dkim settings"
     },
@@ -308,6 +293,21 @@
       "description": "Restart domain verification"
     },
     {
+      "name": "get",
+      "path": "/api/v2/routing/email/domains/{domainId}/mailfrom",
+      "description": "Get domain mail from settings"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/email/domains/{domainId}/mailfrom",
+      "description": "Set domain mail from settings"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/email/domains/{domainId}/testconnection",
+      "description": "Tests the custom SMTP server integration connection set on this ACD domain"
+    },
+    {
       "name": "list",
       "path": "/api/v2/routing/email/domains",
       "description": "Get domains"
@@ -316,6 +316,31 @@
       "name": "create",
       "path": "/api/v2/routing/email/domains",
       "description": "Create a domain"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/routing/email/setting/{emailSettingId}",
+      "description": "Get email setting. Returns the specified email setting that defines settings for email"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/email/setting/{emailSettingId}",
+      "description": "Delete an email setting. Removes the email setting and its associated settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/routing/email/setting/{emailSettingId}",
+      "description": "Update an email setting. Modifies the settings for email setting"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/routing/email/setting",
+      "description": "Get a paged list of email routing settings."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/routing/email/setting",
+      "description": "Create a new email setting. Used to define various settings, that can then be associated with email domains"
     },
     {
       "name": "get",

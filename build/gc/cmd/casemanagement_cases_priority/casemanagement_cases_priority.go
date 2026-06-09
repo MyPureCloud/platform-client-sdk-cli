@@ -30,7 +30,7 @@ func init() {
 func Cmdcasemanagement_cases_priority() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/casemanagement/cases/{caseId}/priority", utils.FormatPermissions([]string{ "caseManagement:casePriority:edit",  }), utils.GenerateDevCentreLink("PATCH", "Case Management", "/api/v2/casemanagement/cases/{caseId}/priority")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "description" : "Priority",
+  "description" : "Priority update.",
   "content" : {
     "application/json" : {
       "schema" : {

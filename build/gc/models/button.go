@@ -19,6 +19,9 @@ type ButtonDud struct {
 
     
 
+
+    
+
 }
 
 // Button
@@ -34,10 +37,15 @@ type Button struct {
     // ContentText - The text label that will be displayed on the button
     ContentText string `json:"contentText"`
 
+
+    // Payload - A payload to uniquely identify a quickReply button in carousel
+    Payload string `json:"payload"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Button) String() string {
+    
     
     
     
@@ -63,8 +71,13 @@ func (u *Button) MarshalJSON() ([]byte, error) {
         Content string `json:"content"`
         
         ContentText string `json:"contentText"`
+        
+        Payload string `json:"payload"`
         *Alias
     }{
+
+        
+
 
         
 

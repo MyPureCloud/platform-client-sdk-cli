@@ -87,8 +87,10 @@ func Cmdworkforcemanagement_businessunits_weeks_schedules() *cobra.Command {
 }`)
 	workforcemanagement_businessunits_weeks_schedulesCmd.AddCommand(getCmd)
 
+	utils.AddFlag(listCmd.Flags(), "time.Time", "earliestWeekDate", "", "If weekId == `recent`, specify the earliest schedule start week date (inclusive) to include in the `recent` range, in yyyy-MM-dd format. Ignored if weekId != `recent`. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+	utils.AddFlag(listCmd.Flags(), "time.Time", "latestWeekDate", "", "If weekId == `recent`, specify the latest schedule start week date (inclusive) to include in the `recent` range, in yyyy-MM-dd format. Ignored if weekId != `recent`. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
 	utils.AddFlag(listCmd.Flags(), "bool", "includeOnlyPublished", "", "includeOnlyPublished")
-	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "expand Valid values: forecast.description")
+	utils.AddFlag(listCmd.Flags(), "string", "expand", "", "expand Valid values: shortTermForecast.description")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules", utils.FormatPermissions([]string{ "wfm:schedule:view", "wfm:publishedSchedule:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -401,6 +403,14 @@ var listCmd = &cobra.Command{
 		weekId, args := args[0], args[1:]
 		path = strings.Replace(path, "{weekId}", fmt.Sprintf("%v", weekId), -1)
 
+		earliestWeekDate := utils.GetFlag(cmd.Flags(), "time.Time", "earliestWeekDate")
+		if earliestWeekDate != "" {
+			queryParams["earliestWeekDate"] = earliestWeekDate
+		}
+		latestWeekDate := utils.GetFlag(cmd.Flags(), "time.Time", "latestWeekDate")
+		if latestWeekDate != "" {
+			queryParams["latestWeekDate"] = latestWeekDate
+		}
 		includeOnlyPublished := utils.GetFlag(cmd.Flags(), "bool", "includeOnlyPublished")
 		if includeOnlyPublished != "" {
 			queryParams["includeOnlyPublished"] = includeOnlyPublished

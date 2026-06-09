@@ -79,11 +79,11 @@ type Stepplan struct {
     ModifiedBy Userreference `json:"modifiedBy"`
 
 
-    // ActivityType - The activityType of the Stepplan.
+    // ActivityType - The activity type of the Stepplan.
     ActivityType string `json:"activityType"`
 
 
-    // WorkitemSettings - The workitemSettings of the Stepplan.
+    // WorkitemSettings - The Workitem settings of the Stepplan.
     WorkitemSettings Workitemsettingsresponse `json:"workitemSettings"`
 
 

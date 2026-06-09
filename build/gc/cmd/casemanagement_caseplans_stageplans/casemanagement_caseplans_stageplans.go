@@ -30,7 +30,7 @@ func init() {
 func Cmdcasemanagement_caseplans_stageplans() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}", utils.FormatPermissions([]string{ "caseManagement:stageplan:edit",  }), utils.GenerateDevCentreLink("PATCH", "Case Management", "/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "description" : "Stageplan",
+  "description" : "Stageplan update.",
   "content" : {
     "application/json" : {
       "schema" : {

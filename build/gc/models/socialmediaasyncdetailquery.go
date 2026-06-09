@@ -20,9 +20,6 @@ type SocialmediaasyncdetailqueryDud struct {
     
 
 
-    TopicIds []string `json:"topicIds"`
-
-
     
 
 
@@ -42,9 +39,6 @@ type Socialmediaasyncdetailquery struct {
 
     // Filter - Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters
     Filter Socialmediaqueryfilter `json:"filter"`
-
-
-    
 
 
     // PageSize - The number of results per page
@@ -91,9 +85,6 @@ func (u *Socialmediaasyncdetailquery) MarshalJSON() ([]byte, error) {
         Order string `json:"order"`
         *Alias
     }{
-
-        
-
 
         
 

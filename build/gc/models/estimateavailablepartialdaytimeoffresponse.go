@@ -23,6 +23,9 @@ type EstimateavailablepartialdaytimeoffresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Estimateavailablepartialdaytimeoffresponse
@@ -42,10 +45,15 @@ type Estimateavailablepartialdaytimeoffresponse struct {
     // Flexible - Whether there is flexibility for a user to choose different hours than the system estimated
     Flexible bool `json:"flexible"`
 
+
+    // OverrideDateType - The override date type, if the partial day request overlaps with an override date
+    OverrideDateType string `json:"overrideDateType"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Estimateavailablepartialdaytimeoffresponse) String() string {
+    
     
     
     
@@ -74,8 +82,13 @@ func (u *Estimateavailablepartialdaytimeoffresponse) MarshalJSON() ([]byte, erro
         PayableMinutes int `json:"payableMinutes"`
         
         Flexible bool `json:"flexible"`
+        
+        OverrideDateType string `json:"overrideDateType"`
         *Alias
     }{
+
+        
+
 
         
 

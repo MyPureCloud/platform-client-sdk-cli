@@ -30,7 +30,7 @@ func init() {
 func Cmdcasemanagement_caseplans() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/casemanagement/caseplans", utils.FormatPermissions([]string{ "caseManagement:caseplan:add",  }), utils.GenerateDevCentreLink("POST", "Case Management", "/api/v2/casemanagement/caseplans")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "description" : "Caseplan",
+  "description" : "Caseplan create request.",
   "content" : {
     "application/json" : {
       "schema" : {
@@ -86,10 +86,10 @@ func Cmdcasemanagement_caseplans() *cobra.Command {
 }`)
 	casemanagement_caseplansCmd.AddCommand(getCmd)
 
-	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of caseplans that has been returned.")
-	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "", "Number of caseplans to return. Maximum of 200.")
-	utils.AddFlag(listCmd.Flags(), "string", "customerIntentId", "", "Filter by Customer Intent.")
-	utils.AddFlag(listCmd.Flags(), "string", "divisionIds", "", "Filter by Divisions.")
+	utils.AddFlag(listCmd.Flags(), "string", "after", "", "Cursor that points to the end of the previously returned set of Caseplans.")
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "", "Number of Caseplans to return. Maximum is 200.")
+	utils.AddFlag(listCmd.Flags(), "string", "customerIntentId", "", "Filter by customer intent.")
+	utils.AddFlag(listCmd.Flags(), "string", "divisionIds", "", "Filter by divisions.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/casemanagement/caseplans", utils.FormatPermissions([]string{ "caseManagement:caseplan:view",  }), utils.GenerateDevCentreLink("GET", "Case Management", "/api/v2/casemanagement/caseplans")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -108,7 +108,7 @@ func Cmdcasemanagement_caseplans() *cobra.Command {
 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/casemanagement/caseplans/{caseplanId}", utils.FormatPermissions([]string{ "caseManagement:caseplan:edit",  }), utils.GenerateDevCentreLink("PATCH", "Case Management", "/api/v2/casemanagement/caseplans/{caseplanId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
-  "description" : "Caseplan",
+  "description" : "Caseplan update.",
   "content" : {
     "application/json" : {
       "schema" : {

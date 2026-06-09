@@ -18,9 +18,6 @@ type ContactsexportDud struct {
     
 
 
-    
-
-
     CreatedBy Domainentityref `json:"createdBy"`
 
 
@@ -31,6 +28,9 @@ type ContactsexportDud struct {
 
 
     DownloadUrl string `json:"downloadUrl"`
+
+
+    
 
 
     SelfUri string `json:"selfUri"`
@@ -46,20 +46,20 @@ type Contactsexport struct {
     DivisionIds []string `json:"divisionIds"`
 
 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
     // QueryConditions - Query conditions to apply on export
     QueryConditions Contactsexportqueryconditions `json:"queryConditions"`
-
-
-    
-
-
-    
-
-
-    
-
-
-    
 
 
     

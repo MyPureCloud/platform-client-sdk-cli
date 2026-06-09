@@ -30,7 +30,7 @@ func init() {
 func Cmdcasemanagement_caseplans_intakesettings() *cobra.Command { 
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/casemanagement/caseplans/{caseplanId}/intakesettings", utils.FormatPermissions([]string{ "caseManagement:caseplanIntakeSettings:edit",  }), utils.GenerateDevCentreLink("PUT", "Case Management", "/api/v2/casemanagement/caseplans/{caseplanId}/intakesettings")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", `{
-  "description" : "Intake Settings",
+  "description" : "Intake settings update.",
   "content" : {
     "application/json" : {
       "schema" : {

@@ -43,7 +43,7 @@ type CaseassociationDud struct {
 
 }
 
-// Caseassociation - Represents an association between a case and an interaction
+// Caseassociation - Represents an association between a Case and an interaction.
 type Caseassociation struct { 
     // Id - The ID of the association.
     Id string `json:"id"`
@@ -53,34 +53,34 @@ type Caseassociation struct {
     Name string `json:"name"`
 
 
-    // AssociationType - Association type.
+    // AssociationType - The association type.
     AssociationType string `json:"associationType"`
 
 
-    // DateAssociated - Interaction association date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    // DateAssociated - The date of the interaction association. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DateAssociated time.Time `json:"dateAssociated"`
 
 
-    // Workitem - Associated workitem ID.
+    // Workitem - The associated Workitem.
     Workitem Workitemreference `json:"workitem"`
 
 
-    // Conversation - Associated conversation ID.
+    // Conversation - The associated Conversation.
     Conversation Conversationreference `json:"conversation"`
 
 
-    // Stage - The stage related to this association.
+    // Stage - The Stage related to this association.
     Stage Stagereference `json:"stage"`
 
 
-    // Step - The step related to this association.
+    // Step - The Step related to this association.
     Step Stepreference `json:"step"`
 
 
     
 
 
-    // VarCase - Case ID
+    // VarCase - The Case for this association.
     VarCase Casereference `json:"case"`
 
 }

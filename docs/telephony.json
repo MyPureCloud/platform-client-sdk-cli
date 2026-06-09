@@ -38,6 +38,51 @@
       "description": "Updates the agent's own greetings."
     },
     {
+      "name": "list",
+      "path": "/api/v2/telephony/numbers/routing",
+      "description": "Get Number Routings by organizationId"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/numbers/routing",
+      "description": "Update the routing of numbers for one or multiple organizations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/numbers/routing/reset",
+      "description": "Reset routing for organization"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/numbers/routing/all",
+      "description": "Re-route all numbers on an organization"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/organization/link",
+      "description": "Get organization links"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/organization/link",
+      "description": "Create a link with an organization"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/telephony/organization/link/{targetOrganizationId}",
+      "description": "Delete a link"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/organization/link/approve/{requestingOrganizationId}",
+      "description": "Approving a requested link"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/organization/link/regions",
+      "description": "Get all the replica regions by primary region"
+    },
+    {
       "name": "get",
       "path": "/api/v2/telephony/sipmessages/conversations/{conversationId}/headers",
       "description": "Get SIP headers."
@@ -669,8 +714,8 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/telephony/siptraces/download/{downloadId}",
-      "description": "Get signed S3 URL for a pcap download"
+      "path": "/api/v2/telephony/siptraces",
+      "description": "Fetch SIP metadata"
     },
     {
       "name": "create",
@@ -679,18 +724,18 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/telephony/siptraces",
-      "description": "Fetch SIP metadata"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}",
-      "description": "Get media endpoint statistics event."
+      "path": "/api/v2/telephony/siptraces/download/{downloadId}",
+      "description": "Get signed S3 URL for a pcap download"
     },
     {
       "name": "get",
       "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}",
       "description": "Get media endpoint statistics events."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}",
+      "description": "Get media endpoint statistics event."
     }
   ]
 }

@@ -38,11 +38,11 @@ type CasecreateDud struct {
 
 // Casecreate
 type Casecreate struct { 
-    // CaseplanId - The ID of the caseplan to create the case from.
+    // CaseplanId - The ID of the Caseplan used to create the Case.
     CaseplanId string `json:"caseplanId"`
 
 
-    // OwnerId - The ID of the owner of the case.
+    // OwnerId - The ID of the owner of the Case.
     OwnerId string `json:"ownerId"`
 
 
@@ -54,15 +54,15 @@ type Casecreate struct {
     ExternalContactId string `json:"externalContactId"`
 
 
-    // ConversationId - The ID of conversation associated with the Case.
+    // ConversationId - The ID of the Conversation associated with the Case.
     ConversationId string `json:"conversationId"`
 
 
-    // WorkitemId - The ID of the workitem associated with the Case.
+    // WorkitemId - The ID of the Workitem associated with the Case.
     WorkitemId string `json:"workitemId"`
 
 
-    // TtlSeconds - The epoch timestamp in seconds specifying the time-to-live for the lifetime of the Case. Can not be greater than 365 days from the current time.
+    // TtlSeconds - Epoch timestamp in seconds for the Case time-to-live. Cannot be more than 365 days after the current time.
     TtlSeconds int `json:"ttlSeconds"`
 
 

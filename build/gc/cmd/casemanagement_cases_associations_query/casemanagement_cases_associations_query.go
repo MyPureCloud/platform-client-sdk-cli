@@ -30,7 +30,7 @@ func init() {
 func Cmdcasemanagement_cases_associations_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/casemanagement/cases/associations/query", utils.FormatPermissions([]string{ "caseManagement:caseAssociation:view",  }), utils.GenerateDevCentreLink("POST", "Case Management", "/api/v2/casemanagement/cases/associations/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "description" : "Case Association",
+  "description" : "Case association query request.",
   "content" : {
     "application/json" : {
       "schema" : {
@@ -38,7 +38,7 @@ func Cmdcasemanagement_cases_associations_query() *cobra.Command {
       }
     }
   },
-  "required" : false
+  "required" : true
 }`)
 	
 	
@@ -63,8 +63,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Query for case associations",
-	Long:  "Query for case associations",
+	Short: "Query for Case associations by interaction.",
+	Long:  "Query for Case associations by interaction.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

@@ -93,7 +93,7 @@ type Caseplan struct {
     DefaultTtlSeconds int `json:"defaultTtlSeconds"`
 
 
-    // DefaultCaseOwner - The default case owner for Cases created from the Caseplan.
+    // DefaultCaseOwner - The default Case owner for Cases created from the Caseplan.
     DefaultCaseOwner Userreference `json:"defaultCaseOwner"`
 
 
@@ -117,11 +117,11 @@ type Caseplan struct {
     DatePublished time.Time `json:"datePublished"`
 
 
-    // ModifiedBy - The id of the User who modified the Caseplan.
+    // ModifiedBy - The ID of the User who modified the Caseplan.
     ModifiedBy Userreference `json:"modifiedBy"`
 
 
-    // CustomerIntent - The customer intent for the Cases created from the caseplan.
+    // CustomerIntent - The customer intent for Cases created from this Caseplan.
     CustomerIntent Customerintentreference `json:"customerIntent"`
 
 

@@ -20,7 +20,7 @@ type CaseexternalcontactreferenceDud struct {
 
 // Caseexternalcontactreference
 type Caseexternalcontactreference struct { 
-    // Id - The globally unique identifier for the object.
+    // Id - The globally unique identifier for the External Contact.
     Id string `json:"id"`
 
 

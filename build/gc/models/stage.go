@@ -93,7 +93,7 @@ type Stage struct {
     
 
 
-    // VarCase - The parent case of the Stage.
+    // VarCase - The parent Case of the Stage.
     VarCase Casereference `json:"case"`
 
 }

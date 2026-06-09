@@ -39,6 +39,9 @@ type KnowledgesettingsresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -69,6 +72,10 @@ type Knowledgesettingsresponse struct {
     Stateful bool `json:"stateful"`
 
 
+    // Filter - Composite tag filter of search results.
+    Filter V3sourcetagfilter `json:"filter"`
+
+
     // DateCreated - Knowledge setting created date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DateCreated time.Time `json:"dateCreated"`
 
@@ -91,6 +98,7 @@ func (o *Knowledgesettingsresponse) String() string {
     
     
      o.Sources = []V3sourceref{{}} 
+    
     
     
     
@@ -125,6 +133,8 @@ func (u *Knowledgesettingsresponse) MarshalJSON() ([]byte, error) {
         
         Stateful bool `json:"stateful"`
         
+        Filter V3sourcetagfilter `json:"filter"`
+        
         DateCreated time.Time `json:"dateCreated"`
         
         DateModified time.Time `json:"dateModified"`
@@ -144,6 +154,9 @@ func (u *Knowledgesettingsresponse) MarshalJSON() ([]byte, error) {
 
         
         Sources: []V3sourceref{{}},
+        
+
+
         
 
 

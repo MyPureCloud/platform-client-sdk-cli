@@ -17,7 +17,7 @@ type WorkitemsettingsresponseDud struct {
 
 // Workitemsettingsresponse
 type Workitemsettingsresponse struct { 
-    // Worktype - The worktype information for the workitem settings.
+    // Worktype - The Worktype information for the Workitem settings.
     Worktype Stepplansworktypereference `json:"worktype"`
 
 }

@@ -173,11 +173,6 @@
       "description": "Get the user associated with external identifier."
     },
     {
-      "name": "getexternalidforuserauthority",
-      "path": "/api/v2/users/{userId}/externalid/{authorityName}",
-      "description": "Get the external identifier of user for an authority."
-    },
-    {
       "name": "getexternalidsforuser",
       "path": "/api/v2/users/{userId}/externalid",
       "description": "Get the external identifiers for a user."
@@ -191,6 +186,11 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}",
       "description": "Delete the external identifier for user."
+    },
+    {
+      "name": "getexternalidforuserauthority",
+      "path": "/api/v2/users/{userId}/externalid/{authorityName}",
+      "description": "Get the external identifier of user for an authority."
     },
     {
       "name": "create",
@@ -323,14 +323,14 @@
       "description": "Get station information for self"
     },
     {
-      "name": "delete",
-      "path": "/api/v2/users/stations/me/associatedstation",
-      "description": "Clear self associated station"
-    },
-    {
       "name": "update",
       "path": "/api/v2/users/stations/me/associatedstation/{stationId}",
       "description": "Set self associated station"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/stations/me/associatedstation",
+      "description": "Clear self associated station"
     },
     {
       "name": "list",
@@ -353,14 +353,14 @@
       "description": "Get station information for user"
     },
     {
-      "name": "delete",
-      "path": "/api/v2/users/{userId}/station/associatedstation",
-      "description": "Clear associated station"
-    },
-    {
       "name": "update",
       "path": "/api/v2/users/{userId}/station/associatedstation/{stationId}",
       "description": "Set associated station"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/station/associatedstation",
+      "description": "Clear associated station"
     },
     {
       "name": "update",
@@ -423,16 +423,6 @@
       "description": "Get the list of core types enabled for a specific namespace."
     },
     {
-      "name": "update",
-      "path": "/api/v2/users/{userId}/customattributes",
-      "description": "Create or update a single custom attributes record. Updating replaces all data with the provided fields."
-    },
-    {
-      "name": "patch",
-      "path": "/api/v2/users/{userId}/customattributes",
-      "description": "Update a single custom attributes record by amending the data with only the provided fields."
-    },
-    {
       "name": "get",
       "path": "/api/v2/users/{userId}/customattributes/{schemaId}",
       "description": "Get custom attributes by schema id"
@@ -441,6 +431,16 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/customattributes/{schemaId}",
       "description": "Delete a custom attributes record."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/customattributes",
+      "description": "Create or update a single custom attributes record. Updating replaces all data with the provided fields."
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/users/{userId}/customattributes",
+      "description": "Update a single custom attributes record by amending the data with only the provided fields."
     },
     {
       "name": "get",
@@ -456,11 +456,6 @@
       "name": "get",
       "path": "/api/v2/users/customattributes/schemas/limits",
       "description": "Get quantitative limits on schemas"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/users/customattributes/schemas/{schemaId}/versions/{versionId}",
-      "description": "Get a specific version of a schema"
     },
     {
       "name": "get",
@@ -483,6 +478,11 @@
       "description": "Get all versions of a user schema"
     },
     {
+      "name": "get",
+      "path": "/api/v2/users/customattributes/schemas/{schemaId}/versions/{versionId}",
+      "description": "Get a specific version of a schema"
+    },
+    {
       "name": "list",
       "path": "/api/v2/users/customattributes/schemas",
       "description": "Get a list of schemas."
@@ -493,9 +493,9 @@
       "description": "Create a schema"
     },
     {
-      "name": "list",
-      "path": "/api/v2/users/development/activities",
-      "description": "Get list of Development Activities"
+      "name": "get",
+      "path": "/api/v2/users/development/activities/{activityId}",
+      "description": "Get a Development Activity"
     },
     {
       "name": "list",
@@ -503,9 +503,9 @@
       "description": "Get list of Development Activities for current user"
     },
     {
-      "name": "get",
-      "path": "/api/v2/users/development/activities/{activityId}",
-      "description": "Get a Development Activity"
+      "name": "list",
+      "path": "/api/v2/users/development/activities",
+      "description": "Get list of Development Activities"
     },
     {
       "name": "create",
@@ -513,14 +513,14 @@
       "description": "Retrieve aggregated development activity data"
     },
     {
-      "name": "list",
-      "path": "/api/v2/users/rules/{ruleId}/dependents",
-      "description": "Get dependents for a users rule"
-    },
-    {
       "name": "get",
       "path": "/api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId}",
       "description": "Get dependent of a users rule"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/rules/{ruleId}/dependents",
+      "description": "Get dependents for a users rule"
     },
     {
       "name": "get",
@@ -538,16 +538,6 @@
       "description": "Update an existing users rule"
     },
     {
-      "name": "create",
-      "path": "/api/v2/users/rules/query",
-      "description": "Query the result of a users rule"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/users/rules/settings/{ruleType}",
-      "description": "Get the settings for a specific users rule type"
-    },
-    {
       "name": "list",
       "path": "/api/v2/users/rules",
       "description": "Get the list of users rules"
@@ -556,6 +546,16 @@
       "name": "create",
       "path": "/api/v2/users/rules",
       "description": "Create a new rule"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/rules/query",
+      "description": "Query the result of a users rule"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/rules/settings/{ruleType}",
+      "description": "Get the settings for a specific users rule type"
     },
     {
       "name": "create",

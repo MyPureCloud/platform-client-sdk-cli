@@ -10,10 +10,22 @@ var (
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type StatusinfoDud struct { }
+type StatusinfoDud struct { 
+    Code string `json:"code"`
+
+
+    Message string `json:"message"`
+
+}
 
 // Statusinfo
-type Statusinfo struct { }
+type Statusinfo struct { 
+    
+
+
+    
+
+}
 
 // String returns a JSON representation of the model
 func (o *Statusinfo) String() string {
@@ -35,6 +47,12 @@ func (u *Statusinfo) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
+
+        
+
         Alias: (*Alias)(u),
     })
 }

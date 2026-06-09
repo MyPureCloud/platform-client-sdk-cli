@@ -46,6 +46,9 @@ type BuupdatetimeoffplanrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Buupdatetimeoffplanrequest
@@ -72,6 +75,10 @@ type Buupdatetimeoffplanrequest struct {
 
     // RestrictedActivityCodeIds - The IDs of non time-off activity codes to check for conflicts in case the auto approval rule specifies checking activity codes. If these activity codes are present in schedule and overlap with the time-off request duration, the request will not be auto approved
     RestrictedActivityCodeIds Setwrapperstring `json:"restrictedActivityCodeIds"`
+
+
+    // OverrideDates - A list of override dates to check for conflicts with time-off request dates. If a conflict is found, the request will not be auto-approved
+    OverrideDates Listwrapperoverridedate `json:"overrideDates"`
 
 
     // HrisTimeOffType - Time-off type, if this time-off plan is associated with the integration
@@ -113,6 +120,7 @@ func (o *Buupdatetimeoffplanrequest) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -142,6 +150,8 @@ func (u *Buupdatetimeoffplanrequest) MarshalJSON() ([]byte, error) {
         
         RestrictedActivityCodeIds Setwrapperstring `json:"restrictedActivityCodeIds"`
         
+        OverrideDates Listwrapperoverridedate `json:"overrideDates"`
+        
         HrisTimeOffType Valuewrapperhristimeofftype `json:"hrisTimeOffType"`
         
         Enabled bool `json:"enabled"`
@@ -155,6 +165,9 @@ func (u *Buupdatetimeoffplanrequest) MarshalJSON() ([]byte, error) {
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -30,7 +30,7 @@ type Caseassociationquery struct {
     PageSize int `json:"pageSize"`
 
 
-    // After - The cursor that points to the end of the set of entities that has been returned.
+    // After - Cursor pointing to the end of the previously returned page of associations.
     After string `json:"after"`
 
 
@@ -38,7 +38,7 @@ type Caseassociationquery struct {
     WorkitemId string `json:"workitemId"`
 
 
-    // ConversationId - The conversation ID to query by.
+    // ConversationId - The Conversation ID to query by.
     ConversationId string `json:"conversationId"`
 
 }

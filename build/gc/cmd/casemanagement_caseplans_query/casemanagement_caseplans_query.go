@@ -30,7 +30,7 @@ func init() {
 func Cmdcasemanagement_caseplans_query() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/casemanagement/caseplans/query", utils.FormatPermissions([]string{ "caseManagement:caseplan:view",  }), utils.GenerateDevCentreLink("POST", "Case Management", "/api/v2/casemanagement/caseplans/query")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
-  "description" : "CaseplanQueryRequest",
+  "description" : "Caseplan query request.",
   "content" : {
     "application/json" : {
       "schema" : {
@@ -63,8 +63,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Query for caseplans",
-	Long:  "Query for caseplans",
+	Short: "Query for Caseplans.",
+	Long:  "Query for Caseplans.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

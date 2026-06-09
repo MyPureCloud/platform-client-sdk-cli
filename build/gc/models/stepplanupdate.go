@@ -34,11 +34,11 @@ type Stepplanupdate struct {
     Description string `json:"description"`
 
 
-    // WorkitemSettings - The workitemSettings of the Stepplan.
+    // WorkitemSettings - The Workitem settings of the Stepplan.
     WorkitemSettings Workitemsettings `json:"workitemSettings"`
 
 
-    // ActivityType - The activityType of the Stepplan.
+    // ActivityType - The activity type of the Stepplan.
     ActivityType string `json:"activityType"`
 
 }

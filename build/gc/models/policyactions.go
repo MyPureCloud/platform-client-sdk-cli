@@ -90,7 +90,7 @@ type Policyactions struct {
     InitiateScreenRecording Initiatescreenrecording `json:"initiateScreenRecording"`
 
 
-    // MediaTranscriptions
+    // MediaTranscriptions - Deprecated. The Voci and Call Journey transcription integrations are no longer supported.
     MediaTranscriptions []Mediatranscription `json:"mediaTranscriptions"`
 
 

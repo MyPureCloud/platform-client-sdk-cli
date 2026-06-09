@@ -25,6 +25,9 @@ type KnowledgesearchpreviewrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Knowledgesearchpreviewrequest
@@ -48,6 +51,10 @@ type Knowledgesearchpreviewrequest struct {
     // ConversationTurns - List of conversation turns to use for stateful search.
     ConversationTurns []Knowledgeconversationturn `json:"conversationTurns"`
 
+
+    // Filter - Composite tag filter applied to the search preview.
+    Filter V3sourcetagfilter `json:"filter"`
+
 }
 
 // String returns a JSON representation of the model
@@ -57,6 +64,7 @@ func (o *Knowledgesearchpreviewrequest) String() string {
     
     
      o.ConversationTurns = []Knowledgeconversationturn{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -83,6 +91,8 @@ func (u *Knowledgesearchpreviewrequest) MarshalJSON() ([]byte, error) {
         Stateful bool `json:"stateful"`
         
         ConversationTurns []Knowledgeconversationturn `json:"conversationTurns"`
+        
+        Filter V3sourcetagfilter `json:"filter"`
         *Alias
     }{
 
@@ -102,6 +112,9 @@ func (u *Knowledgesearchpreviewrequest) MarshalJSON() ([]byte, error) {
 
         
         ConversationTurns: []Knowledgeconversationturn{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

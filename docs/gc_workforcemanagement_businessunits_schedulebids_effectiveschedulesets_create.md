@@ -1,15 +1,22 @@
-## gc externalcontacts contacts exports
+## gc workforcemanagement businessunits schedulebids effectiveschedulesets create
 
-/api/v2/externalcontacts/contacts/exports
+Fetch all the agents with effective schedule set for the given BU
 
 ### Synopsis
 
-/api/v2/externalcontacts/contacts/exports
+Fetch all the agents with effective schedule set for the given BU
+
+```
+gc workforcemanagement businessunits schedulebids effectiveschedulesets create [businessUnitId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for exports
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +36,6 @@
 
 ### SEE ALSO
 
-* [gc externalcontacts contacts](gc_externalcontacts_contacts.html)	 - /api/v2/externalcontacts/contacts
-* [gc externalcontacts contacts exports create](gc_externalcontacts_contacts_exports_create.html)	 - Create bulk export
-* [gc externalcontacts contacts exports get](gc_externalcontacts_contacts_exports_get.html)	 - Get export for exportId
-* [gc externalcontacts contacts exports list](gc_externalcontacts_contacts_exports_list.html)	 - List contact exports for organization
+* [gc workforcemanagement businessunits schedulebids effectiveschedulesets](gc_workforcemanagement_businessunits_schedulebids_effectiveschedulesets.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/effectiveschedulesets
 
 

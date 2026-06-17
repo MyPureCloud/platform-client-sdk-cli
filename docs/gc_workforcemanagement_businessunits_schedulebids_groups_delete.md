@@ -1,15 +1,19 @@
-## gc externalcontacts contacts exports
+## gc workforcemanagement businessunits schedulebids groups delete
 
-/api/v2/externalcontacts/contacts/exports
+Delete a schedule bid group by bid group Id
 
 ### Synopsis
 
-/api/v2/externalcontacts/contacts/exports
+Delete a schedule bid group by bid group Id
+
+```
+gc workforcemanagement businessunits schedulebids groups delete [businessUnitId] [bidId] [bidGroupId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for exports
+  -h, --help   help for delete
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +33,6 @@
 
 ### SEE ALSO
 
-* [gc externalcontacts contacts](gc_externalcontacts_contacts.html)	 - /api/v2/externalcontacts/contacts
-* [gc externalcontacts contacts exports create](gc_externalcontacts_contacts_exports_create.html)	 - Create bulk export
-* [gc externalcontacts contacts exports get](gc_externalcontacts_contacts_exports_get.html)	 - Get export for exportId
-* [gc externalcontacts contacts exports list](gc_externalcontacts_contacts_exports_list.html)	 - List contact exports for organization
+* [gc workforcemanagement businessunits schedulebids groups](gc_workforcemanagement_businessunits_schedulebids_groups.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups
 
 

@@ -47,6 +47,7 @@
 * [gc flows milestones](gc_flows_milestones.html)	 - /api/v2/flows/milestones
 * [gc flows outcomes](gc_flows_outcomes.html)	 - /api/v2/flows/outcomes
 * [gc flows update](gc_flows_update.html)	 - Update flow
+* [gc flows validate](gc_flows_validate.html)	 - /api/v2/flows/validate
 * [gc flows versions](gc_flows_versions.html)	 - /api/v2/flows/{flowId}/versions
 
 

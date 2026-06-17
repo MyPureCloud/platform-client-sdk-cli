@@ -1,15 +1,19 @@
-## gc externalcontacts contacts exports
+## gc workforcemanagement schedulebids preference get
 
-/api/v2/externalcontacts/contacts/exports
+Gets an agent`s schedule bidding preference
 
 ### Synopsis
 
-/api/v2/externalcontacts/contacts/exports
+Gets an agent`s schedule bidding preference
+
+```
+gc workforcemanagement schedulebids preference get [bidId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for exports
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +33,6 @@
 
 ### SEE ALSO
 
-* [gc externalcontacts contacts](gc_externalcontacts_contacts.html)	 - /api/v2/externalcontacts/contacts
-* [gc externalcontacts contacts exports create](gc_externalcontacts_contacts_exports_create.html)	 - Create bulk export
-* [gc externalcontacts contacts exports get](gc_externalcontacts_contacts_exports_get.html)	 - Get export for exportId
-* [gc externalcontacts contacts exports list](gc_externalcontacts_contacts_exports_list.html)	 - List contact exports for organization
+* [gc workforcemanagement schedulebids preference](gc_workforcemanagement_schedulebids_preference.html)	 - /api/v2/workforcemanagement/schedulebids/{bidId}/preference
 
 

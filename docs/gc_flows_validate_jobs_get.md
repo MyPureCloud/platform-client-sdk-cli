@@ -1,15 +1,20 @@
-## gc externalcontacts contacts exports
+## gc flows validate jobs get
 
-/api/v2/externalcontacts/contacts/exports
+Fetch Architect Validate Job Status
 
 ### Synopsis
 
-/api/v2/externalcontacts/contacts/exports
+Fetch Architect Validate Job Status
+
+```
+gc flows validate jobs get [jobId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for exports
+      --expand strings   Which fields, if any, to expand. Valid values: messages
+  -h, --help             help for get
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +34,6 @@
 
 ### SEE ALSO
 
-* [gc externalcontacts contacts](gc_externalcontacts_contacts.html)	 - /api/v2/externalcontacts/contacts
-* [gc externalcontacts contacts exports create](gc_externalcontacts_contacts_exports_create.html)	 - Create bulk export
-* [gc externalcontacts contacts exports get](gc_externalcontacts_contacts_exports_get.html)	 - Get export for exportId
-* [gc externalcontacts contacts exports list](gc_externalcontacts_contacts_exports_list.html)	 - List contact exports for organization
+* [gc flows validate jobs](gc_flows_validate_jobs.html)	 - /api/v2/flows/validate/jobs
 
 

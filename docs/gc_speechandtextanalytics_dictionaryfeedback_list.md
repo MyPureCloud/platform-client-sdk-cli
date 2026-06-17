@@ -18,7 +18,7 @@ gc speechandtextanalytics dictionaryfeedback list [flags]
       --filtercondition string       Filter list command output based on a given condition or regular expression
   -h, --help                         help for list
       --nextPage string              The key for listing the next page
-      --pageSize string              The page size for the listing (default "500")
+      --pageSize string              The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary. (default "500")
   -s, --stream                       Paginate and stream data as it is being processed leaving page information intact
       --transcriptionEngine string   Filter by transcription engine, If not provided, all transcription engines will be considered Valid values: Genesys, GenesysExtended
 ```

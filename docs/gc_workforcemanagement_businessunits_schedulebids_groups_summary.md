@@ -1,15 +1,15 @@
-## gc externalcontacts contacts exports
+## gc workforcemanagement businessunits schedulebids groups summary
 
-/api/v2/externalcontacts/contacts/exports
+/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/summary
 
 ### Synopsis
 
-/api/v2/externalcontacts/contacts/exports
+/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/summary
 
 ### Options
 
 ```
-  -h, --help   help for exports
+  -h, --help   help for summary
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +29,7 @@
 
 ### SEE ALSO
 
-* [gc externalcontacts contacts](gc_externalcontacts_contacts.html)	 - /api/v2/externalcontacts/contacts
-* [gc externalcontacts contacts exports create](gc_externalcontacts_contacts_exports_create.html)	 - Create bulk export
-* [gc externalcontacts contacts exports get](gc_externalcontacts_contacts_exports_get.html)	 - Get export for exportId
-* [gc externalcontacts contacts exports list](gc_externalcontacts_contacts_exports_list.html)	 - List contact exports for organization
+* [gc workforcemanagement businessunits schedulebids groups](gc_workforcemanagement_businessunits_schedulebids_groups.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups
+* [gc workforcemanagement businessunits schedulebids groups summary get](gc_workforcemanagement_businessunits_schedulebids_groups_summary_get.html)	 - Get summary of bid groups that belong to a schedule bid
 
 

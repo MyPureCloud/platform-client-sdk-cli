@@ -1,15 +1,15 @@
-## gc externalcontacts contacts exports
+## gc workforcemanagement schedulebids
 
-/api/v2/externalcontacts/contacts/exports
+/api/v2/workforcemanagement/schedulebids
 
 ### Synopsis
 
-/api/v2/externalcontacts/contacts/exports
+/api/v2/workforcemanagement/schedulebids
 
 ### Options
 
 ```
-  -h, --help   help for exports
+  -h, --help   help for schedulebids
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +29,9 @@
 
 ### SEE ALSO
 
-* [gc externalcontacts contacts](gc_externalcontacts_contacts.html)	 - /api/v2/externalcontacts/contacts
-* [gc externalcontacts contacts exports create](gc_externalcontacts_contacts_exports_create.html)	 - Create bulk export
-* [gc externalcontacts contacts exports get](gc_externalcontacts_contacts_exports_get.html)	 - Get export for exportId
-* [gc externalcontacts contacts exports list](gc_externalcontacts_contacts_exports_list.html)	 - List contact exports for organization
+* [gc workforcemanagement](gc_workforcemanagement.html)	 - /api/v2/workforcemanagement
+* [gc workforcemanagement schedulebids get](gc_workforcemanagement_schedulebids_get.html)	 - Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently
+* [gc workforcemanagement schedulebids preference](gc_workforcemanagement_schedulebids_preference.html)	 - /api/v2/workforcemanagement/schedulebids/{bidId}/preference
+* [gc workforcemanagement schedulebids schedulesets](gc_workforcemanagement_schedulebids_schedulesets.html)	 - /api/v2/workforcemanagement/schedulebids/{bidId}/schedulesets
 
 

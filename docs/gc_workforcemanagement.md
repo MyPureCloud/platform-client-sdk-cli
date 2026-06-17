@@ -40,6 +40,7 @@
 * [gc workforcemanagement integrations](gc_workforcemanagement_integrations.html)	 - /api/v2/workforcemanagement/integrations
 * [gc workforcemanagement managementunits](gc_workforcemanagement_managementunits.html)	 - /api/v2/workforcemanagement/managementunits
 * [gc workforcemanagement notifications](gc_workforcemanagement_notifications.html)	 - /api/v2/workforcemanagement/notifications
+* [gc workforcemanagement schedulebids](gc_workforcemanagement_schedulebids.html)	 - /api/v2/workforcemanagement/schedulebids
 * [gc workforcemanagement schedules](gc_workforcemanagement_schedules.html)	 - /api/v2/workforcemanagement/schedules
 * [gc workforcemanagement schedulingjobs](gc_workforcemanagement_schedulingjobs.html)	 - /api/v2/workforcemanagement/schedulingjobs
 * [gc workforcemanagement shifttrades](gc_workforcemanagement_shifttrades.html)	 - /api/v2/workforcemanagement/shifttrades

@@ -1,10 +1,10 @@
 ## gc externalcontacts contacts exports list
 
-List exports for organization
+List contact exports for organization
 
 ### Synopsis
 
-List exports for organization
+List contact exports for organization
 
 ```
 gc externalcontacts contacts exports list [flags]

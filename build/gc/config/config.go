@@ -89,6 +89,7 @@ var (
 		"eu_central_2":   "euc2.pure.cloud",
 		"mx-central-1":   "mxc1.pure.cloud",
 		"ap-southeast-1": "apse1.pure.cloud",
+		"eusc-de-east-1": "edee1.eusc-pure.cloud",
 	}
 )
 

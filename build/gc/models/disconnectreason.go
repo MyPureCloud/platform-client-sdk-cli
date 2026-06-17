@@ -19,6 +19,9 @@ type DisconnectreasonDud struct {
 
     
 
+
+    
+
 }
 
 // Disconnectreason
@@ -34,10 +37,15 @@ type Disconnectreason struct {
     // Phrase - Human readable English description of the disconnect reason.
     Phrase string `json:"phrase"`
 
+
+    // Reason - Final disconnect reason code that triggered the disposition result.
+    Reason string `json:"reason"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Disconnectreason) String() string {
+    
     
     
     
@@ -63,8 +71,13 @@ func (u *Disconnectreason) MarshalJSON() ([]byte, error) {
         Code int `json:"code"`
         
         Phrase string `json:"phrase"`
+        
+        Reason string `json:"reason"`
         *Alias
     }{
+
+        
+
 
         
 

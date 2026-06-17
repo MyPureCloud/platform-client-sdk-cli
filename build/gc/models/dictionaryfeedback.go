@@ -45,6 +45,9 @@ type DictionaryfeedbackDud struct {
     Status string `json:"status"`
 
 
+    InvalidReason string `json:"invalidReason"`
+
+
     
 
 
@@ -97,11 +100,14 @@ type Dictionaryfeedback struct {
     
 
 
-    // DisplayAs - The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.
+    
+
+
+    // DisplayAs - The display name for the dictionary feedback.
     DisplayAs string `json:"displayAs"`
 
 
-    // ExamplePhrases - A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid and required for Genesys transcription engine.
+    // ExamplePhrases - A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid for Genesys transcription engine. Not applicable for English and Spanish dialects
     ExamplePhrases []Dictionaryfeedbackexamplephrase `json:"examplePhrases"`
 
 
@@ -154,6 +160,9 @@ func (u *Dictionaryfeedback) MarshalJSON() ([]byte, error) {
         SoundsLike []string `json:"soundsLike"`
         *Alias
     }{
+
+        
+
 
         
 

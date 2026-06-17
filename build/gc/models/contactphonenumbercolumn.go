@@ -19,6 +19,9 @@ type ContactphonenumbercolumnDud struct {
 
     
 
+
+    
+
 }
 
 // Contactphonenumbercolumn
@@ -31,6 +34,10 @@ type Contactphonenumbercolumn struct {
     VarType string `json:"type"`
 
 
+    // CallableTimeColumnName - A name of the callableTimeColumn
+    CallableTimeColumnName string `json:"callableTimeColumnName"`
+
+
     // CallableTimeColumn - A column that indicates the timezone to use for a given contact when checking callable times. Not allowed if 'automaticTimeZoneMapping' is set to true.
     CallableTimeColumn string `json:"callableTimeColumn"`
 
@@ -38,6 +45,7 @@ type Contactphonenumbercolumn struct {
 
 // String returns a JSON representation of the model
 func (o *Contactphonenumbercolumn) String() string {
+    
     
     
     
@@ -62,9 +70,14 @@ func (u *Contactphonenumbercolumn) MarshalJSON() ([]byte, error) {
         
         VarType string `json:"type"`
         
+        CallableTimeColumnName string `json:"callableTimeColumnName"`
+        
         CallableTimeColumn string `json:"callableTimeColumn"`
         *Alias
     }{
+
+        
+
 
         
 

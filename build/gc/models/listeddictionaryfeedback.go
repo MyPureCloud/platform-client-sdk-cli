@@ -45,6 +45,9 @@ type ListeddictionaryfeedbackDud struct {
     Status string `json:"status"`
 
 
+    InvalidReason string `json:"invalidReason"`
+
+
     
 
 
@@ -91,7 +94,10 @@ type Listeddictionaryfeedback struct {
     
 
 
-    // DisplayAs - The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.
+    
+
+
+    // DisplayAs - The display name for the dictionary feedback.
     DisplayAs string `json:"displayAs"`
 
 
@@ -134,6 +140,9 @@ func (u *Listeddictionaryfeedback) MarshalJSON() ([]byte, error) {
         DisplayAs string `json:"displayAs"`
         *Alias
     }{
+
+        
+
 
         
 

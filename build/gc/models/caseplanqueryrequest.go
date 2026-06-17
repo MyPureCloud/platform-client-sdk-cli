@@ -22,12 +22,19 @@ type CaseplanqueryrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Caseplanqueryrequest
 type Caseplanqueryrequest struct { 
     // Name - Filter by Caseplan name (case-insensitive, partial match). Omitting name returns all Caseplans (subject to pagination).
     Name string `json:"name"`
+
+
+    // NameSearchType - Type of name search to perform. Default is BEGINS_WITH.
+    NameSearchType string `json:"nameSearchType"`
 
 
     // PageSize - Number of results per page. Maximum is 200. Default is 25.
@@ -45,6 +52,7 @@ type Caseplanqueryrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Caseplanqueryrequest) String() string {
+    
     
     
     
@@ -68,6 +76,8 @@ func (u *Caseplanqueryrequest) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        NameSearchType string `json:"nameSearchType"`
+        
         PageSize int `json:"pageSize"`
         
         After string `json:"after"`
@@ -75,6 +85,9 @@ func (u *Caseplanqueryrequest) MarshalJSON() ([]byte, error) {
         DivisionIds []string `json:"divisionIds"`
         *Alias
     }{
+
+        
+
 
         
 

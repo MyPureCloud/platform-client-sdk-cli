@@ -19,9 +19,6 @@ type KnowledgeexportjobdocumentsfilterDud struct {
 
     
 
-
-    
-
 }
 
 // Knowledgeexportjobdocumentsfilter
@@ -37,17 +34,12 @@ type Knowledgeexportjobdocumentsfilter struct {
     // SourceId
     SourceId string `json:"sourceId"`
 
-
-    // IncludeDocumentsWithFileBody
-    IncludeDocumentsWithFileBody bool `json:"includeDocumentsWithFileBody"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgeexportjobdocumentsfilter) String() string {
     
      o.Entities = []Entity{{}} 
-    
     
 
     j, _ := json.Marshal(o)
@@ -71,8 +63,6 @@ func (u *Knowledgeexportjobdocumentsfilter) MarshalJSON() ([]byte, error) {
         Entities []Entity `json:"entities"`
         
         SourceId string `json:"sourceId"`
-        
-        IncludeDocumentsWithFileBody bool `json:"includeDocumentsWithFileBody"`
         *Alias
     }{
 
@@ -81,9 +71,6 @@ func (u *Knowledgeexportjobdocumentsfilter) MarshalJSON() ([]byte, error) {
 
         
         Entities: []Entity{{}},
-        
-
-
         
 
 

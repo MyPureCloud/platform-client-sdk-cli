@@ -28,6 +28,9 @@ type RecordingnotificationtemplateDud struct {
 
     
 
+
+    
+
 }
 
 // Recordingnotificationtemplate
@@ -51,6 +54,10 @@ type Recordingnotificationtemplate struct {
     Buttons []Recordingtemplatebutton `json:"buttons"`
 
 
+    // Carousel - The template carousel
+    Carousel Recordingtemplatecarousel `json:"carousel"`
+
+
     // Footer - The template footer.
     Footer Recordingtemplatefooter `json:"footer"`
 
@@ -62,6 +69,7 @@ func (o *Recordingnotificationtemplate) String() string {
     
     
      o.Buttons = []Recordingtemplatebutton{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -88,6 +96,8 @@ func (u *Recordingnotificationtemplate) MarshalJSON() ([]byte, error) {
         
         Buttons []Recordingtemplatebutton `json:"buttons"`
         
+        Carousel Recordingtemplatecarousel `json:"carousel"`
+        
         Footer Recordingtemplatefooter `json:"footer"`
         *Alias
     }{
@@ -106,6 +116,9 @@ func (u *Recordingnotificationtemplate) MarshalJSON() ([]byte, error) {
 
         
         Buttons: []Recordingtemplatebutton{{}},
+        
+
+
         
 
 

@@ -265,8 +265,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "List exports for organization",
-	Long:  "List exports for organization",
+	Short: "List contact exports for organization",
+	Long:  "List contact exports for organization",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

@@ -6,24 +6,24 @@ import (
 )
 
 var (
-    ParticipantdatapropertiesMarshalled = false
+    ValidatedetailsMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type ParticipantdatapropertiesDud struct { 
+type ValidatedetailsDud struct { 
     
 
 }
 
-// Participantdataproperties
-type Participantdataproperties struct { 
-    // Name - Participant data name.
-    Name string `json:"name"`
+// Validatedetails
+type Validatedetails struct { 
+    // Flow - The flow to validate. If you do not provide the flow ID, you must provide both the name and type.
+    Flow Architectflowreference `json:"flow"`
 
 }
 
 // String returns a JSON representation of the model
-func (o *Participantdataproperties) String() string {
+func (o *Validatedetails) String() string {
     
 
     j, _ := json.Marshal(o)
@@ -32,17 +32,17 @@ func (o *Participantdataproperties) String() string {
     return str
 }
 
-func (u *Participantdataproperties) MarshalJSON() ([]byte, error) {
-    type Alias Participantdataproperties
+func (u *Validatedetails) MarshalJSON() ([]byte, error) {
+    type Alias Validatedetails
 
-    if ParticipantdatapropertiesMarshalled {
+    if ValidatedetailsMarshalled {
         return []byte("{}"), nil
     }
-    ParticipantdatapropertiesMarshalled = true
+    ValidatedetailsMarshalled = true
 
     return json.Marshal(&struct {
         
-        Name string `json:"name"`
+        Flow Architectflowreference `json:"flow"`
         *Alias
     }{
 

@@ -22,6 +22,12 @@ type OpensocialmediapublicmetadataDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Opensocialmediapublicmetadata - Information about a public message.
@@ -41,6 +47,14 @@ type Opensocialmediapublicmetadata struct {
     // Url - The URL of the social post on the native platform.
     Url string `json:"url"`
 
+
+    // MentionIds - IDs of accounts referenced by name within the message text or caption (for example '@brandpage' in a post body or comment). A 'mention' here uses the same convention as Meta (Facebook, Instagram) and LinkedIn, where it denotes a textual reference to an account. Distinct from tagIds, which represent explicit associations with the message. Null or absent when no accounts are referenced in the text.
+    MentionIds []string `json:"mentionIds"`
+
+
+    // TagIds - IDs of accounts attached to the message itself, independent of the text (for example a person tagged in an Instagram photo so their profile is linked from the image). A 'tag' here uses the same convention as Meta (Facebook, Instagram) and LinkedIn, where it denotes an explicit association with content rather than a textual reference. Distinct from mentionIds, which represent in-text/caption references. Null or absent when no accounts are tagged on the message.
+    TagIds []string `json:"tagIds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -49,6 +63,8 @@ func (o *Opensocialmediapublicmetadata) String() string {
     
     
     
+     o.MentionIds = []string{""} 
+     o.TagIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -73,6 +89,10 @@ func (u *Opensocialmediapublicmetadata) MarshalJSON() ([]byte, error) {
         Source string `json:"source"`
         
         Url string `json:"url"`
+        
+        MentionIds []string `json:"mentionIds"`
+        
+        TagIds []string `json:"tagIds"`
         *Alias
     }{
 
@@ -85,6 +105,16 @@ func (u *Opensocialmediapublicmetadata) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        MentionIds: []string{""},
+        
+
+
+        
+        TagIds: []string{""},
         
 
         Alias: (*Alias)(u),

@@ -6,31 +6,37 @@ import (
 )
 
 var (
-    ContentfilerequestMarshalled = false
+    SchedulebidreferenceMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type ContentfilerequestDud struct { 
+type SchedulebidreferenceDud struct { 
     
 
 
     
+
+
+    SelfUri string `json:"selfUri"`
 
 }
 
-// Contentfilerequest
-type Contentfilerequest struct { 
-    // UploadKey - Key that identifies the file in the storage including the file name
-    UploadKey string `json:"uploadKey"`
+// Schedulebidreference
+type Schedulebidreference struct { 
+    // Id - The ID of the schedule bid
+    Id string `json:"id"`
 
 
-    // Name - The name of the file
+    // Name
     Name string `json:"name"`
+
+
+    
 
 }
 
 // String returns a JSON representation of the model
-func (o *Contentfilerequest) String() string {
+func (o *Schedulebidreference) String() string {
     
     
 
@@ -40,21 +46,24 @@ func (o *Contentfilerequest) String() string {
     return str
 }
 
-func (u *Contentfilerequest) MarshalJSON() ([]byte, error) {
-    type Alias Contentfilerequest
+func (u *Schedulebidreference) MarshalJSON() ([]byte, error) {
+    type Alias Schedulebidreference
 
-    if ContentfilerequestMarshalled {
+    if SchedulebidreferenceMarshalled {
         return []byte("{}"), nil
     }
-    ContentfilerequestMarshalled = true
+    SchedulebidreferenceMarshalled = true
 
     return json.Marshal(&struct {
         
-        UploadKey string `json:"uploadKey"`
+        Id string `json:"id"`
         
         Name string `json:"name"`
         *Alias
     }{
+
+        
+
 
         
 

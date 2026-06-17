@@ -48,6 +48,12 @@ type WorkplanbidDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -94,6 +100,14 @@ type Workplanbid struct {
     PublishedDate time.Time `json:"publishedDate"`
 
 
+    // BidType - The type of bid created
+    BidType string `json:"bidType"`
+
+
+    // EndOverridesAndRotations - If true, all existing overrides, workplan rotations will be ended one day before effective date of this bid
+    EndOverridesAndRotations bool `json:"endOverridesAndRotations"`
+
+
     // WorkPlanFieldsVisibleToAgents - The work plan fields visible to agents whenever work plan preferences are made
     WorkPlanFieldsVisibleToAgents []string `json:"workPlanFieldsVisibleToAgents"`
 
@@ -108,6 +122,8 @@ type Workplanbid struct {
 
 // String returns a JSON representation of the model
 func (o *Workplanbid) String() string {
+    
+    
     
     
     
@@ -157,11 +173,21 @@ func (u *Workplanbid) MarshalJSON() ([]byte, error) {
         
         PublishedDate time.Time `json:"publishedDate"`
         
+        BidType string `json:"bidType"`
+        
+        EndOverridesAndRotations bool `json:"endOverridesAndRotations"`
+        
         WorkPlanFieldsVisibleToAgents []string `json:"workPlanFieldsVisibleToAgents"`
         
         Metadata Workplanbidmetadata `json:"metadata"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

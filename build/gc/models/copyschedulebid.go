@@ -6,17 +6,25 @@ import (
 )
 
 var (
-    KnowledgedocumentdescriptorMarshalled = false
+    CopyschedulebidMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type KnowledgedocumentdescriptorDud struct { }
+type CopyschedulebidDud struct { 
+    
 
-// Knowledgedocumentdescriptor
-type Knowledgedocumentdescriptor struct { }
+}
+
+// Copyschedulebid
+type Copyschedulebid struct { 
+    // Name - The name of the new schedule bid
+    Name string `json:"name"`
+
+}
 
 // String returns a JSON representation of the model
-func (o *Knowledgedocumentdescriptor) String() string {
+func (o *Copyschedulebid) String() string {
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -24,17 +32,22 @@ func (o *Knowledgedocumentdescriptor) String() string {
     return str
 }
 
-func (u *Knowledgedocumentdescriptor) MarshalJSON() ([]byte, error) {
-    type Alias Knowledgedocumentdescriptor
+func (u *Copyschedulebid) MarshalJSON() ([]byte, error) {
+    type Alias Copyschedulebid
 
-    if KnowledgedocumentdescriptorMarshalled {
+    if CopyschedulebidMarshalled {
         return []byte("{}"), nil
     }
-    KnowledgedocumentdescriptorMarshalled = true
+    CopyschedulebidMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Name string `json:"name"`
         *Alias
     }{
+
+        
+
         Alias: (*Alias)(u),
     })
 }

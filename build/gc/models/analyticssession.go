@@ -275,6 +275,9 @@ type AnalyticssessionDud struct {
 
     
 
+
+    
+
 }
 
 // Analyticssession
@@ -417,6 +420,10 @@ type Analyticssession struct {
 
     // EngagementSource - Open Messaging engagement source type
     EngagementSource string `json:"engagementSource"`
+
+
+    // ErrorCodeDescription - Error code description extracted from the first disconnectReason
+    ErrorCodeDescription string `json:"errorCodeDescription"`
 
 
     // ExtendedDeliveryStatus - Extended delivery status
@@ -693,6 +700,7 @@ func (o *Analyticssession) String() string {
     
     
     
+    
      o.RemovedSkillIds = []string{""} 
      o.RequestedRoutings = []string{""} 
     
@@ -808,6 +816,8 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
         EligibleAgentCounts []int `json:"eligibleAgentCounts"`
         
         EngagementSource string `json:"engagementSource"`
+        
+        ErrorCodeDescription string `json:"errorCodeDescription"`
         
         ExtendedDeliveryStatus string `json:"extendedDeliveryStatus"`
         
@@ -1028,6 +1038,9 @@ func (u *Analyticssession) MarshalJSON() ([]byte, error) {
 
         
         EligibleAgentCounts: []int{0},
+        
+
+
         
 
 

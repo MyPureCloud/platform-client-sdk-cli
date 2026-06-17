@@ -28,6 +28,9 @@ type OrgauthsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Orgauthsettings
@@ -55,6 +58,10 @@ type Orgauthsettings struct {
     // InactivityTimeoutExclusions - The list of exempt apis from inactivity timeout.
     InactivityTimeoutExclusions []string `json:"inactivityTimeoutExclusions"`
 
+
+    // UniversalLogout - Indicates whether universal logout is enabled for the organization.
+    UniversalLogout bool `json:"universalLogout"`
+
 }
 
 // String returns a JSON representation of the model
@@ -65,6 +72,7 @@ func (o *Orgauthsettings) String() string {
      o.IpAddressAllowlist = []string{""} 
     
      o.InactivityTimeoutExclusions = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -93,6 +101,8 @@ func (u *Orgauthsettings) MarshalJSON() ([]byte, error) {
         PasswordRequirements Passwordrequirements `json:"passwordRequirements"`
         
         InactivityTimeoutExclusions []string `json:"inactivityTimeoutExclusions"`
+        
+        UniversalLogout bool `json:"universalLogout"`
         *Alias
     }{
 
@@ -117,6 +127,9 @@ func (u *Orgauthsettings) MarshalJSON() ([]byte, error) {
 
         
         InactivityTimeoutExclusions: []string{""},
+        
+
+
         
 
         Alias: (*Alias)(u),

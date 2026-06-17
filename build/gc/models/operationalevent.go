@@ -44,6 +44,12 @@ type OperationaleventDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Operationalevent
@@ -91,10 +97,20 @@ type Operationalevent struct {
     // EntityVersion - The version of the entity in the providing service
     EntityVersion string `json:"entityVersion"`
 
+
+    // PhoneNumber - The phone number associated with the event
+    PhoneNumber string `json:"phoneNumber"`
+
+
+    // ExternalContactId - The external contact ID associated with the event
+    ExternalContactId string `json:"externalContactId"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Operationalevent) String() string {
+    
+    
     
     
     
@@ -144,8 +160,18 @@ func (u *Operationalevent) MarshalJSON() ([]byte, error) {
         DateCreated time.Time `json:"dateCreated"`
         
         EntityVersion string `json:"entityVersion"`
+        
+        PhoneNumber string `json:"phoneNumber"`
+        
+        ExternalContactId string `json:"externalContactId"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

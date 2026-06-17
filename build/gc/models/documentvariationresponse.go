@@ -74,7 +74,7 @@ type Documentvariationresponse struct {
 
 
     // Body - The content for the variation.
-    Body Documentbodyresponse `json:"body"`
+    Body Documentbody `json:"body"`
 
 
     
@@ -113,7 +113,7 @@ func (u *Documentvariationresponse) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
-        Body Documentbodyresponse `json:"body"`
+        Body Documentbody `json:"body"`
         *Alias
     }{
 

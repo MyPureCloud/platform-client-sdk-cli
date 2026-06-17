@@ -24,10 +24,16 @@ type ContactsexportDud struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
+    DateCompletion time.Time `json:"dateCompletion"`
+
+
     Status string `json:"status"`
 
 
     DownloadUrl string `json:"downloadUrl"`
+
+
+    ResultRowCount int `json:"resultRowCount"`
 
 
     
@@ -44,6 +50,12 @@ type Contactsexport struct {
 
     // DivisionIds - Division IDs of entities
     DivisionIds []string `json:"divisionIds"`
+
+
+    
+
+
+    
 
 
     
@@ -98,6 +110,12 @@ func (u *Contactsexport) MarshalJSON() ([]byte, error) {
 
         
         DivisionIds: []string{""},
+        
+
+
+        
+
+
         
 
 

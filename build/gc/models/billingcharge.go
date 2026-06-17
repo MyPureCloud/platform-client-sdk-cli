@@ -40,6 +40,12 @@ type BillingchargeDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Billingcharge
@@ -82,12 +88,22 @@ type Billingcharge struct {
     // OverageCurrency - The currency in which the overage charge is billed.
     OverageCurrency string `json:"overageCurrency"`
 
+
+    // ConvertedTokenCount - AI Token Count after the conversion for AI Products.
+    ConvertedTokenCount float32 `json:"convertedTokenCount"`
+
+
+    // TokenConversionRate - AI Token Conversion Rate — Units per token conversion ratio.
+    TokenConversionRate float32 `json:"tokenConversionRate"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Billingcharge) String() string {
     
      o.Organizations = []Namedentity{{}} 
+    
+    
     
     
     
@@ -129,6 +145,10 @@ func (u *Billingcharge) MarshalJSON() ([]byte, error) {
         OverageCharge float32 `json:"overageCharge"`
         
         OverageCurrency string `json:"overageCurrency"`
+        
+        ConvertedTokenCount float32 `json:"convertedTokenCount"`
+        
+        TokenConversionRate float32 `json:"tokenConversionRate"`
         *Alias
     }{
 
@@ -140,6 +160,12 @@ func (u *Billingcharge) MarshalJSON() ([]byte, error) {
 
         
         Organizations: []Namedentity{{}},
+        
+
+
+        
+
+
         
 
 

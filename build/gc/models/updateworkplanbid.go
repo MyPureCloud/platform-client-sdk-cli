@@ -38,6 +38,9 @@ type UpdateworkplanbidDud struct {
 
     
 
+
+    
+
 }
 
 // Updateworkplanbid - Update work plan bid model
@@ -70,6 +73,10 @@ type Updateworkplanbid struct {
     RankingTiebreakerType string `json:"rankingTiebreakerType"`
 
 
+    // EndOverridesAndRotations - If true, all existing overrides, workplan rotations will be ended one day before effective date of this bid
+    EndOverridesAndRotations bool `json:"endOverridesAndRotations"`
+
+
     // WorkPlanFieldsVisibleToAgents - The work plan fields visible to agents whenever work plan preferences are made
     WorkPlanFieldsVisibleToAgents Listwrapperagentworkplanfield `json:"workPlanFieldsVisibleToAgents"`
 
@@ -81,6 +88,7 @@ type Updateworkplanbid struct {
 
 // String returns a JSON representation of the model
 func (o *Updateworkplanbid) String() string {
+    
     
     
     
@@ -121,11 +129,16 @@ func (u *Updateworkplanbid) MarshalJSON() ([]byte, error) {
         
         RankingTiebreakerType string `json:"rankingTiebreakerType"`
         
+        EndOverridesAndRotations bool `json:"endOverridesAndRotations"`
+        
         WorkPlanFieldsVisibleToAgents Listwrapperagentworkplanfield `json:"workPlanFieldsVisibleToAgents"`
         
         Status string `json:"status"`
         *Alias
     }{
+
+        
+
 
         
 

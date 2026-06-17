@@ -19,9 +19,6 @@ type CopilotcontextvalueDud struct {
 
     
 
-
-    
-
 }
 
 // Copilotcontextvalue
@@ -34,10 +31,6 @@ type Copilotcontextvalue struct {
     VarType string `json:"type"`
 
 
-    // ParticipantDataProperties - Participant data properties.
-    ParticipantDataProperties Participantdataproperties `json:"participantDataProperties"`
-
-
     // ConversationAttributeProperties - Conversation attribute properties.
     ConversationAttributeProperties Conversationattributeproperties `json:"conversationAttributeProperties"`
 
@@ -45,7 +38,6 @@ type Copilotcontextvalue struct {
 
 // String returns a JSON representation of the model
 func (o *Copilotcontextvalue) String() string {
-    
     
     
     
@@ -70,14 +62,9 @@ func (u *Copilotcontextvalue) MarshalJSON() ([]byte, error) {
         
         VarType string `json:"type"`
         
-        ParticipantDataProperties Participantdataproperties `json:"participantDataProperties"`
-        
         ConversationAttributeProperties Conversationattributeproperties `json:"conversationAttributeProperties"`
         *Alias
     }{
-
-        
-
 
         
 

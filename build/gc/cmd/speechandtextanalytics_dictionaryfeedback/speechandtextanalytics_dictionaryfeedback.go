@@ -83,7 +83,7 @@ func Cmdspeechandtextanalytics_dictionaryfeedback() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "dialect", "", "The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard")
 	utils.AddFlag(listCmd.Flags(), "string", "transcriptionEngine", "", "Filter by transcription engine, If not provided, all transcription engines will be considered Valid values: Genesys, GenesysExtended")
 	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "The key for listing the next page")
-	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "500", "The page size for the listing")
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "500", "The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/speechandtextanalytics/dictionaryfeedback", utils.FormatPermissions([]string{ "speechAndTextAnalytics:dictionaryterm:view",  }), utils.GenerateDevCentreLink("GET", "Speech &amp; Text Analytics", "/api/v2/speechandtextanalytics/dictionaryfeedback")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	

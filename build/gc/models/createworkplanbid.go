@@ -35,6 +35,9 @@ type CreateworkplanbidDud struct {
 
     
 
+
+    
+
 }
 
 // Createworkplanbid - Create work plan bid model
@@ -67,6 +70,10 @@ type Createworkplanbid struct {
     RankingTiebreakerType string `json:"rankingTiebreakerType"`
 
 
+    // EndOverridesAndRotations - If true, all existing overrides, workplan rotations will be ended one day before effective date of this bid
+    EndOverridesAndRotations bool `json:"endOverridesAndRotations"`
+
+
     // WorkPlanFieldsVisibleToAgents - The work plan fields visible to agents whenever work plan preferences are made
     WorkPlanFieldsVisibleToAgents []string `json:"workPlanFieldsVisibleToAgents"`
 
@@ -74,6 +81,7 @@ type Createworkplanbid struct {
 
 // String returns a JSON representation of the model
 func (o *Createworkplanbid) String() string {
+    
     
     
     
@@ -113,9 +121,14 @@ func (u *Createworkplanbid) MarshalJSON() ([]byte, error) {
         
         RankingTiebreakerType string `json:"rankingTiebreakerType"`
         
+        EndOverridesAndRotations bool `json:"endOverridesAndRotations"`
+        
         WorkPlanFieldsVisibleToAgents []string `json:"workPlanFieldsVisibleToAgents"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -729,13 +729,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}",
-      "description": "Get media endpoint statistics events."
+      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}",
+      "description": "Get media endpoint statistics event."
     },
     {
       "name": "get",
-      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}",
-      "description": "Get media endpoint statistics event."
+      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}",
+      "description": "Get media endpoint statistics events."
     }
   ]
 }

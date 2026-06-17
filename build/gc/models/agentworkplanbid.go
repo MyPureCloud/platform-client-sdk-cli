@@ -33,6 +33,9 @@ type AgentworkplanbidDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -67,6 +70,10 @@ type Agentworkplanbid struct {
     WorkPlanFieldsVisibleToAgents []string `json:"workPlanFieldsVisibleToAgents"`
 
 
+    // BidType - The type of the bid
+    BidType string `json:"bidType"`
+
+
     
 
 }
@@ -80,6 +87,7 @@ func (o *Agentworkplanbid) String() string {
     
     
      o.WorkPlanFieldsVisibleToAgents = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -110,6 +118,8 @@ func (u *Agentworkplanbid) MarshalJSON() ([]byte, error) {
         Status string `json:"status"`
         
         WorkPlanFieldsVisibleToAgents []string `json:"workPlanFieldsVisibleToAgents"`
+        
+        BidType string `json:"bidType"`
         *Alias
     }{
 
@@ -133,6 +143,9 @@ func (u *Agentworkplanbid) MarshalJSON() ([]byte, error) {
 
         
         WorkPlanFieldsVisibleToAgents: []string{""},
+        
+
+
         
 
 

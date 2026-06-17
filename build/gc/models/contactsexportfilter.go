@@ -25,6 +25,12 @@ type ContactsexportfilterDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Contactsexportfilter
@@ -35,6 +41,14 @@ type Contactsexportfilter struct {
 
     // In - Filtered field should match one of the listed values
     In Contactsexportfieldlistfilter `json:"in"`
+
+
+    // Lte - Filtered field should be less than or equal to the value
+    Lte Contactsexportcomparisonfieldfilter `json:"lte"`
+
+
+    // Gte - Filtered field should be greater than or equal to the value
+    Gte Contactsexportcomparisonfieldfilter `json:"gte"`
 
 
     // And - Boolean AND combination of filters
@@ -52,6 +66,8 @@ type Contactsexportfilter struct {
 
 // String returns a JSON representation of the model
 func (o *Contactsexportfilter) String() string {
+    
+    
     
     
      o.And = []Contactsexportfilter{{}} 
@@ -78,6 +94,10 @@ func (u *Contactsexportfilter) MarshalJSON() ([]byte, error) {
         
         In Contactsexportfieldlistfilter `json:"in"`
         
+        Lte Contactsexportcomparisonfieldfilter `json:"lte"`
+        
+        Gte Contactsexportcomparisonfieldfilter `json:"gte"`
+        
         And []Contactsexportfilter `json:"and"`
         
         Or []Contactsexportfilter `json:"or"`
@@ -85,6 +105,12 @@ func (u *Contactsexportfilter) MarshalJSON() ([]byte, error) {
         Not *Contactsexportfilter `json:"not"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

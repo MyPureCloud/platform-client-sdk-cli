@@ -77,7 +77,7 @@ type Knowledgedocumentqueryvariation struct {
 
 
     // Body - The content for the variation.
-    Body Documentbodyresponse `json:"body"`
+    Body Documentbody `json:"body"`
 
 
     // Chunks - The chunk blocks associated with the variation.
@@ -121,7 +121,7 @@ func (u *Knowledgedocumentqueryvariation) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
-        Body Documentbodyresponse `json:"body"`
+        Body Documentbody `json:"body"`
         
         Chunks []Documentvariationquerychunkblock `json:"chunks"`
         *Alias

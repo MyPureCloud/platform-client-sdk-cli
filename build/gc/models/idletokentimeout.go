@@ -29,7 +29,7 @@ type IdletokentimeoutDud struct {
 
 // Idletokentimeout
 type Idletokentimeout struct { 
-    // IdleTokenTimeoutSeconds - Token timeout length in seconds. Must be at least 5 minutes and 8 hours or less (if HIPAA is disabled) or 15 minutes or less (if HIPAA is enabled).
+    // IdleTokenTimeoutSeconds - Token timeout length in seconds. Must be at least 5 minutes and at most 8 hours. HIPAA-enabled organizations may be subject to a stricter 15-minute maximum during rollout.
     IdleTokenTimeoutSeconds int `json:"idleTokenTimeoutSeconds"`
 
 

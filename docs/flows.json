@@ -334,13 +334,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/flows/{flowId}/versions/{versionId}/configuration",
-      "description": "Get flow version configuration"
+      "path": "/api/v2/flows/{flowId}/versions/{versionId}",
+      "description": "Get flow version"
     },
     {
       "name": "get",
-      "path": "/api/v2/flows/{flowId}/versions/{versionId}",
-      "description": "Get flow version"
+      "path": "/api/v2/flows/{flowId}/versions/{versionId}/configuration",
+      "description": "Get flow version configuration"
     },
     {
       "name": "list",
@@ -371,6 +371,16 @@
       "name": "batchdelete",
       "path": "/api/v2/flows",
       "description": "Batch-delete a list of flows"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/validate/jobs",
+      "description": "Register Architect Validate Job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/validate/jobs/{jobId}",
+      "description": "Fetch Architect Validate Job Status"
     }
   ]
 }

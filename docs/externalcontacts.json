@@ -39,6 +39,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/notes/remove",
+      "description": "Bulk remove notes"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/notes",
       "description": "Bulk fetch notes"
     },
@@ -51,16 +56,6 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/bulk/notes/add",
       "description": "Bulk add notes"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/notes/remove",
-      "description": "Bulk remove notes"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/organizations/add",
-      "description": "Bulk add organizations"
     },
     {
       "name": "create",
@@ -89,8 +84,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/relationships/add",
-      "description": "Bulk add relationships"
+      "path": "/api/v2/externalcontacts/bulk/organizations/add",
+      "description": "Bulk add organizations"
     },
     {
       "name": "create",
@@ -106,6 +101,11 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/bulk/relationships/update",
       "description": "Bulk update relationships"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/relationships/add",
+      "description": "Bulk add relationships"
     },
     {
       "name": "get",
@@ -510,7 +510,7 @@
     {
       "name": "list",
       "path": "/api/v2/externalcontacts/contacts/exports",
-      "description": "List exports for organization"
+      "description": "List contact exports for organization"
     },
     {
       "name": "create",

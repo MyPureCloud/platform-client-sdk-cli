@@ -593,6 +593,7 @@ gc/cmd/flows_milestones/flows_milestones.go
 gc/cmd/flows_milestones_divisionviews/flows_milestones_divisionviews.go
 gc/cmd/flows_outcomes/flows_outcomes.go
 gc/cmd/flows_outcomes_divisionviews/flows_outcomes_divisionviews.go
+gc/cmd/flows_validate_jobs/flows_validate_jobs.go
 gc/cmd/flows_versions/flows_versions.go
 gc/cmd/flows_versions_configuration/flows_versions_configuration.go
 gc/cmd/flows_versions_health/flows_versions_health.go
@@ -1527,6 +1528,12 @@ gc/cmd/workforcemanagement_businessunits_opportunities_enrollments_query/workfor
 gc/cmd/workforcemanagement_businessunits_opportunities_externalactivities_query/workforcemanagement_businessunits_opportunities_externalactivities_query.go
 gc/cmd/workforcemanagement_businessunits_opportunities_query/workforcemanagement_businessunits_opportunities_query.go
 gc/cmd/workforcemanagement_businessunits_planninggroups/workforcemanagement_businessunits_planninggroups.go
+gc/cmd/workforcemanagement_businessunits_schedulebids/workforcemanagement_businessunits_schedulebids.go
+gc/cmd/workforcemanagement_businessunits_schedulebids_copy/workforcemanagement_businessunits_schedulebids_copy.go
+gc/cmd/workforcemanagement_businessunits_schedulebids_effectiveschedulesets/workforcemanagement_businessunits_schedulebids_effectiveschedulesets.go
+gc/cmd/workforcemanagement_businessunits_schedulebids_groups/workforcemanagement_businessunits_schedulebids_groups.go
+gc/cmd/workforcemanagement_businessunits_schedulebids_groups_preferences/workforcemanagement_businessunits_schedulebids_groups_preferences.go
+gc/cmd/workforcemanagement_businessunits_schedulebids_groups_summary/workforcemanagement_businessunits_schedulebids_groups_summary.go
 gc/cmd/workforcemanagement_businessunits_scheduler_settings/workforcemanagement_businessunits_scheduler_settings.go
 gc/cmd/workforcemanagement_businessunits_scheduling_runs/workforcemanagement_businessunits_scheduling_runs.go
 gc/cmd/workforcemanagement_businessunits_scheduling_runs_result/workforcemanagement_businessunits_scheduling_runs_result.go
@@ -1626,6 +1633,9 @@ gc/cmd/workforcemanagement_managementunits_workplans_copy/workforcemanagement_ma
 gc/cmd/workforcemanagement_managementunits_workplans_validate/workforcemanagement_managementunits_workplans_validate.go
 gc/cmd/workforcemanagement_notifications/workforcemanagement_notifications.go
 gc/cmd/workforcemanagement_notifications_update/workforcemanagement_notifications_update.go
+gc/cmd/workforcemanagement_schedulebids/workforcemanagement_schedulebids.go
+gc/cmd/workforcemanagement_schedulebids_preference/workforcemanagement_schedulebids_preference.go
+gc/cmd/workforcemanagement_schedulebids_schedulesets/workforcemanagement_schedulebids_schedulesets.go
 gc/cmd/workforcemanagement_schedules/workforcemanagement_schedules.go
 gc/cmd/workforcemanagement_schedulingjobs/workforcemanagement_schedulingjobs.go
 gc/cmd/workforcemanagement_shifttrades/workforcemanagement_shifttrades.go
@@ -1752,6 +1762,9 @@ gc/models/adherenceexplanationresponse.go
 gc/models/adherencesettings.go
 gc/models/adjacents.go
 gc/models/adjustablelivespeakerdetection.go
+gc/models/adminagentschedulebidbiddingpreference.go
+gc/models/adminagentschedulebidpreferenceresponse.go
+gc/models/adminagentschedulesetpreferences.go
 gc/models/adminagentworkplanbiddingpreference.go
 gc/models/adminagentworkplanpreferenceresponse.go
 gc/models/adminbulkupdatealternativeshifttradestate.go
@@ -1767,6 +1780,9 @@ gc/models/agentactivityentitylisting.go
 gc/models/agentaddopportunityenrollment.go
 gc/models/agentadherencedaymetrics.go
 gc/models/agentadherencescheduledactivity.go
+gc/models/agentassignedschedulesetlist.go
+gc/models/agentassignedshiftset.go
+gc/models/agentbidschedulesetoverriderequest.go
 gc/models/agentbidworkplanoverriderequest.go
 gc/models/agentbulkaddopportunityenrollment.go
 gc/models/agentbulkaddopportunityenrollmentresult.go
@@ -1793,6 +1809,7 @@ gc/models/agentcopilotasyncaggregatequeryresponse.go
 gc/models/agentcopilotasyncaggregationquery.go
 gc/models/agentcountrange.go
 gc/models/agentdirectroutingbackupsettings.go
+gc/models/agenteffectivebid.go
 gc/models/agentevaluatoractivity.go
 gc/models/agentgreeting.go
 gc/models/agentintegrationassociationrequest.go
@@ -1820,11 +1837,18 @@ gc/models/agentqueryopportunities.go
 gc/models/agentqueryopportunitiesresponse.go
 gc/models/agentqueryopportunityresult.go
 gc/models/agentqueuetimerequest.go
+gc/models/agentsbidassignedschedulesetoverriderequest.go
 gc/models/agentsbidassignedworkplanoverriderequest.go
+gc/models/agentschedulebid.go
+gc/models/agentschedulebiddingpreferencepriority.go
+gc/models/agentschedulebiddingpreferenceresponse.go
+gc/models/agentschedulebids.go
+gc/models/agentschedulebidschedulesetresponse.go
 gc/models/agentscheduleshiftactivity.go
 gc/models/agentscheduleunavailabletime.go
 gc/models/agentscoringrule.go
 gc/models/agentscoringruleentitylisting.go
+gc/models/agentseffectiveschedulesetresponse.go
 gc/models/agentsintegrationslisting.go
 gc/models/agentstateactivitycategorycount.go
 gc/models/agentstateadherencestatecount.go
@@ -1962,6 +1986,7 @@ gc/models/architectflowfields.go
 gc/models/architectflowreference.go
 gc/models/architectjobmessage.go
 gc/models/architectjobstateresponse.go
+gc/models/architectvalidatejobstateresponse.go
 gc/models/archiveretention.go
 gc/models/arraynode.go
 gc/models/article.go
@@ -1974,6 +1999,7 @@ gc/models/assessmentlisting.go
 gc/models/assessmentquestiongroupscore.go
 gc/models/assessmentquestionscore.go
 gc/models/assessmentscoringset.go
+gc/models/assignedagentdetails.go
 gc/models/assignedlearningmodule.go
 gc/models/assignedlearningmoduledomainentitylisting.go
 gc/models/assignedsegment.go
@@ -2082,8 +2108,11 @@ gc/models/batchuserpresenceeventrequest.go
 gc/models/batchuserroutingstatuseventrequest.go
 gc/models/benefitassessment.go
 gc/models/benefitassessmentjob.go
+gc/models/bidgroupscheduleset.go
 gc/models/bidgroupworkplanrequest.go
 gc/models/bidgroupworkplanresponse.go
+gc/models/bidgroupworkplanrotationrequest.go
+gc/models/bidgroupworkplanrotationresponse.go
 gc/models/billingcharge.go
 gc/models/billingcontract.go
 gc/models/billingcontractlisting.go
@@ -2683,6 +2712,7 @@ gc/models/contactphonenumbercolumn.go
 gc/models/contactsbulkoperationjob.go
 gc/models/contactsbulkoperationjoblisting.go
 gc/models/contactsexport.go
+gc/models/contactsexportcomparisonfieldfilter.go
 gc/models/contactsexportfieldfilter.go
 gc/models/contactsexportfieldlistfilter.go
 gc/models/contactsexportfilter.go
@@ -2698,8 +2728,6 @@ gc/models/contentcardaction.go
 gc/models/contentcarousel.go
 gc/models/contentdatepicker.go
 gc/models/contentdatepickeravailabletime.go
-gc/models/contentfilerequest.go
-gc/models/contentfileresponse.go
 gc/models/contentfilteritem.go
 gc/models/contentmoderation.go
 gc/models/contentoffer.go
@@ -2876,11 +2904,13 @@ gc/models/conversationsecureattributes.go
 gc/models/conversationsessionsummary.go
 gc/models/conversationsummariesgetresponse.go
 gc/models/conversationsummary.go
+gc/models/conversationsummaryeditedby.go
 gc/models/conversationsummaryextractedentity.go
 gc/models/conversationsummaryfollowup.go
 gc/models/conversationsummarylabel.go
 gc/models/conversationsummaryreason.go
 gc/models/conversationsummaryresolution.go
+gc/models/conversationsummarytriggersource.go
 gc/models/conversationsummarywrapupcode.go
 gc/models/conversationtagsupdate.go
 gc/models/conversationthreadingwindow.go
@@ -2916,6 +2946,7 @@ gc/models/copyattachmentsrequest.go
 gc/models/copybuforecastrequest.go
 gc/models/copycapacityplanrequest.go
 gc/models/copydecisiontablerequest.go
+gc/models/copyschedulebid.go
 gc/models/copyvoicemailmessage.go
 gc/models/copyworkplan.go
 gc/models/copyworkplanbid.go
@@ -2967,6 +2998,7 @@ gc/models/createresponseassetresponse.go
 gc/models/createroomrequest.go
 gc/models/createroomresponse.go
 gc/models/createroutingskill.go
+gc/models/createschedulebid.go
 gc/models/createscheduledtriggerrequest.go
 gc/models/createsecuresession.go
 gc/models/createservicegoaltemplate.go
@@ -3245,8 +3277,6 @@ gc/models/documentbodylistwithhighlight.go
 gc/models/documentbodyparagraph.go
 gc/models/documentbodyparagraphproperties.go
 gc/models/documentbodyparagraphwithhighlight.go
-gc/models/documentbodyrequest.go
-gc/models/documentbodyresponse.go
 gc/models/documentbodytable.go
 gc/models/documentbodytablecaptionblock.go
 gc/models/documentbodytablecaptionitem.go
@@ -4108,8 +4138,6 @@ gc/models/knowledgedocumentbulkversionaddrequest.go
 gc/models/knowledgedocumentchunkrequest.go
 gc/models/knowledgedocumentchunkresponse.go
 gc/models/knowledgedocumentcopy.go
-gc/models/knowledgedocumentcreaterequest.go
-gc/models/knowledgedocumentdescriptor.go
 gc/models/knowledgedocumentfeedback.go
 gc/models/knowledgedocumentfeedbackresponse.go
 gc/models/knowledgedocumentfeedbackresponselisting.go
@@ -4352,12 +4380,14 @@ gc/models/listwrapperagentworkplanfield.go
 gc/models/listwrapperalternativeshiftbusettingsactivitycategory.go
 gc/models/listwrapperalternativeshiftbusettingsgranularity.go
 gc/models/listwrapperbidgroupworkplanrequest.go
+gc/models/listwrapperbidgroupworkplanrotationrequest.go
 gc/models/listwrapperfixedavailability.go
 gc/models/listwrapperinteger.go
 gc/models/listwrapperinterval.go
 gc/models/listwrapperoverridedate.go
 gc/models/listwrapperplanninggroupminimumsrequest.go
 gc/models/listwrapperrequireddaterange.go
+gc/models/listwrapperschedulesetrequest.go
 gc/models/listwrappersecondarypresence.go
 gc/models/listwrappershiftstartvariance.go
 gc/models/listwrapperstring.go
@@ -4780,7 +4810,6 @@ gc/models/parsedcertificate.go
 gc/models/participant.go
 gc/models/participantattributes.go
 gc/models/participantbasic.go
-gc/models/participantdataproperties.go
 gc/models/participantinfo.go
 gc/models/participantmetrics.go
 gc/models/passwordrequirements.go
@@ -4974,6 +5003,7 @@ gc/models/querycriteriagroup.go
 gc/models/querycriteriaitem.go
 gc/models/querycriteriaquery.go
 gc/models/querydivision.go
+gc/models/queryeffectiveschedulesetsrequest.go
 gc/models/queryenrollmentopportunityresult.go
 gc/models/queryexternalactivityopportunitiesresponse.go
 gc/models/queryexternalactivityopportunityresult.go
@@ -4986,6 +5016,7 @@ gc/models/queryopportunityenrollmentsrequest.go
 gc/models/queryopportunityenrollmentsresponse.go
 gc/models/queryopportunityenrollmentsresult.go
 gc/models/queryplanninggrouptostaffinggroupsrequest.go
+gc/models/queryprocessingconfig.go
 gc/models/queryrequest.go
 gc/models/queryrequestclause.go
 gc/models/queryrequestfilter.go
@@ -5033,6 +5064,7 @@ gc/models/ratelimitaggregatequeryresponse.go
 gc/models/ratelimitaggregationquery.go
 gc/models/ratelimitaggregationsort.go
 gc/models/ratelimitaggregationview.go
+gc/models/ratingfilter.go
 gc/models/reaction.go
 gc/models/realtimeadherenceexplanation.go
 gc/models/reason.go
@@ -5102,6 +5134,8 @@ gc/models/registerarchitectexportjob.go
 gc/models/registerarchitectexportjobresponse.go
 gc/models/registerarchitectjobrequest.go
 gc/models/registerarchitectjobresponse.go
+gc/models/registerarchitectvalidatejob.go
+gc/models/registerarchitectvalidatejobresponse.go
 gc/models/relationship.go
 gc/models/relationshiplisting.go
 gc/models/removeentitiesrequest.go
@@ -5245,6 +5279,18 @@ gc/models/salesforcesourceresponse.go
 gc/models/samlprovider.go
 gc/models/schedule.go
 gc/models/scheduleactivity.go
+gc/models/schedulebid.go
+gc/models/schedulebidgroup.go
+gc/models/schedulebidgroupcreate.go
+gc/models/schedulebidgroupreference.go
+gc/models/schedulebidgroupresponse.go
+gc/models/schedulebidgroupsummary.go
+gc/models/schedulebidgroupsummarylist.go
+gc/models/schedulebidgroupupdate.go
+gc/models/schedulebidlistresponse.go
+gc/models/schedulebidreference.go
+gc/models/schedulebidscheduledactivity.go
+gc/models/schedulebidscheduledshift.go
 gc/models/scheduledivisionviewentitylisting.go
 gc/models/scheduledtrigger.go
 gc/models/scheduledtriggerentitylisting.go
@@ -5263,6 +5309,8 @@ gc/models/schedulermessageargument.go
 gc/models/schedulermessageseveritycount.go
 gc/models/schedulermessagetypeseverity.go
 gc/models/schedulesdivisionview.go
+gc/models/scheduleseterror.go
+gc/models/schedulesetrequest.go
 gc/models/scheduleuploadprocessingresponse.go
 gc/models/schedulevisibilityrange.go
 gc/models/schedulevisibilitysettingsrequest.go
@@ -5409,6 +5457,8 @@ gc/models/sharedentity.go
 gc/models/sharedresponse.go
 gc/models/shareentitylisting.go
 gc/models/sharepointauthenticationproperties.go
+gc/models/shiftset.go
+gc/models/shiftseteffectiveworkplan.go
 gc/models/shiftstartvariance.go
 gc/models/shifttradeactivitypreviewresponse.go
 gc/models/shifttradeactivityrule.go
@@ -5950,6 +6000,7 @@ gc/models/updateactioninput.go
 gc/models/updateactivitycoderequest.go
 gc/models/updateactivityplanrequest.go
 gc/models/updateadherenceexplanationstatusrequest.go
+gc/models/updateagentschedulebiddingpreference.go
 gc/models/updateagentworkplanbiddingpreference.go
 gc/models/updatealternativeshiftbusettingsrequest.go
 gc/models/updateanalyticsdataretentionrequest.go
@@ -5984,6 +6035,7 @@ gc/models/updatenotificationsrequest.go
 gc/models/updatenotificationsresponse.go
 gc/models/updateplanninggrouprequest.go
 gc/models/updaterowindexrequest.go
+gc/models/updateschedulebid.go
 gc/models/updatescheduledtriggerrequest.go
 gc/models/updatescheduleuploadresponse.go
 gc/models/updatescheduleuploadschema.go
@@ -6175,6 +6227,7 @@ gc/models/validateaddressresponse.go
 gc/models/validateagentunavailabletimesrequest.go
 gc/models/validateagentunavailabletimesresponse.go
 gc/models/validateassignusers.go
+gc/models/validatedetails.go
 gc/models/validateworkplanmessages.go
 gc/models/validateworkplanresponse.go
 gc/models/validationerror.go
@@ -6321,6 +6374,7 @@ gc/models/wfmusernotification.go
 gc/models/wfmversionedentitymetadata.go
 gc/models/whatsappavailablephonenumberdetails.go
 gc/models/whatsappavailablephonenumberdetailslisting.go
+gc/models/whatsappbusinessscopedid.go
 gc/models/whatsappcallingconfigurationrequest.go
 gc/models/whatsappcallingconfigurationresponse.go
 gc/models/whatsappcampaignschedule.go

@@ -23,6 +23,16 @@
       "description": "Create Learning Assignment"
     },
     {
+      "name": "update",
+      "path": "/api/v2/learning/assignments/{assignmentId}/reschedule",
+      "description": "Reschedule Learning Assignment"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/learning/assignments/me",
+      "description": "List of Learning Assignments assigned to current user"
+    },
+    {
       "name": "get",
       "path": "/api/v2/learning/assignments/{assignmentId}",
       "description": "Get Learning Assignment"
@@ -51,16 +61,6 @@
       "name": "create",
       "path": "/api/v2/learning/assignments/bulkadd",
       "description": "Add multiple learning assignments"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/learning/assignments/{assignmentId}/reschedule",
-      "description": "Reschedule Learning Assignment"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/learning/assignments/me",
-      "description": "List of Learning Assignments assigned to current user"
     },
     {
       "name": "create",
@@ -163,9 +163,9 @@
       "description": "Update a learning module rule"
     },
     {
-      "name": "create",
-      "path": "/api/v2/learning/scheduleslots/query",
-      "description": "Get list of possible slots where a learning activity can be scheduled."
+      "name": "get",
+      "path": "/api/v2/learning/scheduleslots/jobs/{jobId}",
+      "description": "Retrieve the status of the job for the slots where a learning activity can be scheduled."
     },
     {
       "name": "create",
@@ -173,9 +173,9 @@
       "description": "Start job to retrieve slots where a learning activity can be scheduled."
     },
     {
-      "name": "get",
-      "path": "/api/v2/learning/scheduleslots/jobs/{jobId}",
-      "description": "Retrieve the status of the job for the slots where a learning activity can be scheduled."
+      "name": "create",
+      "path": "/api/v2/learning/scheduleslots/query",
+      "description": "Get list of possible slots where a learning activity can be scheduled."
     },
     {
       "name": "get",

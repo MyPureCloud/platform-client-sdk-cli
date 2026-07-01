@@ -98,6 +98,7 @@ gc is a CLI for interacting with Genesys Cloud
 * [gc responsemanagement](gc_responsemanagement.html)	 - /api/v2/responsemanagement
 * [gc routing](gc_routing.html)	 - /api/v2/routing
 * [gc scim](gc_scim.html)	 - /api/v2/scim
+* [gc screenmonitors](gc_screenmonitors.html)	 - /api/v2/screenmonitors
 * [gc screenrecording](gc_screenrecording.html)	 - /api/v2/screenrecording
 * [gc scripts](gc_scripts.html)	 - /api/v2/scripts
 * [gc search](gc_search.html)	 - /api/v2/search

@@ -33,6 +33,7 @@
 * [gc workforcemanagement businessunits capacityplans bulk](gc_workforcemanagement_businessunits_capacityplans_bulk.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/bulk
 * [gc workforcemanagement businessunits capacityplans copy](gc_workforcemanagement_businessunits_capacityplans_copy.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/copy
 * [gc workforcemanagement businessunits capacityplans create](gc_workforcemanagement_businessunits_capacityplans_create.html)	 - Create a new capacity plan
+* [gc workforcemanagement businessunits capacityplans forecast](gc_workforcemanagement_businessunits_capacityplans_forecast.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/forecast
 * [gc workforcemanagement businessunits capacityplans get](gc_workforcemanagement_businessunits_capacityplans_get.html)	 - Get a capacity plan
 * [gc workforcemanagement businessunits capacityplans list](gc_workforcemanagement_businessunits_capacityplans_list.html)	 - Get list of capacity plans for a business unit
 * [gc workforcemanagement businessunits capacityplans requirement](gc_workforcemanagement_businessunits_capacityplans_requirement.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/requirement

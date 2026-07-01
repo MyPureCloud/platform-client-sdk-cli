@@ -37,6 +37,7 @@
 * [gc externalcontacts organizations get](gc_externalcontacts_organizations_get.html)	 - Fetch an external organization
 * [gc externalcontacts organizations identifiers](gc_externalcontacts_organizations_identifiers.html)	 - /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers
 * [gc externalcontacts organizations notes](gc_externalcontacts_organizations_notes.html)	 - /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes
+* [gc externalcontacts organizations patch](gc_externalcontacts_organizations_patch.html)	 - Update specific fields of an external organization
 * [gc externalcontacts organizations relationships](gc_externalcontacts_organizations_relationships.html)	 - /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships
 * [gc externalcontacts organizations schemas](gc_externalcontacts_organizations_schemas.html)	 - /api/v2/externalcontacts/organizations/schemas
 * [gc externalcontacts organizations search](gc_externalcontacts_organizations_search.html)	 - Search for external organizations

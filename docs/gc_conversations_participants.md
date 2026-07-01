@@ -37,6 +37,7 @@
 * [gc conversations participants flaggedreason](gc_conversations_participants_flaggedreason.html)	 - /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason
 * [gc conversations participants internalmessages](gc_conversations_participants_internalmessages.html)	 - /api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages
 * [gc conversations participants replace](gc_conversations_participants_replace.html)	 - /api/v2/conversations/{conversationId}/participants/{participantId}/replace
+* [gc conversations participants screenmonitors](gc_conversations_participants_screenmonitors.html)	 - /api/v2/conversations/{conversationId}/participants/{participantId}/screenmonitors
 * [gc conversations participants secureivrsessions](gc_conversations_participants_secureivrsessions.html)	 - /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions
 * [gc conversations participants transfer](gc_conversations_participants_transfer.html)	 - /api/v2/conversations/{conversationId}/participants/{participantId}/transfer
 * [gc conversations participants update](gc_conversations_participants_update.html)	 - Update a participant.

@@ -1,15 +1,20 @@
-## gc externalcontacts relationships
+## gc workforcemanagement businessunits capacityplans forecast get
 
-/api/v2/externalcontacts/relationships
+Get a capacity plan`s forecast inputs
 
 ### Synopsis
 
-/api/v2/externalcontacts/relationships
+Get a capacity plan`s forecast inputs
+
+```
+gc workforcemanagement businessunits capacityplans forecast get [businessUnitId] [capacityPlanId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for relationships
+      --granularity string   Granularity to access capacity plan forecast data, defaults to weekly Valid values: weekly, monthly
+  -h, --help                 help for get
 ```
 
 ### Options inherited from parent commands
@@ -29,11 +34,6 @@
 
 ### SEE ALSO
 
-* [gc externalcontacts](gc_externalcontacts.html)	 - /api/v2/externalcontacts
-* [gc externalcontacts relationships create](gc_externalcontacts_relationships_create.html)	 - Create a relationship
-* [gc externalcontacts relationships delete](gc_externalcontacts_relationships_delete.html)	 - Delete a relationship
-* [gc externalcontacts relationships get](gc_externalcontacts_relationships_get.html)	 - Fetch a relationship
-* [gc externalcontacts relationships patch](gc_externalcontacts_relationships_patch.html)	 - Update specific fields of a relationship
-* [gc externalcontacts relationships update](gc_externalcontacts_relationships_update.html)	 - Update a relationship
+* [gc workforcemanagement businessunits capacityplans forecast](gc_workforcemanagement_businessunits_capacityplans_forecast.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/forecast
 
 

@@ -44,6 +44,7 @@
 * [gc flows jobs](gc_flows_jobs.html)	 - /api/v2/flows/jobs
 * [gc flows latestconfiguration](gc_flows_latestconfiguration.html)	 - /api/v2/flows/{flowId}/latestconfiguration
 * [gc flows list](gc_flows_list.html)	 - Get a pageable list of flows, filtered by query parameters
+* [gc flows lookup](gc_flows_lookup.html)	 - /api/v2/flows/lookup
 * [gc flows milestones](gc_flows_milestones.html)	 - /api/v2/flows/milestones
 * [gc flows outcomes](gc_flows_outcomes.html)	 - /api/v2/flows/outcomes
 * [gc flows update](gc_flows_update.html)	 - Update flow

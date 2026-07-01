@@ -1,15 +1,15 @@
-## gc externalcontacts relationships
+## gc screenmonitors sessions users details
 
-/api/v2/externalcontacts/relationships
+/api/v2/screenmonitors/sessions/users/details
 
 ### Synopsis
 
-/api/v2/externalcontacts/relationships
+/api/v2/screenmonitors/sessions/users/details
 
 ### Options
 
 ```
-  -h, --help   help for relationships
+  -h, --help   help for details
 ```
 
 ### Options inherited from parent commands
@@ -29,11 +29,7 @@
 
 ### SEE ALSO
 
-* [gc externalcontacts](gc_externalcontacts.html)	 - /api/v2/externalcontacts
-* [gc externalcontacts relationships create](gc_externalcontacts_relationships_create.html)	 - Create a relationship
-* [gc externalcontacts relationships delete](gc_externalcontacts_relationships_delete.html)	 - Delete a relationship
-* [gc externalcontacts relationships get](gc_externalcontacts_relationships_get.html)	 - Fetch a relationship
-* [gc externalcontacts relationships patch](gc_externalcontacts_relationships_patch.html)	 - Update specific fields of a relationship
-* [gc externalcontacts relationships update](gc_externalcontacts_relationships_update.html)	 - Update a relationship
+* [gc screenmonitors sessions users](gc_screenmonitors_sessions_users.html)	 - /api/v2/screenmonitors/sessions/users
+* [gc screenmonitors sessions users details create](gc_screenmonitors_sessions_users_details_create.html)	 - Get screen monitor session details for one or more users.
 
 

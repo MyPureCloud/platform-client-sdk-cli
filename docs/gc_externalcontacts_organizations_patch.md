@@ -1,15 +1,22 @@
-## gc externalcontacts relationships
+## gc externalcontacts organizations patch
 
-/api/v2/externalcontacts/relationships
+Update specific fields of an external organization
 
 ### Synopsis
 
-/api/v2/externalcontacts/relationships
+Update specific fields of an external organization
+
+```
+gc externalcontacts organizations patch [externalOrganizationId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for relationships
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for patch
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,11 +36,6 @@
 
 ### SEE ALSO
 
-* [gc externalcontacts](gc_externalcontacts.html)	 - /api/v2/externalcontacts
-* [gc externalcontacts relationships create](gc_externalcontacts_relationships_create.html)	 - Create a relationship
-* [gc externalcontacts relationships delete](gc_externalcontacts_relationships_delete.html)	 - Delete a relationship
-* [gc externalcontacts relationships get](gc_externalcontacts_relationships_get.html)	 - Fetch a relationship
-* [gc externalcontacts relationships patch](gc_externalcontacts_relationships_patch.html)	 - Update specific fields of a relationship
-* [gc externalcontacts relationships update](gc_externalcontacts_relationships_update.html)	 - Update a relationship
+* [gc externalcontacts organizations](gc_externalcontacts_organizations.html)	 - /api/v2/externalcontacts/organizations
 
 

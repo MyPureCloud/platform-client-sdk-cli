@@ -1,15 +1,15 @@
-## gc externalcontacts relationships
+## gc users screenmonitors sessions
 
-/api/v2/externalcontacts/relationships
+/api/v2/users/{userId}/screenmonitors/sessions
 
 ### Synopsis
 
-/api/v2/externalcontacts/relationships
+/api/v2/users/{userId}/screenmonitors/sessions
 
 ### Options
 
 ```
-  -h, --help   help for relationships
+  -h, --help   help for sessions
 ```
 
 ### Options inherited from parent commands
@@ -29,11 +29,9 @@
 
 ### SEE ALSO
 
-* [gc externalcontacts](gc_externalcontacts.html)	 - /api/v2/externalcontacts
-* [gc externalcontacts relationships create](gc_externalcontacts_relationships_create.html)	 - Create a relationship
-* [gc externalcontacts relationships delete](gc_externalcontacts_relationships_delete.html)	 - Delete a relationship
-* [gc externalcontacts relationships get](gc_externalcontacts_relationships_get.html)	 - Fetch a relationship
-* [gc externalcontacts relationships patch](gc_externalcontacts_relationships_patch.html)	 - Update specific fields of a relationship
-* [gc externalcontacts relationships update](gc_externalcontacts_relationships_update.html)	 - Update a relationship
+* [gc users screenmonitors](gc_users_screenmonitors.html)	 - /api/v2/users/{userId}/screenmonitors
+* [gc users screenmonitors sessions create](gc_users_screenmonitors_sessions_create.html)	 - Start an agent-level screen monitoring session.
+* [gc users screenmonitors sessions delete](gc_users_screenmonitors_sessions_delete.html)	 - Stop an agent-level screen monitoring session.
+* [gc users screenmonitors sessions get](gc_users_screenmonitors_sessions_get.html)	 - Get an agent-level screen monitoring session object using the supplied screenMonitoringId.
 
 

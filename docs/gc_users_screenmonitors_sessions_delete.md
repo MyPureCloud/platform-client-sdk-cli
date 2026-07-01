@@ -1,15 +1,19 @@
-## gc externalcontacts relationships
+## gc users screenmonitors sessions delete
 
-/api/v2/externalcontacts/relationships
+Stop an agent-level screen monitoring session.
 
 ### Synopsis
 
-/api/v2/externalcontacts/relationships
+Stop an agent-level screen monitoring session.
+
+```
+gc users screenmonitors sessions delete [userId] [screenMonitoringId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for relationships
+  -h, --help   help for delete
 ```
 
 ### Options inherited from parent commands
@@ -29,11 +33,6 @@
 
 ### SEE ALSO
 
-* [gc externalcontacts](gc_externalcontacts.html)	 - /api/v2/externalcontacts
-* [gc externalcontacts relationships create](gc_externalcontacts_relationships_create.html)	 - Create a relationship
-* [gc externalcontacts relationships delete](gc_externalcontacts_relationships_delete.html)	 - Delete a relationship
-* [gc externalcontacts relationships get](gc_externalcontacts_relationships_get.html)	 - Fetch a relationship
-* [gc externalcontacts relationships patch](gc_externalcontacts_relationships_patch.html)	 - Update specific fields of a relationship
-* [gc externalcontacts relationships update](gc_externalcontacts_relationships_update.html)	 - Update a relationship
+* [gc users screenmonitors sessions](gc_users_screenmonitors_sessions.html)	 - /api/v2/users/{userId}/screenmonitors/sessions
 
 

@@ -34,6 +34,7 @@
 * [gc externalcontacts organizations notes delete](gc_externalcontacts_organizations_notes_delete.html)	 - Delete a note for an external organization
 * [gc externalcontacts organizations notes get](gc_externalcontacts_organizations_notes_get.html)	 - Fetch a note for an external organization
 * [gc externalcontacts organizations notes list](gc_externalcontacts_organizations_notes_list.html)	 - List notes for an external organization
+* [gc externalcontacts organizations notes patch](gc_externalcontacts_organizations_notes_patch.html)	 - Update an External Organization Note
 * [gc externalcontacts organizations notes update](gc_externalcontacts_organizations_notes_update.html)	 - Update a note for an external organization
 
 

@@ -1,15 +1,15 @@
-## gc externalcontacts relationships
+## gc flows lookup
 
-/api/v2/externalcontacts/relationships
+/api/v2/flows/lookup
 
 ### Synopsis
 
-/api/v2/externalcontacts/relationships
+/api/v2/flows/lookup
 
 ### Options
 
 ```
-  -h, --help   help for relationships
+  -h, --help   help for lookup
 ```
 
 ### Options inherited from parent commands
@@ -29,11 +29,7 @@
 
 ### SEE ALSO
 
-* [gc externalcontacts](gc_externalcontacts.html)	 - /api/v2/externalcontacts
-* [gc externalcontacts relationships create](gc_externalcontacts_relationships_create.html)	 - Create a relationship
-* [gc externalcontacts relationships delete](gc_externalcontacts_relationships_delete.html)	 - Delete a relationship
-* [gc externalcontacts relationships get](gc_externalcontacts_relationships_get.html)	 - Fetch a relationship
-* [gc externalcontacts relationships patch](gc_externalcontacts_relationships_patch.html)	 - Update specific fields of a relationship
-* [gc externalcontacts relationships update](gc_externalcontacts_relationships_update.html)	 - Update a relationship
+* [gc flows](gc_flows.html)	 - /api/v2/flows
+* [gc flows lookup list](gc_flows_lookup_list.html)	 - Look up flows by ID
 
 

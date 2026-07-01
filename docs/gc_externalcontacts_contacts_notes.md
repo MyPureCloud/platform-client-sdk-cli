@@ -34,6 +34,7 @@
 * [gc externalcontacts contacts notes delete](gc_externalcontacts_contacts_notes_delete.html)	 - Delete a note for an external contact
 * [gc externalcontacts contacts notes get](gc_externalcontacts_contacts_notes_get.html)	 - Fetch a note for an external contact
 * [gc externalcontacts contacts notes list](gc_externalcontacts_contacts_notes_list.html)	 - List notes for an external contact
+* [gc externalcontacts contacts notes patch](gc_externalcontacts_contacts_notes_patch.html)	 - Update a Contact Note
 * [gc externalcontacts contacts notes update](gc_externalcontacts_contacts_notes_update.html)	 - Update a note for an external contact
 
 

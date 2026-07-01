@@ -1,31 +1,27 @@
-## gc learning modules list
+## gc flows lookup list
 
-Get all learning modules of an organization
+Look up flows by ID
 
 ### Synopsis
 
-Get all learning modules of an organization
+Look up flows by ID
 
 ```
-gc learning modules list [flags]
+gc flows lookup list [flags]
 ```
 
 ### Options
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --expand strings           Fields to expand in response(case insensitive) Valid values: rule, summaryData
-      --externalIds strings      Specifies the module external IDs to filter by. Only one ID is allowed
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
+      --id strings               Flow ID(s) - REQUIRED
       --pageNumber string        Page number (default "1")
       --pageSize string          Page size (default "25")
-      --searchTerm string        Search Term (searchable by name)
-      --sortBy string            Sort by Valid values: name, createddate, percentpassed, averagescore
-      --sortOrder string         Sort order Valid values: ascending, descending
-      --statuses strings         Specifies the module statuses to filter by Valid values: Unpublished, Published, Archived
+      --sortBy string            Sort by
+      --sortOrder string         Sort order
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
-      --types strings            Specifies the module types. Informational, AssessedContent and Assessment are deprecated Valid values: Informational, AssessedContent, Assessment, External, Native
 ```
 
 ### Options inherited from parent commands
@@ -45,6 +41,6 @@ gc learning modules list [flags]
 
 ### SEE ALSO
 
-* [gc learning modules](gc_learning_modules.html)	 - /api/v2/learning/modules
+* [gc flows lookup](gc_flows_lookup.html)	 - /api/v2/flows/lookup
 
 

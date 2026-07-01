@@ -54,6 +54,9 @@ type ResponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -75,7 +78,7 @@ type Response struct {
     Libraries []Domainentityref `json:"libraries"`
 
 
-    // Texts - One or more texts associated with the response.
+    // Texts - One or more texts associated with the response. Required for responseTypes: Standard, Footer, MessagingTemplate and CampaignEmailTemplate
     Texts []Responsetext `json:"texts"`
 
 
@@ -113,6 +116,10 @@ type Response struct {
     Footer Footertemplate `json:"footer"`
 
 
+    // AppleInvitation - Apple Messages for Business invitation template definition for responseType.AppleInvitation.
+    AppleInvitation Appleinvitation `json:"appleInvitation"`
+
+
     
 
 }
@@ -129,6 +136,7 @@ func (o *Response) String() string {
     
     
      o.Assets = []Rmsassetaddressableref{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -168,6 +176,8 @@ func (u *Response) MarshalJSON() ([]byte, error) {
         Assets []Rmsassetaddressableref `json:"assets"`
         
         Footer Footertemplate `json:"footer"`
+        
+        AppleInvitation Appleinvitation `json:"appleInvitation"`
         *Alias
     }{
 
@@ -215,6 +225,9 @@ func (u *Response) MarshalJSON() ([]byte, error) {
 
         
         Assets: []Rmsassetaddressableref{{}},
+        
+
+
         
 
 

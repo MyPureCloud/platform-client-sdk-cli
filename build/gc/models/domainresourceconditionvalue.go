@@ -30,15 +30,15 @@ type DomainresourceconditionvalueDud struct {
 // Domainresourceconditionvalue
 type Domainresourceconditionvalue struct { 
     // User
-    User User `json:"user"`
+    User Userfullreference `json:"user"`
 
 
     // Queue
-    Queue Queue `json:"queue"`
+    Queue Queuefullreference `json:"queue"`
 
 
     // Team
-    Team Team `json:"team"`
+    Team Teamfullreference `json:"team"`
 
 
     // Value
@@ -74,11 +74,11 @@ func (u *Domainresourceconditionvalue) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        User User `json:"user"`
+        User Userfullreference `json:"user"`
         
-        Queue Queue `json:"queue"`
+        Queue Queuefullreference `json:"queue"`
         
-        Team Team `json:"team"`
+        Team Teamfullreference `json:"team"`
         
         Value string `json:"value"`
         

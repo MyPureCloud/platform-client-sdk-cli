@@ -38,12 +38,26 @@ type BufulldaytimeoffmarkerDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Bufulldaytimeoffmarker
 type Bufulldaytimeoffmarker struct { 
     // BusinessUnitDate - The date of the time off marker, interpreted in the business unit's time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
     BusinessUnitDate time.Time `json:"businessUnitDate"`
+
+
+    // StartOffsetMinutes - The start offset in minutes for the time-off marker
+    StartOffsetMinutes int `json:"startOffsetMinutes"`
+
+
+    // EndOffsetMinutes - The end offset in minutes for the time-off marker
+    EndOffsetMinutes int `json:"endOffsetMinutes"`
 
 
     // LengthMinutes - The length of the time off marker in minutes
@@ -90,6 +104,8 @@ func (o *Bufulldaytimeoffmarker) String() string {
     
     
     
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -109,6 +125,10 @@ func (u *Bufulldaytimeoffmarker) MarshalJSON() ([]byte, error) {
         
         BusinessUnitDate time.Time `json:"businessUnitDate"`
         
+        StartOffsetMinutes int `json:"startOffsetMinutes"`
+        
+        EndOffsetMinutes int `json:"endOffsetMinutes"`
+        
         LengthMinutes int `json:"lengthMinutes"`
         
         Description string `json:"description"`
@@ -126,6 +146,12 @@ func (u *Bufulldaytimeoffmarker) MarshalJSON() ([]byte, error) {
         Delete bool `json:"delete"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

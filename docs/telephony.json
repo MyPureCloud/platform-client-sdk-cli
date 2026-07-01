@@ -49,13 +49,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/telephony/numbers/routing/reset",
-      "description": "Reset routing for organization"
+      "path": "/api/v2/telephony/numbers/routing/all",
+      "description": "Re-route all numbers on an organization"
     },
     {
       "name": "create",
-      "path": "/api/v2/telephony/numbers/routing/all",
-      "description": "Re-route all numbers on an organization"
+      "path": "/api/v2/telephony/numbers/routing/reset",
+      "description": "Reset routing for organization"
     },
     {
       "name": "get",

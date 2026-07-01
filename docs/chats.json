@@ -38,6 +38,16 @@
       "description": "Update reactions to a message"
     },
     {
+      "name": "list",
+      "path": "/api/v2/chats/rooms/{roomJid}/messages",
+      "description": "Get a room's message history"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/chats/rooms/{roomJid}/messages",
+      "description": "Send a message to a room"
+    },
+    {
       "name": "delete",
       "path": "/api/v2/chats/rooms/{roomJid}/messages/{messageId}",
       "description": "Delete a message in a room"
@@ -61,16 +71,6 @@
       "name": "create",
       "path": "/api/v2/chats/users/{userId}/messages",
       "description": "Send a message to a user"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/chats/rooms/{roomJid}/messages",
-      "description": "Get a room's message history"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/chats/rooms/{roomJid}/messages",
-      "description": "Send a message to a room"
     },
     {
       "name": "delete",
@@ -113,6 +113,16 @@
       "description": "Get room participants in a room"
     },
     {
+      "name": "get",
+      "path": "/api/v2/chats/rooms/{roomJid}",
+      "description": "Get a room"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/chats/rooms/{roomJid}",
+      "description": "Set properties for a room"
+    },
+    {
       "name": "create",
       "path": "/api/v2/chats/rooms",
       "description": "Create an adhoc room"
@@ -131,16 +141,6 @@
       "name": "list",
       "path": "/api/v2/chats/threads/{threadId}/messages",
       "description": "Get history by thread"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/chats/rooms/{roomJid}",
-      "description": "Get a room"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/chats/rooms/{roomJid}",
-      "description": "Set properties for a room"
     },
     {
       "name": "get",

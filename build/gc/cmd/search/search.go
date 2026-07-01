@@ -29,7 +29,7 @@ func init() {
 
 func Cmdsearch() *cobra.Command { 
 	utils.AddFlag(createCmd.Flags(), "bool", "profile", "true", "profile")
-	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/search", utils.FormatPermissions([]string{ "directory:user:view",  }), utils.GenerateDevCentreLink("POST", "Search", "/api/v2/search")))
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/search", utils.FormatPermissions([]string{ "directory:user:view", "routing:skill:view",  }), utils.GenerateDevCentreLink("POST", "Search", "/api/v2/search")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "Search request options",
   "content" : {

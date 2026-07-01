@@ -58,6 +58,11 @@
       "description": "Create new knowledge base"
     },
     {
+      "name": "list",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups",
+      "description": "Get knowledge base unanswered groups"
+    },
+    {
       "name": "get",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}",
       "description": "Get knowledge base unanswered group for a particular groupId"
@@ -71,11 +76,6 @@
       "name": "update",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}",
       "description": "Update a Knowledge base unanswered phrase group"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups",
-      "description": "Get knowledge base unanswered groups"
     },
     {
       "name": "get",
@@ -383,11 +383,6 @@
       "description": "Get ids of operation creator users and oauth clients"
     },
     {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import",
-      "description": "Import the parsed articles"
-    },
-    {
       "name": "get",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}",
       "description": "Get parse job report"
@@ -399,13 +394,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs",
-      "description": "Create parse job"
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import",
+      "description": "Import the parsed articles"
     },
     {
       "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search",
-      "description": "Search the documents in a knowledge base."
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs",
+      "description": "Create parse job"
     },
     {
       "name": "update",
@@ -416,6 +411,11 @@
       "name": "create",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/suggestions",
       "description": "Query the knowledge documents to provide suggestions for auto completion."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search",
+      "description": "Search the documents in a knowledge base."
     },
     {
       "name": "create",
@@ -553,19 +553,14 @@
       "description": "Give feedback on a document"
     },
     {
-      "name": "get",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}",
-      "description": "Get a knowledge document by ID."
-    },
-    {
       "name": "list",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents",
       "description": "Get documents."
     },
     {
-      "name": "create",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views",
-      "description": "Create view event for a document."
+      "name": "get",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}",
+      "description": "Get a knowledge document by ID."
     },
     {
       "name": "create",
@@ -576,6 +571,11 @@
       "name": "create",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations",
       "description": "Indicate that documents were presented to the user."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views",
+      "description": "Create view event for a document."
     },
     {
       "name": "list",

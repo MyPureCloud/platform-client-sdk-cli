@@ -72,6 +72,12 @@ type TimeoffrequestDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -130,6 +136,14 @@ type Timeoffrequest struct {
     PayableMinutes []int `json:"payableMinutes"`
 
 
+    // FullDayEarliestStartOffsetMinutes - Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+    FullDayEarliestStartOffsetMinutes []int `json:"fullDayEarliestStartOffsetMinutes"`
+
+
+    // FullDayLatestEndOffsetMinutes - Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+    FullDayLatestEndOffsetMinutes []int `json:"fullDayLatestEndOffsetMinutes"`
+
+
     // Notes - Notes about the time off request
     Notes string `json:"notes"`
 
@@ -177,6 +191,8 @@ func (o *Timeoffrequest) String() string {
     
      o.DurationMinutes = []int{0} 
      o.PayableMinutes = []int{0} 
+     o.FullDayEarliestStartOffsetMinutes = []int{0} 
+     o.FullDayLatestEndOffsetMinutes = []int{0} 
     
     
     
@@ -226,6 +242,10 @@ func (u *Timeoffrequest) MarshalJSON() ([]byte, error) {
         DurationMinutes []int `json:"durationMinutes"`
         
         PayableMinutes []int `json:"payableMinutes"`
+        
+        FullDayEarliestStartOffsetMinutes []int `json:"fullDayEarliestStartOffsetMinutes"`
+        
+        FullDayLatestEndOffsetMinutes []int `json:"fullDayLatestEndOffsetMinutes"`
         
         Notes string `json:"notes"`
         
@@ -287,6 +307,16 @@ func (u *Timeoffrequest) MarshalJSON() ([]byte, error) {
 
         
         PayableMinutes: []int{0},
+        
+
+
+        
+        FullDayEarliestStartOffsetMinutes: []int{0},
+        
+
+
+        
+        FullDayLatestEndOffsetMinutes: []int{0},
         
 
 

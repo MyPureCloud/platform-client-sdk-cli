@@ -19,12 +19,19 @@ type VideosettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Videosettings - The settings to enable video chat
 type Videosettings struct { 
     // Enabled - whether or not video is enabled
     Enabled bool `json:"enabled"`
+
+
+    // Channels - The channels on which video chat is available
+    Channels []string `json:"channels"`
 
 
     // Agent - Video Settings for agent
@@ -39,6 +46,7 @@ type Videosettings struct {
 // String returns a JSON representation of the model
 func (o *Videosettings) String() string {
     
+     o.Channels = []string{""} 
     
     
 
@@ -60,12 +68,19 @@ func (u *Videosettings) MarshalJSON() ([]byte, error) {
         
         Enabled bool `json:"enabled"`
         
+        Channels []string `json:"channels"`
+        
         Agent Agentvideosettings `json:"agent"`
         
         User Uservideosettings `json:"user"`
         *Alias
     }{
 
+        
+
+
+        
+        Channels: []string{""},
         
 
 

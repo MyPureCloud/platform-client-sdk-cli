@@ -81,7 +81,6 @@ func Cmdlearning_modules() *cobra.Command {
 }`)
 	learning_modulesCmd.AddCommand(getCmd)
 
-	utils.AddFlag(listCmd.Flags(), "bool", "isArchived", "false", "Archive status")
 	utils.AddFlag(listCmd.Flags(), "[]string", "types", "", "Specifies the module types. Informational, AssessedContent and Assessment are deprecated Valid values: Informational, AssessedContent, Assessment, External, Native")
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "Page number")
@@ -89,7 +88,6 @@ func Cmdlearning_modules() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "name", "Sort by Valid values: name, createddate, percentpassed, averagescore")
 	utils.AddFlag(listCmd.Flags(), "string", "searchTerm", "", "Search Term (searchable by name)")
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Fields to expand in response(case insensitive) Valid values: rule, summaryData")
-	utils.AddFlag(listCmd.Flags(), "string", "isPublished", "Any", "Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned Valid values: True, False, Any")
 	utils.AddFlag(listCmd.Flags(), "[]string", "statuses", "", "Specifies the module statuses to filter by Valid values: Unpublished, Published, Archived")
 	utils.AddFlag(listCmd.Flags(), "[]string", "externalIds", "", "Specifies the module external IDs to filter by. Only one ID is allowed")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/learning/modules", utils.FormatPermissions([]string{ "learning:module:view",  }), utils.GenerateDevCentreLink("GET", "Learning", "/api/v2/learning/modules")))
@@ -414,10 +412,6 @@ var listCmd = &cobra.Command{
 
 		path := "/api/v2/learning/modules"
 
-		isArchived := utils.GetFlag(cmd.Flags(), "bool", "isArchived")
-		if isArchived != "" {
-			queryParams["isArchived"] = isArchived
-		}
 		types := utils.GetFlag(cmd.Flags(), "[]string", "types")
 		if types != "" {
 			queryParams["types"] = types
@@ -445,10 +439,6 @@ var listCmd = &cobra.Command{
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
-		}
-		isPublished := utils.GetFlag(cmd.Flags(), "string", "isPublished")
-		if isPublished != "" {
-			queryParams["isPublished"] = isPublished
 		}
 		statuses := utils.GetFlag(cmd.Flags(), "[]string", "statuses")
 		if statuses != "" {

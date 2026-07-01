@@ -163,6 +163,21 @@
       "description": "Patch a user's Presence"
     },
     {
+      "name": "create",
+      "path": "/api/v2/users/{userId}/screenmonitors/sessions",
+      "description": "Start an agent-level screen monitoring session."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/screenmonitors/sessions/{screenMonitoringId}",
+      "description": "Get an agent-level screen monitoring session object using the supplied screenMonitoringId."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/screenmonitors/sessions/{screenMonitoringId}",
+      "description": "Stop an agent-level screen monitoring session."
+    },
+    {
       "name": "list",
       "path": "/api/v2/users/chats/me",
       "description": "Get chats for a user"
@@ -363,14 +378,14 @@
       "description": "Clear associated station"
     },
     {
-      "name": "update",
-      "path": "/api/v2/users/{userId}/station/defaultstation/{stationId}",
-      "description": "Set default station"
-    },
-    {
       "name": "delete",
       "path": "/api/v2/users/{userId}/station/defaultstation",
       "description": "Clear default station"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/station/defaultstation/{stationId}",
+      "description": "Set default station"
     },
     {
       "name": "list",
@@ -513,14 +528,14 @@
       "description": "Retrieve aggregated development activity data"
     },
     {
-      "name": "list",
-      "path": "/api/v2/users/rules/{ruleId}/dependents",
-      "description": "Get dependents for a users rule"
-    },
-    {
       "name": "get",
       "path": "/api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId}",
       "description": "Get dependent of a users rule"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/rules/{ruleId}/dependents",
+      "description": "Get dependents for a users rule"
     },
     {
       "name": "get",

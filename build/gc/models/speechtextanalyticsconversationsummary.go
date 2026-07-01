@@ -32,6 +32,15 @@ type SpeechtextanalyticsconversationsummaryDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Speechtextanalyticsconversationsummary
@@ -46,6 +55,14 @@ type Speechtextanalyticsconversationsummary struct {
 
     // Language - Language of the summary
     Language string `json:"language"`
+
+
+    // SummaryId - The id of the summary
+    SummaryId string `json:"summaryId"`
+
+
+    // AgentId - The id of the agent associated with the summary
+    AgentId string `json:"agentId"`
 
 
     // SourceId - The id of the source (program, agent assistant, or flow) from which summarization is triggered
@@ -63,6 +80,10 @@ type Speechtextanalyticsconversationsummary struct {
     // DateCreated - Timestamp of when the summary was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DateCreated time.Time `json:"dateCreated"`
 
+
+    // Insights - Insights of the conversation
+    Insights []Conversationinsight `json:"insights"`
+
 }
 
 // String returns a JSON representation of the model
@@ -74,6 +95,9 @@ func (o *Speechtextanalyticsconversationsummary) String() string {
     
     
     
+    
+    
+     o.Insights = []Conversationinsight{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -97,6 +121,10 @@ func (u *Speechtextanalyticsconversationsummary) MarshalJSON() ([]byte, error) {
         
         Language string `json:"language"`
         
+        SummaryId string `json:"summaryId"`
+        
+        AgentId string `json:"agentId"`
+        
         SourceId string `json:"sourceId"`
         
         Summary string `json:"summary"`
@@ -104,6 +132,8 @@ func (u *Speechtextanalyticsconversationsummary) MarshalJSON() ([]byte, error) {
         Generated bool `json:"generated"`
         
         DateCreated time.Time `json:"dateCreated"`
+        
+        Insights []Conversationinsight `json:"insights"`
         *Alias
     }{
 
@@ -125,6 +155,17 @@ func (u *Speechtextanalyticsconversationsummary) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+
+
+        
+        Insights: []Conversationinsight{{}},
         
 
         Alias: (*Alias)(u),

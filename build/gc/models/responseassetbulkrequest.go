@@ -13,6 +13,12 @@ var (
 type ResponseassetbulkrequestDud struct { 
     
 
+
+    
+
+
+    
+
 }
 
 // Responseassetbulkrequest
@@ -20,11 +26,21 @@ type Responseassetbulkrequest struct {
     // AssetIds - List of Response Asset IDs (max 50)
     AssetIds []string `json:"assetIds"`
 
+
+    // SortBy - The field in the resource that you want to sort the results by. Allowed values: name, dateCreated, dateModified, contentLength
+    SortBy string `json:"sortBy"`
+
+
+    // SortOrder - The sort order for results
+    SortOrder string `json:"sortOrder"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Responseassetbulkrequest) String() string {
      o.AssetIds = []string{""} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -43,11 +59,21 @@ func (u *Responseassetbulkrequest) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         AssetIds []string `json:"assetIds"`
+        
+        SortBy string `json:"sortBy"`
+        
+        SortOrder string `json:"sortOrder"`
         *Alias
     }{
 
         
         AssetIds: []string{""},
+        
+
+
+        
+
+
         
 
         Alias: (*Alias)(u),

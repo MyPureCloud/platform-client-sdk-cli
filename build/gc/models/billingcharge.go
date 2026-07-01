@@ -62,19 +62,19 @@ type Billingcharge struct {
 
 
     // PrepaidQuantity - The quantity of usage that is prepaid.
-    PrepaidQuantity int `json:"prepaidQuantity"`
+    PrepaidQuantity float32 `json:"prepaidQuantity"`
 
 
     // FairuseQuantity - The quantity of usage allowed under fair use policies.
-    FairuseQuantity int `json:"fairuseQuantity"`
+    FairuseQuantity float32 `json:"fairuseQuantity"`
 
 
     // ActualQuantity - The actual quantity of usage.
-    ActualQuantity int `json:"actualQuantity"`
+    ActualQuantity float32 `json:"actualQuantity"`
 
 
     // OverageQuantity - The quantity of usage that exceeds prepaid or fair use limits.
-    OverageQuantity int `json:"overageQuantity"`
+    OverageQuantity float32 `json:"overageQuantity"`
 
 
     // OverageRate - The rate charged per unit of overage.
@@ -132,13 +132,13 @@ func (u *Billingcharge) MarshalJSON() ([]byte, error) {
         
         Organizations []Namedentity `json:"organizations"`
         
-        PrepaidQuantity int `json:"prepaidQuantity"`
+        PrepaidQuantity float32 `json:"prepaidQuantity"`
         
-        FairuseQuantity int `json:"fairuseQuantity"`
+        FairuseQuantity float32 `json:"fairuseQuantity"`
         
-        ActualQuantity int `json:"actualQuantity"`
+        ActualQuantity float32 `json:"actualQuantity"`
         
-        OverageQuantity int `json:"overageQuantity"`
+        OverageQuantity float32 `json:"overageQuantity"`
         
         OverageRate float32 `json:"overageRate"`
         

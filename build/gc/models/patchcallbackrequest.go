@@ -32,6 +32,9 @@ type PatchcallbackrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Patchcallbackrequest
@@ -63,6 +66,10 @@ type Patchcallbackrequest struct {
     // ValidateCallbackNumbers - validateCallbackNumbers
     ValidateCallbackNumbers bool `json:"validateCallbackNumbers"`
 
+
+    // CustomerFirstCallbackDeliveryMode - How customer-first callback agent reservation is applied for this callback. useAgentReservation forces reservation on; noAgentReservation forces it off; useQueueSetting uses the queue configuration.
+    CustomerFirstCallbackDeliveryMode string `json:"customerFirstCallbackDeliveryMode"`
+
 }
 
 // String returns a JSON representation of the model
@@ -73,6 +80,7 @@ func (o *Patchcallbackrequest) String() string {
     
     
      o.CallbackNumbers = []string{""} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -104,6 +112,8 @@ func (u *Patchcallbackrequest) MarshalJSON() ([]byte, error) {
         CallbackNumbers []string `json:"callbackNumbers"`
         
         ValidateCallbackNumbers bool `json:"validateCallbackNumbers"`
+        
+        CustomerFirstCallbackDeliveryMode string `json:"customerFirstCallbackDeliveryMode"`
         *Alias
     }{
 
@@ -124,6 +134,9 @@ func (u *Patchcallbackrequest) MarshalJSON() ([]byte, error) {
 
         
         CallbackNumbers: []string{""},
+        
+
+
         
 
 

@@ -22,6 +22,9 @@ type TextbotflowturnrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Textbotflowturnrequest - Settings for a turn request to a bot flow.
@@ -38,6 +41,10 @@ type Textbotflowturnrequest struct {
     InputEventUserInput Textbotuserinputevent `json:"inputEventUserInput"`
 
 
+    // InputEventRichMedia - The data for the Rich Media input event of this turn if it is a Rich Media input event. Only one inputEvent may be set. Only ButtonResponse, PaymentResponse, Form, Presence are supported.
+    InputEventRichMedia Textbotsrichmediainputevent `json:"inputEventRichMedia"`
+
+
     // InputEventError - The data for the input event of this turn if it is an error event. Only one inputEvent may be set.
     InputEventError Textboterrorinputevent `json:"inputEventError"`
 
@@ -45,6 +52,7 @@ type Textbotflowturnrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Textbotflowturnrequest) String() string {
+    
     
     
     
@@ -72,9 +80,14 @@ func (u *Textbotflowturnrequest) MarshalJSON() ([]byte, error) {
         
         InputEventUserInput Textbotuserinputevent `json:"inputEventUserInput"`
         
+        InputEventRichMedia Textbotsrichmediainputevent `json:"inputEventRichMedia"`
+        
         InputEventError Textboterrorinputevent `json:"inputEventError"`
         *Alias
     }{
+
+        
+
 
         
 

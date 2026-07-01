@@ -44,6 +44,9 @@ type CreatecallbackonconversationcommandDud struct {
 
     
 
+
+    
+
 }
 
 // Createcallbackonconversationcommand
@@ -58,6 +61,10 @@ type Createcallbackonconversationcommand struct {
 
     // RoutingData - The routing data to be used for the callback. Either queueId or routingData is required.
     RoutingData Routingdata `json:"routingData"`
+
+
+    // CustomerFirstCallbackDeliveryMode - How customer-first callback agent reservation is applied for this callback. useAgentReservation forces reservation on; noAgentReservation forces it off; useQueueSetting uses the queue configuration.
+    CustomerFirstCallbackDeliveryMode string `json:"customerFirstCallbackDeliveryMode"`
 
 
     // CallbackUserName - The name of the party to be called back.
@@ -99,6 +106,7 @@ func (o *Createcallbackonconversationcommand) String() string {
     
     
     
+    
      o.CallbackNumbers = []string{""} 
     
     
@@ -129,6 +137,8 @@ func (u *Createcallbackonconversationcommand) MarshalJSON() ([]byte, error) {
         
         RoutingData Routingdata `json:"routingData"`
         
+        CustomerFirstCallbackDeliveryMode string `json:"customerFirstCallbackDeliveryMode"`
+        
         CallbackUserName string `json:"callbackUserName"`
         
         CallbackNumbers []string `json:"callbackNumbers"`
@@ -146,6 +156,9 @@ func (u *Createcallbackonconversationcommand) MarshalJSON() ([]byte, error) {
         CallerIdName string `json:"callerIdName"`
         *Alias
     }{
+
+        
+
 
         
 

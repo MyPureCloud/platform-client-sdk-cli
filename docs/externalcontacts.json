@@ -59,6 +59,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/organizations/add",
+      "description": "Bulk add organizations"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/organizations/remove",
       "description": "Bulk remove organizations"
     },
@@ -84,8 +89,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/organizations/add",
-      "description": "Bulk add organizations"
+      "path": "/api/v2/externalcontacts/bulk/relationships/add",
+      "description": "Bulk add relationships"
     },
     {
       "name": "create",
@@ -103,11 +108,6 @@
       "description": "Bulk update relationships"
     },
     {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/relationships/add",
-      "description": "Bulk add relationships"
-    },
-    {
       "name": "get",
       "path": "/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}",
       "description": "Fetch a note for an external contact"
@@ -121,6 +121,11 @@
       "name": "delete",
       "path": "/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}",
       "description": "Delete a note for an external contact"
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}",
+      "description": "Update a Contact Note"
     },
     {
       "name": "list",
@@ -278,6 +283,11 @@
       "description": "Delete a note for an external organization"
     },
     {
+      "name": "patch",
+      "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}",
+      "description": "Update an External Organization Note"
+    },
+    {
       "name": "list",
       "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes",
       "description": "List notes for an external organization"
@@ -306,6 +316,11 @@
       "name": "delete",
       "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}",
       "description": "Delete an external organization"
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/externalcontacts/organizations/{externalOrganizationId}",
+      "description": "Update specific fields of an external organization"
     },
     {
       "name": "get",
@@ -446,6 +461,11 @@
       "name": "delete",
       "path": "/api/v2/externalcontacts/relationships/{relationshipId}",
       "description": "Delete a relationship"
+    },
+    {
+      "name": "patch",
+      "path": "/api/v2/externalcontacts/relationships/{relationshipId}",
+      "description": "Update specific fields of a relationship"
     },
     {
       "name": "create",

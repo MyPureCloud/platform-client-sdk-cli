@@ -28,6 +28,12 @@ type KnowledgesearchpreviewrequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Knowledgesearchpreviewrequest
@@ -55,6 +61,14 @@ type Knowledgesearchpreviewrequest struct {
     // Filter - Composite tag filter applied to the search preview.
     Filter V3sourcetagfilter `json:"filter"`
 
+
+    // Application - The touchpoint application to simulate for the preview.
+    Application V3knowledgesearchpreviewclientapplication `json:"application"`
+
+
+    // ConversationContext - The channel context to simulate for the preview.
+    ConversationContext Knowledgev3previewconversationcontext `json:"conversationContext"`
+
 }
 
 // String returns a JSON representation of the model
@@ -64,6 +78,8 @@ func (o *Knowledgesearchpreviewrequest) String() string {
     
     
      o.ConversationTurns = []Knowledgeconversationturn{{}} 
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -93,6 +109,10 @@ func (u *Knowledgesearchpreviewrequest) MarshalJSON() ([]byte, error) {
         ConversationTurns []Knowledgeconversationturn `json:"conversationTurns"`
         
         Filter V3sourcetagfilter `json:"filter"`
+        
+        Application V3knowledgesearchpreviewclientapplication `json:"application"`
+        
+        ConversationContext Knowledgev3previewconversationcontext `json:"conversationContext"`
         *Alias
     }{
 
@@ -112,6 +132,12 @@ func (u *Knowledgesearchpreviewrequest) MarshalJSON() ([]byte, error) {
 
         
         ConversationTurns: []Knowledgeconversationturn{{}},
+        
+
+
+        
+
+
         
 
 

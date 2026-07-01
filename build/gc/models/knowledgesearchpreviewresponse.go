@@ -22,6 +22,12 @@ type KnowledgesearchpreviewresponseDud struct {
 
     Result Knowledgesearchresult `json:"result"`
 
+
+    
+
+
+    
+
 }
 
 // Knowledgesearchpreviewresponse
@@ -38,10 +44,20 @@ type Knowledgesearchpreviewresponse struct {
 
     
 
+
+    // Application - The touchpoint application used for the preview.
+    Application V3knowledgesearchpreviewclientapplication `json:"application"`
+
+
+    // ConversationContext - The channel context used for the preview.
+    ConversationContext Knowledgev3previewconversationcontext `json:"conversationContext"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgesearchpreviewresponse) String() string {
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -61,8 +77,18 @@ func (u *Knowledgesearchpreviewresponse) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Query string `json:"query"`
+        
+        Application V3knowledgesearchpreviewclientapplication `json:"application"`
+        
+        ConversationContext Knowledgev3previewconversationcontext `json:"conversationContext"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

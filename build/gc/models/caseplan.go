@@ -73,7 +73,7 @@ type Caseplan struct {
     Name string `json:"name"`
 
 
-    // Division - The division to which this entity belongs.
+    // Division - The division to which this Caseplan belongs.
     Division Starrabledivision `json:"division"`
 
 

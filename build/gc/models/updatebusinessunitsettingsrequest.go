@@ -28,6 +28,12 @@ type UpdatebusinessunitsettingsrequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Updatebusinessunitsettingsrequest
@@ -50,6 +56,14 @@ type Updatebusinessunitsettingsrequest struct {
     Notifications Bunotificationsettingsrequest `json:"notifications"`
 
 
+    // Learning - Learning settings
+    Learning Buactivitysettingsrequest `json:"learning"`
+
+
+    // Coaching - Coaching settings
+    Coaching Buactivitysettingsrequest `json:"coaching"`
+
+
     // Metadata - Version metadata for this business unit
     Metadata Wfmversionedentitymetadata `json:"metadata"`
 
@@ -57,6 +71,8 @@ type Updatebusinessunitsettingsrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Updatebusinessunitsettingsrequest) String() string {
+    
+    
     
     
     
@@ -84,9 +100,19 @@ func (u *Updatebusinessunitsettingsrequest) MarshalJSON() ([]byte, error) {
         
         Notifications Bunotificationsettingsrequest `json:"notifications"`
         
+        Learning Buactivitysettingsrequest `json:"learning"`
+        
+        Coaching Buactivitysettingsrequest `json:"coaching"`
+        
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

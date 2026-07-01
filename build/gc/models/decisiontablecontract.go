@@ -27,7 +27,7 @@ type DecisiontablecontractDud struct {
 // Decisiontablecontract
 type Decisiontablecontract struct { 
     // ParentSchema - DSS schema entity defining source properties for the decision table contract schemas
-    ParentSchema Domainentityref `json:"parentSchema"`
+    ParentSchema Businessrulesparentschemaref `json:"parentSchema"`
 
 
     // RowAuthoringSchema - JSON schema describing required value types for each column in every row in a decision table
@@ -66,7 +66,7 @@ func (u *Decisiontablecontract) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        ParentSchema Domainentityref `json:"parentSchema"`
+        ParentSchema Businessrulesparentschemaref `json:"parentSchema"`
         
         RowAuthoringSchema Jsonschemadocument `json:"rowAuthoringSchema"`
         

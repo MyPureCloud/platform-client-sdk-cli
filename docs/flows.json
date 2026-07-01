@@ -204,13 +204,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/flows/actions/checkin",
-      "description": "Check-in flow"
+      "path": "/api/v2/flows/actions/checkout",
+      "description": "Check-out flow"
     },
     {
       "name": "create",
-      "path": "/api/v2/flows/actions/checkout",
-      "description": "Check-out flow"
+      "path": "/api/v2/flows/actions/checkin",
+      "description": "Check-in flow"
     },
     {
       "name": "create",
@@ -334,13 +334,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/flows/{flowId}/versions/{versionId}",
-      "description": "Get flow version"
+      "path": "/api/v2/flows/{flowId}/versions/{versionId}/configuration",
+      "description": "Get flow version configuration"
     },
     {
       "name": "get",
-      "path": "/api/v2/flows/{flowId}/versions/{versionId}/configuration",
-      "description": "Get flow version configuration"
+      "path": "/api/v2/flows/{flowId}/versions/{versionId}",
+      "description": "Get flow version"
     },
     {
       "name": "list",
@@ -356,6 +356,11 @@
       "name": "list",
       "path": "/api/v2/flows/divisionviews",
       "description": "Get a pageable list of basic flow information objects filterable by query parameters."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/flows/lookup",
+      "description": "Look up flows by ID"
     },
     {
       "name": "list",

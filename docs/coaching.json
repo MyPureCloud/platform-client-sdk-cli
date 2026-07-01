@@ -93,14 +93,14 @@
       "description": "Get list of possible slots where a coaching appointment can be scheduled."
     },
     {
-      "name": "get",
-      "path": "/api/v2/coaching/scheduleslots/jobs/{jobId}",
-      "description": "Retrieve the status of the job for the slots where a coaching appointment can be scheduled."
-    },
-    {
       "name": "create",
       "path": "/api/v2/coaching/scheduleslots/jobs",
       "description": "Start job to retrieve the slots where a coaching appointment can be scheduled."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/coaching/scheduleslots/jobs/{jobId}",
+      "description": "Retrieve the status of the job for the slots where a coaching appointment can be scheduled."
     },
     {
       "name": "list",

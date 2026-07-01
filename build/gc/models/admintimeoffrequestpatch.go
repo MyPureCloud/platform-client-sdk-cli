@@ -41,6 +41,12 @@ type AdmintimeoffrequestpatchDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Admintimeoffrequestpatch
@@ -63,6 +69,14 @@ type Admintimeoffrequestpatch struct {
 
     // FullDayManagementUnitDates - A set of dates in yyyy-MM-dd format. Should be interpreted in the management unit's configured time zone
     FullDayManagementUnitDates []string `json:"fullDayManagementUnitDates"`
+
+
+    // FullDayEarliestStartOffsetMinutes - Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+    FullDayEarliestStartOffsetMinutes Listwrapperinteger `json:"fullDayEarliestStartOffsetMinutes"`
+
+
+    // FullDayLatestEndOffsetMinutes - Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+    FullDayLatestEndOffsetMinutes Listwrapperinteger `json:"fullDayLatestEndOffsetMinutes"`
 
 
     // PartialDayStartDateTimes - A set of start date-times in ISO-8601 format for partial day requests
@@ -93,6 +107,8 @@ func (o *Admintimeoffrequestpatch) String() string {
     
     
      o.FullDayManagementUnitDates = []string{""} 
+    
+    
      o.PartialDayStartDateTimes = []time.Time{{}} 
     
      o.DurationMinutes = []int{0} 
@@ -125,6 +141,10 @@ func (u *Admintimeoffrequestpatch) MarshalJSON() ([]byte, error) {
         
         FullDayManagementUnitDates []string `json:"fullDayManagementUnitDates"`
         
+        FullDayEarliestStartOffsetMinutes Listwrapperinteger `json:"fullDayEarliestStartOffsetMinutes"`
+        
+        FullDayLatestEndOffsetMinutes Listwrapperinteger `json:"fullDayLatestEndOffsetMinutes"`
+        
         PartialDayStartDateTimes []time.Time `json:"partialDayStartDateTimes"`
         
         DailyDurationMinutes int `json:"dailyDurationMinutes"`
@@ -151,6 +171,12 @@ func (u *Admintimeoffrequestpatch) MarshalJSON() ([]byte, error) {
 
         
         FullDayManagementUnitDates: []string{""},
+        
+
+
+        
+
+
         
 
 

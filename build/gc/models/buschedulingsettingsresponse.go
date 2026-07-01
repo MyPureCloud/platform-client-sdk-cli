@@ -28,6 +28,9 @@ type BuschedulingsettingsresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Buschedulingsettingsresponse
@@ -38,6 +41,10 @@ type Buschedulingsettingsresponse struct {
 
     // SyncTimeOffProperties - Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published
     SyncTimeOffProperties []string `json:"syncTimeOffProperties"`
+
+
+    // EnableTimeOffFullDayEstimation - Enables start and end time estimation for full-day time-off requests
+    EnableTimeOffFullDayEstimation bool `json:"enableTimeOffFullDayEstimation"`
 
 
     // ServiceGoalImpact - Configures the max percent increase and decrease of service goals for this business unit
@@ -65,6 +72,7 @@ func (o *Buschedulingsettingsresponse) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -86,6 +94,8 @@ func (u *Buschedulingsettingsresponse) MarshalJSON() ([]byte, error) {
         
         SyncTimeOffProperties []string `json:"syncTimeOffProperties"`
         
+        EnableTimeOffFullDayEstimation bool `json:"enableTimeOffFullDayEstimation"`
+        
         ServiceGoalImpact Wfmservicegoalimpactsettings `json:"serviceGoalImpact"`
         
         AllowWorkPlanPerMinuteGranularity bool `json:"allowWorkPlanPerMinuteGranularity"`
@@ -103,6 +113,9 @@ func (u *Buschedulingsettingsresponse) MarshalJSON() ([]byte, error) {
 
         
         SyncTimeOffProperties: []string{""},
+        
+
+
         
 
 

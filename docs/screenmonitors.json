@@ -1,0 +1,31 @@
+{
+  "supercommand": "screenmonitors",
+  "description": "/api/v2/screenmonitors",
+  "resources": [
+    {
+      "name": "create",
+      "path": "/api/v2/screenmonitors/sessions/users/details",
+      "description": "Get screen monitor session details for one or more users."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/screenmonitors/users/{userId}/sessions",
+      "description": "Get all screen monitoring sessions for the supplied userId."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/screenmonitors/sessions/details",
+      "description": "Get the details of all screen monitoring sessions for the current organization."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/screenmonitors/settings",
+      "description": "Get the Screen Monitor Settings for the Organization"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/screenmonitors/settings",
+      "description": "Update the Screen Monitor Settings for the Organization"
+    }
+  ]
+}

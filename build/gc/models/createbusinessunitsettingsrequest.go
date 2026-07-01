@@ -25,6 +25,12 @@ type CreatebusinessunitsettingsrequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Createbusinessunitsettingsrequest
@@ -48,10 +54,20 @@ type Createbusinessunitsettingsrequest struct {
     // Notifications - Notification settings
     Notifications Bunotificationsettingsrequest `json:"notifications"`
 
+
+    // Learning - Learning settings
+    Learning Buactivitysettingsrequest `json:"learning"`
+
+
+    // Coaching - Coaching settings
+    Coaching Buactivitysettingsrequest `json:"coaching"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Createbusinessunitsettingsrequest) String() string {
+    
+    
     
     
     
@@ -83,8 +99,18 @@ func (u *Createbusinessunitsettingsrequest) MarshalJSON() ([]byte, error) {
         Scheduling Buschedulingsettingsrequest `json:"scheduling"`
         
         Notifications Bunotificationsettingsrequest `json:"notifications"`
+        
+        Learning Buactivitysettingsrequest `json:"learning"`
+        
+        Coaching Buactivitysettingsrequest `json:"coaching"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

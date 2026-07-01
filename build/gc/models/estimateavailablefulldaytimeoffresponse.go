@@ -26,6 +26,12 @@ type EstimateavailablefulldaytimeoffresponseDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Estimateavailablefulldaytimeoffresponse
@@ -49,10 +55,20 @@ type Estimateavailablefulldaytimeoffresponse struct {
     // OverrideDateType - The override date type, if the requested day is an override date
     OverrideDateType string `json:"overrideDateType"`
 
+
+    // EarliestStartOffsetMinutes - Earliest start time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled
+    EarliestStartOffsetMinutes int `json:"earliestStartOffsetMinutes"`
+
+
+    // LatestEndOffsetMinutes - Latest end time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled
+    LatestEndOffsetMinutes int `json:"latestEndOffsetMinutes"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Estimateavailablefulldaytimeoffresponse) String() string {
+    
+    
     
     
     
@@ -84,8 +100,18 @@ func (u *Estimateavailablefulldaytimeoffresponse) MarshalJSON() ([]byte, error) 
         Flexible bool `json:"flexible"`
         
         OverrideDateType string `json:"overrideDateType"`
+        
+        EarliestStartOffsetMinutes int `json:"earliestStartOffsetMinutes"`
+        
+        LatestEndOffsetMinutes int `json:"latestEndOffsetMinutes"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

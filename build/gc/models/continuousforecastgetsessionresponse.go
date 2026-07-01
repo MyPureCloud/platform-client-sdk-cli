@@ -41,12 +41,12 @@ type Continuousforecastgetsessionresponse struct {
     State string `json:"state"`
 
 
+    // ForecastDataState - State of the forecast data
+    ForecastDataState string `json:"forecastDataState"`
+
+
     // ErrorCode - Failed session error code
     ErrorCode string `json:"errorCode"`
-
-
-    // RetrainInProgress - True if a model retrain is currently running for the organization, false if not
-    RetrainInProgress bool `json:"retrainInProgress"`
 
 }
 
@@ -80,9 +80,9 @@ func (u *Continuousforecastgetsessionresponse) MarshalJSON() ([]byte, error) {
         
         State string `json:"state"`
         
-        ErrorCode string `json:"errorCode"`
+        ForecastDataState string `json:"forecastDataState"`
         
-        RetrainInProgress bool `json:"retrainInProgress"`
+        ErrorCode string `json:"errorCode"`
         *Alias
     }{
 

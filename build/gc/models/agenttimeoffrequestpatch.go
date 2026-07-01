@@ -19,6 +19,12 @@ type AgenttimeoffrequestpatchDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Agenttimeoffrequestpatch
@@ -34,10 +40,20 @@ type Agenttimeoffrequestpatch struct {
     // Notes - Notes about the time off request. Can only be edited while the request is still pending
     Notes string `json:"notes"`
 
+
+    // FullDayEarliestStartOffsetMinutes - Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+    FullDayEarliestStartOffsetMinutes Listwrapperinteger `json:"fullDayEarliestStartOffsetMinutes"`
+
+
+    // FullDayLatestEndOffsetMinutes - Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+    FullDayLatestEndOffsetMinutes Listwrapperinteger `json:"fullDayLatestEndOffsetMinutes"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Agenttimeoffrequestpatch) String() string {
+    
+    
     
     
     
@@ -63,8 +79,18 @@ func (u *Agenttimeoffrequestpatch) MarshalJSON() ([]byte, error) {
         Status string `json:"status"`
         
         Notes string `json:"notes"`
+        
+        FullDayEarliestStartOffsetMinutes Listwrapperinteger `json:"fullDayEarliestStartOffsetMinutes"`
+        
+        FullDayLatestEndOffsetMinutes Listwrapperinteger `json:"fullDayLatestEndOffsetMinutes"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

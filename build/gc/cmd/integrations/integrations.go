@@ -101,6 +101,7 @@ func Cmdintegrations() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "ids", "", "Comma-separated list of integration IDs to filter by (max 100)")
 	utils.AddFlag(listCmd.Flags(), "string", "integrationType", "", "Filter integrations by integration type ID")
 	utils.AddFlag(listCmd.Flags(), "string", "reportedState", "", "Filter integrations by reported state (case-insensitive) Valid values: ACTIVE, ACTIVATING, INACTIVE, DEACTIVATING, ERROR")
+	utils.AddFlag(listCmd.Flags(), "string", "credentialId", "", "Filter integrations by credential ID")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/integrations", utils.FormatPermissions([]string{ "integrations:integration:view",  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -484,6 +485,10 @@ var listCmd = &cobra.Command{
 		reportedState := utils.GetFlag(cmd.Flags(), "string", "reportedState")
 		if reportedState != "" {
 			queryParams["reportedState"] = reportedState
+		}
+		credentialId := utils.GetFlag(cmd.Flags(), "string", "credentialId")
+		if credentialId != "" {
+			queryParams["credentialId"] = credentialId
 		}
 		urlString := path
 		if len(queryParams) > 0 {

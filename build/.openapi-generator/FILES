@@ -436,6 +436,7 @@ gc/cmd/conversations_participants_replace_agent/conversations_participants_repla
 gc/cmd/conversations_participants_replace_contact_external/conversations_participants_replace_contact_external.go
 gc/cmd/conversations_participants_replace_external/conversations_participants_replace_external.go
 gc/cmd/conversations_participants_replace_queue/conversations_participants_replace_queue.go
+gc/cmd/conversations_participants_screenmonitors_sessions/conversations_participants_screenmonitors_sessions.go
 gc/cmd/conversations_participants_secureivrsessions/conversations_participants_secureivrsessions.go
 gc/cmd/conversations_participants_transfer/conversations_participants_transfer.go
 gc/cmd/conversations_participants_wrapup/conversations_participants_wrapup.go
@@ -589,6 +590,7 @@ gc/cmd/flows_instances_settings_loglevels_characteristics/flows_instances_settin
 gc/cmd/flows_instances_settings_loglevels_default/flows_instances_settings_loglevels_default.go
 gc/cmd/flows_jobs/flows_jobs.go
 gc/cmd/flows_latestconfiguration/flows_latestconfiguration.go
+gc/cmd/flows_lookup/flows_lookup.go
 gc/cmd/flows_milestones/flows_milestones.go
 gc/cmd/flows_milestones_divisionviews/flows_milestones_divisionviews.go
 gc/cmd/flows_outcomes/flows_outcomes.go
@@ -1167,6 +1169,10 @@ gc/cmd/scim_v2_resourcetypes/scim_v2_resourcetypes.go
 gc/cmd/scim_v2_schemas/scim_v2_schemas.go
 gc/cmd/scim_v2_serviceproviderconfig/scim_v2_serviceproviderconfig.go
 gc/cmd/scim_v2_users/scim_v2_users.go
+gc/cmd/screenmonitors_sessions_details/screenmonitors_sessions_details.go
+gc/cmd/screenmonitors_sessions_users_details/screenmonitors_sessions_users_details.go
+gc/cmd/screenmonitors_settings/screenmonitors_settings.go
+gc/cmd/screenmonitors_users_sessions/screenmonitors_users_sessions.go
 gc/cmd/screenrecording_token/screenrecording_token.go
 gc/cmd/scripts/scripts.go
 gc/cmd/scripts_divisionviews/scripts_divisionviews.go
@@ -1411,6 +1417,7 @@ gc/cmd/users_rules/users_rules.go
 gc/cmd/users_rules_dependents/users_rules_dependents.go
 gc/cmd/users_rules_query/users_rules_query.go
 gc/cmd/users_rules_settings/users_rules_settings.go
+gc/cmd/users_screenmonitors_sessions/users_screenmonitors_sessions.go
 gc/cmd/users_search/users_search.go
 gc/cmd/users_search_conversation_target/users_search_conversation_target.go
 gc/cmd/users_search_queuemembers_manage/users_search_queuemembers_manage.go
@@ -1506,6 +1513,7 @@ gc/cmd/workforcemanagement_businessunits_capacityplanning_longtermrequirements_a
 gc/cmd/workforcemanagement_businessunits_capacityplans/workforcemanagement_businessunits_capacityplans.go
 gc/cmd/workforcemanagement_businessunits_capacityplans_bulk_remove/workforcemanagement_businessunits_capacityplans_bulk_remove.go
 gc/cmd/workforcemanagement_businessunits_capacityplans_copy/workforcemanagement_businessunits_capacityplans_copy.go
+gc/cmd/workforcemanagement_businessunits_capacityplans_forecast/workforcemanagement_businessunits_capacityplans_forecast.go
 gc/cmd/workforcemanagement_businessunits_capacityplans_requirement_generate/workforcemanagement_businessunits_capacityplans_requirement_generate.go
 gc/cmd/workforcemanagement_businessunits_capacityplans_staffinggroupallocations/workforcemanagement_businessunits_capacityplans_staffinggroupallocations.go
 gc/cmd/workforcemanagement_businessunits_capacityplans_staffinggroupallocationshistory/workforcemanagement_businessunits_capacityplans_staffinggroupallocationshistory.go
@@ -1978,6 +1986,7 @@ gc/models/appleintegrationentitylisting.go
 gc/models/appleintegrationrequest.go
 gc/models/appleintegrationupdaterequest.go
 gc/models/appleinvitation.go
+gc/models/appleinvitationnotificationparameters.go
 gc/models/appleopaqueid.go
 gc/models/applepay.go
 gc/models/approvalnamespace.go
@@ -2337,6 +2346,7 @@ gc/models/bushorttermforecastreference.go
 gc/models/bushorttermforecastweekreference.go
 gc/models/businessrulesdataschema.go
 gc/models/businessrulesdataschemalisting.go
+gc/models/businessrulesparentschemaref.go
 gc/models/businessrulesschemacreaterequest.go
 gc/models/businessrulesschemaupdaterequest.go
 gc/models/businessunitactivitycode.go
@@ -2456,6 +2466,9 @@ gc/models/campaignstats.go
 gc/models/campaigntimeslot.go
 gc/models/cannedresponselibraries.go
 gc/models/capacityplandeleterequest.go
+gc/models/capacityplanforecastinputsresponse.go
+gc/models/capacityplanforecastinputstemplate.go
+gc/models/capacityplanforecastmetrics.go
 gc/models/capacityplanlistitem.go
 gc/models/capacityplanmetadata.go
 gc/models/capacityplanmetricssummary.go
@@ -3733,6 +3746,7 @@ gc/models/followersfilter.go
 gc/models/footertemplate.go
 gc/models/forecastabandonrateresponse.go
 gc/models/forecastaveragespeedofanswerresponse.go
+gc/models/forecastinputplanninggroupdata.go
 gc/models/forecastmetadata.go
 gc/models/forecastplanninggroupdata.go
 gc/models/forecastplanninggroupresponse.go
@@ -4234,6 +4248,7 @@ gc/models/knowledgesyncjobstatistics.go
 gc/models/knowledgesyncrequest.go
 gc/models/knowledgev3conversationcontext.go
 gc/models/knowledgev3conversationcontextresponse.go
+gc/models/knowledgev3previewconversationcontext.go
 gc/models/kpiresult.go
 gc/models/label.go
 gc/models/labelcreaterequest.go
@@ -5017,6 +5032,7 @@ gc/models/queryopportunityenrollmentsresponse.go
 gc/models/queryopportunityenrollmentsresult.go
 gc/models/queryplanninggrouptostaffinggroupsrequest.go
 gc/models/queryprocessingconfig.go
+gc/models/queryreformulationcontext.go
 gc/models/queryrequest.go
 gc/models/queryrequestclause.go
 gc/models/queryrequestfilter.go
@@ -5040,6 +5056,7 @@ gc/models/questionsettings.go
 gc/models/queue.go
 gc/models/queueemailaddress.go
 gc/models/queueentitylisting.go
+gc/models/queuefullreference.go
 gc/models/queuemediasettings.go
 gc/models/queuemember.go
 gc/models/queuememberentitylisting.go
@@ -5359,6 +5376,12 @@ gc/models/scimv2user.go
 gc/models/scorablesurvey.go
 gc/models/scoredagent.go
 gc/models/screenmonitoring.go
+gc/models/screenmonitoringdetails.go
+gc/models/screenmonitoringsession.go
+gc/models/screenmonitoringsessionentitylisting.go
+gc/models/screenmonitoringuserdetails.go
+gc/models/screenmonitoringuserdetailsentitylisting.go
+gc/models/screenmonitorsettings.go
 gc/models/screenrecordingactivesessions.go
 gc/models/screenrecordingmetadata.go
 gc/models/screenrecordingmetadatarequest.go
@@ -5592,6 +5615,7 @@ gc/models/speechtextanalyticsconversationsummary.go
 gc/models/speechtextanalyticsconversationsummarylisting.go
 gc/models/speechtextanalyticssettingsrequest.go
 gc/models/speechtextanalyticssettingsresponse.go
+gc/models/speechtextanalyticssummarylabel.go
 gc/models/splittinginformation.go
 gc/models/stacategory.go
 gc/models/staffinggroupallocation.go
@@ -5611,6 +5635,7 @@ gc/models/stageplanreference.go
 gc/models/stageplanupdate.go
 gc/models/stagereference.go
 gc/models/starrabledivision.go
+gc/models/startscreenmonitorresponsebody.go
 gc/models/station.go
 gc/models/stationentitylisting.go
 gc/models/statisticalresponse.go
@@ -5761,6 +5786,7 @@ gc/models/teamactivityquerypredicate.go
 gc/models/teamactivityresponse.go
 gc/models/teamaddmemberfailure.go
 gc/models/teamentitylisting.go
+gc/models/teamfullreference.go
 gc/models/teammemberaddlistingresponse.go
 gc/models/teammemberentitylisting.go
 gc/models/teammembers.go
@@ -6113,6 +6139,7 @@ gc/models/userentitylisting.go
 gc/models/userestablishedevent.go
 gc/models/userexpands.go
 gc/models/userexternalidentifier.go
+gc/models/userfullreference.go
 gc/models/userinsightstrend.go
 gc/models/userinsightstrendmetricitem.go
 gc/models/userinsightstrends.go
@@ -6199,6 +6226,7 @@ gc/models/utilizationrequest.go
 gc/models/utilizationresponse.go
 gc/models/utterance.go
 gc/models/v3knowledgesearchclientapplication.go
+gc/models/v3knowledgesearchpreviewclientapplication.go
 gc/models/v3sourcecreaterequest.go
 gc/models/v3sourcedetailedresponse.go
 gc/models/v3sourceexpandablelisting.go

@@ -17,7 +17,7 @@ type ExternalcontactspatchrequestDud struct {
 
 // Externalcontactspatchrequest
 type Externalcontactspatchrequest struct { 
-    // Changes - A list of changes to apply to the provided contact entity
+    // Changes - A list of changes to apply to the provided entity
     Changes []Contactspatchchange `json:"changes"`
 
 }

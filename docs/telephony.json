@@ -38,6 +38,11 @@
       "description": "Updates the agent's own greetings."
     },
     {
+      "name": "create",
+      "path": "/api/v2/telephony/numbers/routing/all",
+      "description": "Re-route all numbers on an organization"
+    },
+    {
       "name": "list",
       "path": "/api/v2/telephony/numbers/routing",
       "description": "Get Number Routings by organizationId"
@@ -46,11 +51,6 @@
       "name": "create",
       "path": "/api/v2/telephony/numbers/routing",
       "description": "Update the routing of numbers for one or multiple organizations"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/telephony/numbers/routing/all",
-      "description": "Re-route all numbers on an organization"
     },
     {
       "name": "create",
@@ -713,11 +713,6 @@
       "description": "Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge."
     },
     {
-      "name": "get",
-      "path": "/api/v2/telephony/siptraces",
-      "description": "Fetch SIP metadata"
-    },
-    {
       "name": "create",
       "path": "/api/v2/telephony/siptraces/download",
       "description": "Request a download of a pcap file to S3"
@@ -726,6 +721,11 @@
       "name": "get",
       "path": "/api/v2/telephony/siptraces/download/{downloadId}",
       "description": "Get signed S3 URL for a pcap download"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/siptraces",
+      "description": "Fetch SIP metadata"
     },
     {
       "name": "get",

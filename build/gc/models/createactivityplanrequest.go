@@ -64,6 +64,9 @@ type CreateactivityplanrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Createactivityplanrequest
@@ -139,6 +142,10 @@ type Createactivityplanrequest struct {
     // FixedAvailability - Fixed availability configuration for the activity plan
     FixedAvailability []Fixedavailability `json:"fixedAvailability"`
 
+
+    // StartTimeIncrementMinutes - The valid start times available when scheduling sessions
+    StartTimeIncrementMinutes int `json:"startTimeIncrementMinutes"`
+
 }
 
 // String returns a JSON representation of the model
@@ -161,6 +168,7 @@ func (o *Createactivityplanrequest) String() string {
     
     
      o.FixedAvailability = []Fixedavailability{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -213,6 +221,8 @@ func (u *Createactivityplanrequest) MarshalJSON() ([]byte, error) {
         CountsAsPaidTime bool `json:"countsAsPaidTime"`
         
         FixedAvailability []Fixedavailability `json:"fixedAvailability"`
+        
+        StartTimeIncrementMinutes int `json:"startTimeIncrementMinutes"`
         *Alias
     }{
 
@@ -271,6 +281,9 @@ func (u *Createactivityplanrequest) MarshalJSON() ([]byte, error) {
 
         
         FixedAvailability: []Fixedavailability{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

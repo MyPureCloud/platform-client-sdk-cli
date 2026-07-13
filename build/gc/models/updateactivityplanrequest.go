@@ -40,6 +40,21 @@ type UpdateactivityplanrequestDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Updateactivityplanrequest
@@ -83,10 +98,35 @@ type Updateactivityplanrequest struct {
     // FixedAvailability - Fixed availability configuration for the activity plan
     FixedAvailability Listwrapperfixedavailability `json:"fixedAvailability"`
 
+
+    // ActivityCodeId - The activity code associated with the activity plan
+    ActivityCodeId string `json:"activityCodeId"`
+
+
+    // VarType - The type of the activity plan
+    VarType string `json:"type"`
+
+
+    // LengthMinutes - The length in minutes of the activity plan
+    LengthMinutes int `json:"lengthMinutes"`
+
+
+    // CountsAsPaidTime - Whether the activity should count as paid time
+    CountsAsPaidTime bool `json:"countsAsPaidTime"`
+
+
+    // RecurrenceSettings - Settings controlling recurrence for the activity plan. If not set the activity plan will only occur once
+    RecurrenceSettings Recurrencesettingsbase `json:"recurrenceSettings"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Updateactivityplanrequest) String() string {
+    
+    
+    
+    
+    
     
     
     
@@ -133,8 +173,33 @@ func (u *Updateactivityplanrequest) MarshalJSON() ([]byte, error) {
         State string `json:"state"`
         
         FixedAvailability Listwrapperfixedavailability `json:"fixedAvailability"`
+        
+        ActivityCodeId string `json:"activityCodeId"`
+        
+        VarType string `json:"type"`
+        
+        LengthMinutes int `json:"lengthMinutes"`
+        
+        CountsAsPaidTime bool `json:"countsAsPaidTime"`
+        
+        RecurrenceSettings Recurrencesettingsbase `json:"recurrenceSettings"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
 
         
 

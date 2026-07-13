@@ -29,7 +29,17 @@ func init() {
 
 func Cmdbusinessrules_decisiontables_versions() *cobra.Command { 
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/businessrules/decisiontables/{tableId}/versions", utils.FormatPermissions([]string{ "businessrules:decisionTable:add",  }), utils.GenerateDevCentreLink("POST", "Business Rules", "/api/v2/businessrules/decisiontables/{tableId}/versions")))
-	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", ``)
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  "description" : "Decision Table Version",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CreateDecisionTableVersionRequest"
+      }
+    }
+  },
+  "required" : false
+}`)
 	
 	
 	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
@@ -123,8 +133,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create [tableId]",
-	Short: "Create a new decision table version",
-	Long:  "Create a new decision table version",
+	Short: "Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.",
+	Long:  "Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.",
 	Args:  utils.DetermineArgs([]string{ "tableId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -132,6 +142,9 @@ var createCmd = &cobra.Command{
 
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
+			
+			reqModel := models.Createdecisiontableversionrequest{}
+			utils.Render(reqModel.String())
 			
 			return
 		}

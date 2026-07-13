@@ -65,7 +65,7 @@
     {
       "name": "create",
       "path": "/api/v2/businessrules/decisiontables/{tableId}/versions",
-      "description": "Create a new decision table version"
+      "description": "Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version."
     },
     {
       "name": "list",

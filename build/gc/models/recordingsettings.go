@@ -25,6 +25,9 @@ type RecordingsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Recordingsettings
@@ -48,10 +51,15 @@ type Recordingsettings struct {
     // RecordingBatchDownloadUrlTtl - The duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
     RecordingBatchDownloadUrlTtl int `json:"recordingBatchDownloadUrlTtl"`
 
+
+    // StopRecordingWhenOnlyExternalParticipants - Whether to stop recording in conference when only external participants remain
+    StopRecordingWhenOnlyExternalParticipants bool `json:"stopRecordingWhenOnlyExternalParticipants"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Recordingsettings) String() string {
+    
     
     
     
@@ -83,8 +91,13 @@ func (u *Recordingsettings) MarshalJSON() ([]byte, error) {
         RecordingPlaybackUrlTtl int `json:"recordingPlaybackUrlTtl"`
         
         RecordingBatchDownloadUrlTtl int `json:"recordingBatchDownloadUrlTtl"`
+        
+        StopRecordingWhenOnlyExternalParticipants bool `json:"stopRecordingWhenOnlyExternalParticipants"`
         *Alias
     }{
+
+        
+
 
         
 

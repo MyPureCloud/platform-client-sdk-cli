@@ -45,6 +45,9 @@ type StepDud struct {
     
 
 
+    WorkitemActivity Workitemactivityreference `json:"workitemActivity"`
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -95,6 +98,9 @@ type Step struct {
 
     // Stage - The parent Stage of the Step.
     Stage Stagereference `json:"stage"`
+
+
+    
 
 
     
@@ -158,6 +164,9 @@ func (u *Step) MarshalJSON() ([]byte, error) {
         VarCase Casereference `json:"case"`
         *Alias
     }{
+
+        
+
 
         
 

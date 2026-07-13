@@ -26,6 +26,9 @@ type PromptassetDud struct {
     MediaUri string `json:"mediaUri"`
 
 
+    AudioFormat Audioformat `json:"audioFormat"`
+
+
     
 
 
@@ -58,6 +61,9 @@ type Promptasset struct {
 
     // Name
     Name string `json:"name"`
+
+
+    
 
 
     
@@ -133,6 +139,9 @@ func (u *Promptasset) MarshalJSON() ([]byte, error) {
         DurationSeconds float64 `json:"durationSeconds"`
         *Alias
     }{
+
+        
+
 
         
 

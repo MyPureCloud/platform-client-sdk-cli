@@ -204,8 +204,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/flows/actions/checkout",
-      "description": "Check-out flow"
+      "path": "/api/v2/flows/actions/revert",
+      "description": "Revert flow"
     },
     {
       "name": "create",
@@ -214,13 +214,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/flows/actions/deactivate",
-      "description": "Deactivate flow"
+      "path": "/api/v2/flows/actions/checkout",
+      "description": "Check-out flow"
     },
     {
       "name": "create",
-      "path": "/api/v2/flows/actions/revert",
-      "description": "Revert flow"
+      "path": "/api/v2/flows/actions/deactivate",
+      "description": "Deactivate flow"
     },
     {
       "name": "get",

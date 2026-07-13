@@ -35,6 +35,9 @@ type JourneyviewchartDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -49,6 +52,10 @@ type Journeyviewchart struct {
 
 
     
+
+
+    // Rank - The rank of the journey view chart for ordering display
+    Rank int `json:"rank"`
 
 
     // GroupByTime - A time unit to group the metrics by. There is a limit on the number of groupBy properties which can be specified.
@@ -79,6 +86,7 @@ type Journeyviewchart struct {
 func (o *Journeyviewchart) String() string {
     
     
+    
      o.GroupByAttributes = []Journeyviewchartgroupbyattribute{{}} 
      o.Metrics = []Journeyviewchartmetric{{}} 
     
@@ -102,6 +110,8 @@ func (u *Journeyviewchart) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        Rank int `json:"rank"`
+        
         GroupByTime string `json:"groupByTime"`
         
         GroupByAttributes []Journeyviewchartgroupbyattribute `json:"groupByAttributes"`
@@ -113,6 +123,9 @@ func (u *Journeyviewchart) MarshalJSON() ([]byte, error) {
         GroupByMax int `json:"groupByMax"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -178,14 +178,14 @@
       "description": "Answer documents."
     },
     {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search",
-      "description": "Search for chunks in a knowledge base"
-    },
-    {
       "name": "update",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search/{searchId}",
       "description": "Register chunk search result."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search",
+      "description": "Search for chunks in a knowledge base"
     },
     {
       "name": "get",
@@ -514,6 +514,26 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId}",
+      "description": "Get a deletion entry associated with the synchronization"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId}",
+      "description": "Remove a deletion entry associated with the synchronization"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions",
+      "description": "Get deletion entries associated with the synchronization."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions",
+      "description": "Mark a previously synced file for deletion in the synchronization."
+    },
+    {
+      "name": "get",
       "path": "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}",
       "description": "Get a specific synchronization of a source."
     },
@@ -521,6 +541,21 @@
       "name": "update",
       "path": "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}",
       "description": "Update synchronization."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId}",
+      "description": "Get a file upload entry associated with the synchronization"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId}",
+      "description": "Remove a file upload entry associated with the synchronization"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads",
+      "description": "Get file upload entries associated with the synchronization"
     },
     {
       "name": "create",
@@ -553,14 +588,14 @@
       "description": "Give feedback on a document"
     },
     {
-      "name": "list",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents",
-      "description": "Get documents."
-    },
-    {
       "name": "get",
       "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}",
       "description": "Get a knowledge document by ID."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents",
+      "description": "Get documents."
     },
     {
       "name": "create",

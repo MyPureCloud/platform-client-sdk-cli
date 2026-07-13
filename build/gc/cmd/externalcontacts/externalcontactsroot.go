@@ -12,6 +12,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_identifierlookup"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_relationships"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_reversewhitepageslookup"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_notes"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_import"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_settings"
 )
@@ -27,8 +28,9 @@ func init() {
 	externalcontactsCmd.AddCommand(externalcontacts_identifierlookup.Cmdexternalcontacts_identifierlookup())
 	externalcontactsCmd.AddCommand(externalcontacts_relationships.Cmdexternalcontacts_relationships())
 	externalcontactsCmd.AddCommand(externalcontacts_reversewhitepageslookup.Cmdexternalcontacts_reversewhitepageslookup())
+	externalcontactsCmd.AddCommand(externalcontacts_notes.Cmdexternalcontacts_notes())
 	externalcontactsCmd.AddCommand(externalcontacts_import.Cmdexternalcontacts_import())
 	externalcontactsCmd.AddCommand(externalcontacts_settings.Cmdexternalcontacts_settings())
-	externalcontactsCmd.Short = utils.GenerateCustomDescription(externalcontactsCmd.Short, externalcontacts_bulk.Description, externalcontacts_contacts.Description, externalcontacts_merge.Description, externalcontacts_scan.Description, externalcontacts_conversations.Description, externalcontacts_organizations.Description, externalcontacts_externalsources.Description, externalcontacts_identifierlookup.Description, externalcontacts_relationships.Description, externalcontacts_reversewhitepageslookup.Description, externalcontacts_import.Description, externalcontacts_settings.Description, )
+	externalcontactsCmd.Short = utils.GenerateCustomDescription(externalcontactsCmd.Short, externalcontacts_bulk.Description, externalcontacts_contacts.Description, externalcontacts_merge.Description, externalcontacts_scan.Description, externalcontacts_conversations.Description, externalcontacts_organizations.Description, externalcontacts_externalsources.Description, externalcontacts_identifierlookup.Description, externalcontacts_relationships.Description, externalcontacts_reversewhitepageslookup.Description, externalcontacts_notes.Description, externalcontacts_import.Description, externalcontacts_settings.Description, )
 	externalcontactsCmd.Long = externalcontactsCmd.Short
 }

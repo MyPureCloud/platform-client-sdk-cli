@@ -57,6 +57,9 @@ type ActivityplanlistitemDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -123,6 +126,10 @@ type Activityplanlistitem struct {
     ModifiedBy Userreference `json:"modifiedBy"`
 
 
+    // InitialSchedulePeriod - The initial schedule period of the activity plan
+    InitialSchedulePeriod Schedulingperiodbase `json:"initialSchedulePeriod"`
+
+
     
 
 }
@@ -132,6 +139,7 @@ func (o *Activityplanlistitem) String() string {
     
     
      o.ManagementUnits = []Managementunitreference{{}} 
+    
     
     
     
@@ -190,6 +198,8 @@ func (u *Activityplanlistitem) MarshalJSON() ([]byte, error) {
         ModifiedDate time.Time `json:"modifiedDate"`
         
         ModifiedBy Userreference `json:"modifiedBy"`
+        
+        InitialSchedulePeriod Schedulingperiodbase `json:"initialSchedulePeriod"`
         *Alias
     }{
 
@@ -201,6 +211,9 @@ func (u *Activityplanlistitem) MarshalJSON() ([]byte, error) {
 
         
         ManagementUnits: []Managementunitreference{{}},
+        
+
+
         
 
 

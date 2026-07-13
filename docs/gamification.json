@@ -59,13 +59,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/gamification/profiles/users/me/query",
-      "description": "Query performance profiles in date range for the current user"
+      "path": "/api/v2/gamification/profiles/users/{userId}/query",
+      "description": "Query performance profiles in date range for a user"
     },
     {
       "name": "create",
-      "path": "/api/v2/gamification/profiles/users/{userId}/query",
-      "description": "Query performance profiles in date range for a user"
+      "path": "/api/v2/gamification/profiles/users/me/query",
+      "description": "Query performance profiles in date range for the current user"
     },
     {
       "name": "get",
@@ -199,13 +199,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/insights/details",
-      "description": "Get insights details for the current user"
+      "path": "/api/v2/gamification/insights/users/{userId}/details",
+      "description": "Get insights details for the user"
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/insights/users/{userId}/details",
-      "description": "Get insights details for the user"
+      "path": "/api/v2/gamification/insights/details",
+      "description": "Get insights details for the current user"
     },
     {
       "name": "list",
@@ -228,24 +228,24 @@
       "description": "Get insights overall trend for the current user"
     },
     {
+      "name": "list",
+      "path": "/api/v2/gamification/insights",
+      "description": "Get insights summary"
+    },
+    {
       "name": "get",
       "path": "/api/v2/gamification/insights/rankings",
       "description": "Get insights rankings"
     },
     {
       "name": "list",
-      "path": "/api/v2/gamification/insights",
-      "description": "Get insights summary"
+      "path": "/api/v2/gamification/insights/trends",
+      "description": "Get insights user trend for the current user"
     },
     {
       "name": "list",
       "path": "/api/v2/gamification/insights/users/{userId}/trends",
       "description": "Get insights user trend for the user"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/gamification/insights/trends",
-      "description": "Get insights user trend for the current user"
     },
     {
       "name": "list",

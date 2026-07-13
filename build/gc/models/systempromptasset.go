@@ -29,6 +29,9 @@ type SystempromptassetDud struct {
     
 
 
+    AudioFormat Audioformat `json:"audioFormat"`
+
+
     
 
 
@@ -77,6 +80,9 @@ type Systempromptasset struct {
 
     // MediaUri
     MediaUri string `json:"mediaUri"`
+
+
+    
 
 
     // TtsString
@@ -163,6 +169,9 @@ func (u *Systempromptasset) MarshalJSON() ([]byte, error) {
         Tags map[string][]string `json:"tags"`
         *Alias
     }{
+
+        
+
 
         
 

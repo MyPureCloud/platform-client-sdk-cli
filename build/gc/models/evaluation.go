@@ -117,6 +117,24 @@ type EvaluationDud struct {
     EvaluationSource Evaluationsource `json:"evaluationSource"`
 
 
+    DisputeCount int `json:"disputeCount"`
+
+
+    Version int `json:"version"`
+
+
+    VersionHistory Pagelessdomainentitylistingevaluationversion `json:"versionHistory"`
+
+
+    
+
+
+    
+
+
+    
+
+
     AiScoring Aiscoring `json:"aiScoring"`
 
 
@@ -269,6 +287,27 @@ type Evaluation struct {
 
     
 
+
+    
+
+
+    // DeclinedReview - Is true when the evaluation review was declined
+    DeclinedReview bool `json:"declinedReview"`
+
+
+    // EvaluationContextId - The shared id for different versions of an evaluation
+    EvaluationContextId string `json:"evaluationContextId"`
+
+
+    // RetractedEvaluation - The previous evaluation version
+    RetractedEvaluation Evaluationreference `json:"retractedEvaluation"`
+
+
+    
+
+
+    
+
 }
 
 // String returns a JSON representation of the model
@@ -305,6 +344,9 @@ func (o *Evaluation) String() string {
     
     
      o.AuthorizedActions = []string{""} 
+    
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -388,6 +430,12 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
         AuthorizedActions []string `json:"authorizedActions"`
         
         HasAssistanceFailed bool `json:"hasAssistanceFailed"`
+        
+        DeclinedReview bool `json:"declinedReview"`
+        
+        EvaluationContextId string `json:"evaluationContextId"`
+        
+        RetractedEvaluation Evaluationreference `json:"retractedEvaluation"`
         *Alias
     }{
 
@@ -493,6 +541,24 @@ func (u *Evaluation) MarshalJSON() ([]byte, error) {
 
         
         AuthorizedActions: []string{""},
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
         
 
 

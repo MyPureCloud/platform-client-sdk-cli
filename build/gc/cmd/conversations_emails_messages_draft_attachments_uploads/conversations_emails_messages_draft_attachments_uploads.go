@@ -1,4 +1,4 @@
-package integrations_clientapps_unifiedcommunications
+package conversations_emails_messages_draft_attachments_uploads
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("integrations_clientapps_unifiedcommunications", "SWAGGER_OVERRIDE_/api/v2/integrations/clientapps/unifiedcommunications", )
-	integrations_clientapps_unifiedcommunicationsCmd = &cobra.Command{
-		Use:   utils.FormatUsageDescription("integrations_clientapps_unifiedcommunications"),
+	Description = utils.FormatUsageDescription("conversations_emails_messages_draft_attachments_uploads", "SWAGGER_OVERRIDE_/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/uploads", )
+	conversations_emails_messages_draft_attachments_uploadsCmd = &cobra.Command{
+		Use:   utils.FormatUsageDescription("conversations_emails_messages_draft_attachments_uploads"),
 		Short: Description,
 		Long:  Description,
 	}
@@ -24,32 +24,36 @@ var (
 )
 
 func init() {
-	CommandService = services.NewCommandService(integrations_clientapps_unifiedcommunicationsCmd)
+	CommandService = services.NewCommandService(conversations_emails_messages_draft_attachments_uploadsCmd)
 }
 
-func Cmdintegrations_clientapps_unifiedcommunications() *cobra.Command { 
-	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "The total page size requested")
-	utils.AddFlag(listCmd.Flags(), "int", "pageNumber", "1", "The page number requested")
-	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "variable name requested to sort by")
-	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "variable name requested by expand list")
-	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "next page token")
-	utils.AddFlag(listCmd.Flags(), "string", "previousPage", "", "Previous page token")
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/integrations/clientapps/unifiedcommunications", utils.FormatPermissions([]string{ "integration:unifiedCommunications:view",  }), utils.GenerateDevCentreLink("GET", "Integrations", "/api/v2/integrations/clientapps/unifiedcommunications")))
-	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
+func Cmdconversations_emails_messages_draft_attachments_uploads() *cobra.Command { 
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/uploads", utils.FormatPermissions([]string{ "conversation:emailAttachment:add",  }), utils.GenerateDevCentreLink("POST", "Conversations", "/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/uploads")))
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  "description" : "Create attachment pre-signed URL request",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UploadAttachmentRequest"
+      }
+    }
+  },
+  "required" : true
+}`)
 	
 	
-	utils.AddPaginateFlagsIfListingResponse(listCmd.Flags(), "GET", `{
+	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
   "description" : "successful operation",
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/SWAGGER_OVERRIDE_list"
+        "$ref" : "#/components/schemas/UploadAttachmentResponse"
       }
     }
   }
 }`)
-	integrations_clientapps_unifiedcommunicationsCmd.AddCommand(listCmd)
-	return integrations_clientapps_unifiedcommunicationsCmd
+	conversations_emails_messages_draft_attachments_uploadsCmd.AddCommand(createCmd)
+	return conversations_emails_messages_draft_attachments_uploadsCmd
 }
 
 /* function introduced to differentiate string named 'url' from some service queryParams and /net/url imports */
@@ -57,11 +61,11 @@ func queryEscape(value string) string {
    return url.QueryEscape(value)
 }
 
-var listCmd = &cobra.Command{
-	Use:   "list",
-	Short: "UC integration client application configuration.",
-	Long:  "UC integration client application configuration.",
-	Args:  utils.DetermineArgs([]string{ }),
+var createCmd = &cobra.Command{
+	Use:   "create [conversationId]",
+	Short: "Create a URL to upload a message attachment file",
+	Long:  "Create a URL to upload a message attachment file",
+	Args:  utils.DetermineArgs([]string{ "conversationId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = models.Entities{}
@@ -69,37 +73,18 @@ var listCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
+			reqModel := models.Uploadattachmentrequest{}
+			utils.Render(reqModel.String())
+			
 			return
 		}
 
 		queryParams := make(map[string]string)
 
-		path := "/api/v2/integrations/clientapps/unifiedcommunications"
+		path := "/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/uploads"
+		conversationId, args := args[0], args[1:]
+		path = strings.Replace(path, "{conversationId}", fmt.Sprintf("%v", conversationId), -1)
 
-		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
-		if pageSize != "" {
-			queryParams["pageSize"] = pageSize
-		}
-		pageNumber := utils.GetFlag(cmd.Flags(), "int", "pageNumber")
-		if pageNumber != "" {
-			queryParams["pageNumber"] = pageNumber
-		}
-		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
-		if sortBy != "" {
-			queryParams["sortBy"] = sortBy
-		}
-		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
-		if expand != "" {
-			queryParams["expand"] = expand
-		}
-		nextPage := utils.GetFlag(cmd.Flags(), "string", "nextPage")
-		if nextPage != "" {
-			queryParams["nextPage"] = nextPage
-		}
-		previousPage := utils.GetFlag(cmd.Flags(), "string", "previousPage")
-		if previousPage != "" {
-			queryParams["previousPage"] = previousPage
-		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -131,8 +116,8 @@ var listCmd = &cobra.Command{
 			headerParams["Accept"] = localVarHttpHeaderAccept
 		}
 
-		const opId = "list"
-		const httpMethod = "GET"
+		const opId = "create"
+		const httpMethod = "POST"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

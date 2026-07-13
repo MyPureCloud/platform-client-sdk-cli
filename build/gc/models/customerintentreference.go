@@ -14,6 +14,9 @@ type CustomerintentreferenceDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -24,12 +27,17 @@ type Customerintentreference struct {
     Id string `json:"id"`
 
 
+    // Name
+    Name string `json:"name"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Customerintentreference) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -49,8 +57,13 @@ func (u *Customerintentreference) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Id string `json:"id"`
+        
+        Name string `json:"name"`
         *Alias
     }{
+
+        
+
 
         
 

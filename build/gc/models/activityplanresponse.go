@@ -87,6 +87,9 @@ type ActivityplanresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -193,6 +196,10 @@ type Activityplanresponse struct {
     LastRunBy Userreference `json:"lastRunBy"`
 
 
+    // StartTimeIncrementMinutes - The valid start times available when scheduling sessions
+    StartTimeIncrementMinutes int `json:"startTimeIncrementMinutes"`
+
+
     
 
 }
@@ -216,6 +223,7 @@ func (o *Activityplanresponse) String() string {
     
     
      o.FixedAvailability = []Fixedavailability{{}} 
+    
     
     
     
@@ -290,6 +298,8 @@ func (u *Activityplanresponse) MarshalJSON() ([]byte, error) {
         LastRunDate time.Time `json:"lastRunDate"`
         
         LastRunBy Userreference `json:"lastRunBy"`
+        
+        StartTimeIncrementMinutes int `json:"startTimeIncrementMinutes"`
         *Alias
     }{
 
@@ -345,6 +355,9 @@ func (u *Activityplanresponse) MarshalJSON() ([]byte, error) {
 
         
         FixedAvailability: []Fixedavailability{{}},
+        
+
+
         
 
 

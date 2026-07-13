@@ -26,6 +26,9 @@ type PromptassetcreateDud struct {
     MediaUri string `json:"mediaUri"`
 
 
+    AudioFormat Audioformat `json:"audioFormat"`
+
+
     
 
 
@@ -65,6 +68,9 @@ type Promptassetcreate struct {
 
     // Language - The prompt language.
     Language string `json:"language"`
+
+
+    
 
 
     
@@ -137,6 +143,9 @@ func (u *Promptassetcreate) MarshalJSON() ([]byte, error) {
         DurationSeconds float64 `json:"durationSeconds"`
         *Alias
     }{
+
+        
+
 
         
 

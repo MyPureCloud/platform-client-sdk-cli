@@ -272,6 +272,7 @@ gc/cmd/contentmanagement_workspaces_members/contentmanagement_workspaces_members
 gc/cmd/contentmanagement_workspaces_tagvalues/contentmanagement_workspaces_tagvalues.go
 gc/cmd/contentmanagement_workspaces_tagvalues_query/contentmanagement_workspaces_tagvalues_query.go
 gc/cmd/conversations/conversations.go
+gc/cmd/conversations_accessattributes/conversations_accessattributes.go
 gc/cmd/conversations_aftercallwork_participants_communications/conversations_aftercallwork_participants_communications.go
 gc/cmd/conversations_assign/conversations_assign.go
 gc/cmd/conversations_assistant_copilotcontext/conversations_assistant_copilotcontext.go
@@ -355,6 +356,7 @@ gc/cmd/conversations_emails_messages/conversations_emails_messages.go
 gc/cmd/conversations_emails_messages_draft/conversations_emails_messages_draft.go
 gc/cmd/conversations_emails_messages_draft_attachments/conversations_emails_messages_draft_attachments.go
 gc/cmd/conversations_emails_messages_draft_attachments_copy/conversations_emails_messages_draft_attachments_copy.go
+gc/cmd/conversations_emails_messages_draft_attachments_uploads/conversations_emails_messages_draft_attachments_uploads.go
 gc/cmd/conversations_emails_participants/conversations_emails_participants.go
 gc/cmd/conversations_emails_participants_attributes/conversations_emails_participants_attributes.go
 gc/cmd/conversations_emails_participants_communications/conversations_emails_participants_communications.go
@@ -536,9 +538,11 @@ gc/cmd/externalcontacts_import_csv_uploads_preview/externalcontacts_import_csv_u
 gc/cmd/externalcontacts_import_jobs/externalcontacts_import_jobs.go
 gc/cmd/externalcontacts_import_settings/externalcontacts_import_settings.go
 gc/cmd/externalcontacts_merge_contacts/externalcontacts_merge_contacts.go
+gc/cmd/externalcontacts_notes_exports/externalcontacts_notes_exports.go
 gc/cmd/externalcontacts_organizations/externalcontacts_organizations.go
 gc/cmd/externalcontacts_organizations_contacts/externalcontacts_organizations_contacts.go
 gc/cmd/externalcontacts_organizations_enrich/externalcontacts_organizations_enrich.go
+gc/cmd/externalcontacts_organizations_exports/externalcontacts_organizations_exports.go
 gc/cmd/externalcontacts_organizations_identifiers/externalcontacts_organizations_identifiers.go
 gc/cmd/externalcontacts_organizations_notes/externalcontacts_organizations_notes.go
 gc/cmd/externalcontacts_organizations_relationships/externalcontacts_organizations_relationships.go
@@ -548,6 +552,7 @@ gc/cmd/externalcontacts_organizations_schemas_limits/externalcontacts_organizati
 gc/cmd/externalcontacts_organizations_schemas_versions/externalcontacts_organizations_schemas_versions.go
 gc/cmd/externalcontacts_organizations_trustor/externalcontacts_organizations_trustor.go
 gc/cmd/externalcontacts_relationships/externalcontacts_relationships.go
+gc/cmd/externalcontacts_relationships_exports/externalcontacts_relationships_exports.go
 gc/cmd/externalcontacts_reversewhitepageslookup/externalcontacts_reversewhitepageslookup.go
 gc/cmd/externalcontacts_scan_contacts/externalcontacts_scan_contacts.go
 gc/cmd/externalcontacts_scan_contacts_divisionviews_all/externalcontacts_scan_contacts_divisionviews_all.go
@@ -722,7 +727,6 @@ gc/cmd/integrations_botconnectors_bots_summaries/integrations_botconnectors_bots
 gc/cmd/integrations_botconnectors_incoming_messages/integrations_botconnectors_incoming_messages.go
 gc/cmd/integrations_botconnectors_outgoing_messages/integrations_botconnectors_outgoing_messages.go
 gc/cmd/integrations_clientapps/integrations_clientapps.go
-gc/cmd/integrations_clientapps_unifiedcommunications/integrations_clientapps_unifiedcommunications.go
 gc/cmd/integrations_config_current/integrations_config_current.go
 gc/cmd/integrations_credentials/integrations_credentials.go
 gc/cmd/integrations_credentials_listing/integrations_credentials_listing.go
@@ -854,6 +858,7 @@ gc/cmd/knowledge_search_preview/knowledge_search_preview.go
 gc/cmd/knowledge_settings/knowledge_settings.go
 gc/cmd/knowledge_sources/knowledge_sources.go
 gc/cmd/knowledge_sources_synchronizations/knowledge_sources_synchronizations.go
+gc/cmd/knowledge_sources_synchronizations_deletions/knowledge_sources_synchronizations_deletions.go
 gc/cmd/knowledge_sources_synchronizations_uploads/knowledge_sources_synchronizations_uploads.go
 gc/cmd/languages/languages.go
 gc/cmd/languages_translations/languages_translations.go
@@ -2052,6 +2057,7 @@ gc/models/atzmtimeslot.go
 gc/models/atzmtimeslotwithtimezone.go
 gc/models/audioconnectorintegration.go
 gc/models/audioconnectorintegrationentitylisting.go
+gc/models/audioformat.go
 gc/models/audiostate.go
 gc/models/audioupdatedevent.go
 gc/models/auditlogmessage.go
@@ -2514,6 +2520,7 @@ gc/models/caseplancreateresponse.go
 gc/models/caseplandataschema.go
 gc/models/caseplandataschemalisting.go
 gc/models/caseplandataschemarequest.go
+gc/models/caseplanfilter.go
 gc/models/caseplanlisting.go
 gc/models/caseplanqueryentitylisting.go
 gc/models/caseplanqueryrequest.go
@@ -2522,6 +2529,7 @@ gc/models/caseplanupdate.go
 gc/models/casepriorityupdate.go
 gc/models/casereference.go
 gc/models/casesummaryupdate.go
+gc/models/caseuserreference.go
 gc/models/categoriesentitylisting.go
 gc/models/categoriesfilter.go
 gc/models/category.go
@@ -2786,6 +2794,8 @@ gc/models/continuousforecastsessionresponse.go
 gc/models/continuousforecastsnapshotresponse.go
 gc/models/contractual.go
 gc/models/conversation.go
+gc/models/conversationaccessattributesresponse.go
+gc/models/conversationaccessattributesupdate.go
 gc/models/conversationactivitydata.go
 gc/models/conversationactivityentitydata.go
 gc/models/conversationactivitymetricvalue.go
@@ -2987,6 +2997,7 @@ gc/models/createdecisiontablecolumnsrequest.go
 gc/models/createdecisiontableimportjobrequest.go
 gc/models/createdecisiontablerequest.go
 gc/models/createdecisiontablerowrequest.go
+gc/models/createdecisiontableversionrequest.go
 gc/models/createemailrequest.go
 gc/models/createexternaleventsconfigurationrequest.go
 gc/models/createguide.go
@@ -3165,6 +3176,7 @@ gc/models/decisiontablerowentityref.go
 gc/models/decisiontablerowexecutionoutput.go
 gc/models/decisiontablerowlisting.go
 gc/models/decisiontablerowparametervalue.go
+gc/models/decisiontablesnapshot.go
 gc/models/decisiontableversion.go
 gc/models/decisiontableversionentity.go
 gc/models/decisiontableversionlisting.go
@@ -4642,6 +4654,13 @@ gc/models/nluutterance.go
 gc/models/nluutterancesegment.go
 gc/models/note.go
 gc/models/notelisting.go
+gc/models/notesexport.go
+gc/models/notesexportcomparisonfieldfilter.go
+gc/models/notesexportfieldfilter.go
+gc/models/notesexportfieldlistfilter.go
+gc/models/notesexportfilter.go
+gc/models/notesexportlisting.go
+gc/models/notesexportqueryconditions.go
 gc/models/notificationsresponse.go
 gc/models/notificationssettings.go
 gc/models/ntpsettings.go
@@ -4759,6 +4778,13 @@ gc/models/organizationpublicapiusage.go
 gc/models/organizationpublicapiusagequeryrequest.go
 gc/models/organizationpublicapiusageresultsresponse.go
 gc/models/organizationroleentitylisting.go
+gc/models/organizationsexport.go
+gc/models/organizationsexportcomparisonfieldfilter.go
+gc/models/organizationsexportfieldfilter.go
+gc/models/organizationsexportfieldlistfilter.go
+gc/models/organizationsexportfilter.go
+gc/models/organizationsexportlisting.go
+gc/models/organizationsexportqueryconditions.go
 gc/models/organizationusagequeryresponse.go
 gc/models/orgauthsettings.go
 gc/models/orgoauthclient.go
@@ -5155,6 +5181,13 @@ gc/models/registerarchitectvalidatejob.go
 gc/models/registerarchitectvalidatejobresponse.go
 gc/models/relationship.go
 gc/models/relationshiplisting.go
+gc/models/relationshipsexport.go
+gc/models/relationshipsexportcomparisonfieldfilter.go
+gc/models/relationshipsexportfieldfilter.go
+gc/models/relationshipsexportfieldlistfilter.go
+gc/models/relationshipsexportfilter.go
+gc/models/relationshipsexportlisting.go
+gc/models/relationshipsexportqueryconditions.go
 gc/models/removeentitiesrequest.go
 gc/models/removeentity.go
 gc/models/reoccurrence.go
@@ -5998,8 +6031,6 @@ gc/models/typedattribute.go
 gc/models/typingsetting.go
 gc/models/uci10n.go
 gc/models/ucicon.go
-gc/models/ucintegration.go
-gc/models/ucintegrationlisting.go
 gc/models/ucthirdpartypresence.go
 gc/models/ucuserpresence.go
 gc/models/unansweredgroup.go
@@ -6086,6 +6117,8 @@ gc/models/updateverifierrequest.go
 gc/models/updateworkplanbid.go
 gc/models/updateworkplanrotationagentrequest.go
 gc/models/updateworkplanrotationrequest.go
+gc/models/uploadattachmentrequest.go
+gc/models/uploadattachmentresponse.go
 gc/models/uploadmediarequest.go
 gc/models/uploadurlrequest.go
 gc/models/uploadurlrequestbody.go
@@ -6243,10 +6276,15 @@ gc/models/v3sourcetagfilter.go
 gc/models/v3sourceupdaterequest.go
 gc/models/v3startmanualsyncrequest.go
 gc/models/v3synchronization.go
+gc/models/v3synchronizationdeletion.go
+gc/models/v3synchronizationdeletionlisting.go
+gc/models/v3synchronizationfiledeletionrequest.go
 gc/models/v3synchronizationlisting.go
 gc/models/v3synchronizationref.go
 gc/models/v3synchronizationstatistics.go
 gc/models/v3synchronizationupdaterequest.go
+gc/models/v3synchronizationupload.go
+gc/models/v3synchronizationuploadlisting.go
 gc/models/v3synchronizationuploadmetadata.go
 gc/models/v3synchronizationuploadurlrequest.go
 gc/models/v3synchronizationuploadurlresponse.go
@@ -6449,6 +6487,7 @@ gc/models/workdayvaluestrend.go
 gc/models/workdayvaluestrenditem.go
 gc/models/workflowtargetsettings.go
 gc/models/workitem.go
+gc/models/workitemactivityreference.go
 gc/models/workitemcasereference.go
 gc/models/workitemchangelisting.go
 gc/models/workitemcommoncreate.go

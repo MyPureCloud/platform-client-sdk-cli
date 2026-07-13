@@ -163,11 +163,6 @@
       "description": "Patch a user's Presence"
     },
     {
-      "name": "create",
-      "path": "/api/v2/users/{userId}/screenmonitors/sessions",
-      "description": "Start an agent-level screen monitoring session."
-    },
-    {
       "name": "get",
       "path": "/api/v2/users/{userId}/screenmonitors/sessions/{screenMonitoringId}",
       "description": "Get an agent-level screen monitoring session object using the supplied screenMonitoringId."
@@ -176,6 +171,11 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/screenmonitors/sessions/{screenMonitoringId}",
       "description": "Stop an agent-level screen monitoring session."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/{userId}/screenmonitors/sessions",
+      "description": "Start an agent-level screen monitoring session."
     },
     {
       "name": "list",
@@ -338,14 +338,14 @@
       "description": "Get station information for self"
     },
     {
-      "name": "update",
-      "path": "/api/v2/users/stations/me/associatedstation/{stationId}",
-      "description": "Set self associated station"
-    },
-    {
       "name": "delete",
       "path": "/api/v2/users/stations/me/associatedstation",
       "description": "Clear self associated station"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/stations/me/associatedstation/{stationId}",
+      "description": "Set self associated station"
     },
     {
       "name": "list",
@@ -368,24 +368,24 @@
       "description": "Get station information for user"
     },
     {
-      "name": "update",
-      "path": "/api/v2/users/{userId}/station/associatedstation/{stationId}",
-      "description": "Set associated station"
-    },
-    {
       "name": "delete",
       "path": "/api/v2/users/{userId}/station/associatedstation",
       "description": "Clear associated station"
     },
     {
-      "name": "delete",
-      "path": "/api/v2/users/{userId}/station/defaultstation",
-      "description": "Clear default station"
+      "name": "update",
+      "path": "/api/v2/users/{userId}/station/associatedstation/{stationId}",
+      "description": "Set associated station"
     },
     {
       "name": "update",
       "path": "/api/v2/users/{userId}/station/defaultstation/{stationId}",
       "description": "Set default station"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/station/defaultstation",
+      "description": "Clear default station"
     },
     {
       "name": "list",
@@ -508,11 +508,6 @@
       "description": "Create a schema"
     },
     {
-      "name": "get",
-      "path": "/api/v2/users/development/activities/{activityId}",
-      "description": "Get a Development Activity"
-    },
-    {
       "name": "list",
       "path": "/api/v2/users/development/activities",
       "description": "Get list of Development Activities"
@@ -523,19 +518,24 @@
       "description": "Get list of Development Activities for current user"
     },
     {
+      "name": "get",
+      "path": "/api/v2/users/development/activities/{activityId}",
+      "description": "Get a Development Activity"
+    },
+    {
       "name": "create",
       "path": "/api/v2/users/development/activities/aggregates/query",
       "description": "Retrieve aggregated development activity data"
     },
     {
-      "name": "get",
-      "path": "/api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId}",
-      "description": "Get dependent of a users rule"
-    },
-    {
       "name": "list",
       "path": "/api/v2/users/rules/{ruleId}/dependents",
       "description": "Get dependents for a users rule"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId}",
+      "description": "Get dependent of a users rule"
     },
     {
       "name": "get",

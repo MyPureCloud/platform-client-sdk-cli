@@ -14,6 +14,12 @@ type CaseexternalcontactreferenceDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -24,12 +30,22 @@ type Caseexternalcontactreference struct {
     Id string `json:"id"`
 
 
+    // FirstName - The first name of the contact.
+    FirstName string `json:"firstName"`
+
+
+    // LastName - The last name of the contact.
+    LastName string `json:"lastName"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Caseexternalcontactreference) String() string {
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -49,8 +65,18 @@ func (u *Caseexternalcontactreference) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Id string `json:"id"`
+        
+        FirstName string `json:"firstName"`
+        
+        LastName string `json:"lastName"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

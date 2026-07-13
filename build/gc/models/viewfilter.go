@@ -733,6 +733,9 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Viewfilter
@@ -1700,6 +1703,10 @@ type Viewfilter struct {
     // Takeover - Indicates filtering for takeover
     Takeover bool `json:"takeover"`
 
+
+    // SocialPostTypes - The social post types used to filter the view
+    SocialPostTypes []string `json:"socialPostTypes"`
+
 }
 
 // String returns a JSON representation of the model
@@ -1945,6 +1952,7 @@ func (o *Viewfilter) String() string {
      o.EngagementSources = []string{""} 
     
     
+     o.SocialPostTypes = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -2443,6 +2451,8 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         IsSnippetRecorded bool `json:"isSnippetRecorded"`
         
         Takeover bool `json:"takeover"`
+        
+        SocialPostTypes []string `json:"socialPostTypes"`
         *Alias
     }{
 
@@ -3492,6 +3502,11 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        SocialPostTypes: []string{""},
         
 
         Alias: (*Alias)(u),

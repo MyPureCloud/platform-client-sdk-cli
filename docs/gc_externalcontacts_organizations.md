@@ -34,6 +34,7 @@
 * [gc externalcontacts organizations create](gc_externalcontacts_organizations_create.html)	 - Create an external organization
 * [gc externalcontacts organizations delete](gc_externalcontacts_organizations_delete.html)	 - Delete an external organization
 * [gc externalcontacts organizations enrich](gc_externalcontacts_organizations_enrich.html)	 - /api/v2/externalcontacts/organizations/enrich
+* [gc externalcontacts organizations exports](gc_externalcontacts_organizations_exports.html)	 - /api/v2/externalcontacts/organizations/exports
 * [gc externalcontacts organizations get](gc_externalcontacts_organizations_get.html)	 - Fetch an external organization
 * [gc externalcontacts organizations identifiers](gc_externalcontacts_organizations_identifiers.html)	 - /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers
 * [gc externalcontacts organizations notes](gc_externalcontacts_organizations_notes.html)	 - /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes

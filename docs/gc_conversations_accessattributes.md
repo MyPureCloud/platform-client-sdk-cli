@@ -1,22 +1,15 @@
-## gc businessrules decisiontables versions create
+## gc conversations accessattributes
 
-Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
+/api/v2/conversations/{conversationId}/accessattributes
 
 ### Synopsis
 
-Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
-
-```
-gc businessrules decisiontables versions create [tableId] [flags]
-```
+/api/v2/conversations/{conversationId}/accessattributes
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for accessattributes
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,8 @@ gc businessrules decisiontables versions create [tableId] [flags]
 
 ### SEE ALSO
 
-* [gc businessrules decisiontables versions](gc_businessrules_decisiontables_versions.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions
+* [gc conversations](gc_conversations.html)	 - /api/v2/conversations
+* [gc conversations accessattributes get](gc_conversations_accessattributes_get.html)	 - Get the access attributes on a conversation.
+* [gc conversations accessattributes update](gc_conversations_accessattributes_update.html)	 - Set the access attributes on a conversation.
 
 

@@ -1,27 +1,24 @@
-## gc integrations clientapps unifiedcommunications list
+## gc externalcontacts organizations exports list
 
-UC integration client application configuration.
+List organization exports for organization
 
 ### Synopsis
 
-UC integration client application configuration.
+List organization exports for organization
 
 ```
-gc integrations clientapps unifiedcommunications list [flags]
+gc externalcontacts organizations exports list [flags]
 ```
 
 ### Options
 
 ```
+      --after string             The cursor that points to the end of the set of entities
   -a, --autopaginate             Automatically paginate through the results stripping page information
-      --expand strings           variable name requested by expand list
+      --divisionIds strings      Division IDs of entities
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --nextPage string          next page token
-      --pageNumber string        The page number requested (default "1")
-      --pageSize string          The total page size requested (default "25")
-      --previousPage string      Previous page token
-      --sortBy string            variable name requested to sort by
+      --pageSize string          Number of entities to return
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
@@ -42,6 +39,6 @@ gc integrations clientapps unifiedcommunications list [flags]
 
 ### SEE ALSO
 
-* [gc integrations clientapps unifiedcommunications](gc_integrations_clientapps_unifiedcommunications.html)	 - /api/v2/integrations/clientapps/unifiedcommunications
+* [gc externalcontacts organizations exports](gc_externalcontacts_organizations_exports.html)	 - /api/v2/externalcontacts/organizations/exports
 
 

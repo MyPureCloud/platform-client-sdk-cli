@@ -31,6 +31,7 @@
 
 * [gc knowledge sources](gc_knowledge_sources.html)	 - /api/v2/knowledge/sources
 * [gc knowledge sources synchronizations create](gc_knowledge_sources_synchronizations_create.html)	 - Start a manual synchronization from a source.
+* [gc knowledge sources synchronizations deletions](gc_knowledge_sources_synchronizations_deletions.html)	 - /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions
 * [gc knowledge sources synchronizations get](gc_knowledge_sources_synchronizations_get.html)	 - Get a specific synchronization of a source.
 * [gc knowledge sources synchronizations list](gc_knowledge_sources_synchronizations_list.html)	 - Get synchronizations of a source.
 * [gc knowledge sources synchronizations listallsources](gc_knowledge_sources_synchronizations_listallsources.html)	 - Get synchronizations of all sources of the organization.

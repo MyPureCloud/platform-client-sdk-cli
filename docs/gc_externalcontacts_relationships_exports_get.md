@@ -1,15 +1,19 @@
-## gc externalcontacts relationships
+## gc externalcontacts relationships exports get
 
-/api/v2/externalcontacts/relationships
+Get relationships export for exportId
 
 ### Synopsis
 
-/api/v2/externalcontacts/relationships
+Get relationships export for exportId
+
+```
+gc externalcontacts relationships exports get [exportId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for relationships
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -29,12 +33,6 @@
 
 ### SEE ALSO
 
-* [gc externalcontacts](gc_externalcontacts.html)	 - /api/v2/externalcontacts
-* [gc externalcontacts relationships create](gc_externalcontacts_relationships_create.html)	 - Create a relationship
-* [gc externalcontacts relationships delete](gc_externalcontacts_relationships_delete.html)	 - Delete a relationship
 * [gc externalcontacts relationships exports](gc_externalcontacts_relationships_exports.html)	 - /api/v2/externalcontacts/relationships/exports
-* [gc externalcontacts relationships get](gc_externalcontacts_relationships_get.html)	 - Fetch a relationship
-* [gc externalcontacts relationships patch](gc_externalcontacts_relationships_patch.html)	 - Update specific fields of a relationship
-* [gc externalcontacts relationships update](gc_externalcontacts_relationships_update.html)	 - Update a relationship
 
 

@@ -1,22 +1,15 @@
-## gc businessrules decisiontables versions create
+## gc externalcontacts organizations exports
 
-Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
+/api/v2/externalcontacts/organizations/exports
 
 ### Synopsis
 
-Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
-
-```
-gc businessrules decisiontables versions create [tableId] [flags]
-```
+/api/v2/externalcontacts/organizations/exports
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for exports
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,9 @@ gc businessrules decisiontables versions create [tableId] [flags]
 
 ### SEE ALSO
 
-* [gc businessrules decisiontables versions](gc_businessrules_decisiontables_versions.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions
+* [gc externalcontacts organizations](gc_externalcontacts_organizations.html)	 - /api/v2/externalcontacts/organizations
+* [gc externalcontacts organizations exports create](gc_externalcontacts_organizations_exports_create.html)	 - Create organizations export
+* [gc externalcontacts organizations exports get](gc_externalcontacts_organizations_exports_get.html)	 - Get organizations export for exportId
+* [gc externalcontacts organizations exports list](gc_externalcontacts_organizations_exports_list.html)	 - List organization exports for organization
 
 

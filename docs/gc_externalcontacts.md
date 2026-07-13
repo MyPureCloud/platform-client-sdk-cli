@@ -37,6 +37,7 @@
 * [gc externalcontacts identifierlookup](gc_externalcontacts_identifierlookup.html)	 - /api/v2/externalcontacts/identifierlookup
 * [gc externalcontacts import](gc_externalcontacts_import.html)	 - /api/v2/externalcontacts/import
 * [gc externalcontacts merge](gc_externalcontacts_merge.html)	 - /api/v2/externalcontacts/merge
+* [gc externalcontacts notes](gc_externalcontacts_notes.html)	 - /api/v2/externalcontacts/notes
 * [gc externalcontacts organizations](gc_externalcontacts_organizations.html)	 - /api/v2/externalcontacts/organizations
 * [gc externalcontacts relationships](gc_externalcontacts_relationships.html)	 - /api/v2/externalcontacts/relationships
 * [gc externalcontacts reversewhitepageslookup](gc_externalcontacts_reversewhitepageslookup.html)	 - /api/v2/externalcontacts/reversewhitepageslookup

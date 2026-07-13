@@ -1,15 +1,25 @@
-## gc externalcontacts relationships
+## gc externalcontacts relationships exports list
 
-/api/v2/externalcontacts/relationships
+List relationship exports for organization
 
 ### Synopsis
 
-/api/v2/externalcontacts/relationships
+List relationship exports for organization
+
+```
+gc externalcontacts relationships exports list [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for relationships
+      --after string             The cursor that points to the end of the set of entities
+  -a, --autopaginate             Automatically paginate through the results stripping page information
+      --divisionIds strings      Division IDs of entities
+      --filtercondition string   Filter list command output based on a given condition or regular expression
+  -h, --help                     help for list
+      --pageSize string          Number of entities to return
+  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
 ### Options inherited from parent commands
@@ -29,12 +39,6 @@
 
 ### SEE ALSO
 
-* [gc externalcontacts](gc_externalcontacts.html)	 - /api/v2/externalcontacts
-* [gc externalcontacts relationships create](gc_externalcontacts_relationships_create.html)	 - Create a relationship
-* [gc externalcontacts relationships delete](gc_externalcontacts_relationships_delete.html)	 - Delete a relationship
 * [gc externalcontacts relationships exports](gc_externalcontacts_relationships_exports.html)	 - /api/v2/externalcontacts/relationships/exports
-* [gc externalcontacts relationships get](gc_externalcontacts_relationships_get.html)	 - Fetch a relationship
-* [gc externalcontacts relationships patch](gc_externalcontacts_relationships_patch.html)	 - Update specific fields of a relationship
-* [gc externalcontacts relationships update](gc_externalcontacts_relationships_update.html)	 - Update a relationship
 
 

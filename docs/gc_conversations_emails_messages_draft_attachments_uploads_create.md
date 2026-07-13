@@ -1,15 +1,22 @@
-## gc conversations emails messages draft attachments
+## gc conversations emails messages draft attachments uploads create
 
-/api/v2/conversations/emails/{conversationId}/messages/draft/attachments
+Create a URL to upload a message attachment file
 
 ### Synopsis
 
-/api/v2/conversations/emails/{conversationId}/messages/draft/attachments
+Create a URL to upload a message attachment file
+
+```
+gc conversations emails messages draft attachments uploads create [conversationId] [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for attachments
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,9 +36,6 @@
 
 ### SEE ALSO
 
-* [gc conversations emails messages draft](gc_conversations_emails_messages_draft.html)	 - /api/v2/conversations/emails/{conversationId}/messages/draft
-* [gc conversations emails messages draft attachments copy](gc_conversations_emails_messages_draft_attachments_copy.html)	 - /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy
-* [gc conversations emails messages draft attachments delete](gc_conversations_emails_messages_draft_attachments_delete.html)	 - Delete attachment from draft
 * [gc conversations emails messages draft attachments uploads](gc_conversations_emails_messages_draft_attachments_uploads.html)	 - /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/uploads
 
 

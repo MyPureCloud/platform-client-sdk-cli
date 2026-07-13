@@ -1,22 +1,19 @@
-## gc businessrules decisiontables versions create
+## gc knowledge sources synchronizations uploads delete
 
-Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
+Remove a file upload entry associated with the synchronization
 
 ### Synopsis
 
-Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
+Remove a file upload entry associated with the synchronization
 
 ```
-gc businessrules decisiontables versions create [tableId] [flags]
+gc knowledge sources synchronizations uploads delete [sourceId] [synchronizationId] [fileId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for delete
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc businessrules decisiontables versions create [tableId] [flags]
 
 ### SEE ALSO
 
-* [gc businessrules decisiontables versions](gc_businessrules_decisiontables_versions.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions
+* [gc knowledge sources synchronizations uploads](gc_knowledge_sources_synchronizations_uploads.html)	 - /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads
 
 

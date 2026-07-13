@@ -1,15 +1,22 @@
-## gc integrations clientapps unifiedcommunications
+## gc externalcontacts relationships exports create
 
-/api/v2/integrations/clientapps/unifiedcommunications
+Create relationships export
 
 ### Synopsis
 
-/api/v2/integrations/clientapps/unifiedcommunications
+Create relationships export
+
+```
+gc externalcontacts relationships exports create [flags]
+```
 
 ### Options
 
 ```
-  -h, --help   help for unifiedcommunications
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -29,7 +36,6 @@
 
 ### SEE ALSO
 
-* [gc integrations clientapps](gc_integrations_clientapps.html)	 - /api/v2/integrations/clientapps
-* [gc integrations clientapps unifiedcommunications list](gc_integrations_clientapps_unifiedcommunications_list.html)	 - UC integration client application configuration.
+* [gc externalcontacts relationships exports](gc_externalcontacts_relationships_exports.html)	 - /api/v2/externalcontacts/relationships/exports
 
 

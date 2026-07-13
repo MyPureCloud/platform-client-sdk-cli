@@ -1,13 +1,13 @@
-## gc businessrules decisiontables versions create
+## gc externalcontacts notes exports create
 
-Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
+Create notes export
 
 ### Synopsis
 
-Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
+Create notes export
 
 ```
-gc businessrules decisiontables versions create [tableId] [flags]
+gc externalcontacts notes exports create [flags]
 ```
 
 ### Options
@@ -36,6 +36,6 @@ gc businessrules decisiontables versions create [tableId] [flags]
 
 ### SEE ALSO
 
-* [gc businessrules decisiontables versions](gc_businessrules_decisiontables_versions.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions
+* [gc externalcontacts notes exports](gc_externalcontacts_notes_exports.html)	 - /api/v2/externalcontacts/notes/exports
 
 

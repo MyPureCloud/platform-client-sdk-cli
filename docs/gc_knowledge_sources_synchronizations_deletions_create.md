@@ -1,13 +1,13 @@
-## gc businessrules decisiontables versions create
+## gc knowledge sources synchronizations deletions create
 
-Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
+Mark a previously synced file for deletion in the synchronization.
 
 ### Synopsis
 
-Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
+Mark a previously synced file for deletion in the synchronization.
 
 ```
-gc businessrules decisiontables versions create [tableId] [flags]
+gc knowledge sources synchronizations deletions create [sourceId] [synchronizationId] [flags]
 ```
 
 ### Options
@@ -36,6 +36,6 @@ gc businessrules decisiontables versions create [tableId] [flags]
 
 ### SEE ALSO
 
-* [gc businessrules decisiontables versions](gc_businessrules_decisiontables_versions.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions
+* [gc knowledge sources synchronizations deletions](gc_knowledge_sources_synchronizations_deletions.html)	 - /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions
 
 

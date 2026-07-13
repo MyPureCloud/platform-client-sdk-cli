@@ -31,7 +31,7 @@
 
 * [gc businessrules decisiontables](gc_businessrules_decisiontables.html)	 - /api/v2/businessrules/decisiontables
 * [gc businessrules decisiontables versions copy](gc_businessrules_decisiontables_versions_copy.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/copy
-* [gc businessrules decisiontables versions create](gc_businessrules_decisiontables_versions_create.html)	 - Create a new decision table version
+* [gc businessrules decisiontables versions create](gc_businessrules_decisiontables_versions_create.html)	 - Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
 * [gc businessrules decisiontables versions delete](gc_businessrules_decisiontables_versions_delete.html)	 - Delete a decision table version
 * [gc businessrules decisiontables versions execute](gc_businessrules_decisiontables_versions_execute.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/execute
 * [gc businessrules decisiontables versions get](gc_businessrules_decisiontables_versions_get.html)	 - Get a decision table version

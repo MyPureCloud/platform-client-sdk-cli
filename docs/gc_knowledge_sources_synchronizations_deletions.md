@@ -1,15 +1,15 @@
-## gc knowledge sources synchronizations uploads
+## gc knowledge sources synchronizations deletions
 
-/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads
+/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions
 
 ### Synopsis
 
-/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads
+/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions
 
 ### Options
 
 ```
-  -h, --help   help for uploads
+  -h, --help   help for deletions
 ```
 
 ### Options inherited from parent commands
@@ -30,9 +30,9 @@
 ### SEE ALSO
 
 * [gc knowledge sources synchronizations](gc_knowledge_sources_synchronizations.html)	 - /api/v2/knowledge/sources/{sourceId}/synchronizations /api/v2/knowledge/sources/synchronizations
-* [gc knowledge sources synchronizations uploads create](gc_knowledge_sources_synchronizations_uploads_create.html)	 - Create presigned URL for uploading a file in the synchronization.
-* [gc knowledge sources synchronizations uploads delete](gc_knowledge_sources_synchronizations_uploads_delete.html)	 - Remove a file upload entry associated with the synchronization
-* [gc knowledge sources synchronizations uploads get](gc_knowledge_sources_synchronizations_uploads_get.html)	 - Get a file upload entry associated with the synchronization
-* [gc knowledge sources synchronizations uploads list](gc_knowledge_sources_synchronizations_uploads_list.html)	 - Get file upload entries associated with the synchronization
+* [gc knowledge sources synchronizations deletions create](gc_knowledge_sources_synchronizations_deletions_create.html)	 - Mark a previously synced file for deletion in the synchronization.
+* [gc knowledge sources synchronizations deletions delete](gc_knowledge_sources_synchronizations_deletions_delete.html)	 - Remove a deletion entry associated with the synchronization
+* [gc knowledge sources synchronizations deletions get](gc_knowledge_sources_synchronizations_deletions_get.html)	 - Get a deletion entry associated with the synchronization
+* [gc knowledge sources synchronizations deletions list](gc_knowledge_sources_synchronizations_deletions_list.html)	 - Get deletion entries associated with the synchronization.
 
 

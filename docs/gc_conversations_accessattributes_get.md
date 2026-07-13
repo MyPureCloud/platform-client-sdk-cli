@@ -1,22 +1,19 @@
-## gc businessrules decisiontables versions create
+## gc conversations accessattributes get
 
-Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
+Get the access attributes on a conversation.
 
 ### Synopsis
 
-Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
+Get the access attributes on a conversation.
 
 ```
-gc businessrules decisiontables versions create [tableId] [flags]
+gc conversations accessattributes get [conversationId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc businessrules decisiontables versions create [tableId] [flags]
 
 ### SEE ALSO
 
-* [gc businessrules decisiontables versions](gc_businessrules_decisiontables_versions.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions
+* [gc conversations accessattributes](gc_conversations_accessattributes.html)	 - /api/v2/conversations/{conversationId}/accessattributes
 
 

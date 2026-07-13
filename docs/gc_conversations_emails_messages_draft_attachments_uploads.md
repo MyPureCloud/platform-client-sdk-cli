@@ -1,22 +1,15 @@
-## gc businessrules decisiontables versions create
+## gc conversations emails messages draft attachments uploads
 
-Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
+/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/uploads
 
 ### Synopsis
 
-Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
-
-```
-gc businessrules decisiontables versions create [tableId] [flags]
-```
+/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/uploads
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for uploads
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc businessrules decisiontables versions create [tableId] [flags]
 
 ### SEE ALSO
 
-* [gc businessrules decisiontables versions](gc_businessrules_decisiontables_versions.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions
+* [gc conversations emails messages draft attachments](gc_conversations_emails_messages_draft_attachments.html)	 - /api/v2/conversations/emails/{conversationId}/messages/draft/attachments
+* [gc conversations emails messages draft attachments uploads create](gc_conversations_emails_messages_draft_attachments_uploads_create.html)	 - Create a URL to upload a message attachment file
 
 

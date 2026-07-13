@@ -31,6 +31,5 @@
 
 * [gc integrations](gc_integrations.html)	 - /api/v2/integrations
 * [gc integrations clientapps list](gc_integrations_clientapps_list.html)	 - List permitted client app integrations for the logged in user
-* [gc integrations clientapps unifiedcommunications](gc_integrations_clientapps_unifiedcommunications.html)	 - /api/v2/integrations/clientapps/unifiedcommunications
 
 

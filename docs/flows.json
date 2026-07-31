@@ -204,8 +204,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/flows/actions/revert",
-      "description": "Revert flow"
+      "path": "/api/v2/flows/actions/deactivate",
+      "description": "Deactivate flow"
     },
     {
       "name": "create",
@@ -219,8 +219,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/flows/actions/deactivate",
-      "description": "Deactivate flow"
+      "path": "/api/v2/flows/actions/revert",
+      "description": "Revert flow"
     },
     {
       "name": "get",
@@ -334,13 +334,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/flows/{flowId}/versions/{versionId}/configuration",
-      "description": "Get flow version configuration"
+      "path": "/api/v2/flows/{flowId}/versions/{versionId}",
+      "description": "Get flow version"
     },
     {
       "name": "get",
-      "path": "/api/v2/flows/{flowId}/versions/{versionId}",
-      "description": "Get flow version"
+      "path": "/api/v2/flows/{flowId}/versions/{versionId}/configuration",
+      "description": "Get flow version configuration"
     },
     {
       "name": "list",

@@ -20,6 +20,9 @@ type CaseuserreferenceDud struct {
     Presence Userpresence `json:"presence"`
 
 
+    Images []Image `json:"images"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -32,6 +35,9 @@ type Caseuserreference struct {
 
     // Name
     Name string `json:"name"`
+
+
+    
 
 
     
@@ -67,6 +73,9 @@ func (u *Caseuserreference) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         *Alias
     }{
+
+        
+
 
         
 

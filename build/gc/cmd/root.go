@@ -59,6 +59,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/authorization"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/oauth"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/organizations"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/agentic"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/audits"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/screenrecording"
@@ -145,7 +146,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 166.0.0")
+		fmt.Println("Current version: 167.0.0")
 		checkForNewVersion()
 	},
 }
@@ -164,7 +165,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("166.0.0", latestVersion) {
+	if versionsAreEqual("167.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -314,6 +315,7 @@ func init() {
 	rootCmd.AddCommand(authorization.Cmdauthorization())
 	rootCmd.AddCommand(oauth.Cmdoauth())
 	rootCmd.AddCommand(organizations.Cmdorganizations())
+	rootCmd.AddCommand(agentic.Cmdagentic())
 	rootCmd.AddCommand(analytics.Cmdanalytics())
 	rootCmd.AddCommand(audits.Cmdaudits())
 	rootCmd.AddCommand(screenrecording.Cmdscreenrecording())

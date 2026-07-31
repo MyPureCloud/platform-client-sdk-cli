@@ -2,6 +2,10 @@
 .openapi-generator-ignore
 Makefile
 README.md
+gc/cmd/agentic_virtualagents/agentic_virtualagents.go
+gc/cmd/agentic_virtualagents_jobs/agentic_virtualagents_jobs.go
+gc/cmd/agentic_virtualagents_versions/agentic_virtualagents_versions.go
+gc/cmd/agentic_virtualagents_versions_jobs/agentic_virtualagents_versions_jobs.go
 gc/cmd/alerting_alerts/alerting_alerts.go
 gc/cmd/alerting_alerts_all/alerting_alerts_all.go
 gc/cmd/alerting_alerts_bulk/alerting_alerts_bulk.go
@@ -226,6 +230,8 @@ gc/cmd/casemanagement_caseplans_versions_stageplans_stepplans/casemanagement_cas
 gc/cmd/casemanagement_cases/casemanagement_cases.go
 gc/cmd/casemanagement_cases_associations/casemanagement_cases_associations.go
 gc/cmd/casemanagement_cases_associations_query/casemanagement_cases_associations_query.go
+gc/cmd/casemanagement_cases_comments/casemanagement_cases_comments.go
+gc/cmd/casemanagement_cases_comments_me/casemanagement_cases_comments_me.go
 gc/cmd/casemanagement_cases_datedue/casemanagement_cases_datedue.go
 gc/cmd/casemanagement_cases_externalcontacts/casemanagement_cases_externalcontacts.go
 gc/cmd/casemanagement_cases_priority/casemanagement_cases_priority.go
@@ -298,6 +304,7 @@ gc/cmd/conversations_calls_participants_barge/conversations_calls_participants_b
 gc/cmd/conversations_calls_participants_coach/conversations_calls_participants_coach.go
 gc/cmd/conversations_calls_participants_communications/conversations_calls_participants_communications.go
 gc/cmd/conversations_calls_participants_communications_postflowaction/conversations_calls_participants_communications_postflowaction.go
+gc/cmd/conversations_calls_participants_communications_summaries/conversations_calls_participants_communications_summaries.go
 gc/cmd/conversations_calls_participants_communications_uuidata/conversations_calls_participants_communications_uuidata.go
 gc/cmd/conversations_calls_participants_communications_wrapup/conversations_calls_participants_communications_wrapup.go
 gc/cmd/conversations_calls_participants_consult/conversations_calls_participants_consult.go
@@ -391,6 +398,7 @@ gc/cmd/conversations_messages_messages_bulk/conversations_messages_messages_bulk
 gc/cmd/conversations_messages_participants/conversations_messages_participants.go
 gc/cmd/conversations_messages_participants_attributes/conversations_messages_participants_attributes.go
 gc/cmd/conversations_messages_participants_communications/conversations_messages_participants_communications.go
+gc/cmd/conversations_messages_participants_communications_summaries/conversations_messages_participants_communications_summaries.go
 gc/cmd/conversations_messages_participants_communications_wrapup/conversations_messages_participants_communications_wrapup.go
 gc/cmd/conversations_messages_participants_monitor/conversations_messages_participants_monitor.go
 gc/cmd/conversations_messages_participants_parkingstate/conversations_messages_participants_parkingstate.go
@@ -1071,7 +1079,9 @@ gc/cmd/quality_forms_versions/quality_forms_versions.go
 gc/cmd/quality_programs_agentscoringrules/quality_programs_agentscoringrules.go
 gc/cmd/quality_publishedforms/quality_publishedforms.go
 gc/cmd/quality_publishedforms_evaluations/quality_publishedforms_evaluations.go
+gc/cmd/quality_publishedforms_evaluations_divisionviews/quality_publishedforms_evaluations_divisionviews.go
 gc/cmd/quality_publishedforms_surveys/quality_publishedforms_surveys.go
+gc/cmd/quality_publishedforms_surveys_divisionviews/quality_publishedforms_surveys_divisionviews.go
 gc/cmd/quality_surveys/quality_surveys.go
 gc/cmd/quality_surveys_scorable/quality_surveys_scorable.go
 gc/cmd/quality_surveys_scoring/quality_surveys_scoring.go
@@ -1094,6 +1104,7 @@ gc/cmd/recordings_screensessions_details/recordings_screensessions_details.go
 gc/cmd/recordings_screensessions_metadata/recordings_screensessions_metadata.go
 gc/cmd/responsemanagement_libraries/responsemanagement_libraries.go
 gc/cmd/responsemanagement_libraries_bulk/responsemanagement_libraries_bulk.go
+gc/cmd/responsemanagement_libraries_divisionviews/responsemanagement_libraries_divisionviews.go
 gc/cmd/responsemanagement_libraries_query/responsemanagement_libraries_query.go
 gc/cmd/responsemanagement_responseassets/responsemanagement_responseassets.go
 gc/cmd/responsemanagement_responseassets_bulk/responsemanagement_responseassets_bulk.go
@@ -1101,6 +1112,8 @@ gc/cmd/responsemanagement_responseassets_search/responsemanagement_responseasset
 gc/cmd/responsemanagement_responseassets_status/responsemanagement_responseassets_status.go
 gc/cmd/responsemanagement_responseassets_uploads/responsemanagement_responseassets_uploads.go
 gc/cmd/responsemanagement_responses/responsemanagement_responses.go
+gc/cmd/responsemanagement_responses_divisionviews/responsemanagement_responses_divisionviews.go
+gc/cmd/responsemanagement_responses_divisionviews_query/responsemanagement_responses_divisionviews_query.go
 gc/cmd/responsemanagement_responses_query/responsemanagement_responses_query.go
 gc/cmd/root.go
 gc/cmd/routing_assessments/routing_assessments.go
@@ -1402,6 +1415,10 @@ gc/cmd/users_greetings_defaults/users_greetings_defaults.go
 gc/cmd/users_invite/users_invite.go
 gc/cmd/users_me/users_me.go
 gc/cmd/users_me_password/users_me_password.go
+gc/cmd/users_me_verifiers/users_me_verifiers.go
+gc/cmd/users_me_verifiers_totp/users_me_verifiers_totp.go
+gc/cmd/users_me_verifiers_webauthn_register/users_me_verifiers_webauthn_register.go
+gc/cmd/users_me_verifiers_webauthn_register_options/users_me_verifiers_webauthn_register_options.go
 gc/cmd/users_outofoffice/users_outofoffice.go
 gc/cmd/users_password/users_password.go
 gc/cmd/users_presences/users_presences.go
@@ -1504,6 +1521,7 @@ gc/cmd/workforcemanagement_alternativeshifts_trades_jobs/workforcemanagement_alt
 gc/cmd/workforcemanagement_alternativeshifts_trades_state_jobs/workforcemanagement_alternativeshifts_trades_state_jobs.go
 gc/cmd/workforcemanagement_businessunits/workforcemanagement_businessunits.go
 gc/cmd/workforcemanagement_businessunits_activitycodes/workforcemanagement_businessunits_activitycodes.go
+gc/cmd/workforcemanagement_businessunits_activitycodes_bulk/workforcemanagement_businessunits_activitycodes_bulk.go
 gc/cmd/workforcemanagement_businessunits_activityplans/workforcemanagement_businessunits_activityplans.go
 gc/cmd/workforcemanagement_businessunits_activityplans_jobs/workforcemanagement_businessunits_activityplans_jobs.go
 gc/cmd/workforcemanagement_businessunits_activityplans_runs_jobs/workforcemanagement_businessunits_activityplans_runs_jobs.go
@@ -1524,6 +1542,9 @@ gc/cmd/workforcemanagement_businessunits_capacityplans_staffinggroupallocations/
 gc/cmd/workforcemanagement_businessunits_capacityplans_staffinggroupallocationshistory/workforcemanagement_businessunits_capacityplans_staffinggroupallocationshistory.go
 gc/cmd/workforcemanagement_businessunits_capacityplans_staffinggroupallocationshistory_query/workforcemanagement_businessunits_capacityplans_staffinggroupallocationshistory_query.go
 gc/cmd/workforcemanagement_businessunits_capacityplans_staffingrequirements/workforcemanagement_businessunits_capacityplans_staffingrequirements.go
+gc/cmd/workforcemanagement_businessunits_decisionmetrics_jobs/workforcemanagement_businessunits_decisionmetrics_jobs.go
+gc/cmd/workforcemanagement_businessunits_decisionmetrics_update/workforcemanagement_businessunits_decisionmetrics_update.go
+gc/cmd/workforcemanagement_businessunits_decisionmetrics_update_uploadurl/workforcemanagement_businessunits_decisionmetrics_update_uploadurl.go
 gc/cmd/workforcemanagement_businessunits_divisionviews/workforcemanagement_businessunits_divisionviews.go
 gc/cmd/workforcemanagement_businessunits_intraday/workforcemanagement_businessunits_intraday.go
 gc/cmd/workforcemanagement_businessunits_intraday_planninggroups/workforcemanagement_businessunits_intraday_planninggroups.go
@@ -1560,7 +1581,11 @@ gc/cmd/workforcemanagement_businessunits_staffinggroups/workforcemanagement_busi
 gc/cmd/workforcemanagement_businessunits_staffinggroups_planninggroups_query/workforcemanagement_businessunits_staffinggroups_planninggroups_query.go
 gc/cmd/workforcemanagement_businessunits_staffinggroups_query/workforcemanagement_businessunits_staffinggroups_query.go
 gc/cmd/workforcemanagement_businessunits_timeofflimits/workforcemanagement_businessunits_timeofflimits.go
+gc/cmd/workforcemanagement_businessunits_timeofflimits_granularityconversion/workforcemanagement_businessunits_timeofflimits_granularityconversion.go
+gc/cmd/workforcemanagement_businessunits_timeofflimits_granularityconversion_jobs/workforcemanagement_businessunits_timeofflimits_granularityconversion_jobs.go
 gc/cmd/workforcemanagement_businessunits_timeofflimits_values/workforcemanagement_businessunits_timeofflimits_values.go
+gc/cmd/workforcemanagement_businessunits_timeofflimits_values_import/workforcemanagement_businessunits_timeofflimits_values_import.go
+gc/cmd/workforcemanagement_businessunits_timeofflimits_values_import_uploadurl/workforcemanagement_businessunits_timeofflimits_values_import_uploadurl.go
 gc/cmd/workforcemanagement_businessunits_timeofflimits_values_query/workforcemanagement_businessunits_timeofflimits_values_query.go
 gc/cmd/workforcemanagement_businessunits_timeoffplans/workforcemanagement_businessunits_timeoffplans.go
 gc/cmd/workforcemanagement_businessunits_unavailabletimes_schedules_query/workforcemanagement_businessunits_unavailabletimes_schedules_query.go
@@ -1611,6 +1636,7 @@ gc/cmd/workforcemanagement_managementunits_agents_shifttrades/workforcemanagemen
 gc/cmd/workforcemanagement_managementunits_agents_workplans_bulk/workforcemanagement_managementunits_agents_workplans_bulk.go
 gc/cmd/workforcemanagement_managementunits_agents_workplans_query/workforcemanagement_managementunits_agents_workplans_query.go
 gc/cmd/workforcemanagement_managementunits_agentschedules_search/workforcemanagement_managementunits_agentschedules_search.go
+gc/cmd/workforcemanagement_managementunits_decisionmetrics/workforcemanagement_managementunits_decisionmetrics.go
 gc/cmd/workforcemanagement_managementunits_divisionviews/workforcemanagement_managementunits_divisionviews.go
 gc/cmd/workforcemanagement_managementunits_historicaladherencequery/workforcemanagement_managementunits_historicaladherencequery.go
 gc/cmd/workforcemanagement_managementunits_move/workforcemanagement_managementunits_move.go
@@ -1825,6 +1851,25 @@ gc/models/agentdirectroutingbackupsettings.go
 gc/models/agenteffectivebid.go
 gc/models/agentevaluatoractivity.go
 gc/models/agentgreeting.go
+gc/models/agenticversionaddressableentity.go
+gc/models/agenticvirtualagent.go
+gc/models/agenticvirtualagentcomfortstatementsettings.go
+gc/models/agenticvirtualagententitylisting.go
+gc/models/agenticvirtualagenteventsettings.go
+gc/models/agenticvirtualagentguardrailinstruction.go
+gc/models/agenticvirtualagentguardrails.go
+gc/models/agenticvirtualagentjob.go
+gc/models/agenticvirtualagentpropertydefinition.go
+gc/models/agenticvirtualagenttool.go
+gc/models/agenticvirtualagenttooloutputinstruction.go
+gc/models/agenticvirtualagenttypedefinition.go
+gc/models/agenticvirtualagentversion.go
+gc/models/agenticvirtualagentversiondefinition.go
+gc/models/agenticvirtualagentversionjob.go
+gc/models/agenticvirtualagentversionpublish.go
+gc/models/agenticvirtualagentversionpublishjob.go
+gc/models/agenticvirtualagentversionpublishjobrequest.go
+gc/models/agenticvirtualagentversionsettings.go
 gc/models/agentintegrationassociationrequest.go
 gc/models/agentintegrationassociationresponse.go
 gc/models/agentintegrationsrequest.go
@@ -2077,6 +2122,8 @@ gc/models/auditrealtimerelatedrequest.go
 gc/models/auditrealtimerelatedresultsresponse.go
 gc/models/authenticationproperties.go
 gc/models/authenticationsettings.go
+gc/models/authenticatorattestationresponse.go
+gc/models/authenticatorselection.go
 gc/models/authoringknowledgesettings.go
 gc/models/authorizationpolicy.go
 gc/models/authorizationpolicyentitylisting.go
@@ -2121,6 +2168,7 @@ gc/models/batcheventresponse.go
 gc/models/batchpredictiveroutingcustomkpiattributioneventrequest.go
 gc/models/batchuserpresenceeventrequest.go
 gc/models/batchuserroutingstatuseventrequest.go
+gc/models/beginwebauthnregistrationresponse.go
 gc/models/benefitassessment.go
 gc/models/benefitassessmentjob.go
 gc/models/bidgroupscheduleset.go
@@ -2145,6 +2193,7 @@ gc/models/billingusagereport.go
 gc/models/billingusageresource.go
 gc/models/billingwallet.go
 gc/models/biography.go
+gc/models/blendingsettings.go
 gc/models/bot.go
 gc/models/botaggregatedatacontainer.go
 gc/models/botaggregatequeryclause.go
@@ -2204,6 +2253,10 @@ gc/models/buasyncagentschedulessearchresponse.go
 gc/models/buasyncscheduleresponse.go
 gc/models/buasyncschedulerunresponse.go
 gc/models/buaveragespeedofanswer.go
+gc/models/buconverttimeoffgranularitylimitjoblisting.go
+gc/models/buconverttimeofflimitgranularityjobprogress.go
+gc/models/buconverttimeofflimitgranularityjobrequest.go
+gc/models/buconverttimeofflimitgranularityjobresponse.go
 gc/models/bucopyschedulerequest.go
 gc/models/bucreateblankschedulerequest.go
 gc/models/bucreatetimeofflimitrequest.go
@@ -2225,6 +2278,10 @@ gc/models/buheadcountforecastbuplanninggroupheadcountforecastuploadschema.go
 gc/models/buheadcountforecastresponse.go
 gc/models/buimportagentscheduleuploadschema.go
 gc/models/buimportshorttermforecastschema.go
+gc/models/buimporttimeofflimitvalue.go
+gc/models/buimporttimeofflimitvaluesrequest.go
+gc/models/buimporttimeofflimitvaluesschema.go
+gc/models/buimporttimeofflimitvaluesuploadresponse.go
 gc/models/buintradaydatagroup.go
 gc/models/buintradayforecastdata.go
 gc/models/buintradayresponse.go
@@ -2307,6 +2364,9 @@ gc/models/bulkresult.go
 gc/models/bulkresults.go
 gc/models/bulkshifttradestateupdaterequest.go
 gc/models/bulksourceintentsresponse.go
+gc/models/bulkupdateactivitycoderequest.go
+gc/models/bulkupdateactivitycoderequestitem.go
+gc/models/bulkupdateactivitycoderesponse.go
 gc/models/bulkupdatedecisiontablerowsrequest.go
 gc/models/bulkupdatedecisiontablerowsresponse.go
 gc/models/bulkupdateopportunityenrollmentsstatusresponse.go
@@ -2367,6 +2427,9 @@ gc/models/butimeofflimitrange.go
 gc/models/butimeofflimitreference.go
 gc/models/butimeofflimitresponse.go
 gc/models/butimeofflimitvaluerange.go
+gc/models/butimeofflimitvalues.go
+gc/models/butimeofflimitvaluesforgranularityresponse.go
+gc/models/butimeofflimitvaluesimportuploadurlrequest.go
 gc/models/butimeofflimitvaluesresponse.go
 gc/models/butimeoffplanlisting.go
 gc/models/butimeoffplanresponse.go
@@ -2623,6 +2686,9 @@ gc/models/columndatatypespecification.go
 gc/models/columnstatus.go
 gc/models/commandstatus.go
 gc/models/commandstatusentitylisting.go
+gc/models/comment.go
+gc/models/commentcreate.go
+gc/models/commentlisting.go
 gc/models/commonalert.go
 gc/models/commonalertbulkupdaterequest.go
 gc/models/commonallalertupdaterequest.go
@@ -2980,6 +3046,8 @@ gc/models/coversheet.go
 gc/models/createactivitycoderequest.go
 gc/models/createactivityplanrequest.go
 gc/models/createadmintimeoffrequest.go
+gc/models/createagenticvirtualagent.go
+gc/models/createagenticvirtualagentversion.go
 gc/models/createagenttimeoffrequest.go
 gc/models/createalternativeshifttraderequest.go
 gc/models/createbenefitassessmentjobrequest.go
@@ -3003,6 +3071,7 @@ gc/models/createexternaleventsconfigurationrequest.go
 gc/models/createguide.go
 gc/models/createguideversion.go
 gc/models/createintegrationrequest.go
+gc/models/createjoinvideoresponse.go
 gc/models/createkpirequest.go
 gc/models/createmanagementunitapirequest.go
 gc/models/createmanagementunitsettingsrequest.go
@@ -3043,6 +3112,8 @@ gc/models/createuploadsourceurljobresponse.go
 gc/models/createuser.go
 gc/models/createuserassignmentsrequest.go
 gc/models/createutilizationlabelrequest.go
+gc/models/createverifierrequest.go
+gc/models/createverifierresponse.go
 gc/models/createwebchatconversationrequest.go
 gc/models/createwebchatconversationresponse.go
 gc/models/createwebchatmessagerequest.go
@@ -3052,9 +3123,11 @@ gc/models/createworkplanactivity.go
 gc/models/createworkplanbid.go
 gc/models/createworkplanshift.go
 gc/models/credential.go
+gc/models/credentialdescriptor.go
 gc/models/credentialinfo.go
 gc/models/credentialinfocursorlisting.go
 gc/models/credentialinfolisting.go
+gc/models/credentialparameter.go
 gc/models/credentialspecification.go
 gc/models/credentialtype.go
 gc/models/criteria.go
@@ -3150,6 +3223,15 @@ gc/models/datepickeravailabledatetime.go
 gc/models/daterange.go
 gc/models/daterangewithoptionalend.go
 gc/models/dayofweekminimums.go
+gc/models/decisionmetricsdata.go
+gc/models/decisionmetricsjobreference.go
+gc/models/decisionmetricsresponse.go
+gc/models/decisionmetricsupdateerror.go
+gc/models/decisionmetricsupdatejobrequest.go
+gc/models/decisionmetricsupdatejobresponse.go
+gc/models/decisionmetricsuploaddata.go
+gc/models/decisionmetricsuploadresponse.go
+gc/models/decisionmetricsuploadschema.go
 gc/models/decisiontable.go
 gc/models/decisiontablecolumndefaultrowvalue.go
 gc/models/decisiontablecolumns.go
@@ -3353,6 +3435,7 @@ gc/models/domainentity.go
 gc/models/domainentitylisting.go
 gc/models/domainentitylistingevaluationform.go
 gc/models/domainentitylistingqueryresult.go
+gc/models/domainentitylistingresponsedivisionview.go
 gc/models/domainentitylistingsurveyform.go
 gc/models/domainentityref.go
 gc/models/domainlogicalinterface.go
@@ -3455,6 +3538,7 @@ gc/models/emailmessagepreviewlisting.go
 gc/models/emailmessagereply.go
 gc/models/emailoutbounddomainresult.go
 gc/models/emailprogresstransferevent.go
+gc/models/emailrefinementconfig.go
 gc/models/emailroutingestablishedevent.go
 gc/models/emailroutingtransferevent.go
 gc/models/emailsetting.go
@@ -3533,6 +3617,8 @@ gc/models/evaluationdetailquerypredicate.go
 gc/models/evaluationentitylisting.go
 gc/models/evaluationform.go
 gc/models/evaluationformandscoringset.go
+gc/models/evaluationformdivisionview.go
+gc/models/evaluationformdivisionviewlisting.go
 gc/models/evaluationformresponse.go
 gc/models/evaluationformresponseentitylisting.go
 gc/models/evaluationformsearchresponse.go
@@ -3675,6 +3761,7 @@ gc/models/fileuploadmode.go
 gc/models/fileuploadsettings.go
 gc/models/filter.go
 gc/models/filterpreviewresponse.go
+gc/models/finishwebauthnregistrationrequest.go
 gc/models/fixedavailability.go
 gc/models/flattenedjsonschemadocument.go
 gc/models/flow.go
@@ -4250,6 +4337,7 @@ gc/models/knowledgesettinglisting.go
 gc/models/knowledgesettings.go
 gc/models/knowledgesettingsrequest.go
 gc/models/knowledgesettingsresponse.go
+gc/models/knowledgesource.go
 gc/models/knowledgesourcessearchrequest.go
 gc/models/knowledgesourcessearchresponse.go
 gc/models/knowledgesuggestionconfig.go
@@ -4373,6 +4461,8 @@ gc/models/lexv2intent.go
 gc/models/lexv2slot.go
 gc/models/library.go
 gc/models/librarybatchrequest.go
+gc/models/librarydivisionview.go
+gc/models/librarydivisionviewentitylisting.go
 gc/models/libraryentitylisting.go
 gc/models/licenseassignmentrequest.go
 gc/models/licensebatchassignmentrequest.go
@@ -4700,6 +4790,8 @@ gc/models/observationmetricdata.go
 gc/models/observationvalue.go
 gc/models/occurrencedetails.go
 gc/models/okta.go
+gc/models/ondemandconversationsummaryrequest.go
+gc/models/ondemandsummaryacceptedresponse.go
 gc/models/ondemandsummaryconfig.go
 gc/models/onelogin.go
 gc/models/oneonone.go
@@ -5010,6 +5102,8 @@ gc/models/propertychange.go
 gc/models/propertydefinition.go
 gc/models/propertyindexrequest.go
 gc/models/provisioninfo.go
+gc/models/publickeycredentialcreationoptions.go
+gc/models/publickeycredentialcreationresponse.go
 gc/models/publishdraftinput.go
 gc/models/publishedsurveyformreference.go
 gc/models/publishform.go
@@ -5071,6 +5165,7 @@ gc/models/queryresult.go
 gc/models/queryresults.go
 gc/models/queryshifttradelistjobrequest.go
 gc/models/querytimeoffintegrationstatusrequest.go
+gc/models/querytimeofflimitvaluesforgranularityrequest.go
 gc/models/querytimeofflimitvaluesrequest.go
 gc/models/querytimeofflimitvaluesresponse.go
 gc/models/queryuserstaffinggrouplistrequest.go
@@ -5171,6 +5266,7 @@ gc/models/recurrenceperiod.go
 gc/models/recurrencesettings.go
 gc/models/recurrencesettingsbase.go
 gc/models/referrer.go
+gc/models/refinementsettingentity.go
 gc/models/regionresponse.go
 gc/models/regiontimezone.go
 gc/models/registerarchitectexportjob.go
@@ -5188,6 +5284,7 @@ gc/models/relationshipsexportfieldlistfilter.go
 gc/models/relationshipsexportfilter.go
 gc/models/relationshipsexportlisting.go
 gc/models/relationshipsexportqueryconditions.go
+gc/models/relyingpartyentity.go
 gc/models/removeentitiesrequest.go
 gc/models/removeentity.go
 gc/models/reoccurrence.go
@@ -5204,8 +5301,10 @@ gc/models/reportingexportmetadatajobresponse.go
 gc/models/reportinginterval.go
 gc/models/reportingturn.go
 gc/models/reportingturnaction.go
+gc/models/reportingturnactionagentdetails.go
 gc/models/reportingturnbotflowinvocationevent.go
 gc/models/reportingturnflow.go
+gc/models/reportingturnguardrailevent.go
 gc/models/reportingturnintent.go
 gc/models/reportingturnintentslot.go
 gc/models/reportingturnknowledge.go
@@ -5213,9 +5312,11 @@ gc/models/reportingturnknowledgedocument.go
 gc/models/reportingturnknowledgeevents.go
 gc/models/reportingturnknowledgefeedback.go
 gc/models/reportingturnknowledgefeedbackevent.go
+gc/models/reportingturnknowledgemetadata.go
 gc/models/reportingturnknowledgesearch.go
 gc/models/reportingturnknowledgesearchevent.go
 gc/models/reportingturnsresponse.go
+gc/models/reportingturntoolcall.go
 gc/models/reprocessinteractionsbyjobidresponse.go
 gc/models/reprocessjobentitylistingresponse.go
 gc/models/reprocessjobresponse.go
@@ -5261,6 +5362,8 @@ gc/models/responseassetsearchrequest.go
 gc/models/responseassetsearchresults.go
 gc/models/responseassetstatus.go
 gc/models/responseconfig.go
+gc/models/responsedivisionview.go
+gc/models/responsedivisionviewqueryresults.go
 gc/models/responseentitylist.go
 gc/models/responseentitylisting.go
 gc/models/responsefilter.go
@@ -5705,6 +5808,7 @@ gc/models/suggestionknowledgeanswer.go
 gc/models/suggestionknowledgearticle.go
 gc/models/suggestionknowledgesearch.go
 gc/models/suggestionlisting.go
+gc/models/suggestionpatchrequest.go
 gc/models/suggestionscript.go
 gc/models/suggestsearchcriteria.go
 gc/models/suggestsearchrequest.go
@@ -5767,6 +5871,8 @@ gc/models/surveydetailquerypredicate.go
 gc/models/surveyerrordetails.go
 gc/models/surveyform.go
 gc/models/surveyformandscoringset.go
+gc/models/surveyformdivisionview.go
+gc/models/surveyformdivisionviewlisting.go
 gc/models/surveyformentitylisting.go
 gc/models/surveyquestion.go
 gc/models/surveyquestiongroup.go
@@ -5894,13 +6000,14 @@ gc/models/timeofflimitlisting.go
 gc/models/timeofflimitrange.go
 gc/models/timeofflimitreference.go
 gc/models/timeofflimitvaluerange.go
+gc/models/timeofflimitvalues.go
 gc/models/timeoffplan.go
 gc/models/timeoffplanbusinessunitassociation.go
 gc/models/timeoffplanlisting.go
 gc/models/timeoffplanmanagementunitassociation.go
-gc/models/timeoffrequest.go
 gc/models/timeoffrequestlist.go
 gc/models/timeoffrequestlisting.go
+gc/models/timeoffrequestlistitem.go
 gc/models/timeoffrequestlookup.go
 gc/models/timeoffrequestnotification.go
 gc/models/timeoffrequestquerybody.go
@@ -6057,6 +6164,8 @@ gc/models/updateactioninput.go
 gc/models/updateactivitycoderequest.go
 gc/models/updateactivityplanrequest.go
 gc/models/updateadherenceexplanationstatusrequest.go
+gc/models/updateagenticvirtualagent.go
+gc/models/updateagenticvirtualagentversion.go
 gc/models/updateagentschedulebiddingpreference.go
 gc/models/updateagentworkplanbiddingpreference.go
 gc/models/updatealternativeshiftbusettingsrequest.go
@@ -6168,6 +6277,7 @@ gc/models/userdetailqueryfilter.go
 gc/models/userdetailquerypredicate.go
 gc/models/userdetailsquery.go
 gc/models/userdevice.go
+gc/models/userentity.go
 gc/models/userentitylisting.go
 gc/models/userestablishedevent.go
 gc/models/userexpands.go
@@ -6294,6 +6404,7 @@ gc/models/validateagentunavailabletimesrequest.go
 gc/models/validateagentunavailabletimesresponse.go
 gc/models/validateassignusers.go
 gc/models/validatedetails.go
+gc/models/validateverifierrequest.go
 gc/models/validateworkplanmessages.go
 gc/models/validateworkplanresponse.go
 gc/models/validationerror.go
@@ -6310,6 +6421,7 @@ gc/models/valuewrapperdate.go
 gc/models/valuewrappergroupsettings.go
 gc/models/valuewrapperhristimeofftype.go
 gc/models/valuewrapperinstant.go
+gc/models/valuewrapperinteger.go
 gc/models/valuewrapperlocaldate.go
 gc/models/valuewrappermonthlyplanningperiodsettings.go
 gc/models/valuewrapperplanningperiodsettings.go
@@ -6409,6 +6521,7 @@ gc/models/wfmagenthistoricaladherencejobreference.go
 gc/models/wfmagenthistoricaladherenceresponse.go
 gc/models/wfmagenthistoricaladherenceresult.go
 gc/models/wfmbusinessunitreference.go
+gc/models/wfmentitymetadata.go
 gc/models/wfmforecastmodificationintervaloffsetvalue.go
 gc/models/wfmhistoricaladherencebulkitem.go
 gc/models/wfmhistoricaladherencebulkjobreference.go
@@ -6501,6 +6614,7 @@ gc/models/workitemdatebasedruleupdate.go
 gc/models/workitemdelta.go
 gc/models/workitemfilter.go
 gc/models/workitemflowreference.go
+gc/models/workitemlanguagereference.go
 gc/models/workitemmanualassign.go
 gc/models/workitemonattributechangecondition.go
 gc/models/workitemonattributechangeconditionupdate.go
@@ -6526,6 +6640,7 @@ gc/models/workitemquerypostrequest.go
 gc/models/workitemquerysort.go
 gc/models/workitemqueuereference.go
 gc/models/workitemreference.go
+gc/models/workitemroutingskillreference.go
 gc/models/workitemruleaction.go
 gc/models/workitemrulesettings.go
 gc/models/workitemsattributechangeboolean.go

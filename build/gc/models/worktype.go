@@ -145,7 +145,7 @@ type Worktype struct {
 
 
     // DefaultLanguage - The default language for Workitems created from the Worktype.
-    DefaultLanguage Languagereference `json:"defaultLanguage"`
+    DefaultLanguage Workitemlanguagereference `json:"defaultLanguage"`
 
 
     // DefaultTtlSeconds - The default time to time to live in seconds for Workitems created from the Worktype.
@@ -161,7 +161,7 @@ type Worktype struct {
 
 
     // DefaultSkills - The default skills for Workitems created from the Worktype.
-    DefaultSkills []Routingskillreference `json:"defaultSkills"`
+    DefaultSkills []Workitemroutingskillreference `json:"defaultSkills"`
 
 
     // AssignmentEnabled - When set to true, Workitems will be sent to the queue of the Worktype as they are created. Default value is false.
@@ -214,7 +214,7 @@ func (o *Worktype) String() string {
     
     
     
-     o.DefaultSkills = []Routingskillreference{{}} 
+     o.DefaultSkills = []Workitemroutingskillreference{{}} 
     
     
     
@@ -263,7 +263,7 @@ func (u *Worktype) MarshalJSON() ([]byte, error) {
         
         DefaultPriority int `json:"defaultPriority"`
         
-        DefaultLanguage Languagereference `json:"defaultLanguage"`
+        DefaultLanguage Workitemlanguagereference `json:"defaultLanguage"`
         
         DefaultTtlSeconds int `json:"defaultTtlSeconds"`
         
@@ -271,7 +271,7 @@ func (u *Worktype) MarshalJSON() ([]byte, error) {
         
         DefaultQueue Workitemqueuereference `json:"defaultQueue"`
         
-        DefaultSkills []Routingskillreference `json:"defaultSkills"`
+        DefaultSkills []Workitemroutingskillreference `json:"defaultSkills"`
         
         AssignmentEnabled bool `json:"assignmentEnabled"`
         
@@ -343,7 +343,7 @@ func (u *Worktype) MarshalJSON() ([]byte, error) {
 
 
         
-        DefaultSkills: []Routingskillreference{{}},
+        DefaultSkills: []Workitemroutingskillreference{{}},
         
 
 

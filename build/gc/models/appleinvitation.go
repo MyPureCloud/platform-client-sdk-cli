@@ -34,7 +34,7 @@ type Appleinvitation struct {
     TranscriptMessage string `json:"transcriptMessage"`
 
 
-    // TemplateType - The template type for the invitation
+    // TemplateType - The template type for the invitation. Only 'WithImage' is supported.
     TemplateType string `json:"templateType"`
 
 

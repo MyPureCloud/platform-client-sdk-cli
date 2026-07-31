@@ -116,6 +116,9 @@ type CallDud struct {
 
     
 
+
+    
+
 }
 
 // Call
@@ -256,6 +259,10 @@ type Call struct {
     QueueMediaSettings Conversationqueuemediasettings `json:"queueMediaSettings"`
 
 
+    // ClientIpAddress - The reported client IP of the phone for the call.
+    ClientIpAddress string `json:"clientIpAddress"`
+
+
     // Disposition - Call resolution data for Dialer bulk make calls commands.
     Disposition Disposition `json:"disposition"`
 
@@ -284,6 +291,7 @@ func (o *Call) String() string {
     
     
      o.DisconnectReasons = []Disconnectreason{{}} 
+    
     
     
     
@@ -383,6 +391,8 @@ func (u *Call) MarshalJSON() ([]byte, error) {
         
         QueueMediaSettings Conversationqueuemediasettings `json:"queueMediaSettings"`
         
+        ClientIpAddress string `json:"clientIpAddress"`
+        
         Disposition Disposition `json:"disposition"`
         *Alias
     }{
@@ -451,6 +461,9 @@ func (u *Call) MarshalJSON() ([]byte, error) {
 
         
         DisconnectReasons: []Disconnectreason{{}},
+        
+
+
         
 
 

@@ -408,14 +408,14 @@
       "description": "Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled."
     },
     {
-      "name": "get",
-      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs/{jobId}",
-      "description": "Get bulk operation job."
-    },
-    {
       "name": "list",
       "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs",
       "description": "Get 10 most recent bulk operation jobs associated with contact list."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs/{jobId}",
+      "description": "Get bulk operation job."
     },
     {
       "name": "create",

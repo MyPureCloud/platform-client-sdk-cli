@@ -2,6 +2,7 @@ package users
 
 import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_me"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_verifiers"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_agentui"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_roles"
@@ -18,7 +19,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_screenmonitors"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_chats"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_externalid"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_me"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_password"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_profileskills"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_queues"
@@ -40,6 +40,7 @@ import (
 )
 
 func init() {
+	usersCmd.AddCommand(users_me.Cmdusers_me())
 	usersCmd.AddCommand(users_verifiers.Cmdusers_verifiers())
 	usersCmd.AddCommand(users_agentui.Cmdusers_agentui())
 	usersCmd.AddCommand(users_roles.Cmdusers_roles())
@@ -56,7 +57,6 @@ func init() {
 	usersCmd.AddCommand(users_screenmonitors.Cmdusers_screenmonitors())
 	usersCmd.AddCommand(users_chats.Cmdusers_chats())
 	usersCmd.AddCommand(users_externalid.Cmdusers_externalid())
-	usersCmd.AddCommand(users_me.Cmdusers_me())
 	usersCmd.AddCommand(users_password.Cmdusers_password())
 	usersCmd.AddCommand(users_profileskills.Cmdusers_profileskills())
 	usersCmd.AddCommand(users_queues.Cmdusers_queues())
@@ -75,6 +75,6 @@ func init() {
 	usersCmd.AddCommand(users_customattributes.Cmdusers_customattributes())
 	usersCmd.AddCommand(users_development.Cmdusers_development())
 	usersCmd.AddCommand(users_rules.Cmdusers_rules())
-	usersCmd.Short = utils.GenerateCustomDescription(usersCmd.Short, users_verifiers.Description, users_agentui.Description, users_roles.Description, users_callforwarding.Description, users_favorites.Description, users_adjacents.Description, users_superiors.Description, users_directreports.Description, users_profile.Description, users_geolocations.Description, users_greetings.Description, users_outofoffice.Description, users_presences.Description, users_screenmonitors.Description, users_chats.Description, users_externalid.Description, users_me.Description, users_password.Description, users_profileskills.Description, users_queues.Description, users_invite.Description, users_routinglanguages.Description, users_routingskills.Description, users_routingstatus.Description, users_stations.Description, users_skillgroups.Description, users_state.Description, users_station.Description, users_trustors.Description, users_bulk.Description, users_query.Description, users_search.Description, users_customattributes.Description, users_development.Description, users_rules.Description, )
+	usersCmd.Short = utils.GenerateCustomDescription(usersCmd.Short, users_me.Description, users_verifiers.Description, users_agentui.Description, users_roles.Description, users_callforwarding.Description, users_favorites.Description, users_adjacents.Description, users_superiors.Description, users_directreports.Description, users_profile.Description, users_geolocations.Description, users_greetings.Description, users_outofoffice.Description, users_presences.Description, users_screenmonitors.Description, users_chats.Description, users_externalid.Description, users_password.Description, users_profileskills.Description, users_queues.Description, users_invite.Description, users_routinglanguages.Description, users_routingskills.Description, users_routingstatus.Description, users_stations.Description, users_skillgroups.Description, users_state.Description, users_station.Description, users_trustors.Description, users_bulk.Description, users_query.Description, users_search.Description, users_customattributes.Description, users_development.Description, users_rules.Description, )
 	usersCmd.Long = usersCmd.Short
 }

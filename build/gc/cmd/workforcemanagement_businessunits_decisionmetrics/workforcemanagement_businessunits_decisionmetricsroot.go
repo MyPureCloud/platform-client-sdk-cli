@@ -1,0 +1,14 @@
+package workforcemanagement_businessunits_decisionmetrics
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_decisionmetrics_update"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_decisionmetrics_jobs"
+)
+
+func init() {
+	workforcemanagement_businessunits_decisionmetricsCmd.AddCommand(workforcemanagement_businessunits_decisionmetrics_update.Cmdworkforcemanagement_businessunits_decisionmetrics_update())
+	workforcemanagement_businessunits_decisionmetricsCmd.AddCommand(workforcemanagement_businessunits_decisionmetrics_jobs.Cmdworkforcemanagement_businessunits_decisionmetrics_jobs())
+	workforcemanagement_businessunits_decisionmetricsCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_decisionmetricsCmd.Short, workforcemanagement_businessunits_decisionmetrics_update.Description, workforcemanagement_businessunits_decisionmetrics_jobs.Description, )
+	workforcemanagement_businessunits_decisionmetricsCmd.Long = workforcemanagement_businessunits_decisionmetricsCmd.Short
+}

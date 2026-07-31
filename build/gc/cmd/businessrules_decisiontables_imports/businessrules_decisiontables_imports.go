@@ -113,7 +113,7 @@ func Cmdbusinessrules_decisiontables_imports() *cobra.Command {
 	
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
-  "description" : "successful operation",
+  "description" : "Import job cancelled, or already cancelled (idempotent no-op)",
   "content" : {
     "application/json" : {
       "schema" : {

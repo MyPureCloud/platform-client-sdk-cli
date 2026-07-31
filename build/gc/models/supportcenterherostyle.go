@@ -23,11 +23,11 @@ type SupportcenterherostyleDud struct {
 
 // Supportcenterherostyle
 type Supportcenterherostyle struct { 
-    // BackgroundColor - Background color for hero section, in hexadecimal format, eg #ffffff
+    // BackgroundColor - Background color for hero section, in hexadecimal format, eg #ffffff. Required when heroStyle is provided
     BackgroundColor string `json:"backgroundColor"`
 
 
-    // TextColor - Text color for hero section, in hexadecimal format, eg #ffffff
+    // TextColor - Text color for hero section, in hexadecimal format, eg #ffffff. Required when heroStyle is provided
     TextColor string `json:"textColor"`
 
 

@@ -42,6 +42,9 @@ type EvaluationformresponseDud struct {
     
 
 
+    
+
+
     AiScoring Aiscoringsettings `json:"aiScoring"`
 
 
@@ -59,6 +62,10 @@ type Evaluationformresponse struct {
 
     // Name - The evaluation form name
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Writablestarrabledivision `json:"division"`
 
 
     // ModifiedDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -110,6 +117,7 @@ func (o *Evaluationformresponse) String() string {
     
     
     
+    
      o.QuestionGroups = []Evaluationquestiongroup{{}} 
     
     
@@ -135,6 +143,8 @@ func (u *Evaluationformresponse) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        Division Writablestarrabledivision `json:"division"`
+        
         ModifiedDate time.Time `json:"modifiedDate"`
         
         Published bool `json:"published"`
@@ -154,6 +164,9 @@ func (u *Evaluationformresponse) MarshalJSON() ([]byte, error) {
         Dialect string `json:"dialect"`
         *Alias
     }{
+
+        
+
 
         
 

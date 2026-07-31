@@ -16,26 +16,12 @@ type RatingfilterDud struct {
 
     
 
-
-    
-
-
-    
-
 }
 
 // Ratingfilter
 type Ratingfilter struct { 
     // Operator - The comparison operator for review rating filtering.
     Operator string `json:"operator"`
-
-
-    // From - The lower bound for the Between operator
-    From int `json:"from"`
-
-
-    // To - The upper bound for the Between operator
-    To int `json:"to"`
 
 
     // Values - One or more rating values to filter by
@@ -45,8 +31,6 @@ type Ratingfilter struct {
 
 // String returns a JSON representation of the model
 func (o *Ratingfilter) String() string {
-    
-    
     
      o.Values = []int{0} 
 
@@ -68,19 +52,9 @@ func (u *Ratingfilter) MarshalJSON() ([]byte, error) {
         
         Operator string `json:"operator"`
         
-        From int `json:"from"`
-        
-        To int `json:"to"`
-        
         Values []int `json:"values"`
         *Alias
     }{
-
-        
-
-
-        
-
 
         
 

@@ -41,15 +41,15 @@ type SupportcentersettingsDud struct {
 
 // Supportcentersettings - Settings concerning knowledge portal (previously support center)
 type Supportcentersettings struct { 
-    // Enabled - Whether or not knowledge portal (previously support center) is enabled
+    // Enabled - Whether or not knowledge portal (previously support center) is enabled.
     Enabled bool `json:"enabled"`
 
 
-    // KnowledgeBase - The knowledge base for knowledge portal (previously support center)
+    // KnowledgeBase - The knowledge base for knowledge portal (previously support center). Required if support center is enabled
     KnowledgeBase Addressableentityref `json:"knowledgeBase"`
 
 
-    // CustomMessages - Customizable display texts for knowledge portal (previously support center)
+    // CustomMessages - Customizable display texts for knowledge portal (previously support center). Required if support center is enabled, must contain both Welcome and Fallback message entries
     CustomMessages []Supportcentercustommessage `json:"customMessages"`
 
 
@@ -57,11 +57,11 @@ type Supportcentersettings struct {
     RouterType string `json:"routerType"`
 
 
-    // Screens - Available screens for the knowledge portal (previously support center) with its modules
+    // Screens - Available screens for the knowledge portal (previously support center) with its modules. Required if support center is enabled
     Screens []Supportcenterscreen `json:"screens"`
 
 
-    // EnabledCategories - Featured categories for knowledge portal (previously support center) home screen
+    // EnabledCategories - Featured categories for knowledge portal (previously support center) home screen. Required if support center is enabled
     EnabledCategories []Supportcentercategory `json:"enabledCategories"`
 
 
@@ -69,7 +69,7 @@ type Supportcentersettings struct {
     LabelFilter Supportcenterlabelfilter `json:"labelFilter"`
 
 
-    // StyleSetting - Style attributes for knowledge portal (previously support center)
+    // StyleSetting - Style attributes for knowledge portal (previously support center). Required if support center is enabled
     StyleSetting Supportcenterstylesetting `json:"styleSetting"`
 
 

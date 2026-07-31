@@ -135,6 +135,9 @@ type CampaignDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -301,6 +304,10 @@ type Campaign struct {
     DiagnosticsSettings Diagnosticssettings `json:"diagnosticsSettings"`
 
 
+    // PreciseDialingEnabled - Option to enable precise dialing
+    PreciseDialingEnabled bool `json:"preciseDialingEnabled"`
+
+
     
 
 }
@@ -338,6 +345,7 @@ func (o *Campaign) String() string {
     
     
      o.SkillColumns = []string{""} 
+    
     
     
     
@@ -434,6 +442,8 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
         DynamicLineBalancingSettings Dynamiclinebalancingsettings `json:"dynamicLineBalancingSettings"`
         
         DiagnosticsSettings Diagnosticssettings `json:"diagnosticsSettings"`
+        
+        PreciseDialingEnabled bool `json:"preciseDialingEnabled"`
         *Alias
     }{
 
@@ -551,6 +561,9 @@ func (u *Campaign) MarshalJSON() ([]byte, error) {
 
         
         SkillColumns: []string{""},
+        
+
+
         
 
 

@@ -4,6 +4,41 @@
   "resources": [
     {
       "name": "list",
+      "path": "/api/v2/users/me/verifiers",
+      "description": "Get a list of my verifiers"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/me/verifiers/totp",
+      "description": "Add a new TOTP verifier"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/me/verifiers/webauthn/register/options",
+      "description": "Begin WebAuthn verifier registration"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/me/verifiers/webauthn/register",
+      "description": "Finish WebAuthn verifier registration"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/me/verifiers/{verifierId}",
+      "description": "Update a verifier"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/me/verifiers/{verifierId}",
+      "description": "Delete a verifier"
+    },
+    {
+      "name": "validate",
+      "path": "/api/v2/users/me/verifiers/totp/{verifierId}",
+      "description": "Validate a TOTP verifier"
+    },
+    {
+      "name": "list",
       "path": "/api/v2/users/{userId}/verifiers",
       "description": "Get a list of verifiers"
     },
@@ -163,6 +198,11 @@
       "description": "Patch a user's Presence"
     },
     {
+      "name": "create",
+      "path": "/api/v2/users/{userId}/screenmonitors/sessions",
+      "description": "Start an agent-level screen monitoring session."
+    },
+    {
       "name": "get",
       "path": "/api/v2/users/{userId}/screenmonitors/sessions/{screenMonitoringId}",
       "description": "Get an agent-level screen monitoring session object using the supplied screenMonitoringId."
@@ -171,11 +211,6 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/screenmonitors/sessions/{screenMonitoringId}",
       "description": "Stop an agent-level screen monitoring session."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/users/{userId}/screenmonitors/sessions",
-      "description": "Start an agent-level screen monitoring session."
     },
     {
       "name": "list",
@@ -338,14 +373,14 @@
       "description": "Get station information for self"
     },
     {
-      "name": "delete",
-      "path": "/api/v2/users/stations/me/associatedstation",
-      "description": "Clear self associated station"
-    },
-    {
       "name": "update",
       "path": "/api/v2/users/stations/me/associatedstation/{stationId}",
       "description": "Set self associated station"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/stations/me/associatedstation",
+      "description": "Clear self associated station"
     },
     {
       "name": "list",
@@ -368,14 +403,14 @@
       "description": "Get station information for user"
     },
     {
-      "name": "delete",
-      "path": "/api/v2/users/{userId}/station/associatedstation",
-      "description": "Clear associated station"
-    },
-    {
       "name": "update",
       "path": "/api/v2/users/{userId}/station/associatedstation/{stationId}",
       "description": "Set associated station"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/station/associatedstation",
+      "description": "Clear associated station"
     },
     {
       "name": "update",
@@ -449,16 +484,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/users/{userId}/customattributes/{schemaId}",
-      "description": "Get custom attributes by schema id"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/users/{userId}/customattributes/{schemaId}",
-      "description": "Delete a custom attributes record."
-    },
-    {
-      "name": "get",
       "path": "/api/v2/users/{userId}/customattributes/bulk",
       "description": "Get multiple custom attributes records by schema ids"
     },
@@ -466,6 +491,16 @@
       "name": "update",
       "path": "/api/v2/users/{userId}/customattributes/bulk",
       "description": "Update multiple custom attributes records by amending the data with only the provided fields."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/customattributes/{schemaId}",
+      "description": "Get custom attributes by schema id"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/customattributes/{schemaId}",
+      "description": "Delete a custom attributes record."
     },
     {
       "name": "get",
@@ -508,6 +543,11 @@
       "description": "Create a schema"
     },
     {
+      "name": "get",
+      "path": "/api/v2/users/development/activities/{activityId}",
+      "description": "Get a Development Activity"
+    },
+    {
       "name": "list",
       "path": "/api/v2/users/development/activities",
       "description": "Get list of Development Activities"
@@ -516,11 +556,6 @@
       "name": "list",
       "path": "/api/v2/users/development/activities/me",
       "description": "Get list of Development Activities for current user"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/users/development/activities/{activityId}",
-      "description": "Get a Development Activity"
     },
     {
       "name": "create",
@@ -538,6 +573,16 @@
       "description": "Get dependent of a users rule"
     },
     {
+      "name": "list",
+      "path": "/api/v2/users/rules",
+      "description": "Get the list of users rules"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/rules",
+      "description": "Create a new rule"
+    },
+    {
       "name": "get",
       "path": "/api/v2/users/rules/{ruleId}",
       "description": "Get a users rule"
@@ -553,24 +598,14 @@
       "description": "Update an existing users rule"
     },
     {
-      "name": "list",
-      "path": "/api/v2/users/rules",
-      "description": "Get the list of users rules"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/users/rules",
-      "description": "Create a new rule"
+      "name": "get",
+      "path": "/api/v2/users/rules/settings/{ruleType}",
+      "description": "Get the settings for a specific users rule type"
     },
     {
       "name": "create",
       "path": "/api/v2/users/rules/query",
       "description": "Query the result of a users rule"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/users/rules/settings/{ruleType}",
-      "description": "Get the settings for a specific users rule type"
     },
     {
       "name": "create",

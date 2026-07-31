@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_activitycodes
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_activitycodes_bulk"
+)
+
+func init() {
+	workforcemanagement_businessunits_activitycodesCmd.AddCommand(workforcemanagement_businessunits_activitycodes_bulk.Cmdworkforcemanagement_businessunits_activitycodes_bulk())
+	workforcemanagement_businessunits_activitycodesCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_activitycodesCmd.Short, workforcemanagement_businessunits_activitycodes_bulk.Description, )
+	workforcemanagement_businessunits_activitycodesCmd.Long = workforcemanagement_businessunits_activitycodesCmd.Short
+}

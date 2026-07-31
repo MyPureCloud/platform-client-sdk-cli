@@ -19,16 +19,23 @@ type UpdateverifierrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Updateverifierrequest
 type Updateverifierrequest struct { 
-    // Name - The name of the verifier.
+    // Name - The name of the verifier. Maximum length is 100 characters.
     Name string `json:"name"`
 
 
     // Enabled - Indicates whether this verifier will be enabled.
     Enabled bool `json:"enabled"`
+
+
+    // Credential - The WebAuthn credential associated with this verifier.
+    Credential Credential `json:"credential"`
 
 
     // VarDefault - Indicates whether this will be the default verifier.
@@ -38,6 +45,7 @@ type Updateverifierrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Updateverifierrequest) String() string {
+    
     
     
     
@@ -62,9 +70,14 @@ func (u *Updateverifierrequest) MarshalJSON() ([]byte, error) {
         
         Enabled bool `json:"enabled"`
         
+        Credential Credential `json:"credential"`
+        
         VarDefault bool `json:"default"`
         *Alias
     }{
+
+        
+
 
         
 

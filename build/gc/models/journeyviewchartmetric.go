@@ -22,6 +22,9 @@ type JourneyviewchartmetricDud struct {
 
     
 
+
+    
+
 }
 
 // Journeyviewchartmetric - A metric to measure within the chart
@@ -41,10 +44,15 @@ type Journeyviewchartmetric struct {
     // DisplayLabel - A display label for the metric
     DisplayLabel string `json:"displayLabel"`
 
+
+    // Attribute - Attribute name
+    Attribute string `json:"attribute"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Journeyviewchartmetric) String() string {
+    
     
     
     
@@ -73,8 +81,13 @@ func (u *Journeyviewchartmetric) MarshalJSON() ([]byte, error) {
         Aggregate string `json:"aggregate"`
         
         DisplayLabel string `json:"displayLabel"`
+        
+        Attribute string `json:"attribute"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -24,7 +24,7 @@ type Supportcenterdetailedcategorymoduletemplate struct {
     Active bool `json:"active"`
 
 
-    // Sidebar - Sidebar settings for the template
+    // Sidebar - Sidebar settings for the template. Required if support center is enabled
     Sidebar Supportcenterdetailedcategorymodulesidebar `json:"sidebar"`
 
 }

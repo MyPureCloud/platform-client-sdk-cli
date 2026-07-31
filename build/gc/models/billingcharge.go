@@ -14,6 +14,9 @@ type BillingchargeDud struct {
     Id string `json:"id"`
 
 
+    Name string `json:"name"`
+
+
     
 
 
@@ -50,6 +53,9 @@ type BillingchargeDud struct {
 
 // Billingcharge
 type Billingcharge struct { 
+    
+
+
     
 
 
@@ -151,6 +157,9 @@ func (u *Billingcharge) MarshalJSON() ([]byte, error) {
         TokenConversionRate float32 `json:"tokenConversionRate"`
         *Alias
     }{
+
+        
+
 
         
 

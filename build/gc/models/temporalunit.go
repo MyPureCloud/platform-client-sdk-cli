@@ -31,7 +31,7 @@ type Temporalunit struct {
 
 
     // Duration
-    Duration Duration `json:"duration"`
+    Duration string `json:"duration"`
 
 
     // TimeBased
@@ -68,7 +68,7 @@ func (u *Temporalunit) MarshalJSON() ([]byte, error) {
         
         DurationEstimated bool `json:"durationEstimated"`
         
-        Duration Duration `json:"duration"`
+        Duration string `json:"duration"`
         
         TimeBased bool `json:"timeBased"`
         

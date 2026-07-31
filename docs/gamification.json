@@ -218,14 +218,14 @@
       "description": "Query managers in a profile during a period of time"
     },
     {
-      "name": "get",
-      "path": "/api/v2/gamification/insights/groups/trends/all",
-      "description": "Get insights overall trend"
-    },
-    {
       "name": "list",
       "path": "/api/v2/gamification/insights/groups/trends",
       "description": "Get insights overall trend for the current user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/insights/groups/trends/all",
+      "description": "Get insights overall trend"
     },
     {
       "name": "list",
@@ -239,13 +239,13 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/gamification/insights/trends",
-      "description": "Get insights user trend for the current user"
+      "path": "/api/v2/gamification/insights/users/{userId}/trends",
+      "description": "Get insights user trend for the user"
     },
     {
       "name": "list",
-      "path": "/api/v2/gamification/insights/users/{userId}/trends",
-      "description": "Get insights user trend for the user"
+      "path": "/api/v2/gamification/insights/trends",
+      "description": "Get insights user trend for the current user"
     },
     {
       "name": "list",
@@ -264,6 +264,11 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends",
+      "description": "Average performance values trends by metric of the requesting user"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends",
       "description": "Average performance values trends by metric of a division or a performance profile"
     },
@@ -271,11 +276,6 @@
       "name": "getusertrends",
       "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends",
       "description": "Average performance values trends by metric of a user"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends",
-      "description": "Average performance values trends by metric of the requesting user"
     },
     {
       "name": "get",
@@ -319,6 +319,21 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/points/average",
+      "description": "Workday average points by target group"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/values/average",
+      "description": "Workday average values by target group"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/values/trends",
+      "description": "Values trend by target group"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/gamification/scorecards/users/{userId}",
       "description": "Workday performance metrics for a user"
     },
@@ -346,21 +361,6 @@
       "name": "list",
       "path": "/api/v2/gamification/scorecards/users/{userId}/values/trends",
       "description": "Values trends of a user"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/gamification/scorecards/users/points/average",
-      "description": "Workday average points by target group"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/gamification/scorecards/users/values/average",
-      "description": "Workday average values by target group"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/gamification/scorecards/users/values/trends",
-      "description": "Values trend by target group"
     }
   ]
 }

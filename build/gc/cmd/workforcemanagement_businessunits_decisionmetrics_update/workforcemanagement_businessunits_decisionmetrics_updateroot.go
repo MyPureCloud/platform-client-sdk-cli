@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_decisionmetrics_update
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_decisionmetrics_update_uploadurl"
+)
+
+func init() {
+	workforcemanagement_businessunits_decisionmetrics_updateCmd.AddCommand(workforcemanagement_businessunits_decisionmetrics_update_uploadurl.Cmdworkforcemanagement_businessunits_decisionmetrics_update_uploadurl())
+	workforcemanagement_businessunits_decisionmetrics_updateCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_decisionmetrics_updateCmd.Short, workforcemanagement_businessunits_decisionmetrics_update_uploadurl.Description, )
+	workforcemanagement_businessunits_decisionmetrics_updateCmd.Long = workforcemanagement_businessunits_decisionmetrics_updateCmd.Short
+}

@@ -32,27 +32,27 @@ type SupportcenterglobalstyleDud struct {
 
 // Supportcenterglobalstyle
 type Supportcenterglobalstyle struct { 
-    // BackgroundColor - Global background color, in hexadecimal format, eg #ffffff
+    // BackgroundColor - Global background color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
     BackgroundColor string `json:"backgroundColor"`
 
 
-    // PrimaryColor - Global primary color, in hexadecimal format, eg #ffffff
+    // PrimaryColor - Global primary color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
     PrimaryColor string `json:"primaryColor"`
 
 
-    // PrimaryColorDark - Global dark primary color, in hexadecimal format, eg #ffffff
+    // PrimaryColorDark - Global dark primary color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
     PrimaryColorDark string `json:"primaryColorDark"`
 
 
-    // PrimaryColorLight - Global light primary color, in hexadecimal format, eg #ffffff
+    // PrimaryColorLight - Global light primary color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
     PrimaryColorLight string `json:"primaryColorLight"`
 
 
-    // TextColor - Global text color, in hexadecimal format, eg #ffffff
+    // TextColor - Global text color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
     TextColor string `json:"textColor"`
 
 
-    // FontFamily - Global font family
+    // FontFamily - Global font family. Required when globalStyle is provided
     FontFamily string `json:"fontFamily"`
 
 }

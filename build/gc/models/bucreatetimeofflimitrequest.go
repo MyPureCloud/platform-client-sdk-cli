@@ -16,6 +16,12 @@ type BucreatetimeofflimitrequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Bucreatetimeofflimitrequest
@@ -27,10 +33,20 @@ type Bucreatetimeofflimitrequest struct {
     // ManagementUnitId - The ID of the management unit to which this time-off limit is associated. One of managementUnitId or staffingGroupId must be set. This must not be set if staffingGroupId has value
     ManagementUnitId string `json:"managementUnitId"`
 
+
+    // Granularity - Granularity choice for time off limit
+    Granularity string `json:"granularity"`
+
+
+    // FullDayTimeOffStartTime - The start time of full day time off requests associated with this limit interval in HH:mm format.Setting this value is allowed only for time-off limit with fifteen minutes granularity
+    FullDayTimeOffStartTime string `json:"fullDayTimeOffStartTime"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Bucreatetimeofflimitrequest) String() string {
+    
+    
     
     
 
@@ -53,8 +69,18 @@ func (u *Bucreatetimeofflimitrequest) MarshalJSON() ([]byte, error) {
         StaffingGroupId string `json:"staffingGroupId"`
         
         ManagementUnitId string `json:"managementUnitId"`
+        
+        Granularity string `json:"granularity"`
+        
+        FullDayTimeOffStartTime string `json:"fullDayTimeOffStartTime"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

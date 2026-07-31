@@ -31,6 +31,9 @@ type OrgauthsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Orgauthsettings
@@ -62,6 +65,10 @@ type Orgauthsettings struct {
     // UniversalLogout - Indicates whether universal logout is enabled for the organization.
     UniversalLogout bool `json:"universalLogout"`
 
+
+    // TokenStorageLocation - The browser storage location used for authentication tokens.
+    TokenStorageLocation string `json:"tokenStorageLocation"`
+
 }
 
 // String returns a JSON representation of the model
@@ -72,6 +79,7 @@ func (o *Orgauthsettings) String() string {
      o.IpAddressAllowlist = []string{""} 
     
      o.InactivityTimeoutExclusions = []string{""} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -103,6 +111,8 @@ func (u *Orgauthsettings) MarshalJSON() ([]byte, error) {
         InactivityTimeoutExclusions []string `json:"inactivityTimeoutExclusions"`
         
         UniversalLogout bool `json:"universalLogout"`
+        
+        TokenStorageLocation string `json:"tokenStorageLocation"`
         *Alias
     }{
 
@@ -127,6 +137,9 @@ func (u *Orgauthsettings) MarshalJSON() ([]byte, error) {
 
         
         InactivityTimeoutExclusions: []string{""},
+        
+
+
         
 
 

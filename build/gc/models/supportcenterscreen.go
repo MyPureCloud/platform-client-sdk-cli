@@ -20,11 +20,11 @@ type SupportcenterscreenDud struct {
 
 // Supportcenterscreen
 type Supportcenterscreen struct { 
-    // VarType - The type of the screen
+    // VarType - The type of the screen. Required if support center is enabled
     VarType string `json:"type"`
 
 
-    // ModuleSettings - Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article;
+    // ModuleSettings - Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article; Required if support center is enabled
     ModuleSettings []Supportcentermodulesetting `json:"moduleSettings"`
 
 }

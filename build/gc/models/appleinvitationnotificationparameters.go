@@ -17,7 +17,7 @@ type AppleinvitationnotificationparametersDud struct {
 
 // Appleinvitationnotificationparameters - Notification parameters for Apple Invitation
 type Appleinvitationnotificationparameters struct { 
-    // ReferenceId - Provides context for the notification message, such as an order number or case ID.
+    // ReferenceId - An opaque, caller-supplied string that provides business context for the notification message (e.g., an order number or case ID).
     ReferenceId string `json:"referenceId"`
 
 }

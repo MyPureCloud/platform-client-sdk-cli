@@ -18,6 +18,9 @@ type SurveyformDud struct {
     
 
 
+    
+
+
     ModifiedDate time.Time `json:"modifiedDate"`
 
 
@@ -45,6 +48,9 @@ type SurveyformDud struct {
     PublishedVersions Domainentitylistingsurveyform `json:"publishedVersions"`
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -56,6 +62,10 @@ type Surveyform struct {
 
     // Name - The survey form name
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Writablestarrabledivision `json:"division"`
 
 
     
@@ -91,6 +101,10 @@ type Surveyform struct {
     
 
 
+    // Redacted - Is this form redacted
+    Redacted bool `json:"redacted"`
+
+
     
 
 }
@@ -103,7 +117,9 @@ func (o *Surveyform) String() string {
     
     
     
+    
      o.QuestionGroups = []Surveyquestiongroup{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -123,6 +139,8 @@ func (u *Surveyform) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        Division Writablestarrabledivision `json:"division"`
+        
         Published bool `json:"published"`
         
         Disabled bool `json:"disabled"`
@@ -134,6 +152,8 @@ func (u *Surveyform) MarshalJSON() ([]byte, error) {
         Footer string `json:"footer"`
         
         QuestionGroups []Surveyquestiongroup `json:"questionGroups"`
+        
+        Redacted bool `json:"redacted"`
         *Alias
     }{
 
@@ -165,7 +185,13 @@ func (u *Surveyform) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
         QuestionGroups: []Surveyquestiongroup{{}},
+        
+
+
         
 
 

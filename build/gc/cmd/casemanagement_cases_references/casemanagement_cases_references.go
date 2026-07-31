@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdcasemanagement_cases_references() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "string", "expands", "", "Fields to expand. Valid values: caseplan")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expands", "", "Attributes to expand. Comma-separated if more than one. Valid values: caseplan, owner, modifiedBy, externalContact, customerIntent")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/casemanagement/cases/references/{referenceId}", utils.FormatPermissions([]string{ "caseManagement:caseReference:view",  }), utils.GenerateDevCentreLink("GET", "Case Management", "/api/v2/casemanagement/cases/references/{referenceId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -73,7 +73,7 @@ var getCmd = &cobra.Command{
 		referenceId, args := args[0], args[1:]
 		path = strings.Replace(path, "{referenceId}", fmt.Sprintf("%v", referenceId), -1)
 
-		expands := utils.GetFlag(cmd.Flags(), "string", "expands")
+		expands := utils.GetFlag(cmd.Flags(), "[]string", "expands")
 		if expands != "" {
 			queryParams["expands"] = expands
 		}

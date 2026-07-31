@@ -17,7 +17,7 @@ type SupportcentercompactcategorymoduletemplateDud struct {
 
 // Supportcentercompactcategorymoduletemplate
 type Supportcentercompactcategorymoduletemplate struct { 
-    // Active - Whether this template is active or not
+    // Active - Whether this template is active or not. Required if support center is enabled
     Active bool `json:"active"`
 
 }

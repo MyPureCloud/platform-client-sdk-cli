@@ -23,6 +23,12 @@ type VerifierDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -36,8 +42,16 @@ type Verifier struct {
     Name string `json:"name"`
 
 
+    // VarType - The type of verifier.
+    VarType string `json:"type"`
+
+
     // Enabled - Indicates whether this verifier is enabled.
     Enabled bool `json:"enabled"`
+
+
+    // Credential - The WebAuthn credential associated with this verifier.
+    Credential Credential `json:"credential"`
 
 
     // VarDefault - Indicates whether this is the default verifier.
@@ -50,6 +64,8 @@ type Verifier struct {
 
 // String returns a JSON representation of the model
 func (o *Verifier) String() string {
+    
+    
     
     
     
@@ -72,11 +88,21 @@ func (u *Verifier) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        VarType string `json:"type"`
+        
         Enabled bool `json:"enabled"`
+        
+        Credential Credential `json:"credential"`
         
         VarDefault bool `json:"default"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

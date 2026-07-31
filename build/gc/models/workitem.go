@@ -146,7 +146,7 @@ type Workitem struct {
 
 
     // Language - The language of the Workitem.
-    Language Languagereference `json:"language"`
+    Language Workitemlanguagereference `json:"language"`
 
 
     // UtilizationLabel - The utilization label of the Workitem.
@@ -238,7 +238,7 @@ type Workitem struct {
 
 
     // Skills - The skills of the Workitem.
-    Skills []Routingskillreference `json:"skills"`
+    Skills []Workitemroutingskillreference `json:"skills"`
 
 
     // PreferredAgents - The preferred agents of the Workitem.
@@ -302,7 +302,7 @@ func (o *Workitem) String() string {
     
     
     
-     o.Skills = []Routingskillreference{{}} 
+     o.Skills = []Workitemroutingskillreference{{}} 
      o.PreferredAgents = []Userreference{{}} 
     
     
@@ -335,7 +335,7 @@ func (u *Workitem) MarshalJSON() ([]byte, error) {
         
         Description string `json:"description"`
         
-        Language Languagereference `json:"language"`
+        Language Workitemlanguagereference `json:"language"`
         
         UtilizationLabel Workitemutilizationlabelreference `json:"utilizationLabel"`
         
@@ -381,7 +381,7 @@ func (u *Workitem) MarshalJSON() ([]byte, error) {
         
         AlertTimeoutSeconds int `json:"alertTimeoutSeconds"`
         
-        Skills []Routingskillreference `json:"skills"`
+        Skills []Workitemroutingskillreference `json:"skills"`
         
         PreferredAgents []Userreference `json:"preferredAgents"`
         
@@ -484,7 +484,7 @@ func (u *Workitem) MarshalJSON() ([]byte, error) {
 
 
         
-        Skills: []Routingskillreference{{}},
+        Skills: []Workitemroutingskillreference{{}},
         
 
 

@@ -23,6 +23,12 @@ type ButimeofflimitresponseDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -41,8 +47,16 @@ type Butimeofflimitresponse struct {
     ManagementUnit Managementunitreference `json:"managementUnit"`
 
 
+    // Granularity - Granularity choice for time off limit
+    Granularity string `json:"granularity"`
+
+
     // Metadata - Version metadata for the time-off limit
     Metadata Wfmversionedentitymetadata `json:"metadata"`
+
+
+    // FullDayTimeOffStartTime - The start time of full day time off requests associated with this limit interval in HH:mm format.
+    FullDayTimeOffStartTime string `json:"fullDayTimeOffStartTime"`
 
 
     
@@ -51,6 +65,8 @@ type Butimeofflimitresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Butimeofflimitresponse) String() string {
+    
+    
     
     
     
@@ -78,9 +94,19 @@ func (u *Butimeofflimitresponse) MarshalJSON() ([]byte, error) {
         
         ManagementUnit Managementunitreference `json:"managementUnit"`
         
+        Granularity string `json:"granularity"`
+        
         Metadata Wfmversionedentitymetadata `json:"metadata"`
+        
+        FullDayTimeOffStartTime string `json:"fullDayTimeOffStartTime"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

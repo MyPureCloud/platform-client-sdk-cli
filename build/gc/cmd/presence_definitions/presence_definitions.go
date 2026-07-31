@@ -389,8 +389,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Get a list of Presence Definitions",
-	Long:  "Get a list of Presence Definitions",
+	Short: "Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division",
+	Long:  "Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

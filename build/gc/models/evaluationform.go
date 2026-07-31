@@ -39,7 +39,13 @@ type EvaluationformDud struct {
     
 
 
+    
+
+
     AiScoring Aiscoringsettings `json:"aiScoring"`
+
+
+    
 
 
     
@@ -56,6 +62,10 @@ type Evaluationform struct {
 
     // Name - The evaluation form name
     Name string `json:"name"`
+
+
+    // Division - The division to which this entity belongs.
+    Division Writablestarrabledivision `json:"division"`
 
 
     // ModifiedDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -89,6 +99,10 @@ type Evaluationform struct {
     
 
 
+    // Redacted - Is this form redacted
+    Redacted bool `json:"redacted"`
+
+
     // Dialect - The language dialect for this evaluation form. Supported dialects: ar, cs, da, de, en-US, es, fi, fr, fr-CA, he, hi, it, ja, ko, nl, no, pl, pt-BR, pt-PT, ru, sv, th, tr, uk, zh-CN, zh-TW
     Dialect string `json:"dialect"`
 
@@ -103,7 +117,9 @@ func (o *Evaluationform) String() string {
     
     
     
+    
      o.QuestionGroups = []Evaluationquestiongroup{{}} 
+    
     
     
     
@@ -127,6 +143,8 @@ func (u *Evaluationform) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        Division Writablestarrabledivision `json:"division"`
+        
         ModifiedDate time.Time `json:"modifiedDate"`
         
         Published bool `json:"published"`
@@ -140,6 +158,8 @@ func (u *Evaluationform) MarshalJSON() ([]byte, error) {
         EvaluationSettings Evaluationsettings `json:"evaluationSettings"`
         
         LatestVersionFormName string `json:"latestVersionFormName"`
+        
+        Redacted bool `json:"redacted"`
         
         Dialect string `json:"dialect"`
         *Alias
@@ -161,7 +181,13 @@ func (u *Evaluationform) MarshalJSON() ([]byte, error) {
 
 
         
+
+
+        
         QuestionGroups: []Evaluationquestiongroup{{}},
+        
+
+
         
 
 

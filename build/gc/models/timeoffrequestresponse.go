@@ -102,7 +102,7 @@ type Timeoffrequestresponse struct {
     IsFullDayRequest bool `json:"isFullDayRequest"`
 
 
-    // MarkedAsRead - Whether this request has been marked as read by the agent
+    // MarkedAsRead - Deprecated - Always returns true.
     MarkedAsRead bool `json:"markedAsRead"`
 
 

@@ -115,7 +115,7 @@ func Cmdflows() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "25", "Page size")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "id", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "asc", "Sort order")
-	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "ID")
+	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "ID. Deprecated, use GET /api/v2/flows/lookup with the ids parameter instead")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
 	utils.AddFlag(listCmd.Flags(), "string", "description", "", "Description")
 	utils.AddFlag(listCmd.Flags(), "string", "nameOrDescription", "", "Name or description")

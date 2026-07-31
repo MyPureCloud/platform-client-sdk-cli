@@ -116,7 +116,7 @@ type Campaignruleparameters struct {
 
 
     // ForDuration - ISO-8601 Duration for which condition expression must be continuously true before condition is evaluated as true
-    ForDuration Duration `json:"forDuration"`
+    ForDuration string `json:"forDuration"`
 
 }
 
@@ -182,7 +182,7 @@ func (u *Campaignruleparameters) MarshalJSON() ([]byte, error) {
         
         EmailContentTemplate Domainentityref `json:"emailContentTemplate"`
         
-        ForDuration Duration `json:"forDuration"`
+        ForDuration string `json:"forDuration"`
         *Alias
     }{
 

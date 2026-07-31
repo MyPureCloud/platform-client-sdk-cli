@@ -21,7 +21,7 @@ type TimeoffrequestlistingDud struct {
 // Timeoffrequestlisting
 type Timeoffrequestlisting struct { 
     // Entities - List of time off requests
-    Entities []Timeoffrequest `json:"entities"`
+    Entities []Timeoffrequestlistitem `json:"entities"`
 
 
     // DownloadUrl - URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl
@@ -31,7 +31,7 @@ type Timeoffrequestlisting struct {
 
 // String returns a JSON representation of the model
 func (o *Timeoffrequestlisting) String() string {
-     o.Entities = []Timeoffrequest{{}} 
+     o.Entities = []Timeoffrequestlistitem{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -50,14 +50,14 @@ func (u *Timeoffrequestlisting) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Entities []Timeoffrequest `json:"entities"`
+        Entities []Timeoffrequestlistitem `json:"entities"`
         
         DownloadUrl string `json:"downloadUrl"`
         *Alias
     }{
 
         
-        Entities: []Timeoffrequest{{}},
+        Entities: []Timeoffrequestlistitem{{}},
         
 
 

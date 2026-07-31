@@ -38,6 +38,11 @@
       "description": "Update an activity code"
     },
     {
+      "name": "update",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/bulk",
+      "description": "Update multiple activity codes"
+    },
+    {
       "name": "list",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups",
       "description": "Get intraday planning groups for the given date"
@@ -263,24 +268,14 @@
       "description": "Adds a new service goal template"
     },
     {
-      "name": "list",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users",
-      "description": "Gets list of users available for whom you can send direct shift trade requests"
-    },
-    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched",
       "description": "Gets a summary of all shift trades in the matched state"
     },
     {
       "name": "list",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups",
-      "description": "Gets a list of staffing groups"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups",
-      "description": "Creates a new staffing group"
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users",
+      "description": "Gets list of users available for whom you can send direct shift trade requests"
     },
     {
       "name": "get",
@@ -296,6 +291,16 @@
       "name": "update",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}",
       "description": "Updates a staffing group"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups",
+      "description": "Gets a list of staffing groups"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups",
+      "description": "Creates a new staffing group"
     },
     {
       "name": "create",
@@ -338,11 +343,6 @@
       "description": "Matches a shift trade. This route can only be called by the receiving agent"
     },
     {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/agents",
-      "description": "Move agents in and out of management unit"
-    },
-    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/agents/{agentId}/managementunit",
       "description": "Get the management unit to which the agent belongs"
@@ -351,6 +351,11 @@
       "name": "get",
       "path": "/api/v2/workforcemanagement/agents/me/managementunit",
       "description": "Get the management unit to which the currently logged in agent belongs"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/agents",
+      "description": "Move agents in and out of management unit"
     },
     {
       "name": "create",
@@ -819,6 +824,11 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/workforcemanagement/workplanbids",
+      "description": "Gets the list of work plan bids that belong to an agent"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/workforcemanagement/workplanbids/{bidId}/preferences",
       "description": "Gets an agent's work plan bidding preference"
     },
@@ -834,23 +844,18 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/workforcemanagement/workplanbids",
-      "description": "Gets the list of work plan bids that belong to an agent"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/workforcemanagement/alternativeshifts/settings",
       "description": "Get alternative shifts settings from the current logged in agent’s business unit"
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/agentschedules/mine",
-      "description": "Get published schedule for the current user"
+      "path": "/api/v2/workforcemanagement/agentschedules/managementunits/mine",
+      "description": "Fetch agent schedules for the logged in user's management unit"
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/agentschedules/managementunits/mine",
-      "description": "Fetch agent schedules for the logged in user's management unit"
+      "path": "/api/v2/workforcemanagement/agentschedules/mine",
+      "description": "Get published schedule for the current user"
     },
     {
       "name": "create",
@@ -878,9 +883,24 @@
       "description": "Mark a list of notifications as read or unread"
     },
     {
+      "name": "list",
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/decisionmetrics",
+      "description": "Gets the decision metrics of all user in given management unit"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update",
+      "description": "Initiates the decision metrics update process"
+    },
+    {
       "name": "get",
-      "path": "/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs/{jobId}",
-      "description": "Retrieves delete job status for historical data imports associated with the job id"
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/jobs/{jobId}",
+      "description": "Gets the status of the given job"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update/uploadurl",
+      "description": "Creates a signed upload URL for updating decision metrics"
     },
     {
       "name": "list",
@@ -891,6 +911,11 @@
       "name": "create",
       "path": "/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs",
       "description": "Delete the list of the historical data import entries"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs/{jobId}",
+      "description": "Retrieves delete job status for historical data imports associated with the job id"
     },
     {
       "name": "get",
@@ -1008,11 +1033,6 @@
       "description": "Update the opportunity"
     },
     {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations",
-      "description": "Request a daily recalculation of the performance prediction for the associated schedule"
-    },
-    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/{recalculationId}",
       "description": "Get recalculated performance prediction result"
@@ -1028,9 +1048,9 @@
       "description": "Upload daily activity changes to be able to request a performance prediction recalculation"
     },
     {
-      "name": "get",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/summary",
-      "description": "Get summary of bid groups that belong to a schedule bid"
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations",
+      "description": "Request a daily recalculation of the performance prediction for the associated schedule"
     },
     {
       "name": "get",
@@ -1048,11 +1068,6 @@
       "description": "Update a schedule bid group by bid group Id"
     },
     {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups",
-      "description": "Add a bid group in a given schedule bid"
-    },
-    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences",
       "description": "Get agents schedule bid preferences for a bid group"
@@ -1061,6 +1076,16 @@
       "name": "update",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences",
       "description": "Overrides the assigned schedule bid for the specified agents"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/summary",
+      "description": "Get summary of bid groups that belong to a schedule bid"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups",
+      "description": "Add a bid group in a given schedule bid"
     },
     {
       "name": "get",
@@ -1089,13 +1114,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/copy",
-      "description": "Copy a schedule bid"
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/effectiveschedulesets",
+      "description": "Fetch all the agents with effective schedule set for the given BU"
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/effectiveschedulesets",
-      "description": "Fetch all the agents with effective schedule set for the given BU"
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/copy",
+      "description": "Copy a schedule bid"
     },
     {
       "name": "list",
@@ -1213,14 +1238,14 @@
       "description": "Query published schedules for given given time range for set of users"
     },
     {
-      "name": "list",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules",
-      "description": "Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit"
-    },
-    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}",
       "description": "Deprecated.  Use the equivalent business unit resource instead. Get a week schedule"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules",
+      "description": "Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit"
     },
     {
       "name": "get",
@@ -1446,6 +1471,36 @@
       "name": "createforlimits",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query",
       "description": "Retrieves time-off limit related values based on a given set of filters."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query",
+      "description": "Retrieves time-off limit related values based on a given set of filters."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion",
+      "description": "Converts existing time-off limit to another granularity."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion/jobs/{jobId}",
+      "description": "Query the convert time-off limit granularity job operation. Only the user who started the operation can query the status."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion/jobs",
+      "description": "Query the list of convert time-off limit granularity job operation."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import/uploadurl",
+      "description": "Creates a signed upload URL for importing values into time-off limit"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import",
+      "description": "Starts importing the uploaded time-off limit values"
     },
     {
       "name": "list",

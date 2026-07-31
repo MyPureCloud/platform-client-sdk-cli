@@ -68,6 +68,26 @@
       "description": "Create a response."
     },
     {
+      "name": "list",
+      "path": "/api/v2/responsemanagement/libraries/divisionviews",
+      "description": "Gets a list of existing response libraries."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/responsemanagement/libraries/divisionviews/{libraryId}",
+      "description": "Get details about an existing response library."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/responsemanagement/responses/divisionviews/{responseId}",
+      "description": "Get details about an existing response."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/responsemanagement/responses/divisionviews/query",
+      "description": "Query responses"
+    },
+    {
       "name": "get",
       "path": "/api/v2/responsemanagement/responseassets/{responseAssetId}",
       "description": "Get response asset information"

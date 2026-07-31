@@ -16,6 +16,15 @@ type SummarygenerationconfigDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Summarygenerationconfig
@@ -27,10 +36,25 @@ type Summarygenerationconfig struct {
     // SummarySetting - Configured summary setting object.
     SummarySetting Summarysettingentity `json:"summarySetting"`
 
+
+    // RetentionSeconds - Summary retention time in seconds. Can only be modified on the parent assistant.
+    RetentionSeconds int `json:"retentionSeconds"`
+
+
+    // OnDemandSummaryConfig - On-demand summary configuration.
+    OnDemandSummaryConfig Ondemandsummaryconfig `json:"onDemandSummaryConfig"`
+
+
+    // ModelConfig - Model configuration for summarization.
+    ModelConfig Modelconfig `json:"modelConfig"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Summarygenerationconfig) String() string {
+    
+    
+    
     
     
 
@@ -53,8 +77,23 @@ func (u *Summarygenerationconfig) MarshalJSON() ([]byte, error) {
         Enabled bool `json:"enabled"`
         
         SummarySetting Summarysettingentity `json:"summarySetting"`
+        
+        RetentionSeconds int `json:"retentionSeconds"`
+        
+        OnDemandSummaryConfig Ondemandsummaryconfig `json:"onDemandSummaryConfig"`
+        
+        ModelConfig Modelconfig `json:"modelConfig"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

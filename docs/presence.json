@@ -20,7 +20,7 @@
     {
       "name": "list",
       "path": "/api/v2/presence/definitions",
-      "description": "Get a list of Presence Definitions"
+      "description": "Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division"
     },
     {
       "name": "create",

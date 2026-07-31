@@ -45,6 +45,12 @@ type DecisiontableversionDud struct {
     DatePublished time.Time `json:"datePublished"`
 
 
+    CreatedBy Addressableentityref `json:"createdBy"`
+
+
+    PublishedBy Addressableentityref `json:"publishedBy"`
+
+
     
 
 
@@ -86,6 +92,12 @@ type Decisiontableversion struct {
 
     // RowsUri - The rows URI for this decision table version.
     RowsUri string `json:"rowsUri"`
+
+
+    
+
+
+    
 
 
     
@@ -156,6 +168,12 @@ func (u *Decisiontableversion) MarshalJSON() ([]byte, error) {
         Contract Decisiontablecontract `json:"contract"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

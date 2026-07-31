@@ -56,6 +56,9 @@ type BusinessunitactivitycodeDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -118,6 +121,10 @@ type Businessunitactivitycode struct {
     PlanningGroups []Planninggroupreference `json:"planningGroups"`
 
 
+    // Style - The style configuration for the activity code
+    Style Activitycodestyle `json:"style"`
+
+
     // Metadata - Version metadata of this activity code
     Metadata Wfmversionedentitymetadata `json:"metadata"`
 
@@ -142,6 +149,7 @@ func (o *Businessunitactivitycode) String() string {
     
      o.SecondaryPresences = []Secondarypresence{{}} 
      o.PlanningGroups = []Planninggroupreference{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -187,6 +195,8 @@ func (u *Businessunitactivitycode) MarshalJSON() ([]byte, error) {
         SecondaryPresences []Secondarypresence `json:"secondaryPresences"`
         
         PlanningGroups []Planninggroupreference `json:"planningGroups"`
+        
+        Style Activitycodestyle `json:"style"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
@@ -235,6 +245,9 @@ func (u *Businessunitactivitycode) MarshalJSON() ([]byte, error) {
 
         
         PlanningGroups: []Planninggroupreference{{}},
+        
+
+
         
 
 

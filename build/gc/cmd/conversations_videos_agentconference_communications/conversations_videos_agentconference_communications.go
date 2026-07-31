@@ -37,7 +37,7 @@ func Cmdconversations_videos_agentconference_communications() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/VideoConferenceDetails"
+        "$ref" : "#/components/schemas/CreateJoinVideoResponse"
       }
     }
   }

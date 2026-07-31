@@ -20,6 +20,9 @@ type SttengineentityDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -37,12 +40,17 @@ type Sttengineentity struct {
     GrammarBased bool `json:"grammarBased"`
 
 
+    // ReplacedBy - If this STT engine has been deprecated, the STT engine that should be used as a replacement
+    ReplacedBy Addressableentityref `json:"replacedBy"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Sttengineentity) String() string {
+    
     
     
 
@@ -65,8 +73,13 @@ func (u *Sttengineentity) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         
         GrammarBased bool `json:"grammarBased"`
+        
+        ReplacedBy Addressableentityref `json:"replacedBy"`
         *Alias
     }{
+
+        
+
 
         
 

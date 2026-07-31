@@ -51,7 +51,7 @@ type Whatsappdefinition struct {
     Name string `json:"name"`
 
 
-    // Namespace - The messaging template namespace.
+    // Namespace - The messaging template namespace. This field is deprecated.
     Namespace string `json:"namespace"`
 
 

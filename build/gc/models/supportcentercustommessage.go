@@ -20,11 +20,11 @@ type SupportcentercustommessageDud struct {
 
 // Supportcentercustommessage
 type Supportcentercustommessage struct { 
-    // DefaultValue - Default value for the message
+    // DefaultValue - Default value for the message. Required for each custom message entry
     DefaultValue string `json:"defaultValue"`
 
 
-    // VarType - Type of the message
+    // VarType - Type of the message. Required for each custom message entry
     VarType string `json:"type"`
 
 }

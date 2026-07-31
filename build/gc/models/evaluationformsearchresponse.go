@@ -39,6 +39,9 @@ type EvaluationformsearchresponseDud struct {
     
 
 
+    
+
+
     AiScoring Aiscoringsettings `json:"aiScoring"`
 
 
@@ -52,6 +55,10 @@ type EvaluationformsearchresponseDud struct {
 // Evaluationformsearchresponse
 type Evaluationformsearchresponse struct { 
     
+
+
+    // Division - The division to which this entity belongs.
+    Division Writablestarrabledivision `json:"division"`
 
 
     // ModifiedDate - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
@@ -102,6 +109,7 @@ func (o *Evaluationformsearchresponse) String() string {
     
     
     
+    
      o.QuestionGroups = []Evaluationquestiongroup{{}} 
     
     
@@ -125,6 +133,8 @@ func (u *Evaluationformsearchresponse) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
+        Division Writablestarrabledivision `json:"division"`
+        
         ModifiedDate time.Time `json:"modifiedDate"`
         
         Published bool `json:"published"`
@@ -144,6 +154,9 @@ func (u *Evaluationformsearchresponse) MarshalJSON() ([]byte, error) {
         Dialect string `json:"dialect"`
         *Alias
     }{
+
+        
+
 
         
 

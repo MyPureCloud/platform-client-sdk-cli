@@ -118,16 +118,6 @@
       "description": "API invoked to finalize agent checklist evaluation."
     },
     {
-      "name": "get",
-      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}",
-      "description": "Get checklist info for a single checklist."
-    },
-    {
-      "name": "activatechecklist",
-      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}",
-      "description": "Agent Checklist activation API"
-    },
-    {
       "name": "createforchecklist",
       "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs",
       "description": "Create inference job"
@@ -141,6 +131,16 @@
       "name": "list",
       "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists",
       "description": "Get information of all checklists associated with a conversation."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}",
+      "description": "Get checklist info for a single checklist."
+    },
+    {
+      "name": "activatechecklist",
+      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}",
+      "description": "Agent Checklist activation API"
     },
     {
       "name": "create",
@@ -163,16 +163,6 @@
       "description": "Update a single custom attributes record by amending the data with only the provided fields."
     },
     {
-      "name": "get",
-      "path": "/api/v2/conversations/{conversationId}/customattributes/{attributesId}",
-      "description": "Get custom attributes by id"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/conversations/{conversationId}/customattributes/{attributesId}",
-      "description": "Delete a custom attributes record."
-    },
-    {
       "name": "update",
       "path": "/api/v2/conversations/{conversationId}/customattributes/bulk",
       "description": "Create or update a list of custom attributes records. Updating replaces all data with the provided fields."
@@ -181,6 +171,16 @@
       "name": "patch",
       "path": "/api/v2/conversations/{conversationId}/customattributes/bulk",
       "description": "Update a list of custom attributes record by amending the data with only the provided fields."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/conversations/{conversationId}/customattributes/{attributesId}",
+      "description": "Get custom attributes by id"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/conversations/{conversationId}/customattributes/{attributesId}",
+      "description": "Delete a custom attributes record."
     },
     {
       "name": "create",
@@ -426,6 +426,11 @@
       "name": "update",
       "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction",
       "description": "Set mandatory post call actions.  If both values are null or blank error will occur."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries",
+      "description": "Request an on-demand summary for a call communication."
     },
     {
       "name": "list",
@@ -886,6 +891,11 @@
       "name": "create",
       "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
       "description": "Apply wrap-up for this conversation communication"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries",
+      "description": "Request an on-demand summary for a message communication."
     },
     {
       "name": "update",
@@ -1468,6 +1478,11 @@
       "description": "Get Suggestion."
     },
     {
+      "name": "update",
+      "path": "/api/v2/conversations/{conversationId}/suggestions/{suggestionId}",
+      "description": "Update a suggestion."
+    },
+    {
       "name": "create",
       "path": "/api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement",
       "description": "Save an engagement on the suggestion."
@@ -1578,6 +1593,11 @@
       "description": "Create annotation"
     },
     {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/screenmonitors/sessions",
+      "description": "Start a conversation-level screen monitoring session."
+    },
+    {
       "name": "get",
       "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/screenmonitors/sessions/{screenMonitoringId}",
       "description": "Get a conversation-level screen monitoring session object using the supplied screenMonitoringId."
@@ -1586,11 +1606,6 @@
       "name": "delete",
       "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/screenmonitors/sessions/{screenMonitoringId}",
       "description": "Stop a conversation-level screen monitoring session."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/screenmonitors/sessions",
-      "description": "Start a conversation-level screen monitoring session."
     },
     {
       "name": "get",

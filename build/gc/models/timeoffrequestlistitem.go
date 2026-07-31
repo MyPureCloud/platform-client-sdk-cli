@@ -7,11 +7,11 @@ import (
 )
 
 var (
-    TimeoffrequestMarshalled = false
+    TimeoffrequestlistitemMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type TimeoffrequestDud struct { 
+type TimeoffrequestlistitemDud struct { 
     
 
 
@@ -82,8 +82,8 @@ type TimeoffrequestDud struct {
 
 }
 
-// Timeoffrequest
-type Timeoffrequest struct { 
+// Timeoffrequestlistitem
+type Timeoffrequestlistitem struct { 
     // Id - The globally unique identifier for the object.
     Id string `json:"id"`
 
@@ -96,7 +96,7 @@ type Timeoffrequest struct {
     IsFullDayRequest bool `json:"isFullDayRequest"`
 
 
-    // MarkedAsRead - Whether this request has been marked as read by the agent
+    // MarkedAsRead - Deprecated - Always returns true.
     MarkedAsRead bool `json:"markedAsRead"`
 
 
@@ -177,7 +177,7 @@ type Timeoffrequest struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Timeoffrequest) String() string {
+func (o *Timeoffrequestlistitem) String() string {
     
     
     
@@ -207,13 +207,13 @@ func (o *Timeoffrequest) String() string {
     return str
 }
 
-func (u *Timeoffrequest) MarshalJSON() ([]byte, error) {
-    type Alias Timeoffrequest
+func (u *Timeoffrequestlistitem) MarshalJSON() ([]byte, error) {
+    type Alias Timeoffrequestlistitem
 
-    if TimeoffrequestMarshalled {
+    if TimeoffrequestlistitemMarshalled {
         return []byte("{}"), nil
     }
-    TimeoffrequestMarshalled = true
+    TimeoffrequestlistitemMarshalled = true
 
     return json.Marshal(&struct {
         

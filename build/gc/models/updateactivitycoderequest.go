@@ -46,6 +46,9 @@ type UpdateactivitycoderequestDud struct {
 
     
 
+
+    
+
 }
 
 // Updateactivitycoderequest
@@ -90,6 +93,10 @@ type Updateactivitycoderequest struct {
     PlanningGroupIds Listwrapperstring `json:"planningGroupIds"`
 
 
+    // Style - The style configuration for the activity code
+    Style Valuewrapperactivitycodestyle `json:"style"`
+
+
     // Metadata - Version metadata for the associated business unit's list of activity codes
     Metadata Wfmversionedentitymetadata `json:"metadata"`
 
@@ -101,6 +108,7 @@ type Updateactivitycoderequest struct {
 
 // String returns a JSON representation of the model
 func (o *Updateactivitycoderequest) String() string {
+    
     
     
     
@@ -150,11 +158,16 @@ func (u *Updateactivitycoderequest) MarshalJSON() ([]byte, error) {
         
         PlanningGroupIds Listwrapperstring `json:"planningGroupIds"`
         
+        Style Valuewrapperactivitycodestyle `json:"style"`
+        
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         
         SecondaryPresences Listwrappersecondarypresence `json:"secondaryPresences"`
         *Alias
     }{
+
+        
+
 
         
 

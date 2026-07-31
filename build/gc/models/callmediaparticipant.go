@@ -182,6 +182,9 @@ type CallmediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Callmediaparticipant
@@ -413,6 +416,10 @@ type Callmediaparticipant struct {
     // TransferSource - Indicates how call reaches the agent.
     TransferSource string `json:"transferSource"`
 
+
+    // ClientIpAddress - The reported client IP of the phone for the call.
+    ClientIpAddress string `json:"clientIpAddress"`
+
 }
 
 // String returns a JSON representation of the model
@@ -437,6 +444,7 @@ func (o *Callmediaparticipant) String() string {
     
     
      o.Attributes = map[string]string{"": ""} 
+    
     
     
     
@@ -604,6 +612,8 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
         Disposition Disposition `json:"disposition"`
         
         TransferSource string `json:"transferSource"`
+        
+        ClientIpAddress string `json:"clientIpAddress"`
         *Alias
     }{
 
@@ -668,6 +678,9 @@ func (u *Callmediaparticipant) MarshalJSON() ([]byte, error) {
 
         
         Attributes: map[string]string{"": ""},
+        
+
+
         
 
 

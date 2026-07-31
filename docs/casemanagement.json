@@ -138,6 +138,26 @@
       "description": "Create a Case."
     },
     {
+      "name": "delete",
+      "path": "/api/v2/casemanagement/cases/{caseId}/comments/me/{commentId}",
+      "description": "Delete my Comment."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/casemanagement/cases/{caseId}/comments/{commentId}",
+      "description": "Get a Comment."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/casemanagement/cases/{caseId}/comments",
+      "description": "Get comments for a Case."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/casemanagement/cases/{caseId}/comments",
+      "description": "Add a comment to a Case."
+    },
+    {
       "name": "get",
       "path": "/api/v2/casemanagement/cases/{caseId}/terminate/jobs/{jobId}",
       "description": "Get a Terminate Job for a Case."

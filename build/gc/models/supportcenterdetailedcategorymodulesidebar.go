@@ -17,7 +17,7 @@ type SupportcenterdetailedcategorymodulesidebarDud struct {
 
 // Supportcenterdetailedcategorymodulesidebar
 type Supportcenterdetailedcategorymodulesidebar struct { 
-    // Enabled - Whether sidebar is enabled or not
+    // Enabled - Whether sidebar is enabled or not. Required if support center is enabled
     Enabled bool `json:"enabled"`
 
 }

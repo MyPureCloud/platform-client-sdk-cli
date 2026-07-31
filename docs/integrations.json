@@ -113,11 +113,6 @@
       "description": "Retrieves basic info about trusted root CA certificates"
     },
     {
-      "name": "create",
-      "path": "/api/v2/integrations/actions/{actionId}/draft/test",
-      "description": "Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging."
-    },
-    {
       "name": "get",
       "path": "/api/v2/integrations/actions/{actionId}/draft",
       "description": "Retrieve a Draft"
@@ -153,6 +148,11 @@
       "description": "Publish a Draft and make it the active Action configuration"
     },
     {
+      "name": "create",
+      "path": "/api/v2/integrations/actions/{actionId}/draft/test",
+      "description": "Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging."
+    },
+    {
       "name": "get",
       "path": "/api/v2/integrations/actions/{actionId}/draft/validation",
       "description": "Validate current Draft configuration."
@@ -178,11 +178,6 @@
       "description": "Patch an Action"
     },
     {
-      "name": "get",
-      "path": "/api/v2/integrations/actions/{actionId}/templates/{fileName}",
-      "description": "Retrieve text of templates for an action based on filename."
-    },
-    {
       "name": "create",
       "path": "/api/v2/integrations/actions/{actionId}/test",
       "description": "Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging."
@@ -191,6 +186,11 @@
       "name": "get",
       "path": "/api/v2/integrations/actions/{actionId}/schemas/{fileName}",
       "description": "Retrieve schema for an action based on filename."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/actions/{actionId}/templates/{fileName}",
+      "description": "Retrieve text of templates for an action based on filename."
     },
     {
       "name": "get",
@@ -343,14 +343,14 @@
       "description": "Get a Nuance bot in the specified Integration"
     },
     {
-      "name": "list",
-      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results",
-      "description": "Get the result of an asynchronous Nuance bots GET job"
-    },
-    {
       "name": "listBotsJob",
       "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}",
       "description": "Get the status of an asynchronous Nuance bots GET job"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results",
+      "description": "Get the result of an asynchronous Nuance bots GET job"
     },
     {
       "name": "list",
@@ -358,14 +358,14 @@
       "description": "Get a list of Nuance bots in the specified Integration asynchronously"
     },
     {
-      "name": "create",
-      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate",
-      "description": "Try out a single credential for a Nuance bot to know if the secret is correct"
-    },
-    {
       "name": "update",
       "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings",
       "description": "Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate",
+      "description": "Try out a single credential for a Nuance bot to know if the secret is correct"
     },
     {
       "name": "list",

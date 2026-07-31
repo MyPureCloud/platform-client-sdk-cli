@@ -19,6 +19,9 @@ type AianswerDud struct {
 
     
 
+
+    
+
 }
 
 // Aianswer
@@ -34,10 +37,15 @@ type Aianswer struct {
     // FailureType - Describes the type of error associated with the AI answer.
     FailureType string `json:"failureType"`
 
+
+    // MarkedNotApplicable - Indicates whether the AI answer is marked as not applicable.
+    MarkedNotApplicable bool `json:"markedNotApplicable"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Aianswer) String() string {
+    
     
     
     
@@ -63,8 +71,13 @@ func (u *Aianswer) MarshalJSON() ([]byte, error) {
         Explanation string `json:"explanation"`
         
         FailureType string `json:"failureType"`
+        
+        MarkedNotApplicable bool `json:"markedNotApplicable"`
         *Alias
     }{
+
+        
+
 
         
 

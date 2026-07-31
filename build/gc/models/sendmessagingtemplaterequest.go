@@ -36,7 +36,7 @@ type Sendmessagingtemplaterequest struct {
     ResponseId string `json:"responseId"`
 
 
-    // Parameters - A list of Response Management response substitutions for the response's messaging template. (Deprecated) use bodyParameters instead.
+    // Parameters - (Deprecated) use bodyParameters instead.
     Parameters []Templateparameter `json:"parameters"`
 
 

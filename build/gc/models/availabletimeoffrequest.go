@@ -16,6 +16,9 @@ type AvailabletimeoffrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Availabletimeoffrequest
@@ -27,12 +30,17 @@ type Availabletimeoffrequest struct {
     // DateRanges - A list of date ranges of available time off minutes. A maximum number of date ranges is 30. The maximum total number of days in all ranges is 366. If no ranges are specified, then only the presence of the associated time off limit object will be checked. In such case, if the association exists, then the response will contain a list with of a single element filled with timeOffLimitId only.
     DateRanges []Localdaterange `json:"dateRanges"`
 
+
+    // SupportedGranularities - Granularity of time off limits supported to query availability information. Default is 'Daily'
+    SupportedGranularities []string `json:"supportedGranularities"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Availabletimeoffrequest) String() string {
     
      o.DateRanges = []Localdaterange{{}} 
+     o.SupportedGranularities = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -53,6 +61,8 @@ func (u *Availabletimeoffrequest) MarshalJSON() ([]byte, error) {
         ActivityCodeId string `json:"activityCodeId"`
         
         DateRanges []Localdaterange `json:"dateRanges"`
+        
+        SupportedGranularities []string `json:"supportedGranularities"`
         *Alias
     }{
 
@@ -61,6 +71,11 @@ func (u *Availabletimeoffrequest) MarshalJSON() ([]byte, error) {
 
         
         DateRanges: []Localdaterange{{}},
+        
+
+
+        
+        SupportedGranularities: []string{""},
         
 
         Alias: (*Alias)(u),

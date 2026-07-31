@@ -17,7 +17,7 @@ type SupportcenterfeedbacksettingsDud struct {
 
 // Supportcenterfeedbacksettings
 type Supportcenterfeedbacksettings struct { 
-    // Enabled - Whether or not requesting customer feedback on article content and article search results is enabled
+    // Enabled - Whether or not requesting customer feedback on article content and article search results is enabled. Required if support center is enabled
     Enabled bool `json:"enabled"`
 
 }

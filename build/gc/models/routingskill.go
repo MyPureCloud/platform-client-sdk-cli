@@ -18,6 +18,9 @@ type RoutingskillDud struct {
     
 
 
+    
+
+
     DateModified time.Time `json:"dateModified"`
 
 
@@ -40,6 +43,10 @@ type Routingskill struct {
     Name string `json:"name"`
 
 
+    // Division - The id of the division this skill belongs to.
+    Division Division `json:"division"`
+
+
     
 
 
@@ -55,6 +62,7 @@ type Routingskill struct {
 
 // String returns a JSON representation of the model
 func (o *Routingskill) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -74,8 +82,13 @@ func (u *Routingskill) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Name string `json:"name"`
+        
+        Division Division `json:"division"`
         *Alias
     }{
+
+        
+
 
         
 

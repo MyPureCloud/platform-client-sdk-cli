@@ -31,6 +31,7 @@
 
 * [gc casemanagement](gc_casemanagement.html)	 - /api/v2/casemanagement
 * [gc casemanagement cases associations](gc_casemanagement_cases_associations.html)	 - /api/v2/casemanagement/cases/{caseId}/associations
+* [gc casemanagement cases comments](gc_casemanagement_cases_comments.html)	 - /api/v2/casemanagement/cases/{caseId}/comments
 * [gc casemanagement cases create](gc_casemanagement_cases_create.html)	 - Create a Case.
 * [gc casemanagement cases datedue](gc_casemanagement_cases_datedue.html)	 - /api/v2/casemanagement/cases/{caseId}/datedue
 * [gc casemanagement cases delete](gc_casemanagement_cases_delete.html)	 - Delete a Case.

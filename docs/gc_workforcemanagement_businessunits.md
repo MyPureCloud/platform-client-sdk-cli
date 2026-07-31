@@ -38,6 +38,7 @@
 * [gc workforcemanagement businessunits capacityplanning](gc_workforcemanagement_businessunits_capacityplanning.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning
 * [gc workforcemanagement businessunits capacityplans](gc_workforcemanagement_businessunits_capacityplans.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans
 * [gc workforcemanagement businessunits create](gc_workforcemanagement_businessunits_create.html)	 - Add a new business unit
+* [gc workforcemanagement businessunits decisionmetrics](gc_workforcemanagement_businessunits_decisionmetrics.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics
 * [gc workforcemanagement businessunits delete](gc_workforcemanagement_businessunits_delete.html)	 - Delete business unit
 * [gc workforcemanagement businessunits divisionviews](gc_workforcemanagement_businessunits_divisionviews.html)	 - /api/v2/workforcemanagement/businessunits/divisionviews
 * [gc workforcemanagement businessunits get](gc_workforcemanagement_businessunits_get.html)	 - Get business unit

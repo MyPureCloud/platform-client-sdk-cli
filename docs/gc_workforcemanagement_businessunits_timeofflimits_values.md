@@ -1,10 +1,10 @@
 ## gc workforcemanagement businessunits timeofflimits values
 
-/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values
+/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values
 
 ### Synopsis
 
-/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values
+/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values
 
 ### Options
 
@@ -30,7 +30,8 @@
 ### SEE ALSO
 
 * [gc workforcemanagement businessunits timeofflimits](gc_workforcemanagement_businessunits_timeofflimits.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits
-* [gc workforcemanagement businessunits timeofflimits values query](gc_workforcemanagement_businessunits_timeofflimits_values_query.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query
+* [gc workforcemanagement businessunits timeofflimits values import](gc_workforcemanagement_businessunits_timeofflimits_values_import.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import
+* [gc workforcemanagement businessunits timeofflimits values query](gc_workforcemanagement_businessunits_timeofflimits_values_query.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query
 * [gc workforcemanagement businessunits timeofflimits values update](gc_workforcemanagement_businessunits_timeofflimits_values_update.html)	 - Sets daily values for a date range of time-off limit object
 
 

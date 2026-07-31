@@ -35,6 +35,7 @@
 * [gc workforcemanagement managementunits agents](gc_workforcemanagement_managementunits_agents.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents
 * [gc workforcemanagement managementunits agentschedules](gc_workforcemanagement_managementunits_agentschedules.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules
 * [gc workforcemanagement managementunits create](gc_workforcemanagement_managementunits_create.html)	 - Add a management unit
+* [gc workforcemanagement managementunits decisionmetrics](gc_workforcemanagement_managementunits_decisionmetrics.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/decisionmetrics
 * [gc workforcemanagement managementunits delete](gc_workforcemanagement_managementunits_delete.html)	 - Delete management unit
 * [gc workforcemanagement managementunits divisionviews](gc_workforcemanagement_managementunits_divisionviews.html)	 - /api/v2/workforcemanagement/managementunits/divisionviews
 * [gc workforcemanagement managementunits get](gc_workforcemanagement_managementunits_get.html)	 - Get management unit

@@ -1,10 +1,10 @@
 ## gc workforcemanagement businessunits timeofflimits values query
 
-/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query
+/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query
 
 ### Synopsis
 
-/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query
+/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query
 
 ### Options
 
@@ -29,7 +29,8 @@
 
 ### SEE ALSO
 
-* [gc workforcemanagement businessunits timeofflimits values](gc_workforcemanagement_businessunits_timeofflimits_values.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values
+* [gc workforcemanagement businessunits timeofflimits values](gc_workforcemanagement_businessunits_timeofflimits_values.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values
+* [gc workforcemanagement businessunits timeofflimits values query create](gc_workforcemanagement_businessunits_timeofflimits_values_query_create.html)	 - Retrieves time-off limit related values based on a given set of filters.
 * [gc workforcemanagement businessunits timeofflimits values query createforlimits](gc_workforcemanagement_businessunits_timeofflimits_values_query_createforlimits.html)	 - Retrieves time-off limit related values based on a given set of filters.
 
 

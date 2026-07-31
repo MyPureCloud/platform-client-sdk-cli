@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc workforcemanagement businessunits](gc_workforcemanagement_businessunits.html)	 - /api/v2/workforcemanagement/businessunits
+* [gc workforcemanagement businessunits activitycodes bulk](gc_workforcemanagement_businessunits_activitycodes_bulk.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/bulk
 * [gc workforcemanagement businessunits activitycodes create](gc_workforcemanagement_businessunits_activitycodes_create.html)	 - Create a new activity code
 * [gc workforcemanagement businessunits activitycodes delete](gc_workforcemanagement_businessunits_activitycodes_delete.html)	 - Deletes an activity code
 * [gc workforcemanagement businessunits activitycodes get](gc_workforcemanagement_businessunits_activitycodes_get.html)	 - Get an activity code

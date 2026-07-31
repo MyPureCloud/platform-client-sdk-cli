@@ -32,6 +32,7 @@
 * [gc responsemanagement](gc_responsemanagement.html)	 - /api/v2/responsemanagement
 * [gc responsemanagement responses create](gc_responsemanagement_responses_create.html)	 - Create a response.
 * [gc responsemanagement responses delete](gc_responsemanagement_responses_delete.html)	 - Delete an existing response.
+* [gc responsemanagement responses divisionviews](gc_responsemanagement_responses_divisionviews.html)	 - /api/v2/responsemanagement/responses/divisionviews
 * [gc responsemanagement responses get](gc_responsemanagement_responses_get.html)	 - Get details about an existing response.
 * [gc responsemanagement responses list](gc_responsemanagement_responses_list.html)	 - Gets a list of existing responses.
 * [gc responsemanagement responses query](gc_responsemanagement_responses_query.html)	 - /api/v2/responsemanagement/responses/query

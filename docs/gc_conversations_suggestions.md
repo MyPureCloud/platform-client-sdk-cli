@@ -34,5 +34,6 @@
 * [gc conversations suggestions feedback](gc_conversations_suggestions_feedback.html)	 - /api/v2/conversations/{conversationId}/suggestions/feedback
 * [gc conversations suggestions get](gc_conversations_suggestions_get.html)	 - Get Suggestion.
 * [gc conversations suggestions list](gc_conversations_suggestions_list.html)	 - Get all suggestions for a conversation.
+* [gc conversations suggestions update](gc_conversations_suggestions_update.html)	 - Update a suggestion.
 
 

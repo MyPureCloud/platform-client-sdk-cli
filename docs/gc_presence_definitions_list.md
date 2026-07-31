@@ -1,10 +1,10 @@
 ## gc presence definitions list
 
-Get a list of Presence Definitions
+Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division
 
 ### Synopsis
 
-Get a list of Presence Definitions
+Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division
 
 ```
 gc presence definitions list [flags]

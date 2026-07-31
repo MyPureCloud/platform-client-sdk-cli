@@ -33,7 +33,7 @@
 * [gc presence definitions create](gc_presence_definitions_create.html)	 - Create a Presence Definition
 * [gc presence definitions delete](gc_presence_definitions_delete.html)	 - Delete a Presence Definition
 * [gc presence definitions get](gc_presence_definitions_get.html)	 - Get a Presence Definition
-* [gc presence definitions list](gc_presence_definitions_list.html)	 - Get a list of Presence Definitions
+* [gc presence definitions list](gc_presence_definitions_list.html)	 - Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division
 * [gc presence definitions update](gc_presence_definitions_update.html)	 - Update a Presence Definition
 
 

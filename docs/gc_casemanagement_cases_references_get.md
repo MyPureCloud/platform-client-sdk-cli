@@ -13,8 +13,8 @@ gc casemanagement cases references get [referenceId] [flags]
 ### Options
 
 ```
-      --expands string   Fields to expand. Valid values: caseplan
-  -h, --help             help for get
+      --expands strings   Attributes to expand. Comma-separated if more than one. Valid values: caseplan, owner, modifiedBy, externalContact, customerIntent
+  -h, --help              help for get
 ```
 
 ### Options inherited from parent commands

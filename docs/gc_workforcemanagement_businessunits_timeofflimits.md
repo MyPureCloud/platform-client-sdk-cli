@@ -33,7 +33,8 @@
 * [gc workforcemanagement businessunits timeofflimits create](gc_workforcemanagement_businessunits_timeofflimits_create.html)	 - Creates a new time-off limit object
 * [gc workforcemanagement businessunits timeofflimits delete](gc_workforcemanagement_businessunits_timeofflimits_delete.html)	 - Deletes a time-off limit object
 * [gc workforcemanagement businessunits timeofflimits get](gc_workforcemanagement_businessunits_timeofflimits_get.html)	 - Gets a time-off limit object
+* [gc workforcemanagement businessunits timeofflimits granularityconversion](gc_workforcemanagement_businessunits_timeofflimits_granularityconversion.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion
 * [gc workforcemanagement businessunits timeofflimits list](gc_workforcemanagement_businessunits_timeofflimits_list.html)	 - Gets a list of time-off limit objects
-* [gc workforcemanagement businessunits timeofflimits values](gc_workforcemanagement_businessunits_timeofflimits_values.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values
+* [gc workforcemanagement businessunits timeofflimits values](gc_workforcemanagement_businessunits_timeofflimits_values.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values
 
 

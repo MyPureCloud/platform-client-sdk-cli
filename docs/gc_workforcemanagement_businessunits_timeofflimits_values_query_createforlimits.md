@@ -36,6 +36,6 @@ gc workforcemanagement businessunits timeofflimits values query createforlimits 
 
 ### SEE ALSO
 
-* [gc workforcemanagement businessunits timeofflimits values query](gc_workforcemanagement_businessunits_timeofflimits_values_query.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query
+* [gc workforcemanagement businessunits timeofflimits values query](gc_workforcemanagement_businessunits_timeofflimits_values_query.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query
 
 

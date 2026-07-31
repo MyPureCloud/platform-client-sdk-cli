@@ -24,6 +24,7 @@ gc is a CLI for interacting with Genesys Cloud
 
 ### SEE ALSO
 
+* [gc agentic](gc_agentic.html)	 - /api/v2/agentic
 * [gc alerting](gc_alerting.html)	 - /api/v2/alerting
 * [gc alternativeformats](gc_alternativeformats.html)	 - Used to specify the desired input and output formats
 * [gc analytics](gc_analytics.html)	 - /api/v2/analytics

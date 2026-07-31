@@ -20,7 +20,7 @@ gc flows list [flags]
       --editableBy string            Editable by
       --filtercondition string       Filter list command output based on a given condition or regular expression
   -h, --help                         help for list
-      --id strings                   ID
+      --id strings                   ID. Deprecated, use GET /api/v2/flows/lookup with the ids parameter instead
       --includeSchemas string        Include variable schemas Valid values: true, false
       --lockedBy string              Locked by
       --lockedByClientId string      Locked by client ID

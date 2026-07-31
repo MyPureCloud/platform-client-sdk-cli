@@ -36,6 +36,6 @@ gc workforcemanagement businessunits timeofflimits values update [businessUnitId
 
 ### SEE ALSO
 
-* [gc workforcemanagement businessunits timeofflimits values](gc_workforcemanagement_businessunits_timeofflimits_values.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values
+* [gc workforcemanagement businessunits timeofflimits values](gc_workforcemanagement_businessunits_timeofflimits_values.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values
 
 

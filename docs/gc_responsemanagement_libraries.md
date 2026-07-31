@@ -33,6 +33,7 @@
 * [gc responsemanagement libraries bulk](gc_responsemanagement_libraries_bulk.html)	 - /api/v2/responsemanagement/libraries/bulk
 * [gc responsemanagement libraries create](gc_responsemanagement_libraries_create.html)	 - Create a response library.
 * [gc responsemanagement libraries delete](gc_responsemanagement_libraries_delete.html)	 - Delete an existing response library.
+* [gc responsemanagement libraries divisionviews](gc_responsemanagement_libraries_divisionviews.html)	 - /api/v2/responsemanagement/libraries/divisionviews
 * [gc responsemanagement libraries get](gc_responsemanagement_libraries_get.html)	 - Get details about an existing response library.
 * [gc responsemanagement libraries list](gc_responsemanagement_libraries_list.html)	 - Gets a list of existing response libraries.
 * [gc responsemanagement libraries query](gc_responsemanagement_libraries_query.html)	 - /api/v2/responsemanagement/libraries/query

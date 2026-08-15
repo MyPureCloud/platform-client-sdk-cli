@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc workforcemanagement businessunits mainforecast continuousforecast](gc_workforcemanagement_businessunits_mainforecast_continuousforecast.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast
+* [gc workforcemanagement businessunits mainforecast continuousforecast session export](gc_workforcemanagement_businessunits_mainforecast_continuousforecast_session_export.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export
 * [gc workforcemanagement businessunits mainforecast continuousforecast session get](gc_workforcemanagement_businessunits_mainforecast_continuousforecast_session_get.html)	 - Get the session details for the session ID
 * [gc workforcemanagement businessunits mainforecast continuousforecast session getAllSessions](gc_workforcemanagement_businessunits_mainforecast_continuousforecast_session_getAllSessions.html)	 - Get the latest session for the business unit ID
 * [gc workforcemanagement businessunits mainforecast continuousforecast session snapshot](gc_workforcemanagement_businessunits_mainforecast_continuousforecast_session_snapshot.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId}/snapshot

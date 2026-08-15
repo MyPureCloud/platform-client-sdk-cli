@@ -37,7 +37,6 @@
 * [gc conversations barge](gc_conversations_barge.html)	 - /api/v2/conversations/{conversationId}/barge
 * [gc conversations callbacks](gc_conversations_callbacks.html)	 - /api/v2/conversations/callbacks
 * [gc conversations calls](gc_conversations_calls.html)	 - /api/v2/conversations/calls
-* [gc conversations chats](gc_conversations_chats.html)	 - /api/v2/conversations/chats
 * [gc conversations cobrowse](gc_conversations_cobrowse.html)	 - /api/v2/conversations/{conversationId}/cobrowse
 * [gc conversations cobrowsesessions](gc_conversations_cobrowsesessions.html)	 - /api/v2/conversations/cobrowsesessions
 * [gc conversations communications](gc_conversations_communications.html)	 - /api/v2/conversations/{conversationId}/communications

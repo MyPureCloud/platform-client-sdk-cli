@@ -1,10 +1,10 @@
 ## gc speechandtextanalytics topics testphrase jobs create
 
-Create new Speech and Text Analytics publish topics job
+Create new Speech and Text Analytics test topic phrase job
 
 ### Synopsis
 
-Create new Speech and Text Analytics publish topics job
+Create new Speech and Text Analytics test topic phrase job
 
 ```
 gc speechandtextanalytics topics testphrase jobs create [flags]

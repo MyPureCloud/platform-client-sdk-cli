@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
 * [gc taskmanagement workitems schemas coretypes](gc_taskmanagement_workitems_schemas_coretypes.html)	 - /api/v2/taskmanagement/workitems/schemas/coretypes
 * [gc taskmanagement workitems schemas create](gc_taskmanagement_workitems_schemas_create.html)	 - Create a schema
 * [gc taskmanagement workitems schemas delete](gc_taskmanagement_workitems_schemas_delete.html)	 - Delete a schema

@@ -17,7 +17,7 @@ gc users search list [flags]
       --expand strings                     expand
       --filtercondition string             Filter list command output based on a given condition or regular expression
   -h, --help                               help for list
-      --integrationPresenceSource string   integrationPresenceSource Valid values: MicrosoftTeams, ZoomPhone, EightByEight
+      --integrationPresenceSource string   integrationPresenceSource Valid values: MicrosoftTeams, ZoomPhone, EightByEight, RingCentral
       --q64 string                         q64 - REQUIRED
   -s, --stream                             Paginate and stream data as it is being processed leaving page information intact
 ```

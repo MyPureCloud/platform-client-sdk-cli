@@ -47,6 +47,7 @@ gc is a CLI for interacting with Genesys Cloud
 * [gc dataextensions](gc_dataextensions.html)	 - /api/v2/dataextensions
 * [gc dataprivacy](gc_dataprivacy.html)	 - /api/v2/dataprivacy
 * [gc date](gc_date.html)	 - /api/v2/date
+* [gc dependencies](gc_dependencies.html)	 - /api/v2/dependencies
 * [gc diagnostics](gc_diagnostics.html)	 - /api/v2/diagnostics
 * [gc documentation](gc_documentation.html)	 - /api/v2/documentation
 * [gc downloads](gc_downloads.html)	 - /api/v2/downloads
@@ -120,10 +121,8 @@ gc is a CLI for interacting with Genesys Cloud
 * [gc users](gc_users.html)	 - /api/v2/users
 * [gc version](gc_version.html)	 - Print the version number of gc
 * [gc voicemail](gc_voicemail.html)	 - /api/v2/voicemail
-* [gc webchat](gc_webchat.html)	 - /api/v2/webchat
 * [gc webdeployments](gc_webdeployments.html)	 - /api/v2/webdeployments
 * [gc webmessaging](gc_webmessaging.html)	 - /api/v2/webmessaging
-* [gc widgets](gc_widgets.html)	 - /api/v2/widgets
 * [gc workforcemanagement](gc_workforcemanagement.html)	 - /api/v2/workforcemanagement
 
 

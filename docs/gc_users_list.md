@@ -18,7 +18,7 @@ gc users list [flags]
       --filtercondition string                 Filter list command output based on a given condition or regular expression
   -h, --help                                   help for list
       --id strings                             A list of user IDs to fetch by bulk
-      --integrationPresenceSource string       Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100. Valid values: MicrosoftTeams, ZoomPhone, EightByEight
+      --integrationPresenceSource string       Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100. Valid values: MicrosoftTeams, ZoomPhone, EightByEight, RingCentral
       --jabberId strings                       A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
       --pageNumber string                      Page number (default "1")
       --pageSize string                        Page size (default "25")

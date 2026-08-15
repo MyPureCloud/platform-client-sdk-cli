@@ -1,10 +1,10 @@
 ## gc workforcemanagement managementunits timeofflimits delete
 
-Deletes a time off limit object
+Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
 
 ### Synopsis
 
-Deletes a time off limit object
+Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
 
 ```
 gc workforcemanagement managementunits timeofflimits delete [managementUnitId] [timeOffLimitId] [flags]

@@ -1,10 +1,10 @@
 ## gc workforcemanagement managementunits timeoffplans update
 
-Updates a time off plan
+Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
 
 ### Synopsis
 
-Updates a time off plan
+Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
 
 ```
 gc workforcemanagement managementunits timeoffplans update [managementUnitId] [timeOffPlanId] [flags]

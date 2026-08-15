@@ -1,10 +1,10 @@
 ## gc workforcemanagement managementunits timeoffplans list
 
-Gets a list of time off plans
+Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
 
 ### Synopsis
 
-Gets a list of time off plans
+Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
 
 ```
 gc workforcemanagement managementunits timeoffplans list [managementUnitId] [flags]

@@ -31,7 +31,7 @@
 
 * [gc workforcemanagement managementunits](gc_workforcemanagement_managementunits.html)	 - /api/v2/workforcemanagement/managementunits
 * [gc workforcemanagement managementunits timeofflimits create](gc_workforcemanagement_managementunits_timeofflimits_create.html)	 - Creates a new time off limit object under management unit.
-* [gc workforcemanagement managementunits timeofflimits delete](gc_workforcemanagement_managementunits_timeofflimits_delete.html)	 - Deletes a time off limit object
+* [gc workforcemanagement managementunits timeofflimits delete](gc_workforcemanagement_managementunits_timeofflimits_delete.html)	 - Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
 * [gc workforcemanagement managementunits timeofflimits get](gc_workforcemanagement_managementunits_timeofflimits_get.html)	 - Gets a time off limit object
 * [gc workforcemanagement managementunits timeofflimits list](gc_workforcemanagement_managementunits_timeofflimits_list.html)	 - Gets a list of time off limit objects under management unit.
 * [gc workforcemanagement managementunits timeofflimits update](gc_workforcemanagement_managementunits_timeofflimits_update.html)	 - Updates a time off limit object.

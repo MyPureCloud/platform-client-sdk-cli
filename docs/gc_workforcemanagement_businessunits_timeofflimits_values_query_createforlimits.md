@@ -1,10 +1,10 @@
 ## gc workforcemanagement businessunits timeofflimits values query createforlimits
 
-Retrieves time-off limit related values based on a given set of filters.
+Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
 
 ### Synopsis
 
-Retrieves time-off limit related values based on a given set of filters.
+Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
 
 ```
 gc workforcemanagement businessunits timeofflimits values query createforlimits [businessUnitId] [flags]

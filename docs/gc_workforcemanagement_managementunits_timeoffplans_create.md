@@ -1,10 +1,10 @@
 ## gc workforcemanagement managementunits timeoffplans create
 
-Creates a new time off plan
+Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
 
 ### Synopsis
 
-Creates a new time off plan
+Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
 
 ```
 gc workforcemanagement managementunits timeoffplans create [managementUnitId] [flags]

@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc intents](gc_intents.html)	 - /api/v2/intents
+* [gc intents customerintents bulk](gc_intents_customerintents_bulk.html)	 - /api/v2/intents/customerintents/bulk
 * [gc intents customerintents create](gc_intents_customerintents_create.html)	 - Create customer intents
 * [gc intents customerintents delete](gc_intents_customerintents_delete.html)	 - Delete customer intent for customerIntentId
 * [gc intents customerintents get](gc_intents_customerintents_get.html)	 - Get customer intent for customerIntentId

@@ -30,10 +30,10 @@
 ### SEE ALSO
 
 * [gc workforcemanagement managementunits](gc_workforcemanagement_managementunits.html)	 - /api/v2/workforcemanagement/managementunits
-* [gc workforcemanagement managementunits timeoffplans create](gc_workforcemanagement_managementunits_timeoffplans_create.html)	 - Creates a new time off plan
-* [gc workforcemanagement managementunits timeoffplans delete](gc_workforcemanagement_managementunits_timeoffplans_delete.html)	 - Deletes a time off plan
-* [gc workforcemanagement managementunits timeoffplans get](gc_workforcemanagement_managementunits_timeoffplans_get.html)	 - Gets a time off plan
-* [gc workforcemanagement managementunits timeoffplans list](gc_workforcemanagement_managementunits_timeoffplans_list.html)	 - Gets a list of time off plans
-* [gc workforcemanagement managementunits timeoffplans update](gc_workforcemanagement_managementunits_timeoffplans_update.html)	 - Updates a time off plan
+* [gc workforcemanagement managementunits timeoffplans create](gc_workforcemanagement_managementunits_timeoffplans_create.html)	 - Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
+* [gc workforcemanagement managementunits timeoffplans delete](gc_workforcemanagement_managementunits_timeoffplans_delete.html)	 - Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
+* [gc workforcemanagement managementunits timeoffplans get](gc_workforcemanagement_managementunits_timeoffplans_get.html)	 - Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
+* [gc workforcemanagement managementunits timeoffplans list](gc_workforcemanagement_managementunits_timeoffplans_list.html)	 - Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
+* [gc workforcemanagement managementunits timeoffplans update](gc_workforcemanagement_managementunits_timeoffplans_update.html)	 - Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
 
 

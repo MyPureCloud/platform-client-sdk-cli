@@ -1,10 +1,10 @@
 ## gc workforcemanagement managementunits timeoffplans delete
 
-Deletes a time off plan
+Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
 
 ### Synopsis
 
-Deletes a time off plan
+Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
 
 ```
 gc workforcemanagement managementunits timeoffplans delete [managementUnitId] [timeOffPlanId] [flags]

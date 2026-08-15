@@ -18,7 +18,7 @@ gc profile users list [flags]
       --filtercondition string             Filter list command output based on a given condition or regular expression
   -h, --help                               help for list
       --id strings                         id
-      --integrationPresenceSource string   Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. Valid values: MicrosoftTeams, ZoomPhone, EightByEight
+      --integrationPresenceSource string   Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. Valid values: MicrosoftTeams, ZoomPhone, EightByEight, RingCentral
       --jid strings                        jid
       --pageNumber string                  Page number (default "1")
       --pageSize string                    Page size (default "25")

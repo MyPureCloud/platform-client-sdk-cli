@@ -30,7 +30,7 @@
 ### SEE ALSO
 
 * [gc speechandtextanalytics topics testphrase](gc_speechandtextanalytics_topics_testphrase.html)	 - /api/v2/speechandtextanalytics/topics/testphrase
-* [gc speechandtextanalytics topics testphrase jobs create](gc_speechandtextanalytics_topics_testphrase_jobs_create.html)	 - Create new Speech and Text Analytics publish topics job
+* [gc speechandtextanalytics topics testphrase jobs create](gc_speechandtextanalytics_topics_testphrase_jobs_create.html)	 - Create new Speech and Text Analytics test topic phrase job
 * [gc speechandtextanalytics topics testphrase jobs get](gc_speechandtextanalytics_topics_testphrase_jobs_get.html)	 - Get a Speech and Text Analytics test topics phrase job by id
 
 

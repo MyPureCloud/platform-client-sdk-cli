@@ -25,14 +25,14 @@ type Weekly struct {
 
 
     // DownloadResult - Result will always come via downloadUrls; however the schema is included for documentation
-    DownloadResult []Timeseries `json:"downloadResult"`
+    DownloadResult []Continuousforecasttimeseries `json:"downloadResult"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Weekly) String() string {
     
-     o.DownloadResult = []Timeseries{{}} 
+     o.DownloadResult = []Continuousforecasttimeseries{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -52,7 +52,7 @@ func (u *Weekly) MarshalJSON() ([]byte, error) {
         
         DownloadUrl string `json:"downloadUrl"`
         
-        DownloadResult []Timeseries `json:"downloadResult"`
+        DownloadResult []Continuousforecasttimeseries `json:"downloadResult"`
         *Alias
     }{
 
@@ -60,7 +60,7 @@ func (u *Weekly) MarshalJSON() ([]byte, error) {
 
 
         
-        DownloadResult: []Timeseries{{}},
+        DownloadResult: []Continuousforecasttimeseries{{}},
         
 
         Alias: (*Alias)(u),

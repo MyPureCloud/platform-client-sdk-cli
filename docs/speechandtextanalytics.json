@@ -159,6 +159,16 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/speechandtextanalytics/topics/generatedphrases/jobs/{jobId}",
+      "description": "Get a Speech & Text Analytics GenAI phrases job by id"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/speechandtextanalytics/topics/generatedphrases/jobs",
+      "description": "Create new Speech & Text Analytics GenAI topic phrases generation job"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/speechandtextanalytics/programs/general/jobs/{jobId}",
       "description": "Get a Speech & Text Analytics general program job by id"
     },
@@ -220,7 +230,7 @@
     {
       "name": "create",
       "path": "/api/v2/speechandtextanalytics/topics/testphrase/jobs",
-      "description": "Create new Speech & Text Analytics publish topics job"
+      "description": "Create new Speech & Text Analytics test topic phrase job"
     },
     {
       "name": "get",

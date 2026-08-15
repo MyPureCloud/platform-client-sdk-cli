@@ -48,6 +48,9 @@ type StepDud struct {
     WorkitemActivity Workitemactivityreference `json:"workitemActivity"`
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -103,6 +106,10 @@ type Step struct {
     
 
 
+    // FailureReason - The reason the Step failed, if applicable.
+    FailureReason Failurereason `json:"failureReason"`
+
+
     
 
 
@@ -113,6 +120,7 @@ type Step struct {
 
 // String returns a JSON representation of the model
 func (o *Step) String() string {
+    
     
     
     
@@ -161,9 +169,14 @@ func (u *Step) MarshalJSON() ([]byte, error) {
         
         Stage Stagereference `json:"stage"`
         
+        FailureReason Failurereason `json:"failureReason"`
+        
         VarCase Casereference `json:"case"`
         *Alias
     }{
+
+        
+
 
         
 

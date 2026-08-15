@@ -22,9 +22,6 @@ type ContinuousforecastgetsessionresponseDud struct {
 
     
 
-
-    
-
 }
 
 // Continuousforecastgetsessionresponse
@@ -41,10 +38,6 @@ type Continuousforecastgetsessionresponse struct {
     State string `json:"state"`
 
 
-    // ForecastDataState - State of the forecast data
-    ForecastDataState string `json:"forecastDataState"`
-
-
     // ErrorCode - Failed session error code
     ErrorCode string `json:"errorCode"`
 
@@ -52,7 +45,6 @@ type Continuousforecastgetsessionresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Continuousforecastgetsessionresponse) String() string {
-    
     
     
     
@@ -80,14 +72,9 @@ func (u *Continuousforecastgetsessionresponse) MarshalJSON() ([]byte, error) {
         
         State string `json:"state"`
         
-        ForecastDataState string `json:"forecastDataState"`
-        
         ErrorCode string `json:"errorCode"`
         *Alias
     }{
-
-        
-
 
         
 

@@ -131,8 +131,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create [managementUnitId]",
-	Short: "Creates a new time off plan",
-	Long:  "Creates a new time off plan",
+	Short: "Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead",
+	Long:  "Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead",
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -217,8 +217,8 @@ var createCmd = &cobra.Command{
 }
 var deleteCmd = &cobra.Command{
 	Use:   "delete [managementUnitId] [timeOffPlanId]",
-	Short: "Deletes a time off plan",
-	Long:  "Deletes a time off plan",
+	Short: "Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead",
+	Long:  "Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead",
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", "timeOffPlanId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -302,8 +302,8 @@ var deleteCmd = &cobra.Command{
 }
 var getCmd = &cobra.Command{
 	Use:   "get [managementUnitId] [timeOffPlanId]",
-	Short: "Gets a time off plan",
-	Long:  "Gets a time off plan",
+	Short: "Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead",
+	Long:  "Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead",
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", "timeOffPlanId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -387,8 +387,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list [managementUnitId]",
-	Short: "Gets a list of time off plans",
-	Long:  "Gets a list of time off plans",
+	Short: "Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead",
+	Long:  "Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead",
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -470,8 +470,8 @@ var listCmd = &cobra.Command{
 }
 var updateCmd = &cobra.Command{
 	Use:   "update [managementUnitId] [timeOffPlanId]",
-	Short: "Updates a time off plan",
-	Long:  "Updates a time off plan",
+	Short: "Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead",
+	Long:  "Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead",
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", "timeOffPlanId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

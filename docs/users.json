@@ -3,11 +3,6 @@
   "description": "/api/v2/users",
   "resources": [
     {
-      "name": "list",
-      "path": "/api/v2/users/me/verifiers",
-      "description": "Get a list of my verifiers"
-    },
-    {
       "name": "create",
       "path": "/api/v2/users/me/verifiers/totp",
       "description": "Add a new TOTP verifier"
@@ -39,8 +34,8 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/users/{userId}/verifiers",
-      "description": "Get a list of verifiers"
+      "path": "/api/v2/users/me/verifiers",
+      "description": "Get a list of my verifiers"
     },
     {
       "name": "update",
@@ -51,6 +46,11 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/verifiers/{verifierId}",
       "description": "Delete a verifier"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/verifiers",
+      "description": "Get a list of verifiers"
     },
     {
       "name": "get",
@@ -404,16 +404,6 @@
     },
     {
       "name": "update",
-      "path": "/api/v2/users/{userId}/station/associatedstation/{stationId}",
-      "description": "Set associated station"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/users/{userId}/station/associatedstation",
-      "description": "Clear associated station"
-    },
-    {
-      "name": "update",
       "path": "/api/v2/users/{userId}/station/defaultstation/{stationId}",
       "description": "Set default station"
     },
@@ -421,6 +411,16 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/station/defaultstation",
       "description": "Clear default station"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/station/associatedstation/{stationId}",
+      "description": "Set associated station"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/station/associatedstation",
+      "description": "Clear associated station"
     },
     {
       "name": "list",
@@ -484,16 +484,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/users/{userId}/customattributes/bulk",
-      "description": "Get multiple custom attributes records by schema ids"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/users/{userId}/customattributes/bulk",
-      "description": "Update multiple custom attributes records by amending the data with only the provided fields."
-    },
-    {
-      "name": "get",
       "path": "/api/v2/users/{userId}/customattributes/{schemaId}",
       "description": "Get custom attributes by schema id"
     },
@@ -501,6 +491,16 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/customattributes/{schemaId}",
       "description": "Delete a custom attributes record."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/customattributes/bulk",
+      "description": "Get multiple custom attributes records by schema ids"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/customattributes/bulk",
+      "description": "Update multiple custom attributes records by amending the data with only the provided fields."
     },
     {
       "name": "get",
@@ -543,11 +543,6 @@
       "description": "Create a schema"
     },
     {
-      "name": "get",
-      "path": "/api/v2/users/development/activities/{activityId}",
-      "description": "Get a Development Activity"
-    },
-    {
       "name": "list",
       "path": "/api/v2/users/development/activities",
       "description": "Get list of Development Activities"
@@ -558,14 +553,14 @@
       "description": "Get list of Development Activities for current user"
     },
     {
+      "name": "get",
+      "path": "/api/v2/users/development/activities/{activityId}",
+      "description": "Get a Development Activity"
+    },
+    {
       "name": "create",
       "path": "/api/v2/users/development/activities/aggregates/query",
       "description": "Retrieve aggregated development activity data"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/users/rules/{ruleId}/dependents",
-      "description": "Get dependents for a users rule"
     },
     {
       "name": "get",
@@ -574,13 +569,13 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/users/rules",
-      "description": "Get the list of users rules"
+      "path": "/api/v2/users/rules/{ruleId}/dependents",
+      "description": "Get dependents for a users rule"
     },
     {
-      "name": "create",
-      "path": "/api/v2/users/rules",
-      "description": "Create a new rule"
+      "name": "get",
+      "path": "/api/v2/users/rules/settings/{ruleType}",
+      "description": "Get the settings for a specific users rule type"
     },
     {
       "name": "get",
@@ -598,9 +593,14 @@
       "description": "Update an existing users rule"
     },
     {
-      "name": "get",
-      "path": "/api/v2/users/rules/settings/{ruleType}",
-      "description": "Get the settings for a specific users rule type"
+      "name": "list",
+      "path": "/api/v2/users/rules",
+      "description": "Get the list of users rules"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/rules",
+      "description": "Create a new rule"
     },
     {
       "name": "create",

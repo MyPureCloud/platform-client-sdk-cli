@@ -79,8 +79,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Create new Speech and Text Analytics publish topics job",
-	Long:  "Create new Speech and Text Analytics publish topics job",
+	Short: "Create new Speech and Text Analytics test topic phrase job",
+	Long:  "Create new Speech and Text Analytics test topic phrase job",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

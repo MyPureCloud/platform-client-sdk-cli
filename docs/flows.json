@@ -204,11 +204,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/flows/actions/deactivate",
-      "description": "Deactivate flow"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/flows/actions/checkin",
       "description": "Check-in flow"
     },
@@ -216,6 +211,11 @@
       "name": "create",
       "path": "/api/v2/flows/actions/checkout",
       "description": "Check-out flow"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/flows/actions/deactivate",
+      "description": "Deactivate flow"
     },
     {
       "name": "create",

@@ -43,9 +43,6 @@ type PolicyactionsDud struct {
 
     
 
-
-    
-
 }
 
 // Policyactions
@@ -90,10 +87,6 @@ type Policyactions struct {
     InitiateScreenRecording Initiatescreenrecording `json:"initiateScreenRecording"`
 
 
-    // MediaTranscriptions - Deprecated. The Voci and Call Journey transcription integrations are no longer supported.
-    MediaTranscriptions []Mediatranscription `json:"mediaTranscriptions"`
-
-
     // IntegrationExport - Policy action for exporting recordings using an integration to 3rd party s3.
     IntegrationExport Integrationexport `json:"integrationExport"`
 
@@ -111,7 +104,6 @@ func (o *Policyactions) String() string {
      o.AssignSurveys = []Surveyassignment{{}} 
     
     
-     o.MediaTranscriptions = []Mediatranscription{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -149,8 +141,6 @@ func (u *Policyactions) MarshalJSON() ([]byte, error) {
         RetentionDuration Retentionduration `json:"retentionDuration"`
         
         InitiateScreenRecording Initiatescreenrecording `json:"initiateScreenRecording"`
-        
-        MediaTranscriptions []Mediatranscription `json:"mediaTranscriptions"`
         
         IntegrationExport Integrationexport `json:"integrationExport"`
         *Alias
@@ -193,11 +183,6 @@ func (u *Policyactions) MarshalJSON() ([]byte, error) {
         
 
 
-        
-
-
-        
-        MediaTranscriptions: []Mediatranscription{{}},
         
 
 

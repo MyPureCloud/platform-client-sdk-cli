@@ -72,8 +72,14 @@ func Cmdrecordings_deletionprotection() *cobra.Command {
 	
 	
 	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PUT", `{
-  "description" : "Operation was successful.",
-  "content" : { }
+  "description" : "Operation completed. Any conversations that could not be updated are listed in failedUpdates.",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ManageDeleteProtectionResult"
+      }
+    }
+  }
 }`)
 	recordings_deletionprotectionCmd.AddCommand(updateCmd)
 	return recordings_deletionprotectionCmd

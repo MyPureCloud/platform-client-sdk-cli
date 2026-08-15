@@ -22,6 +22,9 @@ type JourneyviewchartdisplayattributesDud struct {
 
     
 
+
+    
+
 }
 
 // Journeyviewchartdisplayattributes - Display attributes for the chart, such as type, labels and legends
@@ -38,6 +41,10 @@ type Journeyviewchartdisplayattributes struct {
     MetricsTitle string `json:"metricsTitle"`
 
 
+    // SecondaryMetricsTitle - A title for the metrics on secondary axis
+    SecondaryMetricsTitle string `json:"secondaryMetricsTitle"`
+
+
     // ShowLegend - Whether to show a legend
     ShowLegend bool `json:"showLegend"`
 
@@ -45,6 +52,7 @@ type Journeyviewchartdisplayattributes struct {
 
 // String returns a JSON representation of the model
 func (o *Journeyviewchartdisplayattributes) String() string {
+    
     
     
     
@@ -72,9 +80,14 @@ func (u *Journeyviewchartdisplayattributes) MarshalJSON() ([]byte, error) {
         
         MetricsTitle string `json:"metricsTitle"`
         
+        SecondaryMetricsTitle string `json:"secondaryMetricsTitle"`
+        
         ShowLegend bool `json:"showLegend"`
         *Alias
     }{
+
+        
+
 
         
 

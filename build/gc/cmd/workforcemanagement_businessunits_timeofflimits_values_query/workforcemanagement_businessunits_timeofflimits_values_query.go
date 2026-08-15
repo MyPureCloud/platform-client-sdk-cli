@@ -177,8 +177,8 @@ var createCmd = &cobra.Command{
 }
 var createforlimitsCmd = &cobra.Command{
 	Use:   "createforlimits [businessUnitId]",
-	Short: "Retrieves time-off limit related values based on a given set of filters.",
-	Long:  "Retrieves time-off limit related values based on a given set of filters.",
+	Short: "Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead",
+	Long:  "Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead",
 	Args:  utils.DetermineArgs([]string{ "businessUnitId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

@@ -14,13 +14,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/events/conversations",
-      "description": "Publish Conversation Batch Events"
+      "path": "/api/v2/events/routing/customkpiattributions",
+      "description": "Publish Predictive Routing Custom Kpi Attribution Batch Events"
     },
     {
       "name": "create",
-      "path": "/api/v2/events/routing/customkpiattributions",
-      "description": "Publish Predictive Routing Custom Kpi Attribution Batch Events"
+      "path": "/api/v2/events/conversations",
+      "description": "Publish Conversation Batch Events"
     }
   ]
 }

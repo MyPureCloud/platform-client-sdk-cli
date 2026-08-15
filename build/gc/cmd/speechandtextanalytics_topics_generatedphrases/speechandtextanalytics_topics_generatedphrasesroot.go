@@ -1,0 +1,12 @@
+package speechandtextanalytics_topics_generatedphrases
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/speechandtextanalytics_topics_generatedphrases_jobs"
+)
+
+func init() {
+	speechandtextanalytics_topics_generatedphrasesCmd.AddCommand(speechandtextanalytics_topics_generatedphrases_jobs.Cmdspeechandtextanalytics_topics_generatedphrases_jobs())
+	speechandtextanalytics_topics_generatedphrasesCmd.Short = utils.GenerateCustomDescription(speechandtextanalytics_topics_generatedphrasesCmd.Short, speechandtextanalytics_topics_generatedphrases_jobs.Description, )
+	speechandtextanalytics_topics_generatedphrasesCmd.Long = speechandtextanalytics_topics_generatedphrasesCmd.Short
+}

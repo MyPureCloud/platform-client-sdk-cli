@@ -20,11 +20,11 @@ type UpdatetimeofflimitrequestDud struct {
 
 // Updatetimeofflimitrequest
 type Updatetimeofflimitrequest struct { 
-    // DefaultLimitMinutes - The default time off limit value in minutes per granularity
+    // DefaultLimitMinutes - Deprecated. The default time off limit value in minutes per granularity
     DefaultLimitMinutes int `json:"defaultLimitMinutes"`
 
 
-    // Metadata - Version metadata for the time off limit
+    // Metadata - Deprecated. Version metadata for the time off limit
     Metadata Wfmversionedentitymetadata `json:"metadata"`
 
 }

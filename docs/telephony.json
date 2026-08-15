@@ -38,11 +38,6 @@
       "description": "Updates the agent's own greetings."
     },
     {
-      "name": "create",
-      "path": "/api/v2/telephony/numbers/routing/all",
-      "description": "Re-route all numbers on an organization"
-    },
-    {
       "name": "list",
       "path": "/api/v2/telephony/numbers/routing",
       "description": "Get Number Routings by organizationId"
@@ -51,6 +46,11 @@
       "name": "create",
       "path": "/api/v2/telephony/numbers/routing",
       "description": "Update the routing of numbers for one or multiple organizations"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/numbers/routing/all",
+      "description": "Re-route all numbers on an organization"
     },
     {
       "name": "create",

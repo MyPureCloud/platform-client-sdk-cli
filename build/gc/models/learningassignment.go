@@ -18,6 +18,9 @@ type LearningassignmentDud struct {
     
 
 
+    DateCompleted time.Time `json:"dateCompleted"`
+
+
     CreatedBy Userreference `json:"createdBy"`
 
 
@@ -145,6 +148,9 @@ type Learningassignment struct {
     
 
 
+    
+
+
     // State - The Learning Assignment state
     State string `json:"state"`
 
@@ -218,6 +224,9 @@ func (u *Learningassignment) MarshalJSON() ([]byte, error) {
         LengthInMinutes int `json:"lengthInMinutes"`
         *Alias
     }{
+
+        
+
 
         
 

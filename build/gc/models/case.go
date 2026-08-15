@@ -72,6 +72,9 @@ type CaseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -157,12 +160,17 @@ type Case struct {
     TtlSeconds int `json:"ttlSeconds"`
 
 
+    // FailureReason - The reason the Case failed, if applicable.
+    FailureReason Failurereason `json:"failureReason"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Case) String() string {
+    
     
     
     
@@ -236,8 +244,13 @@ func (u *Case) MarshalJSON() ([]byte, error) {
         CreationStatus string `json:"creationStatus"`
         
         TtlSeconds int `json:"ttlSeconds"`
+        
+        FailureReason Failurereason `json:"failureReason"`
         *Alias
     }{
+
+        
+
 
         
 

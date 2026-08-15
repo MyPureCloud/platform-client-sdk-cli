@@ -83,16 +83,6 @@
       "description": "Get users for learning module rule"
     },
     {
-      "name": "list",
-      "path": "/api/v2/learning/modules",
-      "description": "Get all learning modules of an organization"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/learning/modules",
-      "description": "Create a new learning module"
-    },
-    {
       "name": "get",
       "path": "/api/v2/learning/modules/{moduleId}",
       "description": "Get a learning module"
@@ -133,6 +123,16 @@
       "description": "Get a specific Learning Module cover art using ID"
     },
     {
+      "name": "list",
+      "path": "/api/v2/learning/modules",
+      "description": "Get all learning modules of an organization"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/modules",
+      "description": "Create a new learning module"
+    },
+    {
       "name": "create",
       "path": "/api/v2/learning/modules/{moduleId}/publish",
       "description": "Publish a Learning module"
@@ -163,14 +163,14 @@
       "description": "Update a learning module rule"
     },
     {
-      "name": "get",
-      "path": "/api/v2/learning/scheduleslots/jobs/{jobId}",
-      "description": "Retrieve the status of the job for the slots where a learning activity can be scheduled."
-    },
-    {
       "name": "create",
       "path": "/api/v2/learning/scheduleslots/jobs",
       "description": "Start job to retrieve slots where a learning activity can be scheduled."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/learning/scheduleslots/jobs/{jobId}",
+      "description": "Retrieve the status of the job for the slots where a learning activity can be scheduled."
     },
     {
       "name": "create",

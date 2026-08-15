@@ -37,9 +37,6 @@ type CrossplatformpolicyactionsDud struct {
 
     
 
-
-    
-
 }
 
 // Crossplatformpolicyactions
@@ -76,10 +73,6 @@ type Crossplatformpolicyactions struct {
     RetentionDuration Retentionduration `json:"retentionDuration"`
 
 
-    // MediaTranscriptions
-    MediaTranscriptions []Mediatranscription `json:"mediaTranscriptions"`
-
-
     // IntegrationExport - Policy action for exporting recordings using an integration to 3rd party s3.
     IntegrationExport Integrationexport `json:"integrationExport"`
 
@@ -95,7 +88,6 @@ func (o *Crossplatformpolicyactions) String() string {
      o.AssignMeteredAssignmentByAgent = []Meteredassignmentbyagent{{}} 
      o.AssignCalibrations = []Calibrationassignment{{}} 
     
-     o.MediaTranscriptions = []Mediatranscription{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -130,8 +122,6 @@ func (u *Crossplatformpolicyactions) MarshalJSON() ([]byte, error) {
         
         RetentionDuration Retentionduration `json:"retentionDuration"`
         
-        MediaTranscriptions []Mediatranscription `json:"mediaTranscriptions"`
-        
         IntegrationExport Integrationexport `json:"integrationExport"`
         *Alias
     }{
@@ -165,11 +155,6 @@ func (u *Crossplatformpolicyactions) MarshalJSON() ([]byte, error) {
         
 
 
-        
-
-
-        
-        MediaTranscriptions: []Mediatranscription{{}},
         
 
 

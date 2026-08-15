@@ -42,6 +42,9 @@ type StageDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 
@@ -90,6 +93,10 @@ type Stage struct {
     Status string `json:"status"`
 
 
+    // FailureReason - The reason the Stage failed, if applicable.
+    FailureReason Failurereason `json:"failureReason"`
+
+
     
 
 
@@ -100,6 +107,7 @@ type Stage struct {
 
 // String returns a JSON representation of the model
 func (o *Stage) String() string {
+    
     
     
     
@@ -145,9 +153,14 @@ func (u *Stage) MarshalJSON() ([]byte, error) {
         
         Status string `json:"status"`
         
+        FailureReason Failurereason `json:"failureReason"`
+        
         VarCase Casereference `json:"case"`
         *Alias
     }{
+
+        
+
 
         
 

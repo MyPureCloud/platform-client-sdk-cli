@@ -34,6 +34,11 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results",
+      "description": "Get bulk terminate job results."
+    },
+    {
+      "name": "get",
       "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}",
       "description": "Get the bulk job associated with the job id."
     },
@@ -46,11 +51,6 @@
       "name": "update",
       "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}",
       "description": "Update workitem bulk terminate job."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results",
-      "description": "Get bulk terminate job results."
     },
     {
       "name": "create",
@@ -108,14 +108,14 @@
       "description": "Query for workitems"
     },
     {
-      "name": "create",
-      "path": "/api/v2/taskmanagement/workitems/query/jobs",
-      "description": "Create a workitem query job"
-    },
-    {
       "name": "get",
       "path": "/api/v2/taskmanagement/workitems/query/jobs/{jobId}",
       "description": "Get the workitem query job associated with the job id."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/query/jobs",
+      "description": "Create a workitem query job"
     },
     {
       "name": "list",
@@ -223,6 +223,11 @@
       "description": "Create a schema"
     },
     {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups",
+      "description": "Add/Remove a wrapup code for the current user in a workitem."
+    },
+    {
       "name": "list",
       "path": "/api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups",
       "description": "Get all wrapup codes added for the given user for a workitem."
@@ -231,11 +236,6 @@
       "name": "update",
       "path": "/api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups",
       "description": "Add/Remove a wrapup code for a given user in a workitem."
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups",
-      "description": "Add/Remove a wrapup code for the current user in a workitem."
     },
     {
       "name": "list",
@@ -273,21 +273,6 @@
       "description": "Query for worktypes"
     },
     {
-      "name": "get",
-      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}",
-      "description": "Get a worktype"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}",
-      "description": "Delete a worktype"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}",
-      "description": "Update the attributes of a worktype"
-    },
-    {
       "name": "list",
       "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/versions",
       "description": "Get all versions of a worktype"
@@ -301,6 +286,21 @@
       "name": "list",
       "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/history",
       "description": "Get a listing of a worktype's attribute change history"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}",
+      "description": "Get a worktype"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}",
+      "description": "Delete a worktype"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}",
+      "description": "Update the attributes of a worktype"
     },
     {
       "name": "create",

@@ -34,7 +34,7 @@ type Journeyviewelementfilterpredicate struct {
     Values []string `json:"values"`
 
 
-    // Operator - Optional operator, default is Matches. Valid values: Matches
+    // Operator - Optional operator, default is Matches. Valid values: Matches, NotMatches
     Operator string `json:"operator"`
 
 

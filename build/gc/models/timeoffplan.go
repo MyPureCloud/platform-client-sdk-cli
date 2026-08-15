@@ -48,35 +48,35 @@ type Timeoffplan struct {
     Id string `json:"id"`
 
 
-    // Name - The name of this time off plan.
+    // Name - Deprecated. The name of this time off plan.
     Name string `json:"name"`
 
 
-    // ActivityCodeIds - The set of activity code IDs associated with this time off plan.
+    // ActivityCodeIds - Deprecated. The set of activity code IDs associated with this time off plan.
     ActivityCodeIds []string `json:"activityCodeIds"`
 
 
-    // TimeOffLimits - The set of time off limit IDs associated with this time off plan.
+    // TimeOffLimits - Deprecated. The set of time off limit IDs associated with this time off plan.
     TimeOffLimits []Timeofflimitreference `json:"timeOffLimits"`
 
 
-    // AutoApprovalRule - Auto approval rule for this time off plan
+    // AutoApprovalRule - Deprecated. Auto approval rule for this time off plan
     AutoApprovalRule string `json:"autoApprovalRule"`
 
 
-    // DaysBeforeStartToExpireFromWaitlist - The number of days before the time off request start date for when the request will be expired from the waitlist.
+    // DaysBeforeStartToExpireFromWaitlist - Deprecated. The number of days before the time off request start date for when the request will be expired from the waitlist.
     DaysBeforeStartToExpireFromWaitlist int `json:"daysBeforeStartToExpireFromWaitlist"`
 
 
-    // HrisTimeOffType - Time off type, if this time off plan is associated with the integration.
+    // HrisTimeOffType - Deprecated. Time off type, if this time off plan is associated with the integration.
     HrisTimeOffType Hristimeofftype `json:"hrisTimeOffType"`
 
 
-    // Active - Whether this time off plan is currently being used by agents.
+    // Active - Deprecated. Whether this time off plan is currently being used by agents.
     Active bool `json:"active"`
 
 
-    // Metadata - Version metadata for the time off plan.
+    // Metadata - Deprecated. Version metadata for the time off plan.
     Metadata Wfmversionedentitymetadata `json:"metadata"`
 
 

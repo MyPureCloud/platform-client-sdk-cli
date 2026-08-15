@@ -217,8 +217,8 @@ var createCmd = &cobra.Command{
 }
 var deleteCmd = &cobra.Command{
 	Use:   "delete [managementUnitId] [timeOffLimitId]",
-	Short: "Deletes a time off limit object",
-	Long:  "Deletes a time off limit object",
+	Short: "Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead",
+	Long:  "Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead",
 	Args:  utils.DetermineArgs([]string{ "managementUnitId", "timeOffLimitId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

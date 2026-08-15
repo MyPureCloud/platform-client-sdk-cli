@@ -69,6 +69,11 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/organizations/limits/docs",
+      "description": "Get limit documentation"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/organizations/limits/docs/freetrial",
       "description": "Get free trial limit documentation"
     },
@@ -86,11 +91,6 @@
       "name": "list",
       "path": "/api/v2/organizations/limits/namespaces/{namespaceName}/defaults",
       "description": "Get the default limits in a namespace for an organization"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/organizations/limits/docs",
-      "description": "Get limit documentation"
     }
   ]
 }

@@ -81,6 +81,11 @@
       "name": "list",
       "path": "/api/v2/intents/sourceintents",
       "description": "Get all mapped source intents by type. If no type selected default is type Segment"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/intents/customerintents/bulk/retrieve",
+      "description": "Get customer intents by IDs"
     }
   ]
 }

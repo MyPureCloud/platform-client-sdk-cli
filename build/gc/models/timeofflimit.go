@@ -33,15 +33,15 @@ type Timeofflimit struct {
     Id string `json:"id"`
 
 
-    // Granularity - Granularity choice for the time off limit
+    // Granularity - Deprecated. Granularity choice for the time off limit
     Granularity string `json:"granularity"`
 
 
-    // DefaultLimitMinutes - The default time off limit value in minutes per granularity interval
+    // DefaultLimitMinutes - Deprecated. The default time off limit value in minutes per granularity interval
     DefaultLimitMinutes int `json:"defaultLimitMinutes"`
 
 
-    // Metadata - Version metadata for the time off limit
+    // Metadata - Deprecated. Version metadata for the time off limit
     Metadata Wfmversionedentitymetadata `json:"metadata"`
 
 

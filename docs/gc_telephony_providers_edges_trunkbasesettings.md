@@ -35,6 +35,8 @@
 * [gc telephony providers edges trunkbasesettings delete](gc_telephony_providers_edges_trunkbasesettings_delete.html)	 - Delete a Trunk Base Settings object by ID
 * [gc telephony providers edges trunkbasesettings get](gc_telephony_providers_edges_trunkbasesettings_get.html)	 - Get a Trunk Base Settings object by ID
 * [gc telephony providers edges trunkbasesettings list](gc_telephony_providers_edges_trunkbasesettings_list.html)	 - Get Trunk Base Settings listing
+* [gc telephony providers edges trunkbasesettings search](gc_telephony_providers_edges_trunkbasesettings_search.html)	 - /api/v2/telephony/providers/edges/trunkbasesettings/search
+* [gc telephony providers edges trunkbasesettings site](gc_telephony_providers_edges_trunkbasesettings_site.html)	 - /api/v2/telephony/providers/edges/trunkbasesettings/site
 * [gc telephony providers edges trunkbasesettings template](gc_telephony_providers_edges_trunkbasesettings_template.html)	 - /api/v2/telephony/providers/edges/trunkbasesettings/template
 * [gc telephony providers edges trunkbasesettings update](gc_telephony_providers_edges_trunkbasesettings_update.html)	 - Update a Trunk Base Settings object by ID
 

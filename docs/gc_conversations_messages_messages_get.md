@@ -13,8 +13,7 @@ gc conversations messages messages get [conversationId] [messageId] [flags]
 ### Options
 
 ```
-  -h, --help                          help for get
-      --useNormalizedMessage string   If true, response removes deprecated fields (textBody, media) Valid values: true, false
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands

@@ -16,8 +16,10 @@ gc businessrules decisiontables versions list [tableId] [flags]
       --after string             The cursor that points to the end of the set of entities that has been returned.
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --filtercondition string   Filter list command output based on a given condition or regular expression
+      --hasSnapshot string       When true, returns only versions that have snapshot metadata. Valid values: true, false
   -h, --help                     help for list
       --pageSize string          Number of entities to return. Maximum of 100.
+      --status strings           Filter by version status. Repeatable. Valid values: Draft, Published, Error, Preparing, Superseded
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 

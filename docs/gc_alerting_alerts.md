@@ -34,7 +34,7 @@
 * [gc alerting alerts bulk](gc_alerting_alerts_bulk.html)	 - /api/v2/alerting/alerts/bulk
 * [gc alerting alerts delete](gc_alerting_alerts_delete.html)	 - Delete an alert
 * [gc alerting alerts get](gc_alerting_alerts_get.html)	 - Get an alert
-* [gc alerting alerts patch](gc_alerting_alerts_patch.html)	 - Allows an entity to mute/snooze an alert or update the unread status of the alert.
+* [gc alerting alerts patch](gc_alerting_alerts_patch.html)	 - Allows an entity to mute/snooze an alert, update the unread status of the alert, or close an alert.
 * [gc alerting alerts query](gc_alerting_alerts_query.html)	 - /api/v2/alerting/alerts/query
 * [gc alerting alerts update](gc_alerting_alerts_update.html)	 - Update an alert read status
 

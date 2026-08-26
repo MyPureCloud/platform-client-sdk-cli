@@ -51,6 +51,7 @@
 * [gc telephony providers edges logs](gc_telephony_providers_edges_logs.html)	 - /api/v2/telephony/providers/edges/{edgeId}/logs
 * [gc telephony providers edges mediastatistics](gc_telephony_providers_edges_mediastatistics.html)	 - /api/v2/telephony/providers/edges/mediastatistics
 * [gc telephony providers edges metrics](gc_telephony_providers_edges_metrics.html)	 - /api/v2/telephony/providers/edges/{edgeId}/metrics /api/v2/telephony/providers/edges/metrics
+* [gc telephony providers edges offlineconfiguration](gc_telephony_providers_edges_offlineconfiguration.html)	 - /api/v2/telephony/providers/edges/{edgeId}/offlineconfiguration
 * [gc telephony providers edges outboundroutes](gc_telephony_providers_edges_outboundroutes.html)	 - /api/v2/telephony/providers/edges/outboundroutes
 * [gc telephony providers edges phonebasesettings](gc_telephony_providers_edges_phonebasesettings.html)	 - /api/v2/telephony/providers/edges/phonebasesettings
 * [gc telephony providers edges phones](gc_telephony_providers_edges_phones.html)	 - /api/v2/telephony/providers/edges/phones

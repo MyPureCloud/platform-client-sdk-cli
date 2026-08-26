@@ -37,7 +37,9 @@
 * [gc businessrules decisiontables versions get](gc_businessrules_decisiontables_versions_get.html)	 - Get a decision table version
 * [gc businessrules decisiontables versions list](gc_businessrules_decisiontables_versions_list.html)	 - Get a list of decision table versions
 * [gc businessrules decisiontables versions publish](gc_businessrules_decisiontables_versions_publish.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/publish
+* [gc businessrules decisiontables versions rollback](gc_businessrules_decisiontables_versions_rollback.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rollback
 * [gc businessrules decisiontables versions rows](gc_businessrules_decisiontables_versions_rows.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows
+* [gc businessrules decisiontables versions snapshot](gc_businessrules_decisiontables_versions_snapshot.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/snapshot
 * [gc businessrules decisiontables versions sync](gc_businessrules_decisiontables_versions_sync.html)	 - /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/sync
 * [gc businessrules decisiontables versions update](gc_businessrules_decisiontables_versions_update.html)	 - Update a decision table version
 

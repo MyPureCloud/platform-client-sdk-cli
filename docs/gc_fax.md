@@ -32,6 +32,7 @@
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
 * [gc fax documents](gc_fax_documents.html)	 - /api/v2/fax/documents
 * [gc fax settings](gc_fax_settings.html)	 - /api/v2/fax/settings
+* [gc fax status](gc_fax_status.html)	 - /api/v2/fax/{faxId}/status
 * [gc fax summary](gc_fax_summary.html)	 - /api/v2/fax/summary
 
 

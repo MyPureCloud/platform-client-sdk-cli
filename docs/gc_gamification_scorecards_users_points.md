@@ -1,10 +1,10 @@
 ## gc gamification scorecards users points
 
-/api/v2/gamification/scorecards/users/points /api/v2/gamification/scorecards/users/{userId}/points
+/api/v2/gamification/scorecards/users/{userId}/points /api/v2/gamification/scorecards/users/points
 
 ### Synopsis
 
-/api/v2/gamification/scorecards/users/points /api/v2/gamification/scorecards/users/{userId}/points
+/api/v2/gamification/scorecards/users/{userId}/points /api/v2/gamification/scorecards/users/points
 
 ### Options
 

@@ -1,10 +1,10 @@
 ## gc alerting alerts patch
 
-Allows an entity to mute/snooze an alert or update the unread status of the alert.
+Allows an entity to mute/snooze an alert, update the unread status of the alert, or close an alert.
 
 ### Synopsis
 
-Allows an entity to mute/snooze an alert or update the unread status of the alert.
+Allows an entity to mute/snooze an alert, update the unread status of the alert, or close an alert.
 
 ```
 gc alerting alerts patch [alertId] [flags]

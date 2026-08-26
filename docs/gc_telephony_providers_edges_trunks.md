@@ -34,5 +34,6 @@
 * [gc telephony providers edges trunks list](gc_telephony_providers_edges_trunks_list.html)	 - Get the list of available trunks.
 * [gc telephony providers edges trunks listedgetrunks](gc_telephony_providers_edges_trunks_listedgetrunks.html)	 - Get the list of available trunks for the given Edge.
 * [gc telephony providers edges trunks metrics](gc_telephony_providers_edges_trunks_metrics.html)	 - /api/v2/telephony/providers/edges/trunks/{trunkId}/metrics /api/v2/telephony/providers/edges/trunks/metrics
+* [gc telephony providers edges trunks search](gc_telephony_providers_edges_trunks_search.html)	 - /api/v2/telephony/providers/edges/trunks/search
 
 

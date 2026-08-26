@@ -36,5 +36,6 @@
 * [gc businessrules schemas get](gc_businessrules_schemas_get.html)	 - Get a schema
 * [gc businessrules schemas list](gc_businessrules_schemas_list.html)	 - Get a list of schemas.
 * [gc businessrules schemas update](gc_businessrules_schemas_update.html)	 - Update a schema
+* [gc businessrules schemas versions](gc_businessrules_schemas_versions.html)	 - /api/v2/businessrules/schemas/{schemaId}/versions
 
 

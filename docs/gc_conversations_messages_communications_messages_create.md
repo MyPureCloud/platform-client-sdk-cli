@@ -13,11 +13,10 @@ gc conversations messages communications messages create [conversationId] [commu
 ### Options
 
 ```
-  -d, --directory string              Directory path with files containing request bodies
-  -f, --file string                   File name containing the JSON body
-  -h, --help                          help for create
-  -b, --printrequestbody              Print the request body format of the API.
-      --useNormalizedMessage string   If true, response removes deprecated fields (textBody, media) Valid values: true, false
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands

@@ -35,6 +35,7 @@
 * [gc telephony mediaregions](gc_telephony_mediaregions.html)	 - /api/v2/telephony/mediaregions
 * [gc telephony numbers](gc_telephony_numbers.html)	 - /api/v2/telephony/numbers
 * [gc telephony organization](gc_telephony_organization.html)	 - /api/v2/telephony/organization
+* [gc telephony prefixes](gc_telephony_prefixes.html)	 - /api/v2/telephony/prefixes
 * [gc telephony providers](gc_telephony_providers.html)	 - /api/v2/telephony/providers
 * [gc telephony settings](gc_telephony_settings.html)	 - /api/v2/telephony/settings
 * [gc telephony sipmessages](gc_telephony_sipmessages.html)	 - /api/v2/telephony/sipmessages

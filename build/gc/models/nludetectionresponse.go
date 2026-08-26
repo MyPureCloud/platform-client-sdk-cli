@@ -26,12 +26,12 @@ type Nludetectionresponse struct {
     
 
 
-    // Output
-    Output Nludetectionoutput `json:"output"`
-
-
     // Input
     Input Nludetectioninput `json:"input"`
+
+
+    // Output
+    Output Nludetectionoutput `json:"output"`
 
 }
 
@@ -56,9 +56,9 @@ func (u *Nludetectionresponse) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Output Nludetectionoutput `json:"output"`
-        
         Input Nludetectioninput `json:"input"`
+        
+        Output Nludetectionoutput `json:"output"`
         *Alias
     }{
 

@@ -178,14 +178,14 @@
       "description": "Answer documents."
     },
     {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search",
-      "description": "Search for chunks in a knowledge base"
-    },
-    {
       "name": "update",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search/{searchId}",
       "description": "Register chunk search result."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search",
+      "description": "Search for chunks in a knowledge base"
     },
     {
       "name": "get",
@@ -404,6 +404,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/suggestions",
+      "description": "Query the knowledge documents to provide suggestions for auto completion."
+    },
+    {
+      "name": "create",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search",
       "description": "Search the documents in a knowledge base."
     },
@@ -411,11 +416,6 @@
       "name": "update",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/{searchId}",
       "description": "Update search result."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/suggestions",
-      "description": "Query the knowledge documents to provide suggestions for auto completion."
     },
     {
       "name": "create",
@@ -599,13 +599,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies",
-      "description": "Indicate that the document was copied by the user."
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views",
+      "description": "Create view event for a document."
     },
     {
       "name": "create",
-      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views",
-      "description": "Create view event for a document."
+      "path": "/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies",
+      "description": "Indicate that the document was copied by the user."
     },
     {
       "name": "create",

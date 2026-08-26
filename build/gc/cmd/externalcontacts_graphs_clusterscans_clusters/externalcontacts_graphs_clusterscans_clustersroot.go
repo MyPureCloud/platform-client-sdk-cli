@@ -1,0 +1,12 @@
+package externalcontacts_graphs_clusterscans_clusters
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_graphs_clusterscans_clusters_merge"
+)
+
+func init() {
+	externalcontacts_graphs_clusterscans_clustersCmd.AddCommand(externalcontacts_graphs_clusterscans_clusters_merge.Cmdexternalcontacts_graphs_clusterscans_clusters_merge())
+	externalcontacts_graphs_clusterscans_clustersCmd.Short = utils.GenerateCustomDescription(externalcontacts_graphs_clusterscans_clustersCmd.Short, externalcontacts_graphs_clusterscans_clusters_merge.Description, )
+	externalcontacts_graphs_clusterscans_clustersCmd.Long = externalcontacts_graphs_clusterscans_clustersCmd.Short
+}

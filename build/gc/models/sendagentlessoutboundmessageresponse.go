@@ -36,12 +36,6 @@ type SendagentlessoutboundmessageresponseDud struct {
     
 
 
-    
-
-
-    
-
-
     User Addressableentityref `json:"user"`
 
 
@@ -70,14 +64,6 @@ type Sendagentlessoutboundmessageresponse struct {
     MessengerType string `json:"messengerType"`
 
 
-    // TextBody - The body of the text message. (Deprecated - Instead use message.normalizedMessage.text)
-    TextBody string `json:"textBody"`
-
-
-    // MessagingTemplate - The messaging template sent. (Deprecated - Instead use message.normalizedMessage.content[#].template)
-    MessagingTemplate Sendmessagingtemplaterequest `json:"messagingTemplate"`
-
-
     // UseExistingActiveConversation - Use an existing active conversation to send the agentless outbound message. Set this parameter to 'true' to use active conversation. Default value: false
     UseExistingActiveConversation bool `json:"useExistingActiveConversation"`
 
@@ -99,8 +85,6 @@ type Sendagentlessoutboundmessageresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Sendagentlessoutboundmessageresponse) String() string {
-    
-    
     
     
     
@@ -133,10 +117,6 @@ func (u *Sendagentlessoutboundmessageresponse) MarshalJSON() ([]byte, error) {
         
         MessengerType string `json:"messengerType"`
         
-        TextBody string `json:"textBody"`
-        
-        MessagingTemplate Sendmessagingtemplaterequest `json:"messagingTemplate"`
-        
         UseExistingActiveConversation bool `json:"useExistingActiveConversation"`
         
         Message Messagedata `json:"message"`
@@ -144,12 +124,6 @@ func (u *Sendagentlessoutboundmessageresponse) MarshalJSON() ([]byte, error) {
         Timestamp time.Time `json:"timestamp"`
         *Alias
     }{
-
-        
-
-
-        
-
 
         
 

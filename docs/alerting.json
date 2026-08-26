@@ -20,7 +20,7 @@
     {
       "name": "patch",
       "path": "/api/v2/alerting/alerts/{alertId}",
-      "description": "Allows an entity to mute/snooze an alert or update the unread status of the alert."
+      "description": "Allows an entity to mute/snooze an alert, update the unread status of the alert, or close an alert."
     },
     {
       "name": "update",

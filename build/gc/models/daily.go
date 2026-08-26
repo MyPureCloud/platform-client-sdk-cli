@@ -20,7 +20,7 @@ type DailyDud struct {
 
 // Daily
 type Daily struct { 
-    // DownloadUrl - Download URL to fetch the result of daily time series. This field is populated only if session state is Complete
+    // DownloadUrl - Download URL to fetch the result of daily time series. This field is populated only if session state is Complete. The downloaded data contains Newline Delimited JSON (NDJSON): one JSON object per line
     DownloadUrl string `json:"downloadUrl"`
 
 

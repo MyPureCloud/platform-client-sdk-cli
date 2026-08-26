@@ -54,8 +54,23 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rollback",
+      "description": "Re-publish a superseded decision table version as the current published version"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/sync",
       "description": "Update the Business Rules Schema to the latest version for a given decision table version"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/snapshot",
+      "description": "Creates a decision table version snapshot"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/snapshot",
+      "description": "Deletes a decision table version snapshot"
     },
     {
       "name": "list",
@@ -144,13 +159,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/add",
-      "description": "Bulk add decision table rows"
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/update",
+      "description": "Bulk update decision table rows"
     },
     {
       "name": "create",
-      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/update",
-      "description": "Bulk update decision table rows"
+      "path": "/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/add",
+      "description": "Bulk add decision table rows"
     },
     {
       "name": "create",
@@ -196,6 +211,16 @@
       "name": "delete",
       "path": "/api/v2/businessrules/schemas/{schemaId}",
       "description": "Delete a schema"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/businessrules/schemas/{schemaId}/versions/{schemaVersion}",
+      "description": "Get a schema version"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/businessrules/schemas/{schemaId}/versions",
+      "description": "List schema versions"
     },
     {
       "name": "list",

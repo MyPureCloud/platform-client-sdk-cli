@@ -39,6 +39,11 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/fax/{faxId}/status",
+      "description": "Get fax status"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/fax/summary",
       "description": "Get fax summary"
     }

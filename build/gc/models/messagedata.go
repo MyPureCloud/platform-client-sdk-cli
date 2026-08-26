@@ -39,12 +39,6 @@ type MessagedataDud struct {
     
 
 
-    
-
-
-    
-
-
     NormalizedMessage Conversationnormalizedmessage `json:"normalizedMessage"`
 
 
@@ -94,16 +88,8 @@ type Messagedata struct {
     MessengerType string `json:"messengerType"`
 
 
-    // TextBody - The body of the text message. (Deprecated - Instead use normalizedMessage.text)
-    TextBody string `json:"textBody"`
-
-
     // Status - The status of the message.
     Status string `json:"status"`
-
-
-    // Media - The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment)
-    Media []Messagemedia `json:"media"`
 
 
     
@@ -134,8 +120,6 @@ func (o *Messagedata) String() string {
     
     
     
-    
-     o.Media = []Messagemedia{{}} 
     
     
 
@@ -169,11 +153,7 @@ func (u *Messagedata) MarshalJSON() ([]byte, error) {
         
         MessengerType string `json:"messengerType"`
         
-        TextBody string `json:"textBody"`
-        
         Status string `json:"status"`
-        
-        Media []Messagemedia `json:"media"`
         
         CreatedBy User `json:"createdBy"`
         
@@ -205,14 +185,6 @@ func (u *Messagedata) MarshalJSON() ([]byte, error) {
         
 
 
-        
-
-
-        
-
-
-        
-        Media: []Messagemedia{{}},
         
 
 

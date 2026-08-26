@@ -279,8 +279,8 @@ var getCmd = &cobra.Command{
 }
 var patchCmd = &cobra.Command{
 	Use:   "patch [alertId]",
-	Short: "Allows an entity to mute/snooze an alert or update the unread status of the alert.",
-	Long:  "Allows an entity to mute/snooze an alert or update the unread status of the alert.",
+	Short: "Allows an entity to mute/snooze an alert, update the unread status of the alert, or close an alert.",
+	Long:  "Allows an entity to mute/snooze an alert, update the unread status of the alert, or close an alert.",
 	Args:  utils.DetermineArgs([]string{ "alertId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

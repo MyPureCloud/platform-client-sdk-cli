@@ -206,14 +206,17 @@ gc/cmd/businessrules_decisiontables_versions/businessrules_decisiontables_versio
 gc/cmd/businessrules_decisiontables_versions_copy/businessrules_decisiontables_versions_copy.go
 gc/cmd/businessrules_decisiontables_versions_execute/businessrules_decisiontables_versions_execute.go
 gc/cmd/businessrules_decisiontables_versions_publish/businessrules_decisiontables_versions_publish.go
+gc/cmd/businessrules_decisiontables_versions_rollback/businessrules_decisiontables_versions_rollback.go
 gc/cmd/businessrules_decisiontables_versions_rows/businessrules_decisiontables_versions_rows.go
 gc/cmd/businessrules_decisiontables_versions_rows_bulk_add/businessrules_decisiontables_versions_rows_bulk_add.go
 gc/cmd/businessrules_decisiontables_versions_rows_bulk_remove/businessrules_decisiontables_versions_rows_bulk_remove.go
 gc/cmd/businessrules_decisiontables_versions_rows_bulk_update/businessrules_decisiontables_versions_rows_bulk_update.go
 gc/cmd/businessrules_decisiontables_versions_rows_search/businessrules_decisiontables_versions_rows_search.go
+gc/cmd/businessrules_decisiontables_versions_snapshot/businessrules_decisiontables_versions_snapshot.go
 gc/cmd/businessrules_decisiontables_versions_sync/businessrules_decisiontables_versions_sync.go
 gc/cmd/businessrules_schemas/businessrules_schemas.go
 gc/cmd/businessrules_schemas_coretypes/businessrules_schemas_coretypes.go
+gc/cmd/businessrules_schemas_versions/businessrules_schemas_versions.go
 gc/cmd/carrierservices_integrations_emergencylocations_me/carrierservices_integrations_emergencylocations_me.go
 gc/cmd/casemanagement_caseplans/casemanagement_caseplans.go
 gc/cmd/casemanagement_caseplans_dataschemas/casemanagement_caseplans_dataschemas.go
@@ -529,6 +532,13 @@ gc/cmd/externalcontacts_contacts_schemas_versions/externalcontacts_contacts_sche
 gc/cmd/externalcontacts_contacts_unresolved/externalcontacts_contacts_unresolved.go
 gc/cmd/externalcontacts_conversations/externalcontacts_conversations.go
 gc/cmd/externalcontacts_externalsources/externalcontacts_externalsources.go
+gc/cmd/externalcontacts_graphs_clusterscans/externalcontacts_graphs_clusterscans.go
+gc/cmd/externalcontacts_graphs_clusterscans_clusters/externalcontacts_graphs_clusterscans_clusters.go
+gc/cmd/externalcontacts_graphs_clusterscans_clusters_merge/externalcontacts_graphs_clusterscans_clusters_merge.go
+gc/cmd/externalcontacts_graphs_clusterscans_latest/externalcontacts_graphs_clusterscans_latest.go
+gc/cmd/externalcontacts_graphs_clusterscans_latest_statistics/externalcontacts_graphs_clusterscans_latest_statistics.go
+gc/cmd/externalcontacts_graphs_clusterscans_statistics/externalcontacts_graphs_clusterscans_statistics.go
+gc/cmd/externalcontacts_graphs_settings/externalcontacts_graphs_settings.go
 gc/cmd/externalcontacts_identifierlookup/externalcontacts_identifierlookup.go
 gc/cmd/externalcontacts_identifierlookup_contacts/externalcontacts_identifierlookup_contacts.go
 gc/cmd/externalcontacts_identifierlookup_organizations/externalcontacts_identifierlookup_organizations.go
@@ -568,6 +578,7 @@ gc/cmd/externalcontacts_settings/externalcontacts_settings.go
 gc/cmd/fax_documents/fax_documents.go
 gc/cmd/fax_documents_content/fax_documents_content.go
 gc/cmd/fax_settings/fax_settings.go
+gc/cmd/fax_status/fax_status.go
 gc/cmd/fax_summary/fax_summary.go
 gc/cmd/fieldconfig/fieldconfig.go
 gc/cmd/flows/flows.go
@@ -1304,6 +1315,9 @@ gc/cmd/telephony_numbers_routing_reset/telephony_numbers_routing_reset.go
 gc/cmd/telephony_organization_link/telephony_organization_link.go
 gc/cmd/telephony_organization_link_approve/telephony_organization_link_approve.go
 gc/cmd/telephony_organization_link_regions/telephony_organization_link_regions.go
+gc/cmd/telephony_prefixes/telephony_prefixes.go
+gc/cmd/telephony_prefixes_bulk/telephony_prefixes_bulk.go
+gc/cmd/telephony_prefixes_simulate_call/telephony_prefixes_simulate_call.go
 gc/cmd/telephony_providers_edges/telephony_providers_edges.go
 gc/cmd/telephony_providers_edges_addressvalidation/telephony_providers_edges_addressvalidation.go
 gc/cmd/telephony_providers_edges_alertablepresences/telephony_providers_edges_alertablepresences.go
@@ -1331,6 +1345,7 @@ gc/cmd/telephony_providers_edges_logs_jobs_upload/telephony_providers_edges_logs
 gc/cmd/telephony_providers_edges_mediastatistics_conversations/telephony_providers_edges_mediastatistics_conversations.go
 gc/cmd/telephony_providers_edges_mediastatistics_conversations_communications/telephony_providers_edges_mediastatistics_conversations_communications.go
 gc/cmd/telephony_providers_edges_metrics/telephony_providers_edges_metrics.go
+gc/cmd/telephony_providers_edges_offlineconfiguration/telephony_providers_edges_offlineconfiguration.go
 gc/cmd/telephony_providers_edges_outboundroutes/telephony_providers_edges_outboundroutes.go
 gc/cmd/telephony_providers_edges_phonebasesettings/telephony_providers_edges_phonebasesettings.go
 gc/cmd/telephony_providers_edges_phonebasesettings_availablemetabases/telephony_providers_edges_phonebasesettings_availablemetabases.go
@@ -1353,9 +1368,12 @@ gc/cmd/telephony_providers_edges_statuscode/telephony_providers_edges_statuscode
 gc/cmd/telephony_providers_edges_timezones/telephony_providers_edges_timezones.go
 gc/cmd/telephony_providers_edges_trunkbasesettings/telephony_providers_edges_trunkbasesettings.go
 gc/cmd/telephony_providers_edges_trunkbasesettings_availablemetabases/telephony_providers_edges_trunkbasesettings_availablemetabases.go
+gc/cmd/telephony_providers_edges_trunkbasesettings_search/telephony_providers_edges_trunkbasesettings_search.go
+gc/cmd/telephony_providers_edges_trunkbasesettings_site/telephony_providers_edges_trunkbasesettings_site.go
 gc/cmd/telephony_providers_edges_trunkbasesettings_template/telephony_providers_edges_trunkbasesettings_template.go
 gc/cmd/telephony_providers_edges_trunks/telephony_providers_edges_trunks.go
 gc/cmd/telephony_providers_edges_trunks_metrics/telephony_providers_edges_trunks_metrics.go
+gc/cmd/telephony_providers_edges_trunks_search/telephony_providers_edges_trunks_search.go
 gc/cmd/telephony_providers_edges_trunkswithrecording/telephony_providers_edges_trunkswithrecording.go
 gc/cmd/telephony_providers_edges_unpair/telephony_providers_edges_unpair.go
 gc/cmd/telephony_settings/telephony_settings.go
@@ -2311,6 +2329,7 @@ gc/models/bulkentityerrorexternalcontact.go
 gc/models/bulkentityerrorexternalorganization.go
 gc/models/bulkentityerrorexternalorganizationenrichrequest.go
 gc/models/bulkentityerrornote.go
+gc/models/bulkentityerrorprefix.go
 gc/models/bulkentityerrorrelationship.go
 gc/models/bulkerror.go
 gc/models/bulkerrordetail.go
@@ -2346,6 +2365,8 @@ gc/models/bulkorganizationsenrichrequest.go
 gc/models/bulkorganizationsenrichresponse.go
 gc/models/bulkorganizationsrequest.go
 gc/models/bulkorganizationsresponse.go
+gc/models/bulkprefixesrequest.go
+gc/models/bulkprefixesresponse.go
 gc/models/bulkpublishopportunitiesresponse.go
 gc/models/bulkrelationshipsrequest.go
 gc/models/bulkrelationshipsresponse.go
@@ -2361,6 +2382,7 @@ gc/models/bulkresponseresultexternalorganizationexternalorganizationbulkentityer
 gc/models/bulkresponseresultexternalorganizationexternalorganizationenrichrequestbulkentityerrorexternalorganizationenrichrequest.go
 gc/models/bulkresponseresultnoteentitybulkentityerrorentity.go
 gc/models/bulkresponseresultnotenotebulkentityerrornote.go
+gc/models/bulkresponseresultprefixprefixbulkentityerrorprefix.go
 gc/models/bulkresponseresultrelationshipentitybulkentityerrorentity.go
 gc/models/bulkresponseresultrelationshiprelationshipbulkentityerrorrelationship.go
 gc/models/bulkresponseresultvoidentitybulkentityerrorentity.go
@@ -2480,6 +2502,7 @@ gc/models/callmediapolicyconditions.go
 gc/models/callmessage.go
 gc/models/callrecord.go
 gc/models/callroute.go
+gc/models/callsimulationresult.go
 gc/models/calltarget.go
 gc/models/calltoaction.go
 gc/models/campaign.go
@@ -2542,6 +2565,8 @@ gc/models/capacityplandeleterequest.go
 gc/models/capacityplanforecastinputsresponse.go
 gc/models/capacityplanforecastinputstemplate.go
 gc/models/capacityplanforecastmetrics.go
+gc/models/capacityplanimportedforecast.go
+gc/models/capacityplanimportedforecastrequest.go
 gc/models/capacityplanlistitem.go
 gc/models/capacityplanmetadata.go
 gc/models/capacityplanmetricssummary.go
@@ -2662,6 +2687,12 @@ gc/models/clientusagequeryresponse.go
 gc/models/cloneduser.go
 gc/models/cloneduserentitylisting.go
 gc/models/closebuttonstyleproperties.go
+gc/models/cluster.go
+gc/models/clusterlist.go
+gc/models/clusterscan.go
+gc/models/clusterscanlist.go
+gc/models/clusterscanstatistics.go
+gc/models/clusterstatistics.go
 gc/models/coachingannotation.go
 gc/models/coachingannotationcreaterequest.go
 gc/models/coachingannotationlist.go
@@ -2816,6 +2847,7 @@ gc/models/contactsexportqueryconditions.go
 gc/models/contactsexportrequest.go
 gc/models/contactsort.go
 gc/models/contactspatchchange.go
+gc/models/contactvertex.go
 gc/models/contentactions.go
 gc/models/contentbuttonresponse.go
 gc/models/contentcard.go
@@ -3040,6 +3072,7 @@ gc/models/copilotfallbackaction.go
 gc/models/copilotnludomain.go
 gc/models/copilotnludomainversion.go
 gc/models/copilotrule.go
+gc/models/copilotsentimentsettings.go
 gc/models/copilottranscriptionconfig.go
 gc/models/copyattachmentsrequest.go
 gc/models/copybuforecastrequest.go
@@ -3075,6 +3108,7 @@ gc/models/createdecisiontablecolumnsrequest.go
 gc/models/createdecisiontableimportjobrequest.go
 gc/models/createdecisiontablerequest.go
 gc/models/createdecisiontablerowrequest.go
+gc/models/createdecisiontablesnapshotrequest.go
 gc/models/createdecisiontableversionrequest.go
 gc/models/createemailrequest.go
 gc/models/createexternaleventsconfigurationrequest.go
@@ -3511,6 +3545,10 @@ gc/models/edgemetricssubsystem.go
 gc/models/edgenetworkdiagnostic.go
 gc/models/edgenetworkdiagnosticrequest.go
 gc/models/edgenetworkdiagnosticresponse.go
+gc/models/edgeofflineconfiguration.go
+gc/models/edgeofflineconfigurationinterface.go
+gc/models/edgeofflineconfigurationnetwork.go
+gc/models/edgeofflineconfigurationresponse.go
 gc/models/edgerebootparameters.go
 gc/models/edgeservicestaterequest.go
 gc/models/edgetrunkbase.go
@@ -3952,7 +3990,11 @@ gc/models/grammarlanguage.go
 gc/models/grammarlanguagefilemetadata.go
 gc/models/grammarlanguageupdate.go
 gc/models/grammarlisting.go
+gc/models/graph.go
 gc/models/graphapisettings.go
+gc/models/graphedge.go
+gc/models/graphsettings.go
+gc/models/graphvertices.go
 gc/models/greeting.go
 gc/models/greetingaudiofile.go
 gc/models/greetinglisting.go
@@ -4033,6 +4075,7 @@ gc/models/hristimeofftypesresponse.go
 gc/models/humanize.go
 gc/models/icon.go
 gc/models/identifierclaimrequest.go
+gc/models/identifiervertex.go
 gc/models/identitynow.go
 gc/models/identityprovider.go
 gc/models/identityproviderentitylisting.go
@@ -4617,6 +4660,8 @@ gc/models/memberentity.go
 gc/models/membergroup.go
 gc/models/memberlisting.go
 gc/models/mergecontactsrequest.go
+gc/models/mergeerror.go
+gc/models/mergeinfo.go
 gc/models/mergeoperation.go
 gc/models/mergerequest.go
 gc/models/message.go
@@ -4908,6 +4953,7 @@ gc/models/outbounddomain.go
 gc/models/outbounddomaincreaterequest.go
 gc/models/outbounddomainentitylisting.go
 gc/models/outbounddomainpatchrequest.go
+gc/models/outboundfaxstatus.go
 gc/models/outboundonlysetting.go
 gc/models/outboundqueueidentityresolutionconfig.go
 gc/models/outboundroute.go
@@ -5087,6 +5133,9 @@ gc/models/predictormodelretrainingerror.go
 gc/models/predictormodels.go
 gc/models/predictorschedule.go
 gc/models/predictorworkloadbalancing.go
+gc/models/prefix.go
+gc/models/prefixlisting.go
+gc/models/prefixlistingitem.go
 gc/models/preprocessingrule.go
 gc/models/presencedefinition.go
 gc/models/presencedetailqueryclause.go
@@ -5405,6 +5454,7 @@ gc/models/roledivision.go
 gc/models/roledivisiongrants.go
 gc/models/roledivisionpair.go
 gc/models/rolesettings.go
+gc/models/rollbackdecisiontableversionrequest.go
 gc/models/room.go
 gc/models/roomparticipant.go
 gc/models/roomparticipantresponse.go
@@ -5952,6 +6002,8 @@ gc/models/teamreference.go
 gc/models/teamsearchcriteria.go
 gc/models/teamsearchrequest.go
 gc/models/teamssearchresponse.go
+gc/models/telephonysearchcriteria.go
+gc/models/telephonysearchrequest.go
 gc/models/telephonysettings.go
 gc/models/templateparameter.go
 gc/models/temporalunit.go
@@ -6099,10 +6151,12 @@ gc/models/trunk.go
 gc/models/trunkbase.go
 gc/models/trunkbaseassignment.go
 gc/models/trunkbaseentitylisting.go
+gc/models/trunkbasessearchresponse.go
 gc/models/trunkconnectedstatus.go
 gc/models/trunkentitylisting.go
 gc/models/trunkerrorinfo.go
 gc/models/trunkerrorinfodetails.go
+gc/models/trunkinstancesearchresponse.go
 gc/models/trunkmetabaseentitylisting.go
 gc/models/trunkmetrics.go
 gc/models/trunkmetricscalls.go
@@ -6435,6 +6489,7 @@ gc/models/validationservicerequest.go
 gc/models/valuewrapperactivitycodestyle.go
 gc/models/valuewrapperactivityplanservicegoalimpactoverrides.go
 gc/models/valuewrapperbushorttermforecastreference.go
+gc/models/valuewrappercapacityplanimportedforecastrequest.go
 gc/models/valuewrapperdate.go
 gc/models/valuewrappergroupsettings.go
 gc/models/valuewrapperhristimeofftype.go

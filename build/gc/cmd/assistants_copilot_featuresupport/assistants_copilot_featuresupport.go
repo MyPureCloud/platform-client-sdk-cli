@@ -29,7 +29,7 @@ func init() {
 
 func Cmdassistants_copilot_featuresupport() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "string", "language", "", "Which language are the features supported for")
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/assistants/copilot/featuresupport", utils.FormatPermissions([]string{ "assistants:copilot:view",  }), utils.GenerateDevCentreLink("GET", "Agent Copilot", "/api/v2/assistants/copilot/featuresupport")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/assistants/copilot/featuresupport", utils.FormatPermissions([]string{ "assistants:copilot:view", "assistants:copilotFeatureSupport:view",  }), utils.GenerateDevCentreLink("GET", "Agent Copilot", "/api/v2/assistants/copilot/featuresupport")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	

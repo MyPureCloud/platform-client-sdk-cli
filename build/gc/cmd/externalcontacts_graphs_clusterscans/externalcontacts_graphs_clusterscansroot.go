@@ -1,0 +1,16 @@
+package externalcontacts_graphs_clusterscans
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_graphs_clusterscans_clusters"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_graphs_clusterscans_statistics"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_graphs_clusterscans_latest"
+)
+
+func init() {
+	externalcontacts_graphs_clusterscansCmd.AddCommand(externalcontacts_graphs_clusterscans_clusters.Cmdexternalcontacts_graphs_clusterscans_clusters())
+	externalcontacts_graphs_clusterscansCmd.AddCommand(externalcontacts_graphs_clusterscans_statistics.Cmdexternalcontacts_graphs_clusterscans_statistics())
+	externalcontacts_graphs_clusterscansCmd.AddCommand(externalcontacts_graphs_clusterscans_latest.Cmdexternalcontacts_graphs_clusterscans_latest())
+	externalcontacts_graphs_clusterscansCmd.Short = utils.GenerateCustomDescription(externalcontacts_graphs_clusterscansCmd.Short, externalcontacts_graphs_clusterscans_clusters.Description, externalcontacts_graphs_clusterscans_statistics.Description, externalcontacts_graphs_clusterscans_latest.Description, )
+	externalcontacts_graphs_clusterscansCmd.Long = externalcontacts_graphs_clusterscansCmd.Short
+}

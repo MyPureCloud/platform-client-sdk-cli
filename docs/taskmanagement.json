@@ -113,14 +113,14 @@
       "description": "Get the workitem query job associated with the job id."
     },
     {
-      "name": "create",
-      "path": "/api/v2/taskmanagement/workitems/query/jobs",
-      "description": "Create a workitem query job"
-    },
-    {
       "name": "list",
       "path": "/api/v2/taskmanagement/workitems/query/jobs/{jobId}/results",
       "description": "Get results from for workitem query job "
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/taskmanagement/workitems/query/jobs",
+      "description": "Create a workitem query job"
     },
     {
       "name": "create",
@@ -273,21 +273,6 @@
       "description": "Query for worktypes"
     },
     {
-      "name": "list",
-      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/versions",
-      "description": "Get all versions of a worktype"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/versions/{entityVersion}",
-      "description": "Get a version of a worktype"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/history",
-      "description": "Get a listing of a worktype's attribute change history"
-    },
-    {
       "name": "get",
       "path": "/api/v2/taskmanagement/worktypes/{worktypeId}",
       "description": "Get a worktype"
@@ -301,6 +286,21 @@
       "name": "update",
       "path": "/api/v2/taskmanagement/worktypes/{worktypeId}",
       "description": "Update the attributes of a worktype"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/versions",
+      "description": "Get all versions of a worktype"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/versions/{entityVersion}",
+      "description": "Get a version of a worktype"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/taskmanagement/worktypes/{worktypeId}/history",
+      "description": "Get a listing of a worktype's attribute change history"
     },
     {
       "name": "create",

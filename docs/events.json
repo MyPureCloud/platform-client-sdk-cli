@@ -4,6 +4,11 @@
   "resources": [
     {
       "name": "create",
+      "path": "/api/v2/events/conversations",
+      "description": "Publish Conversation Batch Events"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/events/users/routingstatus",
       "description": "Publish Agent Routing Status Batch Events"
     },
@@ -16,11 +21,6 @@
       "name": "create",
       "path": "/api/v2/events/routing/customkpiattributions",
       "description": "Publish Predictive Routing Custom Kpi Attribution Batch Events"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/events/conversations",
-      "description": "Publish Conversation Batch Events"
     }
   ]
 }

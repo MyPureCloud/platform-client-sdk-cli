@@ -30,10 +30,10 @@ type ScreenmonitoringsessionDud struct {
     
 
 
-    
-
-
     SelfUri string `json:"selfUri"`
+
+
+    
 
 }
 
@@ -63,11 +63,11 @@ type Screenmonitoringsession struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
+    
+
+
     // ScreenMonitoringId - The unique identifier for this screen monitoring session
     ScreenMonitoringId string `json:"screenMonitoringId"`
-
-
-    
 
 }
 

@@ -1,0 +1,12 @@
+package externalcontacts_graphs_clusterscans_latest
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_graphs_clusterscans_latest_statistics"
+)
+
+func init() {
+	externalcontacts_graphs_clusterscans_latestCmd.AddCommand(externalcontacts_graphs_clusterscans_latest_statistics.Cmdexternalcontacts_graphs_clusterscans_latest_statistics())
+	externalcontacts_graphs_clusterscans_latestCmd.Short = utils.GenerateCustomDescription(externalcontacts_graphs_clusterscans_latestCmd.Short, externalcontacts_graphs_clusterscans_latest_statistics.Description, )
+	externalcontacts_graphs_clusterscans_latestCmd.Long = externalcontacts_graphs_clusterscans_latestCmd.Short
+}

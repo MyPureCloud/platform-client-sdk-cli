@@ -37,6 +37,9 @@ type CommonrulepredicateDud struct {
 
     
 
+
+    
+
 }
 
 // Commonrulepredicate
@@ -65,6 +68,10 @@ type Commonrulepredicate struct {
     Topic string `json:"topic"`
 
 
+    // Characteristic - The anomaly detection characteristic being evaluated with respect to the metric.
+    Characteristic string `json:"characteristic"`
+
+
     // Entity - The entity whose metric is being represented.
     Entity Commonrulepredicateentity `json:"entity"`
 
@@ -80,6 +87,7 @@ type Commonrulepredicate struct {
 
 // String returns a JSON representation of the model
 func (o *Commonrulepredicate) String() string {
+    
     
     
     
@@ -118,6 +126,8 @@ func (u *Commonrulepredicate) MarshalJSON() ([]byte, error) {
         
         Topic string `json:"topic"`
         
+        Characteristic string `json:"characteristic"`
+        
         Entity Commonrulepredicateentity `json:"entity"`
         
         MediaType string `json:"mediaType"`
@@ -125,6 +135,9 @@ func (u *Commonrulepredicate) MarshalJSON() ([]byte, error) {
         Metric string `json:"metric"`
         *Alias
     }{
+
+        
+
 
         
 

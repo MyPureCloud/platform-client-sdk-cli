@@ -13,26 +13,6 @@
       "description": "Retrieve aggregated assignment data"
     },
     {
-      "name": "get",
-      "path": "/api/v2/learning/assignments/{assignmentId}",
-      "description": "Get Learning Assignment"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/learning/assignments/{assignmentId}",
-      "description": "Delete a learning assignment"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/learning/assignments/{assignmentId}",
-      "description": "Update Learning Assignment"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/learning/assignments/{assignmentId}/reschedule",
-      "description": "Reschedule Learning Assignment"
-    },
-    {
       "name": "list",
       "path": "/api/v2/learning/assignments/me",
       "description": "List of Learning Assignments assigned to current user"
@@ -46,6 +26,21 @@
       "name": "create",
       "path": "/api/v2/learning/assignments",
       "description": "Create Learning Assignment"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/learning/assignments/{assignmentId}",
+      "description": "Get Learning Assignment"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/learning/assignments/{assignmentId}",
+      "description": "Delete a learning assignment"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/learning/assignments/{assignmentId}",
+      "description": "Update Learning Assignment"
     },
     {
       "name": "create",
@@ -66,6 +61,11 @@
       "name": "create",
       "path": "/api/v2/learning/assignments/bulkremove",
       "description": "Remove multiple Learning Assignments"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/learning/assignments/{assignmentId}/reschedule",
+      "description": "Reschedule Learning Assignment"
     },
     {
       "name": "get",
@@ -178,14 +178,14 @@
       "description": "Get list of possible slots where a learning activity can be scheduled."
     },
     {
-      "name": "create",
-      "path": "/api/v2/learning/scorm",
-      "description": "Create a SCORM package upload request"
-    },
-    {
       "name": "get",
       "path": "/api/v2/learning/scorm/{scormId}",
       "description": "Get Learning SCORM Result"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/scorm",
+      "description": "Create a SCORM package upload request"
     },
     {
       "name": "create",

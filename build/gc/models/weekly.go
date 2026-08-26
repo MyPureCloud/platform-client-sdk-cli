@@ -20,7 +20,7 @@ type WeeklyDud struct {
 
 // Weekly
 type Weekly struct { 
-    // DownloadUrl - Download URL to fetch the result of weekly time series. This field is populated only if session state is Complete
+    // DownloadUrl - Download URL to fetch the result of weekly time series. This field is populated only if session state is Complete. The downloaded data contains Newline Delimited JSON (NDJSON): one JSON object per line
     DownloadUrl string `json:"downloadUrl"`
 
 

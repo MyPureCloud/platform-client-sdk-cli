@@ -60,8 +60,16 @@ type Sttengineentitylisting struct {
     Total int `json:"total"`
 
 
+    // LastUri
+    LastUri string `json:"lastUri"`
+
+
     // FirstUri
     FirstUri string `json:"firstUri"`
+
+
+    // SelfUri
+    SelfUri string `json:"selfUri"`
 
 
     // NextUri
@@ -70,14 +78,6 @@ type Sttengineentitylisting struct {
 
     // PreviousUri
     PreviousUri string `json:"previousUri"`
-
-
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
-    // SelfUri
-    SelfUri string `json:"selfUri"`
 
 
     // PageCount
@@ -122,15 +122,15 @@ func (u *Sttengineentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
+        LastUri string `json:"lastUri"`
+        
         FirstUri string `json:"firstUri"`
+        
+        SelfUri string `json:"selfUri"`
         
         NextUri string `json:"nextUri"`
         
         PreviousUri string `json:"previousUri"`
-        
-        LastUri string `json:"lastUri"`
-        
-        SelfUri string `json:"selfUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

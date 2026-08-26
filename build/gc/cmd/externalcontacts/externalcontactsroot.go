@@ -15,6 +15,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_notes"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_import"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_settings"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/externalcontacts_graphs"
 )
 
 func init() {
@@ -31,6 +32,7 @@ func init() {
 	externalcontactsCmd.AddCommand(externalcontacts_notes.Cmdexternalcontacts_notes())
 	externalcontactsCmd.AddCommand(externalcontacts_import.Cmdexternalcontacts_import())
 	externalcontactsCmd.AddCommand(externalcontacts_settings.Cmdexternalcontacts_settings())
-	externalcontactsCmd.Short = utils.GenerateCustomDescription(externalcontactsCmd.Short, externalcontacts_bulk.Description, externalcontacts_contacts.Description, externalcontacts_merge.Description, externalcontacts_scan.Description, externalcontacts_conversations.Description, externalcontacts_organizations.Description, externalcontacts_externalsources.Description, externalcontacts_identifierlookup.Description, externalcontacts_relationships.Description, externalcontacts_reversewhitepageslookup.Description, externalcontacts_notes.Description, externalcontacts_import.Description, externalcontacts_settings.Description, )
+	externalcontactsCmd.AddCommand(externalcontacts_graphs.Cmdexternalcontacts_graphs())
+	externalcontactsCmd.Short = utils.GenerateCustomDescription(externalcontactsCmd.Short, externalcontacts_bulk.Description, externalcontacts_contacts.Description, externalcontacts_merge.Description, externalcontacts_scan.Description, externalcontacts_conversations.Description, externalcontacts_organizations.Description, externalcontacts_externalsources.Description, externalcontacts_identifierlookup.Description, externalcontacts_relationships.Description, externalcontacts_reversewhitepageslookup.Description, externalcontacts_notes.Description, externalcontacts_import.Description, externalcontacts_settings.Description, externalcontacts_graphs.Description, )
 	externalcontactsCmd.Long = externalcontactsCmd.Short
 }

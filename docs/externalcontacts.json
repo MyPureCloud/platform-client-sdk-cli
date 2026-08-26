@@ -9,6 +9,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/contacts/add",
+      "description": "Bulk add contacts"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/contacts",
       "description": "Bulk fetch contacts"
     },
@@ -34,8 +39,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/contacts/add",
-      "description": "Bulk add contacts"
+      "path": "/api/v2/externalcontacts/bulk/notes/add",
+      "description": "Bulk add notes"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/notes/remove",
+      "description": "Bulk remove notes"
     },
     {
       "name": "create",
@@ -46,16 +56,6 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/bulk/notes/update",
       "description": "Bulk update notes"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/notes/add",
-      "description": "Bulk add notes"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/notes/remove",
-      "description": "Bulk remove notes"
     },
     {
       "name": "create",
@@ -89,11 +89,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/relationships/remove",
-      "description": "Bulk remove relationships"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/relationships",
       "description": "Bulk fetch relationships"
     },
@@ -106,6 +101,11 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/bulk/relationships/add",
       "description": "Bulk add relationships"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/relationships/remove",
+      "description": "Bulk remove relationships"
     },
     {
       "name": "get",
@@ -138,6 +138,21 @@
       "description": "Create a note for an external contact"
     },
     {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/promotion",
+      "description": "Promote an observed contact (ephemeral or identified) to a curated contact"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/identifiers",
+      "description": "List the identifiers for a contact"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/identifiers",
+      "description": "Claim or release identifiers for a contact"
+    },
+    {
       "name": "get",
       "path": "/api/v2/externalcontacts/contacts/{contactId}",
       "description": "Fetch an external contact"
@@ -156,21 +171,6 @@
       "name": "patch",
       "path": "/api/v2/externalcontacts/contacts/{contactId}",
       "description": "Update specific fields of an external contact"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/externalcontacts/contacts/{contactId}/identifiers",
-      "description": "List the identifiers for a contact"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/externalcontacts/contacts/{contactId}/identifiers",
-      "description": "Claim or release identifiers for a contact"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/contacts/{contactId}/promotion",
-      "description": "Promote an observed contact (ephemeral or identified) to a curated contact"
     },
     {
       "name": "get",
@@ -409,6 +409,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/externalcontacts/identifierlookup/organizations",
+      "description": "Fetch an external organization using an identifier type and value."
+    },
+    {
+      "name": "create",
       "path": "/api/v2/externalcontacts/identifierlookup",
       "description": "Fetch a contact using an identifier type and value."
     },
@@ -416,11 +421,6 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/identifierlookup/contacts",
       "description": "Fetch a contact using an identifier type and value."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/identifierlookup/organizations",
-      "description": "Fetch an external organization using an identifier type and value."
     },
     {
       "name": "list",
@@ -686,6 +686,56 @@
       "name": "delete",
       "path": "/api/v2/externalcontacts/settings",
       "description": "Delete settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}",
+      "description": "Returns a single cluster found by a scan"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters",
+      "description": "Returns a list of clusters found by a scan"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/graphs/clusterscans/{scanId}",
+      "description": "Returns a single cluster scan"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/graphs/clusterscans/{scanId}/statistics",
+      "description": "Returns the statistics about a single cluster scan"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/externalcontacts/graphs/clusterscans",
+      "description": "Returns a list of cluster scans"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/graphs/settings",
+      "description": "Returns the org-wide settings for ExternalContact graph operations"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/graphs/settings",
+      "description": "Updates the org-wide settings for ExternalContact graph operations"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/graphs/clusterscans/latest",
+      "description": "Returns the latest cluster scan"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/externalcontacts/graphs/clusterscans/latest/statistics",
+      "description": "Returns the statistics about the latest cluster scan"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}/merge",
+      "description": "Merge a single cluster found by a scan"
     }
   ]
 }

@@ -13,14 +13,14 @@
       "description": "Get a list of resource types"
     },
     {
-      "name": "get",
-      "path": "/api/v2/scim/schemas/{schemaId}",
-      "description": "Get a SCIM schema"
-    },
-    {
       "name": "list",
       "path": "/api/v2/scim/schemas",
       "description": "Get a list of SCIM schemas"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scim/schemas/{schemaId}",
+      "description": "Get a SCIM schema"
     },
     {
       "name": "list",
@@ -88,14 +88,14 @@
       "description": "Get a list of resource types"
     },
     {
-      "name": "get",
-      "path": "/api/v2/scim/v2/schemas/{schemaId}",
-      "description": "Get a SCIM schema"
-    },
-    {
       "name": "list",
       "path": "/api/v2/scim/v2/schemas",
       "description": "Get a list of SCIM schemas"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/scim/v2/schemas/{schemaId}",
+      "description": "Get a SCIM schema"
     },
     {
       "name": "list",

@@ -60,6 +60,9 @@ type TrustgroupDud struct {
     
 
 
+    
+
+
     DateCreated time.Time `json:"dateCreated"`
 
 
@@ -124,6 +127,10 @@ type Trustgroup struct {
     CallsEnabled bool `json:"callsEnabled"`
 
 
+    // Email - Email address for the group.
+    Email string `json:"email"`
+
+
     // Owners - Owners of the group
     Owners []User `json:"owners"`
 
@@ -142,6 +149,7 @@ func (o *Trustgroup) String() string {
     
      o.Images = []Image{{}} 
      o.Addresses = []Groupcontact{{}} 
+    
     
     
     
@@ -185,6 +193,8 @@ func (u *Trustgroup) MarshalJSON() ([]byte, error) {
         
         CallsEnabled bool `json:"callsEnabled"`
         
+        Email string `json:"email"`
+        
         Owners []User `json:"owners"`
         *Alias
     }{
@@ -220,6 +230,9 @@ func (u *Trustgroup) MarshalJSON() ([]byte, error) {
 
         
         Addresses: []Groupcontact{{}},
+        
+
+
         
 
 

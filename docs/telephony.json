@@ -3,6 +3,21 @@
   "description": "/api/v2/telephony",
   "resources": [
     {
+      "name": "list",
+      "path": "/api/v2/telephony/prefixes",
+      "description": "Get prefixes"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/prefixes/bulk",
+      "description": "Bulk save prefixes"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/prefixes/simulate/call",
+      "description": "Simulate call to test fraud prefix functionality"
+    },
+    {
       "name": "get",
       "path": "/api/v2/telephony/mediaregions",
       "description": "Retrieve the list of AWS regions media can stream through."
@@ -38,6 +53,11 @@
       "description": "Updates the agent's own greetings."
     },
     {
+      "name": "create",
+      "path": "/api/v2/telephony/numbers/routing/all",
+      "description": "Re-route all numbers on an organization"
+    },
+    {
       "name": "list",
       "path": "/api/v2/telephony/numbers/routing",
       "description": "Get Number Routings by organizationId"
@@ -49,23 +69,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/telephony/numbers/routing/all",
-      "description": "Re-route all numbers on an organization"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/telephony/numbers/routing/reset",
       "description": "Reset routing for organization"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/telephony/organization/link",
-      "description": "Get organization links"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/telephony/organization/link",
-      "description": "Create a link with an organization"
     },
     {
       "name": "delete",
@@ -81,6 +86,16 @@
       "name": "list",
       "path": "/api/v2/telephony/organization/link/regions",
       "description": "Get all the replica regions by primary region"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/organization/link",
+      "description": "Get organization links"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/organization/link",
+      "description": "Create a link with an organization"
     },
     {
       "name": "get",
@@ -161,6 +176,11 @@
       "name": "create",
       "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/route",
       "description": "Route request command to collect networking-related information from an Edge for a target IP or host."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/offlineconfiguration",
+      "description": "Create a file that can be used to configure a hardware Edge's settings."
     },
     {
       "name": "create",
@@ -674,6 +694,11 @@
     },
     {
       "name": "list",
+      "path": "/api/v2/telephony/providers/edges/trunkbasesettings/site/{siteId}",
+      "description": "Get Trunk Base Settings listing for site"
+    },
+    {
+      "name": "list",
       "path": "/api/v2/telephony/providers/edges/trunkbasesettings",
       "description": "Get Trunk Base Settings listing"
     },
@@ -681,6 +706,11 @@
       "name": "create",
       "path": "/api/v2/telephony/providers/edges/trunkbasesettings",
       "description": "Create a Trunk Base Settings object"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/trunkbasesettings/search",
+      "description": "Search Trunk Base Settings"
     },
     {
       "name": "list",
@@ -703,6 +733,11 @@
       "description": "Get a Trunk by ID"
     },
     {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/trunks/search",
+      "description": "Search for trunks"
+    },
+    {
       "name": "list",
       "path": "/api/v2/telephony/providers/edges/trunks",
       "description": "Get the list of available trunks."
@@ -713,6 +748,11 @@
       "description": "Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge."
     },
     {
+      "name": "get",
+      "path": "/api/v2/telephony/siptraces",
+      "description": "Fetch SIP metadata"
+    },
+    {
       "name": "create",
       "path": "/api/v2/telephony/siptraces/download",
       "description": "Request a download of a pcap file to S3"
@@ -721,11 +761,6 @@
       "name": "get",
       "path": "/api/v2/telephony/siptraces/download/{downloadId}",
       "description": "Get signed S3 URL for a pcap download"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/telephony/siptraces",
-      "description": "Fetch SIP metadata"
     },
     {
       "name": "get",

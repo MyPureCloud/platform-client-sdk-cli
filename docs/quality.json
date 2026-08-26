@@ -139,13 +139,13 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/quality/forms/evaluations/bulk",
-      "description": "Retrieve a list of evaluation forms by their ids"
+      "path": "/api/v2/quality/forms/evaluations/bulk/contexts",
+      "description": "Retrieve a list of the latest published evaluation form versions by context ids"
     },
     {
       "name": "list",
-      "path": "/api/v2/quality/forms/evaluations/bulk/contexts",
-      "description": "Retrieve a list of the latest published evaluation form versions by context ids"
+      "path": "/api/v2/quality/forms/evaluations/bulk",
+      "description": "Retrieve a list of evaluation forms by their ids"
     },
     {
       "name": "list",
@@ -254,13 +254,13 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/quality/forms/surveys/bulk",
-      "description": "Retrieve a list of survey forms by their ids"
+      "path": "/api/v2/quality/forms/surveys/bulk/contexts",
+      "description": "Retrieve a list of the latest form versions by context ids"
     },
     {
       "name": "list",
-      "path": "/api/v2/quality/forms/surveys/bulk/contexts",
-      "description": "Retrieve a list of the latest form versions by context ids"
+      "path": "/api/v2/quality/forms/surveys/bulk",
+      "description": "Retrieve a list of survey forms by their ids"
     },
     {
       "name": "list",

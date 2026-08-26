@@ -82,6 +82,8 @@ func Cmdbusinessrules_decisiontables_versions() *cobra.Command {
 
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 100.")
+	utils.AddFlag(listCmd.Flags(), "[]string", "status", "", "Filter by version status. Repeatable. Valid values: Draft, Published, Error, Preparing, Superseded")
+	utils.AddFlag(listCmd.Flags(), "bool", "hasSnapshot", "", "When true, returns only versions that have snapshot metadata.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/businessrules/decisiontables/{tableId}/versions", utils.FormatPermissions([]string{ "businessrules:decisionTable:view",  }), utils.GenerateDevCentreLink("GET", "Business Rules", "/api/v2/businessrules/decisiontables/{tableId}/versions")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -415,6 +417,14 @@ var listCmd = &cobra.Command{
 		pageSize := utils.GetFlag(cmd.Flags(), "string", "pageSize")
 		if pageSize != "" {
 			queryParams["pageSize"] = pageSize
+		}
+		status := utils.GetFlag(cmd.Flags(), "[]string", "status")
+		if status != "" {
+			queryParams["status"] = status
+		}
+		hasSnapshot := utils.GetFlag(cmd.Flags(), "bool", "hasSnapshot")
+		if hasSnapshot != "" {
+			queryParams["hasSnapshot"] = hasSnapshot
 		}
 		urlString := path
 		if len(queryParams) > 0 {

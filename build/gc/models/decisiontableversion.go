@@ -51,6 +51,12 @@ type DecisiontableversionDud struct {
     PublishedBy Addressableentityref `json:"publishedBy"`
 
 
+    RollbackReason string `json:"rollbackReason"`
+
+
+    
+
+
     
 
 
@@ -109,6 +115,9 @@ type Decisiontableversion struct {
     
 
 
+    
+
+
     // Columns - The column definitions of this decision table version.
     Columns Decisiontablecolumns `json:"columns"`
 
@@ -117,12 +126,17 @@ type Decisiontableversion struct {
     Contract Decisiontablecontract `json:"contract"`
 
 
+    // Snapshot - Snapshot metadata on this version, if one exists.
+    Snapshot Decisiontablesnapshot `json:"snapshot"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Decisiontableversion) String() string {
+    
     
     
     
@@ -166,8 +180,16 @@ func (u *Decisiontableversion) MarshalJSON() ([]byte, error) {
         Columns Decisiontablecolumns `json:"columns"`
         
         Contract Decisiontablecontract `json:"contract"`
+        
+        Snapshot Decisiontablesnapshot `json:"snapshot"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

@@ -17,7 +17,7 @@ type AppleinvitationnotificationparametersDud struct {
 
 // Appleinvitationnotificationparameters - Notification parameters for Apple Invitation
 type Appleinvitationnotificationparameters struct { 
-    // ReferenceId - An opaque, caller-supplied string that provides business context for the notification message (e.g., an order number or case ID).
+    // ReferenceId - An opaque, caller-supplied string that provides business context for the notification message (e.g., an order number or case ID). Max: 1000 characters. Must not be empty and must not contain '?' or apostrophe (') characters.
     ReferenceId string `json:"referenceId"`
 
 }

@@ -37,12 +37,12 @@ type Programsentitylisting struct {
     PageSize int `json:"pageSize"`
 
 
-    // NextUri
-    NextUri string `json:"nextUri"`
-
-
     // SelfUri
     SelfUri string `json:"selfUri"`
+
+
+    // NextUri
+    NextUri string `json:"nextUri"`
 
 
     // PageCount
@@ -78,9 +78,9 @@ func (u *Programsentitylisting) MarshalJSON() ([]byte, error) {
         
         PageSize int `json:"pageSize"`
         
-        NextUri string `json:"nextUri"`
-        
         SelfUri string `json:"selfUri"`
+        
+        NextUri string `json:"nextUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

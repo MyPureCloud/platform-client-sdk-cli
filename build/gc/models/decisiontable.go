@@ -42,6 +42,9 @@ type DecisiontableDud struct {
     LatestVersionStatus string `json:"latestVersionStatus"`
 
 
+    SnapshotCount int `json:"snapshotCount"`
+
+
     
 
 
@@ -67,6 +70,9 @@ type Decisiontable struct {
 
     // Description - The decision table description.
     Description string `json:"description"`
+
+
+    
 
 
     
@@ -134,6 +140,9 @@ func (u *Decisiontable) MarshalJSON() ([]byte, error) {
         PublishedContract Decisiontablecontract `json:"publishedContract"`
         *Alias
     }{
+
+        
+
 
         
 

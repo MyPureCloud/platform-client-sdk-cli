@@ -64,8 +64,16 @@ type Responseentitylist struct {
     PageCount int `json:"pageCount"`
 
 
+    // LastUri
+    LastUri string `json:"lastUri"`
+
+
     // FirstUri
     FirstUri string `json:"firstUri"`
+
+
+    // SelfUri
+    SelfUri string `json:"selfUri"`
 
 
     // NextUri
@@ -74,14 +82,6 @@ type Responseentitylist struct {
 
     // PreviousUri
     PreviousUri string `json:"previousUri"`
-
-
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
-    // SelfUri
-    SelfUri string `json:"selfUri"`
 
 }
 
@@ -124,15 +124,15 @@ func (u *Responseentitylist) MarshalJSON() ([]byte, error) {
         
         PageCount int `json:"pageCount"`
         
+        LastUri string `json:"lastUri"`
+        
         FirstUri string `json:"firstUri"`
+        
+        SelfUri string `json:"selfUri"`
         
         NextUri string `json:"nextUri"`
         
         PreviousUri string `json:"previousUri"`
-        
-        LastUri string `json:"lastUri"`
-        
-        SelfUri string `json:"selfUri"`
         *Alias
     }{
 

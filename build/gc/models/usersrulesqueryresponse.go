@@ -48,12 +48,12 @@ type Usersrulesqueryresponse struct {
     NextUri string `json:"nextUri"`
 
 
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
-
     // SelfUri
     SelfUri string `json:"selfUri"`
+
+
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
 
 }
 
@@ -90,9 +90,9 @@ func (u *Usersrulesqueryresponse) MarshalJSON() ([]byte, error) {
         
         NextUri string `json:"nextUri"`
         
-        PreviousUri string `json:"previousUri"`
-        
         SelfUri string `json:"selfUri"`
+        
+        PreviousUri string `json:"previousUri"`
         *Alias
     }{
 

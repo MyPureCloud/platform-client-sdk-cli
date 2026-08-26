@@ -60,6 +60,9 @@ type GroupDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -121,6 +124,10 @@ type Group struct {
     CallsEnabled bool `json:"callsEnabled"`
 
 
+    // Email - Email address for the group.
+    Email string `json:"email"`
+
+
     // Owners - Owners of the group
     Owners []User `json:"owners"`
 
@@ -136,6 +143,7 @@ func (o *Group) String() string {
     
      o.Images = []Image{{}} 
      o.Addresses = []Groupcontact{{}} 
+    
     
     
     
@@ -179,6 +187,8 @@ func (u *Group) MarshalJSON() ([]byte, error) {
         
         CallsEnabled bool `json:"callsEnabled"`
         
+        Email string `json:"email"`
+        
         Owners []User `json:"owners"`
         *Alias
     }{
@@ -214,6 +224,9 @@ func (u *Group) MarshalJSON() ([]byte, error) {
 
         
         Addresses: []Groupcontact{{}},
+        
+
+
         
 
 

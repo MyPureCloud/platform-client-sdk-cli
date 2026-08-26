@@ -28,6 +28,9 @@ type SchedulingsettingsresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Schedulingsettingsresponse
@@ -55,10 +58,15 @@ type Schedulingsettingsresponse struct {
     // StartDayOfWeekend - Start day of weekend for scheduling
     StartDayOfWeekend string `json:"startDayOfWeekend"`
 
+
+    // ScheduleVisibility - Schedule visibility settings for agents
+    ScheduleVisibility Schedulevisibilitysettingsresponse `json:"scheduleVisibility"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Schedulingsettingsresponse) String() string {
+    
     
     
     
@@ -93,8 +101,13 @@ func (u *Schedulingsettingsresponse) MarshalJSON() ([]byte, error) {
         MonthlyPlanningPeriod Monthlyplanningperiodsettings `json:"monthlyPlanningPeriod"`
         
         StartDayOfWeekend string `json:"startDayOfWeekend"`
+        
+        ScheduleVisibility Schedulevisibilitysettingsresponse `json:"scheduleVisibility"`
         *Alias
     }{
+
+        
+
 
         
 

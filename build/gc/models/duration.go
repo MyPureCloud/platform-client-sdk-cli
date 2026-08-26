@@ -25,6 +25,9 @@ type DurationDud struct {
 
     
 
+
+    
+
 }
 
 // Duration
@@ -45,6 +48,10 @@ type Duration struct {
     Negative bool `json:"negative"`
 
 
+    // Positive
+    Positive bool `json:"positive"`
+
+
     // Units
     Units []Temporalunit `json:"units"`
 
@@ -52,6 +59,7 @@ type Duration struct {
 
 // String returns a JSON representation of the model
 func (o *Duration) String() string {
+    
     
     
     
@@ -82,9 +90,14 @@ func (u *Duration) MarshalJSON() ([]byte, error) {
         
         Negative bool `json:"negative"`
         
+        Positive bool `json:"positive"`
+        
         Units []Temporalunit `json:"units"`
         *Alias
     }{
+
+        
+
 
         
 

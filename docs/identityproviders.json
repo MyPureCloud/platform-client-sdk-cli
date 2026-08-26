@@ -78,16 +78,6 @@
       "description": "Delete IdentityNow Provider"
     },
     {
-      "name": "list",
-      "path": "/api/v2/identityproviders",
-      "description": "The list of identity providers"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/identityproviders",
-      "description": "Create Identity Provider"
-    },
-    {
       "name": "get",
       "path": "/api/v2/identityproviders/{providerId}",
       "description": "Get Identity Provider"
@@ -101,6 +91,16 @@
       "name": "delete",
       "path": "/api/v2/identityproviders/{providerId}",
       "description": "Delete Identity Provider"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/identityproviders",
+      "description": "The list of identity providers"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/identityproviders",
+      "description": "Create Identity Provider"
     },
     {
       "name": "get",

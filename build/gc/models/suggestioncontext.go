@@ -17,6 +17,9 @@ type SuggestioncontextDud struct {
     MediaType string `json:"mediaType"`
 
 
+    ParticipantType string `json:"participantType"`
+
+
     User Userreference `json:"user"`
 
 
@@ -35,6 +38,9 @@ type SuggestioncontextDud struct {
 
 // Suggestioncontext
 type Suggestioncontext struct { 
+    
+
+
     
 
 
@@ -77,6 +83,9 @@ func (u *Suggestioncontext) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

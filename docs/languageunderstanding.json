@@ -164,11 +164,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report",
-      "description": "Retrieved quality report for the specified NLU Domain Version"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}",
       "description": "Find an NLU Domain Version."
     },
@@ -186,6 +181,11 @@
       "name": "create",
       "path": "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/publish",
       "description": "Publish the draft NLU Domain Version."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report",
+      "description": "Retrieved quality report for the specified NLU Domain Version"
     },
     {
       "name": "create",

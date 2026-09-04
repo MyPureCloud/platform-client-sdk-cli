@@ -84,12 +84,12 @@ type Twitterdataingestionruleresponse struct {
     IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
 
 
-    // Countries - ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
-    Countries []string `json:"countries"`
-
-
     // SearchTerms - Search terms for X (formally Twitter).
     SearchTerms string `json:"searchTerms"`
+
+
+    // Countries - ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
+    Countries []string `json:"countries"`
 
 
     
@@ -104,8 +104,8 @@ func (o *Twitterdataingestionruleresponse) String() string {
     
     
     
-     o.Countries = []string{""} 
     
+     o.Countries = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -135,9 +135,9 @@ func (u *Twitterdataingestionruleresponse) MarshalJSON() ([]byte, error) {
         
         IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
         
-        Countries []string `json:"countries"`
-        
         SearchTerms string `json:"searchTerms"`
+        
+        Countries []string `json:"countries"`
         *Alias
     }{
 
@@ -169,10 +169,10 @@ func (u *Twitterdataingestionruleresponse) MarshalJSON() ([]byte, error) {
 
 
         
-        Countries: []string{""},
+
+
         
-
-
+        Countries: []string{""},
         
 
 

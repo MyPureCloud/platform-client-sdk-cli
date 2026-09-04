@@ -224,6 +224,7 @@ gc/cmd/casemanagement_caseplans_intakesettings/casemanagement_caseplans_intakese
 gc/cmd/casemanagement_caseplans_publish/casemanagement_caseplans_publish.go
 gc/cmd/casemanagement_caseplans_query/casemanagement_caseplans_query.go
 gc/cmd/casemanagement_caseplans_stageplans/casemanagement_caseplans_stageplans.go
+gc/cmd/casemanagement_caseplans_stageplans_reposition/casemanagement_caseplans_stageplans_reposition.go
 gc/cmd/casemanagement_caseplans_stageplans_stepplans/casemanagement_caseplans_stageplans_stepplans.go
 gc/cmd/casemanagement_caseplans_versions/casemanagement_caseplans_versions.go
 gc/cmd/casemanagement_caseplans_versions_dataschemas/casemanagement_caseplans_versions_dataschemas.go
@@ -529,6 +530,7 @@ gc/cmd/externalcontacts_contacts_schemas/externalcontacts_contacts_schemas.go
 gc/cmd/externalcontacts_contacts_schemas_coretypes/externalcontacts_contacts_schemas_coretypes.go
 gc/cmd/externalcontacts_contacts_schemas_limits/externalcontacts_contacts_schemas_limits.go
 gc/cmd/externalcontacts_contacts_schemas_versions/externalcontacts_contacts_schemas_versions.go
+gc/cmd/externalcontacts_contacts_search/externalcontacts_contacts_search.go
 gc/cmd/externalcontacts_contacts_unresolved/externalcontacts_contacts_unresolved.go
 gc/cmd/externalcontacts_conversations/externalcontacts_conversations.go
 gc/cmd/externalcontacts_externalsources/externalcontacts_externalsources.go
@@ -1944,7 +1946,6 @@ gc/models/agentutilizationaggregatequeryfilter.go
 gc/models/agentutilizationaggregatequerypredicate.go
 gc/models/agentutilizationaggregatequeryresponse.go
 gc/models/agentutilizationaggregationquery.go
-gc/models/agentutilizationaggregationsort.go
 gc/models/agentutilizationaggregationview.go
 gc/models/agentutilizationasyncaggregatequeryresponse.go
 gc/models/agentutilizationasyncaggregationquery.go
@@ -1985,6 +1986,8 @@ gc/models/alertrequest.go
 gc/models/alertruleproperties.go
 gc/models/alertsummary.go
 gc/models/alertsummaryentity.go
+gc/models/allocationoutputstemplate.go
+gc/models/allocationresultstemplate.go
 gc/models/alltimepoints.go
 gc/models/alteration.go
 gc/models/alternativeshiftagentscheduledshift.go
@@ -2837,6 +2840,8 @@ gc/models/contactlistuploadurlrequest.go
 gc/models/contactphonenumbercolumn.go
 gc/models/contactsbulkoperationjob.go
 gc/models/contactsbulkoperationjoblisting.go
+gc/models/contactsearchoperation.go
+gc/models/contactsearchrequest.go
 gc/models/contactsexport.go
 gc/models/contactsexportcomparisonfieldfilter.go
 gc/models/contactsexportfieldfilter.go
@@ -2845,6 +2850,7 @@ gc/models/contactsexportfilter.go
 gc/models/contactsexportlisting.go
 gc/models/contactsexportqueryconditions.go
 gc/models/contactsexportrequest.go
+gc/models/contactsimplesearch.go
 gc/models/contactsort.go
 gc/models/contactspatchchange.go
 gc/models/contactvertex.go
@@ -3245,8 +3251,6 @@ gc/models/dataextractionfileschemalisting.go
 gc/models/dataextractionfileurl.go
 gc/models/dataextractionfileurllisting.go
 gc/models/dataingestionrulecriteria.go
-gc/models/dataingestionruleresponse.go
-gc/models/dataingestionruleresponseentitylisting.go
 gc/models/dataingestionrulesmetadata.go
 gc/models/dataingestionrulestatuspatchrequest.go
 gc/models/datarange.go
@@ -3946,6 +3950,8 @@ gc/models/generatebuforecastrequest.go
 gc/models/generatedguidecontent.go
 gc/models/generateguidecontentrequest.go
 gc/models/generatemeetingidrequest.go
+gc/models/genericdataingestionruleresponse.go
+gc/models/genericdataingestionruleresponseentitylisting.go
 gc/models/genericsaml.go
 gc/models/generictemplate.go
 gc/models/genesysbotconnector.go
@@ -5835,8 +5841,10 @@ gc/models/staffingrequirementsplanninggroupdata.go
 gc/models/stage.go
 gc/models/stagelisting.go
 gc/models/stageplan.go
+gc/models/stageplancreate.go
 gc/models/stageplanlisting.go
 gc/models/stageplanreference.go
+gc/models/stageplanreposition.go
 gc/models/stageplanupdate.go
 gc/models/stagereference.go
 gc/models/starrabledivision.go

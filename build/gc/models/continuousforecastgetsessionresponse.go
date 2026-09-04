@@ -26,19 +26,19 @@ type ContinuousforecastgetsessionresponseDud struct {
 
 // Continuousforecastgetsessionresponse
 type Continuousforecastgetsessionresponse struct { 
-    // SessionId - Latest session ID of the business unit
+    // SessionId - The ID of the latest session, regardless of the session's status
     SessionId string `json:"sessionId"`
 
 
-    // LastSuccessfulSessionId - Last successful session ID of the business unit
+    // LastSuccessfulSessionId - The ID of the last session that has a state of Complete
     LastSuccessfulSessionId string `json:"lastSuccessfulSessionId"`
 
 
-    // State - State of the latest session
+    // State - The state of the latest session
     State string `json:"state"`
 
 
-    // ErrorCode - Failed session error code
+    // ErrorCode - The error code if the latest session has a state of Error
     ErrorCode string `json:"errorCode"`
 
 }

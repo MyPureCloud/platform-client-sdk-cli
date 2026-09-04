@@ -2,15 +2,15 @@ package dependencies_type_id_connections
 
 import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dependencies_type_id_connections_requiredbycounts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dependencies_type_id_connections_requires"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dependencies_type_id_connections_requiredby"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/dependencies_type_id_connections_requiredbycounts"
 )
 
 func init() {
-	dependencies_type_id_connectionsCmd.AddCommand(dependencies_type_id_connections_requiredbycounts.Cmddependencies_type_id_connections_requiredbycounts())
 	dependencies_type_id_connectionsCmd.AddCommand(dependencies_type_id_connections_requires.Cmddependencies_type_id_connections_requires())
 	dependencies_type_id_connectionsCmd.AddCommand(dependencies_type_id_connections_requiredby.Cmddependencies_type_id_connections_requiredby())
-	dependencies_type_id_connectionsCmd.Short = utils.GenerateCustomDescription(dependencies_type_id_connectionsCmd.Short, dependencies_type_id_connections_requiredbycounts.Description, dependencies_type_id_connections_requires.Description, dependencies_type_id_connections_requiredby.Description, )
+	dependencies_type_id_connectionsCmd.AddCommand(dependencies_type_id_connections_requiredbycounts.Cmddependencies_type_id_connections_requiredbycounts())
+	dependencies_type_id_connectionsCmd.Short = utils.GenerateCustomDescription(dependencies_type_id_connectionsCmd.Short, dependencies_type_id_connections_requires.Description, dependencies_type_id_connections_requiredby.Description, dependencies_type_id_connections_requiredbycounts.Description, )
 	dependencies_type_id_connectionsCmd.Long = dependencies_type_id_connectionsCmd.Short
 }

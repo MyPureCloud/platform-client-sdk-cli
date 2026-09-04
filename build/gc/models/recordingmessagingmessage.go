@@ -107,6 +107,9 @@ type RecordingmessagingmessageDud struct {
 
     
 
+
+    
+
 }
 
 // Recordingmessagingmessage
@@ -238,6 +241,10 @@ type Recordingmessagingmessage struct {
     // MessageReceipts - List of message receipts
     MessageReceipts []Recordingmessagereceipt `json:"messageReceipts"`
 
+
+    // NotificationResponse - Notification Response content.
+    NotificationResponse Recordingnotificationresponse `json:"notificationResponse"`
+
 }
 
 // String returns a JSON representation of the model
@@ -274,6 +281,7 @@ func (o *Recordingmessagingmessage) String() string {
     
     
      o.MessageReceipts = []Recordingmessagereceipt{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -354,6 +362,8 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
         RichLink Richlink `json:"richLink"`
         
         MessageReceipts []Recordingmessagereceipt `json:"messageReceipts"`
+        
+        NotificationResponse Recordingnotificationresponse `json:"notificationResponse"`
         *Alias
     }{
 
@@ -464,6 +474,9 @@ func (u *Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
 
         
         MessageReceipts: []Recordingmessagereceipt{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

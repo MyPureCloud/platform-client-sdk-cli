@@ -47,6 +47,30 @@ type AnalyticsagentstateagentresponseDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Analyticsagentstateagentresponse
@@ -98,6 +122,38 @@ type Analyticsagentstateagentresponse struct {
     // IsOutOfOffice - Whether the user is out of office
     IsOutOfOffice bool `json:"isOutOfOffice"`
 
+
+    // ManagementUnitId - The id of the user's management unit
+    ManagementUnitId string `json:"managementUnitId"`
+
+
+    // BusinessUnitId - The id of the user's business unit
+    BusinessUnitId string `json:"businessUnitId"`
+
+
+    // AdherenceState - The user's adherence state
+    AdherenceState string `json:"adherenceState"`
+
+
+    // AdherenceImpact - The user's adherence impact
+    AdherenceImpact string `json:"adherenceImpact"`
+
+
+    // AdherenceDate - The timestamp for when the user's adherence state began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    AdherenceDate time.Time `json:"adherenceDate"`
+
+
+    // ScheduledActivityCodeId - The id of the user's scheduled activity code
+    ScheduledActivityCodeId string `json:"scheduledActivityCodeId"`
+
+
+    // ScheduledActivityCategory - The user's scheduled activity category
+    ScheduledActivityCategory string `json:"scheduledActivityCategory"`
+
+
+    // ActualActivityCategory - The user's actual activity category
+    ActualActivityCategory string `json:"actualActivityCategory"`
+
 }
 
 // String returns a JSON representation of the model
@@ -108,6 +164,14 @@ func (o *Analyticsagentstateagentresponse) String() string {
     
     
      o.Sessions = []Analyticsagentstateagentsessionresult{{}} 
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -154,6 +218,22 @@ func (u *Analyticsagentstateagentresponse) MarshalJSON() ([]byte, error) {
         RoutingStatusDate time.Time `json:"routingStatusDate"`
         
         IsOutOfOffice bool `json:"isOutOfOffice"`
+        
+        ManagementUnitId string `json:"managementUnitId"`
+        
+        BusinessUnitId string `json:"businessUnitId"`
+        
+        AdherenceState string `json:"adherenceState"`
+        
+        AdherenceImpact string `json:"adherenceImpact"`
+        
+        AdherenceDate time.Time `json:"adherenceDate"`
+        
+        ScheduledActivityCodeId string `json:"scheduledActivityCodeId"`
+        
+        ScheduledActivityCategory string `json:"scheduledActivityCategory"`
+        
+        ActualActivityCategory string `json:"actualActivityCategory"`
         *Alias
     }{
 
@@ -174,6 +254,30 @@ func (u *Analyticsagentstateagentresponse) MarshalJSON() ([]byte, error) {
 
         
         Sessions: []Analyticsagentstateagentsessionresult{{}},
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
         
 
 

@@ -5,27 +5,27 @@
     {
       "name": "get",
       "path": "/api/v2/mobiledevices/{deviceId}",
-      "description": "Get device"
+      "description": "(Deprecated) Get device"
     },
     {
       "name": "update",
       "path": "/api/v2/mobiledevices/{deviceId}",
-      "description": "Update device"
+      "description": "(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device"
     },
     {
       "name": "delete",
       "path": "/api/v2/mobiledevices/{deviceId}",
-      "description": "Delete device"
+      "description": "(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device"
     },
     {
       "name": "list",
       "path": "/api/v2/mobiledevices",
-      "description": "Get a list of all devices."
+      "description": "(Deprecated) Get a list of all devices."
     },
     {
       "name": "create",
       "path": "/api/v2/mobiledevices",
-      "description": "Create User device"
+      "description": "(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device"
     }
   ]
 }

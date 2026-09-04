@@ -39,9 +39,6 @@ type OpendataingestionruleresponseDud struct {
     
 
 
-    Countries []string `json:"countries"`
-
-
     
 
 
@@ -82,9 +79,6 @@ type Opendataingestionruleresponse struct {
 
     // IngestionRuleInfo - The Info about ingestion rule.
     IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
-
-
-    
 
 
     // ExternalSource - The external source associated with this open data ingestion rule, which is used when performing identity resolution
@@ -136,9 +130,6 @@ func (u *Opendataingestionruleresponse) MarshalJSON() ([]byte, error) {
         ExternalSource Domainentityref `json:"externalSource"`
         *Alias
     }{
-
-        
-
 
         
 

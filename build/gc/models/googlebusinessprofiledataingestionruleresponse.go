@@ -39,9 +39,6 @@ type GooglebusinessprofiledataingestionruleresponseDud struct {
     
 
 
-    Countries []string `json:"countries"`
-
-
     
 
 
@@ -85,9 +82,6 @@ type Googlebusinessprofiledataingestionruleresponse struct {
 
     // IngestionRuleInfo - The Info about ingestion rule.
     IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
-
-
-    
 
 
     // IntegrationId - The Integration Id from which public social posts are ingested. This entity is created using the /conversations/messaging/integrations/open/extensions/googlebusinessprofile resource
@@ -146,9 +140,6 @@ func (u *Googlebusinessprofiledataingestionruleresponse) MarshalJSON() ([]byte, 
         ExternalSource Domainentityref `json:"externalSource"`
         *Alias
     }{
-
-        
-
 
         
 

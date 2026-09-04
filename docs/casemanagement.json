@@ -173,6 +173,11 @@
       "description": "Update the attributes of a Stageplan."
     },
     {
+      "name": "delete",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}",
+      "description": "Delete a Stageplan from a draft Caseplan."
+    },
+    {
       "name": "get",
       "path": "/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}",
       "description": "Get a Stageplan."
@@ -236,6 +241,16 @@
       "name": "create",
       "path": "/api/v2/casemanagement/cases/query/jobs",
       "description": "Create a Case query job."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/reposition",
+      "description": "Reposition a Stageplan within a draft Caseplan."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/casemanagement/caseplans/{caseplanId}/stageplans",
+      "description": "Create a Stageplan on a draft Caseplan."
     }
   ]
 }

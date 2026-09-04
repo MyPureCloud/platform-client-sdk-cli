@@ -736,6 +736,18 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1684,6 +1696,22 @@ type Viewfilter struct {
     SocialVerificationStatus bool `json:"socialVerificationStatus"`
 
 
+    // SocialEngagementLikes - The likes range used to filter the view
+    SocialEngagementLikes Numericrange `json:"socialEngagementLikes"`
+
+
+    // SocialEngagementShares - The shares range used to filter the view
+    SocialEngagementShares Numericrange `json:"socialEngagementShares"`
+
+
+    // SocialEngagementComments - The comments range used to filter the view
+    SocialEngagementComments Numericrange `json:"socialEngagementComments"`
+
+
+    // SocialEngagementViews - The views range used to filter the view
+    SocialEngagementViews Numericrange `json:"socialEngagementViews"`
+
+
     // SessionExpired - Filter to indicate for if session is expired
     SessionExpired bool `json:"sessionExpired"`
 
@@ -1945,6 +1973,10 @@ func (o *Viewfilter) String() string {
      o.SentimentTrendCategories = []string{""} 
      o.ContentModerationFlags = []string{""} 
      o.SocialSourceTypes = []string{""} 
+    
+    
+    
+    
     
     
     
@@ -2441,6 +2473,14 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         SocialFollowerRange Socialnumericrange `json:"socialFollowerRange"`
         
         SocialVerificationStatus bool `json:"socialVerificationStatus"`
+        
+        SocialEngagementLikes Numericrange `json:"socialEngagementLikes"`
+        
+        SocialEngagementShares Numericrange `json:"socialEngagementShares"`
+        
+        SocialEngagementComments Numericrange `json:"socialEngagementComments"`
+        
+        SocialEngagementViews Numericrange `json:"socialEngagementViews"`
         
         SessionExpired bool `json:"sessionExpired"`
         
@@ -3479,6 +3519,18 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         SocialSourceTypes: []string{""},
+        
+
+
+        
+
+
+        
+
+
+        
+
+
         
 
 

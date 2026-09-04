@@ -21,7 +21,7 @@ type PerformancepredictionuploadschemaDud struct {
 
 // Performancepredictionuploadschema
 type Performancepredictionuploadschema struct { 
-    // CalculationStartDate - Date as an ISO-8601 string, corresponding to the beginning of the performance prediction results
+    // CalculationStartDate - The beginning of the performance prediction results, in ISO-8601 format
     CalculationStartDate time.Time `json:"calculationStartDate"`
 
 

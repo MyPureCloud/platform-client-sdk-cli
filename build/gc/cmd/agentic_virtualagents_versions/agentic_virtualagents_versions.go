@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdagentic_virtualagents_versions() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "bool", "validateOnly", "false", "Validate the request without creating the version.")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/agentic/virtualagents/{virtualAgentId}/versions", utils.FormatPermissions([]string{ "agentic:virtualAgentVersion:add",  }), utils.GenerateDevCentreLink("POST", "AI Studio", "/api/v2/agentic/virtualagents/{virtualAgentId}/versions")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "content" : {
@@ -69,6 +70,7 @@ func Cmdagentic_virtualagents_versions() *cobra.Command {
 }`)
 	agentic_virtualagents_versionsCmd.AddCommand(getCmd)
 
+	utils.AddFlag(updateCmd.Flags(), "bool", "validateOnly", "false", "Validate the update without saving the version.")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}", utils.FormatPermissions([]string{ "agentic:virtualAgentVersion:edit",  }), utils.GenerateDevCentreLink("PATCH", "AI Studio", "/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   "content" : {
@@ -125,6 +127,10 @@ var createCmd = &cobra.Command{
 		virtualAgentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{virtualAgentId}", fmt.Sprintf("%v", virtualAgentId), -1)
 
+		validateOnly := utils.GetFlag(cmd.Flags(), "bool", "validateOnly")
+		if validateOnly != "" {
+			queryParams["validateOnly"] = validateOnly
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)
@@ -298,6 +304,10 @@ var updateCmd = &cobra.Command{
 		versionId, args := args[0], args[1:]
 		path = strings.Replace(path, "{versionId}", fmt.Sprintf("%v", versionId), -1)
 
+		validateOnly := utils.GetFlag(cmd.Flags(), "bool", "validateOnly")
+		if validateOnly != "" {
+			queryParams["validateOnly"] = validateOnly
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

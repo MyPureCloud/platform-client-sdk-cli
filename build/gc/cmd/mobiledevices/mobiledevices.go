@@ -134,8 +134,8 @@ func queryEscape(value string) string {
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Create User device",
-	Long:  "Create User device",
+	Short: "(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device",
+	Long:  "(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -218,8 +218,8 @@ var createCmd = &cobra.Command{
 }
 var deleteCmd = &cobra.Command{
 	Use:   "delete [deviceId]",
-	Short: "Delete device",
-	Long:  "Delete device",
+	Short: "(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device",
+	Long:  "(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device",
 	Args:  utils.DetermineArgs([]string{ "deviceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -301,8 +301,8 @@ var deleteCmd = &cobra.Command{
 }
 var getCmd = &cobra.Command{
 	Use:   "get [deviceId]",
-	Short: "Get device",
-	Long:  "Get device",
+	Short: "(Deprecated) Get device",
+	Long:  "(Deprecated) Get device",
 	Args:  utils.DetermineArgs([]string{ "deviceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -384,8 +384,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Get a list of all devices.",
-	Long:  "Get a list of all devices.",
+	Short: "(Deprecated) Get a list of all devices.",
+	Long:  "(Deprecated) Get a list of all devices.",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -477,8 +477,8 @@ var listCmd = &cobra.Command{
 }
 var updateCmd = &cobra.Command{
 	Use:   "update [deviceId]",
-	Short: "Update device",
-	Long:  "Update device",
+	Short: "(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device",
+	Long:  "(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device",
 	Args:  utils.DetermineArgs([]string{ "deviceId", }),
 
 	Run: func(cmd *cobra.Command, args []string) {

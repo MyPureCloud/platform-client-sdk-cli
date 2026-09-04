@@ -39,9 +39,6 @@ type FacebookdataingestionruleresponseDud struct {
     
 
 
-    Countries []string `json:"countries"`
-
-
     
 
 
@@ -82,9 +79,6 @@ type Facebookdataingestionruleresponse struct {
 
     // IngestionRuleInfo - The Info about ingestion rule.
     IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
-
-
-    
 
 
     // IntegrationId - Id of the Integration when source is owned (Authenticated). This entity is created using the /conversations/messaging/integrations/facebook resource. Optional when configuring non-owned pages.
@@ -136,9 +130,6 @@ func (u *Facebookdataingestionruleresponse) MarshalJSON() ([]byte, error) {
         IntegrationId string `json:"integrationId"`
         *Alias
     }{
-
-        
-
 
         
 

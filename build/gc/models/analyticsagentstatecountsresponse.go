@@ -22,6 +22,15 @@ type AnalyticsagentstatecountsresponseDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Analyticsagentstatecountsresponse
@@ -41,6 +50,18 @@ type Analyticsagentstatecountsresponse struct {
     // IsOutOfOfficeCounts - List of count by out of office states
     IsOutOfOfficeCounts []Agentstateisoutofofficecount `json:"isOutOfOfficeCounts"`
 
+
+    // AdherenceStateCounts - List of count by adherence state
+    AdherenceStateCounts []Agentstateadherencestatecount `json:"adherenceStateCounts"`
+
+
+    // ScheduledActivityCategoryCounts - List of count by scheduled activity category
+    ScheduledActivityCategoryCounts []Agentstateactivitycategorycount `json:"scheduledActivityCategoryCounts"`
+
+
+    // ActualActivityCategoryCounts - List of count by actual activity category
+    ActualActivityCategoryCounts []Agentstateactivitycategorycount `json:"actualActivityCategoryCounts"`
+
 }
 
 // String returns a JSON representation of the model
@@ -49,6 +70,9 @@ func (o *Analyticsagentstatecountsresponse) String() string {
      o.PresenceCounts = []Agentstatepresencecount{{}} 
      o.RoutingStatusCounts = []Agentstateroutingstatuscount{{}} 
      o.IsOutOfOfficeCounts = []Agentstateisoutofofficecount{{}} 
+     o.AdherenceStateCounts = []Agentstateadherencestatecount{{}} 
+     o.ScheduledActivityCategoryCounts = []Agentstateactivitycategorycount{{}} 
+     o.ActualActivityCategoryCounts = []Agentstateactivitycategorycount{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -73,6 +97,12 @@ func (u *Analyticsagentstatecountsresponse) MarshalJSON() ([]byte, error) {
         RoutingStatusCounts []Agentstateroutingstatuscount `json:"routingStatusCounts"`
         
         IsOutOfOfficeCounts []Agentstateisoutofofficecount `json:"isOutOfOfficeCounts"`
+        
+        AdherenceStateCounts []Agentstateadherencestatecount `json:"adherenceStateCounts"`
+        
+        ScheduledActivityCategoryCounts []Agentstateactivitycategorycount `json:"scheduledActivityCategoryCounts"`
+        
+        ActualActivityCategoryCounts []Agentstateactivitycategorycount `json:"actualActivityCategoryCounts"`
         *Alias
     }{
 
@@ -93,6 +123,21 @@ func (u *Analyticsagentstatecountsresponse) MarshalJSON() ([]byte, error) {
 
         
         IsOutOfOfficeCounts: []Agentstateisoutofofficecount{{}},
+        
+
+
+        
+        AdherenceStateCounts: []Agentstateadherencestatecount{{}},
+        
+
+
+        
+        ScheduledActivityCategoryCounts: []Agentstateactivitycategorycount{{}},
+        
+
+
+        
+        ActualActivityCategoryCounts: []Agentstateactivitycategorycount{{}},
         
 
         Alias: (*Alias)(u),

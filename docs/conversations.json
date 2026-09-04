@@ -118,11 +118,6 @@
       "description": "API invoked to finalize agent checklist evaluation."
     },
     {
-      "name": "createforchecklist",
-      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs",
-      "description": "Create inference job"
-    },
-    {
       "name": "get",
       "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId}",
       "description": "Get inference job status"
@@ -146,6 +141,11 @@
       "name": "create",
       "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/agentaction",
       "description": "API invoked to capture an agent action."
+    },
+    {
+      "name": "createforchecklist",
+      "path": "/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs",
+      "description": "Create inference job"
     },
     {
       "name": "list",
@@ -239,13 +239,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/conversations/callbacks/bulk/disconnect",
-      "description": "Disconnect multiple scheduled callbacks"
+      "path": "/api/v2/conversations/callbacks/bulk/update",
+      "description": "Update multiple scheduled callbacks"
     },
     {
       "name": "create",
-      "path": "/api/v2/conversations/callbacks/bulk/update",
-      "description": "Update multiple scheduled callbacks"
+      "path": "/api/v2/conversations/callbacks/bulk/disconnect",
+      "description": "Disconnect multiple scheduled callbacks"
     },
     {
       "name": "list",
@@ -1379,11 +1379,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement",
-      "description": "Save an engagement on the suggestion."
-    },
-    {
-      "name": "create",
       "path": "/api/v2/conversations/{conversationId}/suggestions/feedback",
       "description": "Suggestion feedback."
     },
@@ -1401,6 +1396,11 @@
       "name": "update",
       "path": "/api/v2/conversations/{conversationId}/suggestions/{suggestionId}",
       "description": "Update a suggestion."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement",
+      "description": "Save an engagement on the suggestion."
     },
     {
       "name": "get",
@@ -1428,16 +1428,6 @@
       "description": "Trigger summary preview event generation."
     },
     {
-      "name": "list",
-      "path": "/api/v2/conversations/summaries/settings",
-      "description": "Get all summary settings."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/summaries/settings",
-      "description": "Create a summary setting."
-    },
-    {
       "name": "get",
       "path": "/api/v2/conversations/summaries/settings/{summarySettingId}",
       "description": "Receive a summary setting."
@@ -1451,6 +1441,16 @@
       "name": "delete",
       "path": "/api/v2/conversations/summaries/settings/{summarySettingId}",
       "description": "Delete a summary setting."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/summaries/settings",
+      "description": "Get all summary settings."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/summaries/settings",
+      "description": "Create a summary setting."
     },
     {
       "name": "get",

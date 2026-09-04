@@ -138,11 +138,6 @@
       "description": "Create a note for an external contact"
     },
     {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/contacts/{contactId}/promotion",
-      "description": "Promote an observed contact (ephemeral or identified) to a curated contact"
-    },
-    {
       "name": "list",
       "path": "/api/v2/externalcontacts/contacts/{contactId}/identifiers",
       "description": "List the identifiers for a contact"
@@ -171,6 +166,11 @@
       "name": "patch",
       "path": "/api/v2/externalcontacts/contacts/{contactId}",
       "description": "Update specific fields of an external contact"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/promotion",
+      "description": "Promote an observed contact (ephemeral or identified) to a curated contact"
     },
     {
       "name": "get",
@@ -236,6 +236,11 @@
       "name": "list",
       "path": "/api/v2/externalcontacts/scan/contacts",
       "description": "Scan for external contacts using paging"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/contacts/search",
+      "description": "Search for external contacts"
     },
     {
       "name": "update",

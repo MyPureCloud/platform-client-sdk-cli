@@ -28,6 +28,9 @@ type SendagentlessoutboundmessagerequestDud struct {
 
     
 
+
+    
+
 }
 
 // Sendagentlessoutboundmessagerequest
@@ -38,6 +41,10 @@ type Sendagentlessoutboundmessagerequest struct {
 
     // ToAddress - The messaging address of the recipient of the message. For an Apple Invitation and SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234. For WhatsApp messenger type, use a WhatsApp ID of a phone number. E.g for a E.164 formatted phone number `+13175555555`, a WhatsApp ID would be 13175555555. For WebMessaging this cannot be used, instead use externalContactId
     ToAddress string `json:"toAddress"`
+
+
+    // ExternalContactId - The externalContactId of the recipient of the message. Supported for WebMessaging, SMS, and Open messenger types only. For WebMessaging it is required.
+    ExternalContactId string `json:"externalContactId"`
 
 
     // ToAddressMessengerType - The recipient messaging address messenger type.
@@ -65,6 +72,7 @@ func (o *Sendagentlessoutboundmessagerequest) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -86,6 +94,8 @@ func (u *Sendagentlessoutboundmessagerequest) MarshalJSON() ([]byte, error) {
         
         ToAddress string `json:"toAddress"`
         
+        ExternalContactId string `json:"externalContactId"`
+        
         ToAddressMessengerType string `json:"toAddressMessengerType"`
         
         TextBody string `json:"textBody"`
@@ -95,6 +105,9 @@ func (u *Sendagentlessoutboundmessagerequest) MarshalJSON() ([]byte, error) {
         UseExistingActiveConversation bool `json:"useExistingActiveConversation"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -39,9 +39,6 @@ type InstagramdataingestionruleversionresponseDud struct {
     
 
 
-    Countries []string `json:"countries"`
-
-
     
 
 
@@ -82,9 +79,6 @@ type Instagramdataingestionruleversionresponse struct {
 
     // IngestionRuleInfo - The Info about ingestion rule.
     IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
-
-
-    
 
 
     // IntegrationId - The Integration Id from which public social posts are ingested. This entity is created using the /conversations/messaging/integrations/instagram resource
@@ -136,9 +130,6 @@ func (u *Instagramdataingestionruleversionresponse) MarshalJSON() ([]byte, error
         IntegrationId string `json:"integrationId"`
         *Alias
     }{
-
-        
-
 
         
 

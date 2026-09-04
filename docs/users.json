@@ -3,21 +3,6 @@
   "description": "/api/v2/users",
   "resources": [
     {
-      "name": "list",
-      "path": "/api/v2/users/me/verifiers",
-      "description": "Get a list of my verifiers"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/users/me/verifiers/webauthn/register/options",
-      "description": "Begin WebAuthn verifier registration"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/users/me/verifiers/webauthn/register",
-      "description": "Finish WebAuthn verifier registration"
-    },
-    {
       "name": "update",
       "path": "/api/v2/users/me/verifiers/{verifierId}",
       "description": "Update a verifier"
@@ -39,8 +24,18 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/users/{userId}/verifiers",
-      "description": "Get a list of verifiers"
+      "path": "/api/v2/users/me/verifiers",
+      "description": "Get a list of my verifiers"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/me/verifiers/webauthn/register/options",
+      "description": "Begin WebAuthn verifier registration"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/me/verifiers/webauthn/register",
+      "description": "Finish WebAuthn verifier registration"
     },
     {
       "name": "update",
@@ -51,6 +46,11 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/verifiers/{verifierId}",
       "description": "Delete a verifier"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/verifiers",
+      "description": "Get a list of verifiers"
     },
     {
       "name": "get",
@@ -103,6 +103,11 @@
       "description": "Deprecated; will be revived with new contract"
     },
     {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/adjacents",
+      "description": "Get adjacents"
+    },
+    {
       "name": "list",
       "path": "/api/v2/users/{userId}/superiors",
       "description": "Get superiors"
@@ -111,11 +116,6 @@
       "name": "list",
       "path": "/api/v2/users/{userId}/directreports",
       "description": "Get direct reports"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/users/{userId}/adjacents",
-      "description": "Get adjacents"
     },
     {
       "name": "get",
@@ -223,16 +223,6 @@
       "description": "Get the user associated with external identifier."
     },
     {
-      "name": "getexternalidsforuser",
-      "path": "/api/v2/users/{userId}/externalid",
-      "description": "Get the external identifiers for a user."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/users/{userId}/externalid",
-      "description": "Create mapping between external identifier and user. Limit 100 per entity."
-    },
-    {
       "name": "delete",
       "path": "/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}",
       "description": "Delete the external identifier for user."
@@ -241,6 +231,16 @@
       "name": "getexternalidforuserauthority",
       "path": "/api/v2/users/{userId}/externalid/{authorityName}",
       "description": "Get the external identifier of user for an authority."
+    },
+    {
+      "name": "getexternalidsforuser",
+      "path": "/api/v2/users/{userId}/externalid",
+      "description": "Get the external identifiers for a user."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/{userId}/externalid",
+      "description": "Create mapping between external identifier and user. Limit 100 per entity."
     },
     {
       "name": "create",

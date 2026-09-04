@@ -3,11 +3,6 @@
   "description": "/api/v2/dependencies",
   "resources": [
     {
-      "name": "get",
-      "path": "/api/v2/dependencies/type/{entityType}/id/{entityId}/connections/requiredbycounts",
-      "description": "An estimated count of entities that depend on this entity, including indirect dependencies."
-    },
-    {
       "name": "list",
       "path": "/api/v2/dependencies/type/{entityType}/id/{entityId}/connections/requires",
       "description": "Get entities that the given entity requires"
@@ -16,6 +11,11 @@
       "name": "list",
       "path": "/api/v2/dependencies/type/{entityType}/id/{entityId}/connections/requiredby",
       "description": "Get entities that require the given entity"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/dependencies/type/{entityType}/id/{entityId}/connections/requiredbycounts",
+      "description": "An estimated count of entities that depend on this entity, including indirect dependencies."
     }
   ]
 }

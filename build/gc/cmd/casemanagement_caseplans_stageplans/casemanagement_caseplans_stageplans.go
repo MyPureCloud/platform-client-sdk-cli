@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("casemanagement_caseplans_stageplans", "SWAGGER_OVERRIDE_/api/v2/casemanagement/caseplans/{caseplanId}/stageplans", )
+	Description = utils.FormatUsageDescription("casemanagement_caseplans_stageplans", "SWAGGER_OVERRIDE_/api/v2/casemanagement/caseplans/{caseplanId}/stageplans", "SWAGGER_OVERRIDE_/api/v2/casemanagement/caseplans/{caseplanId}/stageplans", "SWAGGER_OVERRIDE_/api/v2/casemanagement/caseplans/{caseplanId}/stageplans", )
 	casemanagement_caseplans_stageplansCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("casemanagement_caseplans_stageplans"),
 		Short: Description,
@@ -28,6 +28,48 @@ func init() {
 }
 
 func Cmdcasemanagement_caseplans_stageplans() *cobra.Command { 
+	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/casemanagement/caseplans/{caseplanId}/stageplans", utils.FormatPermissions([]string{ "caseManagement:stageplan:add",  }), utils.GenerateDevCentreLink("POST", "Case Management", "/api/v2/casemanagement/caseplans/{caseplanId}/stageplans")))
+	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
+  "description" : "Stageplan create request.",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/StageplanCreate"
+      }
+    }
+  },
+  "required" : true
+}`)
+	
+	
+	utils.AddPaginateFlagsIfListingResponse(createCmd.Flags(), "POST", `{
+  "description" : "successful operation",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Stageplan"
+      }
+    }
+  }
+}`)
+	casemanagement_caseplans_stageplansCmd.AddCommand(createCmd)
+
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}", utils.FormatPermissions([]string{ "caseManagement:stageplan:delete",  }), utils.GenerateDevCentreLink("DELETE", "Case Management", "/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}")))
+	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
+	
+	
+	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
+  "description" : "successful operation",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Empty"
+      }
+    }
+  }
+}`)
+	casemanagement_caseplans_stageplansCmd.AddCommand(deleteCmd)
+
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}", utils.FormatPermissions([]string{ "caseManagement:stageplan:edit",  }), utils.GenerateDevCentreLink("PATCH", "Case Management", "/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
   "description" : "Stageplan update.",
@@ -61,6 +103,177 @@ func queryEscape(value string) string {
    return url.QueryEscape(value)
 }
 
+var createCmd = &cobra.Command{
+	Use:   "create [caseplanId]",
+	Short: "Create a Stageplan on a draft Caseplan.",
+	Long:  "Create a Stageplan on a draft Caseplan.",
+	Args:  utils.DetermineArgs([]string{ "caseplanId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Stageplancreate{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/casemanagement/caseplans/{caseplanId}/stageplans"
+		caseplanId, args := args[0], args[1:]
+		path = strings.Replace(path, "{caseplanId}", fmt.Sprintf("%v", caseplanId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
+		headerParams := make(map[string]string)
+		// to determine the Content-Type header
+		localVarHttpContentTypes := []string{ "application/json",  }
+		// set Content-Type header
+		localVarHttpContentType := utils.SelectHeaderContentType(localVarHttpContentTypes)
+		if localVarHttpContentType != "" {
+			headerParams["Content-Type"] = localVarHttpContentType
+		}
+		// to determine the Accept header
+		localVarHttpHeaderAccepts := []string{
+			"application/json",
+		}
+		// set Accept header
+		localVarHttpHeaderAccept := utils.SelectHeaderAccept(localVarHttpHeaderAccepts)
+		if localVarHttpHeaderAccept != "" {
+			headerParams["Accept"] = localVarHttpHeaderAccept
+		}
+
+		const opId = "create"
+		const httpMethod = "POST"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
+			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
+		utils.Render(results)
+	},
+}
+var deleteCmd = &cobra.Command{
+	Use:   "delete [caseplanId] [stageplanId]",
+	Short: "Delete a Stageplan from a draft Caseplan.",
+	Long:  "Delete a Stageplan from a draft Caseplan.",
+	Args:  utils.DetermineArgs([]string{ "caseplanId", "stageplanId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}"
+		caseplanId, args := args[0], args[1:]
+		path = strings.Replace(path, "{caseplanId}", fmt.Sprintf("%v", caseplanId), -1)
+		stageplanId, args := args[0], args[1:]
+		path = strings.Replace(path, "{stageplanId}", fmt.Sprintf("%v", stageplanId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
+		headerParams := make(map[string]string)
+		// to determine the Content-Type header
+		localVarHttpContentTypes := []string{ "application/json",  }
+		// set Content-Type header
+		localVarHttpContentType := utils.SelectHeaderContentType(localVarHttpContentTypes)
+		if localVarHttpContentType != "" {
+			headerParams["Content-Type"] = localVarHttpContentType
+		}
+		// to determine the Accept header
+		localVarHttpHeaderAccepts := []string{
+			"application/json",
+		}
+		// set Accept header
+		localVarHttpHeaderAccept := utils.SelectHeaderAccept(localVarHttpHeaderAccepts)
+		if localVarHttpHeaderAccept != "" {
+			headerParams["Accept"] = localVarHttpHeaderAccept
+		}
+
+		const opId = "delete"
+		const httpMethod = "DELETE"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
+			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
+		utils.Render(results)
+	},
+}
 var updateCmd = &cobra.Command{
 	Use:   "update [caseplanId] [stageplanId]",
 	Short: "Update the attributes of a Stageplan.",

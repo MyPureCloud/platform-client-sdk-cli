@@ -30,6 +30,9 @@
 ### SEE ALSO
 
 * [gc casemanagement caseplans](gc_casemanagement_caseplans.html)	 - /api/v2/casemanagement/caseplans
+* [gc casemanagement caseplans stageplans create](gc_casemanagement_caseplans_stageplans_create.html)	 - Create a Stageplan on a draft Caseplan.
+* [gc casemanagement caseplans stageplans delete](gc_casemanagement_caseplans_stageplans_delete.html)	 - Delete a Stageplan from a draft Caseplan.
+* [gc casemanagement caseplans stageplans reposition](gc_casemanagement_caseplans_stageplans_reposition.html)	 - /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/reposition
 * [gc casemanagement caseplans stageplans stepplans](gc_casemanagement_caseplans_stageplans_stepplans.html)	 - /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/stepplans
 * [gc casemanagement caseplans stageplans update](gc_casemanagement_caseplans_stageplans_update.html)	 - Update the attributes of a Stageplan.
 

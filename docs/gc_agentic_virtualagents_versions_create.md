@@ -13,10 +13,11 @@ gc agentic virtualagents versions create [virtualAgentId] [flags]
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -d, --directory string      Directory path with files containing request bodies
+  -f, --file string           File name containing the JSON body
+  -h, --help                  help for create
+  -b, --printrequestbody      Print the request body format of the API.
+      --validateOnly string   Validate the request without creating the version. Valid values: true, false
 ```
 
 ### Options inherited from parent commands

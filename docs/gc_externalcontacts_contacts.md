@@ -42,6 +42,7 @@
 * [gc externalcontacts contacts patch](gc_externalcontacts_contacts_patch.html)	 - Update specific fields of an external contact
 * [gc externalcontacts contacts promotion](gc_externalcontacts_contacts_promotion.html)	 - /api/v2/externalcontacts/contacts/{contactId}/promotion
 * [gc externalcontacts contacts schemas](gc_externalcontacts_contacts_schemas.html)	 - /api/v2/externalcontacts/contacts/schemas
+* [gc externalcontacts contacts search](gc_externalcontacts_contacts_search.html)	 - /api/v2/externalcontacts/contacts/search
 * [gc externalcontacts contacts search](gc_externalcontacts_contacts_search.html)	 - Search for external contacts
 * [gc externalcontacts contacts unresolved](gc_externalcontacts_contacts_unresolved.html)	 - /api/v2/externalcontacts/contacts/{contactId}/unresolved
 * [gc externalcontacts contacts update](gc_externalcontacts_contacts_update.html)	 - Update an external contact

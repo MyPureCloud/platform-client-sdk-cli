@@ -1,23 +1,15 @@
-## gc agentic virtualagents versions update
+## gc casemanagement caseplans stageplans reposition
 
-Update a virtual agent version.
+/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/reposition
 
 ### Synopsis
 
-Update a virtual agent version.
-
-```
-gc agentic virtualagents versions update [virtualAgentId] [versionId] [flags]
-```
+/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/reposition
 
 ### Options
 
 ```
-  -d, --directory string      Directory path with files containing request bodies
-  -f, --file string           File name containing the JSON body
-  -h, --help                  help for update
-  -b, --printrequestbody      Print the request body format of the API.
-      --validateOnly string   Validate the update without saving the version. Valid values: true, false
+  -h, --help   help for reposition
 ```
 
 ### Options inherited from parent commands
@@ -37,6 +29,7 @@ gc agentic virtualagents versions update [virtualAgentId] [versionId] [flags]
 
 ### SEE ALSO
 
-* [gc agentic virtualagents versions](gc_agentic_virtualagents_versions.html)	 - /api/v2/agentic/virtualagents/{virtualAgentId}/versions
+* [gc casemanagement caseplans stageplans](gc_casemanagement_caseplans_stageplans.html)	 - /api/v2/casemanagement/caseplans/{caseplanId}/stageplans
+* [gc casemanagement caseplans stageplans reposition create](gc_casemanagement_caseplans_stageplans_reposition_create.html)	 - Reposition a Stageplan within a draft Caseplan.
 
 

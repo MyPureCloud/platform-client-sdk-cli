@@ -1,10 +1,10 @@
 ## gc mobiledevices delete
 
-Delete device
+(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device
 
 ### Synopsis
 
-Delete device
+(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device
 
 ```
 gc mobiledevices delete [deviceId] [flags]

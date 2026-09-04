@@ -1,10 +1,10 @@
 ## gc mobiledevices list
 
-Get a list of all devices.
+(Deprecated) Get a list of all devices.
 
 ### Synopsis
 
-Get a list of all devices.
+(Deprecated) Get a list of all devices.
 
 ```
 gc mobiledevices list [flags]

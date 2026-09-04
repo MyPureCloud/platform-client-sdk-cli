@@ -1,10 +1,10 @@
 ## gc mobiledevices create
 
-Create User device
+(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device
 
 ### Synopsis
 
-Create User device
+(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device
 
 ```
 gc mobiledevices create [flags]

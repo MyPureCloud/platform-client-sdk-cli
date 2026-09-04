@@ -1,23 +1,22 @@
-## gc agentic virtualagents versions update
+## gc externalcontacts contacts search create
 
-Update a virtual agent version.
+Search for external contacts
 
 ### Synopsis
 
-Update a virtual agent version.
+Search for external contacts
 
 ```
-gc agentic virtualagents versions update [virtualAgentId] [versionId] [flags]
+gc externalcontacts contacts search create [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string      Directory path with files containing request bodies
-  -f, --file string           File name containing the JSON body
-  -h, --help                  help for update
-  -b, --printrequestbody      Print the request body format of the API.
-      --validateOnly string   Validate the update without saving the version. Valid values: true, false
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -37,6 +36,6 @@ gc agentic virtualagents versions update [virtualAgentId] [versionId] [flags]
 
 ### SEE ALSO
 
-* [gc agentic virtualagents versions](gc_agentic_virtualagents_versions.html)	 - /api/v2/agentic/virtualagents/{virtualAgentId}/versions
+* [gc externalcontacts contacts search](gc_externalcontacts_contacts_search.html)	 - /api/v2/externalcontacts/contacts/search
 
 

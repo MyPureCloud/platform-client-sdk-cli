@@ -1,23 +1,22 @@
-## gc agentic virtualagents versions update
+## gc casemanagement caseplans stageplans create
 
-Update a virtual agent version.
+Create a Stageplan on a draft Caseplan.
 
 ### Synopsis
 
-Update a virtual agent version.
+Create a Stageplan on a draft Caseplan.
 
 ```
-gc agentic virtualagents versions update [virtualAgentId] [versionId] [flags]
+gc casemanagement caseplans stageplans create [caseplanId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string      Directory path with files containing request bodies
-  -f, --file string           File name containing the JSON body
-  -h, --help                  help for update
-  -b, --printrequestbody      Print the request body format of the API.
-      --validateOnly string   Validate the update without saving the version. Valid values: true, false
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -37,6 +36,6 @@ gc agentic virtualagents versions update [virtualAgentId] [versionId] [flags]
 
 ### SEE ALSO
 
-* [gc agentic virtualagents versions](gc_agentic_virtualagents_versions.html)	 - /api/v2/agentic/virtualagents/{virtualAgentId}/versions
+* [gc casemanagement caseplans stageplans](gc_casemanagement_caseplans_stageplans.html)	 - /api/v2/casemanagement/caseplans/{caseplanId}/stageplans
 
 

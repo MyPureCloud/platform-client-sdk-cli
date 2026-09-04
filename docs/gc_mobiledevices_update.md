@@ -1,10 +1,10 @@
 ## gc mobiledevices update
 
-Update device
+(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device
 
 ### Synopsis
 
-Update device
+(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device
 
 ```
 gc mobiledevices update [deviceId] [flags]

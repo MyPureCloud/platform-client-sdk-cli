@@ -1,10 +1,10 @@
 ## gc mobiledevices get
 
-Get device
+(Deprecated) Get device
 
 ### Synopsis
 
-Get device
+(Deprecated) Get device
 
 ```
 gc mobiledevices get [deviceId] [flags]

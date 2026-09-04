@@ -30,10 +30,10 @@
 ### SEE ALSO
 
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
-* [gc mobiledevices create](gc_mobiledevices_create.html)	 - Create User device
-* [gc mobiledevices delete](gc_mobiledevices_delete.html)	 - Delete device
-* [gc mobiledevices get](gc_mobiledevices_get.html)	 - Get device
-* [gc mobiledevices list](gc_mobiledevices_list.html)	 - Get a list of all devices.
-* [gc mobiledevices update](gc_mobiledevices_update.html)	 - Update device
+* [gc mobiledevices create](gc_mobiledevices_create.html)	 - (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device
+* [gc mobiledevices delete](gc_mobiledevices_delete.html)	 - (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device
+* [gc mobiledevices get](gc_mobiledevices_get.html)	 - (Deprecated) Get device
+* [gc mobiledevices list](gc_mobiledevices_list.html)	 - (Deprecated) Get a list of all devices.
+* [gc mobiledevices update](gc_mobiledevices_update.html)	 - (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device
 
 

@@ -25,6 +25,9 @@ type TimeoffrequestquerybodyDud struct {
 
     
 
+
+    
+
 }
 
 // Timeoffrequestquerybody
@@ -33,7 +36,7 @@ type Timeoffrequestquerybody struct {
     Ids []string `json:"ids"`
 
 
-    // UserIds - The set of user ids to filter time off requests
+    // UserIds - The set of user ids to filter time off requests. Omit to query all users in the management unit. Note: If teamIds is also specified, only time off requests for users in the requested teams will be returned
     UserIds []string `json:"userIds"`
 
 
@@ -48,6 +51,10 @@ type Timeoffrequestquerybody struct {
     // DateRange - The inclusive range of dates to filter time off requests
     DateRange Daterange `json:"dateRange"`
 
+
+    // TeamIds - The IDs of work teams to query. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit
+    TeamIds []string `json:"teamIds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -57,6 +64,7 @@ func (o *Timeoffrequestquerybody) String() string {
      o.Statuses = []string{""} 
      o.Substatuses = []string{""} 
     
+     o.TeamIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -83,6 +91,8 @@ func (u *Timeoffrequestquerybody) MarshalJSON() ([]byte, error) {
         Substatuses []string `json:"substatuses"`
         
         DateRange Daterange `json:"dateRange"`
+        
+        TeamIds []string `json:"teamIds"`
         *Alias
     }{
 
@@ -106,6 +116,11 @@ func (u *Timeoffrequestquerybody) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        TeamIds: []string{""},
         
 
         Alias: (*Alias)(u),

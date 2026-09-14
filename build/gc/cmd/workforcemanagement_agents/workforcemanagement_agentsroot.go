@@ -8,6 +8,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_agents_unavailabletimes"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_agents_integrations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_agents_opportunities"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_agents_schedulingpreferences"
 )
 
 func init() {
@@ -17,6 +18,7 @@ func init() {
 	workforcemanagement_agentsCmd.AddCommand(workforcemanagement_agents_unavailabletimes.Cmdworkforcemanagement_agents_unavailabletimes())
 	workforcemanagement_agentsCmd.AddCommand(workforcemanagement_agents_integrations.Cmdworkforcemanagement_agents_integrations())
 	workforcemanagement_agentsCmd.AddCommand(workforcemanagement_agents_opportunities.Cmdworkforcemanagement_agents_opportunities())
-	workforcemanagement_agentsCmd.Short = utils.GenerateCustomDescription(workforcemanagement_agentsCmd.Short, workforcemanagement_agents_managementunit.Description, workforcemanagement_agents_me.Description, workforcemanagement_agents_adherence.Description, workforcemanagement_agents_unavailabletimes.Description, workforcemanagement_agents_integrations.Description, workforcemanagement_agents_opportunities.Description, )
+	workforcemanagement_agentsCmd.AddCommand(workforcemanagement_agents_schedulingpreferences.Cmdworkforcemanagement_agents_schedulingpreferences())
+	workforcemanagement_agentsCmd.Short = utils.GenerateCustomDescription(workforcemanagement_agentsCmd.Short, workforcemanagement_agents_managementunit.Description, workforcemanagement_agents_me.Description, workforcemanagement_agents_adherence.Description, workforcemanagement_agents_unavailabletimes.Description, workforcemanagement_agents_integrations.Description, workforcemanagement_agents_opportunities.Description, workforcemanagement_agents_schedulingpreferences.Description, )
 	workforcemanagement_agentsCmd.Long = workforcemanagement_agentsCmd.Short
 }

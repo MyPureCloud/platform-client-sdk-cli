@@ -103,6 +103,8 @@ func Cmdoutbound_contactlists() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
 	utils.AddFlag(listCmd.Flags(), "[]string", "id", "", "id")
 	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "Division ID(s)")
+	utils.AddFlag(listCmd.Flags(), "string", "timeZone", "", "Filter by time zone")
+	utils.AddFlag(listCmd.Flags(), "[]string", "dateExpiration", "", "Filter by expiration date. Supports filter type prefixes, e.g. greaterthan:2025-01-01T00:00:00Z. Multiple values narrow the range. See https://developer.genesys.cloud/routing/outbound/filter-type")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "a", "Sort order Valid values: ascending, descending")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/contactlists", utils.FormatPermissions([]string{ "outbound:contactList:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/contactlists")))
@@ -551,6 +553,14 @@ var listCmd = &cobra.Command{
 		divisionId := utils.GetFlag(cmd.Flags(), "[]string", "divisionId")
 		if divisionId != "" {
 			queryParams["divisionId"] = divisionId
+		}
+		timeZone := utils.GetFlag(cmd.Flags(), "string", "timeZone")
+		if timeZone != "" {
+			queryParams["timeZone"] = timeZone
+		}
+		dateExpiration := utils.GetFlag(cmd.Flags(), "[]string", "dateExpiration")
+		if dateExpiration != "" {
+			queryParams["dateExpiration"] = dateExpiration
 		}
 		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
 		if sortBy != "" {

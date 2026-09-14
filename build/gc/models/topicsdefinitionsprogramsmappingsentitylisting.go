@@ -25,6 +25,9 @@ type TopicsdefinitionsprogramsmappingsentitylistingDud struct {
 
     
 
+
+    
+
 }
 
 // Topicsdefinitionsprogramsmappingsentitylisting
@@ -35,6 +38,10 @@ type Topicsdefinitionsprogramsmappingsentitylisting struct {
 
     // PageSize
     PageSize int `json:"pageSize"`
+
+
+    // Total
+    Total int `json:"total"`
 
 
     // SelfUri
@@ -53,6 +60,7 @@ type Topicsdefinitionsprogramsmappingsentitylisting struct {
 // String returns a JSON representation of the model
 func (o *Topicsdefinitionsprogramsmappingsentitylisting) String() string {
      o.Entities = []Topicsdefinitionsprogrammappings{{}} 
+    
     
     
     
@@ -78,6 +86,8 @@ func (u *Topicsdefinitionsprogramsmappingsentitylisting) MarshalJSON() ([]byte, 
         
         PageSize int `json:"pageSize"`
         
+        Total int `json:"total"`
+        
         SelfUri string `json:"selfUri"`
         
         PageCount int `json:"pageCount"`
@@ -88,6 +98,9 @@ func (u *Topicsdefinitionsprogramsmappingsentitylisting) MarshalJSON() ([]byte, 
 
         
         Entities: []Topicsdefinitionsprogrammappings{{}},
+        
+
+
         
 
 

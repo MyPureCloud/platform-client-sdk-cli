@@ -10,13 +10,21 @@ var (
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type RegisterarchitectjobrequestDud struct { }
+type RegisterarchitectjobrequestDud struct { 
+    
+
+}
 
 // Registerarchitectjobrequest
-type Registerarchitectjobrequest struct { }
+type Registerarchitectjobrequest struct { 
+    // CreateStubs - If true, flow stubs will be created for any dependencies during the job.
+    CreateStubs bool `json:"createStubs"`
+
+}
 
 // String returns a JSON representation of the model
 func (o *Registerarchitectjobrequest) String() string {
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -33,8 +41,13 @@ func (u *Registerarchitectjobrequest) MarshalJSON() ([]byte, error) {
     RegisterarchitectjobrequestMarshalled = true
 
     return json.Marshal(&struct {
+        
+        CreateStubs bool `json:"createStubs"`
         *Alias
     }{
+
+        
+
         Alias: (*Alias)(u),
     })
 }

@@ -35,7 +35,7 @@ type Whatsappembeddedsignupintegrationrequest struct {
     
 
 
-    // Name - The name of the WhatsApp Integration
+    // Name - The name of the WhatsApp Integration. Required for Embedded Signup v2; optional for v4 (set later via PATCH).
     Name string `json:"name"`
 
 
@@ -47,7 +47,7 @@ type Whatsappembeddedsignupintegrationrequest struct {
     MessagingSetting Messagingsettingrequestreference `json:"messagingSetting"`
 
 
-    // EmbeddedSignupAccessToken - The access token returned from the embedded signup flow
+    // EmbeddedSignupAccessToken - The access token returned from the embedded signup flow. Not required for versions v4 or later.
     EmbeddedSignupAccessToken string `json:"embeddedSignupAccessToken"`
 
 

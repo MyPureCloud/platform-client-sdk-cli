@@ -123,6 +123,11 @@
       "description": "Update summary of a Case."
     },
     {
+      "name": "update",
+      "path": "/api/v2/casemanagement/cases/{caseId}/owner",
+      "description": "Update the ownerId of a Case"
+    },
+    {
       "name": "list",
       "path": "/api/v2/casemanagement/cases/externalcontacts/{externalContactId}",
       "description": "Get a list of Cases for an External Contact."
@@ -166,6 +171,21 @@
       "name": "create",
       "path": "/api/v2/casemanagement/cases/{caseId}/terminate/jobs",
       "description": "Create a Terminate Job for a Case."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/casemanagement/cases/query/jobs/{jobId}/results",
+      "description": "Get results for a case query job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/casemanagement/cases/query/jobs/{jobId}",
+      "description": "Get a case query job by id"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/casemanagement/cases/query/jobs",
+      "description": "Create a Case query job."
     },
     {
       "name": "update",
@@ -221,26 +241,6 @@
       "name": "list",
       "path": "/api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps",
       "description": "Get a list of Steps."
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/casemanagement/cases/{caseId}/owner",
-      "description": "Update the ownerId of a Case"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/casemanagement/cases/query/jobs/{jobId}",
-      "description": "Get a case query job by id"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/casemanagement/cases/query/jobs/{jobId}/results",
-      "description": "Get results for a case query job"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/casemanagement/cases/query/jobs",
-      "description": "Create a Case query job."
     },
     {
       "name": "create",

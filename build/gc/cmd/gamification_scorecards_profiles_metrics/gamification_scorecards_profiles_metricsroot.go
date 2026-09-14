@@ -2,13 +2,13 @@ package gamification_scorecards_profiles_metrics
 
 import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gamification_scorecards_profiles_metrics_values"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gamification_scorecards_profiles_metrics_users"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/gamification_scorecards_profiles_metrics_values"
 )
 
 func init() {
-	gamification_scorecards_profiles_metricsCmd.AddCommand(gamification_scorecards_profiles_metrics_values.Cmdgamification_scorecards_profiles_metrics_values())
 	gamification_scorecards_profiles_metricsCmd.AddCommand(gamification_scorecards_profiles_metrics_users.Cmdgamification_scorecards_profiles_metrics_users())
-	gamification_scorecards_profiles_metricsCmd.Short = utils.GenerateCustomDescription(gamification_scorecards_profiles_metricsCmd.Short, gamification_scorecards_profiles_metrics_values.Description, gamification_scorecards_profiles_metrics_users.Description, )
+	gamification_scorecards_profiles_metricsCmd.AddCommand(gamification_scorecards_profiles_metrics_values.Cmdgamification_scorecards_profiles_metrics_values())
+	gamification_scorecards_profiles_metricsCmd.Short = utils.GenerateCustomDescription(gamification_scorecards_profiles_metricsCmd.Short, gamification_scorecards_profiles_metrics_users.Description, gamification_scorecards_profiles_metrics_values.Description, )
 	gamification_scorecards_profiles_metricsCmd.Long = gamification_scorecards_profiles_metricsCmd.Short
 }

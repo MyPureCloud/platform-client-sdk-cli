@@ -25,6 +25,9 @@ type ProgramsentitylistingDud struct {
 
     
 
+
+    
+
 }
 
 // Programsentitylisting
@@ -35,6 +38,10 @@ type Programsentitylisting struct {
 
     // PageSize
     PageSize int `json:"pageSize"`
+
+
+    // Total
+    Total int `json:"total"`
 
 
     // SelfUri
@@ -53,6 +60,7 @@ type Programsentitylisting struct {
 // String returns a JSON representation of the model
 func (o *Programsentitylisting) String() string {
      o.Entities = []Listedprogram{{}} 
+    
     
     
     
@@ -78,6 +86,8 @@ func (u *Programsentitylisting) MarshalJSON() ([]byte, error) {
         
         PageSize int `json:"pageSize"`
         
+        Total int `json:"total"`
+        
         SelfUri string `json:"selfUri"`
         
         NextUri string `json:"nextUri"`
@@ -88,6 +98,9 @@ func (u *Programsentitylisting) MarshalJSON() ([]byte, error) {
 
         
         Entities: []Listedprogram{{}},
+        
+
+
         
 
 

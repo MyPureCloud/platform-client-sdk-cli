@@ -28,6 +28,9 @@ type CreateverifierresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Createverifierresponse
@@ -52,6 +55,10 @@ type Createverifierresponse struct {
     KeyUri string `json:"keyUri"`
 
 
+    // EncodedQuickResponseCode - Base64-encoded PNG of the TOTP registration QR code.
+    EncodedQuickResponseCode string `json:"encodedQuickResponseCode"`
+
+
     // VarDefault - Indicates whether this is the default verifier.
     VarDefault bool `json:"default"`
 
@@ -59,6 +66,7 @@ type Createverifierresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Createverifierresponse) String() string {
+    
     
     
     
@@ -92,9 +100,14 @@ func (u *Createverifierresponse) MarshalJSON() ([]byte, error) {
         
         KeyUri string `json:"keyUri"`
         
+        EncodedQuickResponseCode string `json:"encodedQuickResponseCode"`
+        
         VarDefault bool `json:"default"`
         *Alias
     }{
+
+        
+
 
         
 

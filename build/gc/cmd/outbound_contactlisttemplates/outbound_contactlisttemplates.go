@@ -97,6 +97,7 @@ func Cmdoutbound_contactlisttemplates() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "bool", "allowEmptyResult", "false", "Whether to return an empty page when there are no results for that page")
 	utils.AddFlag(listCmd.Flags(), "string", "filterType", "Prefix", "Filter type Valid values: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith")
 	utils.AddFlag(listCmd.Flags(), "string", "name", "", "Name")
+	utils.AddFlag(listCmd.Flags(), "string", "timeZone", "", "Filter by time zone")
 	utils.AddFlag(listCmd.Flags(), "string", "sortBy", "", "Sort by")
 	utils.AddFlag(listCmd.Flags(), "string", "sortOrder", "a", "Sort order Valid values: ascending, descending")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/outbound/contactlisttemplates", utils.FormatPermissions([]string{ "outbound:contactListTemplate:view",  }), utils.GenerateDevCentreLink("GET", "Outbound", "/api/v2/outbound/contactlisttemplates")))
@@ -521,6 +522,10 @@ var listCmd = &cobra.Command{
 		name := utils.GetFlag(cmd.Flags(), "string", "name")
 		if name != "" {
 			queryParams["name"] = name
+		}
+		timeZone := utils.GetFlag(cmd.Flags(), "string", "timeZone")
+		if timeZone != "" {
+			queryParams["timeZone"] = timeZone
 		}
 		sortBy := utils.GetFlag(cmd.Flags(), "string", "sortBy")
 		if sortBy != "" {

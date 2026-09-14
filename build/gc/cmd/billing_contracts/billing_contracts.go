@@ -46,7 +46,7 @@ func Cmdbilling_contracts() *cobra.Command {
 
 	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
 	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
-	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
+	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 10.")
 	utils.AddFlag(listCmd.Flags(), "time.Time", "dateStart", "", "Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
 	utils.AddFlag(listCmd.Flags(), "time.Time", "dateEnd", "", "End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
 	utils.AddFlag(listCmd.Flags(), "string", "status", "", "Filter by the status of contracts Valid values: Active, Inactive")

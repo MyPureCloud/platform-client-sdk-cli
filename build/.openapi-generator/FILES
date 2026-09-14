@@ -1002,6 +1002,7 @@ gc/cmd/outbound_contactlistfilters/outbound_contactlistfilters.go
 gc/cmd/outbound_contactlistfilters_bulk_retrieve/outbound_contactlistfilters_bulk_retrieve.go
 gc/cmd/outbound_contactlistfilters_preview/outbound_contactlistfilters_preview.go
 gc/cmd/outbound_contactlists/outbound_contactlists.go
+gc/cmd/outbound_contactlists_bulk_update/outbound_contactlists_bulk_update.go
 gc/cmd/outbound_contactlists_clear/outbound_contactlists_clear.go
 gc/cmd/outbound_contactlists_contacts/outbound_contactlists_contacts.go
 gc/cmd/outbound_contactlists_contacts_bulk/outbound_contactlists_contacts_bulk.go
@@ -1517,6 +1518,7 @@ gc/cmd/workforcemanagement_agents_me_possibleworkshifts/workforcemanagement_agen
 gc/cmd/workforcemanagement_agents_opportunities_enrollments_bulk_add/workforcemanagement_agents_opportunities_enrollments_bulk_add.go
 gc/cmd/workforcemanagement_agents_opportunities_enrollments_bulk_statuses_update/workforcemanagement_agents_opportunities_enrollments_bulk_statuses_update.go
 gc/cmd/workforcemanagement_agents_opportunities_query/workforcemanagement_agents_opportunities_query.go
+gc/cmd/workforcemanagement_agents_schedulingpreferences_query/workforcemanagement_agents_schedulingpreferences_query.go
 gc/cmd/workforcemanagement_agents_unavailabletimes_query/workforcemanagement_agents_unavailabletimes_query.go
 gc/cmd/workforcemanagement_agentschedules_managementunits_mine/workforcemanagement_agentschedules_managementunits_mine.go
 gc/cmd/workforcemanagement_agentschedules_mine/workforcemanagement_agentschedules_mine.go
@@ -1581,6 +1583,7 @@ gc/cmd/workforcemanagement_businessunits_schedulebids_groups_summary/workforcema
 gc/cmd/workforcemanagement_businessunits_scheduler_settings/workforcemanagement_businessunits_scheduler_settings.go
 gc/cmd/workforcemanagement_businessunits_scheduling_runs/workforcemanagement_businessunits_scheduling_runs.go
 gc/cmd/workforcemanagement_businessunits_scheduling_runs_result/workforcemanagement_businessunits_scheduling_runs_result.go
+gc/cmd/workforcemanagement_businessunits_schedulingpreferences_settings/workforcemanagement_businessunits_schedulingpreferences_settings.go
 gc/cmd/workforcemanagement_businessunits_servicegoaltemplates/workforcemanagement_businessunits_servicegoaltemplates.go
 gc/cmd/workforcemanagement_businessunits_shifttrading_trades_evaluate_jobs/workforcemanagement_businessunits_shifttrading_trades_evaluate_jobs.go
 gc/cmd/workforcemanagement_businessunits_shifttrading_trades_query_jobs/workforcemanagement_businessunits_shifttrading_trades_query_jobs.go
@@ -1687,6 +1690,9 @@ gc/cmd/workforcemanagement_schedulebids_preference/workforcemanagement_scheduleb
 gc/cmd/workforcemanagement_schedulebids_schedulesets/workforcemanagement_schedulebids_schedulesets.go
 gc/cmd/workforcemanagement_schedules/workforcemanagement_schedules.go
 gc/cmd/workforcemanagement_schedulingjobs/workforcemanagement_schedulingjobs.go
+gc/cmd/workforcemanagement_schedulingpreferences/workforcemanagement_schedulingpreferences.go
+gc/cmd/workforcemanagement_schedulingpreferences_query/workforcemanagement_schedulingpreferences_query.go
+gc/cmd/workforcemanagement_schedulingpreferences_settings/workforcemanagement_schedulingpreferences_settings.go
 gc/cmd/workforcemanagement_shifttrades/workforcemanagement_shifttrades.go
 gc/cmd/workforcemanagement_shifttrading_trades_jobs/workforcemanagement_shifttrading_trades_jobs.go
 gc/cmd/workforcemanagement_shifttrading_trades_match_jobs/workforcemanagement_shifttrading_trades_match_jobs.go
@@ -1706,6 +1712,7 @@ gc/cmd/workforcemanagement_unavailabletimes/workforcemanagement_unavailabletimes
 gc/cmd/workforcemanagement_unavailabletimes_query/workforcemanagement_unavailabletimes_query.go
 gc/cmd/workforcemanagement_unavailabletimes_settings/workforcemanagement_unavailabletimes_settings.go
 gc/cmd/workforcemanagement_unavailabletimes_validation_jobs/workforcemanagement_unavailabletimes_validation_jobs.go
+gc/cmd/workforcemanagement_users_activity/workforcemanagement_users_activity.go
 gc/cmd/workforcemanagement_users_workplanbidranks/workforcemanagement_users_workplanbidranks.go
 gc/cmd/workforcemanagement_users_workplanbidranks_bulk/workforcemanagement_users_workplanbidranks_bulk.go
 gc/cmd/workforcemanagement_workplanbids/workforcemanagement_workplanbids.go
@@ -1919,6 +1926,8 @@ gc/models/agentschedulebids.go
 gc/models/agentschedulebidschedulesetresponse.go
 gc/models/agentscheduleshiftactivity.go
 gc/models/agentscheduleunavailabletime.go
+gc/models/agentschedulingpreference.go
+gc/models/agentschedulingpreferencelisting.go
 gc/models/agentscoringrule.go
 gc/models/agentscoringruleentitylisting.go
 gc/models/agentseffectiveschedulesetresponse.go
@@ -2327,6 +2336,7 @@ gc/models/bulkcontactsresponse.go
 gc/models/bulkdeletedecisiontablerowsrequest.go
 gc/models/bulkdeleteresponse.go
 gc/models/bulkentityerrorcontactenrichrequest.go
+gc/models/bulkentityerrorcontactlist.go
 gc/models/bulkentityerrorentity.go
 gc/models/bulkentityerrorexternalcontact.go
 gc/models/bulkentityerrorexternalorganization.go
@@ -2377,6 +2387,7 @@ gc/models/bulkremoveopportunitiesresponse.go
 gc/models/bulkremoveopportunitiesresult.go
 gc/models/bulkremovesourceintentsrequest.go
 gc/models/bulkresponse.go
+gc/models/bulkresponseresultcontactlistcontactlistbulkentityerrorcontactlist.go
 gc/models/bulkresponseresultexternalcontactcontactenrichrequestbulkentityerrorcontactenrichrequest.go
 gc/models/bulkresponseresultexternalcontactentitybulkentityerrorentity.go
 gc/models/bulkresponseresultexternalcontactexternalcontactbulkentityerrorexternalcontact.go
@@ -2450,6 +2461,7 @@ gc/models/businessunitlisting.go
 gc/models/businessunitlistitem.go
 gc/models/businessunitreference.go
 gc/models/businessunitresponse.go
+gc/models/businessunitschedulingpreferencessettingsresponse.go
 gc/models/businessunitsettingsresponse.go
 gc/models/butimeofflimitlisting.go
 gc/models/butimeofflimitrange.go
@@ -2833,6 +2845,8 @@ gc/models/contactlistfilterrange.go
 gc/models/contactlisting.go
 gc/models/contactlistingrequest.go
 gc/models/contactlistingresponse.go
+gc/models/contactlistsbulkeditrequest.go
+gc/models/contactlistsbulkeditresponse.go
 gc/models/contactlisttemplate.go
 gc/models/contactlisttemplatebulkretrievebody.go
 gc/models/contactlisttemplateentitylisting.go
@@ -2932,7 +2946,9 @@ gc/models/conversationappsettings.go
 gc/models/conversationassociation.go
 gc/models/conversationasyncaggregatequeryresponse.go
 gc/models/conversationasyncaggregationquery.go
+gc/models/conversationattribute.go
 gc/models/conversationattributeproperties.go
+gc/models/conversationattributeschema.go
 gc/models/conversationbasic.go
 gc/models/conversationcategoriesentitylisting.go
 gc/models/conversationcategory.go
@@ -4399,6 +4415,7 @@ gc/models/knowledgesearchpreviewrequest.go
 gc/models/knowledgesearchpreviewresponse.go
 gc/models/knowledgesearchresult.go
 gc/models/knowledgesetting.go
+gc/models/knowledgesettingdynamicfilter.go
 gc/models/knowledgesettinglisting.go
 gc/models/knowledgesettings.go
 gc/models/knowledgesettingsrequest.go
@@ -5198,6 +5215,7 @@ gc/models/quarterhourly.go
 gc/models/queryadherenceexplanationsresponse.go
 gc/models/queryagentscheduleunavailabletimesrequest.go
 gc/models/queryagentscheduleunavailabletimesresponse.go
+gc/models/queryagentschedulingpreferencesrequest.go
 gc/models/queryagentshifttradelistjobrequest.go
 gc/models/queryagentsintegrationsrequest.go
 gc/models/queryagentunavailabletimesrequest.go
@@ -6247,10 +6265,12 @@ gc/models/updateadherenceexplanationstatusrequest.go
 gc/models/updateagenticvirtualagent.go
 gc/models/updateagenticvirtualagentversion.go
 gc/models/updateagentschedulebiddingpreference.go
+gc/models/updateagentschedulingpreferencesrequest.go
 gc/models/updateagentworkplanbiddingpreference.go
 gc/models/updatealternativeshiftbusettingsrequest.go
 gc/models/updateanalyticsdataretentionrequest.go
 gc/models/updatebusinessunitrequest.go
+gc/models/updatebusinessunitschedulingpreferencessettingsrequest.go
 gc/models/updatebusinessunitsettingsrequest.go
 gc/models/updatecapacityplanrequest.go
 gc/models/updatecoachingappointmentrequest.go
@@ -6319,15 +6339,21 @@ gc/models/usageexecutionresult.go
 gc/models/usageitem.go
 gc/models/usagequerysortby.go
 gc/models/user.go
+gc/models/useractivity.go
+gc/models/useractivityadherencepresence.go
 gc/models/useractivitydata.go
 gc/models/useractivityentitydata.go
+gc/models/useractivitylisting.go
 gc/models/useractivitymetricvalue.go
+gc/models/useractivityoutofoffice.go
+gc/models/useractivitypresencedefinition.go
 gc/models/useractivityquery.go
 gc/models/useractivityqueryclause.go
 gc/models/useractivityqueryfilter.go
 gc/models/useractivityquerymetric.go
 gc/models/useractivityquerypredicate.go
 gc/models/useractivityresponse.go
+gc/models/useractivityroutingstatus.go
 gc/models/useragentinfo.go
 gc/models/useraggregatedatacontainer.go
 gc/models/useraggregatequeryclause.go
@@ -6399,6 +6425,7 @@ gc/models/userroutinglanguagepost.go
 gc/models/userroutingskill.go
 gc/models/userroutingskillpost.go
 gc/models/userroutingstatusevent.go
+gc/models/usersactivityrequest.go
 gc/models/userschedule.go
 gc/models/userscheduleactivity.go
 gc/models/userscheduleadherence.go

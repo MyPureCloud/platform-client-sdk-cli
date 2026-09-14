@@ -132,6 +132,9 @@ type UserqueueDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -239,6 +242,10 @@ type Userqueue struct {
     OnHoldPrompt Domainentityref `json:"onHoldPrompt"`
 
 
+    // DefaultMediaLanguage - The canonical language code (e.g. en-US) used for the default media language on the queue.
+    DefaultMediaLanguage string `json:"defaultMediaLanguage"`
+
+
     // CannedResponseLibraries - Canned response library IDs and mode with which they are associated with the queue
     CannedResponseLibraries Cannedresponselibraries `json:"cannedResponseLibraries"`
 
@@ -332,6 +339,7 @@ func (o *Userqueue) String() string {
     
     
     
+    
      o.DefaultScripts = map[string]Script{"": {}} 
     
     
@@ -400,6 +408,8 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
         WhisperPrompt Domainentityref `json:"whisperPrompt"`
         
         OnHoldPrompt Domainentityref `json:"onHoldPrompt"`
+        
+        DefaultMediaLanguage string `json:"defaultMediaLanguage"`
         
         CannedResponseLibraries Cannedresponselibraries `json:"cannedResponseLibraries"`
         
@@ -495,6 +505,9 @@ func (u *Userqueue) MarshalJSON() ([]byte, error) {
 
         
         MemberGroups: []Membergroup{{}},
+        
+
+
         
 
 

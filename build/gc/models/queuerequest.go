@@ -132,6 +132,9 @@ type QueuerequestDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -238,6 +241,10 @@ type Queuerequest struct {
     OnHoldPrompt Domainentityref `json:"onHoldPrompt"`
 
 
+    // DefaultMediaLanguage - The canonical language code (e.g. en-US) used for the default media language on the queue.
+    DefaultMediaLanguage string `json:"defaultMediaLanguage"`
+
+
     // AutoAnswerOnly - Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered.
     AutoAnswerOnly bool `json:"autoAnswerOnly"`
 
@@ -331,6 +338,7 @@ func (o *Queuerequest) String() string {
     
     
     
+    
      o.DefaultScripts = map[string]Script{"": {}} 
     
     
@@ -396,6 +404,8 @@ func (u *Queuerequest) MarshalJSON() ([]byte, error) {
         WhisperPrompt Domainentityref `json:"whisperPrompt"`
         
         OnHoldPrompt Domainentityref `json:"onHoldPrompt"`
+        
+        DefaultMediaLanguage string `json:"defaultMediaLanguage"`
         
         AutoAnswerOnly bool `json:"autoAnswerOnly"`
         
@@ -491,6 +501,9 @@ func (u *Queuerequest) MarshalJSON() ([]byte, error) {
 
         
         MemberGroups: []Membergroup{{}},
+        
+
+
         
 
 

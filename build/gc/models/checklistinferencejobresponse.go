@@ -51,6 +51,9 @@ type ChecklistinferencejobresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -109,12 +112,17 @@ type Checklistinferencejobresponse struct {
     Direction string `json:"direction"`
 
 
+    // Preview - Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+    Preview bool `json:"preview"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Checklistinferencejobresponse) String() string {
+    
     
     
     
@@ -170,8 +178,13 @@ func (u *Checklistinferencejobresponse) MarshalJSON() ([]byte, error) {
         MediaType string `json:"mediaType"`
         
         Direction string `json:"direction"`
+        
+        Preview bool `json:"preview"`
         *Alias
     }{
+
+        
+
 
         
 

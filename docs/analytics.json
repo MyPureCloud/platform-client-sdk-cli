@@ -248,16 +248,6 @@
       "description": "Query for flow aggregates"
     },
     {
-      "name": "list",
-      "path": "/api/v2/analytics/flows/aggregates/jobs/{jobId}/results",
-      "description": "Fetch a page of results for an async aggregates query"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/analytics/flows/activity/query",
-      "description": "Query for flow activity observations"
-    },
-    {
       "name": "create",
       "path": "/api/v2/analytics/flows/aggregates/jobs",
       "description": "Query for flow aggregates asynchronously"
@@ -273,14 +263,19 @@
       "description": "Delete/cancel an async request for flow aggregates"
     },
     {
+      "name": "list",
+      "path": "/api/v2/analytics/flows/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
       "name": "create",
       "path": "/api/v2/analytics/flows/observations/query",
       "description": "Query for flow observations"
     },
     {
-      "name": "list",
-      "path": "/api/v2/analytics/journeys/aggregates/jobs/{jobId}/results",
-      "description": "Fetch a page of results for an async aggregates query"
+      "name": "create",
+      "path": "/api/v2/analytics/flows/activity/query",
+      "description": "Query for flow activity observations"
     },
     {
       "name": "create",
@@ -303,6 +298,16 @@
       "description": "Delete/cancel an async request for journey aggregates"
     },
     {
+      "name": "list",
+      "path": "/api/v2/analytics/journeys/aggregates/jobs/{jobId}/results",
+      "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/knowledge/aggregates/query",
+      "description": "Query for knowledge aggregates"
+    },
+    {
       "name": "create",
       "path": "/api/v2/analytics/knowledge/aggregates/jobs",
       "description": "Query for knowledge aggregates asynchronously"
@@ -318,11 +323,6 @@
       "description": "Delete/cancel an async request for knowledge aggregates"
     },
     {
-      "name": "create",
-      "path": "/api/v2/analytics/knowledge/aggregates/query",
-      "description": "Query for knowledge aggregates"
-    },
-    {
       "name": "list",
       "path": "/api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async aggregates query"
@@ -336,6 +336,11 @@
       "name": "create",
       "path": "/api/v2/analytics/ratelimits/aggregates/query",
       "description": "Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/resolutions/aggregates/query",
+      "description": "Query for resolution aggregates"
     },
     {
       "name": "create",
@@ -359,13 +364,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/analytics/resolutions/aggregates/query",
-      "description": "Query for resolution aggregates"
+      "path": "/api/v2/analytics/routing/activity/query",
+      "description": "Query for user activity observations"
     },
     {
       "name": "create",
-      "path": "/api/v2/analytics/routing/activity/query",
-      "description": "Query for user activity observations"
+      "path": "/api/v2/analytics/summaries/aggregates/jobs",
+      "description": "Query for summary aggregates asynchronously"
     },
     {
       "name": "get",
@@ -384,11 +389,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/analytics/summaries/aggregates/jobs",
-      "description": "Query for summary aggregates asynchronously"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/analytics/summaries/aggregates/query",
       "description": "Query for summary aggregates"
     },
@@ -396,11 +396,6 @@
       "name": "create",
       "path": "/api/v2/analytics/surveys/aggregates/query",
       "description": "Query for survey aggregates"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/analytics/surveys/aggregates/jobs",
-      "description": "Query for survey aggregates asynchronously"
     },
     {
       "name": "get",
@@ -411,6 +406,11 @@
       "name": "delete",
       "path": "/api/v2/analytics/surveys/aggregates/jobs/{jobId}",
       "description": "Delete/cancel an async request for survey aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/surveys/aggregates/jobs",
+      "description": "Query for survey aggregates asynchronously"
     },
     {
       "name": "list",
@@ -654,6 +654,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/analytics/copilots/aggregates/query",
+      "description": "Query for copilot aggregates"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/analytics/copilots/aggregates/jobs",
       "description": "Query for copilot aggregates asynchronously"
     },
@@ -671,11 +676,6 @@
       "name": "list",
       "path": "/api/v2/analytics/copilots/aggregates/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async aggregates query"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/analytics/copilots/aggregates/query",
-      "description": "Query for copilot aggregates"
     },
     {
       "name": "get",

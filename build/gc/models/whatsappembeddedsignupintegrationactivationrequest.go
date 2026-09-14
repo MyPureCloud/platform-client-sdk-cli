@@ -35,7 +35,7 @@ type Whatsappembeddedsignupintegrationactivationrequest struct {
     
 
 
-    // PhoneNumber - Phone number to associate with the WhatsApp integration
+    // PhoneNumber - E.164 phone number to associate with the WhatsApp integration. Not required for embedded signup v4 or later.
     PhoneNumber string `json:"phoneNumber"`
 
 

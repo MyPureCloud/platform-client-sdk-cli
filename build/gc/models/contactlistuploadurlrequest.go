@@ -37,6 +37,15 @@ type ContactlistuploadurlrequestDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Contactlistuploadurlrequest
@@ -76,10 +85,25 @@ type Contactlistuploadurlrequest struct {
     // FileSpecificationTemplateId - File specification template ID
     FileSpecificationTemplateId string `json:"fileSpecificationTemplateId"`
 
+
+    // RetentionTypeColumn - The column name from your file to get retention type values from.
+    RetentionTypeColumn string `json:"retentionTypeColumn"`
+
+
+    // RetentionDaysColumn - The column name from your file to get retention day values from.
+    RetentionDaysColumn string `json:"retentionDaysColumn"`
+
+
+    // RetentionDateExpirationColumn - The column name from your file to get date expiration values from.
+    RetentionDateExpirationColumn string `json:"retentionDateExpirationColumn"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Contactlistuploadurlrequest) String() string {
+    
+    
+    
     
     
     
@@ -123,8 +147,23 @@ func (u *Contactlistuploadurlrequest) MarshalJSON() ([]byte, error) {
         DivisionIdForTargetContactLists string `json:"divisionIdForTargetContactLists"`
         
         FileSpecificationTemplateId string `json:"fileSpecificationTemplateId"`
+        
+        RetentionTypeColumn string `json:"retentionTypeColumn"`
+        
+        RetentionDaysColumn string `json:"retentionDaysColumn"`
+        
+        RetentionDateExpirationColumn string `json:"retentionDateExpirationColumn"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

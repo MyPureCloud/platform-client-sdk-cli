@@ -13,6 +13,9 @@ var (
 type ChecklistinferencejobpayloadDud struct { 
     
 
+
+    
+
 }
 
 // Checklistinferencejobpayload
@@ -20,11 +23,16 @@ type Checklistinferencejobpayload struct {
     // ConversationContext - List of conversations on which checklist evaluation is to be done.
     ConversationContext []Conversationcontext `json:"conversationContext"`
 
+
+    // Preview - Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+    Preview bool `json:"preview"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Checklistinferencejobpayload) String() string {
      o.ConversationContext = []Conversationcontext{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -43,11 +51,16 @@ func (u *Checklistinferencejobpayload) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         ConversationContext []Conversationcontext `json:"conversationContext"`
+        
+        Preview bool `json:"preview"`
         *Alias
     }{
 
         
         ConversationContext: []Conversationcontext{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

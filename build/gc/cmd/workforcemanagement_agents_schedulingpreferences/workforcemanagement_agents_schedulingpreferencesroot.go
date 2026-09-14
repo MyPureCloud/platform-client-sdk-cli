@@ -1,0 +1,12 @@
+package workforcemanagement_agents_schedulingpreferences
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_agents_schedulingpreferences_query"
+)
+
+func init() {
+	workforcemanagement_agents_schedulingpreferencesCmd.AddCommand(workforcemanagement_agents_schedulingpreferences_query.Cmdworkforcemanagement_agents_schedulingpreferences_query())
+	workforcemanagement_agents_schedulingpreferencesCmd.Short = utils.GenerateCustomDescription(workforcemanagement_agents_schedulingpreferencesCmd.Short, workforcemanagement_agents_schedulingpreferences_query.Description, )
+	workforcemanagement_agents_schedulingpreferencesCmd.Long = workforcemanagement_agents_schedulingpreferencesCmd.Short
+}

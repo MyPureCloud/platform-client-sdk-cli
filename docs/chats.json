@@ -19,13 +19,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/chats/users/{userId}/messages/{messageIds}",
-      "description": "Get messages by id(s) from a 1on1"
+      "path": "/api/v2/chats/rooms/{roomJid}/messages/{messageIds}",
+      "description": "Get messages by id(s) from a room"
     },
     {
       "name": "get",
-      "path": "/api/v2/chats/rooms/{roomJid}/messages/{messageIds}",
-      "description": "Get messages by id(s) from a room"
+      "path": "/api/v2/chats/users/{userId}/messages/{messageIds}",
+      "description": "Get messages by id(s) from a 1on1"
     },
     {
       "name": "get",

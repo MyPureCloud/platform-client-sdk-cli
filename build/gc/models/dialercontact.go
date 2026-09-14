@@ -54,6 +54,15 @@ type DialercontactDud struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -109,6 +118,18 @@ type Dialercontact struct {
     
 
 
+    // RetentionType - The type of retention for this contact. Valid values: Never, Today, RetentionDays, DateExpiration
+    RetentionType string `json:"retentionType"`
+
+
+    // RetentionDays - The number of days to retain this contact. Required when retentionType is RetentionDays.
+    RetentionDays int `json:"retentionDays"`
+
+
+    // DateExpiration - The expiration date of the contact. Required when retentionType is DateExpiration. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateExpiration time.Time `json:"dateExpiration"`
+
+
     
 
 }
@@ -122,6 +143,9 @@ func (o *Dialercontact) String() string {
     
      o.PhoneNumberStatus = map[string]Phonenumberstatus{"": {}} 
      o.ContactableStatus = map[string]Contactablestatus{"": {}} 
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -152,6 +176,12 @@ func (u *Dialercontact) MarshalJSON() ([]byte, error) {
         PhoneNumberStatus map[string]Phonenumberstatus `json:"phoneNumberStatus"`
         
         ContactableStatus map[string]Contactablestatus `json:"contactableStatus"`
+        
+        RetentionType string `json:"retentionType"`
+        
+        RetentionDays int `json:"retentionDays"`
+        
+        DateExpiration time.Time `json:"dateExpiration"`
         *Alias
     }{
 
@@ -193,6 +223,15 @@ func (u *Dialercontact) MarshalJSON() ([]byte, error) {
 
         
         ContactableStatus: map[string]Contactablestatus{"": {}},
+        
+
+
+        
+
+
+        
+
+
         
 
 

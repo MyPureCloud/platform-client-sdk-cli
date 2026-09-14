@@ -89,7 +89,7 @@ var createCmd = &cobra.Command{
 		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
 		if printReqBody {
 			
-			reqModel := models.Interface{}
+			reqModel := models.Registerarchitectjobrequest{}
 			utils.Render(reqModel.String())
 			
 			return

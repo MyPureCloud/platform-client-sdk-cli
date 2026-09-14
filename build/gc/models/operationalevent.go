@@ -50,6 +50,12 @@ type OperationaleventDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Operationalevent
@@ -94,6 +100,14 @@ type Operationalevent struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
+    // DateModified - The date and time the entity affected by the event was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateModified time.Time `json:"dateModified"`
+
+
+    // EntityModifiedBy - The unique identifier of the user who last modified the entity affected by the event.
+    EntityModifiedBy string `json:"entityModifiedBy"`
+
+
     // EntityVersion - The version of the entity in the providing service
     EntityVersion string `json:"entityVersion"`
 
@@ -109,6 +123,8 @@ type Operationalevent struct {
 
 // String returns a JSON representation of the model
 func (o *Operationalevent) String() string {
+    
+    
     
     
     
@@ -159,6 +175,10 @@ func (u *Operationalevent) MarshalJSON() ([]byte, error) {
         
         DateCreated time.Time `json:"dateCreated"`
         
+        DateModified time.Time `json:"dateModified"`
+        
+        EntityModifiedBy string `json:"entityModifiedBy"`
+        
         EntityVersion string `json:"entityVersion"`
         
         PhoneNumber string `json:"phoneNumber"`
@@ -166,6 +186,12 @@ func (u *Operationalevent) MarshalJSON() ([]byte, error) {
         ExternalContactId string `json:"externalContactId"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

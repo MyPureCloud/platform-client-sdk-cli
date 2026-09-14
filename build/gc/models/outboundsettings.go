@@ -51,6 +51,15 @@ type OutboundsettingsDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -105,12 +114,27 @@ type Outboundsettings struct {
     RescheduleTimeZoneSkippedContacts bool `json:"rescheduleTimeZoneSkippedContacts"`
 
 
+    // ContactListDefaultRetentionType - The default type of retention for newly created contact lists and contact list templates. Valid values: Never, Today, RetentionDays.
+    ContactListDefaultRetentionType string `json:"contactListDefaultRetentionType"`
+
+
+    // ContactListDefaultRetentionDays - The default number of days to retain newly created contact lists and contact list templates. Only applicable when retentionType is RetentionDays.
+    ContactListDefaultRetentionDays int `json:"contactListDefaultRetentionDays"`
+
+
+    // TimeZone - The time zone for newly created lists' retention when option Today is used; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+    TimeZone string `json:"timeZone"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Outboundsettings) String() string {
+    
+    
+    
     
     
     
@@ -154,8 +178,23 @@ func (u *Outboundsettings) MarshalJSON() ([]byte, error) {
         AutomaticTimeZoneMapping Automatictimezonemappingsettings `json:"automaticTimeZoneMapping"`
         
         RescheduleTimeZoneSkippedContacts bool `json:"rescheduleTimeZoneSkippedContacts"`
+        
+        ContactListDefaultRetentionType string `json:"contactListDefaultRetentionType"`
+        
+        ContactListDefaultRetentionDays int `json:"contactListDefaultRetentionDays"`
+        
+        TimeZone string `json:"timeZone"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
 
         
 

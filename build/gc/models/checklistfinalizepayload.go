@@ -13,6 +13,9 @@ var (
 type ChecklistfinalizepayloadDud struct { 
     
 
+
+    
+
 }
 
 // Checklistfinalizepayload
@@ -20,10 +23,15 @@ type Checklistfinalizepayload struct {
     // ExitReason - Exit reason provided at the time of finalizing the checklist.
     ExitReason string `json:"exitReason"`
 
+
+    // Preview - Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+    Preview bool `json:"preview"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Checklistfinalizepayload) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Checklistfinalizepayload) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         ExitReason string `json:"exitReason"`
+        
+        Preview bool `json:"preview"`
         *Alias
     }{
+
+        
+
 
         
 

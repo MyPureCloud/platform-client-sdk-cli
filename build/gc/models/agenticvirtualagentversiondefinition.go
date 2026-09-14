@@ -31,6 +31,9 @@ type AgenticvirtualagentversiondefinitionDud struct {
 
     
 
+
+    
+
 }
 
 // Agenticvirtualagentversiondefinition - Definition of a virtual agent version.
@@ -62,6 +65,10 @@ type Agenticvirtualagentversiondefinition struct {
     // Settings - Additional settings for the virtual agent version.
     Settings Agenticvirtualagentversionsettings `json:"settings"`
 
+
+    // Model - The model powering the virtual agent version. Where a new model version is available, the Preview value can be used to opt into using it for your virtual agent. Note: Preview model versions will over time become the Stable version used.
+    Model string `json:"model"`
+
 }
 
 // String returns a JSON representation of the model
@@ -72,6 +79,7 @@ func (o *Agenticvirtualagentversiondefinition) String() string {
      o.Tools = []Agenticvirtualagenttool{{}} 
      o.Types = []Agenticvirtualagenttypedefinition{{}} 
      o.Events = []Agenticvirtualagenteventsettings{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -103,6 +111,8 @@ func (u *Agenticvirtualagentversiondefinition) MarshalJSON() ([]byte, error) {
         Events []Agenticvirtualagenteventsettings `json:"events"`
         
         Settings Agenticvirtualagentversionsettings `json:"settings"`
+        
+        Model string `json:"model"`
         *Alias
     }{
 
@@ -129,6 +139,9 @@ func (u *Agenticvirtualagentversiondefinition) MarshalJSON() ([]byte, error) {
 
         
         Events: []Agenticvirtualagenteventsettings{{}},
+        
+
+
         
 
 

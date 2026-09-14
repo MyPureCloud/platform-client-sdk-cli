@@ -31,6 +31,9 @@ type VariableDud struct {
 
     
 
+
+    
+
 }
 
 // Variable
@@ -62,6 +65,10 @@ type Variable struct {
     // ListVariables - The variables that the list result will be stored in. Only applicable when type is 'List'.
     ListVariables []Variable `json:"listVariables"`
 
+
+    // CustomConversationAttributes - The Conversation Custom Attributes (CCA) for this variable. When present, the variable value is bound to the specified conversation attributes.
+    CustomConversationAttributes []Conversationattribute `json:"customConversationAttributes"`
+
 }
 
 // String returns a JSON representation of the model
@@ -73,6 +80,7 @@ func (o *Variable) String() string {
      o.Validation = Interface{} 
      o.ListValues = Interface{} 
      o.ListVariables = []Variable{{}} 
+     o.CustomConversationAttributes = []Conversationattribute{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -103,6 +111,8 @@ func (u *Variable) MarshalJSON() ([]byte, error) {
         ListValues interface{} `json:"listValues"`
         
         ListVariables []Variable `json:"listVariables"`
+        
+        CustomConversationAttributes []Conversationattribute `json:"customConversationAttributes"`
         *Alias
     }{
 
@@ -130,6 +140,11 @@ func (u *Variable) MarshalJSON() ([]byte, error) {
 
         
         ListVariables: []Variable{{}},
+        
+
+
+        
+        CustomConversationAttributes: []Conversationattribute{{}},
         
 
         Alias: (*Alias)(u),

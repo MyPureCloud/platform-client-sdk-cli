@@ -72,6 +72,9 @@ type AgentchecklistresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -130,6 +133,10 @@ type Agentchecklistresponse struct {
     Direction string `json:"direction"`
 
 
+    // Preview - Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+    Preview bool `json:"preview"`
+
+
     // EvaluationStartDate - Date when the checklist evaluation began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     EvaluationStartDate time.Time `json:"evaluationStartDate"`
 
@@ -168,6 +175,7 @@ func (o *Agentchecklistresponse) String() string {
     
      o.ChecklistItems = []Checklistitem{{}} 
      o.ActivationTriggers = []Activationtrigger{{}} 
+    
     
     
     
@@ -227,6 +235,8 @@ func (u *Agentchecklistresponse) MarshalJSON() ([]byte, error) {
         
         Direction string `json:"direction"`
         
+        Preview bool `json:"preview"`
+        
         EvaluationStartDate time.Time `json:"evaluationStartDate"`
         
         EvaluationLastModifiedDate time.Time `json:"evaluationLastModifiedDate"`
@@ -256,6 +266,9 @@ func (u *Agentchecklistresponse) MarshalJSON() ([]byte, error) {
 
         
         ActivationTriggers: []Activationtrigger{{}},
+        
+
+
         
 
 

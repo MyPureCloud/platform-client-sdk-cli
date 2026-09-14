@@ -94,16 +94,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice",
-      "description": "Creates a presigned URL for uploading a grammar voice mode file"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice",
-      "description": "Clear the voice mode file for the grammar language if there is one"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf",
       "description": "Creates a presigned URL for uploading a grammar DTMF mode file"
     },
@@ -111,6 +101,16 @@
       "name": "delete",
       "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf",
       "description": "Clear the DTMF mode file for the grammar language if there is one"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice",
+      "description": "Creates a presigned URL for uploading a grammar voice mode file"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice",
+      "description": "Clear the voice mode file for the grammar language if there is one"
     },
     {
       "name": "create",

@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_schedulingpreferences
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_schedulingpreferences_settings"
+)
+
+func init() {
+	workforcemanagement_businessunits_schedulingpreferencesCmd.AddCommand(workforcemanagement_businessunits_schedulingpreferences_settings.Cmdworkforcemanagement_businessunits_schedulingpreferences_settings())
+	workforcemanagement_businessunits_schedulingpreferencesCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_schedulingpreferencesCmd.Short, workforcemanagement_businessunits_schedulingpreferences_settings.Description, )
+	workforcemanagement_businessunits_schedulingpreferencesCmd.Long = workforcemanagement_businessunits_schedulingpreferencesCmd.Short
+}

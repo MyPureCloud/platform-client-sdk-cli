@@ -25,6 +25,9 @@ type SurveyassignmentDud struct {
 
     
 
+
+    
+
 }
 
 // Surveyassignment
@@ -48,10 +51,15 @@ type Surveyassignment struct {
     // SendingDomain - Validated email domain, required
     SendingDomain string `json:"sendingDomain"`
 
+
+    // UseThreadingTimelineForSendTime - If true, the survey invitation send time will be calculated using the threading timeline. If false or unspecified, a fixed 72-hour delay will be used. Default is false for new policies.
+    UseThreadingTimelineForSendTime bool `json:"useThreadingTimelineForSendTime"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Surveyassignment) String() string {
+    
     
     
     
@@ -83,8 +91,13 @@ func (u *Surveyassignment) MarshalJSON() ([]byte, error) {
         SendingUser string `json:"sendingUser"`
         
         SendingDomain string `json:"sendingDomain"`
+        
+        UseThreadingTimelineForSendTime bool `json:"useThreadingTimelineForSendTime"`
         *Alias
     }{
+
+        
+
 
         
 

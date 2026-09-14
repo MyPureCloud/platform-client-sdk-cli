@@ -73,11 +73,6 @@
       "description": "Delete a queue"
     },
     {
-      "name": "delete",
-      "path": "/api/v2/routing/queues/{queueId}/wrapupcodes/{codeId}",
-      "description": "Delete a wrap-up code from a queue"
-    },
-    {
       "name": "list",
       "path": "/api/v2/routing/queues/{queueId}/wrapupcodes",
       "description": "Get the wrap-up codes for a queue"
@@ -86,6 +81,11 @@
       "name": "create",
       "path": "/api/v2/routing/queues/{queueId}/wrapupcodes",
       "description": "Add up to 100 wrap-up codes to a queue"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/routing/queues/{queueId}/wrapupcodes/{codeId}",
+      "description": "Delete a wrap-up code from a queue"
     },
     {
       "name": "list",

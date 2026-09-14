@@ -20,6 +20,9 @@ type PromptDud struct {
     
 
 
+    
+
+
     Resources []Promptasset `json:"resources"`
 
 
@@ -40,6 +43,10 @@ type Prompt struct {
     Name string `json:"name"`
 
 
+    // Division - The division to which this entity belongs.
+    Division Writablestarrabledivision `json:"division"`
+
+
     // Description
     Description string `json:"description"`
 
@@ -56,6 +63,7 @@ type Prompt struct {
 
 // String returns a JSON representation of the model
 func (o *Prompt) String() string {
+    
     
     
     
@@ -80,9 +88,14 @@ func (u *Prompt) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        Division Writablestarrabledivision `json:"division"`
+        
         Description string `json:"description"`
         *Alias
     }{
+
+        
+
 
         
 

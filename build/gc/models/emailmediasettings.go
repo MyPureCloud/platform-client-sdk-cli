@@ -25,6 +25,9 @@ type EmailmediasettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Emailmediasettings
@@ -48,6 +51,10 @@ type Emailmediasettings struct {
     // ManualAnswerAlertToneSeconds - How long to play the alerting tone for a manual-answer interaction
     ManualAnswerAlertToneSeconds float64 `json:"manualAnswerAlertToneSeconds"`
 
+
+    // AllOutboundEmailAddresses - The list of email addresses that are assigned to the queue and can be used by agents as an outbound email address.
+    AllOutboundEmailAddresses []Queueemailaddress `json:"allOutboundEmailAddresses"`
+
 }
 
 // String returns a JSON representation of the model
@@ -57,6 +64,7 @@ func (o *Emailmediasettings) String() string {
     
     
     
+     o.AllOutboundEmailAddresses = []Queueemailaddress{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -83,6 +91,8 @@ func (u *Emailmediasettings) MarshalJSON() ([]byte, error) {
         AutoAnswerAlertToneSeconds float64 `json:"autoAnswerAlertToneSeconds"`
         
         ManualAnswerAlertToneSeconds float64 `json:"manualAnswerAlertToneSeconds"`
+        
+        AllOutboundEmailAddresses []Queueemailaddress `json:"allOutboundEmailAddresses"`
         *Alias
     }{
 
@@ -98,6 +108,11 @@ func (u *Emailmediasettings) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        AllOutboundEmailAddresses: []Queueemailaddress{{}},
         
 
         Alias: (*Alias)(u),

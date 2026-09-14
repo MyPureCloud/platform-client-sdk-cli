@@ -69,6 +69,18 @@ type ContactlistDud struct {
     
 
 
+    
+
+
+    
+
+
+    DateExpiration time.Time `json:"dateExpiration"`
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -146,6 +158,21 @@ type Contactlist struct {
     TrimWhitespace bool `json:"trimWhitespace"`
 
 
+    // RetentionType - The type of retention for this list. Valid values: Never, Today, RetentionDays
+    RetentionType string `json:"retentionType"`
+
+
+    // RetentionDays - The number of days to retain this list. Required when retentionType is RetentionDays.
+    RetentionDays int `json:"retentionDays"`
+
+
+    
+
+
+    // TimeZone - The time zone for this contact list; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+    TimeZone string `json:"timeZone"`
+
+
     
 
 }
@@ -165,6 +192,9 @@ func (o *Contactlist) String() string {
     
     
      o.ColumnDataTypeSpecifications = []Columndatatypespecification{{}} 
+    
+    
+    
     
 
     j, _ := json.Marshal(o)
@@ -210,6 +240,12 @@ func (u *Contactlist) MarshalJSON() ([]byte, error) {
         ColumnDataTypeSpecifications []Columndatatypespecification `json:"columnDataTypeSpecifications"`
         
         TrimWhitespace bool `json:"trimWhitespace"`
+        
+        RetentionType string `json:"retentionType"`
+        
+        RetentionDays int `json:"retentionDays"`
+        
+        TimeZone string `json:"timeZone"`
         *Alias
     }{
 
@@ -276,6 +312,18 @@ func (u *Contactlist) MarshalJSON() ([]byte, error) {
 
         
         ColumnDataTypeSpecifications: []Columndatatypespecification{{}},
+        
+
+
+        
+
+
+        
+
+
+        
+
+
         
 
 

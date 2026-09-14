@@ -13,21 +13,6 @@
       "description": "Retrieve aggregated assignment data"
     },
     {
-      "name": "list",
-      "path": "/api/v2/learning/assignments/me",
-      "description": "List of Learning Assignments assigned to current user"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/learning/assignments",
-      "description": "List of Learning module Assignments"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/learning/assignments",
-      "description": "Create Learning Assignment"
-    },
-    {
       "name": "get",
       "path": "/api/v2/learning/assignments/{assignmentId}",
       "description": "Get Learning Assignment"
@@ -41,6 +26,26 @@
       "name": "update",
       "path": "/api/v2/learning/assignments/{assignmentId}",
       "description": "Update Learning Assignment"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/learning/assignments/{assignmentId}/reschedule",
+      "description": "Reschedule Learning Assignment"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/learning/assignments/me",
+      "description": "List of Learning Assignments assigned to current user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/learning/assignments",
+      "description": "List of Learning module Assignments"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/assignments",
+      "description": "Create Learning Assignment"
     },
     {
       "name": "create",
@@ -63,11 +68,6 @@
       "description": "Remove multiple Learning Assignments"
     },
     {
-      "name": "update",
-      "path": "/api/v2/learning/assignments/{assignmentId}/reschedule",
-      "description": "Reschedule Learning Assignment"
-    },
-    {
       "name": "get",
       "path": "/api/v2/learning/assignments/{assignmentId}/steps/{stepId}",
       "description": "Get Learning Assignment Step"
@@ -81,6 +81,21 @@
       "name": "create",
       "path": "/api/v2/learning/rules/query",
       "description": "Get users for learning module rule"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/learning/modules/{moduleId}",
+      "description": "Get a learning module"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/learning/modules/{moduleId}",
+      "description": "Update a learning module"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/learning/modules/{moduleId}",
+      "description": "Delete a learning module"
     },
     {
       "name": "create",
@@ -101,21 +116,6 @@
       "name": "update",
       "path": "/api/v2/learning/modules/{moduleId}/users/{userId}/assignments",
       "description": "Update an external assignment for a specific user"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/learning/modules/{moduleId}",
-      "description": "Get a learning module"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/learning/modules/{moduleId}",
-      "description": "Update a learning module"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/learning/modules/{moduleId}",
-      "description": "Delete a learning module"
     },
     {
       "name": "get",
@@ -164,11 +164,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/learning/scheduleslots/query",
-      "description": "Get list of possible slots where a learning activity can be scheduled."
-    },
-    {
-      "name": "create",
       "path": "/api/v2/learning/scheduleslots/jobs",
       "description": "Start job to retrieve slots where a learning activity can be scheduled."
     },
@@ -176,6 +171,11 @@
       "name": "get",
       "path": "/api/v2/learning/scheduleslots/jobs/{jobId}",
       "description": "Retrieve the status of the job for the slots where a learning activity can be scheduled."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/scheduleslots/query",
+      "description": "Get list of possible slots where a learning activity can be scheduled."
     },
     {
       "name": "get",

@@ -13,6 +13,9 @@ var (
 type CreateroutingskillDud struct { 
     
 
+
+    
+
 }
 
 // Createroutingskill
@@ -20,10 +23,15 @@ type Createroutingskill struct {
     // Name - The name of the skill.
     Name string `json:"name"`
 
+
+    // DivisionId - The division to which this skill will belong
+    DivisionId string `json:"divisionId"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Createroutingskill) String() string {
+    
     
 
     j, _ := json.Marshal(o)
@@ -43,8 +51,13 @@ func (u *Createroutingskill) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         
         Name string `json:"name"`
+        
+        DivisionId string `json:"divisionId"`
         *Alias
     }{
+
+        
+
 
         
 

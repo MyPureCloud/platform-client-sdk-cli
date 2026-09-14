@@ -19,8 +19,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/leaderboard",
-      "description": "Leaderboard of the requesting user's division or performance profile"
+      "path": "/api/v2/gamification/leaderboard/all",
+      "description": "Leaderboard by filter type"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/leaderboard/all/bestpoints",
+      "description": "Best Points by division or performance profile"
     },
     {
       "name": "get",
@@ -29,13 +34,8 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/leaderboard/all",
-      "description": "Leaderboard by filter type"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/gamification/leaderboard/all/bestpoints",
-      "description": "Best Points by division or performance profile"
+      "path": "/api/v2/gamification/leaderboard",
+      "description": "Leaderboard of the requesting user's division or performance profile"
     },
     {
       "name": "get",
@@ -144,16 +144,6 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/gamification/contests",
-      "description": "Get a List of Contests (Admin)"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/gamification/contests",
-      "description": "Creates a Contest"
-    },
-    {
-      "name": "list",
       "path": "/api/v2/gamification/contests/me",
       "description": "Get a List of Contests (Agent/Supervisor)"
     },
@@ -176,6 +166,16 @@
       "name": "patch",
       "path": "/api/v2/gamification/contests/{contestId}",
       "description": "Finalize a Contest by Id"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/contests",
+      "description": "Get a List of Contests (Admin)"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/gamification/contests",
+      "description": "Creates a Contest"
     },
     {
       "name": "list",
@@ -209,18 +209,13 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/gamification/insights/managers",
-      "description": "Query managers in a profile during a period of time"
-    },
-    {
-      "name": "list",
       "path": "/api/v2/gamification/insights/members",
       "description": "Query users in a profile during a period of time"
     },
     {
-      "name": "get",
-      "path": "/api/v2/gamification/insights/groups/trends/all",
-      "description": "Get insights overall trend"
+      "name": "list",
+      "path": "/api/v2/gamification/insights/managers",
+      "description": "Query managers in a profile during a period of time"
     },
     {
       "name": "list",
@@ -229,13 +224,18 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/insights/rankings",
-      "description": "Get insights rankings"
+      "path": "/api/v2/gamification/insights/groups/trends/all",
+      "description": "Get insights overall trend"
     },
     {
       "name": "list",
       "path": "/api/v2/gamification/insights",
       "description": "Get insights summary"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/insights/rankings",
+      "description": "Get insights rankings"
     },
     {
       "name": "list",
@@ -263,9 +263,9 @@
       "description": "Validate member assignment"
     },
     {
-      "name": "get",
-      "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends",
-      "description": "Average performance values trends by metric of the requesting user"
+      "name": "getusertrends",
+      "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends",
+      "description": "Average performance values trends by metric of a user"
     },
     {
       "name": "get",
@@ -273,19 +273,9 @@
       "description": "Average performance values trends by metric of a division or a performance profile"
     },
     {
-      "name": "getusertrends",
-      "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends",
-      "description": "Average performance values trends by metric of a user"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/gamification/scorecards",
-      "description": "Workday performance metrics of the requesting user"
-    },
-    {
       "name": "get",
-      "path": "/api/v2/gamification/scorecards/bestpoints",
-      "description": "Best points of the requesting user"
+      "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends",
+      "description": "Average performance values trends by metric of the requesting user"
     },
     {
       "name": "get",
@@ -318,9 +308,14 @@
       "description": "Average values of the requesting user's division or performance profile"
     },
     {
+      "name": "list",
+      "path": "/api/v2/gamification/scorecards",
+      "description": "Workday performance metrics of the requesting user"
+    },
+    {
       "name": "get",
-      "path": "/api/v2/gamification/scorecards/users/{userId}/bestpoints",
-      "description": "Best points of a user"
+      "path": "/api/v2/gamification/scorecards/bestpoints",
+      "description": "Best points of the requesting user"
     },
     {
       "name": "get",
@@ -361,6 +356,11 @@
       "name": "get",
       "path": "/api/v2/gamification/scorecards/users/values/trends",
       "description": "Values trend by target group"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/{userId}/bestpoints",
+      "description": "Best points of a user"
     }
   ]
 }

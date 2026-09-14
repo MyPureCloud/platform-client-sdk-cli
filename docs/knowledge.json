@@ -178,14 +178,14 @@
       "description": "Answer documents."
     },
     {
-      "name": "update",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search/{searchId}",
-      "description": "Register chunk search result."
-    },
-    {
       "name": "create",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search",
       "description": "Search for chunks in a knowledge base"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search/{searchId}",
+      "description": "Register chunk search result."
     },
     {
       "name": "get",
@@ -373,14 +373,14 @@
       "description": "Create synchronization job"
     },
     {
-      "name": "list",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations",
-      "description": "Get operations"
-    },
-    {
       "name": "get",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query",
       "description": "Get ids of operation creator users and oauth clients"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations",
+      "description": "Get operations"
     },
     {
       "name": "get",
@@ -403,6 +403,11 @@
       "description": "Create parse job"
     },
     {
+      "name": "update",
+      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/{searchId}",
+      "description": "Update search result."
+    },
+    {
       "name": "create",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/suggestions",
       "description": "Query the knowledge documents to provide suggestions for auto completion."
@@ -411,11 +416,6 @@
       "name": "create",
       "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search",
       "description": "Search the documents in a knowledge base."
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/{searchId}",
-      "description": "Update search result."
     },
     {
       "name": "create",

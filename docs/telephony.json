@@ -8,14 +8,14 @@
       "description": "Get prefixes"
     },
     {
-      "name": "create",
-      "path": "/api/v2/telephony/prefixes/bulk",
-      "description": "Bulk save prefixes"
-    },
-    {
       "name": "get",
       "path": "/api/v2/telephony/prefixes/simulate/call",
       "description": "Simulate call to test fraud prefix functionality"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/prefixes/bulk",
+      "description": "Bulk save prefixes"
     },
     {
       "name": "get",
@@ -53,6 +53,11 @@
       "description": "Updates the agent's own greetings."
     },
     {
+      "name": "create",
+      "path": "/api/v2/telephony/numbers/routing/all",
+      "description": "Re-route all numbers on an organization"
+    },
+    {
       "name": "list",
       "path": "/api/v2/telephony/numbers/routing",
       "description": "Get Number Routings by organizationId"
@@ -64,13 +69,18 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/telephony/numbers/routing/all",
-      "description": "Re-route all numbers on an organization"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/telephony/numbers/routing/reset",
       "description": "Reset routing for organization"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/telephony/organization/link/approve/{requestingOrganizationId}",
+      "description": "Approving a requested link"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/organization/link/regions",
+      "description": "Get all the replica regions by primary region"
     },
     {
       "name": "get",
@@ -86,16 +96,6 @@
       "name": "delete",
       "path": "/api/v2/telephony/organization/link/{targetOrganizationId}",
       "description": "Delete a link"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/telephony/organization/link/approve/{requestingOrganizationId}",
-      "description": "Approving a requested link"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/telephony/organization/link/regions",
-      "description": "Get all the replica regions by primary region"
     },
     {
       "name": "get",
@@ -139,6 +139,16 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping",
+      "description": "Get networking-related information from an Edge for a target IP or host."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping",
+      "description": "Ping Request command to collect networking-related information from an Edge for a target IP or host."
+    },
+    {
+      "name": "get",
       "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath",
       "description": "Get networking-related information from an Edge for a target IP or host."
     },
@@ -166,16 +176,6 @@
       "name": "create",
       "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/route",
       "description": "Route request command to collect networking-related information from an Edge for a target IP or host."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping",
-      "description": "Get networking-related information from an Edge for a target IP or host."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping",
-      "description": "Ping Request command to collect networking-related information from an Edge for a target IP or host."
     },
     {
       "name": "create",
@@ -764,13 +764,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}",
-      "description": "Get media endpoint statistics event."
+      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}",
+      "description": "Get media endpoint statistics events."
     },
     {
       "name": "get",
-      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}",
-      "description": "Get media endpoint statistics events."
+      "path": "/api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}",
+      "description": "Get media endpoint statistics event."
     }
   ]
 }

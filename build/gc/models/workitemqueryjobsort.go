@@ -16,21 +16,29 @@ type WorkitemqueryjobsortDud struct {
 
     
 
+
+    
+
 }
 
 // Workitemqueryjobsort
 type Workitemqueryjobsort struct { 
-    // Name - Specify an attribute for sorting.
+    // Name - Specify an attribute for sorting. Use 'customFields' to sort by a custom field, in which case the customField property is required.
     Name string `json:"name"`
 
 
     // Ascending - Sort Ascending
     Ascending bool `json:"ascending"`
 
+
+    // CustomField - The key of the custom field to sort by. Required when name is 'customFields' and must not be set otherwise.
+    CustomField string `json:"customField"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Workitemqueryjobsort) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Workitemqueryjobsort) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         
         Ascending bool `json:"ascending"`
+        
+        CustomField string `json:"customField"`
         *Alias
     }{
+
+        
+
 
         
 

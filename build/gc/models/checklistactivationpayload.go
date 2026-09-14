@@ -40,6 +40,9 @@ type ChecklistactivationpayloadDud struct {
 
     
 
+
+    
+
 }
 
 // Checklistactivationpayload
@@ -83,10 +86,15 @@ type Checklistactivationpayload struct {
     // Direction - Direction of the conversation.
     Direction string `json:"direction"`
 
+
+    // Preview - Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+    Preview bool `json:"preview"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Checklistactivationpayload) String() string {
+    
     
     
     
@@ -133,8 +141,13 @@ func (u *Checklistactivationpayload) MarshalJSON() ([]byte, error) {
         MediaType string `json:"mediaType"`
         
         Direction string `json:"direction"`
+        
+        Preview bool `json:"preview"`
         *Alias
     }{
+
+        
+
 
         
 

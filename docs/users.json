@@ -3,21 +3,6 @@
   "description": "/api/v2/users",
   "resources": [
     {
-      "name": "update",
-      "path": "/api/v2/users/me/verifiers/{verifierId}",
-      "description": "Update a verifier"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/users/me/verifiers/{verifierId}",
-      "description": "Delete a verifier"
-    },
-    {
-      "name": "validate",
-      "path": "/api/v2/users/me/verifiers/totp/{verifierId}",
-      "description": "Validate a TOTP verifier"
-    },
-    {
       "name": "create",
       "path": "/api/v2/users/me/verifiers/totp",
       "description": "Add a new TOTP verifier"
@@ -39,6 +24,26 @@
     },
     {
       "name": "update",
+      "path": "/api/v2/users/me/verifiers/{verifierId}",
+      "description": "Update a verifier"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/me/verifiers/{verifierId}",
+      "description": "Delete a verifier"
+    },
+    {
+      "name": "validate",
+      "path": "/api/v2/users/me/verifiers/totp/{verifierId}",
+      "description": "Validate a TOTP verifier"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/users/{userId}/verifiers",
+      "description": "Get a list of verifiers"
+    },
+    {
+      "name": "update",
       "path": "/api/v2/users/{userId}/verifiers/{verifierId}",
       "description": "Update a verifier"
     },
@@ -46,11 +51,6 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/verifiers/{verifierId}",
       "description": "Delete a verifier"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/users/{userId}/verifiers",
-      "description": "Get a list of verifiers"
     },
     {
       "name": "get",
@@ -198,11 +198,6 @@
       "description": "Patch a user's Presence"
     },
     {
-      "name": "create",
-      "path": "/api/v2/users/{userId}/screenmonitors/sessions",
-      "description": "Start an agent-level screen monitoring session."
-    },
-    {
       "name": "get",
       "path": "/api/v2/users/{userId}/screenmonitors/sessions/{screenMonitoringId}",
       "description": "Get an agent-level screen monitoring session object using the supplied screenMonitoringId."
@@ -213,6 +208,11 @@
       "description": "Stop an agent-level screen monitoring session."
     },
     {
+      "name": "create",
+      "path": "/api/v2/users/{userId}/screenmonitors/sessions",
+      "description": "Start an agent-level screen monitoring session."
+    },
+    {
       "name": "list",
       "path": "/api/v2/users/chats/me",
       "description": "Get chats for a user"
@@ -221,11 +221,6 @@
       "name": "getuserbyexternalid",
       "path": "/api/v2/users/externalid/{authorityName}/{externalKey}",
       "description": "Get the user associated with external identifier."
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}",
-      "description": "Delete the external identifier for user."
     },
     {
       "name": "getexternalidforuserauthority",
@@ -241,6 +236,11 @@
       "name": "create",
       "path": "/api/v2/users/{userId}/externalid",
       "description": "Create mapping between external identifier and user. Limit 100 per entity."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}",
+      "description": "Delete the external identifier for user."
     },
     {
       "name": "create",

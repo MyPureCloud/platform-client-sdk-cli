@@ -121,6 +121,7 @@ func Cmdarchitect_prompts() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "bool", "includeMediaUris", "true", "Include the media URIs for each resource")
 	utils.AddFlag(listCmd.Flags(), "bool", "includeResources", "true", "Include the resources for each system prompt")
 	utils.AddFlag(listCmd.Flags(), "[]string", "language", "", "Filter the resources down to the provided languages")
+	utils.AddFlag(listCmd.Flags(), "[]string", "divisionId", "", "division ID(s)")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/architect/prompts", utils.FormatPermissions([]string{ "architect:userPrompt:view",  }), utils.GenerateDevCentreLink("GET", "Architect", "/api/v2/architect/prompts")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -578,6 +579,10 @@ var listCmd = &cobra.Command{
 		language := utils.GetFlag(cmd.Flags(), "[]string", "language")
 		if language != "" {
 			queryParams["language"] = language
+		}
+		divisionId := utils.GetFlag(cmd.Flags(), "[]string", "divisionId")
+		if divisionId != "" {
+			queryParams["divisionId"] = divisionId
 		}
 		urlString := path
 		if len(queryParams) > 0 {

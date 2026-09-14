@@ -1,13 +1,13 @@
-## gc taskmanagement workitems create
+## gc outbound contactlists bulk update create
 
-Create a workitem
+Bulk update contact lists.
 
 ### Synopsis
 
-Create a workitem
+Bulk update contact lists.
 
 ```
-gc taskmanagement workitems create [flags]
+gc outbound contactlists bulk update create [flags]
 ```
 
 ### Options
@@ -36,6 +36,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc outbound contactlists bulk update](gc_outbound_contactlists_bulk_update.html)	 - /api/v2/outbound/contactlists/bulk/update
 
 

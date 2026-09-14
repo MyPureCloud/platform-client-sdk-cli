@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc workforcemanagement](gc_workforcemanagement.html)	 - /api/v2/workforcemanagement
+* [gc workforcemanagement users activity](gc_workforcemanagement_users_activity.html)	 - /api/v2/workforcemanagement/users/activity
 * [gc workforcemanagement users workplanbidranks](gc_workforcemanagement_users_workplanbidranks.html)	 - /api/v2/workforcemanagement/users/{userId}/workplanbidranks
 
 

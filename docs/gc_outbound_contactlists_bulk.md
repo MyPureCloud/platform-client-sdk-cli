@@ -1,22 +1,15 @@
-## gc taskmanagement workitems create
+## gc outbound contactlists bulk
 
-Create a workitem
+/api/v2/outbound/contactlists/bulk
 
 ### Synopsis
 
-Create a workitem
-
-```
-gc taskmanagement workitems create [flags]
-```
+/api/v2/outbound/contactlists/bulk
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for bulk
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc outbound contactlists](gc_outbound_contactlists.html)	 - /api/v2/outbound/contactlists
+* [gc outbound contactlists bulk update](gc_outbound_contactlists_bulk_update.html)	 - /api/v2/outbound/contactlists/bulk/update
 
 

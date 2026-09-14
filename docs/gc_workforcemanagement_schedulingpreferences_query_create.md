@@ -1,13 +1,13 @@
-## gc taskmanagement workitems create
+## gc workforcemanagement schedulingpreferences query create
 
-Create a workitem
+Get agent scheduling preferences
 
 ### Synopsis
 
-Create a workitem
+Get agent scheduling preferences
 
 ```
-gc taskmanagement workitems create [flags]
+gc workforcemanagement schedulingpreferences query create [flags]
 ```
 
 ### Options
@@ -36,6 +36,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc workforcemanagement schedulingpreferences query](gc_workforcemanagement_schedulingpreferences_query.html)	 - /api/v2/workforcemanagement/schedulingpreferences/query
 
 

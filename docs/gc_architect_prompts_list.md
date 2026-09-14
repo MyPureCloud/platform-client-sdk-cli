@@ -15,6 +15,7 @@ gc architect prompts list [flags]
 ```
   -a, --autopaginate               Automatically paginate through the results stripping page information
       --description string         Description
+      --divisionId strings         division ID(s)
       --filtercondition string     Filter list command output based on a given condition or regular expression
   -h, --help                       help for list
       --includeMediaUris string    Include the media URIs for each resource Valid values: true, false

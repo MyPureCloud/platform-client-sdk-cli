@@ -24,6 +24,7 @@ gc outbound contactlisttemplates list [flags]
       --sortBy string             Sort by
       --sortOrder string          Sort order Valid values: ascending, descending
   -s, --stream                    Paginate and stream data as it is being processed leaving page information intact
+      --timeZone string           Filter by time zone
 ```
 
 ### Options inherited from parent commands

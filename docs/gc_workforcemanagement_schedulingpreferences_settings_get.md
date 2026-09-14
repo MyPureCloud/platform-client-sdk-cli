@@ -1,22 +1,19 @@
-## gc taskmanagement workitems create
+## gc workforcemanagement schedulingpreferences settings get
 
-Create a workitem
+Get scheduling preferences settings for the agent`s business unit
 
 ### Synopsis
 
-Create a workitem
+Get scheduling preferences settings for the agent`s business unit
 
 ```
-gc taskmanagement workitems create [flags]
+gc workforcemanagement schedulingpreferences settings get [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc workforcemanagement schedulingpreferences settings](gc_workforcemanagement_schedulingpreferences_settings.html)	 - /api/v2/workforcemanagement/schedulingpreferences/settings
 
 

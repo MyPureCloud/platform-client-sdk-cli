@@ -15,6 +15,7 @@ gc outbound contactlists list [flags]
 ```
       --allowEmptyResult string      Whether to return an empty page when there are no results for that page Valid values: true, false
   -a, --autopaginate                 Automatically paginate through the results stripping page information
+      --dateExpiration strings       Filter by expiration date. Supports filter type prefixes, e.g. greaterthan:2025-01-01T00:00:00Z. Multiple values narrow the range. See https://developer.genesys.cloud/routing/outbound/filter-type
       --divisionId strings           Division ID(s)
       --filterType string            Filter type Valid values: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith
       --filtercondition string       Filter list command output based on a given condition or regular expression
@@ -28,6 +29,7 @@ gc outbound contactlists list [flags]
       --sortBy string                Sort by
       --sortOrder string             Sort order Valid values: ascending, descending
   -s, --stream                       Paginate and stream data as it is being processed leaving page information intact
+      --timeZone string              Filter by time zone
 ```
 
 ### Options inherited from parent commands

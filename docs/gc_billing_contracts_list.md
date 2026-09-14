@@ -21,7 +21,7 @@ gc billing contracts list [flags]
       --externalNumber string    Filter by the unique external number.
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --pageSize string          Number of entities to return. Maximum of 200.
+      --pageSize string          Number of entities to return. Maximum of 10.
       --status string            Filter by the status of contracts Valid values: Active, Inactive
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```

@@ -1,13 +1,13 @@
-## gc taskmanagement workitems create
+## gc workforcemanagement users activity create
 
-Create a workitem
+Get a list of UserScheduleAdherence records for the requested users
 
 ### Synopsis
 
-Create a workitem
+Get a list of UserScheduleAdherence records for the requested users
 
 ```
-gc taskmanagement workitems create [flags]
+gc workforcemanagement users activity create [flags]
 ```
 
 ### Options
@@ -36,6 +36,6 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc workforcemanagement users activity](gc_workforcemanagement_users_activity.html)	 - /api/v2/workforcemanagement/users/activity
 
 

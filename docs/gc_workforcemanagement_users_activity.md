@@ -1,22 +1,15 @@
-## gc taskmanagement workitems create
+## gc workforcemanagement users activity
 
-Create a workitem
+/api/v2/workforcemanagement/users/activity
 
 ### Synopsis
 
-Create a workitem
-
-```
-gc taskmanagement workitems create [flags]
-```
+/api/v2/workforcemanagement/users/activity
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for activity
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +29,7 @@ gc taskmanagement workitems create [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc workforcemanagement users](gc_workforcemanagement_users.html)	 - /api/v2/workforcemanagement/users
+* [gc workforcemanagement users activity create](gc_workforcemanagement_users_activity_create.html)	 - Get a list of UserScheduleAdherence records for the requested users
 
 

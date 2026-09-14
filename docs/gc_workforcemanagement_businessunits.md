@@ -52,6 +52,7 @@
 * [gc workforcemanagement businessunits schedulebids](gc_workforcemanagement_businessunits_schedulebids.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids
 * [gc workforcemanagement businessunits scheduler](gc_workforcemanagement_businessunits_scheduler.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler
 * [gc workforcemanagement businessunits scheduling](gc_workforcemanagement_businessunits_scheduling.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling
+* [gc workforcemanagement businessunits schedulingpreferences](gc_workforcemanagement_businessunits_schedulingpreferences.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulingpreferences
 * [gc workforcemanagement businessunits servicegoaltemplates](gc_workforcemanagement_businessunits_servicegoaltemplates.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates
 * [gc workforcemanagement businessunits shifttrading](gc_workforcemanagement_businessunits_shifttrading.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading
 * [gc workforcemanagement businessunits staffinggroups](gc_workforcemanagement_businessunits_staffinggroups.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups

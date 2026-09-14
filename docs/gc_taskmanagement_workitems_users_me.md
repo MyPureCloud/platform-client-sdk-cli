@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems users](gc_taskmanagement_workitems_users.html)	 - /api/v2/taskmanagement/workitems/{workitemId}/users/me
+* [gc taskmanagement workitems users](gc_taskmanagement_workitems_users.html)	 - /api/v2/taskmanagement/workitems/{workitemId}/users
 * [gc taskmanagement workitems users me wrapups](gc_taskmanagement_workitems_users_me_wrapups.html)	 - /api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups
 
 

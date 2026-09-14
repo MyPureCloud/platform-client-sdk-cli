@@ -36,6 +36,7 @@
 * [gc workforcemanagement agents managementunit](gc_workforcemanagement_agents_managementunit.html)	 - /api/v2/workforcemanagement/agents/{agentId}/managementunit
 * [gc workforcemanagement agents me](gc_workforcemanagement_agents_me.html)	 - /api/v2/workforcemanagement/agents/me
 * [gc workforcemanagement agents opportunities](gc_workforcemanagement_agents_opportunities.html)	 - /api/v2/workforcemanagement/agents/opportunities
+* [gc workforcemanagement agents schedulingpreferences](gc_workforcemanagement_agents_schedulingpreferences.html)	 - /api/v2/workforcemanagement/agents/{agentId}/schedulingpreferences
 * [gc workforcemanagement agents unavailabletimes](gc_workforcemanagement_agents_unavailabletimes.html)	 - /api/v2/workforcemanagement/agents/{agentId}/unavailabletimes
 
 

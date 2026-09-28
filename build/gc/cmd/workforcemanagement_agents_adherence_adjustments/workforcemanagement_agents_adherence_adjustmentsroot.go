@@ -1,0 +1,12 @@
+package workforcemanagement_agents_adherence_adjustments
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_agents_adherence_adjustments_query"
+)
+
+func init() {
+	workforcemanagement_agents_adherence_adjustmentsCmd.AddCommand(workforcemanagement_agents_adherence_adjustments_query.Cmdworkforcemanagement_agents_adherence_adjustments_query())
+	workforcemanagement_agents_adherence_adjustmentsCmd.Short = utils.GenerateCustomDescription(workforcemanagement_agents_adherence_adjustmentsCmd.Short, workforcemanagement_agents_adherence_adjustments_query.Description, )
+	workforcemanagement_agents_adherence_adjustmentsCmd.Long = workforcemanagement_agents_adherence_adjustmentsCmd.Short
+}

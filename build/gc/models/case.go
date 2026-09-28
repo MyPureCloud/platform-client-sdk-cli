@@ -75,6 +75,12 @@ type CaseDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -100,12 +106,20 @@ type Case struct {
     Reference string `json:"reference"`
 
 
+    // ExternalId - The identifier of the Case in an external system.
+    ExternalId string `json:"externalId"`
+
+
     // Caseplan - The Caseplan the Case was created from.
     Caseplan Caseplanreference `json:"caseplan"`
 
 
     // Summary - Overview information for the Case.
     Summary string `json:"summary"`
+
+
+    // Description - The description of the Case.
+    Description string `json:"description"`
 
 
     // Owner - The owner of the Case.
@@ -190,6 +204,8 @@ func (o *Case) String() string {
     
     
     
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -215,9 +231,13 @@ func (u *Case) MarshalJSON() ([]byte, error) {
         
         Reference string `json:"reference"`
         
+        ExternalId string `json:"externalId"`
+        
         Caseplan Caseplanreference `json:"caseplan"`
         
         Summary string `json:"summary"`
+        
+        Description string `json:"description"`
         
         Owner Caseuserreference `json:"owner"`
         
@@ -248,6 +268,12 @@ func (u *Case) MarshalJSON() ([]byte, error) {
         FailureReason Failurereason `json:"failureReason"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

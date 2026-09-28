@@ -19,13 +19,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/leaderboard/all",
-      "description": "Leaderboard by filter type"
+      "path": "/api/v2/gamification/leaderboard/all/bestpoints",
+      "description": "Best Points by division or performance profile"
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/leaderboard/all/bestpoints",
-      "description": "Best Points by division or performance profile"
+      "path": "/api/v2/gamification/leaderboard",
+      "description": "Leaderboard of the requesting user's division or performance profile"
     },
     {
       "name": "get",
@@ -34,8 +34,8 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/leaderboard",
-      "description": "Leaderboard of the requesting user's division or performance profile"
+      "path": "/api/v2/gamification/leaderboard/all",
+      "description": "Leaderboard by filter type"
     },
     {
       "name": "get",
@@ -218,24 +218,24 @@
       "description": "Query managers in a profile during a period of time"
     },
     {
-      "name": "list",
-      "path": "/api/v2/gamification/insights/groups/trends",
-      "description": "Get insights overall trend for the current user"
-    },
-    {
       "name": "get",
       "path": "/api/v2/gamification/insights/groups/trends/all",
       "description": "Get insights overall trend"
     },
     {
       "name": "list",
-      "path": "/api/v2/gamification/insights",
-      "description": "Get insights summary"
+      "path": "/api/v2/gamification/insights/groups/trends",
+      "description": "Get insights overall trend for the current user"
     },
     {
       "name": "get",
       "path": "/api/v2/gamification/insights/rankings",
       "description": "Get insights rankings"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/insights",
+      "description": "Get insights summary"
     },
     {
       "name": "list",
@@ -263,9 +263,9 @@
       "description": "Validate member assignment"
     },
     {
-      "name": "getusertrends",
-      "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends",
-      "description": "Average performance values trends by metric of a user"
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends",
+      "description": "Average performance values trends by metric of the requesting user"
     },
     {
       "name": "get",
@@ -273,9 +273,19 @@
       "description": "Average performance values trends by metric of a division or a performance profile"
     },
     {
+      "name": "getusertrends",
+      "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends",
+      "description": "Average performance values trends by metric of a user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/gamification/scorecards",
+      "description": "Workday performance metrics of the requesting user"
+    },
+    {
       "name": "get",
-      "path": "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends",
-      "description": "Average performance values trends by metric of the requesting user"
+      "path": "/api/v2/gamification/scorecards/bestpoints",
+      "description": "Best points of the requesting user"
     },
     {
       "name": "get",
@@ -308,19 +318,9 @@
       "description": "Average values of the requesting user's division or performance profile"
     },
     {
-      "name": "list",
-      "path": "/api/v2/gamification/scorecards",
-      "description": "Workday performance metrics of the requesting user"
-    },
-    {
       "name": "get",
-      "path": "/api/v2/gamification/scorecards/bestpoints",
-      "description": "Best points of the requesting user"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/gamification/scorecards/users/{userId}",
-      "description": "Workday performance metrics for a user"
+      "path": "/api/v2/gamification/scorecards/users/{userId}/bestpoints",
+      "description": "Best points of a user"
     },
     {
       "name": "get",
@@ -331,6 +331,11 @@
       "name": "get",
       "path": "/api/v2/gamification/scorecards/users/{userId}/points/trends",
       "description": "Points trend for a user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/scorecards/users/{userId}",
+      "description": "Workday performance metrics for a user"
     },
     {
       "name": "get",
@@ -356,11 +361,6 @@
       "name": "get",
       "path": "/api/v2/gamification/scorecards/users/values/trends",
       "description": "Values trend by target group"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/gamification/scorecards/users/{userId}/bestpoints",
-      "description": "Best points of a user"
     }
   ]
 }

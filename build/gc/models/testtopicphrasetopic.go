@@ -22,6 +22,9 @@ type TesttopicphrasetopicDud struct {
 
     
 
+
+    
+
 }
 
 // Testtopicphrasetopic
@@ -32,6 +35,10 @@ type Testtopicphrasetopic struct {
 
     // Strictness - The topic strictness, default value is 72
     Strictness string `json:"strictness"`
+
+
+    // MatchingType - The topic matching type Lexical or Semantic, default value is Semantic
+    MatchingType string `json:"matchingType"`
 
 
     // Dialect - The topic dialect, default value is en-US
@@ -45,6 +52,7 @@ type Testtopicphrasetopic struct {
 
 // String returns a JSON representation of the model
 func (o *Testtopicphrasetopic) String() string {
+    
     
     
     
@@ -70,11 +78,16 @@ func (u *Testtopicphrasetopic) MarshalJSON() ([]byte, error) {
         
         Strictness string `json:"strictness"`
         
+        MatchingType string `json:"matchingType"`
+        
         Dialect string `json:"dialect"`
         
         Participants string `json:"participants"`
         *Alias
     }{
+
+        
+
 
         
 

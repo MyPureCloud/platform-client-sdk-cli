@@ -239,13 +239,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/conversations/callbacks/bulk/update",
-      "description": "Update multiple scheduled callbacks"
+      "path": "/api/v2/conversations/callbacks/bulk/disconnect",
+      "description": "Disconnect multiple scheduled callbacks"
     },
     {
       "name": "create",
-      "path": "/api/v2/conversations/callbacks/bulk/disconnect",
-      "description": "Disconnect multiple scheduled callbacks"
+      "path": "/api/v2/conversations/callbacks/bulk/update",
+      "description": "Update multiple scheduled callbacks"
     },
     {
       "name": "list",
@@ -883,6 +883,11 @@
       "description": "Send message typing event"
     },
     {
+      "name": "create",
+      "path": "/api/v2/conversations/messages/{conversationId}/participants/{participantId}/takeover",
+      "description": "The User performing this action will takeover the conversation from the participant specified."
+    },
+    {
       "name": "update",
       "path": "/api/v2/conversations/screenshares/{conversationId}/recordingstate",
       "description": "Update a conversation by setting its recording state"
@@ -913,6 +918,16 @@
       "description": "Apply wrap-up for this conversation communication"
     },
     {
+      "name": "get",
+      "path": "/api/v2/conversations/videos/meetings/{meetingId}",
+      "description": "Gets a record for a given meetingId"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/videos/meetings",
+      "description": "Generate a meetingId for a given conferenceId"
+    },
+    {
       "name": "update",
       "path": "/api/v2/conversations/videos/{conversationId}/recordingstate",
       "description": "Update a conversation by setting its recording state"
@@ -926,16 +941,6 @@
       "name": "create",
       "path": "/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup",
       "description": "Apply wrap-up for this conversation communication"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/conversations/videos/meetings/{meetingId}",
-      "description": "Gets a record for a given meetingId"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/videos/meetings",
-      "description": "Generate a meetingId for a given conferenceId"
     },
     {
       "name": "get",
@@ -1378,6 +1383,16 @@
       "description": "Create secure IVR session. Only a participant in the conversation can invoke a secure IVR."
     },
     {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/suggestions/feedback",
+      "description": "Suggestion feedback."
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/conversations/{conversationId}/suggestions",
+      "description": "Get all suggestions for a conversation."
+    },
+    {
       "name": "get",
       "path": "/api/v2/conversations/{conversationId}/suggestions/{suggestionId}",
       "description": "Get Suggestion."
@@ -1391,16 +1406,6 @@
       "name": "create",
       "path": "/api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement",
       "description": "Save an engagement on the suggestion."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/{conversationId}/suggestions/feedback",
-      "description": "Suggestion feedback."
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/conversations/{conversationId}/suggestions",
-      "description": "Get all suggestions for a conversation."
     },
     {
       "name": "get",
@@ -1508,6 +1513,11 @@
       "description": "Create annotation"
     },
     {
+      "name": "create",
+      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/screenmonitors/sessions",
+      "description": "Start a conversation-level screen monitoring session."
+    },
+    {
       "name": "get",
       "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/screenmonitors/sessions/{screenMonitoringId}",
       "description": "Get a conversation-level screen monitoring session object using the supplied screenMonitoringId."
@@ -1516,11 +1526,6 @@
       "name": "delete",
       "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/screenmonitors/sessions/{screenMonitoringId}",
       "description": "Stop a conversation-level screen monitoring session."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/conversations/{conversationId}/participants/{participantId}/screenmonitors/sessions",
-      "description": "Start a conversation-level screen monitoring session."
     },
     {
       "name": "get",
@@ -1538,14 +1543,14 @@
       "description": "Get copilot context values for a conversation."
     },
     {
-      "name": "create",
-      "path": "/api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId}",
-      "description": "Create an Agent-Type video conference and assign an agent to it"
-    },
-    {
       "name": "get",
       "path": "/api/v2/conversations/videos/{conferenceId}/details",
       "description": "Get video conference details (e.g. the current number of active participants)."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId}",
+      "description": "Create an Agent-Type video conference and assign an agent to it"
     },
     {
       "name": "get",

@@ -29,7 +29,7 @@ type V3synchronizationuploadurlrequestDud struct {
 
 // V3synchronizationuploadurlrequest
 type V3synchronizationuploadurlrequest struct { 
-    // FileName - Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|
+    // FileName - Path and name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|
     FileName string `json:"fileName"`
 
 

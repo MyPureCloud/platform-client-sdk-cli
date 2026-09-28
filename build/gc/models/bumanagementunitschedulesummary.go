@@ -34,7 +34,7 @@ type Bumanagementunitschedulesummary struct {
     ManagementUnit Managementunitreference `json:"managementUnit"`
 
 
-    // AgentCount - The number of agents from this management unit that are in the schedule
+    // AgentCount - The number of agents from this management unit that are in the schedule. On update requests, this reflects the number of agents whose schedules were actually modified
     AgentCount int `json:"agentCount"`
 
 

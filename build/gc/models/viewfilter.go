@@ -748,6 +748,12 @@ type ViewfilterDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Viewfilter
@@ -1712,6 +1718,14 @@ type Viewfilter struct {
     SocialEngagementViews Numericrange `json:"socialEngagementViews"`
 
 
+    // SocialEngagementSaves - The saves range used to filter the view
+    SocialEngagementSaves Numericrange `json:"socialEngagementSaves"`
+
+
+    // SocialEngagementReposts - The reposts range used to filter the view
+    SocialEngagementReposts Numericrange `json:"socialEngagementReposts"`
+
+
     // SessionExpired - Filter to indicate for if session is expired
     SessionExpired bool `json:"sessionExpired"`
 
@@ -1973,6 +1987,8 @@ func (o *Viewfilter) String() string {
      o.SentimentTrendCategories = []string{""} 
      o.ContentModerationFlags = []string{""} 
      o.SocialSourceTypes = []string{""} 
+    
+    
     
     
     
@@ -2481,6 +2497,10 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
         SocialEngagementComments Numericrange `json:"socialEngagementComments"`
         
         SocialEngagementViews Numericrange `json:"socialEngagementViews"`
+        
+        SocialEngagementSaves Numericrange `json:"socialEngagementSaves"`
+        
+        SocialEngagementReposts Numericrange `json:"socialEngagementReposts"`
         
         SessionExpired bool `json:"sessionExpired"`
         
@@ -3519,6 +3539,12 @@ func (u *Viewfilter) MarshalJSON() ([]byte, error) {
 
         
         SocialSourceTypes: []string{""},
+        
+
+
+        
+
+
         
 
 

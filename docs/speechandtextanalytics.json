@@ -104,6 +104,16 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/speechandtextanalytics/programs/{programId}/settings/processing",
+      "description": "Get program processing settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/speechandtextanalytics/programs/{programId}/settings/processing",
+      "description": "Update program processing settings"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines",
       "description": "Get transcription engine settings of a program"
     },
@@ -121,6 +131,11 @@
       "name": "list",
       "path": "/api/v2/speechandtextanalytics/programs/mappings",
       "description": "Get the list of Speech & Text Analytics programs mappings to queues and flows"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/speechandtextanalytics/programs/settings/processing",
+      "description": "Get the list of program processing settings for the organization"
     },
     {
       "name": "list",

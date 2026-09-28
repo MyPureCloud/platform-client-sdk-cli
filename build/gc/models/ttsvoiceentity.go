@@ -29,6 +29,18 @@ type TtsvoiceentityDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -42,8 +54,16 @@ type Ttsvoiceentity struct {
     Name string `json:"name"`
 
 
+    // DisplayName - The display name of the TTS voice
+    DisplayName string `json:"displayName"`
+
+
     // Gender - The gender of the TTS voice
     Gender string `json:"gender"`
+
+
+    // VoiceType - The type of the TTS voice
+    VoiceType string `json:"voiceType"`
 
 
     // Language - The language supported by the TTS voice
@@ -58,6 +78,14 @@ type Ttsvoiceentity struct {
     IsDefault bool `json:"isDefault"`
 
 
+    // SupportedModels - The models supported by the TTS voice
+    SupportedModels []string `json:"supportedModels"`
+
+
+    // Provider - The provider of the TTS voice
+    Provider string `json:"provider"`
+
+
     
 
 }
@@ -68,6 +96,10 @@ func (o *Ttsvoiceentity) String() string {
     
     
     
+    
+    
+    
+     o.SupportedModels = []string{""} 
     
 
     j, _ := json.Marshal(o)
@@ -88,13 +120,21 @@ func (u *Ttsvoiceentity) MarshalJSON() ([]byte, error) {
         
         Name string `json:"name"`
         
+        DisplayName string `json:"displayName"`
+        
         Gender string `json:"gender"`
+        
+        VoiceType string `json:"voiceType"`
         
         Language string `json:"language"`
         
         Engine Ttsengineentity `json:"engine"`
         
         IsDefault bool `json:"isDefault"`
+        
+        SupportedModels []string `json:"supportedModels"`
+        
+        Provider string `json:"provider"`
         *Alias
     }{
 
@@ -110,6 +150,20 @@ func (u *Ttsvoiceentity) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+        SupportedModels: []string{""},
         
 
 

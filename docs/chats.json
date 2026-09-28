@@ -98,6 +98,11 @@
       "description": "Get a room participant"
     },
     {
+      "name": "getRoomParticipants",
+      "path": "/api/v2/chats/rooms/{roomJid}/participants",
+      "description": "Get room participants in a room"
+    },
+    {
       "name": "create",
       "path": "/api/v2/chats/rooms/{roomJid}/participants/{userId}",
       "description": "Join a room"
@@ -106,11 +111,6 @@
       "name": "delete",
       "path": "/api/v2/chats/rooms/{roomJid}/participants/{userId}",
       "description": "Remove a user from a room."
-    },
-    {
-      "name": "getRoomParticipants",
-      "path": "/api/v2/chats/rooms/{roomJid}/participants",
-      "description": "Get room participants in a room"
     },
     {
       "name": "get",

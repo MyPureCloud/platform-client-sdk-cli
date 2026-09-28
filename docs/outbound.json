@@ -108,11 +108,6 @@
       "description": "Get line distribution information for campaigns using same Edge Group or Site as given campaign"
     },
     {
-      "name": "create",
-      "path": "/api/v2/outbound/campaigns/{campaignId}/stop",
-      "description": "Stop the campaign"
-    },
-    {
       "name": "get",
       "path": "/api/v2/outbound/campaigns/{campaignId}",
       "description": "Get dialer campaign."
@@ -166,6 +161,11 @@
       "name": "create",
       "path": "/api/v2/outbound/campaigns/{campaignId}/start",
       "description": "Start the campaign"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/outbound/campaigns/{campaignId}/stop",
+      "description": "Stop the campaign"
     },
     {
       "name": "get",

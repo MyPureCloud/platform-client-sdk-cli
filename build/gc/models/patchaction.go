@@ -25,15 +25,6 @@ type PatchactionDud struct {
 
     
 
-
-    
-
-
-    
-
-
-    
-
 }
 
 // Patchaction
@@ -44,18 +35,6 @@ type Patchaction struct {
 
     // ActionTemplate - Action template associated with the action map.
     ActionTemplate Actionmapactiontemplate `json:"actionTemplate"`
-
-
-    // ActionTargetId - Deprecated. Action target ID.
-    ActionTargetId string `json:"actionTargetId"`
-
-
-    // IsPacingEnabled - Deprecated. Whether this action should be throttled.
-    IsPacingEnabled bool `json:"isPacingEnabled"`
-
-
-    // Props - Deprecated. Additional properties.
-    Props Patchactionproperties `json:"props"`
 
 
     // ArchitectFlowFields - Architect Flow Id and input contract.
@@ -73,9 +52,6 @@ type Patchaction struct {
 
 // String returns a JSON representation of the model
 func (o *Patchaction) String() string {
-    
-    
-    
     
     
     
@@ -102,12 +78,6 @@ func (u *Patchaction) MarshalJSON() ([]byte, error) {
         
         ActionTemplate Actionmapactiontemplate `json:"actionTemplate"`
         
-        ActionTargetId string `json:"actionTargetId"`
-        
-        IsPacingEnabled bool `json:"isPacingEnabled"`
-        
-        Props Patchactionproperties `json:"props"`
-        
         ArchitectFlowFields Architectflowfields `json:"architectFlowFields"`
         
         WebMessagingOfferFields Patchwebmessagingofferfields `json:"webMessagingOfferFields"`
@@ -115,15 +85,6 @@ func (u *Patchaction) MarshalJSON() ([]byte, error) {
         OpenActionFields Openactionfields `json:"openActionFields"`
         *Alias
     }{
-
-        
-
-
-        
-
-
-        
-
 
         
 

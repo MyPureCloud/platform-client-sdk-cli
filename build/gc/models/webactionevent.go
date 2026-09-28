@@ -49,9 +49,6 @@ type WebactioneventDud struct {
 
     
 
-
-    
-
 }
 
 // Webactionevent
@@ -62,10 +59,6 @@ type Webactionevent struct {
 
     // ActionMap - The action map that triggered the action.
     ActionMap Actioneventactionmap `json:"actionMap"`
-
-
-    // ActionTarget - Deprecated. The target for engagement actions.
-    ActionTarget Addressableentityref `json:"actionTarget"`
 
 
     // TimeToDisposition - Milliseconds elapsed until the action is disposed.
@@ -128,7 +121,6 @@ func (o *Webactionevent) String() string {
     
     
     
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -149,8 +141,6 @@ func (u *Webactionevent) MarshalJSON() ([]byte, error) {
         Action Eventaction `json:"action"`
         
         ActionMap Actioneventactionmap `json:"actionMap"`
-        
-        ActionTarget Addressableentityref `json:"actionTarget"`
         
         TimeToDisposition int `json:"timeToDisposition"`
         
@@ -175,9 +165,6 @@ func (u *Webactionevent) MarshalJSON() ([]byte, error) {
         VisitReferrer Referrer `json:"visitReferrer"`
         *Alias
     }{
-
-        
-
 
         
 

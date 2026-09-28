@@ -34,6 +34,9 @@ type TopicrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Topicrequest
@@ -52,6 +55,10 @@ type Topicrequest struct {
 
     // ProgramIds - The ids of programs associated to the topic
     ProgramIds []string `json:"programIds"`
+
+
+    // MatchingType - The topic matching type Lexical or Semantic, default value is Semantic
+    MatchingType string `json:"matchingType"`
 
 
     // Tags - The topic tags
@@ -77,6 +84,7 @@ func (o *Topicrequest) String() string {
     
     
      o.ProgramIds = []string{""} 
+    
      o.Tags = []string{""} 
     
     
@@ -106,6 +114,8 @@ func (u *Topicrequest) MarshalJSON() ([]byte, error) {
         
         ProgramIds []string `json:"programIds"`
         
+        MatchingType string `json:"matchingType"`
+        
         Tags []string `json:"tags"`
         
         Dialect string `json:"dialect"`
@@ -127,6 +137,9 @@ func (u *Topicrequest) MarshalJSON() ([]byte, error) {
 
         
         ProgramIds: []string{""},
+        
+
+
         
 
 

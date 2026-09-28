@@ -193,16 +193,6 @@
       "description": "Lookup the datalake availability date and time"
     },
     {
-      "name": "create",
-      "path": "/api/v2/analytics/evaluations/aggregates/query",
-      "description": "Query for evaluation aggregates"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/analytics/evaluations/aggregates/jobs",
-      "description": "Query for evaluation aggregates asynchronously"
-    },
-    {
       "name": "get",
       "path": "/api/v2/analytics/evaluations/aggregates/jobs/{jobId}",
       "description": "Get status for async query for evaluation aggregates"
@@ -216,6 +206,16 @@
       "name": "list",
       "path": "/api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/evaluations/aggregates/query",
+      "description": "Query for evaluation aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/evaluations/aggregates/jobs",
+      "description": "Query for evaluation aggregates asynchronously"
     },
     {
       "name": "create",
@@ -304,11 +304,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/analytics/knowledge/aggregates/query",
-      "description": "Query for knowledge aggregates"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/analytics/knowledge/aggregates/jobs",
       "description": "Query for knowledge aggregates asynchronously"
     },
@@ -326,6 +321,11 @@
       "name": "list",
       "path": "/api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/knowledge/aggregates/query",
+      "description": "Query for knowledge aggregates"
     },
     {
       "name": "create",
@@ -393,11 +393,6 @@
       "description": "Query for summary aggregates"
     },
     {
-      "name": "create",
-      "path": "/api/v2/analytics/surveys/aggregates/query",
-      "description": "Query for survey aggregates"
-    },
-    {
       "name": "get",
       "path": "/api/v2/analytics/surveys/aggregates/jobs/{jobId}",
       "description": "Get status for async query for survey aggregates"
@@ -408,14 +403,19 @@
       "description": "Delete/cancel an async request for survey aggregates"
     },
     {
-      "name": "create",
-      "path": "/api/v2/analytics/surveys/aggregates/jobs",
-      "description": "Query for survey aggregates asynchronously"
-    },
-    {
       "name": "list",
       "path": "/api/v2/analytics/surveys/aggregates/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async aggregates query"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/surveys/aggregates/query",
+      "description": "Query for survey aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/surveys/aggregates/jobs",
+      "description": "Query for survey aggregates asynchronously"
     },
     {
       "name": "create",
@@ -479,11 +479,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/analytics/users/aggregates/query",
-      "description": "Query for user aggregates"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/analytics/users/aggregates/jobs",
       "description": "Query for user aggregates asynchronously"
     },
@@ -496,6 +491,11 @@
       "name": "delete",
       "path": "/api/v2/analytics/users/aggregates/jobs/{jobId}",
       "description": "Delete/cancel an async request for user aggregates"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/users/aggregates/query",
+      "description": "Query for user aggregates"
     },
     {
       "name": "list",
@@ -598,19 +598,34 @@
       "description": "Get dashboards summary for a user"
     },
     {
-      "name": "list",
-      "path": "/api/v2/analytics/reporting/dashboards/users",
-      "description": "Get dashboards summary for users in a org"
-    },
-    {
       "name": "create",
       "path": "/api/v2/analytics/reporting/dashboards/users/bulk/remove",
       "description": "Bulk soft delete dashboards owned by other user(s)"
     },
     {
       "name": "list",
+      "path": "/api/v2/analytics/reporting/dashboards/users",
+      "description": "Get dashboards summary for users in a org"
+    },
+    {
+      "name": "list",
       "path": "/api/v2/analytics/reporting/settings/users/{userId}/dashboards",
       "description": "Get list of dashboards for an user"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/analytics/dataextraction/downloads/metadata",
+      "description": "Get metadata on files available for extraction"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/analytics/dataextraction/downloads/{downloadId}",
+      "description": "Get analytics data warehouse file download"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/analytics/dataextraction/downloads/bulk",
+      "description": "Get download URLs for analytics data warehouse files"
     },
     {
       "name": "list",
@@ -676,21 +691,6 @@
       "name": "list",
       "path": "/api/v2/analytics/copilots/aggregates/jobs/{jobId}/results",
       "description": "Fetch a page of results for an async aggregates query"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/analytics/dataextraction/downloads/{downloadId}",
-      "description": "Get analytics data warehouse file download"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/analytics/dataextraction/downloads/bulk",
-      "description": "Get download URLs for analytics data warehouse files"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/analytics/dataextraction/downloads/metadata",
-      "description": "Get metadata on files available for extraction"
     }
   ]
 }

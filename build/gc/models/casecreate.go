@@ -34,6 +34,12 @@ type CasecreateDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Casecreate
@@ -48,6 +54,14 @@ type Casecreate struct {
 
     // Summary - Overview information for the Case. Valid length between 3 and 512 characters.
     Summary string `json:"summary"`
+
+
+    // Description - The description of the Case. Maximum length of 512 characters.
+    Description string `json:"description"`
+
+
+    // ExternalId - The identifier of the Case in an external system. Minimum length is 1 character. Maximum length of 64 characters.
+    ExternalId string `json:"externalId"`
 
 
     // ExternalContactId - The ID of the External Contact associated with the Case.
@@ -80,6 +94,8 @@ func (o *Casecreate) String() string {
     
     
     
+    
+    
      o.Intake = []Intake{{}} 
 
     j, _ := json.Marshal(o)
@@ -104,6 +120,10 @@ func (u *Casecreate) MarshalJSON() ([]byte, error) {
         
         Summary string `json:"summary"`
         
+        Description string `json:"description"`
+        
+        ExternalId string `json:"externalId"`
+        
         ExternalContactId string `json:"externalContactId"`
         
         ConversationId string `json:"conversationId"`
@@ -115,6 +135,12 @@ func (u *Casecreate) MarshalJSON() ([]byte, error) {
         Intake []Intake `json:"intake"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

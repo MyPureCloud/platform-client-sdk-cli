@@ -92,10 +92,7 @@ func Cmdrouting_predictors_keyperformanceindicators() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/components/schemas/KeyPerformanceIndicator"
-        }
+        "$ref" : "#/components/schemas/KeyPerformanceIndicatorEntityListing"
       }
     }
   }

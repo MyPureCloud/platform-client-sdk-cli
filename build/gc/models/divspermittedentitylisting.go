@@ -67,16 +67,16 @@ type Divspermittedentitylisting struct {
     AllDivsPermitted bool `json:"allDivsPermitted"`
 
 
-    // LastUri
-    LastUri string `json:"lastUri"`
-
-
     // FirstUri
     FirstUri string `json:"firstUri"`
 
 
     // SelfUri
     SelfUri string `json:"selfUri"`
+
+
+    // LastUri
+    LastUri string `json:"lastUri"`
 
 
     // NextUri
@@ -132,11 +132,11 @@ func (u *Divspermittedentitylisting) MarshalJSON() ([]byte, error) {
         
         AllDivsPermitted bool `json:"allDivsPermitted"`
         
-        LastUri string `json:"lastUri"`
-        
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
+        
+        LastUri string `json:"lastUri"`
         
         NextUri string `json:"nextUri"`
         

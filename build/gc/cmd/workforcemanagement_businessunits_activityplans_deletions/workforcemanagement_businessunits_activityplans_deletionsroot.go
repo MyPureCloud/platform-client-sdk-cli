@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_activityplans_deletions
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_activityplans_deletions_jobs"
+)
+
+func init() {
+	workforcemanagement_businessunits_activityplans_deletionsCmd.AddCommand(workforcemanagement_businessunits_activityplans_deletions_jobs.Cmdworkforcemanagement_businessunits_activityplans_deletions_jobs())
+	workforcemanagement_businessunits_activityplans_deletionsCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_activityplans_deletionsCmd.Short, workforcemanagement_businessunits_activityplans_deletions_jobs.Description, )
+	workforcemanagement_businessunits_activityplans_deletionsCmd.Long = workforcemanagement_businessunits_activityplans_deletionsCmd.Short
+}

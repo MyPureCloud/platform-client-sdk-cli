@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdorgauthorization_trustors_clonedusers() *cobra.Command { 
-	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}", utils.FormatPermissions([]string{ "authorization:orgTrusteeUser:delete",  }), utils.GenerateDevCentreLink("DELETE", "Organization Authorization", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}")))
+	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}", utils.FormatPermissions([]string{ "authorization:orgTrusteeClonedUser:delete", "authorization:orgTrusteeUser:delete",  }), utils.GenerateDevCentreLink("DELETE", "Organization Authorization", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	
@@ -38,7 +38,7 @@ func Cmdorgauthorization_trustors_clonedusers() *cobra.Command {
 }`)
 	orgauthorization_trustors_clonedusersCmd.AddCommand(deleteCmd)
 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}", utils.FormatPermissions([]string{ "authorization:orgTrusteeUser:view",  }), utils.GenerateDevCentreLink("GET", "Organization Authorization", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}", utils.FormatPermissions([]string{ "authorization:orgTrusteeClonedUser:view", "authorization:orgTrusteeUser:view",  }), utils.GenerateDevCentreLink("GET", "Organization Authorization", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	
@@ -54,7 +54,7 @@ func Cmdorgauthorization_trustors_clonedusers() *cobra.Command {
 }`)
 	orgauthorization_trustors_clonedusersCmd.AddCommand(getCmd)
 
-	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers", utils.FormatPermissions([]string{ "authorization:orgTrusteeUser:view",  }), utils.GenerateDevCentreLink("GET", "Organization Authorization", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers")))
+	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers", utils.FormatPermissions([]string{ "authorization:orgTrusteeClonedUser:view", "authorization:orgTrusteeUser:view",  }), utils.GenerateDevCentreLink("GET", "Organization Authorization", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
 	
@@ -70,7 +70,7 @@ func Cmdorgauthorization_trustors_clonedusers() *cobra.Command {
 }`)
 	orgauthorization_trustors_clonedusersCmd.AddCommand(listCmd)
 
-	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}", utils.FormatPermissions([]string{ "authorization:orgTrusteeUser:add",  }), utils.GenerateDevCentreLink("PUT", "Organization Authorization", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}")))
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PUT", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}", utils.FormatPermissions([]string{ "authorization:orgTrusteeClonedUser:add", "authorization:orgTrusteeUser:add",  }), utils.GenerateDevCentreLink("PUT", "Organization Authorization", "/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PUT", ``)
 	
 	

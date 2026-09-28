@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_adherence_adjustments_query
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_adherence_adjustments_query_jobs"
+)
+
+func init() {
+	workforcemanagement_businessunits_adherence_adjustments_queryCmd.AddCommand(workforcemanagement_businessunits_adherence_adjustments_query_jobs.Cmdworkforcemanagement_businessunits_adherence_adjustments_query_jobs())
+	workforcemanagement_businessunits_adherence_adjustments_queryCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_adherence_adjustments_queryCmd.Short, workforcemanagement_businessunits_adherence_adjustments_query_jobs.Description, )
+	workforcemanagement_businessunits_adherence_adjustments_queryCmd.Long = workforcemanagement_businessunits_adherence_adjustments_queryCmd.Short
+}

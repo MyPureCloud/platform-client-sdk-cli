@@ -57,6 +57,9 @@ type ResponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -116,6 +119,10 @@ type Response struct {
     Footer Footertemplate `json:"footer"`
 
 
+    // Form - Form template definition for responseType.Form.
+    Form Form `json:"form"`
+
+
     // AppleInvitation - Apple Messages for Business invitation template definition for responseType.AppleInvitation.
     AppleInvitation Appleinvitation `json:"appleInvitation"`
 
@@ -136,6 +143,7 @@ func (o *Response) String() string {
     
     
      o.Assets = []Rmsassetaddressableref{{}} 
+    
     
     
 
@@ -176,6 +184,8 @@ func (u *Response) MarshalJSON() ([]byte, error) {
         Assets []Rmsassetaddressableref `json:"assets"`
         
         Footer Footertemplate `json:"footer"`
+        
+        Form Form `json:"form"`
         
         AppleInvitation Appleinvitation `json:"appleInvitation"`
         *Alias
@@ -225,6 +235,9 @@ func (u *Response) MarshalJSON() ([]byte, error) {
 
         
         Assets: []Rmsassetaddressableref{{}},
+        
+
+
         
 
 

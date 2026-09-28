@@ -1,10 +1,10 @@
 ## gc workforcemanagement businessunits activityplans jobs
 
-/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs
+/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/jobs /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs
 
 ### Synopsis
 
-/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs
+/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/jobs /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs
 
 ### Options
 
@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc workforcemanagement businessunits activityplans](gc_workforcemanagement_businessunits_activityplans.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans
+* [gc workforcemanagement businessunits activityplans jobs get](gc_workforcemanagement_businessunits_activityplans_jobs_get.html)	 - Gets the latest job for an activity plan in the business unit
 * [gc workforcemanagement businessunits activityplans jobs list](gc_workforcemanagement_businessunits_activityplans_jobs_list.html)	 - Gets the latest job for all activity plans in the business unit
 
 

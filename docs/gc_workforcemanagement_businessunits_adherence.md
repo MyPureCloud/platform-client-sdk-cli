@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc workforcemanagement businessunits](gc_workforcemanagement_businessunits.html)	 - /api/v2/workforcemanagement/businessunits
+* [gc workforcemanagement businessunits adherence adjustments](gc_workforcemanagement_businessunits_adherence_adjustments.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments
 * [gc workforcemanagement businessunits adherence explanations](gc_workforcemanagement_businessunits_adherence_explanations.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations
 
 

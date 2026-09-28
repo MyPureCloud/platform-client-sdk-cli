@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc workforcemanagement agents](gc_workforcemanagement_agents.html)	 - /api/v2/workforcemanagement/agents
+* [gc workforcemanagement agents adherence adjustments](gc_workforcemanagement_agents_adherence_adjustments.html)	 - /api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments
 * [gc workforcemanagement agents adherence explanations](gc_workforcemanagement_agents_adherence_explanations.html)	 - /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations
 
 

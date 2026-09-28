@@ -31,9 +31,11 @@
 
 * [gc workforcemanagement businessunits](gc_workforcemanagement_businessunits.html)	 - /api/v2/workforcemanagement/businessunits
 * [gc workforcemanagement businessunits activityplans create](gc_workforcemanagement_businessunits_activityplans_create.html)	 - Create an activity plan
+* [gc workforcemanagement businessunits activityplans deletions](gc_workforcemanagement_businessunits_activityplans_deletions.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions
 * [gc workforcemanagement businessunits activityplans get](gc_workforcemanagement_businessunits_activityplans_get.html)	 - Get an activity plan
-* [gc workforcemanagement businessunits activityplans jobs](gc_workforcemanagement_businessunits_activityplans_jobs.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs
+* [gc workforcemanagement businessunits activityplans jobs](gc_workforcemanagement_businessunits_activityplans_jobs.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/jobs /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs
 * [gc workforcemanagement businessunits activityplans list](gc_workforcemanagement_businessunits_activityplans_list.html)	 - Get activity plans
+* [gc workforcemanagement businessunits activityplans occurrences](gc_workforcemanagement_businessunits_activityplans_occurrences.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences
 * [gc workforcemanagement businessunits activityplans runs](gc_workforcemanagement_businessunits_activityplans_runs.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs
 * [gc workforcemanagement businessunits activityplans update](gc_workforcemanagement_businessunits_activityplans_update.html)	 - Update an activity plan
 

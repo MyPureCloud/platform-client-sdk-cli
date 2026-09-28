@@ -1,10 +1,10 @@
 ## gc speechandtextanalytics programs settings
 
-/api/v2/speechandtextanalytics/programs/{programId}/settings
+/api/v2/speechandtextanalytics/programs/{programId}/settings /api/v2/speechandtextanalytics/programs/settings
 
 ### Synopsis
 
-/api/v2/speechandtextanalytics/programs/{programId}/settings
+/api/v2/speechandtextanalytics/programs/{programId}/settings /api/v2/speechandtextanalytics/programs/settings
 
 ### Options
 
@@ -31,5 +31,6 @@
 
 * [gc speechandtextanalytics programs](gc_speechandtextanalytics_programs.html)	 - /api/v2/speechandtextanalytics/programs
 * [gc speechandtextanalytics programs settings insights](gc_speechandtextanalytics_programs_settings_insights.html)	 - /api/v2/speechandtextanalytics/programs/{programId}/settings/insights /api/v2/speechandtextanalytics/programs/settings/insights
+* [gc speechandtextanalytics programs settings processing](gc_speechandtextanalytics_programs_settings_processing.html)	 - /api/v2/speechandtextanalytics/programs/{programId}/settings/processing /api/v2/speechandtextanalytics/programs/settings/processing
 
 

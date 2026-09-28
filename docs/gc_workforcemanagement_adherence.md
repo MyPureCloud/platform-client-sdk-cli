@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc workforcemanagement](gc_workforcemanagement.html)	 - /api/v2/workforcemanagement
+* [gc workforcemanagement adherence adjustments](gc_workforcemanagement_adherence_adjustments.html)	 - /api/v2/workforcemanagement/adherence/adjustments
 * [gc workforcemanagement adherence explanations](gc_workforcemanagement_adherence_explanations.html)	 - /api/v2/workforcemanagement/adherence/explanations
 * [gc workforcemanagement adherence get](gc_workforcemanagement_adherence_get.html)	 - Get a list of UserScheduleAdherence records for the requested users
 * [gc workforcemanagement adherence historical](gc_workforcemanagement_adherence_historical.html)	 - /api/v2/workforcemanagement/adherence/historical

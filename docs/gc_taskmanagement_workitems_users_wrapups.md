@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems users](gc_taskmanagement_workitems_users.html)	 - /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc taskmanagement workitems users](gc_taskmanagement_workitems_users.html)	 - /api/v2/taskmanagement/workitems/{workitemId}/users/me
 * [gc taskmanagement workitems users wrapups list](gc_taskmanagement_workitems_users_wrapups_list.html)	 - Get all wrapup codes added for the given user for a workitem.
 * [gc taskmanagement workitems users wrapups update](gc_taskmanagement_workitems_users_wrapups_update.html)	 - Add/Remove a wrapup code for a given user in a workitem.
 

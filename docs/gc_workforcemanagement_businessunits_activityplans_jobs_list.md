@@ -33,6 +33,6 @@ gc workforcemanagement businessunits activityplans jobs list [businessUnitId] [f
 
 ### SEE ALSO
 
-* [gc workforcemanagement businessunits activityplans jobs](gc_workforcemanagement_businessunits_activityplans_jobs.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs
+* [gc workforcemanagement businessunits activityplans jobs](gc_workforcemanagement_businessunits_activityplans_jobs.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/jobs /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs
 
 

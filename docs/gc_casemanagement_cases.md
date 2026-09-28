@@ -35,7 +35,9 @@
 * [gc casemanagement cases create](gc_casemanagement_cases_create.html)	 - Create a Case.
 * [gc casemanagement cases datedue](gc_casemanagement_cases_datedue.html)	 - /api/v2/casemanagement/cases/{caseId}/datedue
 * [gc casemanagement cases delete](gc_casemanagement_cases_delete.html)	 - Delete a Case.
+* [gc casemanagement cases description](gc_casemanagement_cases_description.html)	 - /api/v2/casemanagement/cases/{caseId}/description
 * [gc casemanagement cases externalcontacts](gc_casemanagement_cases_externalcontacts.html)	 - /api/v2/casemanagement/cases/externalcontacts
+* [gc casemanagement cases externalid](gc_casemanagement_cases_externalid.html)	 - /api/v2/casemanagement/cases/{caseId}/externalid
 * [gc casemanagement cases get](gc_casemanagement_cases_get.html)	 - Get a Case.
 * [gc casemanagement cases owner](gc_casemanagement_cases_owner.html)	 - /api/v2/casemanagement/cases/{caseId}/owner
 * [gc casemanagement cases priority](gc_casemanagement_cases_priority.html)	 - /api/v2/casemanagement/cases/{caseId}/priority

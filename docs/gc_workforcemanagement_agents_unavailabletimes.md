@@ -31,5 +31,6 @@
 
 * [gc workforcemanagement agents](gc_workforcemanagement_agents.html)	 - /api/v2/workforcemanagement/agents
 * [gc workforcemanagement agents unavailabletimes query](gc_workforcemanagement_agents_unavailabletimes_query.html)	 - /api/v2/workforcemanagement/agents/{agentId}/unavailabletimes/query
+* [gc workforcemanagement agents unavailabletimes update](gc_workforcemanagement_agents_unavailabletimes_update.html)	 - Update unavailable times for the requested agent
 
 

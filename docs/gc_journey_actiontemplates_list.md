@@ -16,7 +16,7 @@ gc journey actiontemplates list [flags]
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
-      --mediaType string         Media type Valid values: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction
+      --mediaType string         Media type Valid values: webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction
       --pageNumber string        Page number (default "1")
       --pageSize string          Page size (default "25")
       --queryFields queryValue   ActionTemplate field(s) to query on. Requires queryValue to also be set.

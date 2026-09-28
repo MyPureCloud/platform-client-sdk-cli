@@ -1,22 +1,19 @@
-## gc journey actiontargets update
+## gc workforcemanagement businessunits activityplans deletions jobs create
 
-Deprecated. Update a single action target.
+Delete an activity plan
 
 ### Synopsis
 
-Deprecated. Update a single action target.
+Delete an activity plan
 
 ```
-gc journey actiontargets update [actionTargetId] [flags]
+gc workforcemanagement businessunits activityplans deletions jobs create [businessUnitId] [activityPlanId] [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for update
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for create
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc journey actiontargets update [actionTargetId] [flags]
 
 ### SEE ALSO
 
-* [gc journey actiontargets](gc_journey_actiontargets.html)	 - /api/v2/journey/actiontargets
+* [gc workforcemanagement businessunits activityplans deletions jobs](gc_workforcemanagement_businessunits_activityplans_deletions_jobs.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs
 
 

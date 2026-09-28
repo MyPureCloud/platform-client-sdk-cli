@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc speechandtextanalytics programs settings](gc_speechandtextanalytics_programs_settings.html)	 - /api/v2/speechandtextanalytics/programs/{programId}/settings
+* [gc speechandtextanalytics programs settings](gc_speechandtextanalytics_programs_settings.html)	 - /api/v2/speechandtextanalytics/programs/{programId}/settings /api/v2/speechandtextanalytics/programs/settings
 * [gc speechandtextanalytics programs settings insights get](gc_speechandtextanalytics_programs_settings_insights_get.html)	 - Get AI Insights settings of a program
 * [gc speechandtextanalytics programs settings insights list](gc_speechandtextanalytics_programs_settings_insights_list.html)	 - Get the list of program AI Insights settings for the organization
 * [gc speechandtextanalytics programs settings insights update](gc_speechandtextanalytics_programs_settings_insights_update.html)	 - Update AI Insights settings of a program

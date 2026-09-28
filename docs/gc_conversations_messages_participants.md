@@ -35,6 +35,7 @@
 * [gc conversations messages participants monitor](gc_conversations_messages_participants_monitor.html)	 - /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor
 * [gc conversations messages participants parkingstate](gc_conversations_messages_participants_parkingstate.html)	 - /api/v2/conversations/messages/{conversationId}/participants/{participantId}/parkingstate
 * [gc conversations messages participants replace](gc_conversations_messages_participants_replace.html)	 - /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace
+* [gc conversations messages participants takeover](gc_conversations_messages_participants_takeover.html)	 - /api/v2/conversations/messages/{conversationId}/participants/{participantId}/takeover
 * [gc conversations messages participants update](gc_conversations_messages_participants_update.html)	 - Update conversation participant
 * [gc conversations messages participants wrapup](gc_conversations_messages_participants_wrapup.html)	 - /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup
 * [gc conversations messages participants wrapupcodes](gc_conversations_messages_participants_wrapupcodes.html)	 - /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes

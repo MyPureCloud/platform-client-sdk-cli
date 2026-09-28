@@ -1,10 +1,10 @@
 ## gc gamification scorecards profiles metrics users values
 
-/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values
+/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values
 
 ### Synopsis
 
-/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values
+/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values
 
 ### Options
 

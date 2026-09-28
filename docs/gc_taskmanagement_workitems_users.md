@@ -1,10 +1,10 @@
 ## gc taskmanagement workitems users
 
-/api/v2/taskmanagement/workitems/{workitemId}/users
+/api/v2/taskmanagement/workitems/{workitemId}/users/me
 
 ### Synopsis
 
-/api/v2/taskmanagement/workitems/{workitemId}/users
+/api/v2/taskmanagement/workitems/{workitemId}/users/me
 
 ### Options
 
@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
 * [gc taskmanagement workitems users me](gc_taskmanagement_workitems_users_me.html)	 - /api/v2/taskmanagement/workitems/{workitemId}/users/me
 * [gc taskmanagement workitems users wrapups](gc_taskmanagement_workitems_users_wrapups.html)	 - /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups
 

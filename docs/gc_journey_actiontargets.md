@@ -32,6 +32,5 @@
 * [gc journey](gc_journey.html)	 - /api/v2/journey
 * [gc journey actiontargets get](gc_journey_actiontargets_get.html)	 - Deprecated. Retrieve a single action target.
 * [gc journey actiontargets list](gc_journey_actiontargets_list.html)	 - Deprecated. Retrieve all action targets.
-* [gc journey actiontargets update](gc_journey_actiontargets_update.html)	 - Deprecated. Update a single action target.
 
 

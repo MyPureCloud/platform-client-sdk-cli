@@ -32,7 +32,7 @@
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
 * [gc orphanrecordings delete](gc_orphanrecordings_delete.html)	 - Deletes a single orphan recording
 * [gc orphanrecordings get](gc_orphanrecordings_get.html)	 - Gets a single orphan recording
-* [gc orphanrecordings list](gc_orphanrecordings_list.html)	 - Gets all orphan recordings
+* [gc orphanrecordings list](gc_orphanrecordings_list.html)	 - Gets all orphan recordings. When querying without `hasConversation = true`, the results are capped at 500 orphan recordings
 * [gc orphanrecordings media](gc_orphanrecordings_media.html)	 - /api/v2/orphanrecordings/{orphanId}/media
 * [gc orphanrecordings update](gc_orphanrecordings_update.html)	 - Updates an orphan recording to a regular recording with retention values
 

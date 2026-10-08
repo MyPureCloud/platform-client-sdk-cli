@@ -15,6 +15,7 @@ gc authorization subjects me get [flags]
 ```
   -h, --help                       help for get
       --includeDuplicates string   Include multiple entries with the same role and division but different subjects Valid values: true, false Valid values: true, false
+      --includeFullRoles string    Include full role data with permission policies for each grant Valid values: true, false Valid values: true, false
 ```
 
 ### Options inherited from parent commands

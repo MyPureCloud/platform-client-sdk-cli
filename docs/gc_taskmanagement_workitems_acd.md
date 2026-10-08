@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
 * [gc taskmanagement workitems acd cancel](gc_taskmanagement_workitems_acd_cancel.html)	 - /api/v2/taskmanagement/workitems/{workitemId}/acd/cancel
 
 

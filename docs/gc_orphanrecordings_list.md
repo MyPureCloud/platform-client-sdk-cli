@@ -1,10 +1,10 @@
 ## gc orphanrecordings list
 
-Gets all orphan recordings
+Gets all orphan recordings. When querying without `hasConversation = true`, the results are capped at 500 orphan recordings
 
 ### Synopsis
 
-Gets all orphan recordings
+Gets all orphan recordings. When querying without `hasConversation = true`, the results are capped at 500 orphan recordings
 
 ```
 gc orphanrecordings list [flags]
@@ -16,7 +16,7 @@ gc orphanrecordings list [flags]
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --expand strings           variable name requested by expand list
       --filtercondition string   Filter list command output based on a given condition or regular expression
-      --hasConversation string   Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. Valid values: true, false
+      --hasConversation string   Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization, capped at 500 results. Valid values: true, false
   -h, --help                     help for list
       --media string             Filter resulting orphans based on their media type Valid values: Call, Screen
       --nextPage string          next page token

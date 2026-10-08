@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
 * [gc taskmanagement workitems disconnect create](gc_taskmanagement_workitems_disconnect_create.html)	 - Disconnect the assignee of the workitem
 
 

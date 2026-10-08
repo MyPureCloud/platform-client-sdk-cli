@@ -19,6 +19,11 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/gamification/leaderboard/all",
+      "description": "Leaderboard by filter type"
+    },
+    {
+      "name": "get",
       "path": "/api/v2/gamification/leaderboard/all/bestpoints",
       "description": "Best Points by division or performance profile"
     },
@@ -31,11 +36,6 @@
       "name": "get",
       "path": "/api/v2/gamification/leaderboard/bestpoints",
       "description": "Best Points of the requesting user's current performance profile or division"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/gamification/leaderboard/all",
-      "description": "Leaderboard by filter type"
     },
     {
       "name": "get",
@@ -59,13 +59,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/gamification/profiles/users/{userId}/query",
-      "description": "Query performance profiles in date range for a user"
+      "path": "/api/v2/gamification/profiles/users/me/query",
+      "description": "Query performance profiles in date range for the current user"
     },
     {
       "name": "create",
-      "path": "/api/v2/gamification/profiles/users/me/query",
-      "description": "Query performance profiles in date range for the current user"
+      "path": "/api/v2/gamification/profiles/users/{userId}/query",
+      "description": "Query performance profiles in date range for a user"
     },
     {
       "name": "get",
@@ -144,6 +144,16 @@
     },
     {
       "name": "list",
+      "path": "/api/v2/gamification/contests",
+      "description": "Get a List of Contests (Admin)"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/gamification/contests",
+      "description": "Creates a Contest"
+    },
+    {
+      "name": "list",
       "path": "/api/v2/gamification/contests/me",
       "description": "Get a List of Contests (Agent/Supervisor)"
     },
@@ -166,16 +176,6 @@
       "name": "patch",
       "path": "/api/v2/gamification/contests/{contestId}",
       "description": "Finalize a Contest by Id"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/gamification/contests",
-      "description": "Get a List of Contests (Admin)"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/gamification/contests",
-      "description": "Creates a Contest"
     },
     {
       "name": "list",
@@ -209,13 +209,13 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/gamification/insights/members",
-      "description": "Query users in a profile during a period of time"
+      "path": "/api/v2/gamification/insights/managers",
+      "description": "Query managers in a profile during a period of time"
     },
     {
       "name": "list",
-      "path": "/api/v2/gamification/insights/managers",
-      "description": "Query managers in a profile during a period of time"
+      "path": "/api/v2/gamification/insights/members",
+      "description": "Query users in a profile during a period of time"
     },
     {
       "name": "get",
@@ -228,14 +228,14 @@
       "description": "Get insights overall trend for the current user"
     },
     {
-      "name": "get",
-      "path": "/api/v2/gamification/insights/rankings",
-      "description": "Get insights rankings"
-    },
-    {
       "name": "list",
       "path": "/api/v2/gamification/insights",
       "description": "Get insights summary"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/gamification/insights/rankings",
+      "description": "Get insights rankings"
     },
     {
       "name": "list",
@@ -334,13 +334,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/scorecards/users/{userId}",
-      "description": "Workday performance metrics for a user"
+      "path": "/api/v2/gamification/scorecards/users/{userId}/points/alltime",
+      "description": "All-time points for a user"
     },
     {
       "name": "get",
-      "path": "/api/v2/gamification/scorecards/users/{userId}/points/alltime",
-      "description": "All-time points for a user"
+      "path": "/api/v2/gamification/scorecards/users/{userId}",
+      "description": "Workday performance metrics for a user"
     },
     {
       "name": "list",

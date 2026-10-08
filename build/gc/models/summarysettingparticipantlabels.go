@@ -16,6 +16,9 @@ type SummarysettingparticipantlabelsDud struct {
 
     
 
+
+    
+
 }
 
 // Summarysettingparticipantlabels
@@ -27,10 +30,15 @@ type Summarysettingparticipantlabels struct {
     // External - Specify how to refer the external participant of the interaction.
     External string `json:"external"`
 
+
+    // VirtualAgent - Specify how to refer the virtual agent of the interaction.
+    VirtualAgent string `json:"virtualAgent"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Summarysettingparticipantlabels) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Summarysettingparticipantlabels) MarshalJSON() ([]byte, error) {
         Internal string `json:"internal"`
         
         External string `json:"external"`
+        
+        VirtualAgent string `json:"virtualAgent"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -98,11 +98,6 @@
       "description": "Create a Caseplan."
     },
     {
-      "name": "update",
-      "path": "/api/v2/casemanagement/cases/{caseId}/owner",
-      "description": "Update the ownerId of a Case"
-    },
-    {
       "name": "get",
       "path": "/api/v2/casemanagement/cases/{caseId}",
       "description": "Get a Case."
@@ -126,6 +121,11 @@
       "name": "update",
       "path": "/api/v2/casemanagement/cases/{caseId}/summary",
       "description": "Update summary of a Case."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/casemanagement/cases/{caseId}/owner",
+      "description": "Update the ownerId of a Case"
     },
     {
       "name": "list",

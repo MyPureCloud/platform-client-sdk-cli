@@ -23,6 +23,9 @@ type AddshifttradejobrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Addshifttradejobrequest
@@ -42,12 +45,17 @@ type Addshifttradejobrequest struct {
     // ExpirationDate - When this shift trade will expire. Date time is represented as an ISO-8601 string
     ExpirationDate time.Time `json:"expirationDate"`
 
+
+    // ReviewNote - Optional note from the initiating user for shift trade review
+    ReviewNote string `json:"reviewNote"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Addshifttradejobrequest) String() string {
     
      o.AcceptableIntervals = []Requireddaterange{{}} 
+    
     
     
 
@@ -74,6 +82,8 @@ func (u *Addshifttradejobrequest) MarshalJSON() ([]byte, error) {
         Target Shifttradetargetrequestitem `json:"target"`
         
         ExpirationDate time.Time `json:"expirationDate"`
+        
+        ReviewNote string `json:"reviewNote"`
         *Alias
     }{
 
@@ -82,6 +92,9 @@ func (u *Addshifttradejobrequest) MarshalJSON() ([]byte, error) {
 
         
         AcceptableIntervals: []Requireddaterange{{}},
+        
+
+
         
 
 

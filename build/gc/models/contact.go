@@ -46,7 +46,7 @@ type Contact struct {
     MediaType string `json:"mediaType"`
 
 
-    // VarType
+    // VarType - The type of this contact entry. Note: the PRIMARY email address cannot be changed via PATCH /api/v2/users/{userId}; submitting a modified value for the PRIMARY entry returns a 400 error.
     VarType string `json:"type"`
 
 

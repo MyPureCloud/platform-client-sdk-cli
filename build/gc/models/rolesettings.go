@@ -20,6 +20,9 @@ type RolesettingsDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -37,12 +40,17 @@ type Rolesettings struct {
     AuthorizationGrantDivisionAware bool `json:"authorizationGrantDivisionAware"`
 
 
+    // GenesysOrgPolicyBypass - Boolean enabling skip of attribute-based access control policy enforcement when enabled and the organization is on the Genesys bypass list
+    GenesysOrgPolicyBypass bool `json:"genesysOrgPolicyBypass"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Rolesettings) String() string {
+    
     
     
 
@@ -65,8 +73,13 @@ func (u *Rolesettings) MarshalJSON() ([]byte, error) {
         BackfillEnabled bool `json:"backfillEnabled"`
         
         AuthorizationGrantDivisionAware bool `json:"authorizationGrantDivisionAware"`
+        
+        GenesysOrgPolicyBypass bool `json:"genesysOrgPolicyBypass"`
         *Alias
     }{
+
+        
+
 
         
 

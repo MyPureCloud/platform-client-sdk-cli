@@ -4,11 +4,6 @@
   "resources": [
     {
       "name": "get",
-      "path": "/api/v2/agentic/virtualagents/{virtualAgentId}/jobs/{jobId}",
-      "description": "Get a virtualAgent job."
-    },
-    {
-      "name": "get",
       "path": "/api/v2/agentic/virtualagents/{virtualAgentId}",
       "description": "Get virtual agent."
     },
@@ -24,13 +19,13 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}",
-      "description": "Get a virtual agent version."
+      "path": "/api/v2/agentic/virtualagents/{virtualAgentId}/jobs/{jobId}",
+      "description": "Get a virtualAgent job."
     },
     {
-      "name": "update",
-      "path": "/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}",
-      "description": "Update a virtual agent version."
+      "name": "create",
+      "path": "/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}/jobs",
+      "description": "Start the publishing of a virtual agent version."
     },
     {
       "name": "get",
@@ -38,9 +33,14 @@
       "description": "Get the status of the publishing job for this virtual agent version."
     },
     {
-      "name": "create",
-      "path": "/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}/jobs",
-      "description": "Start the publishing of a virtual agent version."
+      "name": "get",
+      "path": "/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}",
+      "description": "Get a virtual agent version."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}",
+      "description": "Update a virtual agent version."
     },
     {
       "name": "create",

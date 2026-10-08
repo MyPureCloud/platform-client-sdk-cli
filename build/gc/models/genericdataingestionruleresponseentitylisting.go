@@ -60,16 +60,16 @@ type Genericdataingestionruleresponseentitylisting struct {
     Total int `json:"total"`
 
 
+    // LastUri
+    LastUri string `json:"lastUri"`
+
+
     // FirstUri
     FirstUri string `json:"firstUri"`
 
 
     // SelfUri
     SelfUri string `json:"selfUri"`
-
-
-    // LastUri
-    LastUri string `json:"lastUri"`
 
 
     // NextUri
@@ -122,11 +122,11 @@ func (u *Genericdataingestionruleresponseentitylisting) MarshalJSON() ([]byte, e
         
         Total int `json:"total"`
         
+        LastUri string `json:"lastUri"`
+        
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
-        
-        LastUri string `json:"lastUri"`
         
         NextUri string `json:"nextUri"`
         

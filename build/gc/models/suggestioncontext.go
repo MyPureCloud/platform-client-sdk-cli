@@ -34,10 +34,16 @@ type SuggestioncontextDud struct {
 
     QueryStatement string `json:"queryStatement"`
 
+
+    Language string `json:"language"`
+
 }
 
 // Suggestioncontext
 type Suggestioncontext struct { 
+    
+
+
     
 
 
@@ -83,6 +89,9 @@ func (u *Suggestioncontext) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

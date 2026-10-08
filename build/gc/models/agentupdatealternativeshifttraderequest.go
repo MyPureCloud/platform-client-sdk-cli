@@ -16,12 +16,19 @@ type AgentupdatealternativeshifttraderequestDud struct {
 
     
 
+
+    
+
 }
 
 // Agentupdatealternativeshifttraderequest
 type Agentupdatealternativeshifttraderequest struct { 
     // State - The new state of this alternative shift trade
     State string `json:"state"`
+
+
+    // ReviewNote - Optional note for supervisors to review during alternative shift trade approval
+    ReviewNote string `json:"reviewNote"`
 
 
     // Metadata - Version metadata for this alternative shift trade
@@ -31,6 +38,7 @@ type Agentupdatealternativeshifttraderequest struct {
 
 // String returns a JSON representation of the model
 func (o *Agentupdatealternativeshifttraderequest) String() string {
+    
     
     
 
@@ -52,9 +60,14 @@ func (u *Agentupdatealternativeshifttraderequest) MarshalJSON() ([]byte, error) 
         
         State string `json:"state"`
         
+        ReviewNote string `json:"reviewNote"`
+        
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
+
+        
+
 
         
 

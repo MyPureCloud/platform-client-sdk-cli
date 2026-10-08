@@ -31,6 +31,9 @@ type OpencontentattachmentDud struct {
 
     
 
+
+    
+
 }
 
 // Opencontentattachment - Attachment object.
@@ -62,10 +65,15 @@ type Opencontentattachment struct {
     // Filename - Suggested file name for attachment.
     Filename string `json:"filename"`
 
+
+    // Thumbnail - Thumbnail image for the attachment content. Not always available.
+    Thumbnail Opencontentthumbnail `json:"thumbnail"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Opencontentattachment) String() string {
+    
     
     
     
@@ -103,8 +111,13 @@ func (u *Opencontentattachment) MarshalJSON() ([]byte, error) {
         Sha256 string `json:"sha256"`
         
         Filename string `json:"filename"`
+        
+        Thumbnail Opencontentthumbnail `json:"thumbnail"`
         *Alias
     }{
+
+        
+
 
         
 

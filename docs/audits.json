@@ -9,13 +9,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/audits/query",
-      "description": "Create audit query execution"
+      "path": "/api/v2/audits/query/realtime/related",
+      "description": "Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id."
     },
     {
       "name": "create",
-      "path": "/api/v2/audits/query/realtime/related",
-      "description": "Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id."
+      "path": "/api/v2/audits/query",
+      "description": "Create audit query execution"
     },
     {
       "name": "get",

@@ -60,6 +60,9 @@ type AlternativeshifttraderesponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -99,6 +102,10 @@ type Alternativeshifttraderesponse struct {
 
     // ExpirationDate - The date when the trade will expire in ISO-8601 format. The trade cannot be approved after expiration
     ExpirationDate time.Time `json:"expirationDate"`
+
+
+    // ReviewNote - Optional note from the initiating user for shift trade review
+    ReviewNote string `json:"reviewNote"`
 
 
     // State - The state of this alternative shift trade
@@ -148,6 +155,7 @@ func (o *Alternativeshifttraderesponse) String() string {
     
     
     
+    
      o.Violations = []string{""} 
     
 
@@ -183,6 +191,8 @@ func (u *Alternativeshifttraderesponse) MarshalJSON() ([]byte, error) {
         
         ExpirationDate time.Time `json:"expirationDate"`
         
+        ReviewNote string `json:"reviewNote"`
+        
         State string `json:"state"`
         
         ProcessingStatus string `json:"processingStatus"`
@@ -212,6 +222,9 @@ func (u *Alternativeshifttraderesponse) MarshalJSON() ([]byte, error) {
 
         
         OfferedShifts: []Alternativeshiftagentscheduledshift{{}},
+        
+
+
         
 
 

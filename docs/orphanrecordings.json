@@ -25,7 +25,7 @@
     {
       "name": "list",
       "path": "/api/v2/orphanrecordings",
-      "description": "Gets all orphan recordings"
+      "description": "Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings"
     }
   ]
 }

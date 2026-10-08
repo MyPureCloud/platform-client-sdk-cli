@@ -2762,6 +2762,7 @@ gc/models/checklistinferencejobcreationresponse.go
 gc/models/checklistinferencejobpayload.go
 gc/models/checklistinferencejobresponse.go
 gc/models/checklistitem.go
+gc/models/checklisttransferconfig.go
 gc/models/chunksearchregisterrequest.go
 gc/models/clientapp.go
 gc/models/clientappconfigurationinfo.go
@@ -3059,6 +3060,7 @@ gc/models/conversationcontentrichlinkheader.go
 gc/models/conversationcontentroadsideassistance.go
 gc/models/conversationcontentstory.go
 gc/models/conversationcontenttext.go
+gc/models/conversationcontentthumbnail.go
 gc/models/conversationcontentwheelpicker.go
 gc/models/conversationcontentwheelpickeritem.go
 gc/models/conversationcontext.go
@@ -3307,6 +3309,9 @@ gc/models/customattributesidresponse.go
 gc/models/customattributeslisting.go
 gc/models/customattributespatchrequest.go
 gc/models/customattributesupdaterequest.go
+gc/models/customconversationattributeinput.go
+gc/models/customconversationattributeoutput.go
+gc/models/customconversationattributeupdate.go
 gc/models/customer.go
 gc/models/customerintent.go
 gc/models/customerintentassignmentlisting.go
@@ -4125,11 +4130,14 @@ gc/models/guidecontentgenerationjob.go
 gc/models/guideentitylisting.go
 gc/models/guidejob.go
 gc/models/guidesessioninputevent.go
+gc/models/guidesessionmessage.go
 gc/models/guidesessionturninvocationdata.go
 gc/models/guidesessionturninvocationparameters.go
 gc/models/guidesessionturninvocationresponse.go
 gc/models/guidesessionturnrequest.go
+gc/models/guidesessionturnrequestcontext.go
 gc/models/guidesessionturnresponse.go
+gc/models/guidesessionturnresponsecontext.go
 gc/models/guidesessionturnresponsedata.go
 gc/models/guidesessionvariable.go
 gc/models/guideversion.go
@@ -4966,6 +4974,7 @@ gc/models/oneonone.go
 gc/models/openactionfields.go
 gc/models/openactionproperties.go
 gc/models/opencontentattachment.go
+gc/models/opencontentthumbnail.go
 gc/models/opendataingestionrulerequest.go
 gc/models/opendataingestionruleresponse.go
 gc/models/opendataingestionruleversionresponse.go
@@ -6010,6 +6019,7 @@ gc/models/summarysettingentitylisting.go
 gc/models/summarysettingparticipantlabels.go
 gc/models/summarysettingpii.go
 gc/models/summarysettingwithtranscript.go
+gc/models/summarytransferconfig.go
 gc/models/supportcentercategory.go
 gc/models/supportcentercompactcategorymoduletemplate.go
 gc/models/supportcentercustommessage.go

@@ -22,6 +22,9 @@ type ShifttradeinitiatingsideresponseitemDud struct {
 
     
 
+
+    
+
 }
 
 // Shifttradeinitiatingsideresponseitem
@@ -41,10 +44,15 @@ type Shifttradeinitiatingsideresponseitem struct {
     // Shift - The shift offered for trade by the initiating user
     Shift Shifttradeshiftresponseitem `json:"shift"`
 
+
+    // ReviewNote - Optional note from the initiating user for shift trade review
+    ReviewNote string `json:"reviewNote"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Shifttradeinitiatingsideresponseitem) String() string {
+    
     
     
     
@@ -73,8 +81,13 @@ func (u *Shifttradeinitiatingsideresponseitem) MarshalJSON() ([]byte, error) {
         Schedule Schedulereferencewithbusinessunit `json:"schedule"`
         
         Shift Shifttradeshiftresponseitem `json:"shift"`
+        
+        ReviewNote string `json:"reviewNote"`
         *Alias
     }{
+
+        
+
 
         
 

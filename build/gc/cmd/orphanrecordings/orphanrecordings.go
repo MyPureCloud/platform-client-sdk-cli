@@ -66,7 +66,7 @@ func Cmdorphanrecordings() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "variable name requested by expand list")
 	utils.AddFlag(listCmd.Flags(), "string", "nextPage", "", "next page token")
 	utils.AddFlag(listCmd.Flags(), "string", "previousPage", "", "Previous page token")
-	utils.AddFlag(listCmd.Flags(), "bool", "hasConversation", "false", "Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization.")
+	utils.AddFlag(listCmd.Flags(), "bool", "hasConversation", "false", "Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization, capped at 500 results.")
 	utils.AddFlag(listCmd.Flags(), "string", "media", "", "Filter resulting orphans based on their media type Valid values: Call, Screen")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/orphanrecordings", utils.FormatPermissions([]string{ "recording:orphan:view",  }), utils.GenerateDevCentreLink("GET", "Recording", "/api/v2/orphanrecordings")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -284,8 +284,8 @@ var getCmd = &cobra.Command{
 }
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Gets all orphan recordings",
-	Long:  "Gets all orphan recordings",
+	Short: "Gets all orphan recordings. When querying without `hasConversation = true`, the results are capped at 500 orphan recordings",
+	Long:  "Gets all orphan recordings. When querying without `hasConversation = true`, the results are capped at 500 orphan recordings",
 	Args:  utils.DetermineArgs([]string{ }),
 
 	Run: func(cmd *cobra.Command, args []string) {

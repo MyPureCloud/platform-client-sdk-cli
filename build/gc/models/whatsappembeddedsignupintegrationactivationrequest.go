@@ -14,7 +14,7 @@ type WhatsappembeddedsignupintegrationactivationrequestDud struct {
     Id string `json:"id"`
 
 
-    Name string `json:"name"`
+    
 
 
     
@@ -32,7 +32,8 @@ type Whatsappembeddedsignupintegrationactivationrequest struct {
     
 
 
-    
+    // Name - The WhatsApp integration name. Required for Embedded Signup v4 activation; not used in v2.
+    Name string `json:"name"`
 
 
     // PhoneNumber - E.164 phone number to associate with the WhatsApp integration. Not required for embedded signup v4 or later.
@@ -51,6 +52,7 @@ type Whatsappembeddedsignupintegrationactivationrequest struct {
 func (o *Whatsappembeddedsignupintegrationactivationrequest) String() string {
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -67,6 +69,8 @@ func (u *Whatsappembeddedsignupintegrationactivationrequest) MarshalJSON() ([]by
     WhatsappembeddedsignupintegrationactivationrequestMarshalled = true
 
     return json.Marshal(&struct {
+        
+        Name string `json:"name"`
         
         PhoneNumber string `json:"phoneNumber"`
         

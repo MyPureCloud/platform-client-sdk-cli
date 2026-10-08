@@ -26,6 +26,9 @@ type UpdateshifttradejobrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Updateshifttradejobrequest
@@ -46,6 +49,10 @@ type Updateshifttradejobrequest struct {
     AcceptableIntervals Listwrapperrequireddaterange `json:"acceptableIntervals"`
 
 
+    // ReviewNote - Optional note from the initiating user for shift trade review
+    ReviewNote Valuewrapperstring `json:"reviewNote"`
+
+
     // Metadata - Version metadata for the shift trade
     Metadata Wfmversionedentitymetadata `json:"metadata"`
 
@@ -53,6 +60,7 @@ type Updateshifttradejobrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Updateshifttradejobrequest) String() string {
+    
     
     
     
@@ -83,9 +91,14 @@ func (u *Updateshifttradejobrequest) MarshalJSON() ([]byte, error) {
         
         AcceptableIntervals Listwrapperrequireddaterange `json:"acceptableIntervals"`
         
+        ReviewNote Valuewrapperstring `json:"reviewNote"`
+        
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
     }{
+
+        
+
 
         
 

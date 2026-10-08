@@ -78,9 +78,6 @@ type CaseDud struct {
     
 
 
-    
-
-
     SelfUri string `json:"selfUri"`
 
 }
@@ -88,10 +85,6 @@ type CaseDud struct {
 // Case
 type Case struct { 
     
-
-
-    // Name - The name of the Case.
-    Name string `json:"name"`
 
 
     // Division - The division to which this entity belongs.
@@ -205,7 +198,6 @@ func (o *Case) String() string {
     
     
     
-    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -222,8 +214,6 @@ func (u *Case) MarshalJSON() ([]byte, error) {
     CaseMarshalled = true
 
     return json.Marshal(&struct {
-        
-        Name string `json:"name"`
         
         Division Starrabledivision `json:"division"`
         
@@ -268,9 +258,6 @@ func (u *Case) MarshalJSON() ([]byte, error) {
         FailureReason Failurereason `json:"failureReason"`
         *Alias
     }{
-
-        
-
 
         
 

@@ -26,6 +26,9 @@ type CreatealternativeshifttraderequestDud struct {
 
     
 
+
+    
+
 }
 
 // Createalternativeshifttraderequest
@@ -49,6 +52,10 @@ type Createalternativeshifttraderequest struct {
     // ExpirationDate - The date when the trade will expire in ISO-8601 format. The trade cannot be approved after expiration
     ExpirationDate time.Time `json:"expirationDate"`
 
+
+    // ReviewNote - Optional note for supervisors to review during alternative shift trade approval
+    ReviewNote string `json:"reviewNote"`
+
 }
 
 // String returns a JSON representation of the model
@@ -56,6 +63,7 @@ func (o *Createalternativeshifttraderequest) String() string {
     
      o.DropShiftReferenceKeys = []string{""} 
      o.PickupShiftReferenceKeys = []string{""} 
+    
     
     
 
@@ -84,6 +92,8 @@ func (u *Createalternativeshifttraderequest) MarshalJSON() ([]byte, error) {
         AlternativeShiftTradeGranularity string `json:"alternativeShiftTradeGranularity"`
         
         ExpirationDate time.Time `json:"expirationDate"`
+        
+        ReviewNote string `json:"reviewNote"`
         *Alias
     }{
 
@@ -97,6 +107,9 @@ func (u *Createalternativeshifttraderequest) MarshalJSON() ([]byte, error) {
 
         
         PickupShiftReferenceKeys: []string{""},
+        
+
+
         
 
 

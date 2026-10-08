@@ -3,10 +3,10 @@ package casemanagement_cases
 import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/casemanagement_cases_associations"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/casemanagement_cases_owner"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/casemanagement_cases_priority"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/casemanagement_cases_datedue"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/casemanagement_cases_summary"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/casemanagement_cases_owner"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/casemanagement_cases_externalcontacts"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/casemanagement_cases_references"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/casemanagement_cases_comments"
@@ -19,10 +19,10 @@ import (
 
 func init() {
 	casemanagement_casesCmd.AddCommand(casemanagement_cases_associations.Cmdcasemanagement_cases_associations())
-	casemanagement_casesCmd.AddCommand(casemanagement_cases_owner.Cmdcasemanagement_cases_owner())
 	casemanagement_casesCmd.AddCommand(casemanagement_cases_priority.Cmdcasemanagement_cases_priority())
 	casemanagement_casesCmd.AddCommand(casemanagement_cases_datedue.Cmdcasemanagement_cases_datedue())
 	casemanagement_casesCmd.AddCommand(casemanagement_cases_summary.Cmdcasemanagement_cases_summary())
+	casemanagement_casesCmd.AddCommand(casemanagement_cases_owner.Cmdcasemanagement_cases_owner())
 	casemanagement_casesCmd.AddCommand(casemanagement_cases_externalcontacts.Cmdcasemanagement_cases_externalcontacts())
 	casemanagement_casesCmd.AddCommand(casemanagement_cases_references.Cmdcasemanagement_cases_references())
 	casemanagement_casesCmd.AddCommand(casemanagement_cases_comments.Cmdcasemanagement_cases_comments())
@@ -31,6 +31,6 @@ func init() {
 	casemanagement_casesCmd.AddCommand(casemanagement_cases_stages.Cmdcasemanagement_cases_stages())
 	casemanagement_casesCmd.AddCommand(casemanagement_cases_description.Cmdcasemanagement_cases_description())
 	casemanagement_casesCmd.AddCommand(casemanagement_cases_externalid.Cmdcasemanagement_cases_externalid())
-	casemanagement_casesCmd.Short = utils.GenerateCustomDescription(casemanagement_casesCmd.Short, casemanagement_cases_associations.Description, casemanagement_cases_owner.Description, casemanagement_cases_priority.Description, casemanagement_cases_datedue.Description, casemanagement_cases_summary.Description, casemanagement_cases_externalcontacts.Description, casemanagement_cases_references.Description, casemanagement_cases_comments.Description, casemanagement_cases_terminate.Description, casemanagement_cases_query.Description, casemanagement_cases_stages.Description, casemanagement_cases_description.Description, casemanagement_cases_externalid.Description, )
+	casemanagement_casesCmd.Short = utils.GenerateCustomDescription(casemanagement_casesCmd.Short, casemanagement_cases_associations.Description, casemanagement_cases_priority.Description, casemanagement_cases_datedue.Description, casemanagement_cases_summary.Description, casemanagement_cases_owner.Description, casemanagement_cases_externalcontacts.Description, casemanagement_cases_references.Description, casemanagement_cases_comments.Description, casemanagement_cases_terminate.Description, casemanagement_cases_query.Description, casemanagement_cases_stages.Description, casemanagement_cases_description.Description, casemanagement_cases_externalid.Description, )
 	casemanagement_casesCmd.Long = casemanagement_casesCmd.Short
 }

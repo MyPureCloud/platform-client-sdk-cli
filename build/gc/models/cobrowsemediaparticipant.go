@@ -212,7 +212,7 @@ type Cobrowsemediaparticipant struct {
     User Domainentityref `json:"user"`
 
 
-    // Queue - The PureCloud queue for this participant.
+    // Queue - The PureCloud queue for this participant. Id and selfUri will be populated, name is optional.
     Queue Domainentityref `json:"queue"`
 
 

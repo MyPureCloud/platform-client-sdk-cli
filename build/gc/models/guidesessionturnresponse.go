@@ -28,6 +28,9 @@ type GuidesessionturnresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Guidesessionturnresponse - Response for a guide session turn
@@ -55,6 +58,10 @@ type Guidesessionturnresponse struct {
     // Invocations - The invocations for this turn.
     Invocations []Guidesessionturninvocationresponse `json:"invocations"`
 
+
+    // Context - The context for this turn, including conversation custom attribute updates.
+    Context Guidesessionturnresponsecontext `json:"context"`
+
 }
 
 // String returns a JSON representation of the model
@@ -65,6 +72,7 @@ func (o *Guidesessionturnresponse) String() string {
      o.OutputVariables = []Guidesessionvariable{{}} 
     
      o.Invocations = []Guidesessionturninvocationresponse{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -93,6 +101,8 @@ func (u *Guidesessionturnresponse) MarshalJSON() ([]byte, error) {
         InvocationId string `json:"invocationId"`
         
         Invocations []Guidesessionturninvocationresponse `json:"invocations"`
+        
+        Context Guidesessionturnresponsecontext `json:"context"`
         *Alias
     }{
 
@@ -115,6 +125,9 @@ func (u *Guidesessionturnresponse) MarshalJSON() ([]byte, error) {
 
         
         Invocations: []Guidesessionturninvocationresponse{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

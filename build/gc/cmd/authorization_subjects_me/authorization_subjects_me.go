@@ -29,6 +29,7 @@ func init() {
 
 func Cmdauthorization_subjects_me() *cobra.Command { 
 	utils.AddFlag(getCmd.Flags(), "bool", "includeDuplicates", "false", "Include multiple entries with the same role and division but different subjects Valid values: true, false")
+	utils.AddFlag(getCmd.Flags(), "bool", "includeFullRoles", "true", "Include full role data with permission policies for each grant Valid values: true, false")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/authorization/subjects/me", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("GET", "Authorization", "/api/v2/authorization/subjects/me")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -74,6 +75,10 @@ var getCmd = &cobra.Command{
 		includeDuplicates := utils.GetFlag(cmd.Flags(), "bool", "includeDuplicates")
 		if includeDuplicates != "" {
 			queryParams["includeDuplicates"] = includeDuplicates
+		}
+		includeFullRoles := utils.GetFlag(cmd.Flags(), "bool", "includeFullRoles")
+		if includeFullRoles != "" {
+			queryParams["includeFullRoles"] = includeFullRoles
 		}
 		urlString := path
 		if len(queryParams) > 0 {

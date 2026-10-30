@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdexternalcontacts_graphs_clusterscans_latest() *cobra.Command { 
-	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand Valid values: statistics.aggregated")
+	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "which fields, if any, to expand Valid values: statistics.aggregated, settings")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/graphs/clusterscans/latest", utils.FormatPermissions([]string{ "externalContacts:contact:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/graphs/clusterscans/latest")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -38,7 +38,7 @@ func Cmdexternalcontacts_graphs_clusterscans_latest() *cobra.Command {
   "content" : {
     "application/json" : {
       "schema" : {
-        "$ref" : "#/components/schemas/ClusterScan"
+        "$ref" : "#/components/schemas/LatestClusterScan"
       }
     }
   }

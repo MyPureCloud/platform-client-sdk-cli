@@ -163,14 +163,9 @@
       "description": "Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error."
     },
     {
-      "name": "get",
-      "path": "/api/v2/integrations/actions/{actionId}/schemas/{fileName}",
-      "description": "Retrieve schema for an action based on filename."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/integrations/actions/{actionId}/templates/{fileName}",
-      "description": "Retrieve text of templates for an action based on filename."
+      "name": "create",
+      "path": "/api/v2/integrations/actions/{actionId}/test",
+      "description": "Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging."
     },
     {
       "name": "get",
@@ -188,9 +183,14 @@
       "description": "Patch an Action"
     },
     {
-      "name": "create",
-      "path": "/api/v2/integrations/actions/{actionId}/test",
-      "description": "Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging."
+      "name": "get",
+      "path": "/api/v2/integrations/actions/{actionId}/schemas/{fileName}",
+      "description": "Retrieve schema for an action based on filename."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/actions/{actionId}/templates/{fileName}",
+      "description": "Retrieve text of templates for an action based on filename."
     },
     {
       "name": "get",

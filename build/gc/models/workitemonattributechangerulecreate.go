@@ -16,6 +16,9 @@ type WorkitemonattributechangerulecreateDud struct {
 
     
 
+
+    
+
 }
 
 // Workitemonattributechangerulecreate
@@ -24,13 +27,18 @@ type Workitemonattributechangerulecreate struct {
     Name string `json:"name"`
 
 
-    // Condition - The rules condition. If the condition criteria is met the rules action will be executed.
+    // Condition - The rules condition. If the condition criteria is met the rules action will be executed. Mutually exclusive with match; exactly one of condition or match must be provided.
     Condition Workitemonattributechangecondition `json:"condition"`
+
+
+    // Match - Grouped match criteria combined with logical operators. Mutually exclusive with condition; exactly one of condition or match must be provided.
+    Match Workitemonattributechangematch `json:"match"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Workitemonattributechangerulecreate) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Workitemonattributechangerulecreate) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         
         Condition Workitemonattributechangecondition `json:"condition"`
+        
+        Match Workitemonattributechangematch `json:"match"`
         *Alias
     }{
+
+        
+
 
         
 

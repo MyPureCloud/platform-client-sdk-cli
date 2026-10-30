@@ -28,6 +28,9 @@ type CasequeryjobcreateDud struct {
 
     
 
+
+    
+
 }
 
 // Casequeryjobcreate
@@ -42,6 +45,10 @@ type Casequeryjobcreate struct {
 
     // Filters - List of filter objects to be used in the search. Use an empty list to run the query with no filters.
     Filters []Casequeryjobfilter `json:"filters"`
+
+
+    // FilterGroups - List of filter groups to be used in the search. The filters within a group are combined using the group operator; groups are combined with each other and with the top-level filters using AND. 
+    FilterGroups []Casequeryjobfiltergroup `json:"filterGroups"`
 
 
     // Sort - Sort order for results.
@@ -62,6 +69,7 @@ func (o *Casequeryjobcreate) String() string {
     
     
      o.Filters = []Casequeryjobfilter{{}} 
+     o.FilterGroups = []Casequeryjobfiltergroup{{}} 
     
      o.Attributes = []string{""} 
      o.Expands = []string{""} 
@@ -88,6 +96,8 @@ func (u *Casequeryjobcreate) MarshalJSON() ([]byte, error) {
         
         Filters []Casequeryjobfilter `json:"filters"`
         
+        FilterGroups []Casequeryjobfiltergroup `json:"filterGroups"`
+        
         Sort Casequeryjobsort `json:"sort"`
         
         Attributes []string `json:"attributes"`
@@ -104,6 +114,11 @@ func (u *Casequeryjobcreate) MarshalJSON() ([]byte, error) {
 
         
         Filters: []Casequeryjobfilter{{}},
+        
+
+
+        
+        FilterGroups: []Casequeryjobfiltergroup{{}},
         
 
 

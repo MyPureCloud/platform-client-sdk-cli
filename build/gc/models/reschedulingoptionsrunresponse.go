@@ -41,6 +41,15 @@ type ReschedulingoptionsrunresponseDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Reschedulingoptionsrunresponse
@@ -84,6 +93,18 @@ type Reschedulingoptionsrunresponse struct {
     // DoNotChangeManuallyEditedShifts - Whether manually edited shifts are allowed to be changed
     DoNotChangeManuallyEditedShifts bool `json:"doNotChangeManuallyEditedShifts"`
 
+
+    // ActivitySmoothingType - The activity smoothing type used for this reschedule run
+    ActivitySmoothingType string `json:"activitySmoothingType"`
+
+
+    // InduceScheduleVariability - Whether schedule variability was induced for this reschedule run
+    InduceScheduleVariability bool `json:"induceScheduleVariability"`
+
+
+    // UseUnavailableTimesSnapshot - Whether original unavailable times from schedule generation were used instead of the latest saved unavailable times
+    UseUnavailableTimesSnapshot bool `json:"useUnavailableTimesSnapshot"`
+
 }
 
 // String returns a JSON representation of the model
@@ -94,6 +115,9 @@ func (o *Reschedulingoptionsrunresponse) String() string {
      o.ManagementUnits = []Reschedulingmanagementunitresponse{{}} 
     
      o.ActivityCodeIds = []string{""} 
+    
+    
+    
     
     
     
@@ -134,6 +158,12 @@ func (u *Reschedulingoptionsrunresponse) MarshalJSON() ([]byte, error) {
         DoNotChangeShiftStartTimes bool `json:"doNotChangeShiftStartTimes"`
         
         DoNotChangeManuallyEditedShifts bool `json:"doNotChangeManuallyEditedShifts"`
+        
+        ActivitySmoothingType string `json:"activitySmoothingType"`
+        
+        InduceScheduleVariability bool `json:"induceScheduleVariability"`
+        
+        UseUnavailableTimesSnapshot bool `json:"useUnavailableTimesSnapshot"`
         *Alias
     }{
 
@@ -156,6 +186,15 @@ func (u *Reschedulingoptionsrunresponse) MarshalJSON() ([]byte, error) {
 
         
         ActivityCodeIds: []string{""},
+        
+
+
+        
+
+
+        
+
+
         
 
 

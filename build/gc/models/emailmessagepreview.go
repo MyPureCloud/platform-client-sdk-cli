@@ -60,6 +60,9 @@ type EmailmessagepreviewDud struct {
     MaxEmailSizeBytes int `json:"maxEmailSizeBytes"`
 
 
+    RecipientWarnings []Recipientwarning `json:"recipientWarnings"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -119,6 +122,9 @@ type Emailmessagepreview struct {
 
     // DraftType - The type of draft that need to be treated.
     DraftType string `json:"draftType"`
+
+
+    
 
 
     
@@ -223,6 +229,9 @@ func (u *Emailmessagepreview) MarshalJSON() ([]byte, error) {
 
         
         Attachments: []Attachment{{}},
+        
+
+
         
 
 

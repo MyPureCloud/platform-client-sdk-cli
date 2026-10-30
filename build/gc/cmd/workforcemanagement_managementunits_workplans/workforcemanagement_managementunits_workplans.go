@@ -84,6 +84,7 @@ func Cmdworkforcemanagement_managementunits_workplans() *cobra.Command {
 
 	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Include to access additional data on the work plans Valid values: agentCount, agents, optionalDays, shifts, shiftStartVariances, details")
 	utils.AddFlag(listCmd.Flags(), "[]string", "exclude", "", "Exclude specific data on the work plans from the response Valid values: shifts.activities")
+	utils.AddFlag(listCmd.Flags(), "bool", "forceDownloadService", "", "Force the result of this operation to be sent via download service. For testing/app development purposes")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans", utils.FormatPermissions([]string{ "wfm:agent:view", "wfm:publishedSchedule:view", "wfm:schedule:view", "wfm:workPlanRotation:view", "wfm:workPlan:view",  }), utils.GenerateDevCentreLink("GET", "Workforce Management", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -426,6 +427,10 @@ var listCmd = &cobra.Command{
 		exclude := utils.GetFlag(cmd.Flags(), "[]string", "exclude")
 		if exclude != "" {
 			queryParams["exclude"] = exclude
+		}
+		forceDownloadService := utils.GetFlag(cmd.Flags(), "bool", "forceDownloadService")
+		if forceDownloadService != "" {
+			queryParams["forceDownloadService"] = forceDownloadService
 		}
 		urlString := path
 		if len(queryParams) > 0 {

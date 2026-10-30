@@ -43,7 +43,7 @@ type Sendagentlessoutboundmessagerequest struct {
     ToAddress string `json:"toAddress"`
 
 
-    // ExternalContactId - The externalContactId of the recipient of the message. Supported for WebMessaging, SMS, and Open messenger types only. For WebMessaging it is required.
+    // ExternalContactId - The externalContactId of the recipient of the message. Supported for WebMessaging, SMS, Open and WhatsApp messenger types only. For WebMessaging it is required.
     ExternalContactId string `json:"externalContactId"`
 
 

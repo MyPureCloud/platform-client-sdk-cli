@@ -776,8 +776,10 @@ gc/cmd/integrations_webhooks_events/integrations_webhooks_events.go
 gc/cmd/intents_assignments_externalcontacts/intents_assignments_externalcontacts.go
 gc/cmd/intents_assignments_externalcontacts_customerintents_assignment/intents_assignments_externalcontacts_customerintents_assignment.go
 gc/cmd/intents_categories/intents_categories.go
+gc/cmd/intents_categories_similar/intents_categories_similar.go
 gc/cmd/intents_customerintents/intents_customerintents.go
 gc/cmd/intents_customerintents_bulk_retrieve/intents_customerintents_bulk_retrieve.go
+gc/cmd/intents_customerintents_similar/intents_customerintents_similar.go
 gc/cmd/intents_customerintents_sourceintents/intents_customerintents_sourceintents.go
 gc/cmd/intents_customerintents_sourceintents_bulk_add/intents_customerintents_sourceintents_bulk_add.go
 gc/cmd/intents_customerintents_sourceintents_bulk_remove/intents_customerintents_sourceintents_bulk_remove.go
@@ -876,9 +878,12 @@ gc/cmd/knowledge_search/knowledge_search.go
 gc/cmd/knowledge_search_preview/knowledge_search_preview.go
 gc/cmd/knowledge_settings/knowledge_settings.go
 gc/cmd/knowledge_sources/knowledge_sources.go
+gc/cmd/knowledge_sources_files_counts/knowledge_sources_files_counts.go
 gc/cmd/knowledge_sources_synchronizations/knowledge_sources_synchronizations.go
 gc/cmd/knowledge_sources_synchronizations_deletions/knowledge_sources_synchronizations_deletions.go
 gc/cmd/knowledge_sources_synchronizations_uploads/knowledge_sources_synchronizations_uploads.go
+gc/cmd/knowledge_sources_tags/knowledge_sources_tags.go
+gc/cmd/knowledge_sources_tags_grouped/knowledge_sources_tags_grouped.go
 gc/cmd/languages/languages.go
 gc/cmd/languages_translations/languages_translations.go
 gc/cmd/languages_translations_builtin/languages_translations_builtin.go
@@ -939,7 +944,6 @@ gc/cmd/locations_sublocations/locations_sublocations.go
 gc/cmd/messaging_settings/messaging_settings.go
 gc/cmd/messaging_settings_default/messaging_settings_default.go
 gc/cmd/messaging_supportedcontent/messaging_supportedcontent.go
-gc/cmd/mobiledevices/mobiledevices.go
 gc/cmd/notifications_availabletopics/notifications_availabletopics.go
 gc/cmd/notifications_channels/notifications_channels.go
 gc/cmd/notifications_channels_subscriptions/notifications_channels_subscriptions.go
@@ -1215,6 +1219,8 @@ gc/cmd/scripts_published_pages/scripts_published_pages.go
 gc/cmd/scripts_published_variables/scripts_published_variables.go
 gc/cmd/scripts_uploads_status/scripts_uploads_status.go
 gc/cmd/search/search.go
+gc/cmd/search_settings/search_settings.go
+gc/cmd/search_settings_contentsearch/search_settings_contentsearch.go
 gc/cmd/search_suggest/search_suggest.go
 gc/cmd/settings_executiondata/settings_executiondata.go
 gc/cmd/socialmedia_analytics_aggregates_jobs/socialmedia_analytics_aggregates_jobs.go
@@ -1673,6 +1679,7 @@ gc/cmd/workforcemanagement_managementunits_divisionviews/workforcemanagement_man
 gc/cmd/workforcemanagement_managementunits_historicaladherencequery/workforcemanagement_managementunits_historicaladherencequery.go
 gc/cmd/workforcemanagement_managementunits_move/workforcemanagement_managementunits_move.go
 gc/cmd/workforcemanagement_managementunits_schedules_search/workforcemanagement_managementunits_schedules_search.go
+gc/cmd/workforcemanagement_managementunits_selfschedule_settings/workforcemanagement_managementunits_selfschedule_settings.go
 gc/cmd/workforcemanagement_managementunits_shifttrades_matched/workforcemanagement_managementunits_shifttrades_matched.go
 gc/cmd/workforcemanagement_managementunits_shifttrades_users/workforcemanagement_managementunits_shifttrades_users.go
 gc/cmd/workforcemanagement_managementunits_shrinkage_jobs/workforcemanagement_managementunits_shrinkage_jobs.go
@@ -1712,6 +1719,11 @@ gc/cmd/workforcemanagement_schedulingjobs/workforcemanagement_schedulingjobs.go
 gc/cmd/workforcemanagement_schedulingpreferences/workforcemanagement_schedulingpreferences.go
 gc/cmd/workforcemanagement_schedulingpreferences_query/workforcemanagement_schedulingpreferences_query.go
 gc/cmd/workforcemanagement_schedulingpreferences_settings/workforcemanagement_schedulingpreferences_settings.go
+gc/cmd/workforcemanagement_selfschedule_activitymoves/workforcemanagement_selfschedule_activitymoves.go
+gc/cmd/workforcemanagement_selfschedule_jobs/workforcemanagement_selfschedule_jobs.go
+gc/cmd/workforcemanagement_selfschedule_offers_jobs/workforcemanagement_selfschedule_offers_jobs.go
+gc/cmd/workforcemanagement_selfschedule_query/workforcemanagement_selfschedule_query.go
+gc/cmd/workforcemanagement_selfschedule_settings/workforcemanagement_selfschedule_settings.go
 gc/cmd/workforcemanagement_shifttrades/workforcemanagement_shifttrades.go
 gc/cmd/workforcemanagement_shifttrading_trades_jobs/workforcemanagement_shifttrading_trades_jobs.go
 gc/cmd/workforcemanagement_shifttrading_trades_match_jobs/workforcemanagement_shifttrading_trades_match_jobs.go
@@ -1990,6 +2002,7 @@ gc/models/agentscheduleshiftactivity.go
 gc/models/agentscheduleunavailabletime.go
 gc/models/agentschedulingpreference.go
 gc/models/agentschedulingpreferencelisting.go
+gc/models/agentschedulingpreferencestiebreaker.go
 gc/models/agentscoringrule.go
 gc/models/agentscoringruleentitylisting.go
 gc/models/agentseffectiveschedulesetresponse.go
@@ -2709,6 +2722,7 @@ gc/models/casepriorityupdate.go
 gc/models/casequeryjobcreate.go
 gc/models/casequeryjoberror.go
 gc/models/casequeryjobfilter.go
+gc/models/casequeryjobfiltergroup.go
 gc/models/casequeryjobresponse.go
 gc/models/casequeryjobresultsresponse.go
 gc/models/casequeryjobsort.go
@@ -2777,6 +2791,7 @@ gc/models/closebuttonstyleproperties.go
 gc/models/cluster.go
 gc/models/clusterlist.go
 gc/models/clusterscan.go
+gc/models/clusterscangraphsettings.go
 gc/models/clusterscanlist.go
 gc/models/clusterscanstatistics.go
 gc/models/clusterstatistics.go
@@ -2954,6 +2969,7 @@ gc/models/contentofferstyleproperties.go
 gc/models/contentofferstylingconfiguration.go
 gc/models/contentpositionproperties.go
 gc/models/contentreaction.go
+gc/models/contentsearchsetting.go
 gc/models/contentsetting.go
 gc/models/contestcompletedata.go
 gc/models/contestcompletedatascore.go
@@ -3478,7 +3494,6 @@ gc/models/digitalruleset.go
 gc/models/digitalrulesetentitylisting.go
 gc/models/digitlength.go
 gc/models/digits.go
-gc/models/directoryuserdeviceslisting.go
 gc/models/directrouting.go
 gc/models/directroutingmediasettings.go
 gc/models/disablesiteconnectionsrequest.go
@@ -4232,6 +4247,7 @@ gc/models/infixoperator.go
 gc/models/infrastructureascodejob.go
 gc/models/initialconfiguration.go
 gc/models/initiatescreenrecording.go
+gc/models/initiatevideochatrecording.go
 gc/models/initiatingaction.go
 gc/models/initiatingalternativeshift.go
 gc/models/initiatingshiftrequestitem.go
@@ -4542,6 +4558,7 @@ gc/models/lastattemptbycolumnconditionsettings.go
 gc/models/lastattemptoverallconditionsettings.go
 gc/models/lastresultbycolumnconditionsettings.go
 gc/models/lastresultoverallconditionsettings.go
+gc/models/latestclusterscan.go
 gc/models/launcherbuttonsettings.go
 gc/models/leaderboard.go
 gc/models/leaderboarditem.go
@@ -5057,7 +5074,9 @@ gc/models/organizationsexportqueryconditions.go
 gc/models/organizationusagequeryresponse.go
 gc/models/orgauthsettings.go
 gc/models/orgoauthclient.go
+gc/models/orgsettings.go
 gc/models/orguser.go
+gc/models/orgv3sourcestagsresponse.go
 gc/models/orgwhitelistsettings.go
 gc/models/orphanrecording.go
 gc/models/orphanrecordinglisting.go
@@ -5397,6 +5416,7 @@ gc/models/recipientadditionalidentifier.go
 gc/models/recipientflow.go
 gc/models/recipientlisting.go
 gc/models/recipientrequest.go
+gc/models/recipientwarning.go
 gc/models/recognition.go
 gc/models/recognitionbase.go
 gc/models/recognitions.go
@@ -5751,6 +5771,18 @@ gc/models/selectedcolumns.go
 gc/models/selectedcustomcalculationcolumns.go
 gc/models/selectoreventtrigger.go
 gc/models/selfagentgreeting.go
+gc/models/selfscheduleactivitymovelistitem.go
+gc/models/selfscheduleactivitymoverequestitem.go
+gc/models/selfscheduleagentmanagementunitsettings.go
+gc/models/selfschedulejob.go
+gc/models/selfschedulejobrequest.go
+gc/models/selfschedulemanagementunitsettings.go
+gc/models/selfschedulemanagementunitsettingsrequest.go
+gc/models/selfscheduleoffersactivitymovetemplate.go
+gc/models/selfscheduleoffersjob.go
+gc/models/selfscheduleoffersjobrequest.go
+gc/models/selfscheduleoffersresulttemplate.go
+gc/models/selfschedulequery.go
 gc/models/sendagentlessoutboundmessagerequest.go
 gc/models/sendagentlessoutboundmessageresponse.go
 gc/models/sendmessagebody.go
@@ -5791,6 +5823,7 @@ gc/models/settingdirection.go
 gc/models/settings.go
 gc/models/setuuidatarequest.go
 gc/models/setwhatsappintegrationactionsettings.go
+gc/models/setwrapperactivitycategory.go
 gc/models/setwrapperassignmenteffectivedaterange.go
 gc/models/setwrapperdayofweek.go
 gc/models/setwrapperroutepathrequest.go
@@ -5842,6 +5875,12 @@ gc/models/shrinkageoverrides.go
 gc/models/signature.go
 gc/models/signeddata.go
 gc/models/signedurlresponse.go
+gc/models/similarcategoriesresponse.go
+gc/models/similarcategoryresult.go
+gc/models/similarcustomerintentresult.go
+gc/models/similarcustomerintentsrequest.go
+gc/models/similarcustomerintentsresponse.go
+gc/models/similarentityref.go
 gc/models/singleworkdayaveragepoints.go
 gc/models/singleworkdayaveragevalues.go
 gc/models/sipdownloadresponse.go
@@ -6486,7 +6525,6 @@ gc/models/userdetailqueryclause.go
 gc/models/userdetailqueryfilter.go
 gc/models/userdetailquerypredicate.go
 gc/models/userdetailsquery.go
-gc/models/userdevice.go
 gc/models/userentity.go
 gc/models/userentitylisting.go
 gc/models/userestablishedevent.go
@@ -6586,6 +6624,9 @@ gc/models/v3sourcedetailedresponse.go
 gc/models/v3sourceexpandablelisting.go
 gc/models/v3sourceexpandablelistresponse.go
 gc/models/v3sourceexpandableresponse.go
+gc/models/v3sourcefilecountentry.go
+gc/models/v3sourcefilecountsrequest.go
+gc/models/v3sourcefilecountsresponse.go
 gc/models/v3sourcefilter.go
 gc/models/v3sourcefilterdetails.go
 gc/models/v3sourcefolderdetails.go
@@ -6594,6 +6635,9 @@ gc/models/v3sourceref.go
 gc/models/v3sourceschedulesettings.go
 gc/models/v3sourcesitedetails.go
 gc/models/v3sourcetagfilter.go
+gc/models/v3sourcetagresponse.go
+gc/models/v3sourcetagsgroupedentry.go
+gc/models/v3sourcetagsgroupedresponse.go
 gc/models/v3sourceupdaterequest.go
 gc/models/v3startmanualsyncrequest.go
 gc/models/v3synchronization.go
@@ -6808,7 +6852,9 @@ gc/models/workitemflowreference.go
 gc/models/workitemlanguagereference.go
 gc/models/workitemmanualassign.go
 gc/models/workitemonattributechangecondition.go
+gc/models/workitemonattributechangeconditiongroup.go
 gc/models/workitemonattributechangeconditionupdate.go
+gc/models/workitemonattributechangematch.go
 gc/models/workitemonattributechangerule.go
 gc/models/workitemonattributechangerulecreate.go
 gc/models/workitemonattributechangerulelisting.go

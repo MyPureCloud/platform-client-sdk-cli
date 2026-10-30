@@ -13,6 +13,16 @@
       "description": "Retrieve aggregated assignment data"
     },
     {
+      "name": "list",
+      "path": "/api/v2/learning/assignments",
+      "description": "List of Learning module Assignments"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/assignments",
+      "description": "Create Learning Assignment"
+    },
+    {
       "name": "get",
       "path": "/api/v2/learning/assignments/{assignmentId}",
       "description": "Get Learning Assignment"
@@ -28,14 +38,9 @@
       "description": "Update Learning Assignment"
     },
     {
-      "name": "list",
-      "path": "/api/v2/learning/assignments",
-      "description": "List of Learning module Assignments"
-    },
-    {
       "name": "create",
-      "path": "/api/v2/learning/assignments",
-      "description": "Create Learning Assignment"
+      "path": "/api/v2/learning/assignments/{assignmentId}/reset",
+      "description": "Reset Learning Assignment"
     },
     {
       "name": "create",
@@ -63,11 +68,6 @@
       "description": "List of Learning Assignments assigned to current user"
     },
     {
-      "name": "create",
-      "path": "/api/v2/learning/assignments/{assignmentId}/reset",
-      "description": "Reset Learning Assignment"
-    },
-    {
       "name": "get",
       "path": "/api/v2/learning/assignments/{assignmentId}/steps/{stepId}",
       "description": "Get Learning Assignment Step"
@@ -81,31 +81,6 @@
       "name": "create",
       "path": "/api/v2/learning/rules/query",
       "description": "Get users for learning module rule"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/learning/modules/{moduleId}/jobs/{jobId}",
-      "description": "Get a specific Learning Module job status"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/learning/modules/{moduleId}/versions/{versionId}",
-      "description": "Get specific version of a published module"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/learning/modules/coverart/{coverArtId}",
-      "description": "Get a specific Learning Module cover art using ID"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/learning/modules",
-      "description": "Get all learning modules of an organization"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/learning/modules",
-      "description": "Create a new learning module"
     },
     {
       "name": "get",
@@ -131,6 +106,31 @@
       "name": "update",
       "path": "/api/v2/learning/modules/{moduleId}/preview",
       "description": "Update a learning module preview"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/learning/modules/{moduleId}/jobs/{jobId}",
+      "description": "Get a specific Learning Module job status"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/learning/modules/{moduleId}/versions/{versionId}",
+      "description": "Get specific version of a published module"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/learning/modules/coverart/{coverArtId}",
+      "description": "Get a specific Learning Module cover art using ID"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/learning/modules",
+      "description": "Get all learning modules of an organization"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/learning/modules",
+      "description": "Create a new learning module"
     },
     {
       "name": "create",

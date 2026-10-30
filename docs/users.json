@@ -4,6 +4,11 @@
   "resources": [
     {
       "name": "create",
+      "path": "/api/v2/users/me/verifiers/webauthn/register/options",
+      "description": "Begin WebAuthn verifier registration"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/users/me/verifiers/webauthn/register",
       "description": "Finish WebAuthn verifier registration"
     },
@@ -31,11 +36,6 @@
       "name": "list",
       "path": "/api/v2/users/me/verifiers",
       "description": "Get a list of my verifiers"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/users/me/verifiers/webauthn/register/options",
-      "description": "Begin WebAuthn verifier registration"
     },
     {
       "name": "update",
@@ -99,8 +99,8 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/users/{userId}/favorites",
-      "description": "Deprecated; will be revived with new contract"
+      "path": "/api/v2/users/{userId}/superiors",
+      "description": "Get superiors"
     },
     {
       "name": "get",
@@ -109,13 +109,13 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/users/{userId}/superiors",
-      "description": "Get superiors"
+      "path": "/api/v2/users/{userId}/directreports",
+      "description": "Get direct reports"
     },
     {
       "name": "list",
-      "path": "/api/v2/users/{userId}/directreports",
-      "description": "Get direct reports"
+      "path": "/api/v2/users/{userId}/favorites",
+      "description": "Deprecated; will be revived with new contract"
     },
     {
       "name": "get",
@@ -179,16 +179,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/users/{userId}/presences/purecloud",
-      "description": "Get a user's Genesys Cloud presence."
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/users/{userId}/presences/purecloud",
-      "description": "Patch a Genesys Cloud user's presence"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/users/{userId}/presences/{sourceId}",
       "description": "Get a user's Presence"
     },
@@ -199,6 +189,21 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/users/{userId}/presences/purecloud",
+      "description": "Get a user's Genesys Cloud presence."
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/presences/purecloud",
+      "description": "Patch a Genesys Cloud user's presence"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/users/{userId}/screenmonitors/sessions",
+      "description": "Start an agent-level screen monitoring session."
+    },
+    {
+      "name": "get",
       "path": "/api/v2/users/{userId}/screenmonitors/sessions/{screenMonitoringId}",
       "description": "Get an agent-level screen monitoring session object using the supplied screenMonitoringId."
     },
@@ -206,11 +211,6 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/screenmonitors/sessions/{screenMonitoringId}",
       "description": "Stop an agent-level screen monitoring session."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/users/{userId}/screenmonitors/sessions",
-      "description": "Start an agent-level screen monitoring session."
     },
     {
       "name": "list",
@@ -404,16 +404,6 @@
     },
     {
       "name": "update",
-      "path": "/api/v2/users/{userId}/station/associatedstation/{stationId}",
-      "description": "Set associated station"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/users/{userId}/station/associatedstation",
-      "description": "Clear associated station"
-    },
-    {
-      "name": "update",
       "path": "/api/v2/users/{userId}/station/defaultstation/{stationId}",
       "description": "Set default station"
     },
@@ -421,6 +411,16 @@
       "name": "delete",
       "path": "/api/v2/users/{userId}/station/defaultstation",
       "description": "Clear default station"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/users/{userId}/station/associatedstation/{stationId}",
+      "description": "Set associated station"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/station/associatedstation",
+      "description": "Clear associated station"
     },
     {
       "name": "list",
@@ -473,16 +473,6 @@
       "description": "Get the list of core types enabled for a specific namespace."
     },
     {
-      "name": "get",
-      "path": "/api/v2/users/{userId}/customattributes/{schemaId}",
-      "description": "Get custom attributes by schema id"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/users/{userId}/customattributes/{schemaId}",
-      "description": "Delete a custom attributes record."
-    },
-    {
       "name": "update",
       "path": "/api/v2/users/{userId}/customattributes",
       "description": "Create or update a single custom attributes record. Updating replaces all data with the provided fields."
@@ -501,6 +491,16 @@
       "name": "update",
       "path": "/api/v2/users/{userId}/customattributes/bulk",
       "description": "Update multiple custom attributes records by amending the data with only the provided fields."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/{userId}/customattributes/{schemaId}",
+      "description": "Get custom attributes by schema id"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/users/{userId}/customattributes/{schemaId}",
+      "description": "Delete a custom attributes record."
     },
     {
       "name": "get",
@@ -543,14 +543,14 @@
       "description": "Create a schema"
     },
     {
-      "name": "get",
-      "path": "/api/v2/users/development/activities/{activityId}",
-      "description": "Get a Development Activity"
-    },
-    {
       "name": "list",
       "path": "/api/v2/users/development/activities",
       "description": "Get list of Development Activities"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/users/development/activities/{activityId}",
+      "description": "Get a Development Activity"
     },
     {
       "name": "list",

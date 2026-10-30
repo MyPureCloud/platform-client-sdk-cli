@@ -50,6 +50,9 @@ type EmailmessagereplyDud struct {
 
     MaxEmailSizeBytes int `json:"maxEmailSizeBytes"`
 
+
+    RecipientWarnings []Recipientwarning `json:"recipientWarnings"`
+
 }
 
 // Emailmessagereply
@@ -96,6 +99,9 @@ type Emailmessagereply struct {
 
     // HistoryIncluded - Indicates whether the history of previous emails of the conversation is included within the email bodies of this message.
     HistoryIncluded bool `json:"historyIncluded"`
+
+
+    
 
 
     
@@ -185,6 +191,9 @@ func (u *Emailmessagereply) MarshalJSON() ([]byte, error) {
 
         
         Attachments: []Attachment{{}},
+        
+
+
         
 
 

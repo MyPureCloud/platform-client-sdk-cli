@@ -66,6 +66,7 @@ func Cmdrouting_queues() *cobra.Command {
 	routing_queuesCmd.AddCommand(deleteCmd)
 
 	utils.AddFlag(getCmd.Flags(), "[]string", "expand", "", "Which fields, if any, to expand Valid values: identityresolution")
+	utils.AddFlag(getCmd.Flags(), "bool", "forceMemberRecount", "false", "Force a recount of queue membership. This is an expensive, opt-in operation intended for repairing out-of-sync membership counters.")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/routing/queues/{queueId}", utils.FormatPermissions([]string{ "routing:queue:view",  }), utils.GenerateDevCentreLink("GET", "Routing", "/api/v2/routing/queues/{queueId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -336,6 +337,10 @@ var getCmd = &cobra.Command{
 		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
 		if expand != "" {
 			queryParams["expand"] = expand
+		}
+		forceMemberRecount := utils.GetFlag(cmd.Flags(), "bool", "forceMemberRecount")
+		if forceMemberRecount != "" {
+			queryParams["forceMemberRecount"] = forceMemberRecount
 		}
 		urlString := path
 		if len(queryParams) > 0 {

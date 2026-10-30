@@ -29,6 +29,9 @@ type WorkitemonattributechangeruleDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -54,8 +57,12 @@ type Workitemonattributechangerule struct {
     Worktype Worktypereference `json:"worktype"`
 
 
-    // Condition - The rules condition. If the condition criteria is met the rules action will be executed.
+    // Condition - The rules condition. If the condition criteria is met the rules action will be executed. Mutually exclusive with match; a rule carries exactly one of condition or match.
     Condition Workitemonattributechangecondition `json:"condition"`
+
+
+    // Match - Grouped match criteria combined with logical operators. Mutually exclusive with condition; a rule carries exactly one of condition or match.
+    Match Workitemonattributechangematch `json:"match"`
 
 
     
@@ -64,6 +71,7 @@ type Workitemonattributechangerule struct {
 
 // String returns a JSON representation of the model
 func (o *Workitemonattributechangerule) String() string {
+    
     
     
     
@@ -95,8 +103,13 @@ func (u *Workitemonattributechangerule) MarshalJSON() ([]byte, error) {
         Worktype Worktypereference `json:"worktype"`
         
         Condition Workitemonattributechangecondition `json:"condition"`
+        
+        Match Workitemonattributechangematch `json:"match"`
         *Alias
     }{
+
+        
+
 
         
 

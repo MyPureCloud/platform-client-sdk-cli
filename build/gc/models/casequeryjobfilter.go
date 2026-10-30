@@ -19,11 +19,14 @@ type CasequeryjobfilterDud struct {
 
     
 
+
+    
+
 }
 
 // Casequeryjobfilter
 type Casequeryjobfilter struct { 
-    // Name - Attribute name. Valid filter names are: 'caseplanId', 'ownerId', 'status', 'priority', 'dateDue', 'externalContactId', 'customerIntentId', 'dateCreated', 'divisionId', 'reference'.
+    // Name - Attribute name. Valid filter names are: 'caseplanId', 'ownerId', 'status', 'priority', 'dateDue', 'externalContactId', 'customerIntentId', 'dateCreated', 'divisionId', 'reference', 'externalId'.
     Name string `json:"name"`
 
 
@@ -34,6 +37,10 @@ type Casequeryjobfilter struct {
     // Values - List of values to be used in the filter.
     Values []string `json:"values"`
 
+
+    // CaseSensitive - Whether the filter matches letter case exactly. Only valid for 'reference' and 'externalId' filters. Defaults to true.
+    CaseSensitive bool `json:"caseSensitive"`
+
 }
 
 // String returns a JSON representation of the model
@@ -41,6 +48,7 @@ func (o *Casequeryjobfilter) String() string {
     
     
      o.Values = []string{""} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -63,6 +71,8 @@ func (u *Casequeryjobfilter) MarshalJSON() ([]byte, error) {
         Operator string `json:"operator"`
         
         Values []string `json:"values"`
+        
+        CaseSensitive bool `json:"caseSensitive"`
         *Alias
     }{
 
@@ -74,6 +84,9 @@ func (u *Casequeryjobfilter) MarshalJSON() ([]byte, error) {
 
         
         Values: []string{""},
+        
+
+
         
 
         Alias: (*Alias)(u),

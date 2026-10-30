@@ -22,9 +22,6 @@ type WorkitemonattributechangeconditionDud struct {
 
     
 
-
-    
-
 }
 
 // Workitemonattributechangecondition
@@ -33,26 +30,21 @@ type Workitemonattributechangecondition struct {
     Attribute string `json:"attribute"`
 
 
-    // NewValue - The new value of the attribute. If the attribute is updated to this value this part of the condition will be met. Required for exact-match conditions (when operator is not set).
+    // NewValue - The value the attribute's new value is compared against. Compared for equality unless an operator is supplied. Null matches the attribute having been cleared, on clearable attributes.
     NewValue string `json:"newValue"`
 
 
-    // OldValue - The old value of the attribute. If the attribute was updated from this value this part of the condition will be met.
+    // OldValue - The value the attribute is transitioning from. Not permitted for the priority attribute. Omitted or null matches any previous value.
     OldValue string `json:"oldValue"`
 
 
-    // Operator - The comparison operator used to evaluate the priority attribute against the value. Only supported for the priority attribute.
+    // Operator - How the attribute's new value is compared against newValue. Required for the priority attribute; not permitted otherwise.
     Operator string `json:"operator"`
-
-
-    // Value - The numeric value compared against the priority attribute using the operator. Required when operator is set. Only supported for the priority attribute.
-    Value int `json:"value"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Workitemonattributechangecondition) String() string {
-    
     
     
     
@@ -81,13 +73,8 @@ func (u *Workitemonattributechangecondition) MarshalJSON() ([]byte, error) {
         OldValue string `json:"oldValue"`
         
         Operator string `json:"operator"`
-        
-        Value int `json:"value"`
         *Alias
     }{
-
-        
-
 
         
 

@@ -16,6 +16,9 @@ type CsvmappingentryDud struct {
 
     
 
+
+    
+
 }
 
 // Csvmappingentry
@@ -27,10 +30,15 @@ type Csvmappingentry struct {
     // TargetField - Json path to map data to
     TargetField string `json:"targetField"`
 
+
+    // ValueFormat - How the CSV cell value is interpreted at the target path. When omitted, the cell is treated as a string.
+    ValueFormat string `json:"valueFormat"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Csvmappingentry) String() string {
+    
     
     
 
@@ -53,8 +61,13 @@ func (u *Csvmappingentry) MarshalJSON() ([]byte, error) {
         SourceField string `json:"sourceField"`
         
         TargetField string `json:"targetField"`
+        
+        ValueFormat string `json:"valueFormat"`
         *Alias
     }{
+
+        
+
 
         
 

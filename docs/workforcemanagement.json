@@ -324,11 +324,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search",
-      "description": "Searches for potential shift trade matches for the current agent"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk",
       "description": "Updates the state of a batch of shift trades"
     },
@@ -341,6 +336,11 @@
       "name": "create",
       "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match",
       "description": "Matches a shift trade. This route can only be called by the receiving agent"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search",
+      "description": "Searches for potential shift trade matches for the current agent"
     },
     {
       "name": "create",
@@ -548,6 +548,11 @@
       "description": "Update adherence adjustment reason codes in bulk for a business unit"
     },
     {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/query",
+      "description": "Query adherence adjustments for the requested agent"
+    },
+    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/{adjustmentId}",
       "description": "Get an adherence adjustment for the requested agent"
@@ -559,8 +564,8 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/query",
-      "description": "Query adherence adjustments for the requested agent"
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query",
+      "description": "Query adherence adjustments for a business unit. Results will be returned using cursor pagination"
     },
     {
       "name": "list",
@@ -588,11 +593,6 @@
       "description": "Update adherence adjustments in bulk for a business unit"
     },
     {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query",
-      "description": "Query adherence adjustments for a business unit. Results will be returned using cursor pagination"
-    },
-    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/settings",
       "description": "Get adherence adjustments settings for a business unit"
@@ -601,6 +601,11 @@
       "name": "update",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/settings",
       "description": "Update adherence adjustments settings for a business unit"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/adherence/adjustments/query",
+      "description": "Query adherence adjustments for the current user"
     },
     {
       "name": "get",
@@ -619,11 +624,6 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/adherence/adjustments/query",
-      "description": "Query adherence adjustments for the current user"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/workforcemanagement/adherence/adjustments",
       "description": "Submit an adherence adjustment for the current user"
     },
@@ -631,6 +631,11 @@
       "name": "get",
       "path": "/api/v2/workforcemanagement/adherence/explanations/jobs/{jobId}",
       "description": "Query the status of an adherence explanation operation. Only the user who started the operation can query the status"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations",
+      "description": "Add an adherence explanation for the requested user"
     },
     {
       "name": "get",
@@ -649,23 +654,18 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations",
-      "description": "Add an adherence explanation for the requested user"
-    },
-    {
-      "name": "create",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query",
       "description": "Query adherence explanations across an entire business unit for the requested period"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/workforcemanagement/adherence/explanations/{explanationId}",
-      "description": "Get an adherence explanation for the current user"
     },
     {
       "name": "create",
       "path": "/api/v2/workforcemanagement/adherence/explanations",
       "description": "Submit an adherence explanation for the current user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/adherence/explanations/{explanationId}",
+      "description": "Get an adherence explanation for the current user"
     },
     {
       "name": "create",
@@ -734,13 +734,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/settings/query",
-      "description": "Query availability management units settings"
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/schedules/query",
+      "description": "Get agent schedule generation unavailable times"
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/schedules/query",
-      "description": "Get agent schedule generation unavailable times"
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/settings/query",
+      "description": "Query availability management units settings"
     },
     {
       "name": "update",
@@ -748,14 +748,14 @@
       "description": "Update management unit availability settings"
     },
     {
-      "name": "update",
-      "path": "/api/v2/workforcemanagement/agents/{agentId}/unavailabletimes",
-      "description": "Update unavailable times for the requested agent"
-    },
-    {
       "name": "create",
       "path": "/api/v2/workforcemanagement/agents/{agentId}/unavailabletimes/query",
       "description": "Get agent unavailable times"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/workforcemanagement/agents/{agentId}/unavailabletimes",
+      "description": "Update unavailable times for the requested agent"
     },
     {
       "name": "get",
@@ -938,24 +938,24 @@
       "description": "Create a historical export job"
     },
     {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs",
-      "description": "Create a session export job"
-    },
-    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs/{jobId}",
       "description": "Get status of the session export job"
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs",
-      "description": "Create a snapshot export job"
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs",
+      "description": "Create a session export job"
     },
     {
       "name": "get",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs/{jobId}",
       "description": "Get status of the snapshot export job"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs",
+      "description": "Create a snapshot export job"
     },
     {
       "name": "get",
@@ -988,16 +988,6 @@
       "description": "Get the daily waitlist positions of a time off request for the current user"
     },
     {
-      "name": "get",
-      "path": "/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}",
-      "description": "Get a time off request for the current user"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}",
-      "description": "Update a time off request for the current user"
-    },
-    {
       "name": "list",
       "path": "/api/v2/workforcemanagement/timeoffrequests",
       "description": "Get a list of time off requests for the current user"
@@ -1006,6 +996,16 @@
       "name": "create",
       "path": "/api/v2/workforcemanagement/timeoffrequests",
       "description": "Create a time off request for the current user"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}",
+      "description": "Get a time off request for the current user"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}",
+      "description": "Update a time off request for the current user"
     },
     {
       "name": "update",
@@ -1059,13 +1059,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/agentschedules/managementunits/mine",
-      "description": "Fetch agent schedules for the logged in user's management unit"
+      "path": "/api/v2/workforcemanagement/agentschedules/mine",
+      "description": "Get published schedule for the current user"
     },
     {
       "name": "create",
-      "path": "/api/v2/workforcemanagement/agentschedules/mine",
-      "description": "Get published schedule for the current user"
+      "path": "/api/v2/workforcemanagement/agentschedules/managementunits/mine",
+      "description": "Fetch agent schedules for the logged in user's management unit"
     },
     {
       "name": "create",
@@ -1143,14 +1143,14 @@
       "description": "Trigger validation process for historical import"
     },
     {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/agents/integrations/hris/query",
-      "description": "Query integrations for agents"
-    },
-    {
       "name": "update",
       "path": "/api/v2/workforcemanagement/agents/{agentId}/integrations/hris",
       "description": "Update integrations for agent"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/agents/integrations/hris/query",
+      "description": "Query integrations for agents"
     },
     {
       "name": "get",
@@ -1264,16 +1264,6 @@
     },
     {
       "name": "get",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences",
-      "description": "Get agents schedule bid preferences for a bid group"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences",
-      "description": "Overrides the assigned schedule bid for the specified agents"
-    },
-    {
-      "name": "get",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}",
       "description": "Get a schedule bid group"
     },
@@ -1296,6 +1286,16 @@
       "name": "create",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups",
       "description": "Add a bid group in a given schedule bid"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences",
+      "description": "Get agents schedule bid preferences for a bid group"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences",
+      "description": "Overrides the assigned schedule bid for the specified agents"
     },
     {
       "name": "get",
@@ -1388,6 +1388,11 @@
       "description": "Starts processing a schedule import"
     },
     {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update/uploadurl",
+      "description": "Creates a signed upload URL for updating a schedule"
+    },
+    {
       "name": "list",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules",
       "description": "Get the list of week schedules for the specified week"
@@ -1396,11 +1401,6 @@
       "name": "create",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules",
       "description": "Create a blank schedule"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update/uploadurl",
-      "description": "Creates a signed upload URL for updating a schedule"
     },
     {
       "name": "create",
@@ -1471,6 +1471,51 @@
       "name": "get",
       "path": "/api/v2/workforcemanagement/schedulingjobs/{jobId}",
       "description": "Get status of the scheduling job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/selfschedule/settings",
+      "description": "Get admin self-scheduling settings for a management unit"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/selfschedule/settings",
+      "description": "Update admin self-scheduling settings for a management unit"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/selfschedule/activitymoves/{activityMoveId}",
+      "description": "Lookup a single agent activity move based on its identifier"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/selfschedule/jobs",
+      "description": "Agent starts an async job to edit a shift request by updating the start time of one or more activities."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/selfschedule/jobs/{jobId}",
+      "description": "View result of create self-schedule activity move operation. Only the user who started the operation can query the status"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/selfschedule/offers/jobs",
+      "description": "Agent starts async job to search for best time for offers"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/selfschedule/offers/jobs/{jobId}",
+      "description": "View result of self-schedule search for best time for offer operation. Only the user who started the operation can query the status"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/selfschedule/query",
+      "description": "Query self-schedule activity moves for agent"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/workforcemanagement/selfschedule/settings",
+      "description": "Agent gets the self-schedule management unit settings."
     },
     {
       "name": "create",
@@ -1588,6 +1633,11 @@
       "description": "Request a historical shrinkage report"
     },
     {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests",
+      "description": "Create a new time off request"
+    },
+    {
       "name": "get",
       "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}",
       "description": "Get a time off request"
@@ -1596,11 +1646,6 @@
       "name": "update",
       "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}",
       "description": "Update a time off request"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests",
-      "description": "Create a new time off request"
     },
     {
       "name": "list",
@@ -1643,14 +1688,14 @@
       "description": "Estimates available time off for an agent"
     },
     {
-      "name": "update",
-      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus",
-      "description": "Set integration status for a time off request."
-    },
-    {
       "name": "create",
       "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query",
       "description": "Retrieves integration statuses for a list of time off requests"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus",
+      "description": "Set integration status for a time off request."
     },
     {
       "name": "list",
@@ -1873,6 +1918,11 @@
       "description": "Update work plan bid"
     },
     {
+      "name": "create",
+      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/copy",
+      "description": "Copy a work plan bid"
+    },
+    {
       "name": "list",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids",
       "description": "Get list of work plan bids"
@@ -1881,11 +1931,6 @@
       "name": "create",
       "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids",
       "description": "Create a new work plan bid"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/copy",
-      "description": "Copy a work plan bid"
     },
     {
       "name": "create",

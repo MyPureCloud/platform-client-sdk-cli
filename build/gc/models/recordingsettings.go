@@ -28,6 +28,9 @@ type RecordingsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Recordingsettings
@@ -55,10 +58,15 @@ type Recordingsettings struct {
     // StopRecordingWhenOnlyExternalParticipants - Whether to stop recording in conference when only external participants remain
     StopRecordingWhenOnlyExternalParticipants bool `json:"stopRecordingWhenOnlyExternalParticipants"`
 
+
+    // HierarchyAccessControlEnabled - Whether hierarchy access control using the Reports To management chain is enabled for the organization
+    HierarchyAccessControlEnabled bool `json:"hierarchyAccessControlEnabled"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Recordingsettings) String() string {
+    
     
     
     
@@ -93,8 +101,13 @@ func (u *Recordingsettings) MarshalJSON() ([]byte, error) {
         RecordingBatchDownloadUrlTtl int `json:"recordingBatchDownloadUrlTtl"`
         
         StopRecordingWhenOnlyExternalParticipants bool `json:"stopRecordingWhenOnlyExternalParticipants"`
+        
+        HierarchyAccessControlEnabled bool `json:"hierarchyAccessControlEnabled"`
         *Alias
     }{
+
+        
+
 
         
 

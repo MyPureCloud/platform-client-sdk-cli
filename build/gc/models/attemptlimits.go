@@ -42,6 +42,9 @@ type AttemptlimitsDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -85,6 +88,10 @@ type Attemptlimits struct {
     RecallEntries map[string]Recallentry `json:"recallEntries"`
 
 
+    // PhoneTypeRecallEntries - Configuration for recall attempts per phone type
+    PhoneTypeRecallEntries map[string]interface{} `json:"phoneTypeRecallEntries"`
+
+
     
 
 }
@@ -98,6 +105,7 @@ func (o *Attemptlimits) String() string {
     
     
      o.RecallEntries = map[string]Recallentry{"": {}} 
+     o.PhoneTypeRecallEntries = map[string]interface{}{"": Interface{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -128,6 +136,8 @@ func (u *Attemptlimits) MarshalJSON() ([]byte, error) {
         ResetPeriod string `json:"resetPeriod"`
         
         RecallEntries map[string]Recallentry `json:"recallEntries"`
+        
+        PhoneTypeRecallEntries map[string]interface{} `json:"phoneTypeRecallEntries"`
         *Alias
     }{
 
@@ -160,6 +170,11 @@ func (u *Attemptlimits) MarshalJSON() ([]byte, error) {
 
         
         RecallEntries: map[string]Recallentry{"": {}},
+        
+
+
+        
+        PhoneTypeRecallEntries: map[string]interface{}{"": Interface{}},
         
 
 

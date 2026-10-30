@@ -28,12 +28,26 @@ type ConversationcustomattributessearchrequestDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Conversationcustomattributessearchrequest
 type Conversationcustomattributessearchrequest struct { 
     // Expand - Expand your search with bulk lookups
     Expand []string `json:"expand"`
+
+
+    // QueryReservedFields - The search criteria for reserved fields
+    QueryReservedFields []Conversationcustomattributessearchcriteria `json:"queryReservedFields"`
+
+
+    // QueryCustomAttributes - The search criteria for custom attributes
+    QueryCustomAttributes []Conversationcustomattributessearchcriteria `json:"queryCustomAttributes"`
 
 
     // PageSize - The number of results per page
@@ -60,6 +74,8 @@ type Conversationcustomattributessearchrequest struct {
 // String returns a JSON representation of the model
 func (o *Conversationcustomattributessearchrequest) String() string {
      o.Expand = []string{""} 
+     o.QueryReservedFields = []Conversationcustomattributessearchcriteria{{}} 
+     o.QueryCustomAttributes = []Conversationcustomattributessearchcriteria{{}} 
     
     
      o.Sort = []Searchsort{{}} 
@@ -84,6 +100,10 @@ func (u *Conversationcustomattributessearchrequest) MarshalJSON() ([]byte, error
         
         Expand []string `json:"expand"`
         
+        QueryReservedFields []Conversationcustomattributessearchcriteria `json:"queryReservedFields"`
+        
+        QueryCustomAttributes []Conversationcustomattributessearchcriteria `json:"queryCustomAttributes"`
+        
         PageSize int `json:"pageSize"`
         
         PageNumber int `json:"pageNumber"`
@@ -98,6 +118,16 @@ func (u *Conversationcustomattributessearchrequest) MarshalJSON() ([]byte, error
 
         
         Expand: []string{""},
+        
+
+
+        
+        QueryReservedFields: []Conversationcustomattributessearchcriteria{{}},
+        
+
+
+        
+        QueryCustomAttributes: []Conversationcustomattributessearchcriteria{{}},
         
 
 

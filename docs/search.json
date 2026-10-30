@@ -21,6 +21,21 @@
       "name": "create",
       "path": "/api/v2/search/suggest",
       "description": "Suggest resources."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/search/settings",
+      "description": "Get the organization's search settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/search/settings",
+      "description": "Patch the organization's search settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/search/settings/contentsearch",
+      "description": "Patch the organization's content search settings"
     }
   ]
 }

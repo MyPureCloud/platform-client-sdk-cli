@@ -1,0 +1,20 @@
+package workforcemanagement_selfschedule
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_selfschedule_activitymoves"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_selfschedule_jobs"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_selfschedule_offers"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_selfschedule_query"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_selfschedule_settings"
+)
+
+func init() {
+	workforcemanagement_selfscheduleCmd.AddCommand(workforcemanagement_selfschedule_activitymoves.Cmdworkforcemanagement_selfschedule_activitymoves())
+	workforcemanagement_selfscheduleCmd.AddCommand(workforcemanagement_selfschedule_jobs.Cmdworkforcemanagement_selfschedule_jobs())
+	workforcemanagement_selfscheduleCmd.AddCommand(workforcemanagement_selfschedule_offers.Cmdworkforcemanagement_selfschedule_offers())
+	workforcemanagement_selfscheduleCmd.AddCommand(workforcemanagement_selfschedule_query.Cmdworkforcemanagement_selfschedule_query())
+	workforcemanagement_selfscheduleCmd.AddCommand(workforcemanagement_selfschedule_settings.Cmdworkforcemanagement_selfschedule_settings())
+	workforcemanagement_selfscheduleCmd.Short = utils.GenerateCustomDescription(workforcemanagement_selfscheduleCmd.Short, workforcemanagement_selfschedule_activitymoves.Description, workforcemanagement_selfschedule_jobs.Description, workforcemanagement_selfschedule_offers.Description, workforcemanagement_selfschedule_query.Description, workforcemanagement_selfschedule_settings.Description, )
+	workforcemanagement_selfscheduleCmd.Long = workforcemanagement_selfscheduleCmd.Short
+}

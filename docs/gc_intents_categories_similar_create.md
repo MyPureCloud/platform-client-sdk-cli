@@ -1,19 +1,22 @@
-## gc mobiledevices delete
+## gc intents categories similar create
 
-(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device
+Find similar categories
 
 ### Synopsis
 
-(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device
+Find similar categories
 
 ```
-gc mobiledevices delete [deviceId] [flags]
+gc intents categories similar create [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help   help for delete
+  -d, --directory string   Directory path with files containing request bodies
+  -f, --file string        File name containing the JSON body
+  -h, --help               help for create
+  -b, --printrequestbody   Print the request body format of the API.
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +36,6 @@ gc mobiledevices delete [deviceId] [flags]
 
 ### SEE ALSO
 
-* [gc mobiledevices](gc_mobiledevices.html)	 - /api/v2/mobiledevices
+* [gc intents categories similar](gc_intents_categories_similar.html)	 - /api/v2/intents/categories/similar
 
 

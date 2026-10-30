@@ -32,9 +32,11 @@
 * [gc knowledge](gc_knowledge.html)	 - /api/v2/knowledge
 * [gc knowledge sources create](gc_knowledge_sources_create.html)	 - Create a new source
 * [gc knowledge sources delete](gc_knowledge_sources_delete.html)	 - Delete source
+* [gc knowledge sources files](gc_knowledge_sources_files.html)	 - /api/v2/knowledge/sources/files
 * [gc knowledge sources get](gc_knowledge_sources_get.html)	 - Get source
 * [gc knowledge sources list](gc_knowledge_sources_list.html)	 - List sources
 * [gc knowledge sources synchronizations](gc_knowledge_sources_synchronizations.html)	 - /api/v2/knowledge/sources/{sourceId}/synchronizations /api/v2/knowledge/sources/synchronizations
+* [gc knowledge sources tags](gc_knowledge_sources_tags.html)	 - /api/v2/knowledge/sources/tags
 * [gc knowledge sources update](gc_knowledge_sources_update.html)	 - Update the source
 
 

@@ -81,7 +81,6 @@ gc is a CLI for interacting with Genesys Cloud
 * [gc locations](gc_locations.html)	 - /api/v2/locations
 * [gc logging](gc_logging.html)	 - Manages the logging for the CLI
 * [gc messaging](gc_messaging.html)	 - /api/v2/messaging
-* [gc mobiledevices](gc_mobiledevices.html)	 - /api/v2/mobiledevices
 * [gc notifications](gc_notifications.html)	 - /api/v2/notifications
 * [gc oauth](gc_oauth.html)	 - /api/v2/oauth
 * [gc organizations](gc_organizations.html)	 - /api/v2/organizations

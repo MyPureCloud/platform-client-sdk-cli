@@ -32,6 +32,7 @@
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
 * [gc search create](gc_search_create.html)	 - Search resources.
 * [gc search list](gc_search_list.html)	 - Search using the q64 value returned from a previous search.
+* [gc search settings](gc_search_settings.html)	 - /api/v2/search/settings
 * [gc search suggest](gc_search_suggest.html)	 - /api/v2/search/suggest
 
 

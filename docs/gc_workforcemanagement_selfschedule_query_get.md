@@ -1,22 +1,19 @@
-## gc mobiledevices create
+## gc workforcemanagement selfschedule query get
 
-(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device
+Query self-schedule activity moves for agent
 
 ### Synopsis
 
-(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device
+Query self-schedule activity moves for agent
 
 ```
-gc mobiledevices create [flags]
+gc workforcemanagement selfschedule query get [flags]
 ```
 
 ### Options
 
 ```
-  -d, --directory string   Directory path with files containing request bodies
-  -f, --file string        File name containing the JSON body
-  -h, --help               help for create
-  -b, --printrequestbody   Print the request body format of the API.
+  -h, --help   help for get
 ```
 
 ### Options inherited from parent commands
@@ -36,6 +33,6 @@ gc mobiledevices create [flags]
 
 ### SEE ALSO
 
-* [gc mobiledevices](gc_mobiledevices.html)	 - /api/v2/mobiledevices
+* [gc workforcemanagement selfschedule query](gc_workforcemanagement_selfschedule_query.html)	 - /api/v2/workforcemanagement/selfschedule/query
 
 

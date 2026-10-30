@@ -1,13 +1,13 @@
-## gc mobiledevices list
+## gc knowledge sources tags list
 
-(Deprecated) Get a list of all devices.
+Get tags across sources for the organization
 
 ### Synopsis
 
-(Deprecated) Get a list of all devices.
+Get tags across sources for the organization
 
 ```
-gc mobiledevices list [flags]
+gc knowledge sources tags list [flags]
 ```
 
 ### Options
@@ -17,9 +17,10 @@ gc mobiledevices list [flags]
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --pageNumber string        Page number (default "1")
-      --pageSize string          Page size (default "25")
-      --sortOrder string         Ascending or descending sort order Valid values: ascending, descending
+      --pageSize string          Number of items per page. Maximum is 200. (default "100")
+      --sourceIds string         Optional comma-separated source IDs to scope tags.
   -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
+      --tagName string           Optional substring filter for tag names.
 ```
 
 ### Options inherited from parent commands
@@ -39,6 +40,6 @@ gc mobiledevices list [flags]
 
 ### SEE ALSO
 
-* [gc mobiledevices](gc_mobiledevices.html)	 - /api/v2/mobiledevices
+* [gc knowledge sources tags](gc_knowledge_sources_tags.html)	 - /api/v2/knowledge/sources/tags
 
 

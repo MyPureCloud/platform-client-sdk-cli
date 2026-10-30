@@ -43,6 +43,7 @@
 * [gc workforcemanagement managementunits list](gc_workforcemanagement_managementunits_list.html)	 - Get management units
 * [gc workforcemanagement managementunits move](gc_workforcemanagement_managementunits_move.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/move
 * [gc workforcemanagement managementunits schedules](gc_workforcemanagement_managementunits_schedules.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules
+* [gc workforcemanagement managementunits selfschedule](gc_workforcemanagement_managementunits_selfschedule.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/selfschedule
 * [gc workforcemanagement managementunits shifttrades](gc_workforcemanagement_managementunits_shifttrades.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades
 * [gc workforcemanagement managementunits shrinkage](gc_workforcemanagement_managementunits_shrinkage.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage
 * [gc workforcemanagement managementunits timeofflimits](gc_workforcemanagement_managementunits_timeofflimits.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits

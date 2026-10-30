@@ -13,7 +13,7 @@ gc externalcontacts graphs clusterscans latest get [flags]
 ### Options
 
 ```
-      --expand strings   which fields, if any, to expand Valid values: statistics.aggregated
+      --expand strings   which fields, if any, to expand Valid values: statistics.aggregated, settings
   -h, --help             help for get
 ```
 

@@ -34,6 +34,7 @@
 * [gc intents categories delete](gc_intents_categories_delete.html)	 - Delete category for categoryId
 * [gc intents categories get](gc_intents_categories_get.html)	 - Get category for categoryId
 * [gc intents categories list](gc_intents_categories_list.html)	 - Get categories
+* [gc intents categories similar](gc_intents_categories_similar.html)	 - /api/v2/intents/categories/similar
 * [gc intents categories update](gc_intents_categories_update.html)	 - Patch category for categoryId
 
 

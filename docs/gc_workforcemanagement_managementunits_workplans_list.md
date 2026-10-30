@@ -13,9 +13,10 @@ gc workforcemanagement managementunits workplans list [managementUnitId] [flags]
 ### Options
 
 ```
-      --exclude strings   Exclude specific data on the work plans from the response Valid values: shifts.activities
-      --expand strings    Include to access additional data on the work plans Valid values: agentCount, agents, optionalDays, shifts, shiftStartVariances, details
-  -h, --help              help for list
+      --exclude strings               Exclude specific data on the work plans from the response Valid values: shifts.activities
+      --expand strings                Include to access additional data on the work plans Valid values: agentCount, agents, optionalDays, shifts, shiftStartVariances, details
+      --forceDownloadService string   Force the result of this operation to be sent via download service. For testing/app development purposes Valid values: true, false
+  -h, --help                          help for list
 ```
 
 ### Options inherited from parent commands

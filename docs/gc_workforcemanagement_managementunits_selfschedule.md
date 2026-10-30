@@ -1,19 +1,15 @@
-## gc mobiledevices get
+## gc workforcemanagement managementunits selfschedule
 
-(Deprecated) Get device
+/api/v2/workforcemanagement/managementunits/{managementUnitId}/selfschedule
 
 ### Synopsis
 
-(Deprecated) Get device
-
-```
-gc mobiledevices get [deviceId] [flags]
-```
+/api/v2/workforcemanagement/managementunits/{managementUnitId}/selfschedule
 
 ### Options
 
 ```
-  -h, --help   help for get
+  -h, --help   help for selfschedule
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +29,7 @@ gc mobiledevices get [deviceId] [flags]
 
 ### SEE ALSO
 
-* [gc mobiledevices](gc_mobiledevices.html)	 - /api/v2/mobiledevices
+* [gc workforcemanagement managementunits](gc_workforcemanagement_managementunits.html)	 - /api/v2/workforcemanagement/managementunits
+* [gc workforcemanagement managementunits selfschedule settings](gc_workforcemanagement_managementunits_selfschedule_settings.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/selfschedule/settings
 
 

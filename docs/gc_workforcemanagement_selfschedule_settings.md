@@ -1,15 +1,15 @@
-## gc mobiledevices
+## gc workforcemanagement selfschedule settings
 
-/api/v2/mobiledevices
+/api/v2/workforcemanagement/selfschedule/settings
 
 ### Synopsis
 
-/api/v2/mobiledevices
+/api/v2/workforcemanagement/selfschedule/settings
 
 ### Options
 
 ```
-  -h, --help   help for mobiledevices
+  -h, --help   help for settings
 ```
 
 ### Options inherited from parent commands
@@ -29,11 +29,7 @@
 
 ### SEE ALSO
 
-* [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
-* [gc mobiledevices create](gc_mobiledevices_create.html)	 - (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device
-* [gc mobiledevices delete](gc_mobiledevices_delete.html)	 - (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device
-* [gc mobiledevices get](gc_mobiledevices_get.html)	 - (Deprecated) Get device
-* [gc mobiledevices list](gc_mobiledevices_list.html)	 - (Deprecated) Get a list of all devices.
-* [gc mobiledevices update](gc_mobiledevices_update.html)	 - (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device
+* [gc workforcemanagement selfschedule](gc_workforcemanagement_selfschedule.html)	 - /api/v2/workforcemanagement/selfschedule
+* [gc workforcemanagement selfschedule settings get](gc_workforcemanagement_selfschedule_settings_get.html)	 - Agent gets the self-schedule management unit settings.
 
 

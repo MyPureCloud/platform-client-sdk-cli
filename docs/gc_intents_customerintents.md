@@ -35,6 +35,7 @@
 * [gc intents customerintents delete](gc_intents_customerintents_delete.html)	 - Delete customer intent for customerIntentId
 * [gc intents customerintents get](gc_intents_customerintents_get.html)	 - Get customer intent for customerIntentId
 * [gc intents customerintents list](gc_intents_customerintents_list.html)	 - Get customer intents
+* [gc intents customerintents similar](gc_intents_customerintents_similar.html)	 - /api/v2/intents/customerintents/similar
 * [gc intents customerintents sourceintents](gc_intents_customerintents_sourceintents.html)	 - /api/v2/intents/customerintents/{customerIntentId}/sourceintents
 * [gc intents customerintents update](gc_intents_customerintents_update.html)	 - Patch customer intent for customerIntentId
 

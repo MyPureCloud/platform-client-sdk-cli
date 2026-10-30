@@ -33,6 +33,6 @@ gc taskmanagement workitems delete [workitemId] [flags]
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
 
 

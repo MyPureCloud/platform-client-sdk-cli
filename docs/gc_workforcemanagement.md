@@ -44,6 +44,7 @@
 * [gc workforcemanagement schedules](gc_workforcemanagement_schedules.html)	 - /api/v2/workforcemanagement/schedules
 * [gc workforcemanagement schedulingjobs](gc_workforcemanagement_schedulingjobs.html)	 - /api/v2/workforcemanagement/schedulingjobs
 * [gc workforcemanagement schedulingpreferences](gc_workforcemanagement_schedulingpreferences.html)	 - /api/v2/workforcemanagement/schedulingpreferences
+* [gc workforcemanagement selfschedule](gc_workforcemanagement_selfschedule.html)	 - /api/v2/workforcemanagement/selfschedule
 * [gc workforcemanagement shifttrades](gc_workforcemanagement_shifttrades.html)	 - /api/v2/workforcemanagement/shifttrades
 * [gc workforcemanagement shifttrading](gc_workforcemanagement_shifttrading.html)	 - /api/v2/workforcemanagement/shifttrading
 * [gc workforcemanagement shrinkage](gc_workforcemanagement_shrinkage.html)	 - /api/v2/workforcemanagement/shrinkage

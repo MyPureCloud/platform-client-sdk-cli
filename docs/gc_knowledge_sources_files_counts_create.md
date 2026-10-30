@@ -1,13 +1,13 @@
-## gc mobiledevices update
+## gc knowledge sources files counts create
 
-(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device
+Get per-source file counts for the selected tag filter
 
 ### Synopsis
 
-(Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device
+Get per-source file counts for the selected tag filter
 
 ```
-gc mobiledevices update [deviceId] [flags]
+gc knowledge sources files counts create [flags]
 ```
 
 ### Options
@@ -15,7 +15,7 @@ gc mobiledevices update [deviceId] [flags]
 ```
   -d, --directory string   Directory path with files containing request bodies
   -f, --file string        File name containing the JSON body
-  -h, --help               help for update
+  -h, --help               help for create
   -b, --printrequestbody   Print the request body format of the API.
 ```
 
@@ -36,6 +36,6 @@ gc mobiledevices update [deviceId] [flags]
 
 ### SEE ALSO
 
-* [gc mobiledevices](gc_mobiledevices.html)	 - /api/v2/mobiledevices
+* [gc knowledge sources files counts](gc_knowledge_sources_files_counts.html)	 - /api/v2/knowledge/sources/files/counts
 
 

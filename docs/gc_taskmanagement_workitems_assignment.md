@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
+* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
 * [gc taskmanagement workitems assignment update](gc_taskmanagement_workitems_assignment_update.html)	 - Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
 
 

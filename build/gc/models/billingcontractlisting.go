@@ -27,7 +27,7 @@ type BillingcontractlistingDud struct {
 // Billingcontractlisting
 type Billingcontractlisting struct { 
     // Entities
-    Entities []Billingcontract `json:"entities"`
+    Entities []Billingcontractsummary `json:"entities"`
 
 
     // NextUri
@@ -45,7 +45,7 @@ type Billingcontractlisting struct {
 
 // String returns a JSON representation of the model
 func (o *Billingcontractlisting) String() string {
-     o.Entities = []Billingcontract{{}} 
+     o.Entities = []Billingcontractsummary{{}} 
     
     
     
@@ -66,7 +66,7 @@ func (u *Billingcontractlisting) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        Entities []Billingcontract `json:"entities"`
+        Entities []Billingcontractsummary `json:"entities"`
         
         NextUri string `json:"nextUri"`
         
@@ -77,7 +77,7 @@ func (u *Billingcontractlisting) MarshalJSON() ([]byte, error) {
     }{
 
         
-        Entities: []Billingcontract{{}},
+        Entities: []Billingcontractsummary{{}},
         
 
 

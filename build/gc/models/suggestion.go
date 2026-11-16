@@ -57,6 +57,9 @@ type SuggestionDud struct {
     Script Suggestionscript `json:"script"`
 
 
+    SuggestedKnowledgeAnswer Suggestiongeneratedknowledgeanswer `json:"suggestedKnowledgeAnswer"`
+
+
     ThirdPartySuggestion Thirdpartysuggestion `json:"thirdPartySuggestion"`
 
 
@@ -66,6 +69,9 @@ type SuggestionDud struct {
 
 // Suggestion
 type Suggestion struct { 
+    
+
+
     
 
 
@@ -138,6 +144,9 @@ func (u *Suggestion) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

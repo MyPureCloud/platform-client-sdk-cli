@@ -50,7 +50,7 @@ type Topicrequest struct {
 
 
     // Strictness - The topic strictness, default value is 72
-    Strictness string `json:"strictness"`
+    Strictness int `json:"strictness"`
 
 
     // ProgramIds - The ids of programs associated to the topic
@@ -110,7 +110,7 @@ func (u *Topicrequest) MarshalJSON() ([]byte, error) {
         
         Description string `json:"description"`
         
-        Strictness string `json:"strictness"`
+        Strictness int `json:"strictness"`
         
         ProgramIds []string `json:"programIds"`
         

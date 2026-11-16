@@ -16,33 +16,12 @@ type CaseplanqueryentitylistingDud struct {
 
     
 
-
-    
-
-
-    
-
-
-    
-
 }
 
 // Caseplanqueryentitylisting
 type Caseplanqueryentitylisting struct { 
     // Entities
     Entities []Caseplan `json:"entities"`
-
-
-    // NextUri
-    NextUri string `json:"nextUri"`
-
-
-    // SelfUri
-    SelfUri string `json:"selfUri"`
-
-
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
 
 
     // After
@@ -53,9 +32,6 @@ type Caseplanqueryentitylisting struct {
 // String returns a JSON representation of the model
 func (o *Caseplanqueryentitylisting) String() string {
      o.Entities = []Caseplan{{}} 
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -76,27 +52,12 @@ func (u *Caseplanqueryentitylisting) MarshalJSON() ([]byte, error) {
         
         Entities []Caseplan `json:"entities"`
         
-        NextUri string `json:"nextUri"`
-        
-        SelfUri string `json:"selfUri"`
-        
-        PreviousUri string `json:"previousUri"`
-        
         After string `json:"after"`
         *Alias
     }{
 
         
         Entities: []Caseplan{{}},
-        
-
-
-        
-
-
-        
-
-
         
 
 

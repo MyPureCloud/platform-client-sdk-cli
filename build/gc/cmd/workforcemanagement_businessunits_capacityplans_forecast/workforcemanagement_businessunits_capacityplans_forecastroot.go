@@ -1,0 +1,12 @@
+package workforcemanagement_businessunits_capacityplans_forecast
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_businessunits_capacityplans_forecast_uploadurls"
+)
+
+func init() {
+	workforcemanagement_businessunits_capacityplans_forecastCmd.AddCommand(workforcemanagement_businessunits_capacityplans_forecast_uploadurls.Cmdworkforcemanagement_businessunits_capacityplans_forecast_uploadurls())
+	workforcemanagement_businessunits_capacityplans_forecastCmd.Short = utils.GenerateCustomDescription(workforcemanagement_businessunits_capacityplans_forecastCmd.Short, workforcemanagement_businessunits_capacityplans_forecast_uploadurls.Description, )
+	workforcemanagement_businessunits_capacityplans_forecastCmd.Long = workforcemanagement_businessunits_capacityplans_forecastCmd.Short
+}

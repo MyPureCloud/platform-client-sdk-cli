@@ -115,6 +115,8 @@ func Cmdscim_groups() *cobra.Command {
 }`)
 	scim_groupsCmd.AddCommand(replaceCmd)
 
+	utils.AddFlag(updateCmd.Flags(), "[]string", "attributes", "", "Indicates which attributes to include. Returns these attributes and the id, active, and meta attributes. Use attributes to avoid expensive secondary calls for the default attributes. Valid values: id, displayName, members, externalId, meta, meta.version, meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:id, urn:ietf:params:scim:schemas:core:2.0:Group:meta, urn:ietf:params:scim:schemas:core:2.0:Group:meta.version, urn:ietf:params:scim:schemas:core:2.0:Group:meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:displayName, urn:ietf:params:scim:schemas:core:2.0:Group:members, urn:ietf:params:scim:schemas:core:2.0:Group:externalId")
+	utils.AddFlag(updateCmd.Flags(), "[]string", "excludedAttributes", "", "Indicates which attributes to exclude. Returns the default attributes minus excludedAttributes. Always returns id, active, and meta attributes. Use excludedAttributes to avoid expensive secondary calls for the default attributes. Valid values: id, displayName, members, externalId, meta, meta.version, meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:id, urn:ietf:params:scim:schemas:core:2.0:Group:meta, urn:ietf:params:scim:schemas:core:2.0:Group:meta.version, urn:ietf:params:scim:schemas:core:2.0:Group:meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:displayName, urn:ietf:params:scim:schemas:core:2.0:Group:members, urn:ietf:params:scim:schemas:core:2.0:Group:externalId")
 	utils.AddFlag(updateCmd.Flags(), "string", "ifMatch", "", "The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: 42. If the ETag is different from the version on the server, returns 400 with a scimType of invalidVers.")
 	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/scim/groups/{groupId}", utils.FormatPermissions([]string{ "directory:group:edit",  }), utils.GenerateDevCentreLink("PATCH", "SCIM", "/api/v2/scim/groups/{groupId}")))
 	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
@@ -478,6 +480,14 @@ var updateCmd = &cobra.Command{
 		groupId, args := args[0], args[1:]
 		path = strings.Replace(path, "{groupId}", fmt.Sprintf("%v", groupId), -1)
 
+		attributes := utils.GetFlag(cmd.Flags(), "[]string", "attributes")
+		if attributes != "" {
+			queryParams["attributes"] = attributes
+		}
+		excludedAttributes := utils.GetFlag(cmd.Flags(), "[]string", "excludedAttributes")
+		if excludedAttributes != "" {
+			queryParams["excludedAttributes"] = excludedAttributes
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

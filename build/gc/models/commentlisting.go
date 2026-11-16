@@ -16,12 +16,6 @@ type CommentlistingDud struct {
 
     
 
-
-    
-
-
-    
-
 }
 
 // Commentlisting
@@ -33,21 +27,11 @@ type Commentlisting struct {
     // NextUri
     NextUri string `json:"nextUri"`
 
-
-    // SelfUri
-    SelfUri string `json:"selfUri"`
-
-
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Commentlisting) String() string {
      o.Entities = []Comment{{}} 
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -69,21 +53,11 @@ func (u *Commentlisting) MarshalJSON() ([]byte, error) {
         Entities []Comment `json:"entities"`
         
         NextUri string `json:"nextUri"`
-        
-        SelfUri string `json:"selfUri"`
-        
-        PreviousUri string `json:"previousUri"`
         *Alias
     }{
 
         
         Entities: []Comment{{}},
-        
-
-
-        
-
-
         
 
 

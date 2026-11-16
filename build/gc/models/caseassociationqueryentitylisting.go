@@ -16,33 +16,12 @@ type CaseassociationqueryentitylistingDud struct {
 
     
 
-
-    
-
-
-    
-
-
-    
-
 }
 
 // Caseassociationqueryentitylisting
 type Caseassociationqueryentitylisting struct { 
     // Entities
     Entities []Caseassociation `json:"entities"`
-
-
-    // NextUri
-    NextUri string `json:"nextUri"`
-
-
-    // SelfUri
-    SelfUri string `json:"selfUri"`
-
-
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
 
 
     // After
@@ -53,9 +32,6 @@ type Caseassociationqueryentitylisting struct {
 // String returns a JSON representation of the model
 func (o *Caseassociationqueryentitylisting) String() string {
      o.Entities = []Caseassociation{{}} 
-    
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -76,27 +52,12 @@ func (u *Caseassociationqueryentitylisting) MarshalJSON() ([]byte, error) {
         
         Entities []Caseassociation `json:"entities"`
         
-        NextUri string `json:"nextUri"`
-        
-        SelfUri string `json:"selfUri"`
-        
-        PreviousUri string `json:"previousUri"`
-        
         After string `json:"after"`
         *Alias
     }{
 
         
         Entities: []Caseassociation{{}},
-        
-
-
-        
-
-
-        
-
-
         
 
 

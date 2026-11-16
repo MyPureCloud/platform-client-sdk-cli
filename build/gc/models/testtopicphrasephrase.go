@@ -25,7 +25,7 @@ type Testtopicphrasephrase struct {
 
 
     // Strictness - The phrase strictness, default value is null
-    Strictness string `json:"strictness"`
+    Strictness int `json:"strictness"`
 
 }
 
@@ -52,7 +52,7 @@ func (u *Testtopicphrasephrase) MarshalJSON() ([]byte, error) {
         
         Text string `json:"text"`
         
-        Strictness string `json:"strictness"`
+        Strictness int `json:"strictness"`
         *Alias
     }{
 

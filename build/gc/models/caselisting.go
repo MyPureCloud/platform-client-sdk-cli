@@ -16,12 +16,6 @@ type CaselistingDud struct {
 
     
 
-
-    
-
-
-    
-
 }
 
 // Caselisting
@@ -33,21 +27,11 @@ type Caselisting struct {
     // NextUri
     NextUri string `json:"nextUri"`
 
-
-    // SelfUri
-    SelfUri string `json:"selfUri"`
-
-
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Caselisting) String() string {
      o.Entities = []Case{{}} 
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -69,21 +53,11 @@ func (u *Caselisting) MarshalJSON() ([]byte, error) {
         Entities []Case `json:"entities"`
         
         NextUri string `json:"nextUri"`
-        
-        SelfUri string `json:"selfUri"`
-        
-        PreviousUri string `json:"previousUri"`
         *Alias
     }{
 
         
         Entities: []Case{{}},
-        
-
-
-        
-
-
         
 
 

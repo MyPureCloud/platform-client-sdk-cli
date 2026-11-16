@@ -53,6 +53,12 @@ type BillingcontractDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Billingcontract
@@ -108,8 +114,16 @@ type Billingcontract struct {
     BillingPeriods []Billingcontractperiod `json:"billingPeriods"`
 
 
+    // Organizations - Organizations associated with the contract, deduplicated from plan associations.
+    Organizations []Namedentity `json:"organizations"`
+
+
     // Plans - The collection of prices for the related organizations.
     Plans []Billingplan `json:"plans"`
+
+
+    // Wallets - Wallet balances for the contract.
+    Wallets []Billingwallet `json:"wallets"`
 
 }
 
@@ -127,7 +141,9 @@ func (o *Billingcontract) String() string {
     
     
      o.BillingPeriods = []Billingcontractperiod{{}} 
+     o.Organizations = []Namedentity{{}} 
      o.Plans = []Billingplan{{}} 
+     o.Wallets = []Billingwallet{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -169,7 +185,11 @@ func (u *Billingcontract) MarshalJSON() ([]byte, error) {
         
         BillingPeriods []Billingcontractperiod `json:"billingPeriods"`
         
+        Organizations []Namedentity `json:"organizations"`
+        
         Plans []Billingplan `json:"plans"`
+        
+        Wallets []Billingwallet `json:"wallets"`
         *Alias
     }{
 
@@ -217,7 +237,17 @@ func (u *Billingcontract) MarshalJSON() ([]byte, error) {
 
 
         
+        Organizations: []Namedentity{{}},
+        
+
+
+        
         Plans: []Billingplan{{}},
+        
+
+
+        
+        Wallets: []Billingwallet{{}},
         
 
         Alias: (*Alias)(u),

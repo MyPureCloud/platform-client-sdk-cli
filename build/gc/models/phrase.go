@@ -31,7 +31,7 @@ type Phrase struct {
 
 
     // Strictness - The phrase strictness, default value is null
-    Strictness string `json:"strictness"`
+    Strictness int `json:"strictness"`
 
 
     // Sentiment - The phrase sentiment, default value is Unspecified. Note: Sentiment value for phrases is currently not in use and has no impact to the system.
@@ -68,7 +68,7 @@ func (u *Phrase) MarshalJSON() ([]byte, error) {
         
         Text string `json:"text"`
         
-        Strictness string `json:"strictness"`
+        Strictness int `json:"strictness"`
         
         Sentiment string `json:"sentiment"`
         

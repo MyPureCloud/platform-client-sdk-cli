@@ -453,6 +453,7 @@ gc/cmd/conversations_recordingmetadata/conversations_recordingmetadata.go
 gc/cmd/conversations_recordings/conversations_recordings.go
 gc/cmd/conversations_recordings_annotations/conversations_recordings_annotations.go
 gc/cmd/conversations_recordingstate/conversations_recordingstate.go
+gc/cmd/conversations_screenmonitors/conversations_screenmonitors.go
 gc/cmd/conversations_screenshares_participants_communications_wrapup/conversations_screenshares_participants_communications_wrapup.go
 gc/cmd/conversations_screenshares_recordingstate/conversations_screenshares_recordingstate.go
 gc/cmd/conversations_secureattributes/conversations_secureattributes.go
@@ -1248,6 +1249,7 @@ gc/cmd/socialmedia_twitter_historical_tweets/socialmedia_twitter_historical_twee
 gc/cmd/speechandtextanalytics_categories/speechandtextanalytics_categories.go
 gc/cmd/speechandtextanalytics_conversations/speechandtextanalytics_conversations.go
 gc/cmd/speechandtextanalytics_conversations_categories/speechandtextanalytics_conversations_categories.go
+gc/cmd/speechandtextanalytics_conversations_communications_transcriptoutline/speechandtextanalytics_conversations_communications_transcriptoutline.go
 gc/cmd/speechandtextanalytics_conversations_communications_transcripturl/speechandtextanalytics_conversations_communications_transcripturl.go
 gc/cmd/speechandtextanalytics_conversations_communications_transcripturls/speechandtextanalytics_conversations_communications_transcripturls.go
 gc/cmd/speechandtextanalytics_conversations_sentiments/speechandtextanalytics_conversations_sentiments.go
@@ -1394,6 +1396,7 @@ gc/cmd/telephony_sipmessages_conversations/telephony_sipmessages_conversations.g
 gc/cmd/telephony_sipmessages_conversations_headers/telephony_sipmessages_conversations_headers.go
 gc/cmd/telephony_siptraces/telephony_siptraces.go
 gc/cmd/telephony_siptraces_download/telephony_siptraces_download.go
+gc/cmd/telephony_trunkbasesettings_metrics/telephony_trunkbasesettings_metrics.go
 gc/cmd/textbots_botflows_sessions/textbots_botflows_sessions.go
 gc/cmd/textbots_botflows_sessions_turns/textbots_botflows_sessions_turns.go
 gc/cmd/textbots_bots_execute/textbots_bots_execute.go
@@ -1549,6 +1552,7 @@ gc/cmd/workforcemanagement_businessunits_activitycodes_bulk/workforcemanagement_
 gc/cmd/workforcemanagement_businessunits_activityplans/workforcemanagement_businessunits_activityplans.go
 gc/cmd/workforcemanagement_businessunits_activityplans_deletions_jobs/workforcemanagement_businessunits_activityplans_deletions_jobs.go
 gc/cmd/workforcemanagement_businessunits_activityplans_jobs/workforcemanagement_businessunits_activityplans_jobs.go
+gc/cmd/workforcemanagement_businessunits_activityplans_occurrences/workforcemanagement_businessunits_activityplans_occurrences.go
 gc/cmd/workforcemanagement_businessunits_activityplans_occurrences_deletions_jobs/workforcemanagement_businessunits_activityplans_occurrences_deletions_jobs.go
 gc/cmd/workforcemanagement_businessunits_activityplans_occurrences_sessions_deletions_jobs/workforcemanagement_businessunits_activityplans_occurrences_sessions_deletions_jobs.go
 gc/cmd/workforcemanagement_businessunits_activityplans_occurrences_sessions_users_deletions_jobs/workforcemanagement_businessunits_activityplans_occurrences_sessions_users_deletions_jobs.go
@@ -1571,6 +1575,7 @@ gc/cmd/workforcemanagement_businessunits_capacityplans/workforcemanagement_busin
 gc/cmd/workforcemanagement_businessunits_capacityplans_bulk_remove/workforcemanagement_businessunits_capacityplans_bulk_remove.go
 gc/cmd/workforcemanagement_businessunits_capacityplans_copy/workforcemanagement_businessunits_capacityplans_copy.go
 gc/cmd/workforcemanagement_businessunits_capacityplans_forecast/workforcemanagement_businessunits_capacityplans_forecast.go
+gc/cmd/workforcemanagement_businessunits_capacityplans_forecast_uploadurls/workforcemanagement_businessunits_capacityplans_forecast_uploadurls.go
 gc/cmd/workforcemanagement_businessunits_capacityplans_requirement_generate/workforcemanagement_businessunits_capacityplans_requirement_generate.go
 gc/cmd/workforcemanagement_businessunits_capacityplans_staffinggroupallocations/workforcemanagement_businessunits_capacityplans_staffinggroupallocations.go
 gc/cmd/workforcemanagement_businessunits_capacityplans_staffinggroupallocationshistory/workforcemanagement_businessunits_capacityplans_staffinggroupallocationshistory.go
@@ -1812,17 +1817,25 @@ gc/models/activityplanjoblisting.go
 gc/models/activityplanjobresponse.go
 gc/models/activityplanlisting.go
 gc/models/activityplanlistitem.go
+gc/models/activityplanoccurrencelisting.go
+gc/models/activityplanoccurrencelistitem.go
 gc/models/activityplanoccurrencereference.go
+gc/models/activityplanoccurrenceresponse.go
 gc/models/activityplanoccurrencesdeletionjobresponse.go
 gc/models/activityplanoccurrencesessionsusersstructurereference.go
+gc/models/activityplanoccurrencesessionwithattendees.go
+gc/models/activityplanoccurrenceviolation.go
 gc/models/activityplanreference.go
 gc/models/activityplanresponse.go
 gc/models/activityplanrunjobresponse.go
 gc/models/activityplanservicegoalimpactoverrides.go
 gc/models/activityplanservicelevelimpactoverride.go
 gc/models/activityplansessionstructurereference.go
+gc/models/activityplansessionviolation.go
 gc/models/activityplanstructurewithoccurrencesessionsusersreference.go
 gc/models/activityplanstructurewithoccurrencesreference.go
+gc/models/activityplanunscheduledattendee.go
+gc/models/activityplanviolationdetails.go
 gc/models/acwsettings.go
 gc/models/addadherenceadjustmentagentrequest.go
 gc/models/addadherenceexplanationadminrequest.go
@@ -1929,7 +1942,12 @@ gc/models/agenticvirtualagentguardrailssettingsallof.go
 gc/models/agenticvirtualagentinputvalidation.go
 gc/models/agenticvirtualagentjob.go
 gc/models/agenticvirtualagentknowledgebasetool.go
+gc/models/agenticvirtualagentknowledgebasetoolallof.go
 gc/models/agenticvirtualagentknowledgesettingtool.go
+gc/models/agenticvirtualagentknowledgesettingtoolallof.go
+gc/models/agenticvirtualagentmcpschemas.go
+gc/models/agenticvirtualagentmcptool.go
+gc/models/agenticvirtualagentmcptoolallof.go
 gc/models/agenticvirtualagentpropertydefinition.go
 gc/models/agenticvirtualagentpythoninputvalidation.go
 gc/models/agenticvirtualagentpythoninputvalidationallof.go
@@ -2021,6 +2039,11 @@ gc/models/agentstatesessionfilter.go
 gc/models/agentstatesessionqueryclause.go
 gc/models/agentstatesessionquerypredicate.go
 gc/models/agentstateuserfilter.go
+gc/models/agentstateworkitemassignmentstatecount.go
+gc/models/agentstateworkitemfilter.go
+gc/models/agentstateworkitemqueryclause.go
+gc/models/agentstateworkitemquerypredicate.go
+gc/models/agentstateworkitemstatuscategorycount.go
 gc/models/agentsworkplansresponse.go
 gc/models/agenttimeoffrequestpatch.go
 gc/models/agentupdatealternativeshifttraderequest.go
@@ -2093,6 +2116,7 @@ gc/models/amazonlexrequest.go
 gc/models/analyticsagentgroup.go
 gc/models/analyticsagentstateagentresponse.go
 gc/models/analyticsagentstateagentsessionresult.go
+gc/models/analyticsagentstateagentworkitemresult.go
 gc/models/analyticsagentstatecountsresponse.go
 gc/models/analyticsagentstatequeryresponse.go
 gc/models/analyticsconversation.go
@@ -2229,6 +2253,8 @@ gc/models/auditrealtimequeryrequest.go
 gc/models/auditrealtimequeryresultsresponse.go
 gc/models/auditrealtimerelatedrequest.go
 gc/models/auditrealtimerelatedresultsresponse.go
+gc/models/authenticationextensionslargebloboutputs.go
+gc/models/authenticationextensionsprfoutputs.go
 gc/models/authenticationproperties.go
 gc/models/authenticationsettings.go
 gc/models/authenticatorattestationresponse.go
@@ -2286,11 +2312,13 @@ gc/models/bidgroupworkplanrequest.go
 gc/models/bidgroupworkplanresponse.go
 gc/models/bidgroupworkplanrotationrequest.go
 gc/models/bidgroupworkplanrotationresponse.go
+gc/models/billingaisubitem.go
 gc/models/billingcharge.go
 gc/models/billingcontract.go
 gc/models/billingcontractlisting.go
 gc/models/billingcontractperiod.go
 gc/models/billingcontractperioddetail.go
+gc/models/billingcontractsummary.go
 gc/models/billinginvoice.go
 gc/models/billinginvoiceitem.go
 gc/models/billinginvoiceitemlisting.go
@@ -2358,7 +2386,7 @@ gc/models/buagentschedulesearchresponse.go
 gc/models/buagentscheduleshift.go
 gc/models/buagentscheduleshiftrequest.go
 gc/models/buagentschedulesqueryresponse.go
-gc/models/buagentschedulessearchresponse.go
+gc/models/buagentschedulessearchresponsebuagentschedulesearchresponse.go
 gc/models/buagentscheduleupdate.go
 gc/models/bualternativeshiftjobresponse.go
 gc/models/buasyncagentschedulesqueryresponse.go
@@ -2521,6 +2549,8 @@ gc/models/buschedulersettingsrequest.go
 gc/models/buschedulersettingsresponse.go
 gc/models/buschedulerun.go
 gc/models/buschedulerunlisting.go
+gc/models/buschedulesearchagentscheduleresponse.go
+gc/models/buschedulesummary.go
 gc/models/buschedulingsettingsrequest.go
 gc/models/buschedulingsettingsresponse.go
 gc/models/busearchagentschedulesrequest.go
@@ -2614,6 +2644,7 @@ gc/models/campaigndiagnosticwindow.go
 gc/models/campaigndivisionview.go
 gc/models/campaigndivisionviewlisting.go
 gc/models/campaignentitylisting.go
+gc/models/campaignidentityresolutionconfig.go
 gc/models/campaigninteraction.go
 gc/models/campaigninteractions.go
 gc/models/campaignlinesutilization.go
@@ -2641,6 +2672,7 @@ gc/models/campaignruledayofweekparameters.go
 gc/models/campaignruleentities.go
 gc/models/campaignruleentitylisting.go
 gc/models/campaignruleexecutionsettings.go
+gc/models/campaignruleoutboundblendingsettings.go
 gc/models/campaignruleparameters.go
 gc/models/campaignrulespecificdateinterval.go
 gc/models/campaignrulespecificdateparameters.go
@@ -2659,9 +2691,17 @@ gc/models/campaignstats.go
 gc/models/campaigntimeslot.go
 gc/models/cannedresponselibraries.go
 gc/models/capacityplandeleterequest.go
+gc/models/capacityplanforecastactualvalues.go
+gc/models/capacityplanforecastdistribution.go
+gc/models/capacityplanforecastdistributionvalues.go
+gc/models/capacityplanforecastimportschema.go
+gc/models/capacityplanforecastimportupload.go
+gc/models/capacityplanforecastimportuploadrequest.go
+gc/models/capacityplanforecastimportuploadresponse.go
 gc/models/capacityplanforecastinputsresponse.go
 gc/models/capacityplanforecastinputstemplate.go
 gc/models/capacityplanforecastmetrics.go
+gc/models/capacityplanforecastplanninggroup.go
 gc/models/capacityplanimportedforecast.go
 gc/models/capacityplanimportedforecastrequest.go
 gc/models/capacityplanlistitem.go
@@ -2781,6 +2821,7 @@ gc/models/chunksearchregisterrequest.go
 gc/models/clientapp.go
 gc/models/clientappconfigurationinfo.go
 gc/models/clientappentitylisting.go
+gc/models/clientextensionresults.go
 gc/models/clientpublicapiusage.go
 gc/models/clientpublicapiusagequeryrequest.go
 gc/models/clientpublicapiusageresultsresponse.go
@@ -3281,6 +3322,7 @@ gc/models/credentialinfo.go
 gc/models/credentialinfocursorlisting.go
 gc/models/credentialinfolisting.go
 gc/models/credentialparameter.go
+gc/models/credentialpropertiesoutput.go
 gc/models/credentialspecification.go
 gc/models/credentialtype.go
 gc/models/criteria.go
@@ -3337,6 +3379,7 @@ gc/models/customerintentlisting.go
 gc/models/customerintentpatch.go
 gc/models/customerintentreference.go
 gc/models/customerintentresponse.go
+gc/models/customerintentusage.go
 gc/models/customerinteractioncenter.go
 gc/models/customersourceintent.go
 gc/models/customersourceintentlisting.go
@@ -3429,6 +3472,7 @@ gc/models/definition.go
 gc/models/deletableuserreference.go
 gc/models/deleteprogramresponse.go
 gc/models/deleteretention.go
+gc/models/deleteverifierresponse.go
 gc/models/dependency.go
 gc/models/dependencycount.go
 gc/models/dependencyentity.go
@@ -5716,7 +5760,10 @@ gc/models/scimv2user.go
 gc/models/scorablesurvey.go
 gc/models/scoredagent.go
 gc/models/screenmonitoring.go
+gc/models/screenmonitoringconversation.go
+gc/models/screenmonitoringconversationentitylisting.go
 gc/models/screenmonitoringdetails.go
+gc/models/screenmonitoringparticipant.go
 gc/models/screenmonitoringsession.go
 gc/models/screenmonitoringsessionentitylisting.go
 gc/models/screenmonitoringuserdetails.go
@@ -6281,6 +6328,8 @@ gc/models/transcriptcategories.go
 gc/models/transcriptionconfig.go
 gc/models/transcriptionenginesrequest.go
 gc/models/transcriptionsettings.go
+gc/models/transcriptoutlineresponse.go
+gc/models/transcriptoutlinesegment.go
 gc/models/transcripts.go
 gc/models/transcriptsearchcriteria.go
 gc/models/transcriptsearchrequest.go
@@ -6312,6 +6361,8 @@ gc/models/trunk.go
 gc/models/trunkbase.go
 gc/models/trunkbaseassignment.go
 gc/models/trunkbaseentitylisting.go
+gc/models/trunkbasemetrics.go
+gc/models/trunkbasemetricsentitylisting.go
 gc/models/trunkbasessearchresponse.go
 gc/models/trunkconnectedstatus.go
 gc/models/trunkentitylisting.go

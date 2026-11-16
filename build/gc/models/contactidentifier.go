@@ -26,6 +26,9 @@ type ContactidentifierDud struct {
 
     
 
+
+    
+
 }
 
 // Contactidentifier
@@ -49,10 +52,15 @@ type Contactidentifier struct {
     // ExternalSource - The External Source ID of the identifier
     ExternalSource Externalsource `json:"externalSource"`
 
+
+    // PortfolioId - The portfolio id associated with the identifier. Only applicable to identifiers of type SocialWhatsappBsuid.
+    PortfolioId string `json:"portfolioId"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Contactidentifier) String() string {
+    
     
     
     
@@ -84,8 +92,13 @@ func (u *Contactidentifier) MarshalJSON() ([]byte, error) {
         DateCreated time.Time `json:"dateCreated"`
         
         ExternalSource Externalsource `json:"externalSource"`
+        
+        PortfolioId string `json:"portfolioId"`
         *Alias
     }{
+
+        
+
 
         
 

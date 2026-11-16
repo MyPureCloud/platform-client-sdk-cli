@@ -29,12 +29,15 @@ type BucurrentagentschedulesearchresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Bucurrentagentschedulesearchresponse
 type Bucurrentagentschedulesearchresponse struct { 
     // AgentSchedules - The requested agent schedules
-    AgentSchedules []Buagentschedulesearchresponse `json:"agentSchedules"`
+    AgentSchedules []Buschedulesearchagentscheduleresponse `json:"agentSchedules"`
 
 
     // BusinessUnitTimeZone - The time zone configured for the business unit to which this schedule applies
@@ -56,16 +59,21 @@ type Bucurrentagentschedulesearchresponse struct {
     // Updates - The list of updates for the schedule. Only used in notifications
     Updates []Buagentscheduleupdate `json:"updates"`
 
+
+    // VisibilityRange - The schedule visibility range
+    VisibilityRange Schedulevisibilityrange `json:"visibilityRange"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Bucurrentagentschedulesearchresponse) String() string {
-     o.AgentSchedules = []Buagentschedulesearchresponse{{}} 
+     o.AgentSchedules = []Buschedulesearchagentscheduleresponse{{}} 
     
      o.PublishedSchedules = []Buagentschedulepublishedschedulereference{{}} 
     
     
      o.Updates = []Buagentscheduleupdate{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -83,7 +91,7 @@ func (u *Bucurrentagentschedulesearchresponse) MarshalJSON() ([]byte, error) {
 
     return json.Marshal(&struct {
         
-        AgentSchedules []Buagentschedulesearchresponse `json:"agentSchedules"`
+        AgentSchedules []Buschedulesearchagentscheduleresponse `json:"agentSchedules"`
         
         BusinessUnitTimeZone string `json:"businessUnitTimeZone"`
         
@@ -94,11 +102,13 @@ func (u *Bucurrentagentschedulesearchresponse) MarshalJSON() ([]byte, error) {
         EndDate time.Time `json:"endDate"`
         
         Updates []Buagentscheduleupdate `json:"updates"`
+        
+        VisibilityRange Schedulevisibilityrange `json:"visibilityRange"`
         *Alias
     }{
 
         
-        AgentSchedules: []Buagentschedulesearchresponse{{}},
+        AgentSchedules: []Buschedulesearchagentscheduleresponse{{}},
         
 
 
@@ -118,6 +128,9 @@ func (u *Bucurrentagentschedulesearchresponse) MarshalJSON() ([]byte, error) {
 
         
         Updates: []Buagentscheduleupdate{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

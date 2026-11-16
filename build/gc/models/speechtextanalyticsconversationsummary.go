@@ -41,6 +41,12 @@ type SpeechtextanalyticsconversationsummaryDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Speechtextanalyticsconversationsummary
@@ -84,6 +90,14 @@ type Speechtextanalyticsconversationsummary struct {
     // Insights - Insights of the conversation
     Insights []Conversationinsight `json:"insights"`
 
+
+    // CommunicationId - The id of the communication associated with this summary
+    CommunicationId string `json:"communicationId"`
+
+
+    // Labels - The summary labels
+    Labels []Speechtextanalyticssummarylabel `json:"labels"`
+
 }
 
 // String returns a JSON representation of the model
@@ -98,6 +112,8 @@ func (o *Speechtextanalyticsconversationsummary) String() string {
     
     
      o.Insights = []Conversationinsight{{}} 
+    
+     o.Labels = []Speechtextanalyticssummarylabel{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -134,6 +150,10 @@ func (u *Speechtextanalyticsconversationsummary) MarshalJSON() ([]byte, error) {
         DateCreated time.Time `json:"dateCreated"`
         
         Insights []Conversationinsight `json:"insights"`
+        
+        CommunicationId string `json:"communicationId"`
+        
+        Labels []Speechtextanalyticssummarylabel `json:"labels"`
         *Alias
     }{
 
@@ -166,6 +186,14 @@ func (u *Speechtextanalyticsconversationsummary) MarshalJSON() ([]byte, error) {
 
         
         Insights: []Conversationinsight{{}},
+        
+
+
+        
+
+
+        
+        Labels: []Speechtextanalyticssummarylabel{{}},
         
 
         Alias: (*Alias)(u),

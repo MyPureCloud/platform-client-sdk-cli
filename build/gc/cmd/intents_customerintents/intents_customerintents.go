@@ -64,6 +64,7 @@ func Cmdintents_customerintents() *cobra.Command {
 }`)
 	intents_customerintentsCmd.AddCommand(deleteCmd)
 
+	utils.AddFlag(getCmd.Flags(), "bool", "includeUsage", "", "When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off.")
 	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/intents/customerintents/{customerIntentId}", utils.FormatPermissions([]string{ "externalContacts:customerIntentTaxonomy:view",  }), utils.GenerateDevCentreLink("GET", "Intents", "/api/v2/intents/customerintents/{customerIntentId}")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
@@ -321,6 +322,10 @@ var getCmd = &cobra.Command{
 		customerIntentId, args := args[0], args[1:]
 		path = strings.Replace(path, "{customerIntentId}", fmt.Sprintf("%v", customerIntentId), -1)
 
+		includeUsage := utils.GetFlag(cmd.Flags(), "bool", "includeUsage")
+		if includeUsage != "" {
+			queryParams["includeUsage"] = includeUsage
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

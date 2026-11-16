@@ -47,6 +47,9 @@ type CopilotDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -70,6 +73,10 @@ type Copilot struct {
 
     // SummaryGenerationConfig - Copilot generated summary configuration.
     SummaryGenerationConfig Summarygenerationconfig `json:"summaryGenerationConfig"`
+
+
+    // EmailSummaryGenerationConfig - Email summary configuration.
+    EmailSummaryGenerationConfig Emailsummarygenerationconfig `json:"emailSummaryGenerationConfig"`
 
 
     // WrapupCodePredictionConfig - Copilot generated wrapup code prediction configuration.
@@ -117,6 +124,7 @@ func (o *Copilot) String() string {
     
     
     
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -142,6 +150,8 @@ func (u *Copilot) MarshalJSON() ([]byte, error) {
         
         SummaryGenerationConfig Summarygenerationconfig `json:"summaryGenerationConfig"`
         
+        EmailSummaryGenerationConfig Emailsummarygenerationconfig `json:"emailSummaryGenerationConfig"`
+        
         WrapupCodePredictionConfig Wrapupcodepredictionconfig `json:"wrapupCodePredictionConfig"`
         
         AnswerGenerationConfig Answergenerationconfig `json:"answerGenerationConfig"`
@@ -157,6 +167,9 @@ func (u *Copilot) MarshalJSON() ([]byte, error) {
         ManualSearchConfig Manualsearchconfig `json:"manualSearchConfig"`
         *Alias
     }{
+
+        
+
 
         
 

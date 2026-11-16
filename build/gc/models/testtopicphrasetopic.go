@@ -34,7 +34,7 @@ type Testtopicphrasetopic struct {
 
 
     // Strictness - The topic strictness, default value is 72
-    Strictness string `json:"strictness"`
+    Strictness int `json:"strictness"`
 
 
     // MatchingType - The topic matching type Lexical or Semantic, default value is Semantic
@@ -76,7 +76,7 @@ func (u *Testtopicphrasetopic) MarshalJSON() ([]byte, error) {
         
         Phrase Testtopicphrasephrase `json:"phrase"`
         
-        Strictness string `json:"strictness"`
+        Strictness int `json:"strictness"`
         
         MatchingType string `json:"matchingType"`
         

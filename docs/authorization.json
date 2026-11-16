@@ -73,9 +73,9 @@
       "description": "Get a page of access policies for an organization"
     },
     {
-      "name": "list",
-      "path": "/api/v2/authorization/policies/subject/{subjectId}",
-      "description": "Get a page of access policies for a given subject"
+      "name": "create",
+      "path": "/api/v2/authorization/policies/targets/{targetName}/validate",
+      "description": "Validate the conditions and attributes of an access control policy for a specified resource target"
     },
     {
       "name": "get",
@@ -86,6 +86,11 @@
       "name": "delete",
       "path": "/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}",
       "description": "Delete an access control policy"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/authorization/policies/subject/{subjectId}",
+      "description": "Get a page of access policies for a given subject"
     },
     {
       "name": "get",
@@ -111,11 +116,6 @@
       "name": "get",
       "path": "/api/v2/authorization/policies/targets",
       "description": "Get a map of policy targets to valid attributes for those targets"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/authorization/policies/targets/{targetName}/validate",
-      "description": "Validate the conditions and attributes of an access control policy for a specified resource target"
     },
     {
       "name": "get",
@@ -168,11 +168,6 @@
       "description": "Bulk-grant roles and divisions to a subject."
     },
     {
-      "name": "get",
-      "path": "/api/v2/authorization/subjects/{subjectId}",
-      "description": "Returns a listing of roles and permissions for a user."
-    },
-    {
       "name": "create",
       "path": "/api/v2/authorization/subjects/{subjectId}/bulkreplace",
       "description": "Replace subject's roles and divisions with the exact list supplied in the request."
@@ -181,6 +176,11 @@
       "name": "create",
       "path": "/api/v2/authorization/subjects/{subjectId}/bulkremove",
       "description": "Bulk-remove grants from a subject."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/subjects/{subjectId}",
+      "description": "Returns a listing of roles and permissions for a user."
     },
     {
       "name": "list",

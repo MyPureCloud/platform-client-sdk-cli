@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("users_verifiers", "SWAGGER_OVERRIDE_/api/v2/users/{userId}/verifiers", "SWAGGER_OVERRIDE_/api/v2/users/{userId}/verifiers", "SWAGGER_OVERRIDE_/api/v2/users/{userId}/verifiers", )
+	Description = utils.FormatUsageDescription("users_verifiers", "SWAGGER_OVERRIDE_/api/v2/users/{userId}/verifiers", "SWAGGER_OVERRIDE_/api/v2/users/{userId}/verifiers", "SWAGGER_OVERRIDE_/api/v2/users/{userId}/verifiers", "SWAGGER_OVERRIDE_/api/v2/users/{userId}/verifiers", )
 	users_verifiersCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("users_verifiers"),
 		Short: Description,
@@ -37,6 +37,22 @@ func Cmdusers_verifiers() *cobra.Command {
   "content" : { }
 }`)
 	users_verifiersCmd.AddCommand(deleteCmd)
+
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/verifiers/{verifierId}", utils.FormatPermissions([]string{ "mfa:verifier:view",  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/{userId}/verifiers/{verifierId}")))
+	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
+	
+	
+	utils.AddPaginateFlagsIfListingResponse(getCmd.Flags(), "GET", `{
+  "description" : "successful operation",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Verifier"
+      }
+    }
+  }
+}`)
+	users_verifiersCmd.AddCommand(getCmd)
 
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/users/{userId}/verifiers", utils.FormatPermissions([]string{ "mfa:verifier:view",  }), utils.GenerateDevCentreLink("GET", "Users", "/api/v2/users/{userId}/verifiers")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
@@ -143,6 +159,91 @@ var deleteCmd = &cobra.Command{
 
 		const opId = "delete"
 		const httpMethod = "DELETE"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
+			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
+		utils.Render(results)
+	},
+}
+var getCmd = &cobra.Command{
+	Use:   "get [userId] [verifierId]",
+	Short: "Get a verifier",
+	Long:  "Get a verifier",
+	Args:  utils.DetermineArgs([]string{ "userId", "verifierId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/users/{userId}/verifiers/{verifierId}"
+		userId, args := args[0], args[1:]
+		path = strings.Replace(path, "{userId}", fmt.Sprintf("%v", userId), -1)
+		verifierId, args := args[0], args[1:]
+		path = strings.Replace(path, "{verifierId}", fmt.Sprintf("%v", verifierId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
+		headerParams := make(map[string]string)
+		// to determine the Content-Type header
+		localVarHttpContentTypes := []string{ "application/json",  }
+		// set Content-Type header
+		localVarHttpContentType := utils.SelectHeaderContentType(localVarHttpContentTypes)
+		if localVarHttpContentType != "" {
+			headerParams["Content-Type"] = localVarHttpContentType
+		}
+		// to determine the Accept header
+		localVarHttpHeaderAccepts := []string{
+			"application/json",
+		}
+		// set Accept header
+		localVarHttpHeaderAccept := utils.SelectHeaderAccept(localVarHttpHeaderAccepts)
+		if localVarHttpHeaderAccept != "" {
+			headerParams["Accept"] = localVarHttpHeaderAccept
+		}
+
+		const opId = "get"
+		const httpMethod = "GET"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

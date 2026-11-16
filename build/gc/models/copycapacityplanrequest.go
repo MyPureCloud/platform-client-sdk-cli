@@ -26,6 +26,9 @@ type CopycapacityplanrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Copycapacityplanrequest
@@ -46,13 +49,18 @@ type Copycapacityplanrequest struct {
     EndBusinessUnitDate time.Time `json:"endBusinessUnitDate"`
 
 
-    // Forecast - The selected forecast for this capacity plan. Uses forecast from original capacity plan if not specified
+    // Forecast - The generated forecast for the capacity plan. Uses forecast from original capacity plan if not specified
     Forecast Valuewrapperbushorttermforecastreference `json:"forecast"`
+
+
+    // ImportedForecast - The externally imported forecast for the capacity plan. Uses forecast from original capacity plan if not specified
+    ImportedForecast Valuewrappercapacityplanimportedforecastrequest `json:"importedForecast"`
 
 }
 
 // String returns a JSON representation of the model
 func (o *Copycapacityplanrequest) String() string {
+    
     
     
     
@@ -84,8 +92,13 @@ func (u *Copycapacityplanrequest) MarshalJSON() ([]byte, error) {
         EndBusinessUnitDate time.Time `json:"endBusinessUnitDate"`
         
         Forecast Valuewrapperbushorttermforecastreference `json:"forecast"`
+        
+        ImportedForecast Valuewrappercapacityplanimportedforecastrequest `json:"importedForecast"`
         *Alias
     }{
+
+        
+
 
         
 

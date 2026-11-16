@@ -16,6 +16,12 @@ type WhatsappidDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Whatsappid - User information for a WhatsApp account
@@ -27,12 +33,22 @@ type Whatsappid struct {
     // DisplayName - The displayName of this person's account in WhatsApp. Max: 100 characters.
     DisplayName string `json:"displayName"`
 
+
+    // Username - The username of the account.
+    Username string `json:"username"`
+
+
+    // WhatsAppBusinessScopedIds - The set of Whatsapp Business Scoped Ids that this contact is associated with.
+    WhatsAppBusinessScopedIds []Whatsappbusinessscopedid `json:"whatsAppBusinessScopedIds"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Whatsappid) String() string {
     
     
+    
+     o.WhatsAppBusinessScopedIds = []Whatsappbusinessscopedid{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -53,12 +69,24 @@ func (u *Whatsappid) MarshalJSON() ([]byte, error) {
         PhoneNumber Phonenumber `json:"phoneNumber"`
         
         DisplayName string `json:"displayName"`
+        
+        Username string `json:"username"`
+        
+        WhatsAppBusinessScopedIds []Whatsappbusinessscopedid `json:"whatsAppBusinessScopedIds"`
         *Alias
     }{
 
         
 
 
+        
+
+
+        
+
+
+        
+        WhatsAppBusinessScopedIds: []Whatsappbusinessscopedid{{}},
         
 
         Alias: (*Alias)(u),

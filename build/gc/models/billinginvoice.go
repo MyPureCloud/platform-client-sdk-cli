@@ -53,6 +53,9 @@ type BillinginvoiceDud struct {
 
     
 
+
+    
+
 }
 
 // Billinginvoice
@@ -111,6 +114,10 @@ type Billinginvoice struct {
     // Amount - Amount.
     Amount float32 `json:"amount"`
 
+
+    // AgreementIds - Agreement IDs billed on this invoice, collected from its invoice lines.
+    AgreementIds []string `json:"agreementIds"`
+
 }
 
 // String returns a JSON representation of the model
@@ -128,6 +135,7 @@ func (o *Billinginvoice) String() string {
     
     
     
+     o.AgreementIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -170,6 +178,8 @@ func (u *Billinginvoice) MarshalJSON() ([]byte, error) {
         CustomerInvoiceType string `json:"customerInvoiceType"`
         
         Amount float32 `json:"amount"`
+        
+        AgreementIds []string `json:"agreementIds"`
         *Alias
     }{
 
@@ -212,6 +222,11 @@ func (u *Billinginvoice) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+        AgreementIds: []string{""},
         
 
         Alias: (*Alias)(u),

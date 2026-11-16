@@ -34,6 +34,7 @@ func Cmdbilling_contracts_invoices() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "time.Time", "dateStart", "", "Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
 	utils.AddFlag(listCmd.Flags(), "time.Time", "dateEnd", "", "End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
 	utils.AddFlag(listCmd.Flags(), "string", "paymentStatus", "", "Payment Status Valid values: Paid, UnPaid")
+	utils.AddFlag(listCmd.Flags(), "string", "agreementId", "", "Filter invoices by agreement ID.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/billing/contracts/invoices", utils.FormatPermissions([]string{ "billing:subscription:view",  }), utils.GenerateDevCentreLink("GET", "Billing", "/api/v2/billing/contracts/invoices")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -99,6 +100,10 @@ var listCmd = &cobra.Command{
 		paymentStatus := utils.GetFlag(cmd.Flags(), "string", "paymentStatus")
 		if paymentStatus != "" {
 			queryParams["paymentStatus"] = paymentStatus
+		}
+		agreementId := utils.GetFlag(cmd.Flags(), "string", "agreementId")
+		if agreementId != "" {
+			queryParams["agreementId"] = agreementId
 		}
 		urlString := path
 		if len(queryParams) > 0 {

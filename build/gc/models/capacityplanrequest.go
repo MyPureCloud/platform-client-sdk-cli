@@ -32,6 +32,9 @@ type CapacityplanrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Capacityplanrequest
@@ -52,8 +55,12 @@ type Capacityplanrequest struct {
     EndBusinessUnitDate time.Time `json:"endBusinessUnitDate"`
 
 
-    // Forecast - The selected forecast for this capacity plan. Null when main forecast is used in the future
+    // Forecast - The generated forecast for this capacity plan. Exactly one of forecast or importedForecast must be provided
     Forecast Bushorttermforecastreference `json:"forecast"`
+
+
+    // ImportedForecast - The externally imported forecast for this capacity plan. Exactly one of forecast or importedForecast must be provided
+    ImportedForecast Capacityplanimportedforecastrequest `json:"importedForecast"`
 
 
     // FullTimeEquivalentWeeklyHours - The weekly hours used to calculate full time equivalent agents
@@ -67,6 +74,7 @@ type Capacityplanrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Capacityplanrequest) String() string {
+    
     
     
     
@@ -101,11 +109,16 @@ func (u *Capacityplanrequest) MarshalJSON() ([]byte, error) {
         
         Forecast Bushorttermforecastreference `json:"forecast"`
         
+        ImportedForecast Capacityplanimportedforecastrequest `json:"importedForecast"`
+        
         FullTimeEquivalentWeeklyHours float64 `json:"fullTimeEquivalentWeeklyHours"`
         
         StaffingGroupAllocations []Createstaffinggroupallocation `json:"staffingGroupAllocations"`
         *Alias
     }{
+
+        
+
 
         
 

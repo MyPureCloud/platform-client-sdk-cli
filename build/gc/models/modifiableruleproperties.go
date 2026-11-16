@@ -1,5 +1,6 @@
 package models
 import (
+    "time"
     "encoding/json"
     "strconv"
     "strings"
@@ -12,6 +13,15 @@ var (
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
 type ModifiablerulepropertiesDud struct { 
     Id string `json:"id"`
+
+
+    
+
+
+    
+
+
+    
 
 
     
@@ -72,6 +82,18 @@ type Modifiableruleproperties struct {
     Conditions Commonruleconditions `json:"conditions"`
 
 
+    // Muted - Flag that indicates if the rule is muted.
+    Muted bool `json:"muted"`
+
+
+    // DateStartMute - Timestamp of when the mute status of the rule should start. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateStartMute time.Time `json:"dateStartMute"`
+
+
+    // DateEndMute - Timestamp of when the mute status of the rule should end. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateEndMute time.Time `json:"dateEndMute"`
+
+
     
 
 }
@@ -82,6 +104,9 @@ func (o *Modifiableruleproperties) String() string {
     
     
      o.Notifications = []Alertnotification{{}} 
+    
+    
+    
     
     
     
@@ -115,6 +140,12 @@ func (u *Modifiableruleproperties) MarshalJSON() ([]byte, error) {
         WaitBetweenNotificationMs int `json:"waitBetweenNotificationMs"`
         
         Conditions Commonruleconditions `json:"conditions"`
+        
+        Muted bool `json:"muted"`
+        
+        DateStartMute time.Time `json:"dateStartMute"`
+        
+        DateEndMute time.Time `json:"dateEndMute"`
         *Alias
     }{
 
@@ -132,6 +163,15 @@ func (u *Modifiableruleproperties) MarshalJSON() ([]byte, error) {
 
         
         Notifications: []Alertnotification{{}},
+        
+
+
+        
+
+
+        
+
+
         
 
 

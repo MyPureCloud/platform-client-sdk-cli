@@ -34,6 +34,9 @@ type OrgauthsettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Orgauthsettings
@@ -69,6 +72,10 @@ type Orgauthsettings struct {
     // TokenStorageLocation - The browser storage location used for authentication tokens.
     TokenStorageLocation string `json:"tokenStorageLocation"`
 
+
+    // SsoLoginFirst - Indicates whether single sign-on is displayed before Genesys Cloud credentials on the login page.
+    SsoLoginFirst bool `json:"ssoLoginFirst"`
+
 }
 
 // String returns a JSON representation of the model
@@ -79,6 +86,7 @@ func (o *Orgauthsettings) String() string {
      o.IpAddressAllowlist = []string{""} 
     
      o.InactivityTimeoutExclusions = []string{""} 
+    
     
     
 
@@ -113,6 +121,8 @@ func (u *Orgauthsettings) MarshalJSON() ([]byte, error) {
         UniversalLogout bool `json:"universalLogout"`
         
         TokenStorageLocation string `json:"tokenStorageLocation"`
+        
+        SsoLoginFirst bool `json:"ssoLoginFirst"`
         *Alias
     }{
 
@@ -137,6 +147,9 @@ func (u *Orgauthsettings) MarshalJSON() ([]byte, error) {
 
         
         InactivityTimeoutExclusions: []string{""},
+        
+
+
         
 
 

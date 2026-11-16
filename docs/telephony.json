@@ -53,6 +53,11 @@
       "description": "Updates the agent's own greetings."
     },
     {
+      "name": "create",
+      "path": "/api/v2/telephony/numbers/routing/reset",
+      "description": "Reset routing for organization"
+    },
+    {
       "name": "list",
       "path": "/api/v2/telephony/numbers/routing",
       "description": "Get Number Routings by organizationId"
@@ -66,11 +71,6 @@
       "name": "create",
       "path": "/api/v2/telephony/numbers/routing/all",
       "description": "Re-route all numbers on an organization"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/telephony/numbers/routing/reset",
-      "description": "Reset routing for organization"
     },
     {
       "name": "get",
@@ -661,6 +661,16 @@
       "name": "create",
       "path": "/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes",
       "description": "Create outbound route"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/telephony/trunkbasesettings/metrics",
+      "description": "Get the trunkbase metrics for the specified ids."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/telephony/trunkbasesettings/{trunkBaseId}/metrics",
+      "description": "Get the trunkbase metrics."
     },
     {
       "name": "get",

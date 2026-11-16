@@ -45,7 +45,7 @@ type Userpresenceevent struct {
     UserId string `json:"userId"`
 
 
-    // SourceId - The id (V4 UUID) of the presence source being updated
+    // SourceId - The id (UUID) of the presence source being updated
     SourceId string `json:"sourceId"`
 
 

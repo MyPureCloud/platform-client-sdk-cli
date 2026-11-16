@@ -55,6 +55,8 @@ func Cmdexternalcontacts_contacts_journey_segments() *cobra.Command {
 
 	utils.AddFlag(listCmd.Flags(), "bool", "includeMerged", "", "Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.")
 	utils.AddFlag(listCmd.Flags(), "int", "limit", "", "Number of entities to return. Default of 25, maximum of 500.")
+	utils.AddFlag(listCmd.Flags(), "[]string", "expand", "", "Expand the response with additional fields. Valid values: segment")
+	utils.AddFlag(listCmd.Flags(), "[]string", "segmentIds", "", "IDs of segments to return. Maximum of 5")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/externalcontacts/contacts/{contactId}/journey/segments", utils.FormatPermissions([]string{ "externalContacts:segmentAssignment:view",  }), utils.GenerateDevCentreLink("GET", "External Contacts", "/api/v2/externalcontacts/contacts/{contactId}/journey/segments")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -192,6 +194,14 @@ var listCmd = &cobra.Command{
 		limit := utils.GetFlag(cmd.Flags(), "int", "limit")
 		if limit != "" {
 			queryParams["limit"] = limit
+		}
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
+		segmentIds := utils.GetFlag(cmd.Flags(), "[]string", "segmentIds")
+		if segmentIds != "" {
+			queryParams["segmentIds"] = segmentIds
 		}
 		urlString := path
 		if len(queryParams) > 0 {

@@ -16,6 +16,12 @@ type KnowledgesearchresultDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Knowledgesearchresult
@@ -27,12 +33,22 @@ type Knowledgesearchresult struct {
     // RetrievedReferences - The retrieved references for the search query.
     RetrievedReferences []Knowledgeretrievedreference `json:"retrievedReferences"`
 
+
+    // FailureReason - Reason the search request did not produce an answer or relevant content.
+    FailureReason string `json:"failureReason"`
+
+
+    // Message - A detailed error message describing the failureReason.
+    Message string `json:"message"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Knowledgesearchresult) String() string {
     
      o.RetrievedReferences = []Knowledgeretrievedreference{{}} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -53,6 +69,10 @@ func (u *Knowledgesearchresult) MarshalJSON() ([]byte, error) {
         GeneratedAnswer string `json:"generatedAnswer"`
         
         RetrievedReferences []Knowledgeretrievedreference `json:"retrievedReferences"`
+        
+        FailureReason string `json:"failureReason"`
+        
+        Message string `json:"message"`
         *Alias
     }{
 
@@ -61,6 +81,12 @@ func (u *Knowledgesearchresult) MarshalJSON() ([]byte, error) {
 
         
         RetrievedReferences: []Knowledgeretrievedreference{{}},
+        
+
+
+        
+
+
         
 
         Alias: (*Alias)(u),

@@ -86,6 +86,7 @@ func Cmdjourney_segments() *cobra.Command {
 	utils.AddFlag(listCmd.Flags(), "[]string", "segmentIds", "", "IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.")
 	utils.AddFlag(listCmd.Flags(), "[]string", "queryFields", "", "Segment field(s) to query on. Requires `queryValue` to also be set.")
 	utils.AddFlag(listCmd.Flags(), "string", "queryValue", "", "Value to query on using fuzzy matching. Requires `queryFields` to also be set.")
+	utils.AddFlag(listCmd.Flags(), "[]string", "displayNames", "", "Display names of segments to return. Case-insensitive matching. Maximum of 5. Must not contain exact duplicates (case-sensitive). Use of this parameter is not compatible with pagination or sorting or querying or segmentIds.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/journey/segments", utils.FormatPermissions([]string{ "journey:segment:view",  }), utils.GenerateDevCentreLink("GET", "Journey", "/api/v2/journey/segments")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -430,6 +431,10 @@ var listCmd = &cobra.Command{
 		queryValue := utils.GetFlag(cmd.Flags(), "string", "queryValue")
 		if queryValue != "" {
 			queryParams["queryValue"] = queryValue
+		}
+		displayNames := utils.GetFlag(cmd.Flags(), "[]string", "displayNames")
+		if displayNames != "" {
+			queryParams["displayNames"] = displayNames
 		}
 		urlString := path
 		if len(queryParams) > 0 {

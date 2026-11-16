@@ -336,7 +336,7 @@ type Session struct {
     LastScreen string `json:"lastScreen"`
 
 
-    // CaseAssociations - Cases associated with the session - conversation only.
+    // CaseAssociations - Cases associated with the session - conversation and campaign only.
     CaseAssociations []Journeycaseassociation `json:"caseAssociations"`
 
 

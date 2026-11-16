@@ -41,12 +41,12 @@ type Buagentschedulerescheduleresponse struct {
     FullDayTimeOffMarkers []Bufulldaytimeoffmarker `json:"fullDayTimeOffMarkers"`
 
 
-    // WorkPlan - The work plan for this user
-    WorkPlan Workplanreference `json:"workPlan"`
-
-
     // WorkPlansPerWeek - The work plans per week for this user from the work plan rotation. Null values in the list denotes that user is not part of any work plan for that week
     WorkPlansPerWeek []Workplanreference `json:"workPlansPerWeek"`
+
+
+    // WorkPlan - The work plan for this user
+    WorkPlan Workplanreference `json:"workPlan"`
 
 }
 
@@ -55,8 +55,8 @@ func (o *Buagentschedulerescheduleresponse) String() string {
     
      o.Shifts = []Buagentscheduleshift{{}} 
      o.FullDayTimeOffMarkers = []Bufulldaytimeoffmarker{{}} 
-    
      o.WorkPlansPerWeek = []Workplanreference{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -80,9 +80,9 @@ func (u *Buagentschedulerescheduleresponse) MarshalJSON() ([]byte, error) {
         
         FullDayTimeOffMarkers []Bufulldaytimeoffmarker `json:"fullDayTimeOffMarkers"`
         
-        WorkPlan Workplanreference `json:"workPlan"`
-        
         WorkPlansPerWeek []Workplanreference `json:"workPlansPerWeek"`
+        
+        WorkPlan Workplanreference `json:"workPlan"`
         *Alias
     }{
 
@@ -100,10 +100,10 @@ func (u *Buagentschedulerescheduleresponse) MarshalJSON() ([]byte, error) {
 
 
         
-
-
-        
         WorkPlansPerWeek: []Workplanreference{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

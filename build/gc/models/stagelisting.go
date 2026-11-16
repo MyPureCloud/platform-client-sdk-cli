@@ -16,12 +16,6 @@ type StagelistingDud struct {
 
     
 
-
-    
-
-
-    
-
 }
 
 // Stagelisting
@@ -33,21 +27,11 @@ type Stagelisting struct {
     // NextUri
     NextUri string `json:"nextUri"`
 
-
-    // SelfUri
-    SelfUri string `json:"selfUri"`
-
-
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Stagelisting) String() string {
      o.Entities = []Stage{{}} 
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -69,21 +53,11 @@ func (u *Stagelisting) MarshalJSON() ([]byte, error) {
         Entities []Stage `json:"entities"`
         
         NextUri string `json:"nextUri"`
-        
-        SelfUri string `json:"selfUri"`
-        
-        PreviousUri string `json:"previousUri"`
         *Alias
     }{
 
         
         Entities: []Stage{{}},
-        
-
-
-        
-
-
         
 
 

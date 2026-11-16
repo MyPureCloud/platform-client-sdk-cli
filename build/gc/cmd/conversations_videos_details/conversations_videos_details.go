@@ -28,7 +28,7 @@ func init() {
 }
 
 func Cmdconversations_videos_details() *cobra.Command { 
-	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/videos/{conferenceId}/details", utils.FormatPermissions([]string{ "video:video:access",  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/videos/{conferenceId}/details")))
+	getCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", getCmd.UsageTemplate(), "GET", "/api/v2/conversations/videos/{conferenceId}/details", utils.FormatPermissions([]string{ "video:video:access", "conversation:video:add", "conversation:videoVoice:add",  }), utils.GenerateDevCentreLink("GET", "Conversations", "/api/v2/conversations/videos/{conferenceId}/details")))
 	utils.AddFileFlagIfUpsert(getCmd.Flags(), "GET", ``)
 	
 	

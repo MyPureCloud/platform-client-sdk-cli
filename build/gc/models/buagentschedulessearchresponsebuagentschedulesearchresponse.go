@@ -6,11 +6,11 @@ import (
 )
 
 var (
-    BuagentschedulessearchresponseMarshalled = false
+    BuagentschedulessearchresponsebuagentschedulesearchresponseMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type BuagentschedulessearchresponseDud struct { 
+type BuagentschedulessearchresponsebuagentschedulesearchresponseDud struct { 
     
 
 
@@ -21,8 +21,8 @@ type BuagentschedulessearchresponseDud struct {
 
 }
 
-// Buagentschedulessearchresponse
-type Buagentschedulessearchresponse struct { 
+// Buagentschedulessearchresponsebuagentschedulesearchresponse
+type Buagentschedulessearchresponsebuagentschedulesearchresponse struct { 
     // AgentSchedules - The requested agent schedules
     AgentSchedules []Buagentschedulesearchresponse `json:"agentSchedules"`
 
@@ -37,7 +37,7 @@ type Buagentschedulessearchresponse struct {
 }
 
 // String returns a JSON representation of the model
-func (o *Buagentschedulessearchresponse) String() string {
+func (o *Buagentschedulessearchresponsebuagentschedulesearchresponse) String() string {
      o.AgentSchedules = []Buagentschedulesearchresponse{{}} 
     
      o.PublishedSchedules = []Buagentschedulepublishedschedulereference{{}} 
@@ -48,13 +48,13 @@ func (o *Buagentschedulessearchresponse) String() string {
     return str
 }
 
-func (u *Buagentschedulessearchresponse) MarshalJSON() ([]byte, error) {
-    type Alias Buagentschedulessearchresponse
+func (u *Buagentschedulessearchresponsebuagentschedulesearchresponse) MarshalJSON() ([]byte, error) {
+    type Alias Buagentschedulessearchresponsebuagentschedulesearchresponse
 
-    if BuagentschedulessearchresponseMarshalled {
+    if BuagentschedulessearchresponsebuagentschedulesearchresponseMarshalled {
         return []byte("{}"), nil
     }
-    BuagentschedulessearchresponseMarshalled = true
+    BuagentschedulessearchresponsebuagentschedulesearchresponseMarshalled = true
 
     return json.Marshal(&struct {
         

@@ -24,6 +24,9 @@ type IntentscategoryDud struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
+    Usage []Customerintentusage `json:"usage"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -39,6 +42,9 @@ type Intentscategory struct {
 
     // Description - Description of the category
     Description string `json:"description"`
+
+
+    
 
 
     
@@ -74,6 +80,9 @@ func (u *Intentscategory) MarshalJSON() ([]byte, error) {
         Description string `json:"description"`
         *Alias
     }{
+
+        
+
 
         
 

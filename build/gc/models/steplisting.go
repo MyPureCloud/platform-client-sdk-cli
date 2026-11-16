@@ -16,12 +16,6 @@ type SteplistingDud struct {
 
     
 
-
-    
-
-
-    
-
 }
 
 // Steplisting
@@ -33,21 +27,11 @@ type Steplisting struct {
     // NextUri
     NextUri string `json:"nextUri"`
 
-
-    // SelfUri
-    SelfUri string `json:"selfUri"`
-
-
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Steplisting) String() string {
      o.Entities = []Step{{}} 
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -69,21 +53,11 @@ func (u *Steplisting) MarshalJSON() ([]byte, error) {
         Entities []Step `json:"entities"`
         
         NextUri string `json:"nextUri"`
-        
-        SelfUri string `json:"selfUri"`
-        
-        PreviousUri string `json:"previousUri"`
         *Alias
     }{
 
         
         Entities: []Step{{}},
-        
-
-
-        
-
-
         
 
 

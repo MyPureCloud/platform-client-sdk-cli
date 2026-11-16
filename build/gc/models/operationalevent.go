@@ -56,6 +56,12 @@ type OperationaleventDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Operationalevent
@@ -119,10 +125,20 @@ type Operationalevent struct {
     // ExternalContactId - The external contact ID associated with the event
     ExternalContactId string `json:"externalContactId"`
 
+
+    // ReferenceId - The identifier of an external record that provides additional information or context related to the event
+    ReferenceId string `json:"referenceId"`
+
+
+    // ReferenceType - The type of external record that referenceId refers to
+    ReferenceType string `json:"referenceType"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Operationalevent) String() string {
+    
+    
     
     
     
@@ -184,8 +200,18 @@ func (u *Operationalevent) MarshalJSON() ([]byte, error) {
         PhoneNumber string `json:"phoneNumber"`
         
         ExternalContactId string `json:"externalContactId"`
+        
+        ReferenceId string `json:"referenceId"`
+        
+        ReferenceType string `json:"referenceType"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

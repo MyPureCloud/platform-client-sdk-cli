@@ -49,6 +49,12 @@ type BillingchargeDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Billingcharge
@@ -63,7 +69,7 @@ type Billingcharge struct {
     Product Billingproduct `json:"product"`
 
 
-    // Organizations - List of plans within the organization.
+    // Organizations - Organizations associated with this charge.
     Organizations []Namedentity `json:"organizations"`
 
 
@@ -71,8 +77,12 @@ type Billingcharge struct {
     PrepaidQuantity float32 `json:"prepaidQuantity"`
 
 
-    // FairuseQuantity - The quantity of usage allowed under fair use policies.
-    FairuseQuantity float32 `json:"fairuseQuantity"`
+    // FairuseAllocation - Quantity of usage allowed under fair-use policies.
+    FairuseAllocation float32 `json:"fairuseAllocation"`
+
+
+    // FairuseAmount - Monetary value of the fair-use allocation, in the same currency as overageCurrency.
+    FairuseAmount float32 `json:"fairuseAmount"`
 
 
     // ActualQuantity - The actual quantity of usage.
@@ -102,6 +112,10 @@ type Billingcharge struct {
     // TokenConversionRate - AI Token Conversion Rate — Units per token conversion ratio.
     TokenConversionRate float32 `json:"tokenConversionRate"`
 
+
+    // AiSubItems - Usage that makes up this AI parent bundle, including the bundle's own token usage and each child product's usage converted to tokens; the converted total is the parent's actual quantity.
+    AiSubItems []Billingaisubitem `json:"aiSubItems"`
+
 }
 
 // String returns a JSON representation of the model
@@ -117,6 +131,8 @@ func (o *Billingcharge) String() string {
     
     
     
+    
+     o.AiSubItems = []Billingaisubitem{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -140,7 +156,9 @@ func (u *Billingcharge) MarshalJSON() ([]byte, error) {
         
         PrepaidQuantity float32 `json:"prepaidQuantity"`
         
-        FairuseQuantity float32 `json:"fairuseQuantity"`
+        FairuseAllocation float32 `json:"fairuseAllocation"`
+        
+        FairuseAmount float32 `json:"fairuseAmount"`
         
         ActualQuantity float32 `json:"actualQuantity"`
         
@@ -155,6 +173,8 @@ func (u *Billingcharge) MarshalJSON() ([]byte, error) {
         ConvertedTokenCount float32 `json:"convertedTokenCount"`
         
         TokenConversionRate float32 `json:"tokenConversionRate"`
+        
+        AiSubItems []Billingaisubitem `json:"aiSubItems"`
         *Alias
     }{
 
@@ -196,6 +216,14 @@ func (u *Billingcharge) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+        AiSubItems: []Billingaisubitem{{}},
         
 
         Alias: (*Alias)(u),

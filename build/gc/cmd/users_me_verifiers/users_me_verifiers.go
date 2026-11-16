@@ -28,13 +28,20 @@ func init() {
 }
 
 func Cmdusers_me_verifiers() *cobra.Command { 
+	utils.AddFlag(deleteCmd.Flags(), "string", "replacementDefaultVerifierId", "", "The ID of an enabled verifier to make the default after deleting the current default")
 	deleteCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", deleteCmd.UsageTemplate(), "DELETE", "/api/v2/users/me/verifiers/{verifierId}", utils.FormatPermissions([]string{  }), utils.GenerateDevCentreLink("DELETE", "Users", "/api/v2/users/me/verifiers/{verifierId}")))
 	utils.AddFileFlagIfUpsert(deleteCmd.Flags(), "DELETE", ``)
 	
 	
 	utils.AddPaginateFlagsIfListingResponse(deleteCmd.Flags(), "DELETE", `{
   "description" : "The verifier was deleted successfully",
-  "content" : { }
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/DeleteVerifierResponse"
+      }
+    }
+  }
 }`)
 	users_me_verifiersCmd.AddCommand(deleteCmd)
 
@@ -108,6 +115,10 @@ var deleteCmd = &cobra.Command{
 		verifierId, args := args[0], args[1:]
 		path = strings.Replace(path, "{verifierId}", fmt.Sprintf("%v", verifierId), -1)
 
+		replacementDefaultVerifierId := utils.GetFlag(cmd.Flags(), "string", "replacementDefaultVerifierId")
+		if replacementDefaultVerifierId != "" {
+			queryParams["replacementDefaultVerifierId"] = replacementDefaultVerifierId
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

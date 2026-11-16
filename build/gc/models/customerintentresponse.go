@@ -30,6 +30,9 @@ type CustomerintentresponseDud struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
+    Usage []Customerintentusage `json:"usage"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -49,6 +52,9 @@ type Customerintentresponse struct {
 
     // ExpiryTime - Expiry time in hours of the customer intent
     ExpiryTime int `json:"expiryTime"`
+
+
+    
 
 
     
@@ -90,6 +96,9 @@ func (u *Customerintentresponse) MarshalJSON() ([]byte, error) {
         ExpiryTime int `json:"expiryTime"`
         *Alias
     }{
+
+        
+
 
         
 

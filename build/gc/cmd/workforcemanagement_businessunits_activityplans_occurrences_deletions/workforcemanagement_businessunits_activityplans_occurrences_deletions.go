@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("workforcemanagement_businessunits_activityplans_occurrences_deletions", "SWAGGER_OVERRIDE_/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions")
+	Description = utils.FormatUsageDescription("workforcemanagement_businessunits_activityplans_occurrences_deletions", "SWAGGER_OVERRIDE_/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions")
 	workforcemanagement_businessunits_activityplans_occurrences_deletionsCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("workforcemanagement_businessunits_activityplans_occurrences_deletions"),
 		Short: Description,

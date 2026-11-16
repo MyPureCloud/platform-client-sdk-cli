@@ -34,7 +34,7 @@ type Agenticvirtualagentrepetitioncheck struct {
     Messages int `json:"messages"`
 
 
-    // Similarity - The similarity category compared to the Levenshtein result that triggers this check's instruction.
+    // Similarity - The similarity category compared to the comparison result that triggers this check's instruction. VeryLoose, Loose, and Strict require semantic comparison to be enabled for your organization; a request using one of these without that capability enabled fails with 501 Not Implemented.
     Similarity string `json:"similarity"`
 
 

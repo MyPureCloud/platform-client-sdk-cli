@@ -28,6 +28,9 @@ type AgenticvirtualagenttoolinputDud struct {
 
     
 
+
+    
+
 }
 
 // Agenticvirtualagenttoolinput - Input for a tool.
@@ -52,6 +55,10 @@ type Agenticvirtualagenttoolinput struct {
     FallbackToUser bool `json:"fallbackToUser"`
 
 
+    // DependencyOnly - Whether this input is used for gating/preconditions only and is not sent with the underlying tool at runtime.
+    DependencyOnly bool `json:"dependencyOnly"`
+
+
     // Mapping - Path used to extract this input from a previous tool output. Only valid when source is 'ToolOutput'. The path starts with a tool output type name, may contain only string property names or integer array indexes, and must resolve to a primitive value.
     Mapping []interface{} `json:"mapping"`
 
@@ -59,6 +66,7 @@ type Agenticvirtualagenttoolinput struct {
 
 // String returns a JSON representation of the model
 func (o *Agenticvirtualagenttoolinput) String() string {
+    
     
     
     
@@ -92,9 +100,14 @@ func (u *Agenticvirtualagenttoolinput) MarshalJSON() ([]byte, error) {
         
         FallbackToUser bool `json:"fallbackToUser"`
         
+        DependencyOnly bool `json:"dependencyOnly"`
+        
         Mapping []interface{} `json:"mapping"`
         *Alias
     }{
+
+        
+
 
         
 

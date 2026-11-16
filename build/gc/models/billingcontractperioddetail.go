@@ -26,9 +26,6 @@ type BillingcontractperioddetailDud struct {
 
     
 
-
-    
-
 }
 
 // Billingcontractperioddetail
@@ -51,10 +48,6 @@ type Billingcontractperioddetail struct {
     // Charges - Represents usage metrics including prepaid, actual, and overage quantities along with associated charges.
     Charges []Billingcharge `json:"charges"`
 
-
-    // Wallets - Represents usage metrics including prepaid, actual, and overage quantities along with associated charges.
-    Wallets []Billingwallet `json:"wallets"`
-
 }
 
 // String returns a JSON representation of the model
@@ -63,7 +56,6 @@ func (o *Billingcontractperioddetail) String() string {
     
     
      o.Charges = []Billingcharge{{}} 
-     o.Wallets = []Billingwallet{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -88,8 +80,6 @@ func (u *Billingcontractperioddetail) MarshalJSON() ([]byte, error) {
         Status string `json:"status"`
         
         Charges []Billingcharge `json:"charges"`
-        
-        Wallets []Billingwallet `json:"wallets"`
         *Alias
     }{
 
@@ -107,11 +97,6 @@ func (u *Billingcontractperioddetail) MarshalJSON() ([]byte, error) {
 
         
         Charges: []Billingcharge{{}},
-        
-
-
-        
-        Wallets: []Billingwallet{{}},
         
 
         Alias: (*Alias)(u),

@@ -17,6 +17,9 @@ type AgentmuscheduleresultDud struct {
 
     
 
+
+    
+
 }
 
 // Agentmuscheduleresult
@@ -28,12 +31,17 @@ type Agentmuscheduleresult struct {
     // AgentSchedules - The list of agent schedules for the management unit
     AgentSchedules []Agentmuscheduleitem `json:"agentSchedules"`
 
+
+    // VisibilityRange - The schedule visibility range
+    VisibilityRange Schedulevisibilityrange `json:"visibilityRange"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Agentmuscheduleresult) String() string {
     
      o.AgentSchedules = []Agentmuscheduleitem{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -54,6 +62,8 @@ func (u *Agentmuscheduleresult) MarshalJSON() ([]byte, error) {
         ReferenceStartDate time.Time `json:"referenceStartDate"`
         
         AgentSchedules []Agentmuscheduleitem `json:"agentSchedules"`
+        
+        VisibilityRange Schedulevisibilityrange `json:"visibilityRange"`
         *Alias
     }{
 
@@ -62,6 +72,9 @@ func (u *Agentmuscheduleresult) MarshalJSON() ([]byte, error) {
 
         
         AgentSchedules: []Agentmuscheduleitem{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

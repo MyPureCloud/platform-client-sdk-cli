@@ -36,6 +36,9 @@ type CapacityplanresponseDud struct {
     
 
 
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -54,8 +57,12 @@ type Capacityplanresponse struct {
     Description string `json:"description"`
 
 
-    // Forecast - The selected forecast for this capacity plan. Null when main forecast is used in the future
+    // Forecast - The generated forecast for this capacity plan. Null when the capacity plan uses other forecast types
     Forecast Bushorttermforecastreference `json:"forecast"`
+
+
+    // ImportedForecast - The externally imported forecast for this capacity plan. Null when the capacity plan uses other forecast types
+    ImportedForecast Capacityplanimportedforecast `json:"importedForecast"`
 
 
     // StartBusinessUnitDate - The start date for the capacity plan relative to the business unit time zone in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
@@ -80,6 +87,7 @@ type Capacityplanresponse struct {
 
 // String returns a JSON representation of the model
 func (o *Capacityplanresponse) String() string {
+    
     
     
     
@@ -113,6 +121,8 @@ func (u *Capacityplanresponse) MarshalJSON() ([]byte, error) {
         
         Forecast Bushorttermforecastreference `json:"forecast"`
         
+        ImportedForecast Capacityplanimportedforecast `json:"importedForecast"`
+        
         StartBusinessUnitDate time.Time `json:"startBusinessUnitDate"`
         
         EndBusinessUnitDate time.Time `json:"endBusinessUnitDate"`
@@ -122,6 +132,9 @@ func (u *Capacityplanresponse) MarshalJSON() ([]byte, error) {
         Metadata Capacityplanmetadata `json:"metadata"`
         *Alias
     }{
+
+        
+
 
         
 

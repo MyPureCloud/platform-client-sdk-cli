@@ -44,12 +44,12 @@ type Buagentschedulequeryresponse struct {
     FullDayTimeOffMarkers []Bufulldaytimeoffmarker `json:"fullDayTimeOffMarkers"`
 
 
-    // WorkPlan - The work plan for this user
-    WorkPlan Workplanreference `json:"workPlan"`
-
-
     // WorkPlansPerWeek - The work plans per week for this user from the work plan rotation. Null values in the list denotes that user is not part of any work plan for that week
     WorkPlansPerWeek []Workplanreference `json:"workPlansPerWeek"`
+
+
+    // WorkPlan - The work plan for this user
+    WorkPlan Workplanreference `json:"workPlan"`
 
 
     // Metadata - Versioned entity metadata for this agent schedule
@@ -62,8 +62,8 @@ func (o *Buagentschedulequeryresponse) String() string {
     
      o.Shifts = []Buagentscheduleshift{{}} 
      o.FullDayTimeOffMarkers = []Bufulldaytimeoffmarker{{}} 
-    
      o.WorkPlansPerWeek = []Workplanreference{{}} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -88,9 +88,9 @@ func (u *Buagentschedulequeryresponse) MarshalJSON() ([]byte, error) {
         
         FullDayTimeOffMarkers []Bufulldaytimeoffmarker `json:"fullDayTimeOffMarkers"`
         
-        WorkPlan Workplanreference `json:"workPlan"`
-        
         WorkPlansPerWeek []Workplanreference `json:"workPlansPerWeek"`
+        
+        WorkPlan Workplanreference `json:"workPlan"`
         
         Metadata Wfmversionedentitymetadata `json:"metadata"`
         *Alias
@@ -110,10 +110,10 @@ func (u *Buagentschedulequeryresponse) MarshalJSON() ([]byte, error) {
 
 
         
-
-
-        
         WorkPlansPerWeek: []Workplanreference{{}},
+        
+
+
         
 
 

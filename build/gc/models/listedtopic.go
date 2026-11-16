@@ -72,8 +72,8 @@ type Listedtopic struct {
     Published bool `json:"published"`
 
 
-    // Strictness
-    Strictness string `json:"strictness"`
+    // Strictness - The topic strictness, default value is 72
+    Strictness int `json:"strictness"`
 
 
     // MatchingType
@@ -149,7 +149,7 @@ func (u *Listedtopic) MarshalJSON() ([]byte, error) {
         
         Published bool `json:"published"`
         
-        Strictness string `json:"strictness"`
+        Strictness int `json:"strictness"`
         
         MatchingType string `json:"matchingType"`
         

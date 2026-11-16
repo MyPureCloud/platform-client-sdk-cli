@@ -298,6 +298,11 @@
       "description": "Get the list of Speech & Text Analytics unpublished programs"
     },
     {
+      "name": "get",
+      "path": "/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcriptoutline",
+      "description": "Get the transcript outline for a specific conversation and communication."
+    },
+    {
       "name": "create",
       "path": "/api/v2/speechandtextanalytics/transcripts/search",
       "description": "Search resources."

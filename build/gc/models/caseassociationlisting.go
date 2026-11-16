@@ -16,12 +16,6 @@ type CaseassociationlistingDud struct {
 
     
 
-
-    
-
-
-    
-
 }
 
 // Caseassociationlisting
@@ -33,21 +27,11 @@ type Caseassociationlisting struct {
     // NextUri
     NextUri string `json:"nextUri"`
 
-
-    // SelfUri
-    SelfUri string `json:"selfUri"`
-
-
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
-
 }
 
 // String returns a JSON representation of the model
 func (o *Caseassociationlisting) String() string {
      o.Entities = []Caseassociation{{}} 
-    
-    
     
 
     j, _ := json.Marshal(o)
@@ -69,21 +53,11 @@ func (u *Caseassociationlisting) MarshalJSON() ([]byte, error) {
         Entities []Caseassociation `json:"entities"`
         
         NextUri string `json:"nextUri"`
-        
-        SelfUri string `json:"selfUri"`
-        
-        PreviousUri string `json:"previousUri"`
         *Alias
     }{
 
         
         Entities: []Caseassociation{{}},
-        
-
-
-        
-
-
         
 
 

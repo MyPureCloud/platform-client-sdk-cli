@@ -38,7 +38,7 @@ type Buasyncagentschedulessearchresponse struct {
 
 
     // Result - The result of the operation.  Null unless status == Complete
-    Result Buagentschedulessearchresponse `json:"result"`
+    Result Buagentschedulessearchresponsebuagentschedulesearchresponse `json:"result"`
 
 
     // Progress - Percent progress for the operation
@@ -78,7 +78,7 @@ func (u *Buasyncagentschedulessearchresponse) MarshalJSON() ([]byte, error) {
         
         OperationId string `json:"operationId"`
         
-        Result Buagentschedulessearchresponse `json:"result"`
+        Result Buagentschedulessearchresponsebuagentschedulesearchresponse `json:"result"`
         
         Progress int `json:"progress"`
         

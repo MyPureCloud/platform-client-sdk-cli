@@ -189,13 +189,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/train",
-      "description": "Train the draft NLU Domain Version."
+      "path": "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect",
+      "description": "Detect intent, entities, etc. in the submitted text using the specified NLU domain version."
     },
     {
       "name": "create",
-      "path": "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect",
-      "description": "Detect intent, entities, etc. in the submitted text using the specified NLU domain version."
+      "path": "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/train",
+      "description": "Train the draft NLU Domain Version."
     },
     {
       "name": "list",

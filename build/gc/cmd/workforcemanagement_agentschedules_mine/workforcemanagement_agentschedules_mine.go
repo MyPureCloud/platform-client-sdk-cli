@@ -28,6 +28,7 @@ func init() {
 }
 
 func Cmdworkforcemanagement_agentschedules_mine() *cobra.Command { 
+	utils.AddFlag(createCmd.Flags(), "[]string", "expand", "", "Include to access additional data on the agent schedules Valid values: agentSchedules.workPlansPerWeek")
 	createCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", createCmd.UsageTemplate(), "POST", "/api/v2/workforcemanagement/agentschedules/mine", utils.FormatPermissions([]string{ "wfm:agentSchedule:view",  }), utils.GenerateDevCentreLink("POST", "Workforce Management", "/api/v2/workforcemanagement/agentschedules/mine")))
 	utils.AddFileFlagIfUpsert(createCmd.Flags(), "POST", `{
   "description" : "body",
@@ -83,6 +84,10 @@ var createCmd = &cobra.Command{
 
 		path := "/api/v2/workforcemanagement/agentschedules/mine"
 
+		expand := utils.GetFlag(cmd.Flags(), "[]string", "expand")
+		if expand != "" {
+			queryParams["expand"] = expand
+		}
 		urlString := path
 		if len(queryParams) > 0 {
 			urlString = fmt.Sprintf("%v?", path)

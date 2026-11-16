@@ -20,6 +20,12 @@ type PurecloudDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -37,6 +43,14 @@ type Purecloud struct {
     Disabled bool `json:"disabled"`
 
 
+    // NativeLoginExceptionsEnabled
+    NativeLoginExceptionsEnabled bool `json:"nativeLoginExceptionsEnabled"`
+
+
+    // NativeLoginExceptionGroupIds
+    NativeLoginExceptionGroupIds []string `json:"nativeLoginExceptionGroupIds"`
+
+
     
 
 }
@@ -45,6 +59,8 @@ type Purecloud struct {
 func (o *Purecloud) String() string {
     
     
+    
+     o.NativeLoginExceptionGroupIds = []string{""} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -65,6 +81,10 @@ func (u *Purecloud) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         
         Disabled bool `json:"disabled"`
+        
+        NativeLoginExceptionsEnabled bool `json:"nativeLoginExceptionsEnabled"`
+        
+        NativeLoginExceptionGroupIds []string `json:"nativeLoginExceptionGroupIds"`
         *Alias
     }{
 
@@ -74,6 +94,14 @@ func (u *Purecloud) MarshalJSON() ([]byte, error) {
         
 
 
+        
+
+
+        
+
+
+        
+        NativeLoginExceptionGroupIds: []string{""},
         
 
 

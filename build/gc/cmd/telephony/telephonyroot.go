@@ -11,6 +11,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_sipmessages"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_providers"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_calls"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_trunkbasesettings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/telephony_siptraces"
 )
 
@@ -24,7 +25,8 @@ func init() {
 	telephonyCmd.AddCommand(telephony_sipmessages.Cmdtelephony_sipmessages())
 	telephonyCmd.AddCommand(telephony_providers.Cmdtelephony_providers())
 	telephonyCmd.AddCommand(telephony_calls.Cmdtelephony_calls())
+	telephonyCmd.AddCommand(telephony_trunkbasesettings.Cmdtelephony_trunkbasesettings())
 	telephonyCmd.AddCommand(telephony_siptraces.Cmdtelephony_siptraces())
-	telephonyCmd.Short = utils.GenerateCustomDescription(telephonyCmd.Short, telephony_prefixes.Description, telephony_mediaregions.Description, telephony_settings.Description, telephony_agents.Description, telephony_numbers.Description, telephony_organization.Description, telephony_sipmessages.Description, telephony_providers.Description, telephony_calls.Description, telephony_siptraces.Description, )
+	telephonyCmd.Short = utils.GenerateCustomDescription(telephonyCmd.Short, telephony_prefixes.Description, telephony_mediaregions.Description, telephony_settings.Description, telephony_agents.Description, telephony_numbers.Description, telephony_organization.Description, telephony_sipmessages.Description, telephony_providers.Description, telephony_calls.Description, telephony_trunkbasesettings.Description, telephony_siptraces.Description, )
 	telephonyCmd.Long = telephonyCmd.Short
 }

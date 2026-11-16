@@ -24,6 +24,9 @@ type SimilarcategoryresultDud struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
+    Usage []Customerintentusage `json:"usage"`
+
+
     
 
 
@@ -42,6 +45,9 @@ type Similarcategoryresult struct {
 
     // Description - Description of the category
     Description string `json:"description"`
+
+
+    
 
 
     
@@ -84,6 +90,9 @@ func (u *Similarcategoryresult) MarshalJSON() ([]byte, error) {
         Distance float64 `json:"distance"`
         *Alias
     }{
+
+        
+
 
         
 

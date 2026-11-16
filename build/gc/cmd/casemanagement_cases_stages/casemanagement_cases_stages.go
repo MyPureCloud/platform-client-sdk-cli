@@ -44,9 +44,8 @@ func Cmdcasemanagement_cases_stages() *cobra.Command {
 }`)
 	casemanagement_cases_stagesCmd.AddCommand(getCmd)
 
-	utils.AddFlag(listCmd.Flags(), "string", "before", "", "The cursor that points to the start of the set of entities that has been returned.")
-	utils.AddFlag(listCmd.Flags(), "string", "after", "", "The cursor that points to the end of the set of entities that has been returned.")
-	utils.AddFlag(listCmd.Flags(), "string", "pageSize", "", "Number of entities to return. Maximum of 200.")
+	utils.AddFlag(listCmd.Flags(), "string", "after", "", "Cursor that points to the end of the previously returned page.")
+	utils.AddFlag(listCmd.Flags(), "int", "pageSize", "", "Number of entities to return. Maximum is 200.")
 	listCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", listCmd.UsageTemplate(), "GET", "/api/v2/casemanagement/cases/{caseId}/stages", utils.FormatPermissions([]string{ "caseManagement:stage:view",  }), utils.GenerateDevCentreLink("GET", "Case Management", "/api/v2/casemanagement/cases/{caseId}/stages")))
 	utils.AddFileFlagIfUpsert(listCmd.Flags(), "GET", ``)
 	
@@ -176,15 +175,11 @@ var listCmd = &cobra.Command{
 		caseId, args := args[0], args[1:]
 		path = strings.Replace(path, "{caseId}", fmt.Sprintf("%v", caseId), -1)
 
-		before := utils.GetFlag(cmd.Flags(), "string", "before")
-		if before != "" {
-			queryParams["before"] = before
-		}
 		after := utils.GetFlag(cmd.Flags(), "string", "after")
 		if after != "" {
 			queryParams["after"] = after
 		}
-		pageSize := utils.GetFlag(cmd.Flags(), "string", "pageSize")
+		pageSize := utils.GetFlag(cmd.Flags(), "int", "pageSize")
 		if pageSize != "" {
 			queryParams["pageSize"] = pageSize
 		}

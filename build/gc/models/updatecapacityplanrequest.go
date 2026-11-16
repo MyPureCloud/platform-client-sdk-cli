@@ -35,6 +35,9 @@ type UpdatecapacityplanrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Updatecapacityplanrequest
@@ -55,8 +58,12 @@ type Updatecapacityplanrequest struct {
     EndBusinessUnitDate time.Time `json:"endBusinessUnitDate"`
 
 
-    // Forecast - The selected forecast for this capacity plan
+    // Forecast - The generated forecast for this capacity plan. When switching from an imported forecast, provide a value for forecast
     Forecast Valuewrapperbushorttermforecastreference `json:"forecast"`
+
+
+    // ImportedForecast - The externally imported forecast for this capacity plan. When switching from a forecast, provide a value for importedForecast
+    ImportedForecast Valuewrappercapacityplanimportedforecastrequest `json:"importedForecast"`
 
 
     // FullTimeEquivalentWeeklyHours - The weekly hours used to calculate full time equivalent agents
@@ -74,6 +81,7 @@ type Updatecapacityplanrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Updatecapacityplanrequest) String() string {
+    
     
     
     
@@ -109,6 +117,8 @@ func (u *Updatecapacityplanrequest) MarshalJSON() ([]byte, error) {
         
         Forecast Valuewrapperbushorttermforecastreference `json:"forecast"`
         
+        ImportedForecast Valuewrappercapacityplanimportedforecastrequest `json:"importedForecast"`
+        
         FullTimeEquivalentWeeklyHours float64 `json:"fullTimeEquivalentWeeklyHours"`
         
         UseLatestPlanningGroupStaffingGroupAssociation bool `json:"useLatestPlanningGroupStaffingGroupAssociation"`
@@ -116,6 +126,9 @@ func (u *Updatecapacityplanrequest) MarshalJSON() ([]byte, error) {
         Metadata Capacityplanmetadata `json:"metadata"`
         *Alias
     }{
+
+        
+
 
         
 

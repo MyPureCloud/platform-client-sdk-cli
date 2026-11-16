@@ -73,7 +73,7 @@ type Billinginvoiceitem struct {
 
 
     // Quantity - Quantity of the item.
-    Quantity int `json:"quantity"`
+    Quantity float32 `json:"quantity"`
 
 
     // UnitOfMeasure - Unit of Measure.
@@ -125,7 +125,7 @@ func (u *Billinginvoiceitem) MarshalJSON() ([]byte, error) {
         
         Organization Namedentity `json:"organization"`
         
-        Quantity int `json:"quantity"`
+        Quantity float32 `json:"quantity"`
         
         UnitOfMeasure string `json:"unitOfMeasure"`
         

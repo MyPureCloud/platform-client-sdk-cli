@@ -16,6 +16,9 @@ type OutboundblendingsettingsDud struct {
 
     
 
+
+    Active bool `json:"active"`
+
 }
 
 // Outboundblendingsettings
@@ -26,6 +29,9 @@ type Outboundblendingsettings struct {
 
     // CampaignReservationPercentage - The proportion of on-queue agents to reserve for outbound campaign calls. Allowable range 1 - 100 (inclusive).
     CampaignReservationPercentage int `json:"campaignReservationPercentage"`
+
+
+    
 
 }
 
@@ -55,6 +61,9 @@ func (u *Outboundblendingsettings) MarshalJSON() ([]byte, error) {
         CampaignReservationPercentage int `json:"campaignReservationPercentage"`
         *Alias
     }{
+
+        
+
 
         
 

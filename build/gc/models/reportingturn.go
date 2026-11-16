@@ -47,6 +47,21 @@ type ReportingturnDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Reportingturn
@@ -83,6 +98,14 @@ type Reportingturn struct {
     KnowledgeBaseEvents Reportingturnknowledgeevents `json:"knowledgeBaseEvents"`
 
 
+    // BotFlowInvocationEvents - The details related to the invoking and invoked flows of the bot flow session.
+    BotFlowInvocationEvents []Reportingturnbotflowinvocationevent `json:"botFlowInvocationEvents"`
+
+
+    // DateInputStarted - Timestamp indicating the datetime when the input came from the user. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateInputStarted time.Time `json:"dateInputStarted"`
+
+
     // DateCreated - Timestamp indicating when the original turn was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     DateCreated time.Time `json:"dateCreated"`
 
@@ -98,6 +121,18 @@ type Reportingturn struct {
     // SessionEndDetails - The details related to end of bot flow session.
     SessionEndDetails Sessionenddetails `json:"sessionEndDetails"`
 
+
+    // ToolCalls - Metadata of tool calls carried out in the reporting turn.
+    ToolCalls []Reportingturntoolcall `json:"toolCalls"`
+
+
+    // GuardrailEvents - Metadata of any Guardrail events that occurred in the reporting turn.
+    GuardrailEvents []Reportingturnguardrailevent `json:"guardrailEvents"`
+
+
+    // ExecutionFrameId - The executionFrameId of the ask action within the reportingTurn.
+    ExecutionFrameId string `json:"executionFrameId"`
+
 }
 
 // String returns a JSON representation of the model
@@ -110,9 +145,14 @@ func (o *Reportingturn) String() string {
     
     
     
+     o.BotFlowInvocationEvents = []Reportingturnbotflowinvocationevent{{}} 
     
     
     
+    
+    
+     o.ToolCalls = []Reportingturntoolcall{{}} 
+     o.GuardrailEvents = []Reportingturnguardrailevent{{}} 
     
 
     j, _ := json.Marshal(o)
@@ -147,6 +187,10 @@ func (u *Reportingturn) MarshalJSON() ([]byte, error) {
         
         KnowledgeBaseEvents Reportingturnknowledgeevents `json:"knowledgeBaseEvents"`
         
+        BotFlowInvocationEvents []Reportingturnbotflowinvocationevent `json:"botFlowInvocationEvents"`
+        
+        DateInputStarted time.Time `json:"dateInputStarted"`
+        
         DateCreated time.Time `json:"dateCreated"`
         
         DateCompleted time.Time `json:"dateCompleted"`
@@ -154,6 +198,12 @@ func (u *Reportingturn) MarshalJSON() ([]byte, error) {
         AskActionResult string `json:"askActionResult"`
         
         SessionEndDetails Sessionenddetails `json:"sessionEndDetails"`
+        
+        ToolCalls []Reportingturntoolcall `json:"toolCalls"`
+        
+        GuardrailEvents []Reportingturnguardrailevent `json:"guardrailEvents"`
+        
+        ExecutionFrameId string `json:"executionFrameId"`
         *Alias
     }{
 
@@ -184,11 +234,32 @@ func (u *Reportingturn) MarshalJSON() ([]byte, error) {
 
 
         
+        BotFlowInvocationEvents: []Reportingturnbotflowinvocationevent{{}},
+        
 
 
         
 
 
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+        ToolCalls: []Reportingturntoolcall{{}},
+        
+
+
+        
+        GuardrailEvents: []Reportingturnguardrailevent{{}},
         
 
 

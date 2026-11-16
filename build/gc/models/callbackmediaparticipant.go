@@ -152,6 +152,9 @@ type CallbackmediaparticipantDud struct {
 
     
 
+
+    
+
 }
 
 // Callbackmediaparticipant
@@ -340,6 +343,10 @@ type Callbackmediaparticipant struct {
     AutomatedCallbackConfigId string `json:"automatedCallbackConfigId"`
 
 
+    // ClientIpAddress - The reported client IP of the phone for the call.
+    ClientIpAddress string `json:"clientIpAddress"`
+
+
     // CallbackScheduledTime - Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
     CallbackScheduledTime time.Time `json:"callbackScheduledTime"`
 
@@ -388,6 +395,7 @@ func (o *Callbackmediaparticipant) String() string {
     
     
      o.CallbackNumbers = []string{""} 
+    
     
     
     
@@ -502,6 +510,8 @@ func (u *Callbackmediaparticipant) MarshalJSON() ([]byte, error) {
         TimeoutSeconds int `json:"timeoutSeconds"`
         
         AutomatedCallbackConfigId string `json:"automatedCallbackConfigId"`
+        
+        ClientIpAddress string `json:"clientIpAddress"`
         
         CallbackScheduledTime time.Time `json:"callbackScheduledTime"`
         *Alias
@@ -633,6 +643,9 @@ func (u *Callbackmediaparticipant) MarshalJSON() ([]byte, error) {
 
         
         CallbackNumbers: []string{""},
+        
+
+
         
 
 

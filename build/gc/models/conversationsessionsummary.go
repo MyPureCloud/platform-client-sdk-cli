@@ -53,6 +53,27 @@ type ConversationsessionsummaryDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Conversationsessionsummary
@@ -105,6 +126,34 @@ type Conversationsessionsummary struct {
     DateCreated time.Time `json:"dateCreated"`
 
 
+    // LatestCommunication - The most recent communication whose corresponding content was used for generating the summary. This field will be null if not available.
+    LatestCommunication Entity `json:"latestCommunication"`
+
+
+    // Labels - The summary labels.
+    Labels []Conversationsummarylabel `json:"labels"`
+
+
+    // Queue - The queue that handled the conversation, if any.
+    Queue Addressableentityref `json:"queue"`
+
+
+    // TriggerSource - The configuration source that triggered summarization.
+    TriggerSource Conversationsummarytriggersource `json:"triggerSource"`
+
+
+    // SummarySourceType - The service used to generate the summary.
+    SummarySourceType string `json:"summarySourceType"`
+
+
+    // TriggerType - How summarization was triggered, either on-demand by an agent or automatically after the conversation disconnect.
+    TriggerType string `json:"triggerType"`
+
+
+    // LastEditedBy - The user that last edited the summary, if the summary was edited.
+    LastEditedBy Conversationsummaryeditedby `json:"lastEditedBy"`
+
+
     // Communication - The communication object of the summary.
     Communication Entity `json:"communication"`
 
@@ -123,6 +172,13 @@ func (o *Conversationsessionsummary) String() string {
     
     
      o.PredictedWrapupCodes = []Conversationsummarywrapupcode{{}} 
+    
+    
+    
+    
+    
+    
+     o.Labels = []Conversationsummarylabel{{}} 
     
     
     
@@ -171,6 +227,20 @@ func (u *Conversationsessionsummary) MarshalJSON() ([]byte, error) {
         
         DateCreated time.Time `json:"dateCreated"`
         
+        LatestCommunication Entity `json:"latestCommunication"`
+        
+        Labels []Conversationsummarylabel `json:"labels"`
+        
+        Queue Addressableentityref `json:"queue"`
+        
+        TriggerSource Conversationsummarytriggersource `json:"triggerSource"`
+        
+        SummarySourceType string `json:"summarySourceType"`
+        
+        TriggerType string `json:"triggerType"`
+        
+        LastEditedBy Conversationsummaryeditedby `json:"lastEditedBy"`
+        
         Communication Entity `json:"communication"`
         
         Participants []Addressableentityref `json:"participants"`
@@ -197,6 +267,29 @@ func (u *Conversationsessionsummary) MarshalJSON() ([]byte, error) {
 
         
         PredictedWrapupCodes: []Conversationsummarywrapupcode{{}},
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+        Labels: []Conversationsummarylabel{{}},
         
 
 

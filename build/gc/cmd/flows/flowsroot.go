@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows_instances"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows_export"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows_jobs"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows_validate"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows_actions"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows_executions"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows_versions"
@@ -15,7 +16,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows_latestconfiguration"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows_divisionviews"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows_lookup"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/flows_validate"
 )
 
 func init() {
@@ -23,6 +23,7 @@ func init() {
 	flowsCmd.AddCommand(flows_instances.Cmdflows_instances())
 	flowsCmd.AddCommand(flows_export.Cmdflows_export())
 	flowsCmd.AddCommand(flows_jobs.Cmdflows_jobs())
+	flowsCmd.AddCommand(flows_validate.Cmdflows_validate())
 	flowsCmd.AddCommand(flows_actions.Cmdflows_actions())
 	flowsCmd.AddCommand(flows_executions.Cmdflows_executions())
 	flowsCmd.AddCommand(flows_versions.Cmdflows_versions())
@@ -32,7 +33,6 @@ func init() {
 	flowsCmd.AddCommand(flows_latestconfiguration.Cmdflows_latestconfiguration())
 	flowsCmd.AddCommand(flows_divisionviews.Cmdflows_divisionviews())
 	flowsCmd.AddCommand(flows_lookup.Cmdflows_lookup())
-	flowsCmd.AddCommand(flows_validate.Cmdflows_validate())
-	flowsCmd.Short = utils.GenerateCustomDescription(flowsCmd.Short, flows_datatables.Description, flows_instances.Description, flows_export.Description, flows_jobs.Description, flows_actions.Description, flows_executions.Description, flows_versions.Description, flows_milestones.Description, flows_outcomes.Description, flows_history.Description, flows_latestconfiguration.Description, flows_divisionviews.Description, flows_lookup.Description, flows_validate.Description, )
+	flowsCmd.Short = utils.GenerateCustomDescription(flowsCmd.Short, flows_datatables.Description, flows_instances.Description, flows_export.Description, flows_jobs.Description, flows_validate.Description, flows_actions.Description, flows_executions.Description, flows_versions.Description, flows_milestones.Description, flows_outcomes.Description, flows_history.Description, flows_latestconfiguration.Description, flows_divisionviews.Description, flows_lookup.Description, )
 	flowsCmd.Long = flowsCmd.Short
 }

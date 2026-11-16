@@ -28,6 +28,9 @@ type GuidesessionturnrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Guidesessionturnrequest - Request for a guide session turn
@@ -55,6 +58,10 @@ type Guidesessionturnrequest struct {
     // Context - The context for this turn, including conversation custom attributes and messages.
     Context Guidesessionturnrequestcontext `json:"context"`
 
+
+    // ConversationId - The ID of the conversation this turn belongs to.
+    ConversationId string `json:"conversationId"`
+
 }
 
 // String returns a JSON representation of the model
@@ -63,6 +70,7 @@ func (o *Guidesessionturnrequest) String() string {
     
     
      o.InputVariables = []Guidesessionvariable{{}} 
+    
     
     
 
@@ -93,6 +101,8 @@ func (u *Guidesessionturnrequest) MarshalJSON() ([]byte, error) {
         KnowledgeSettings Knowledgesettings `json:"knowledgeSettings"`
         
         Context Guidesessionturnrequestcontext `json:"context"`
+        
+        ConversationId string `json:"conversationId"`
         *Alias
     }{
 
@@ -107,6 +117,9 @@ func (u *Guidesessionturnrequest) MarshalJSON() ([]byte, error) {
 
         
         InputVariables: []Guidesessionvariable{{}},
+        
+
+
         
 
 

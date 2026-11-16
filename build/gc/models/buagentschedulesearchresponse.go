@@ -19,6 +19,9 @@ type BuagentschedulesearchresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Buagentschedulesearchresponse
@@ -34,6 +37,10 @@ type Buagentschedulesearchresponse struct {
     // FullDayTimeOffMarkers - Full day time off markers which apply to this agent schedule
     FullDayTimeOffMarkers []Bufulldaytimeoffmarker `json:"fullDayTimeOffMarkers"`
 
+
+    // WorkPlansPerWeek - The work plans per week for this user from the work plan rotation. Null values in the list denotes that user is not part of any work plan for that week
+    WorkPlansPerWeek []Workplanreference `json:"workPlansPerWeek"`
+
 }
 
 // String returns a JSON representation of the model
@@ -41,6 +48,7 @@ func (o *Buagentschedulesearchresponse) String() string {
     
      o.Shifts = []Buagentscheduleshift{{}} 
      o.FullDayTimeOffMarkers = []Bufulldaytimeoffmarker{{}} 
+     o.WorkPlansPerWeek = []Workplanreference{{}} 
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -63,6 +71,8 @@ func (u *Buagentschedulesearchresponse) MarshalJSON() ([]byte, error) {
         Shifts []Buagentscheduleshift `json:"shifts"`
         
         FullDayTimeOffMarkers []Bufulldaytimeoffmarker `json:"fullDayTimeOffMarkers"`
+        
+        WorkPlansPerWeek []Workplanreference `json:"workPlansPerWeek"`
         *Alias
     }{
 
@@ -76,6 +86,11 @@ func (u *Buagentschedulesearchresponse) MarshalJSON() ([]byte, error) {
 
         
         FullDayTimeOffMarkers: []Bufulldaytimeoffmarker{{}},
+        
+
+
+        
+        WorkPlansPerWeek: []Workplanreference{{}},
         
 
         Alias: (*Alias)(u),

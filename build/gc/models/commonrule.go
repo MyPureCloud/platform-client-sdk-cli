@@ -54,6 +54,15 @@ type CommonruleDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -89,6 +98,18 @@ type Commonrule struct {
 
     // Conditions - The set of metric conditions that would trigger an alert.
     Conditions Commonruleconditions `json:"conditions"`
+
+
+    // Muted - Flag that indicates if the rule is muted.
+    Muted bool `json:"muted"`
+
+
+    // DateStartMute - Timestamp of when the mute status of the rule should start. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateStartMute time.Time `json:"dateStartMute"`
+
+
+    // DateEndMute - Timestamp of when the mute status of the rule should end. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    DateEndMute time.Time `json:"dateEndMute"`
 
 
     // VarType - The type of the rule.
@@ -134,6 +155,9 @@ func (o *Commonrule) String() string {
     
     
     
+    
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -165,6 +189,12 @@ func (u *Commonrule) MarshalJSON() ([]byte, error) {
         
         Conditions Commonruleconditions `json:"conditions"`
         
+        Muted bool `json:"muted"`
+        
+        DateStartMute time.Time `json:"dateStartMute"`
+        
+        DateEndMute time.Time `json:"dateEndMute"`
+        
         VarType string `json:"type"`
         
         InAlarm bool `json:"inAlarm"`
@@ -193,6 +223,15 @@ func (u *Commonrule) MarshalJSON() ([]byte, error) {
 
         
         Notifications: []Alertnotification{{}},
+        
+
+
+        
+
+
+        
+
+
         
 
 

@@ -98,6 +98,9 @@ type CallbackbasicDud struct {
 
     
 
+
+    
+
 }
 
 // Callbackbasic
@@ -217,6 +220,10 @@ type Callbackbasic struct {
     // QueueMediaSettings - Represents the queue settings for this media type.
     QueueMediaSettings Conversationqueuemediasettings `json:"queueMediaSettings"`
 
+
+    // ClientIpAddress - The reported client IP of the phone for the call.
+    ClientIpAddress string `json:"clientIpAddress"`
+
 }
 
 // String returns a JSON representation of the model
@@ -232,6 +239,7 @@ func (o *Callbackbasic) String() string {
     
     
      o.CallbackNumbers = []string{""} 
+    
     
     
     
@@ -324,6 +332,8 @@ func (u *Callbackbasic) MarshalJSON() ([]byte, error) {
         CallerIdName string `json:"callerIdName"`
         
         QueueMediaSettings Conversationqueuemediasettings `json:"queueMediaSettings"`
+        
+        ClientIpAddress string `json:"clientIpAddress"`
         *Alias
     }{
 
@@ -361,6 +371,9 @@ func (u *Callbackbasic) MarshalJSON() ([]byte, error) {
 
         
         CallbackNumbers: []string{""},
+        
+
+
         
 
 

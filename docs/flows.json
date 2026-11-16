@@ -194,6 +194,16 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/flows/validate/jobs",
+      "description": "Register Architect Validate Job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/flows/validate/jobs/{jobId}",
+      "description": "Fetch Architect Validate Job Status"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/flows/actions/unlock",
       "description": "Unlock flow"
     },
@@ -376,16 +386,6 @@
       "name": "batchdelete",
       "path": "/api/v2/flows",
       "description": "Batch-delete a list of flows"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/flows/validate/jobs",
-      "description": "Register Architect Validate Job"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/flows/validate/jobs/{jobId}",
-      "description": "Fetch Architect Validate Job Status"
     }
   ]
 }

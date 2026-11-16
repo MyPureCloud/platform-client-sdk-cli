@@ -13,7 +13,8 @@ gc intents categories get [categoryId] [flags]
 ### Options
 
 ```
-  -h, --help   help for get
+  -h, --help                  help for get
+      --includeUsage string   When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off. Valid values: true, false
 ```
 
 ### Options inherited from parent commands

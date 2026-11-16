@@ -1,19 +1,22 @@
-## gc conversations messages communications messages media create
+## gc conversations screenmonitors list
 
-Create media
+Get active screen monitoring conversations for the logged in user
 
 ### Synopsis
 
-Create media
+Get active screen monitoring conversations for the logged in user
 
 ```
-gc conversations messages communications messages media create [conversationId] [communicationId] [flags]
+gc conversations screenmonitors list [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help   help for create
+  -a, --autopaginate             Automatically paginate through the results stripping page information
+      --filtercondition string   Filter list command output based on a given condition or regular expression
+  -h, --help                     help for list
+  -s, --stream                   Paginate and stream data as it is being processed leaving page information intact
 ```
 
 ### Options inherited from parent commands
@@ -33,6 +36,6 @@ gc conversations messages communications messages media create [conversationId] 
 
 ### SEE ALSO
 
-* [gc conversations messages communications messages media](gc_conversations_messages_communications_messages_media.html)	 - /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media
+* [gc conversations screenmonitors](gc_conversations_screenmonitors.html)	 - /api/v2/conversations/screenmonitors
 
 

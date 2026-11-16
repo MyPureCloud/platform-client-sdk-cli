@@ -30,7 +30,9 @@
 ### SEE ALSO
 
 * [gc workforcemanagement businessunits activityplans](gc_workforcemanagement_businessunits_activityplans.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans
-* [gc workforcemanagement businessunits activityplans occurrences deletions](gc_workforcemanagement_businessunits_activityplans_occurrences_deletions.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions
+* [gc workforcemanagement businessunits activityplans occurrences deletions](gc_workforcemanagement_businessunits_activityplans_occurrences_deletions.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions
+* [gc workforcemanagement businessunits activityplans occurrences get](gc_workforcemanagement_businessunits_activityplans_occurrences_get.html)	 - Get a specific occurrence for the activity plan
+* [gc workforcemanagement businessunits activityplans occurrences list](gc_workforcemanagement_businessunits_activityplans_occurrences_list.html)	 - Get all occurrences for an activity plan
 * [gc workforcemanagement businessunits activityplans occurrences sessions](gc_workforcemanagement_businessunits_activityplans_occurrences_sessions.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions
 
 

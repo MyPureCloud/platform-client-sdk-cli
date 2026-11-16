@@ -13,7 +13,8 @@ gc users me verifiers delete [verifierId] [flags]
 ### Options
 
 ```
-  -h, --help   help for delete
+  -h, --help                                  help for delete
+      --replacementDefaultVerifierId string   The ID of an enabled verifier to make the default after deleting the current default
 ```
 
 ### Options inherited from parent commands

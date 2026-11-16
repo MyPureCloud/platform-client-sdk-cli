@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc workforcemanagement agents integrations](gc_workforcemanagement_agents_integrations.html)	 - /api/v2/workforcemanagement/agents/{agentId}/integrations
+* [gc workforcemanagement agents integrations](gc_workforcemanagement_agents_integrations.html)	 - /api/v2/workforcemanagement/agents/integrations
 * [gc workforcemanagement agents integrations hris query](gc_workforcemanagement_agents_integrations_hris_query.html)	 - /api/v2/workforcemanagement/agents/integrations/hris/query
 * [gc workforcemanagement agents integrations hris update](gc_workforcemanagement_agents_integrations_hris_update.html)	 - Update integrations for agent
 

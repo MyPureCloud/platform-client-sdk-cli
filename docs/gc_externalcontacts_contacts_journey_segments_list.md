@@ -13,9 +13,11 @@ gc externalcontacts contacts journey segments list [contactId] [flags]
 ### Options
 
 ```
+      --expand strings         Expand the response with additional fields. Valid values: segment
   -h, --help                   help for list
       --includeMerged string   Indicates whether to return segment assignments from all external contacts in the merge-set of the given one. Valid values: true, false
       --limit string           Number of entities to return. Default of 25, maximum of 500.
+      --segmentIds strings     IDs of segments to return. Maximum of 5
 ```
 
 ### Options inherited from parent commands

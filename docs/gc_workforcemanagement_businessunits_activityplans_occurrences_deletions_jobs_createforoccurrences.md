@@ -36,6 +36,6 @@ gc workforcemanagement businessunits activityplans occurrences deletions jobs cr
 
 ### SEE ALSO
 
-* [gc workforcemanagement businessunits activityplans occurrences deletions jobs](gc_workforcemanagement_businessunits_activityplans_occurrences_deletions_jobs.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs
+* [gc workforcemanagement businessunits activityplans occurrences deletions jobs](gc_workforcemanagement_businessunits_activityplans_occurrences_deletions_jobs.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions/jobs /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs
 
 

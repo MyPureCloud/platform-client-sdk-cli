@@ -55,6 +55,7 @@
 * [gc conversations recordingmetadata](gc_conversations_recordingmetadata.html)	 - /api/v2/conversations/{conversationId}/recordingmetadata
 * [gc conversations recordings](gc_conversations_recordings.html)	 - /api/v2/conversations/{conversationId}/recordings
 * [gc conversations recordingstate](gc_conversations_recordingstate.html)	 - /api/v2/conversations/{conversationId}/recordingstate
+* [gc conversations screenmonitors](gc_conversations_screenmonitors.html)	 - /api/v2/conversations/screenmonitors
 * [gc conversations screenshares](gc_conversations_screenshares.html)	 - /api/v2/conversations/screenshares
 * [gc conversations secureattributes](gc_conversations_secureattributes.html)	 - /api/v2/conversations/{conversationId}/secureattributes
 * [gc conversations settings](gc_conversations_settings.html)	 - /api/v2/conversations/settings

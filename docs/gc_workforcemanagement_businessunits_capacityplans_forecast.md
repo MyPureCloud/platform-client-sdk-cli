@@ -31,5 +31,6 @@
 
 * [gc workforcemanagement businessunits capacityplans](gc_workforcemanagement_businessunits_capacityplans.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans
 * [gc workforcemanagement businessunits capacityplans forecast get](gc_workforcemanagement_businessunits_capacityplans_forecast_get.html)	 - Get a capacity plan`s forecast inputs
+* [gc workforcemanagement businessunits capacityplans forecast uploadurls](gc_workforcemanagement_businessunits_capacityplans_forecast_uploadurls.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/forecast/uploadurls
 
 

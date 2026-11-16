@@ -31,6 +31,7 @@
 
 * [gc users](gc_users.html)	 - /api/v2/users
 * [gc users verifiers delete](gc_users_verifiers_delete.html)	 - Delete a verifier
+* [gc users verifiers get](gc_users_verifiers_get.html)	 - Get a verifier
 * [gc users verifiers list](gc_users_verifiers_list.html)	 - Get a list of verifiers
 * [gc users verifiers update](gc_users_verifiers_update.html)	 - Update a verifier
 

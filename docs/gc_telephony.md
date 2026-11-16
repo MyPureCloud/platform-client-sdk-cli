@@ -40,5 +40,6 @@
 * [gc telephony settings](gc_telephony_settings.html)	 - /api/v2/telephony/settings
 * [gc telephony sipmessages](gc_telephony_sipmessages.html)	 - /api/v2/telephony/sipmessages
 * [gc telephony siptraces](gc_telephony_siptraces.html)	 - /api/v2/telephony/siptraces
+* [gc telephony trunkbasesettings](gc_telephony_trunkbasesettings.html)	 - /api/v2/telephony/trunkbasesettings
 
 

@@ -14,6 +14,7 @@ gc journey segments list [flags]
 
 ```
   -a, --autopaginate             Automatically paginate through the results stripping page information
+      --displayNames strings     Display names of segments to return. Case-insensitive matching. Maximum of 5. Must not contain exact duplicates (case-sensitive). Use of this parameter is not compatible with pagination or sorting or querying or segmentIds.
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --isActive string          Determines whether or not to show only active segments. Valid values: true, false

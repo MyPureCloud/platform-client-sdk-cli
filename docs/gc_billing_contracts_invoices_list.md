@@ -14,6 +14,7 @@ gc billing contracts invoices list [flags]
 
 ```
       --after string             The cursor that points to the end of the set of entities that has been returned.
+      --agreementId string       Filter invoices by agreement ID.
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --before string            The cursor that points to the start of the set of entities that has been returned.
       --dateEnd string           End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd

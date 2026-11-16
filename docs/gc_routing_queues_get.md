@@ -13,7 +13,7 @@ gc routing queues get [queueId] [flags]
 ### Options
 
 ```
-      --expand strings              Which fields, if any, to expand Valid values: identityresolution
+      --expand strings              Which fields, if any, to expand Valid values: identityresolution, outboundblendingstatus
       --forceMemberRecount string   Force a recount of queue membership. This is an expensive, opt-in operation intended for repairing out-of-sync membership counters. Valid values: true, false
   -h, --help                        help for get
 ```

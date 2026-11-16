@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc speechandtextanalytics conversations](gc_speechandtextanalytics_conversations.html)	 - /api/v2/speechandtextanalytics/conversations
+* [gc speechandtextanalytics conversations communications transcriptoutline](gc_speechandtextanalytics_conversations_communications_transcriptoutline.html)	 - /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcriptoutline
 * [gc speechandtextanalytics conversations communications transcripturl](gc_speechandtextanalytics_conversations_communications_transcripturl.html)	 - /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl
 * [gc speechandtextanalytics conversations communications transcripturls](gc_speechandtextanalytics_conversations_communications_transcripturls.html)	 - /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturls
 

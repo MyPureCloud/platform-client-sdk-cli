@@ -14,6 +14,7 @@ gc workforcemanagement agentschedules mine create [flags]
 
 ```
   -d, --directory string   Directory path with files containing request bodies
+      --expand strings     Include to access additional data on the agent schedules Valid values: agentSchedules.workPlansPerWeek
   -f, --file string        File name containing the JSON body
   -h, --help               help for create
   -b, --printrequestbody   Print the request body format of the API.

@@ -1,10 +1,10 @@
 ## gc workforcemanagement businessunits activityplans occurrences deletions jobs
 
-/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs
+/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions/jobs /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs
 
 ### Synopsis
 
-/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs
+/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions/jobs /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs
 
 ### Options
 
@@ -29,8 +29,10 @@
 
 ### SEE ALSO
 
-* [gc workforcemanagement businessunits activityplans occurrences deletions](gc_workforcemanagement_businessunits_activityplans_occurrences_deletions.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions
+* [gc workforcemanagement businessunits activityplans occurrences deletions](gc_workforcemanagement_businessunits_activityplans_occurrences_deletions.html)	 - /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions
+* [gc workforcemanagement businessunits activityplans occurrences deletions jobs create](gc_workforcemanagement_businessunits_activityplans_occurrences_deletions_jobs_create.html)	 - Delete an occurrence for the activity plan
 * [gc workforcemanagement businessunits activityplans occurrences deletions jobs createforoccurrences](gc_workforcemanagement_businessunits_activityplans_occurrences_deletions_jobs_createforoccurrences.html)	 - Delete occurrences for the activity plan
+* [gc workforcemanagement businessunits activityplans occurrences deletions jobs get](gc_workforcemanagement_businessunits_activityplans_occurrences_deletions_jobs_get.html)	 - Gets an occurrence deletion job
 * [gc workforcemanagement businessunits activityplans occurrences deletions jobs getforoccurrences](gc_workforcemanagement_businessunits_activityplans_occurrences_deletions_jobs_getforoccurrences.html)	 - Gets an occurrences deletion job
 
 

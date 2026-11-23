@@ -181,6 +181,16 @@
       "name": "create",
       "path": "/api/v2/recording/uploads/reports",
       "description": "Creates a recording upload status report"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/recording/snippets/settings",
+      "description": "Get the Snippet Recording Settings for the Organization"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/recording/snippets/settings",
+      "description": "Update the Snippet Recording Settings for the Organization"
     }
   ]
 }

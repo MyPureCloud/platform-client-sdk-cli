@@ -33,6 +33,12 @@ type TesttopicphrasejobsDud struct {
     
 
 
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -58,6 +64,14 @@ type Testtopicphrasejobs struct {
     DateModified time.Time `json:"dateModified"`
 
 
+    // ProcessedTranscriptsCount - Total count of transcripts processed. 0 until the job is completed
+    ProcessedTranscriptsCount int `json:"processedTranscriptsCount"`
+
+
+    // MatchedTranscriptsCount - Count of transcripts that matched the phrase. 0 until the job is completed
+    MatchedTranscriptsCount int `json:"matchedTranscriptsCount"`
+
+
     // Action
     Action string `json:"action"`
 
@@ -72,6 +86,8 @@ type Testtopicphrasejobs struct {
 
 // String returns a JSON representation of the model
 func (o *Testtopicphrasejobs) String() string {
+    
+    
     
     
     
@@ -103,11 +119,21 @@ func (u *Testtopicphrasejobs) MarshalJSON() ([]byte, error) {
         
         DateModified time.Time `json:"dateModified"`
         
+        ProcessedTranscriptsCount int `json:"processedTranscriptsCount"`
+        
+        MatchedTranscriptsCount int `json:"matchedTranscriptsCount"`
+        
         Action string `json:"action"`
         
         EntityType string `json:"entityType"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

@@ -42,6 +42,27 @@ type GenericdataingestionruleresponseDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -85,6 +106,34 @@ type Genericdataingestionruleresponse struct {
     Countries []string `json:"countries"`
 
 
+    // NonOwnedAccount - The non-owned Instagram account for listening. Can be present when source is External.
+    NonOwnedAccount interface{} `json:"nonOwnedAccount"`
+
+
+    // Hashtags - The hashtags configuration for listening. Can be present when source is External.
+    Hashtags interface{} `json:"hashtags"`
+
+
+    // IntegrationId - The Integration Id from which public social posts are ingested.
+    IntegrationId string `json:"integrationId"`
+
+
+    // SearchTerms - Search terms for X (formally Twitter).
+    SearchTerms string `json:"searchTerms"`
+
+
+    // MessageTypes - Array of message types to fetch when source type is external.
+    MessageTypes []string `json:"messageTypes"`
+
+
+    // PageId - The ID of the Facebook page when source is external.
+    PageId string `json:"pageId"`
+
+
+    // ExternalSource - The external source associated with this data ingestion rule, which is used when performing identity resolution.
+    ExternalSource Domainentityref `json:"externalSource"`
+
+
     
 
 }
@@ -98,6 +147,13 @@ func (o *Genericdataingestionruleresponse) String() string {
     
     
      o.Countries = []string{""} 
+     o.NonOwnedAccount = Interface{} 
+     o.Hashtags = Interface{} 
+    
+    
+     o.MessageTypes = []string{""} 
+    
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -128,6 +184,20 @@ func (u *Genericdataingestionruleresponse) MarshalJSON() ([]byte, error) {
         IngestionRuleInfo Messageinfo `json:"ingestionRuleInfo"`
         
         Countries []string `json:"countries"`
+        
+        NonOwnedAccount interface{} `json:"nonOwnedAccount"`
+        
+        Hashtags interface{} `json:"hashtags"`
+        
+        IntegrationId string `json:"integrationId"`
+        
+        SearchTerms string `json:"searchTerms"`
+        
+        MessageTypes []string `json:"messageTypes"`
+        
+        PageId string `json:"pageId"`
+        
+        ExternalSource Domainentityref `json:"externalSource"`
         *Alias
     }{
 
@@ -160,6 +230,33 @@ func (u *Genericdataingestionruleresponse) MarshalJSON() ([]byte, error) {
 
         
         Countries: []string{""},
+        
+
+
+        
+        NonOwnedAccount: Interface{},
+        
+
+
+        
+        Hashtags: Interface{},
+        
+
+
+        
+
+
+        
+
+
+        
+        MessageTypes: []string{""},
+        
+
+
+        
+
+
         
 
 

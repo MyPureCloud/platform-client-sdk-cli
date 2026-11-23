@@ -223,6 +223,11 @@
       "description": "Get a Stage."
     },
     {
+      "name": "update",
+      "path": "/api/v2/casemanagement/cases/{caseId}/stages/{stageId}",
+      "description": "Update the attributes of a Stage."
+    },
+    {
       "name": "list",
       "path": "/api/v2/casemanagement/cases/{caseId}/stages",
       "description": "Get a list of Stages."

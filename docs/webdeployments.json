@@ -14,13 +14,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/webdeployments/token/refresh",
-      "description": "Refresh a JWT."
+      "path": "/api/v2/webdeployments/token/oauthcodegrantjwtexchange",
+      "description": "Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments."
     },
     {
       "name": "create",
-      "path": "/api/v2/webdeployments/token/oauthcodegrantjwtexchange",
-      "description": "Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments."
+      "path": "/api/v2/webdeployments/token/refresh",
+      "description": "Refresh a JWT."
     },
     {
       "name": "delete",
@@ -36,11 +36,6 @@
       "name": "create",
       "path": "/api/v2/webdeployments/configurations",
       "description": "Create a configuration draft"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/webdeployments/configurations/{configurationId}/versions",
-      "description": "Get the versions of a configuration"
     },
     {
       "name": "get",
@@ -61,6 +56,11 @@
       "name": "create",
       "path": "/api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish",
       "description": "Publish the configuration draft and create a new version"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/webdeployments/configurations/{configurationId}/versions",
+      "description": "Get the versions of a configuration"
     },
     {
       "name": "get",

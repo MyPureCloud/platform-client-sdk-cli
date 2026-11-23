@@ -16,6 +16,9 @@ type CreatecallbackresponseDud struct {
 
     
 
+
+    
+
 }
 
 // Createcallbackresponse
@@ -27,12 +30,17 @@ type Createcallbackresponse struct {
     // CallbackIdentifiers - The list of communication identifiers for the callback participants
     CallbackIdentifiers []Callbackidentifier `json:"callbackIdentifiers"`
 
+
+    // ScheduleEvaluationResult - The outcome of the operating schedule group evaluation. Present only when schedule group validation is enabled for the organization
+    ScheduleEvaluationResult string `json:"scheduleEvaluationResult"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Createcallbackresponse) String() string {
     
      o.CallbackIdentifiers = []Callbackidentifier{{}} 
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -53,6 +61,8 @@ func (u *Createcallbackresponse) MarshalJSON() ([]byte, error) {
         Conversation Domainentityref `json:"conversation"`
         
         CallbackIdentifiers []Callbackidentifier `json:"callbackIdentifiers"`
+        
+        ScheduleEvaluationResult string `json:"scheduleEvaluationResult"`
         *Alias
     }{
 
@@ -61,6 +71,9 @@ func (u *Createcallbackresponse) MarshalJSON() ([]byte, error) {
 
         
         CallbackIdentifiers: []Callbackidentifier{{}},
+        
+
+
         
 
         Alias: (*Alias)(u),

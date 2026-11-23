@@ -29,6 +29,11 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId}",
+      "description": "Get the status of the publishing job for this guide version."
+    },
+    {
+      "name": "get",
       "path": "/api/v2/guides/{guideId}/versions/{versionId}",
       "description": "Get a guide version."
     },
@@ -41,11 +46,6 @@
       "name": "create",
       "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs",
       "description": "Start the publishing of a guide version."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId}",
-      "description": "Get the status of the publishing job for this guide version."
     },
     {
       "name": "create",
@@ -76,6 +76,26 @@
       "name": "create",
       "path": "/api/v2/guides/uploads",
       "description": "Generate presigned URL for uploading a file content to generate guide"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/guides/transcripts/discovery/{snapshotId}",
+      "description": "Get the status of a discovery snapshot."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/guides/transcripts/discovery",
+      "description": "Create a discovery job."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/guides/transcripts/snapshots/{snapshotId}/generate",
+      "description": "Get the status of a guide generation job."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/guides/transcripts/snapshots/{snapshotId}/generate",
+      "description": "Create a guide generation job."
     }
   ]
 }

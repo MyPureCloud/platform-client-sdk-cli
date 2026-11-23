@@ -67,6 +67,14 @@ type Externalorganizationlisting struct {
     PartialResults bool `json:"partialResults"`
 
 
+    // NextUri
+    NextUri string `json:"nextUri"`
+
+
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
+
+
     // LastUri
     LastUri string `json:"lastUri"`
 
@@ -77,14 +85,6 @@ type Externalorganizationlisting struct {
 
     // SelfUri
     SelfUri string `json:"selfUri"`
-
-
-    // NextUri
-    NextUri string `json:"nextUri"`
-
-
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
 
 
     // PageCount
@@ -132,15 +132,15 @@ func (u *Externalorganizationlisting) MarshalJSON() ([]byte, error) {
         
         PartialResults bool `json:"partialResults"`
         
+        NextUri string `json:"nextUri"`
+        
+        PreviousUri string `json:"previousUri"`
+        
         LastUri string `json:"lastUri"`
         
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
-        
-        NextUri string `json:"nextUri"`
-        
-        PreviousUri string `json:"previousUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

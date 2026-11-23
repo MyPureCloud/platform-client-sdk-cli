@@ -22,6 +22,9 @@ type TestexecutionresultDud struct {
 
     
 
+
+    
+
 }
 
 // Testexecutionresult
@@ -41,6 +44,10 @@ type Testexecutionresult struct {
     // Success - Indicates whether or not the test was a success
     Success bool `json:"success"`
 
+
+    // DurationMs - Total time in milliseconds taken to execute the test
+    DurationMs int `json:"durationMs"`
+
 }
 
 // String returns a JSON representation of the model
@@ -48,6 +55,7 @@ func (o *Testexecutionresult) String() string {
      o.Operations = []Testexecutionoperationresult{{}} 
     
      o.FinalResult = Interface{} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -73,6 +81,8 @@ func (u *Testexecutionresult) MarshalJSON() ([]byte, error) {
         FinalResult interface{} `json:"finalResult"`
         
         Success bool `json:"success"`
+        
+        DurationMs int `json:"durationMs"`
         *Alias
     }{
 
@@ -86,6 +96,9 @@ func (u *Testexecutionresult) MarshalJSON() ([]byte, error) {
 
         
         FinalResult: Interface{},
+        
+
+
         
 
 

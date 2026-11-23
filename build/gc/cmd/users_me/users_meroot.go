@@ -4,11 +4,13 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_me_verifiers"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_me_password"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/users_me_trustors"
 )
 
 func init() {
 	users_meCmd.AddCommand(users_me_verifiers.Cmdusers_me_verifiers())
 	users_meCmd.AddCommand(users_me_password.Cmdusers_me_password())
-	users_meCmd.Short = utils.GenerateCustomDescription(users_meCmd.Short, users_me_verifiers.Description, users_me_password.Description, )
+	users_meCmd.AddCommand(users_me_trustors.Cmdusers_me_trustors())
+	users_meCmd.Short = utils.GenerateCustomDescription(users_meCmd.Short, users_me_verifiers.Description, users_me_password.Description, users_me_trustors.Description, )
 	users_meCmd.Long = users_meCmd.Short
 }

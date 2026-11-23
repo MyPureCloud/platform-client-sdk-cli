@@ -58,6 +58,9 @@ type CreatecallrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Createcallrequest
@@ -72,6 +75,10 @@ type Createcallrequest struct {
 
     // CallerIdName - The caller id name for this outbound call.
     CallerIdName string `json:"callerIdName"`
+
+
+    // AgentIndicatedAddress - The caller id for this outbound call when the agent indicated override is configured.
+    AgentIndicatedAddress string `json:"agentIndicatedAddress"`
 
 
     // CallFromQueueId - The queue ID to call on behalf of.
@@ -136,6 +143,7 @@ func (o *Createcallrequest) String() string {
     
     
     
+    
      o.Attributes = map[string]string{"": ""} 
     
      o.RoutingSkillsIds = []string{""} 
@@ -168,6 +176,8 @@ func (u *Createcallrequest) MarshalJSON() ([]byte, error) {
         
         CallerIdName string `json:"callerIdName"`
         
+        AgentIndicatedAddress string `json:"agentIndicatedAddress"`
+        
         CallFromQueueId string `json:"callFromQueueId"`
         
         CallQueueId string `json:"callQueueId"`
@@ -195,6 +205,9 @@ func (u *Createcallrequest) MarshalJSON() ([]byte, error) {
         Label string `json:"label"`
         *Alias
     }{
+
+        
+
 
         
 

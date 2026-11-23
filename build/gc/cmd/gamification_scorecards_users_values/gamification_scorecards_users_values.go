@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("gamification_scorecards_users_values", "SWAGGER_OVERRIDE_/api/v2/gamification/scorecards/users/{userId}/values")
+	Description = utils.FormatUsageDescription("gamification_scorecards_users_values", "SWAGGER_OVERRIDE_/api/v2/gamification/scorecards/users/values")
 	gamification_scorecards_users_valuesCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("gamification_scorecards_users_values"),
 		Short: Description,

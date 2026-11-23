@@ -64,6 +64,12 @@ type CallbackmediasettingsDud struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // Callbackmediasettings
@@ -139,10 +145,20 @@ type Callbackmediasettings struct {
     // Site - The identifier of the site to be used for dialing; can be set in place of an edge group.
     Site Domainentityref `json:"site"`
 
+
+    // EnableAgentReservation - The property to enable pre-dial agent reservation
+    EnableAgentReservation bool `json:"enableAgentReservation"`
+
+
+    // MaxCallbackDelayHours - The max amount of time a callback can be scheduled out into the future (in hours); Allowable range 1 - 720 hour(s) (inclusive)
+    MaxCallbackDelayHours int `json:"maxCallbackDelayHours"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Callbackmediasettings) String() string {
+    
+    
     
     
     
@@ -213,8 +229,18 @@ func (u *Callbackmediasettings) MarshalJSON() ([]byte, error) {
         EdgeGroup Domainentityref `json:"edgeGroup"`
         
         Site Domainentityref `json:"site"`
+        
+        EnableAgentReservation bool `json:"enableAgentReservation"`
+        
+        MaxCallbackDelayHours int `json:"maxCallbackDelayHours"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

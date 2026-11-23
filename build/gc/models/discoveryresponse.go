@@ -6,17 +6,25 @@ import (
 )
 
 var (
-    CopilotsentimentsettingsMarshalled = false
+    DiscoveryresponseMarshalled = false
 )
 
 // This struct is here to use the useless readonly properties so that their required imports don't throw an unused error (time, etc.)
-type CopilotsentimentsettingsDud struct { }
+type DiscoveryresponseDud struct { 
+    
 
-// Copilotsentimentsettings
-type Copilotsentimentsettings struct { }
+}
+
+// Discoveryresponse
+type Discoveryresponse struct { 
+    // SnapshotId - The snapshot ID for the discovery job.
+    SnapshotId string `json:"snapshotId"`
+
+}
 
 // String returns a JSON representation of the model
-func (o *Copilotsentimentsettings) String() string {
+func (o *Discoveryresponse) String() string {
+    
 
     j, _ := json.Marshal(o)
     str, _ := strconv.Unquote(strings.Replace(strconv.Quote(string(j)), `\\u`, `\u`, -1))
@@ -24,17 +32,22 @@ func (o *Copilotsentimentsettings) String() string {
     return str
 }
 
-func (u *Copilotsentimentsettings) MarshalJSON() ([]byte, error) {
-    type Alias Copilotsentimentsettings
+func (u *Discoveryresponse) MarshalJSON() ([]byte, error) {
+    type Alias Discoveryresponse
 
-    if CopilotsentimentsettingsMarshalled {
+    if DiscoveryresponseMarshalled {
         return []byte("{}"), nil
     }
-    CopilotsentimentsettingsMarshalled = true
+    DiscoveryresponseMarshalled = true
 
     return json.Marshal(&struct {
+        
+        SnapshotId string `json:"snapshotId"`
         *Alias
     }{
+
+        
+
         Alias: (*Alias)(u),
     })
 }

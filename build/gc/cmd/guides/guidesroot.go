@@ -6,6 +6,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/guides_sessions"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/guides_versions"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/guides_uploads"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/guides_transcripts"
 )
 
 func init() {
@@ -13,6 +14,7 @@ func init() {
 	guidesCmd.AddCommand(guides_sessions.Cmdguides_sessions())
 	guidesCmd.AddCommand(guides_versions.Cmdguides_versions())
 	guidesCmd.AddCommand(guides_uploads.Cmdguides_uploads())
-	guidesCmd.Short = utils.GenerateCustomDescription(guidesCmd.Short, guides_jobs.Description, guides_sessions.Description, guides_versions.Description, guides_uploads.Description, )
+	guidesCmd.AddCommand(guides_transcripts.Cmdguides_transcripts())
+	guidesCmd.Short = utils.GenerateCustomDescription(guidesCmd.Short, guides_jobs.Description, guides_sessions.Description, guides_versions.Description, guides_uploads.Description, guides_transcripts.Description, )
 	guidesCmd.Long = guidesCmd.Short
 }

@@ -67,6 +67,14 @@ type Relationshiplisting struct {
     PartialResults bool `json:"partialResults"`
 
 
+    // NextUri
+    NextUri string `json:"nextUri"`
+
+
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
+
+
     // LastUri
     LastUri string `json:"lastUri"`
 
@@ -77,14 +85,6 @@ type Relationshiplisting struct {
 
     // SelfUri
     SelfUri string `json:"selfUri"`
-
-
-    // NextUri
-    NextUri string `json:"nextUri"`
-
-
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
 
 
     // PageCount
@@ -132,15 +132,15 @@ func (u *Relationshiplisting) MarshalJSON() ([]byte, error) {
         
         PartialResults bool `json:"partialResults"`
         
+        NextUri string `json:"nextUri"`
+        
+        PreviousUri string `json:"previousUri"`
+        
         LastUri string `json:"lastUri"`
         
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
-        
-        NextUri string `json:"nextUri"`
-        
-        PreviousUri string `json:"previousUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

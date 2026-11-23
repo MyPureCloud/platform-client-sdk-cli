@@ -1,0 +1,12 @@
+package signals_anomalydetection_queue_anomalies_exports
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/signals_anomalydetection_queue_anomalies_exports_jobs"
+)
+
+func init() {
+	signals_anomalydetection_queue_anomalies_exportsCmd.AddCommand(signals_anomalydetection_queue_anomalies_exports_jobs.Cmdsignals_anomalydetection_queue_anomalies_exports_jobs())
+	signals_anomalydetection_queue_anomalies_exportsCmd.Short = utils.GenerateCustomDescription(signals_anomalydetection_queue_anomalies_exportsCmd.Short, signals_anomalydetection_queue_anomalies_exports_jobs.Description, )
+	signals_anomalydetection_queue_anomalies_exportsCmd.Long = signals_anomalydetection_queue_anomalies_exportsCmd.Short
+}

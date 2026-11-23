@@ -59,6 +59,9 @@ type BillingcontractDud struct {
 
     
 
+
+    
+
 }
 
 // Billingcontract
@@ -76,6 +79,10 @@ type Billingcontract struct {
 
     // CommercialModel - The type of commercial model.
     CommercialModel string `json:"commercialModel"`
+
+
+    // BillingFrequency - How the contract is billed. Values include Monthly Pre-pay, Annual Pre-pay and Monthly in Arrears.
+    BillingFrequency string `json:"billingFrequency"`
 
 
     // PurchaseOrderNumbers - List of po numbers periods for this contract.
@@ -132,6 +139,7 @@ func (o *Billingcontract) String() string {
     
     
     
+    
      o.PurchaseOrderNumbers = []string{""} 
     
     
@@ -167,6 +175,8 @@ func (u *Billingcontract) MarshalJSON() ([]byte, error) {
         
         CommercialModel string `json:"commercialModel"`
         
+        BillingFrequency string `json:"billingFrequency"`
+        
         PurchaseOrderNumbers []string `json:"purchaseOrderNumbers"`
         
         BillToCustomer Customer `json:"billToCustomer"`
@@ -192,6 +202,9 @@ func (u *Billingcontract) MarshalJSON() ([]byte, error) {
         Wallets []Billingwallet `json:"wallets"`
         *Alias
     }{
+
+        
+
 
         
 

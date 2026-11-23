@@ -1,0 +1,66 @@
+{
+  "supercommand": "signals",
+  "description": "/api/v2/signals",
+  "resources": [
+    {
+      "name": "get",
+      "path": "/api/v2/signals/anomalydetection/queues/{queueId}/analysis",
+      "description": "Get forecasted bounds and analysis for the specified queue"
+    },
+    {
+      "name": "list",
+      "path": "/api/v2/signals/anomalydetection/queues/available",
+      "description": "Get queues available for anomaly detection monitoring"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/signals/anomalydetection/queues/monitored",
+      "description": "Get the list of queues currently enabled for anomaly detection monitoring"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/signals/anomalydetection/queues/monitored",
+      "description": "Add or remove queues from anomaly detection monitoring"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/signals/anomalydetection/settings",
+      "description": "Get organization specific anomaly settings"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/signals/anomalydetection/settings",
+      "description": "Update organization specific anomaly settings"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/signals/anomalydetection/queue/anomalies/{anomalyId}",
+      "description": "Get a queue anomaly by ID"
+    },
+    {
+      "name": "update",
+      "path": "/api/v2/signals/anomalydetection/queue/anomalies/{anomalyId}",
+      "description": "Update a queue anomaly by ID"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/signals/anomalydetection/queue/anomalies/query",
+      "description": "Query for queue anomalies"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/signals/anomalydetection/queue/anomalies/summary",
+      "description": "Get summary of queue anomalies"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/signals/anomalydetection/queue/anomalies/exports/jobs",
+      "description": "Create a queue anomaly export job"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/signals/anomalydetection/queue/anomalies/exports/jobs/{jobId}",
+      "description": "Get status of the queue anomaly export job"
+    }
+  ]
+}

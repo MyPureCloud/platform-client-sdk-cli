@@ -1,0 +1,12 @@
+package workforcemanagement_timeoffrequests_evaluate_jobs
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/workforcemanagement_timeoffrequests_evaluate_jobs_status"
+)
+
+func init() {
+	workforcemanagement_timeoffrequests_evaluate_jobsCmd.AddCommand(workforcemanagement_timeoffrequests_evaluate_jobs_status.Cmdworkforcemanagement_timeoffrequests_evaluate_jobs_status())
+	workforcemanagement_timeoffrequests_evaluate_jobsCmd.Short = utils.GenerateCustomDescription(workforcemanagement_timeoffrequests_evaluate_jobsCmd.Short, workforcemanagement_timeoffrequests_evaluate_jobs_status.Description, )
+	workforcemanagement_timeoffrequests_evaluate_jobsCmd.Long = workforcemanagement_timeoffrequests_evaluate_jobsCmd.Short
+}

@@ -19,6 +19,9 @@ type TransfertoexternalrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Transfertoexternalrequest
@@ -31,6 +34,10 @@ type Transfertoexternalrequest struct {
     KeepInternalMessageAlive bool `json:"keepInternalMessageAlive"`
 
 
+    // AgentIndicatedAddress - The agent indicated address of the transfer initiator. May override the address depending on trunk address priority. Only available for call conversations.
+    AgentIndicatedAddress string `json:"agentIndicatedAddress"`
+
+
     // Address - The address (like phone number) of the external contact.
     Address string `json:"address"`
 
@@ -38,6 +45,7 @@ type Transfertoexternalrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Transfertoexternalrequest) String() string {
+    
     
     
     
@@ -62,9 +70,14 @@ func (u *Transfertoexternalrequest) MarshalJSON() ([]byte, error) {
         
         KeepInternalMessageAlive bool `json:"keepInternalMessageAlive"`
         
+        AgentIndicatedAddress string `json:"agentIndicatedAddress"`
+        
         Address string `json:"address"`
         *Alias
     }{
+
+        
+
 
         
 

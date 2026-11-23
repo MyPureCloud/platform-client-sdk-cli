@@ -44,16 +44,16 @@ type Unpublishedprogramsentitylisting struct {
     Total int `json:"total"`
 
 
-    // SelfUri
-    SelfUri string `json:"selfUri"`
-
-
     // PageCount
     PageCount int `json:"pageCount"`
 
 
     // NextUri
     NextUri string `json:"nextUri"`
+
+
+    // SelfUri
+    SelfUri string `json:"selfUri"`
 
 }
 
@@ -88,11 +88,11 @@ func (u *Unpublishedprogramsentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
-        SelfUri string `json:"selfUri"`
-        
         PageCount int `json:"pageCount"`
         
         NextUri string `json:"nextUri"`
+        
+        SelfUri string `json:"selfUri"`
         *Alias
     }{
 

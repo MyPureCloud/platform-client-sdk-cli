@@ -13,6 +13,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/taskmanagement_workitems_schemas"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/taskmanagement_workitems_users"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/taskmanagement_workitems_wrapups"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/taskmanagement_workitems_accessattributes"
 )
 
 func init() {
@@ -27,6 +28,7 @@ func init() {
 	taskmanagement_workitemsCmd.AddCommand(taskmanagement_workitems_schemas.Cmdtaskmanagement_workitems_schemas())
 	taskmanagement_workitemsCmd.AddCommand(taskmanagement_workitems_users.Cmdtaskmanagement_workitems_users())
 	taskmanagement_workitemsCmd.AddCommand(taskmanagement_workitems_wrapups.Cmdtaskmanagement_workitems_wrapups())
-	taskmanagement_workitemsCmd.Short = utils.GenerateCustomDescription(taskmanagement_workitemsCmd.Short, taskmanagement_workitems_bulk.Description, taskmanagement_workitems_query.Description, taskmanagement_workitems_disconnect.Description, taskmanagement_workitems_terminate.Description, taskmanagement_workitems_assignment.Description, taskmanagement_workitems_versions.Description, taskmanagement_workitems_history.Description, taskmanagement_workitems_acd.Description, taskmanagement_workitems_schemas.Description, taskmanagement_workitems_users.Description, taskmanagement_workitems_wrapups.Description, )
+	taskmanagement_workitemsCmd.AddCommand(taskmanagement_workitems_accessattributes.Cmdtaskmanagement_workitems_accessattributes())
+	taskmanagement_workitemsCmd.Short = utils.GenerateCustomDescription(taskmanagement_workitemsCmd.Short, taskmanagement_workitems_bulk.Description, taskmanagement_workitems_query.Description, taskmanagement_workitems_disconnect.Description, taskmanagement_workitems_terminate.Description, taskmanagement_workitems_assignment.Description, taskmanagement_workitems_versions.Description, taskmanagement_workitems_history.Description, taskmanagement_workitems_acd.Description, taskmanagement_workitems_schemas.Description, taskmanagement_workitems_users.Description, taskmanagement_workitems_wrapups.Description, taskmanagement_workitems_accessattributes.Description, )
 	taskmanagement_workitemsCmd.Long = taskmanagement_workitemsCmd.Short
 }

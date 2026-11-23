@@ -44,12 +44,12 @@ type Topicsentitylisting struct {
     Total int `json:"total"`
 
 
-    // SelfUri
-    SelfUri string `json:"selfUri"`
-
-
     // NextUri
     NextUri string `json:"nextUri"`
+
+
+    // SelfUri
+    SelfUri string `json:"selfUri"`
 
 
     // PageCount
@@ -88,9 +88,9 @@ func (u *Topicsentitylisting) MarshalJSON() ([]byte, error) {
         
         Total int `json:"total"`
         
-        SelfUri string `json:"selfUri"`
-        
         NextUri string `json:"nextUri"`
+        
+        SelfUri string `json:"selfUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

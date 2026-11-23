@@ -26,6 +26,18 @@ type WhatsappembeddedsignupintegrationrequestDud struct {
     
 
 
+    
+
+
+    
+
+
+    
+
+
+    
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -51,12 +63,32 @@ type Whatsappembeddedsignupintegrationrequest struct {
     EmbeddedSignupAccessToken string `json:"embeddedSignupAccessToken"`
 
 
+    // EmbeddedSignupTokenCode - The token exchange code returned from embedded signup (v4 or later).
+    EmbeddedSignupTokenCode string `json:"embeddedSignupTokenCode"`
+
+
+    // WhatsAppBusinessAccountId - The WhatsApp Business Account Id returned from embedded signup (v4 or later).
+    WhatsAppBusinessAccountId string `json:"whatsAppBusinessAccountId"`
+
+
+    // PhoneNumberId - The Phone Number Id returned from embedded signup (v4 or later).
+    PhoneNumberId string `json:"phoneNumberId"`
+
+
+    // BusinessPortfolioId - The Business Portfolio Id returned from embedded signup (v4 or later).
+    BusinessPortfolioId string `json:"businessPortfolioId"`
+
+
     
 
 }
 
 // String returns a JSON representation of the model
 func (o *Whatsappembeddedsignupintegrationrequest) String() string {
+    
+    
+    
+    
     
     
     
@@ -85,8 +117,28 @@ func (u *Whatsappembeddedsignupintegrationrequest) MarshalJSON() ([]byte, error)
         MessagingSetting Messagingsettingrequestreference `json:"messagingSetting"`
         
         EmbeddedSignupAccessToken string `json:"embeddedSignupAccessToken"`
+        
+        EmbeddedSignupTokenCode string `json:"embeddedSignupTokenCode"`
+        
+        WhatsAppBusinessAccountId string `json:"whatsAppBusinessAccountId"`
+        
+        PhoneNumberId string `json:"phoneNumberId"`
+        
+        BusinessPortfolioId string `json:"businessPortfolioId"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
+
+        
+
 
         
 

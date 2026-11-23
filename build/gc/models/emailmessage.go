@@ -63,6 +63,9 @@ type EmailmessageDud struct {
     MaxEmailSizeBytes int `json:"maxEmailSizeBytes"`
 
 
+    OverrideHeaders []Headerentry `json:"overrideHeaders"`
+
+
     RecipientWarnings []Recipientwarning `json:"recipientWarnings"`
 
 
@@ -129,6 +132,9 @@ type Emailmessage struct {
 
     // DraftType - The type of draft that need to be treated.
     DraftType string `json:"draftType"`
+
+
+    
 
 
     
@@ -239,6 +245,9 @@ func (u *Emailmessage) MarshalJSON() ([]byte, error) {
 
         
         Attachments: []Attachment{{}},
+        
+
+
         
 
 

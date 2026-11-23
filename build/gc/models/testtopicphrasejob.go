@@ -58,11 +58,11 @@ type Testtopicphrasejob struct {
     DateModified time.Time `json:"dateModified"`
 
 
-    // ProcessedTranscriptsCount
+    // ProcessedTranscriptsCount - Total count of transcripts processed. 0 until the job is completed
     ProcessedTranscriptsCount int `json:"processedTranscriptsCount"`
 
 
-    // MatchedTranscriptsCount
+    // MatchedTranscriptsCount - Count of transcripts that matched the phrase. 0 until the job is completed
     MatchedTranscriptsCount int `json:"matchedTranscriptsCount"`
 
 

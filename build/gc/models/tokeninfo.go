@@ -27,12 +27,18 @@ type TokeninfoDud struct {
     DateTokenIdles time.Time `json:"dateTokenIdles"`
 
 
+    Amr []string `json:"amr"`
+
+
     
 
 }
 
 // Tokeninfo
 type Tokeninfo struct { 
+    
+
+
     
 
 
@@ -76,6 +82,9 @@ func (u *Tokeninfo) MarshalJSON() ([]byte, error) {
         OAuthClient Orgoauthclient `json:"OAuthClient"`
         *Alias
     }{
+
+        
+
 
         
 

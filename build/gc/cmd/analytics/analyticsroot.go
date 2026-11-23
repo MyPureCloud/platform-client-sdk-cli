@@ -5,6 +5,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_actions"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_agentcopilots"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_agents"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_agenticvirtualagents"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_bots"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_casemanagement"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_conversations"
@@ -13,6 +14,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_flowexecutions"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_flows"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_journeys"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_kpiattributions"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_knowledge"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_queues"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_ratelimits"
@@ -35,6 +37,7 @@ func init() {
 	analyticsCmd.AddCommand(analytics_actions.Cmdanalytics_actions())
 	analyticsCmd.AddCommand(analytics_agentcopilots.Cmdanalytics_agentcopilots())
 	analyticsCmd.AddCommand(analytics_agents.Cmdanalytics_agents())
+	analyticsCmd.AddCommand(analytics_agenticvirtualagents.Cmdanalytics_agenticvirtualagents())
 	analyticsCmd.AddCommand(analytics_bots.Cmdanalytics_bots())
 	analyticsCmd.AddCommand(analytics_casemanagement.Cmdanalytics_casemanagement())
 	analyticsCmd.AddCommand(analytics_conversations.Cmdanalytics_conversations())
@@ -43,6 +46,7 @@ func init() {
 	analyticsCmd.AddCommand(analytics_flowexecutions.Cmdanalytics_flowexecutions())
 	analyticsCmd.AddCommand(analytics_flows.Cmdanalytics_flows())
 	analyticsCmd.AddCommand(analytics_journeys.Cmdanalytics_journeys())
+	analyticsCmd.AddCommand(analytics_kpiattributions.Cmdanalytics_kpiattributions())
 	analyticsCmd.AddCommand(analytics_knowledge.Cmdanalytics_knowledge())
 	analyticsCmd.AddCommand(analytics_queues.Cmdanalytics_queues())
 	analyticsCmd.AddCommand(analytics_ratelimits.Cmdanalytics_ratelimits())
@@ -59,6 +63,6 @@ func init() {
 	analyticsCmd.AddCommand(analytics_reporting.Cmdanalytics_reporting())
 	analyticsCmd.AddCommand(analytics_dataextraction.Cmdanalytics_dataextraction())
 	analyticsCmd.AddCommand(analytics_agentutilizations.Cmdanalytics_agentutilizations())
-	analyticsCmd.Short = utils.GenerateCustomDescription(analyticsCmd.Short, analytics_actions.Description, analytics_agentcopilots.Description, analytics_agents.Description, analytics_bots.Description, analytics_casemanagement.Description, analytics_conversations.Description, analytics_copilots.Description, analytics_evaluations.Description, analytics_flowexecutions.Description, analytics_flows.Description, analytics_journeys.Description, analytics_knowledge.Description, analytics_queues.Description, analytics_ratelimits.Description, analytics_resolutions.Description, analytics_routing.Description, analytics_summaries.Description, analytics_surveys.Description, analytics_taskmanagement.Description, analytics_teams.Description, analytics_transcripts.Description, analytics_users.Description, analytics_botflows.Description, analytics_dataretention.Description, analytics_reporting.Description, analytics_dataextraction.Description, analytics_agentutilizations.Description, )
+	analyticsCmd.Short = utils.GenerateCustomDescription(analyticsCmd.Short, analytics_actions.Description, analytics_agentcopilots.Description, analytics_agents.Description, analytics_agenticvirtualagents.Description, analytics_bots.Description, analytics_casemanagement.Description, analytics_conversations.Description, analytics_copilots.Description, analytics_evaluations.Description, analytics_flowexecutions.Description, analytics_flows.Description, analytics_journeys.Description, analytics_kpiattributions.Description, analytics_knowledge.Description, analytics_queues.Description, analytics_ratelimits.Description, analytics_resolutions.Description, analytics_routing.Description, analytics_summaries.Description, analytics_surveys.Description, analytics_taskmanagement.Description, analytics_teams.Description, analytics_transcripts.Description, analytics_users.Description, analytics_botflows.Description, analytics_dataretention.Description, analytics_reporting.Description, analytics_dataextraction.Description, analytics_agentutilizations.Description, )
 	analyticsCmd.Long = analyticsCmd.Short
 }

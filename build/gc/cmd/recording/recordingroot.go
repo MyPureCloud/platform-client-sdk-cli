@@ -11,6 +11,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recording_jobs"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recording_settings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recording_uploads"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/recording_snippets"
 )
 
 func init() {
@@ -23,6 +24,7 @@ func init() {
 	recordingCmd.AddCommand(recording_jobs.Cmdrecording_jobs())
 	recordingCmd.AddCommand(recording_settings.Cmdrecording_settings())
 	recordingCmd.AddCommand(recording_uploads.Cmdrecording_uploads())
-	recordingCmd.Short = utils.GenerateCustomDescription(recordingCmd.Short, recording_crossplatform.Description, recording_mediaretentionpolicies.Description, recording_recordingkeys.Description, recording_localkeys.Description, recording_keyconfigurations.Description, recording_batchrequests.Description, recording_jobs.Description, recording_settings.Description, recording_uploads.Description, )
+	recordingCmd.AddCommand(recording_snippets.Cmdrecording_snippets())
+	recordingCmd.Short = utils.GenerateCustomDescription(recordingCmd.Short, recording_crossplatform.Description, recording_mediaretentionpolicies.Description, recording_recordingkeys.Description, recording_localkeys.Description, recording_keyconfigurations.Description, recording_batchrequests.Description, recording_jobs.Description, recording_settings.Description, recording_uploads.Description, recording_snippets.Description, )
 	recordingCmd.Long = recordingCmd.Short
 }

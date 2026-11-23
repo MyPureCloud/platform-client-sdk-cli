@@ -13,10 +13,16 @@ var (
 type FacebookappcredentialsDud struct { 
     Id string `json:"id"`
 
+
+    ConfigurationId string `json:"configurationId"`
+
 }
 
 // Facebookappcredentials
 type Facebookappcredentials struct { 
+    
+
+
     
 
 }
@@ -41,6 +47,9 @@ func (u *Facebookappcredentials) MarshalJSON() ([]byte, error) {
     return json.Marshal(&struct {
         *Alias
     }{
+
+        
+
 
         
 

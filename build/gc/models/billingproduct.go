@@ -22,6 +22,18 @@ type BillingproductDud struct {
 
     
 
+
+    
+
+
+    
+
+
+    
+
+
+    
+
 }
 
 // Billingproduct
@@ -40,10 +52,30 @@ type Billingproduct struct {
     // UnitOfMeasure - The unit of measure for the product.
     UnitOfMeasure string `json:"unitOfMeasure"`
 
+
+    // Category - The category of the product, for example AI bundles.
+    Category string `json:"category"`
+
+
+    // Capability - The capability the product provides, for example AppFoundry.
+    Capability string `json:"capability"`
+
+
+    // Platform - The platform code of the product, for example PL003.
+    Platform string `json:"platform"`
+
+
+    // Family - The product family, for example Genesys Cloud.
+    Family string `json:"family"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Billingproduct) String() string {
+    
+    
+    
+    
     
     
     
@@ -69,8 +101,28 @@ func (u *Billingproduct) MarshalJSON() ([]byte, error) {
         Name string `json:"name"`
         
         UnitOfMeasure string `json:"unitOfMeasure"`
+        
+        Category string `json:"category"`
+        
+        Capability string `json:"capability"`
+        
+        Platform string `json:"platform"`
+        
+        Family string `json:"family"`
         *Alias
     }{
+
+        
+
+
+        
+
+
+        
+
+
+        
+
 
         
 

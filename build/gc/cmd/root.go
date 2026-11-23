@@ -35,6 +35,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/ipranges"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/languages"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/locations"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/orphanrecordings"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/presencedefinitions"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/scripts"
@@ -42,7 +43,6 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/stations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/systempresences"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/teams"
-	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/fax"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/timezones"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/tokens"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/userrecordings"
@@ -60,6 +60,7 @@ import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/organizations"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/agentic"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/signals"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/audits"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/screenrecording"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/billing"
@@ -144,7 +145,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 175.0.0")
+		fmt.Println("Current version: 176.0.0")
 		checkForNewVersion()
 	},
 }
@@ -163,7 +164,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("175.0.0", latestVersion) {
+	if versionsAreEqual("176.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
@@ -289,6 +290,7 @@ func init() {
 	rootCmd.AddCommand(ipranges.Cmdipranges())
 	rootCmd.AddCommand(languages.Cmdlanguages())
 	rootCmd.AddCommand(locations.Cmdlocations())
+	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(orphanrecordings.Cmdorphanrecordings())
 	rootCmd.AddCommand(presencedefinitions.Cmdpresencedefinitions())
 	rootCmd.AddCommand(scripts.Cmdscripts())
@@ -296,7 +298,6 @@ func init() {
 	rootCmd.AddCommand(stations.Cmdstations())
 	rootCmd.AddCommand(systempresences.Cmdsystempresences())
 	rootCmd.AddCommand(teams.Cmdteams())
-	rootCmd.AddCommand(fax.Cmdfax())
 	rootCmd.AddCommand(timezones.Cmdtimezones())
 	rootCmd.AddCommand(tokens.Cmdtokens())
 	rootCmd.AddCommand(userrecordings.Cmduserrecordings())
@@ -314,6 +315,7 @@ func init() {
 	rootCmd.AddCommand(organizations.Cmdorganizations())
 	rootCmd.AddCommand(agentic.Cmdagentic())
 	rootCmd.AddCommand(analytics.Cmdanalytics())
+	rootCmd.AddCommand(signals.Cmdsignals())
 	rootCmd.AddCommand(audits.Cmdaudits())
 	rootCmd.AddCommand(screenrecording.Cmdscreenrecording())
 	rootCmd.AddCommand(billing.Cmdbilling())

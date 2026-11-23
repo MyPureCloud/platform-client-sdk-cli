@@ -4,13 +4,13 @@
   "resources": [
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/contacts/remove",
-      "description": "Bulk remove contacts"
+      "path": "/api/v2/externalcontacts/bulk/contacts/add",
+      "description": "Bulk add contacts"
     },
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/contacts/add",
-      "description": "Bulk add contacts"
+      "path": "/api/v2/externalcontacts/bulk/contacts/divisionviews",
+      "description": "Bulk fetch contacts across divisions"
     },
     {
       "name": "create",
@@ -29,13 +29,13 @@
     },
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/contacts/divisionviews",
-      "description": "Bulk fetch contacts across divisions"
+      "path": "/api/v2/externalcontacts/bulk/contacts/enrich",
+      "description": "Bulk Enrich Contacts - Run up to 10 Enrich operations per request"
     },
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/contacts/enrich",
-      "description": "Bulk Enrich Contacts - Run up to 10 Enrich operations per request"
+      "path": "/api/v2/externalcontacts/bulk/contacts/remove",
+      "description": "Bulk remove contacts"
     },
     {
       "name": "create",
@@ -59,6 +59,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/organizations/enrich",
+      "description": "Bulk enrich external organizations - Run up to 10 Enrich operations per request"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/organizations/remove",
       "description": "Bulk remove organizations"
     },
@@ -74,18 +79,18 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/externalcontacts/bulk/organizations/add",
+      "description": "Bulk add organizations"
+    },
+    {
+      "name": "create",
       "path": "/api/v2/externalcontacts/bulk/organizations/divisionviews",
       "description": "Bulk fetch organizations across divisions"
     },
     {
       "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/organizations/enrich",
-      "description": "Bulk enrich external organizations - Run up to 10 Enrich operations per request"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/organizations/add",
-      "description": "Bulk add organizations"
+      "path": "/api/v2/externalcontacts/bulk/relationships/remove",
+      "description": "Bulk remove relationships"
     },
     {
       "name": "create",
@@ -101,11 +106,6 @@
       "name": "create",
       "path": "/api/v2/externalcontacts/bulk/relationships/add",
       "description": "Bulk add relationships"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/bulk/relationships/remove",
-      "description": "Bulk remove relationships"
     },
     {
       "name": "get",
@@ -158,6 +158,11 @@
       "description": "Update specific fields of an external contact"
     },
     {
+      "name": "create",
+      "path": "/api/v2/externalcontacts/contacts/{contactId}/promotion",
+      "description": "Promote an observed contact (ephemeral or identified) to a curated contact"
+    },
+    {
       "name": "list",
       "path": "/api/v2/externalcontacts/contacts/{contactId}/identifiers",
       "description": "List the identifiers for a contact"
@@ -166,11 +171,6 @@
       "name": "update",
       "path": "/api/v2/externalcontacts/contacts/{contactId}/identifiers",
       "description": "Claim or release identifiers for a contact"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/externalcontacts/contacts/{contactId}/promotion",
-      "description": "Promote an observed contact (ephemeral or identified) to a curated contact"
     },
     {
       "name": "get",

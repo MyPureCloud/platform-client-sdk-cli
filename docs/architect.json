@@ -3,6 +3,11 @@
   "description": "/api/v2/architect",
   "resources": [
     {
+      "name": "get",
+      "path": "/api/v2/architect/capabilities",
+      "description": "Get Architect capabilities such as actions, data types, flow types, functions, and languages"
+    },
+    {
       "name": "list",
       "path": "/api/v2/architect/dependencytracking/consumedresources",
       "description": "Get resources that are consumed by a given Dependency Tracking object"
@@ -78,6 +83,16 @@
       "description": "Creates a new emergency group"
     },
     {
+      "name": "create",
+      "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf",
+      "description": "Creates a presigned URL for uploading a grammar DTMF mode file"
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf",
+      "description": "Clear the DTMF mode file for the grammar language if there is one"
+    },
+    {
       "name": "get",
       "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}",
       "description": "Get a grammar language."
@@ -101,16 +116,6 @@
       "name": "delete",
       "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice",
       "description": "Clear the voice mode file for the grammar language if there is one"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf",
-      "description": "Creates a presigned URL for uploading a grammar DTMF mode file"
-    },
-    {
-      "name": "delete",
-      "path": "/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf",
-      "description": "Clear the DTMF mode file for the grammar language if there is one"
     },
     {
       "name": "create",

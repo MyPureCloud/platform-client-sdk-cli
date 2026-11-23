@@ -169,6 +169,16 @@
     },
     {
       "name": "get",
+      "path": "/api/v2/integrations/actions/{actionId}/schemas/{fileName}",
+      "description": "Retrieve schema for an action based on filename."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/integrations/actions/{actionId}/templates/{fileName}",
+      "description": "Retrieve text of templates for an action based on filename."
+    },
+    {
+      "name": "get",
       "path": "/api/v2/integrations/actions/{actionId}",
       "description": "Retrieves a single Action matching id."
     },
@@ -181,16 +191,6 @@
       "name": "update",
       "path": "/api/v2/integrations/actions/{actionId}",
       "description": "Patch an Action"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/integrations/actions/{actionId}/schemas/{fileName}",
-      "description": "Retrieve schema for an action based on filename."
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/integrations/actions/{actionId}/templates/{fileName}",
-      "description": "Retrieve text of templates for an action based on filename."
     },
     {
       "name": "get",

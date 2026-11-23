@@ -4,6 +4,21 @@
   "resources": [
     {
       "name": "get",
+      "path": "/api/v2/authorization/customattributes/itemtypes/{itemType}",
+      "description": "Get the default search criteria for an itemType."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/customattributes/itemtypes/{itemType}",
+      "description": "Add a new default search criteria for an itemType."
+    },
+    {
+      "name": "delete",
+      "path": "/api/v2/authorization/customattributes/itemtypes/{itemType}",
+      "description": "Delete the default search criteria for an itemType."
+    },
+    {
+      "name": "get",
       "path": "/api/v2/authorization/divisions/home",
       "description": "Retrieve the home division for the organization."
     },
@@ -11,6 +26,11 @@
       "name": "get",
       "path": "/api/v2/authorization/divisions/limit",
       "description": "Returns the maximum allowed number of divisions."
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/divisions/{divisionId}/restore",
+      "description": "Recreate a previously deleted division."
     },
     {
       "name": "get",
@@ -26,11 +46,6 @@
       "name": "delete",
       "path": "/api/v2/authorization/divisions/{divisionId}",
       "description": "Delete a division."
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/authorization/divisions/{divisionId}/restore",
-      "description": "Recreate a previously deleted division."
     },
     {
       "name": "list",
@@ -69,13 +84,13 @@
     },
     {
       "name": "list",
-      "path": "/api/v2/authorization/policies",
-      "description": "Get a page of access policies for an organization"
+      "path": "/api/v2/authorization/policies/subject/{subjectId}",
+      "description": "Get a page of access policies for a given subject"
     },
     {
-      "name": "create",
-      "path": "/api/v2/authorization/policies/targets/{targetName}/validate",
-      "description": "Validate the conditions and attributes of an access control policy for a specified resource target"
+      "name": "list",
+      "path": "/api/v2/authorization/policies",
+      "description": "Get a page of access policies for an organization"
     },
     {
       "name": "get",
@@ -86,11 +101,6 @@
       "name": "delete",
       "path": "/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}",
       "description": "Delete an access control policy"
-    },
-    {
-      "name": "list",
-      "path": "/api/v2/authorization/policies/subject/{subjectId}",
-      "description": "Get a page of access policies for a given subject"
     },
     {
       "name": "get",
@@ -116,6 +126,11 @@
       "name": "get",
       "path": "/api/v2/authorization/policies/targets",
       "description": "Get a map of policy targets to valid attributes for those targets"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/authorization/policies/targets/{targetName}/validate",
+      "description": "Validate the conditions and attributes of an access control policy for a specified resource target"
     },
     {
       "name": "get",
@@ -154,6 +169,11 @@
     },
     {
       "name": "create",
+      "path": "/api/v2/authorization/subjects/{subjectId}/divisions/query",
+      "description": "Gets all divisions for a particular user in an org."
+    },
+    {
+      "name": "create",
       "path": "/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}",
       "description": "Make a grant of a role in a division"
     },
@@ -161,6 +181,11 @@
       "name": "delete",
       "path": "/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}",
       "description": "Delete a grant of a role in a division"
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/authorization/subjects/{subjectId}",
+      "description": "Returns a listing of roles and permissions for a user."
     },
     {
       "name": "create",
@@ -178,9 +203,9 @@
       "description": "Bulk-remove grants from a subject."
     },
     {
-      "name": "get",
-      "path": "/api/v2/authorization/subjects/{subjectId}",
-      "description": "Returns a listing of roles and permissions for a user."
+      "name": "update",
+      "path": "/api/v2/authorization/roles/{roleId}/users/remove",
+      "description": "Removes the users from the role"
     },
     {
       "name": "list",
@@ -191,11 +216,6 @@
       "name": "update",
       "path": "/api/v2/authorization/roles/{roleId}/users/add",
       "description": "Sets the users for the role"
-    },
-    {
-      "name": "update",
-      "path": "/api/v2/authorization/roles/{roleId}/users/remove",
-      "description": "Removes the users from the role"
     },
     {
       "name": "list",

@@ -2,6 +2,7 @@ package authorization
 
 import (
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/authorization_customattributes"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/authorization_divisions"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/authorization_policies"
 	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/authorization_divisionspermitted"
@@ -13,6 +14,7 @@ import (
 )
 
 func init() {
+	authorizationCmd.AddCommand(authorization_customattributes.Cmdauthorization_customattributes())
 	authorizationCmd.AddCommand(authorization_divisions.Cmdauthorization_divisions())
 	authorizationCmd.AddCommand(authorization_policies.Cmdauthorization_policies())
 	authorizationCmd.AddCommand(authorization_divisionspermitted.Cmdauthorization_divisionspermitted())
@@ -21,6 +23,6 @@ func init() {
 	authorizationCmd.AddCommand(authorization_subjects.Cmdauthorization_subjects())
 	authorizationCmd.AddCommand(authorization_roles.Cmdauthorization_roles())
 	authorizationCmd.AddCommand(authorization_settings.Cmdauthorization_settings())
-	authorizationCmd.Short = utils.GenerateCustomDescription(authorizationCmd.Short, authorization_divisions.Description, authorization_policies.Description, authorization_divisionspermitted.Description, authorization_permissions.Description, authorization_products.Description, authorization_subjects.Description, authorization_roles.Description, authorization_settings.Description, )
+	authorizationCmd.Short = utils.GenerateCustomDescription(authorizationCmd.Short, authorization_customattributes.Description, authorization_divisions.Description, authorization_policies.Description, authorization_divisionspermitted.Description, authorization_permissions.Description, authorization_products.Description, authorization_subjects.Description, authorization_roles.Description, authorization_settings.Description, )
 	authorizationCmd.Long = authorizationCmd.Short
 }

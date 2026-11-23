@@ -38,16 +38,6 @@
       "description": "Update reactions to a message"
     },
     {
-      "name": "list",
-      "path": "/api/v2/chats/rooms/{roomJid}/messages",
-      "description": "Get a room's message history"
-    },
-    {
-      "name": "create",
-      "path": "/api/v2/chats/rooms/{roomJid}/messages",
-      "description": "Send a message to a room"
-    },
-    {
       "name": "delete",
       "path": "/api/v2/chats/rooms/{roomJid}/messages/{messageId}",
       "description": "Delete a message in a room"
@@ -88,14 +78,19 @@
       "description": "Add pinned messages for a 1on1, up to a maximum of 5 pinned messages"
     },
     {
+      "name": "list",
+      "path": "/api/v2/chats/rooms/{roomJid}/messages",
+      "description": "Get a room's message history"
+    },
+    {
+      "name": "create",
+      "path": "/api/v2/chats/rooms/{roomJid}/messages",
+      "description": "Send a message to a room"
+    },
+    {
       "name": "delete",
       "path": "/api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId}",
       "description": "Remove a pinned message from a 1on1"
-    },
-    {
-      "name": "get",
-      "path": "/api/v2/chats/rooms/{roomJid}/participants/{participantJid}",
-      "description": "Get a room participant"
     },
     {
       "name": "create",
@@ -106,6 +101,11 @@
       "name": "delete",
       "path": "/api/v2/chats/rooms/{roomJid}/participants/{userId}",
       "description": "Remove a user from a room."
+    },
+    {
+      "name": "get",
+      "path": "/api/v2/chats/rooms/{roomJid}/participants/{participantJid}",
+      "description": "Get a room participant"
     },
     {
       "name": "getRoomParticipants",

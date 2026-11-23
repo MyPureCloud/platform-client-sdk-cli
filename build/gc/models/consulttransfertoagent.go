@@ -22,6 +22,9 @@ type ConsulttransfertoagentDud struct {
 
     
 
+
+    
+
 }
 
 // Consulttransfertoagent
@@ -32,6 +35,10 @@ type Consulttransfertoagent struct {
 
     // ConsultingUserId - The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID
     ConsultingUserId string `json:"consultingUserId"`
+
+
+    // AgentIndicatedAddress - The agent indicated address of the transfer initiator. May override the address depending on trunk address priority.
+    AgentIndicatedAddress string `json:"agentIndicatedAddress"`
 
 
     // UserId - The id of the internal user.
@@ -45,6 +52,7 @@ type Consulttransfertoagent struct {
 
 // String returns a JSON representation of the model
 func (o *Consulttransfertoagent) String() string {
+    
     
     
     
@@ -70,11 +78,16 @@ func (u *Consulttransfertoagent) MarshalJSON() ([]byte, error) {
         
         ConsultingUserId string `json:"consultingUserId"`
         
+        AgentIndicatedAddress string `json:"agentIndicatedAddress"`
+        
         UserId string `json:"userId"`
         
         UserDisplayName string `json:"userDisplayName"`
         *Alias
     }{
+
+        
+
 
         
 

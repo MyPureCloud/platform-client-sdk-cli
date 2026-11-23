@@ -19,6 +19,9 @@ type ConsulttransfertoexternalDud struct {
 
     
 
+
+    
+
 }
 
 // Consulttransfertoexternal
@@ -31,6 +34,10 @@ type Consulttransfertoexternal struct {
     ConsultingUserId string `json:"consultingUserId"`
 
 
+    // AgentIndicatedAddress - The agent indicated address of the transfer initiator. May override the address depending on trunk address priority.
+    AgentIndicatedAddress string `json:"agentIndicatedAddress"`
+
+
     // Address - The address (like phone number) of the external contact.
     Address string `json:"address"`
 
@@ -38,6 +45,7 @@ type Consulttransfertoexternal struct {
 
 // String returns a JSON representation of the model
 func (o *Consulttransfertoexternal) String() string {
+    
     
     
     
@@ -62,9 +70,14 @@ func (u *Consulttransfertoexternal) MarshalJSON() ([]byte, error) {
         
         ConsultingUserId string `json:"consultingUserId"`
         
+        AgentIndicatedAddress string `json:"agentIndicatedAddress"`
+        
         Address string `json:"address"`
         *Alias
     }{
+
+        
+
 
         
 

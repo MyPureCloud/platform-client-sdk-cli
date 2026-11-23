@@ -67,6 +67,14 @@ type Learningassignmentuserlisting struct {
     UnfilteredTotal int `json:"unfilteredTotal"`
 
 
+    // NextUri
+    NextUri string `json:"nextUri"`
+
+
+    // PreviousUri
+    PreviousUri string `json:"previousUri"`
+
+
     // LastUri
     LastUri string `json:"lastUri"`
 
@@ -77,14 +85,6 @@ type Learningassignmentuserlisting struct {
 
     // SelfUri
     SelfUri string `json:"selfUri"`
-
-
-    // NextUri
-    NextUri string `json:"nextUri"`
-
-
-    // PreviousUri
-    PreviousUri string `json:"previousUri"`
 
 
     // PageCount
@@ -132,15 +132,15 @@ func (u *Learningassignmentuserlisting) MarshalJSON() ([]byte, error) {
         
         UnfilteredTotal int `json:"unfilteredTotal"`
         
+        NextUri string `json:"nextUri"`
+        
+        PreviousUri string `json:"previousUri"`
+        
         LastUri string `json:"lastUri"`
         
         FirstUri string `json:"firstUri"`
         
         SelfUri string `json:"selfUri"`
-        
-        NextUri string `json:"nextUri"`
-        
-        PreviousUri string `json:"previousUri"`
         
         PageCount int `json:"pageCount"`
         *Alias

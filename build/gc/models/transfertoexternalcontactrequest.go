@@ -22,6 +22,9 @@ type TransfertoexternalcontactrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Transfertoexternalcontactrequest
@@ -32,6 +35,10 @@ type Transfertoexternalcontactrequest struct {
 
     // KeepInternalMessageAlive - If true, the digital internal message will NOT be terminated.
     KeepInternalMessageAlive bool `json:"keepInternalMessageAlive"`
+
+
+    // AgentIndicatedAddress - The agent indicated address of the transfer initiator. May override the address depending on trunk address priority. Only available for call conversations.
+    AgentIndicatedAddress string `json:"agentIndicatedAddress"`
 
 
     // ContactId - The external contact id.
@@ -45,6 +52,7 @@ type Transfertoexternalcontactrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Transfertoexternalcontactrequest) String() string {
+    
     
     
     
@@ -70,11 +78,16 @@ func (u *Transfertoexternalcontactrequest) MarshalJSON() ([]byte, error) {
         
         KeepInternalMessageAlive bool `json:"keepInternalMessageAlive"`
         
+        AgentIndicatedAddress string `json:"agentIndicatedAddress"`
+        
         ContactId string `json:"contactId"`
         
         PhoneType string `json:"phoneType"`
         *Alias
     }{
+
+        
+
 
         
 

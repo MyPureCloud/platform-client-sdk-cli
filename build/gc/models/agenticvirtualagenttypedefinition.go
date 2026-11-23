@@ -83,7 +83,7 @@ type Agenticvirtualagenttypedefinition struct {
     StatusCodes []int `json:"statusCodes"`
 
 
-    // DefaultInstruction - Default instruction for how the virtual agent should handle this error type when a tool references it without its own error instruction. Applies when type is DataActionHttpError or A2AError.
+    // DefaultInstruction - Default instruction for how the virtual agent should handle this error type when a tool references it without its own error instruction. Applies when type is DataActionHttpError, A2AError or McpError.
     DefaultInstruction string `json:"defaultInstruction"`
 
 

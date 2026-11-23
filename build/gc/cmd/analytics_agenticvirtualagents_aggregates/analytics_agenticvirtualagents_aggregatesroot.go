@@ -1,0 +1,14 @@
+package analytics_agenticvirtualagents_aggregates
+
+import (
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/utils"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_agenticvirtualagents_aggregates_query"
+	"github.com/mypurecloud/platform-client-sdk-cli/build/gc/cmd/analytics_agenticvirtualagents_aggregates_jobs"
+)
+
+func init() {
+	analytics_agenticvirtualagents_aggregatesCmd.AddCommand(analytics_agenticvirtualagents_aggregates_query.Cmdanalytics_agenticvirtualagents_aggregates_query())
+	analytics_agenticvirtualagents_aggregatesCmd.AddCommand(analytics_agenticvirtualagents_aggregates_jobs.Cmdanalytics_agenticvirtualagents_aggregates_jobs())
+	analytics_agenticvirtualagents_aggregatesCmd.Short = utils.GenerateCustomDescription(analytics_agenticvirtualagents_aggregatesCmd.Short, analytics_agenticvirtualagents_aggregates_query.Description, analytics_agenticvirtualagents_aggregates_jobs.Description, )
+	analytics_agenticvirtualagents_aggregatesCmd.Long = analytics_agenticvirtualagents_aggregatesCmd.Short
+}

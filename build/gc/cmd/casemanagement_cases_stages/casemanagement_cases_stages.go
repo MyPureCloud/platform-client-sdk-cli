@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	Description = utils.FormatUsageDescription("casemanagement_cases_stages", "SWAGGER_OVERRIDE_/api/v2/casemanagement/cases/{caseId}/stages", "SWAGGER_OVERRIDE_/api/v2/casemanagement/cases/{caseId}/stages", )
+	Description = utils.FormatUsageDescription("casemanagement_cases_stages", "SWAGGER_OVERRIDE_/api/v2/casemanagement/cases/{caseId}/stages", "SWAGGER_OVERRIDE_/api/v2/casemanagement/cases/{caseId}/stages", "SWAGGER_OVERRIDE_/api/v2/casemanagement/cases/{caseId}/stages", )
 	casemanagement_cases_stagesCmd = &cobra.Command{
 		Use:   utils.FormatUsageDescription("casemanagement_cases_stages"),
 		Short: Description,
@@ -61,6 +61,32 @@ func Cmdcasemanagement_cases_stages() *cobra.Command {
   }
 }`)
 	casemanagement_cases_stagesCmd.AddCommand(listCmd)
+
+	updateCmd.SetUsageTemplate(fmt.Sprintf("%s\nOperation:\n  %s %s\n%s\n%s", updateCmd.UsageTemplate(), "PATCH", "/api/v2/casemanagement/cases/{caseId}/stages/{stageId}", utils.FormatPermissions([]string{ "caseManagement:stage:edit",  }), utils.GenerateDevCentreLink("PATCH", "Case Management", "/api/v2/casemanagement/cases/{caseId}/stages/{stageId}")))
+	utils.AddFileFlagIfUpsert(updateCmd.Flags(), "PATCH", `{
+  "description" : "Stage update.",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/StageUpdate"
+      }
+    }
+  },
+  "required" : true
+}`)
+	
+	
+	utils.AddPaginateFlagsIfListingResponse(updateCmd.Flags(), "PATCH", `{
+  "description" : "successful operation",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Stage"
+      }
+    }
+  }
+}`)
+	casemanagement_cases_stagesCmd.AddCommand(updateCmd)
 	return casemanagement_cases_stagesCmd
 }
 
@@ -216,6 +242,94 @@ var listCmd = &cobra.Command{
 
 		const opId = "list"
 		const httpMethod = "GET"
+		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
+		// TODO read from config file
+		retryConfig := &retry.RetryConfiguration{
+			RetryWaitMin: 5 * time.Second,
+			RetryWaitMax: 60 * time.Second,
+			RetryMax:     20,
+		}
+		results, err := retryFunc(retryConfig)
+		if err != nil {
+			if httpMethod == "HEAD" {
+				if httpErr, ok := err.(models.HttpStatusError); ok {
+					logger.Fatal(fmt.Sprintf("Status Code %v\n", httpErr.StatusCode))
+				}
+			}
+			logger.Fatal(err)
+		}
+
+		filterCondition, _ := cmd.Flags().GetString("filtercondition")
+		if filterCondition != "" {
+			filteredResults, err := utils.FilterByCondition(results, filterCondition)
+			if err != nil {
+				logger.Fatal(err)
+			}
+			results = filteredResults
+		}
+
+		utils.Render(results)
+	},
+}
+var updateCmd = &cobra.Command{
+	Use:   "update [caseId] [stageId]",
+	Short: "Update the attributes of a Stage.",
+	Long:  "Update the attributes of a Stage.",
+	Args:  utils.DetermineArgs([]string{ "caseId", "stageId", }),
+
+	Run: func(cmd *cobra.Command, args []string) {
+		_ = models.Entities{}
+
+		printReqBody, _ := cmd.Flags().GetBool("printrequestbody")
+		if printReqBody {
+			
+			reqModel := models.Stageupdate{}
+			utils.Render(reqModel.String())
+			
+			return
+		}
+
+		queryParams := make(map[string]string)
+
+		path := "/api/v2/casemanagement/cases/{caseId}/stages/{stageId}"
+		caseId, args := args[0], args[1:]
+		path = strings.Replace(path, "{caseId}", fmt.Sprintf("%v", caseId), -1)
+		stageId, args := args[0], args[1:]
+		path = strings.Replace(path, "{stageId}", fmt.Sprintf("%v", stageId), -1)
+
+		urlString := path
+		if len(queryParams) > 0 {
+			urlString = fmt.Sprintf("%v?", path)
+			for k, v := range queryParams {
+				urlString += fmt.Sprintf("%v=%v&", queryEscape(strings.TrimSpace(k)), queryEscape(strings.TrimSpace(v)))
+			}
+			urlString = strings.TrimSuffix(urlString, "&")
+		}
+
+		if strings.Contains(urlString, "varType") {
+			urlString = strings.Replace(urlString, "varType", "type", -1)
+		}
+
+		headerParams := make(map[string]string)
+		// to determine the Content-Type header
+		localVarHttpContentTypes := []string{ "application/json",  }
+		// set Content-Type header
+		localVarHttpContentType := utils.SelectHeaderContentType(localVarHttpContentTypes)
+		if localVarHttpContentType != "" {
+			headerParams["Content-Type"] = localVarHttpContentType
+		}
+		// to determine the Accept header
+		localVarHttpHeaderAccepts := []string{
+			"application/json",
+		}
+		// set Accept header
+		localVarHttpHeaderAccept := utils.SelectHeaderAccept(localVarHttpHeaderAccepts)
+		if localVarHttpHeaderAccept != "" {
+			headerParams["Accept"] = localVarHttpHeaderAccept
+		}
+
+		const opId = "update"
+		const httpMethod = "PATCH"
 		retryFunc := CommandService.DetermineAction(httpMethod, urlString, headerParams, cmd, opId)
 		// TODO read from config file
 		retryConfig := &retry.RetryConfiguration{

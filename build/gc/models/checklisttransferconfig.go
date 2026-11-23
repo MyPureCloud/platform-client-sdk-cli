@@ -17,7 +17,7 @@ type ChecklisttransferconfigDud struct {
 
 // Checklisttransferconfig
 type Checklisttransferconfig struct { 
-    // Enabled - Whether checklist transfer data is visible to the receiving agent. Defaults to true when not set.
+    // Enabled - Whether checklist transfer data is visible to the receiving agent. Defaults to false when not set; newly created Copilots have this enabled by default.
     Enabled bool `json:"enabled"`
 
 }

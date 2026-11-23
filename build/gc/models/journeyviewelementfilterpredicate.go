@@ -22,6 +22,9 @@ type JourneyviewelementfilterpredicateDud struct {
 
     
 
+
+    
+
 }
 
 // Journeyviewelementfilterpredicate - A filter on an element within a journey view
@@ -38,6 +41,10 @@ type Journeyviewelementfilterpredicate struct {
     Operator string `json:"operator"`
 
 
+    // ArrayOperator - Optional operator on how to match array attributes, default is MatchAny. Valid values: MatchAny, MatchAll, MatchOnly
+    ArrayOperator string `json:"arrayOperator"`
+
+
     // NoValue - set this to true if no specific value to be considered
     NoValue bool `json:"noValue"`
 
@@ -47,6 +54,7 @@ type Journeyviewelementfilterpredicate struct {
 func (o *Journeyviewelementfilterpredicate) String() string {
     
      o.Values = []string{""} 
+    
     
     
 
@@ -72,6 +80,8 @@ func (u *Journeyviewelementfilterpredicate) MarshalJSON() ([]byte, error) {
         
         Operator string `json:"operator"`
         
+        ArrayOperator string `json:"arrayOperator"`
+        
         NoValue bool `json:"noValue"`
         *Alias
     }{
@@ -81,6 +91,9 @@ func (u *Journeyviewelementfilterpredicate) MarshalJSON() ([]byte, error) {
 
         
         Values: []string{""},
+        
+
+
         
 
 

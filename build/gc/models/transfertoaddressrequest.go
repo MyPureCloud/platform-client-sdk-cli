@@ -19,6 +19,9 @@ type TransfertoaddressrequestDud struct {
 
     
 
+
+    
+
 }
 
 // Transfertoaddressrequest
@@ -31,6 +34,10 @@ type Transfertoaddressrequest struct {
     KeepInternalMessageAlive bool `json:"keepInternalMessageAlive"`
 
 
+    // AgentIndicatedAddress - The agent indicated address of the transfer initiator. May override the address depending on trunk address priority. Only available for call conversations.
+    AgentIndicatedAddress string `json:"agentIndicatedAddress"`
+
+
     // Address - User's name, queue's name, destination's address or phone number.
     Address string `json:"address"`
 
@@ -38,6 +45,7 @@ type Transfertoaddressrequest struct {
 
 // String returns a JSON representation of the model
 func (o *Transfertoaddressrequest) String() string {
+    
     
     
     
@@ -62,9 +70,14 @@ func (u *Transfertoaddressrequest) MarshalJSON() ([]byte, error) {
         
         KeepInternalMessageAlive bool `json:"keepInternalMessageAlive"`
         
+        AgentIndicatedAddress string `json:"agentIndicatedAddress"`
+        
         Address string `json:"address"`
         *Alias
     }{
+
+        
+
 
         
 

@@ -22,6 +22,9 @@ type VideosettingsDud struct {
 
     
 
+
+    
+
 }
 
 // Videosettings - The settings to enable video chat
@@ -41,12 +44,17 @@ type Videosettings struct {
     // User - Video Settings for user
     User Uservideosettings `json:"user"`
 
+
+    // Recording - Video chat recording and customer consent settings
+    Recording Videorecordingsettings `json:"recording"`
+
 }
 
 // String returns a JSON representation of the model
 func (o *Videosettings) String() string {
     
      o.Channels = []string{""} 
+    
     
     
 
@@ -73,6 +81,8 @@ func (u *Videosettings) MarshalJSON() ([]byte, error) {
         Agent Agentvideosettings `json:"agent"`
         
         User Uservideosettings `json:"user"`
+        
+        Recording Videorecordingsettings `json:"recording"`
         *Alias
     }{
 
@@ -81,6 +91,9 @@ func (u *Videosettings) MarshalJSON() ([]byte, error) {
 
         
         Channels: []string{""},
+        
+
+
         
 
 

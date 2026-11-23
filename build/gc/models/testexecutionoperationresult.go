@@ -25,6 +25,9 @@ type TestexecutionoperationresultDud struct {
 
     
 
+
+    
+
 }
 
 // Testexecutionoperationresult
@@ -48,6 +51,10 @@ type Testexecutionoperationresult struct {
     // VarError - Error that occurred during the operation
     VarError Errorbody `json:"error"`
 
+
+    // DurationMs - Time in milliseconds taken to execute this step
+    DurationMs int `json:"durationMs"`
+
 }
 
 // String returns a JSON representation of the model
@@ -56,6 +63,7 @@ func (o *Testexecutionoperationresult) String() string {
     
     
      o.Result = Interface{} 
+    
     
 
     j, _ := json.Marshal(o)
@@ -83,6 +91,8 @@ func (u *Testexecutionoperationresult) MarshalJSON() ([]byte, error) {
         Result interface{} `json:"result"`
         
         VarError Errorbody `json:"error"`
+        
+        DurationMs int `json:"durationMs"`
         *Alias
     }{
 
@@ -97,6 +107,9 @@ func (u *Testexecutionoperationresult) MarshalJSON() ([]byte, error) {
 
         
         Result: Interface{},
+        
+
+
         
 
 

@@ -66,6 +66,12 @@ type WhatsappintegrationDud struct {
     WhatsAppBusinessAccountId string `json:"whatsAppBusinessAccountId"`
 
 
+    PhoneNumberId string `json:"phoneNumberId"`
+
+
+    BusinessPortfolioId string `json:"businessPortfolioId"`
+
+
     SelfUri string `json:"selfUri"`
 
 }
@@ -138,6 +144,12 @@ type Whatsappintegration struct {
 
     
 
+
+    
+
+
+    
+
 }
 
 // String returns a JSON representation of the model
@@ -190,6 +202,12 @@ func (u *Whatsappintegration) MarshalJSON() ([]byte, error) {
         Version int `json:"version"`
         *Alias
     }{
+
+        
+
+
+        
+
 
         
 

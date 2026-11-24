@@ -31,6 +31,7 @@
 
 * [gc workforcemanagement managementunits](gc_workforcemanagement_managementunits.html)	 - /api/v2/workforcemanagement/managementunits
 * [gc workforcemanagement managementunits timeoffrequests create](gc_workforcemanagement_managementunits_timeoffrequests_create.html)	 - Create a new time off request
+* [gc workforcemanagement managementunits timeoffrequests evaluate](gc_workforcemanagement_managementunits_timeoffrequests_evaluate.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/evaluate
 * [gc workforcemanagement managementunits timeoffrequests integrationstatus](gc_workforcemanagement_managementunits_timeoffrequests_integrationstatus.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus
 * [gc workforcemanagement managementunits timeoffrequests query](gc_workforcemanagement_managementunits_timeoffrequests_query.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query
 * [gc workforcemanagement managementunits timeoffrequests users](gc_workforcemanagement_managementunits_timeoffrequests_users.html)	 - /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users

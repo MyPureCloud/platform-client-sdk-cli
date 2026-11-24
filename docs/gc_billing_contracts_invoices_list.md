@@ -17,8 +17,8 @@ gc billing contracts invoices list [flags]
       --agreementId string       Filter invoices by agreement ID.
   -a, --autopaginate             Automatically paginate through the results stripping page information
       --before string            The cursor that points to the start of the set of entities that has been returned.
-      --dateEnd string           End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-      --dateStart string         Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+      --dateEnd string           End date for the query. When dateStart is also supplied, dateEnd must be on or after dateStart. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+      --dateStart string         Start date for the query. When dateEnd is also supplied, dateStart must be on or before dateEnd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
       --filtercondition string   Filter list command output based on a given condition or regular expression
   -h, --help                     help for list
       --pageSize string          Number of entities to return. Maximum of 200.

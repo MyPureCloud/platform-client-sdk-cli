@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
+* [gc architect capabilities](gc_architect_capabilities.html)	 - /api/v2/architect/capabilities
 * [gc architect dependencytracking](gc_architect_dependencytracking.html)	 - /api/v2/architect/dependencytracking
 * [gc architect emergencygroups](gc_architect_emergencygroups.html)	 - /api/v2/architect/emergencygroups
 * [gc architect grammars](gc_architect_grammars.html)	 - /api/v2/architect/grammars

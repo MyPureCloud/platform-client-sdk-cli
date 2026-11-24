@@ -38,6 +38,7 @@
 * [gc recording mediaretentionpolicies](gc_recording_mediaretentionpolicies.html)	 - /api/v2/recording/mediaretentionpolicies
 * [gc recording recordingkeys](gc_recording_recordingkeys.html)	 - /api/v2/recording/recordingkeys
 * [gc recording settings](gc_recording_settings.html)	 - /api/v2/recording/settings
+* [gc recording snippets](gc_recording_snippets.html)	 - /api/v2/recording/snippets
 * [gc recording uploads](gc_recording_uploads.html)	 - /api/v2/recording/uploads
 
 

@@ -33,5 +33,6 @@
 * [gc casemanagement cases stages get](gc_casemanagement_cases_stages_get.html)	 - Get a Stage.
 * [gc casemanagement cases stages list](gc_casemanagement_cases_stages_list.html)	 - Get a list of Stages.
 * [gc casemanagement cases stages steps](gc_casemanagement_cases_stages_steps.html)	 - /api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps
+* [gc casemanagement cases stages update](gc_casemanagement_cases_stages_update.html)	 - Update the attributes of a Stage.
 
 

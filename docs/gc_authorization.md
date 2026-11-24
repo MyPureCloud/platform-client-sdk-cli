@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
+* [gc authorization customattributes](gc_authorization_customattributes.html)	 - /api/v2/authorization/customattributes
 * [gc authorization divisions](gc_authorization_divisions.html)	 - /api/v2/authorization/divisions
 * [gc authorization divisionspermitted](gc_authorization_divisionspermitted.html)	 - /api/v2/authorization/divisionspermitted
 * [gc authorization permissions](gc_authorization_permissions.html)	 - /api/v2/authorization/permissions

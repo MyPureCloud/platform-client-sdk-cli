@@ -32,6 +32,7 @@
 * [gc conversations](gc_conversations.html)	 - /api/v2/conversations
 * [gc conversations emails agentless](gc_conversations_emails_agentless.html)	 - /api/v2/conversations/emails/agentless
 * [gc conversations emails create](gc_conversations_emails_create.html)	 - Create an email conversation
+* [gc conversations emails draft](gc_conversations_emails_draft.html)	 - /api/v2/conversations/emails/{conversationId}/draft
 * [gc conversations emails get](gc_conversations_emails_get.html)	 - Get email conversation
 * [gc conversations emails inboundmessages](gc_conversations_emails_inboundmessages.html)	 - /api/v2/conversations/emails/{conversationId}/inboundmessages
 * [gc conversations emails list](gc_conversations_emails_list.html)	 - Get the logged-in user`s active conversations and their Email participants state.

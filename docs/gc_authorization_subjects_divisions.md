@@ -30,6 +30,7 @@
 ### SEE ALSO
 
 * [gc authorization subjects](gc_authorization_subjects.html)	 - /api/v2/authorization/subjects
+* [gc authorization subjects divisions query](gc_authorization_subjects_divisions_query.html)	 - /api/v2/authorization/subjects/{subjectId}/divisions/query
 * [gc authorization subjects divisions roles](gc_authorization_subjects_divisions_roles.html)	 - /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles
 
 

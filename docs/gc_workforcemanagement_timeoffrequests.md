@@ -32,6 +32,7 @@
 * [gc workforcemanagement](gc_workforcemanagement.html)	 - /api/v2/workforcemanagement
 * [gc workforcemanagement timeoffrequests create](gc_workforcemanagement_timeoffrequests_create.html)	 - Create a time off request for the current user
 * [gc workforcemanagement timeoffrequests estimate](gc_workforcemanagement_timeoffrequests_estimate.html)	 - /api/v2/workforcemanagement/timeoffrequests/estimate
+* [gc workforcemanagement timeoffrequests evaluate](gc_workforcemanagement_timeoffrequests_evaluate.html)	 - /api/v2/workforcemanagement/timeoffrequests/evaluate
 * [gc workforcemanagement timeoffrequests get](gc_workforcemanagement_timeoffrequests_get.html)	 - Get a time off request for the current user
 * [gc workforcemanagement timeoffrequests integrationstatus](gc_workforcemanagement_timeoffrequests_integrationstatus.html)	 - /api/v2/workforcemanagement/timeoffrequests/integrationstatus
 * [gc workforcemanagement timeoffrequests list](gc_workforcemanagement_timeoffrequests_list.html)	 - Get a list of time off requests for the current user

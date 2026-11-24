@@ -32,6 +32,7 @@
 * [gc](gc.html)	 - gc is a CLI for interacting with Genesys Cloud
 * [gc analytics actions](gc_analytics_actions.html)	 - /api/v2/analytics/actions
 * [gc analytics agentcopilots](gc_analytics_agentcopilots.html)	 - /api/v2/analytics/agentcopilots
+* [gc analytics agenticvirtualagents](gc_analytics_agenticvirtualagents.html)	 - /api/v2/analytics/agenticvirtualagents
 * [gc analytics agents](gc_analytics_agents.html)	 - /api/v2/analytics/agents
 * [gc analytics agentutilizations](gc_analytics_agentutilizations.html)	 - /api/v2/analytics/agentutilizations
 * [gc analytics botflows](gc_analytics_botflows.html)	 - /api/v2/analytics/botflows
@@ -46,6 +47,7 @@
 * [gc analytics flows](gc_analytics_flows.html)	 - /api/v2/analytics/flows
 * [gc analytics journeys](gc_analytics_journeys.html)	 - /api/v2/analytics/journeys
 * [gc analytics knowledge](gc_analytics_knowledge.html)	 - /api/v2/analytics/knowledge
+* [gc analytics kpiattributions](gc_analytics_kpiattributions.html)	 - /api/v2/analytics/kpiattributions
 * [gc analytics queues](gc_analytics_queues.html)	 - /api/v2/analytics/queues
 * [gc analytics ratelimits](gc_analytics_ratelimits.html)	 - /api/v2/analytics/ratelimits
 * [gc analytics reporting](gc_analytics_reporting.html)	 - /api/v2/analytics/reporting

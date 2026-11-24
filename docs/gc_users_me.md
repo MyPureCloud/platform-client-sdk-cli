@@ -32,6 +32,7 @@
 * [gc users](gc_users.html)	 - /api/v2/users
 * [gc users me get](gc_users_me_get.html)	 - Get current user details.
 * [gc users me password](gc_users_me_password.html)	 - /api/v2/users/me/password
+* [gc users me trustors](gc_users_me_trustors.html)	 - /api/v2/users/me/trustors
 * [gc users me verifiers](gc_users_me_verifiers.html)	 - /api/v2/users/me/verifiers
 
 

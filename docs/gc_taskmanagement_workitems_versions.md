@@ -29,7 +29,7 @@
 
 ### SEE ALSO
 
-* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems /api/v2/taskmanagement/workitems/{workitemId}/users
+* [gc taskmanagement workitems](gc_taskmanagement_workitems.html)	 - /api/v2/taskmanagement/workitems
 * [gc taskmanagement workitems versions get](gc_taskmanagement_workitems_versions_get.html)	 - Get a version of a workitem
 * [gc taskmanagement workitems versions list](gc_taskmanagement_workitems_versions_list.html)	 - Get all versions of a workitem
 

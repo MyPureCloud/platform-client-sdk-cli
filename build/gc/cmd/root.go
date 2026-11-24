@@ -145,7 +145,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of gc",
 	Long:  `All software has versions. This is gc version's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Current version: 176.0.0")
+		fmt.Println("Current version: 177.0.0")
 		checkForNewVersion()
 	},
 }
@@ -164,7 +164,7 @@ func checkForNewVersion() {
 		return
 	}
 
-	if versionsAreEqual("176.0.0", latestVersion) {
+	if versionsAreEqual("177.0.0", latestVersion) {
 		fmt.Println("You're all up to date.")
 	} else {
 		fmt.Printf("A new version of the CLI is available: %v\n", latestVersion)
